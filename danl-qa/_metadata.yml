@@ -18,9 +18,9 @@ include-after-body:
 comments:
   giscus:
     repo: bcdanl/101
-    mapping: title
-    reactions-enabled: true
-    loading: lazy
+    # mapping: title
+    reactions-enabled: false
+    # loading: lazy
     input-position: top
     theme: preferred_color_scheme
     language: en

@@ -319,8 +319,8 @@ mpg
 ### Workflow: Naming and File Management
 
 - Save your class R script for each class.
-- I use the following name for class R script:
-  - `danl-101-lec-04-2024-0905.R`
+- I use the following style of file name for class R script:
+  - e.g., `danl-101-lec-04-2024-0905.R`
 
 - Do not have any space when you name a file.
   - It is recommended to use all lower cases.
@@ -470,6 +470,13 @@ a
 ::::
 
 
+## R Basics
+###  Objects
+
+- Sometimes you will hear variables referred to as **objects**.
+
+- Everything that is not a *literal value*, such as `10`, is an **object**. 
+
 
 
 ## R Basics
@@ -505,26 +512,11 @@ y <- x + 12
   4. Assigns the result to the left-side variable, `y`.
 
 
-    
-## R Basics
-###  Values, Variables, and Types
-
-::: {}
-- Sometimes you will hear variables referred to as **objects**.
-
-- Everything that is not a *literal value*, such as `10`, is an **object**. 
-
-:::
-
 
 
 
 ## R Basics
-###  Values, Variables, and Types
-
-::: {.panel-tabset}
-
-## Types
+### Data Types
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -547,8 +539,8 @@ y <- x + 12
 ::::
 
 
-
-## Data containers
+## R Basics
+### Data Containers
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -557,6 +549,7 @@ y <- x + 12
   <img src="https://bcdanl.github.io/lec_figs/r_data_types.png" style="width: 100%; margin-bottom: -20px;">
   <p style="font-weight: bold;"></p>
 </div>
+
 :::
 
 ::: {.column width="50%"}
@@ -569,13 +562,11 @@ y <- x + 12
 ::::
 
 
-:::
-
 
 
 
 ## R Basics
-### R Variable and Data Types
+### Data Types
 
 
 ::: {.panel-tabset}
@@ -589,7 +580,8 @@ class(myname) # returns the data **type** of an object.
 
 
 - Strings are known as `character` in R. 
-- Use the double quotes `"` or single quotes `'` to wrap around the string
+- Use the double quotes (`"`) or single quotes (`'`) to wrap around the string
+  - Most IDE, including RStudio, automatically provides a pair of quotes when typing just one quote.
 
 
 
@@ -883,9 +875,10 @@ $$
 $$
 \overline{s} = \sqrt{ \left( \frac{(x_{1}-\overline{x})^{2} + (x_{2}-\overline{x})^{2} + \cdots + (x_{N}-\overline{x})^{2}}{N-1}\;\, \right) }
 $$
+
 - The **standard deviation** (SD) is also a measure of the spread of values within a given vector.
-  - It is simply the square root of the variance.
-  - `sd(x)` calculates the standard deviation  of the values in a vector $x$. 
+  - SD is simply the square root of the variance.
+  - `sd(x)` calculates the standard deviation  of the values in a vector $x$
   - SD helps us understand how representative the mean is of the data. 
   - A low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean.
   
@@ -1024,7 +1017,6 @@ ncol(uciCar)
 
 ::: {.column width="50%"}
 ```{.r}
-
 library(skimr)
 skim(uciCar)
 ```

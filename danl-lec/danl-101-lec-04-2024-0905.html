@@ -647,9 +647,9 @@ Byeong-Hak Choe
 <h3 id="workflow-naming-and-file-management">Workflow: Naming and File Management</h3>
 <ul>
 <li class="fragment">Save your class R script for each class.</li>
-<li class="fragment">I use the following name for class R script:
+<li class="fragment">I use the following style of file name for class R script:
 <ul>
-<li class="fragment"><code>danl-101-lec-04-2024-0905.R</code></li>
+<li class="fragment">e.g., <code>danl-101-lec-04-2024-0905.R</code></li>
 </ul></li>
 <li class="fragment">Do not have any space when you name a file.
 <ul>
@@ -793,6 +793,14 @@ Byeong-Hak Choe
 </section>
 <section id="r-basics-3" class="slide level2">
 <h2>R Basics</h2>
+<h3 id="objects">Objects</h3>
+<ul>
+<li class="fragment"><p>Sometimes you will hear variables referred to as <strong>objects</strong>.</p></li>
+<li class="fragment"><p>Everything that is not a <em>literal value</em>, such as <code>10</code>, is an <strong>object</strong>.</p></li>
+</ul>
+</section>
+<section id="r-basics-4" class="slide level2">
+<h2>R Basics</h2>
 <h3 id="assignment">Assignment</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>x <span class="sc">&lt;</span> <span class="sc">-</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -805,7 +813,7 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="r-basics-4" class="slide level2">
+<section id="r-basics-5" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="assignment-1">Assignment</h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
@@ -824,23 +832,9 @@ Byeong-Hak Choe
 </ol></li>
 </ul>
 </section>
-<section id="r-basics-5" class="slide level2">
-<h2>R Basics</h2>
-<h3 id="values-variables-and-types-2">Values, Variables, and Types</h3>
-<div>
-<ul>
-<li class="fragment"><p>Sometimes you will hear variables referred to as <strong>objects</strong>.</p></li>
-<li class="fragment"><p>Everything that is not a <em>literal value</em>, such as <code>10</code>, is an <strong>object</strong>.</p></li>
-</ul>
-</div>
-</section>
 <section id="r-basics-6" class="slide level2">
 <h2>R Basics</h2>
-<h3 id="values-variables-and-types-3">Values, Variables, and Types</h3>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Types</a></li><li><a href="#tabset-1-2">Data containers</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
+<h3 id="data-types">Data Types</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p align="center">
@@ -859,8 +853,10 @@ Byeong-Hak Choe
 </ul>
 </div>
 </div>
-</div>
-<div id="tabset-1-2">
+</section>
+<section id="r-basics-7" class="slide level2">
+<h2>R Basics</h2>
+<h3 id="data-containers">Data Containers</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div style="text-align: center; width: 100%; margin: auto;">
@@ -878,25 +874,25 @@ Byeong-Hak Choe
 </ul>
 </div>
 </div>
-</div>
-</div>
-</div>
 </section>
-<section id="r-basics-7" class="slide level2">
+<section id="r-basics-8" class="slide level2">
 <h2>R Basics</h2>
-<h3 id="r-variable-and-data-types">R Variable and Data Types</h3>
+<h3 id="data-types-1">Data Types</h3>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Character</a></li><li><a href="#tabset-2-2">Numbers</a></li><li><a href="#tabset-2-3">Logical (<code>TRUE</code>/<code>FALSE</code>)</a></li><li><a href="#tabset-2-4">Vectors</a></li><li><a href="#tabset-2-5">Factors</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Character</a></li><li><a href="#tabset-1-2">Numbers</a></li><li><a href="#tabset-1-3">Logical (<code>TRUE</code>/<code>FALSE</code>)</a></li><li><a href="#tabset-1-4">Vectors</a></li><li><a href="#tabset-1-5">Factors</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-1-1">
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>myname <span class="ot">&lt;-</span> <span class="st">"my_name"</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="fu">class</span>(myname) <span class="co"># returns the data **type** of an object.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Strings are known as <code>character</code> in R.</li>
-<li class="fragment">Use the double quotes <code>"</code> or single quotes <code>'</code> to wrap around the string</li>
+<li class="fragment">Use the double quotes (<code>"</code>) or single quotes (<code>'</code>) to wrap around the string
+<ul>
+<li class="fragment">Most IDE, including RStudio, automatically provides a pair of quotes when typing just one quote.</li>
+</ul></li>
 </ul>
 </div>
-<div id="tabset-2-2">
+<div id="tabset-1-2">
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>favorite.integer <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="dv">2</span>)</span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="fu">class</span>(favorite.integer)</span>
 <span id="cb8-3"><a href="#cb8-3"></a></span>
@@ -909,7 +905,7 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </div>
-<div id="tabset-2-3">
+<div id="tabset-1-3">
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">class</span>(<span class="cn">TRUE</span>)</span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="fu">class</span>(<span class="cn">FALSE</span>)</span>
 <span id="cb9-3"><a href="#cb9-3"></a>favorite.numeric <span class="sc">==</span> <span class="fl">8.8</span></span>
@@ -919,7 +915,7 @@ Byeong-Hak Choe
 <li class="fragment">We use the <code>==</code> to test for equality in R</li>
 </ul>
 </div>
-<div id="tabset-2-4">
+<div id="tabset-1-4">
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>  <span class="co"># colon operator</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"3"</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
 <span id="cb10-3"><a href="#cb10-3"></a>beers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"BUD LIGHT"</span>, <span class="st">"BUSCH LIGHT"</span>, <span class="st">"COORS LIGHT"</span>, </span>
@@ -932,7 +928,7 @@ Byeong-Hak Choe
 <li class="fragment"><p><code>c(...)</code>: Returns a vector that is constructed from one or more arguments, with the order of the vector elements corresponding to the order of the arguments.</p></li>
 </ul>
 </div>
-<div id="tabset-2-5">
+<div id="tabset-1-5">
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>beers <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(beers)</span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="fu">class</span>(beers)</span>
 <span id="cb11-3"><a href="#cb11-3"></a></span>
@@ -949,7 +945,7 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="r-basics-8" class="slide level2">
+<section id="r-basics-9" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="workflow-quotation-marks-parentheses-and">Workflow: Quotation marks, parentheses, and <code>+</code></h3>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>x <span class="ot">&lt;-</span> <span class="st">"hello</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -961,7 +957,7 @@ Byeong-Hak Choe
 <li class="fragment">The <code>+</code> tells you that R is waiting for more input; it doesn’t think you’re done yet.</li>
 </ul>
 </section>
-<section id="r-basics-9" class="slide level2">
+<section id="r-basics-10" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="functions">Functions</h3>
 <ul>
@@ -971,7 +967,7 @@ Byeong-Hak Choe
 <li class="fragment"><p>We will mostly use built-in functions.</p></li>
 </ul>
 </section>
-<section id="r-basics-10" class="slide level2">
+<section id="r-basics-11" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="functions-arguments-and-parameters">Functions, Arguments, and Parameters</h3>
 <div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -987,13 +983,13 @@ Byeong-Hak Choe
 <li class="fragment"><p>A <em>default argument</em> is a fallback value that R passes to a parameter if the function invocation does not explicitly provide one.</p></li>
 </ul>
 </section>
-<section id="r-basics-11" class="slide level2">
+<section id="r-basics-12" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="arithmetic-operations-and-mathematical-functions">Arithmetic Operations and Mathematical Functions</h3>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Algebra</a></li><li><a href="#tabset-3-2">Math functions</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Algebra</a></li><li><a href="#tabset-2-2">Math functions</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1">
+<div id="tabset-2-1">
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span></span>
@@ -1014,7 +1010,7 @@ Byeong-Hak Choe
 <li class="fragment"><p>R can be used for a wide range of mathematical calculations.</p></li>
 </ul>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-2-2">
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="dv">5</span> <span class="sc">*</span> <span class="fu">abs</span>(<span class="sc">-</span><span class="dv">3</span>)</span>
@@ -1039,7 +1035,7 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="r-basics-12" class="slide level2">
+<section id="r-basics-13" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="vectorized-operations">Vectorized Operations</h3>
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
@@ -1129,7 +1125,16 @@ Byeong-Hak Choe
 <h3 id="standard-deviation">Standard Deviation</h3>
 <p><span class="math display">\[
 \overline{s} = \sqrt{ \left( \frac{(x_{1}-\overline{x})^{2} + (x_{2}-\overline{x})^{2} + \cdots + (x_{N}-\overline{x})^{2}}{N-1}\;\, \right) }
-\]</span> - The <strong>standard deviation</strong> (SD) is also a measure of the spread of values within a given vector. - It is simply the square root of the variance. - <code>sd(x)</code> calculates the standard deviation of the values in a vector <span class="math inline">\(x\)</span>. - SD helps us understand how representative the mean is of the data. - A low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean.</p>
+\]</span></p>
+<ul>
+<li class="fragment">The <strong>standard deviation</strong> (SD) is also a measure of the spread of values within a given vector.
+<ul>
+<li class="fragment">SD is simply the square root of the variance.</li>
+<li class="fragment"><code>sd(x)</code> calculates the standard deviation of the values in a vector <span class="math inline">\(x\)</span></li>
+<li class="fragment">SD helps us understand how representative the mean is of the data.</li>
+<li class="fragment">A low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean.</li>
+</ul></li>
+</ul>
 </section>
 <section id="measures-of-dispersion-4" class="slide level2">
 <h2>Measures of Dispersion</h2>
@@ -1164,7 +1169,7 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="r-basics-13" class="slide level2">
+<section id="r-basics-14" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="casting-variables">Casting Variables</h3>
 <div class="columns">
@@ -1187,13 +1192,13 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="r-basics-14" class="slide level2">
+<section id="r-basics-15" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="absolute-vs.-relative-pathnames">Absolute vs.&nbsp;Relative Pathnames</h3>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Absolute Path</a></li><li><a href="#tabset-4-2">Relative Path</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Absolute Path</a></li><li><a href="#tabset-3-2">Relative Path</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-3-1">
 <ul>
 <li class="fragment"><p>Complete path from the root directory to the target file or directory.</p></li>
 <li class="fragment"><p>Independent of the current working directory.</p></li>
@@ -1201,7 +1206,7 @@ Byeong-Hak Choe
 <li class="fragment"><p>Example (Windows): <code>C:\\Users\\user\\Documents\\data\\car_data.csv</code></p></li>
 </ul>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-3-2">
 <ul>
 <li class="fragment">Path relative to the current working directory.</li>
 <li class="fragment">Changes based on the current directory. <!-- - Uses '.' for current directory and '..' for parent directory. --></li>
@@ -1212,7 +1217,7 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="r-basics-15" class="slide level2">
+<section id="r-basics-16" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="working-with-data-from-files">Working with Data from Files</h3>
 <div>
@@ -1234,7 +1239,7 @@ Byeong-Hak Choe
 </ul>
 </div>
 </section>
-<section id="r-basics-16" class="slide level2">
+<section id="r-basics-17" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="examining-data.frames">Examining data.frames</h3>
 <div class="columns">
@@ -1244,9 +1249,8 @@ Byeong-Hak Choe
 <span id="cb24-3"><a href="#cb24-3"></a><span class="fu">nrow</span>(uciCar)</span>
 <span id="cb24-4"><a href="#cb24-4"></a><span class="fu">ncol</span>(uciCar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a></span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="fu">skim</span>(uciCar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">skim</span>(uciCar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -1258,7 +1262,7 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="r-basics-17" class="slide level2">
+<section id="r-basics-18" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="reading-data.frames-from-an-url">Reading data.frames from an URL</h3>
 <div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>tvshows <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
@@ -1267,7 +1271,7 @@ Byeong-Hak Choe
 <li class="fragment">We can import the CSV file from the web.</li>
 </ul>
 </section>
-<section id="r-basics-18" class="slide level2">
+<section id="r-basics-19" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="tidy-data.frame-variables-observations-and-values">Tidy <code>data.frame</code>: Variables, Observations, and Values</h3>
 <p align="center">

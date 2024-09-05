@@ -315,6 +315,16 @@ mpg
 :::
 ::::
 
+## Setting the Tools
+### Workflow: Naming and File Management
+
+- Save your class R script for each class.
+- I use the following name for class R script:
+  - `danl-101-lec-04-2024-0905.R`
+
+- Do not have any space when you name a file.
+  - It is recommended to use all lower cases.
+
 
 ## Setting the Tools
 ### Workflow: Code and comment style
@@ -336,6 +346,7 @@ mpg
 :::: {.columns}
 ::: {.column width="50%"}
 - **Windows**
+  - **Alt + -** adds an assignment operator
   - **Ctrl + Enter** runs a current line of code
   - **Ctrl + Shift + C** makes a comment (#)
   - **Ctrl + Shift + R** makes a section (# Section - - - -)
@@ -344,6 +355,7 @@ mpg
 
 ::: {.column width="50%"}
 - **Mac**
+  - **option + -** adds an assignment operator
   - **command + return** runs a current line of code
   - **command + shift + C** makes a comment (#)
   - **command + shift + R** makes a section (# Section - - - -)

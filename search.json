@@ -1180,21 +1180,21 @@
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-14",
     "title": "Lecture 4",
     "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Code and comment style\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is R’s comment character.\n\nIn R scripts (*.R files), # indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to."
+    "text": "Setting the Tools\nWorkflow: Naming and File Management\n\nSave your class R script for each class.\nI use the following name for class R script:\n\ndanl-101-lec-04-2024-0905.R\n\nDo not have any space when you name a file.\n\nIt is recommended to use all lower cases."
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-15",
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-15",
     "title": "Lecture 4",
     "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\nCtrl (command for Mac Users) + Z undoes the previous action.\nCtrl (command for Mac Users) + Shift + Z redoes when undo is executed."
+    "text": "Setting the Tools\nWorkflow: Code and comment style\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is R’s comment character.\n\nIn R scripts (*.R files), # indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to."
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-16",
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-16",
     "title": "Lecture 4",
     "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\nCtrl (command for Mac Users) + F is useful when finding a phrase (and replace the phrase) in the RScript."
+    "text": "Setting the Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\nCtrl (command for Mac Users) + Z undoes the previous action.\nCtrl (command for Mac Users) + Shift + Z redoes when undo is executed."
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-1",
@@ -1418,7 +1418,7 @@
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-17",
     "title": "Lecture 4",
     "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Auto-completion\n\n\nlibr\n\n\n\n\n\n\n\nAuto-completion of command is useful.\n\nType libr in the RScript in RStudio and wait for a second."
+    "text": "Setting the Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\nCtrl (command for Mac Users) + F is useful when finding a phrase (and replace the phrase) in the RScript."
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion-2",
@@ -1453,11 +1453,18 @@
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-danl-tools-1",
     "title": "Lecture 4",
     "section": "Setting the DANL Tools",
-    "text": "Setting the DANL Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\n\n\n\nWindows\n\nCtrl + Enter runs a current line of code\nCtrl + Shift + C makes a comment (#)\nCtrl + Shift + R makes a section (# Section - - - -)\n\n\n\n\nMac\n\ncommand + return runs a current line of code\ncommand + shift + C makes a comment (#)\ncommand + shift + R makes a section (# Section - - - -)"
+    "text": "Setting the DANL Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\n\n\n\nWindows\n\nAlt + - adds an assignment operator\nCtrl + Enter runs a current line of code\nCtrl + Shift + C makes a comment (#)\nCtrl + Shift + R makes a section (# Section - - - -)\n\n\n\n\nMac\n\noption + - adds an assignment operator\ncommand + return runs a current line of code\ncommand + shift + C makes a comment (#)\ncommand + shift + R makes a section (# Section - - - -)"
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-18",
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-18",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nWorkflow: Auto-completion\n\n\nlibr\n\n\n\n\n\n\n\nAuto-completion of command is useful.\n\nType libr in the RScript in RStudio and wait for a second."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-19",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-19",
     "title": "Lecture 4",
     "section": "Setting the Tools",
     "text": "Setting the Tools\nWorkflow: STOP icon\n\n\n\n\nWhen the code is running, RStudio shows the STOP icon ( 🛑 ) at the top right corner in the Console Pane.\n\nDo not click it unless if you want to stop running the code."

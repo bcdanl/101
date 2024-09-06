@@ -568,6 +568,36 @@ y <- x + 12
 ## R Basics
 ### Data Types
 
+:::: {.columns}
+::: {.column width="50%"}
+```{.r}
+orig_number <- 4.39898498
+class(orig_number)
+mod_number <- as.integer(orig_number)
+class(mod_number)
+```
+:::
+
+::: {.column width="50%"}
+
+```{.r}
+# TRUE converts to 1; FALSE does to 0.
+as.numeric(TRUE)
+as.numeric(FALSE)
+```
+:::
+::::
+
+
+- Sometimes we need to explicitly cast a value from one type to another. 
+
+  - We can do this using built-in functions like `as.character()`, `as.integer()`, `as.numeric()`, and `as.factor()`. 
+
+
+
+## R Basics
+### Data Types
+
 
 ::: {.panel-tabset}
 
@@ -919,35 +949,6 @@ quantile(x, 1) # maximum
 :::
 ::::
 
-
-## R Basics
-###  Casting Variables
-
-:::: {.columns}
-::: {.column width="50%"}
-```{.r}
-orig_number <- 4.39898498
-class(orig_number)
-mod_number <- as.integer(orig_number)
-class(mod_number)
-```
-:::
-
-::: {.column width="50%"}
-
-```{.r}
-# TRUE converts to 1; FALSE does to 0.
-as.numeric(TRUE)
-as.numeric(FALSE)
-```
-:::
-::::
-
-
-- Sometimes we need to explicitly cast a value from one type to another. 
-
-  - We can do this using built-in functions like `as.character()`, `as.integer()`, `as.numeric()`, and `as.factor()`. 
-  - If we try these, R will do its best to interpret the input and convert it to the output type we'd like and, if they can't, the code will throw `NA`.
 
 
 

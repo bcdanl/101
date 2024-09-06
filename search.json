@@ -1250,49 +1250,49 @@
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-8",
     "title": "Lecture 4",
     "section": "R Basics",
-    "text": "R Basics\nData Types\n\nCharacterNumbersLogical (TRUE/FALSE)VectorsFactors\n\n\nmyname &lt;- \"my_name\"\nclass(myname) # returns the data **type** of an object.\n\nStrings are known as character in R.\nUse the double quotes (\") or single quotes (') to wrap around the string\n\nMost IDE, including RStudio, automatically provides a pair of quotes when typing just one quote.\n\n\n\n\nfavorite.integer &lt;- as.integer(2)\nclass(favorite.integer)\n\nfavorite.numeric &lt;- as.numeric(8.8)\nclass(favorite.numeric)\n\nNumbers have different classes.\n\nThe most common two are integer and numeric. Integers are whole numbers.\n\n\n\n\nclass(TRUE)\nclass(FALSE)\nfavorite.numeric == 8.8\nfavorite.numeric == 9.9\nclass(favorite.numeric == 8.8)\n\nWe use the == to test for equality in R\n\n\n\na &lt;- 1:10  # colon operator\nb &lt;- c(\"3\", 4, 5)\nbeers &lt;- c(\"BUD LIGHT\", \"BUSCH LIGHT\", \"COORS LIGHT\", \n           \"MILLER LITE\", \"NATURAL LIGHT\")\nclass(a)\nclass(b)\nclass(beers)\n\nWe can create one-dimensional data structures called “vectors”.\nc(...): Returns a vector that is constructed from one or more arguments, with the order of the vector elements corresponding to the order of the arguments.\n\n\n\nbeers &lt;- as.factor(beers)\nclass(beers)\n\nlevels(beers)\nnlevels(beers)\n\nFactors store categorical data.\nUnder the hood, factors are actually integers that have a string label attached to each unique integer.\n\nFor example, if we have a long list of Male/Female labels for each of our patients, this will be stored a “column” of zeros and ones by R."
+    "text": "R Basics\nData Types\n\n\norig_number &lt;- 4.39898498\nclass(orig_number)\nmod_number &lt;- as.integer(orig_number)\nclass(mod_number)\n\n# TRUE converts to 1; FALSE does to 0.\nas.numeric(TRUE)\nas.numeric(FALSE)\n\n\n\nSometimes we need to explicitly cast a value from one type to another.\n\nWe can do this using built-in functions like as.character(), as.integer(), as.numeric(), and as.factor()."
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-9",
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-9",
     "title": "Lecture 4",
     "section": "R Basics",
-    "text": "R Basics\nWorkflow: Quotation marks, parentheses, and +\nx &lt;- \"hello\n\nQuotation marks and parentheses must always come in a pair.\n\nIf not, Console Pane will show you the continuation character +:\n\nThe + tells you that R is waiting for more input; it doesn’t think you’re done yet."
+    "text": "R Basics\nData Types\n\nCharacterNumbersLogical (TRUE/FALSE)VectorsFactors\n\n\nmyname &lt;- \"my_name\"\nclass(myname) # returns the data **type** of an object.\n\nStrings are known as character in R.\nUse the double quotes (\") or single quotes (') to wrap around the string\n\nMost IDE, including RStudio, automatically provides a pair of quotes when typing just one quote.\n\n\n\n\nfavorite.integer &lt;- as.integer(2)\nclass(favorite.integer)\n\nfavorite.numeric &lt;- as.numeric(8.8)\nclass(favorite.numeric)\n\nNumbers have different classes.\n\nThe most common two are integer and numeric. Integers are whole numbers.\n\n\n\n\nclass(TRUE)\nclass(FALSE)\nfavorite.numeric == 8.8\nfavorite.numeric == 9.9\nclass(favorite.numeric == 8.8)\n\nWe use the == to test for equality in R\n\n\n\na &lt;- 1:10  # colon operator\nb &lt;- c(\"3\", 4, 5)\nbeers &lt;- c(\"BUD LIGHT\", \"BUSCH LIGHT\", \"COORS LIGHT\", \n           \"MILLER LITE\", \"NATURAL LIGHT\")\nclass(a)\nclass(b)\nclass(beers)\n\nWe can create one-dimensional data structures called “vectors”.\nc(...): Returns a vector that is constructed from one or more arguments, with the order of the vector elements corresponding to the order of the arguments.\n\n\n\nbeers &lt;- as.factor(beers)\nclass(beers)\n\nlevels(beers)\nnlevels(beers)\n\nFactors store categorical data.\nUnder the hood, factors are actually integers that have a string label attached to each unique integer.\n\nFor example, if we have a long list of Male/Female labels for each of our patients, this will be stored a “column” of zeros and ones by R."
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-10",
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-10",
     "title": "Lecture 4",
     "section": "R Basics",
-    "text": "R Basics\nFunctions\n\nA function can take any number and type of input parameters and return any number and type of output results.\nR ships a vast number of built-in functions.\nR also allows a user to define a new function.\nWe will mostly use built-in functions."
+    "text": "R Basics\nWorkflow: Quotation marks, parentheses, and +\nx &lt;- \"hello\n\nQuotation marks and parentheses must always come in a pair.\n\nIf not, Console Pane will show you the continuation character +:\n\nThe + tells you that R is waiting for more input; it doesn’t think you’re done yet."
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-11",
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-11",
     "title": "Lecture 4",
     "section": "R Basics",
-    "text": "R Basics\nFunctions, Arguments, and Parameters\nlibrary(tidyverse)\n\n# The function `str_c()`, provided by `tidyverse`, concatenates characters.\nstr_c(\"Data\", \"Analytics\")\nstr_c(\"Data\", \"Analytics\", sep = \"!\")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that R passes to a parameter if the function invocation does not explicitly provide one."
+    "text": "R Basics\nFunctions\n\nA function can take any number and type of input parameters and return any number and type of output results.\nR ships a vast number of built-in functions.\nR also allows a user to define a new function.\nWe will mostly use built-in functions."
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-12",
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-12",
     "title": "Lecture 4",
     "section": "R Basics",
-    "text": "R Basics\nArithmetic Operations and Mathematical Functions\n\nAlgebraMath functions\n\n\n\n\n5 + 3\n5 - 3\n5 * 3\n5 / 3\n5^3\n\n( 3 + 4 )^2\n3 + 4^2\n3 + 2 * 4^2\n3 + 2 * 4 + 2\n(3 + 2) * (4 + 2)\n\n\n\nAll of the basic operators with parentheses we see in mathematics are available to use.\nR can be used for a wide range of mathematical calculations.\n\n\n\n\n\n5 * abs(-3)\nsqrt(17) / 2\nexp(3)\nlog(3)\nlog(exp(3))\nexp(log(3))\n\nR has many built-in mathematical functions that facilitate calculations and data analysis.\n\n\n\nabs(x): the absolute value \\(|x|\\)\nsqrt(x): the square root \\(\\sqrt{x}\\)\nexp(x): the exponential value \\(e^x\\), where \\(e = 2.718...\\)\nlog(x): the natural logarithm \\(\\log_{e}(x)\\), or simply \\(\\log(x)\\)"
+    "text": "R Basics\nFunctions, Arguments, and Parameters\nlibrary(tidyverse)\n\n# The function `str_c()`, provided by `tidyverse`, concatenates characters.\nstr_c(\"Data\", \"Analytics\")\nstr_c(\"Data\", \"Analytics\", sep = \"!\")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that R passes to a parameter if the function invocation does not explicitly provide one."
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-13",
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-13",
     "title": "Lecture 4",
     "section": "R Basics",
-    "text": "R Basics\nVectorized Operations\na &lt;- c(1, 2, 3, 4, 5)\nb &lt;- c(5, 4, 3, 2, 1)\n\na + b\na - b\na * b\na / b\nsqrt(a)\n\nVectorized operations mean applying a function to every element of a vector without explicitly writing a loop.\n\nThis is possible because most functions in R are vectorized, meaning they are designed to operate on vectors element-wise.\nVectorized operations are a powerful feature of R, enabling efficient and concise code for data analysis and manipulation."
+    "text": "R Basics\nArithmetic Operations and Mathematical Functions\n\nAlgebraMath functions\n\n\n\n\n5 + 3\n5 - 3\n5 * 3\n5 / 3\n5^3\n\n( 3 + 4 )^2\n3 + 4^2\n3 + 2 * 4^2\n3 + 2 * 4 + 2\n(3 + 2) * (4 + 2)\n\n\n\nAll of the basic operators with parentheses we see in mathematics are available to use.\nR can be used for a wide range of mathematical calculations.\n\n\n\n\n\n5 * abs(-3)\nsqrt(17) / 2\nexp(3)\nlog(3)\nlog(exp(3))\nexp(log(3))\n\nR has many built-in mathematical functions that facilitate calculations and data analysis.\n\n\n\nabs(x): the absolute value \\(|x|\\)\nsqrt(x): the square root \\(\\sqrt{x}\\)\nexp(x): the exponential value \\(e^x\\), where \\(e = 2.718...\\)\nlog(x): the natural logarithm \\(\\log_{e}(x)\\), or simply \\(\\log(x)\\)"
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-14",
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-14",
     "title": "Lecture 4",
     "section": "R Basics",
-    "text": "R Basics\nCasting Variables\n\n\norig_number &lt;- 4.39898498\nclass(orig_number)\nmod_number &lt;- as.integer(orig_number)\nclass(mod_number)\n\n# TRUE converts to 1; FALSE does to 0.\nas.numeric(TRUE)\nas.numeric(FALSE)\n\n\n\nSometimes we need to explicitly cast a value from one type to another.\n\nWe can do this using built-in functions like as.character(), as.integer(), as.numeric(), and as.factor().\nIf we try these, R will do its best to interpret the input and convert it to the output type we’d like and, if they can’t, the code will throw NA."
+    "text": "R Basics\nVectorized Operations\na &lt;- c(1, 2, 3, 4, 5)\nb &lt;- c(5, 4, 3, 2, 1)\n\na + b\na - b\na * b\na / b\nsqrt(a)\n\nVectorized operations mean applying a function to every element of a vector without explicitly writing a loop.\n\nThis is possible because most functions in R are vectorized, meaning they are designed to operate on vectors element-wise.\nVectorized operations are a powerful feature of R, enabling efficient and concise code for data analysis and manipulation."
   },
   {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-15",

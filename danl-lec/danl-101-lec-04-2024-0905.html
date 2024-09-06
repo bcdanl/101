@@ -878,12 +878,34 @@ Byeong-Hak Choe
 <section id="r-basics-8" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="data-types-1">Data Types</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>orig_number <span class="ot">&lt;-</span> <span class="fl">4.39898498</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">class</span>(orig_number)</span>
+<span id="cb7-3"><a href="#cb7-3"></a>mod_number <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(orig_number)</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">class</span>(mod_number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># TRUE converts to 1; FALSE does to 0.</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">as.numeric</span>(<span class="cn">TRUE</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">as.numeric</span>(<span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment"><p>Sometimes we need to explicitly cast a value from one type to another.</p>
+<ul>
+<li class="fragment">We can do this using built-in functions like <code>as.character()</code>, <code>as.integer()</code>, <code>as.numeric()</code>, and <code>as.factor()</code>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="r-basics-9" class="slide level2">
+<h2>R Basics</h2>
+<h3 id="data-types-2">Data Types</h3>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Character</a></li><li><a href="#tabset-1-2">Numbers</a></li><li><a href="#tabset-1-3">Logical (<code>TRUE</code>/<code>FALSE</code>)</a></li><li><a href="#tabset-1-4">Vectors</a></li><li><a href="#tabset-1-5">Factors</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>myname <span class="ot">&lt;-</span> <span class="st">"my_name"</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">class</span>(myname) <span class="co"># returns the data **type** of an object.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>myname <span class="ot">&lt;-</span> <span class="st">"my_name"</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">class</span>(myname) <span class="co"># returns the data **type** of an object.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Strings are known as <code>character</code> in R.</li>
 <li class="fragment">Use the double quotes (<code>"</code>) or single quotes (<code>'</code>) to wrap around the string
@@ -893,11 +915,11 @@ Byeong-Hak Choe
 </ul>
 </div>
 <div id="tabset-1-2">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>favorite.integer <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="dv">2</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">class</span>(favorite.integer)</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a>favorite.numeric <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fl">8.8</span>)</span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="fu">class</span>(favorite.numeric)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>favorite.integer <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="dv">2</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">class</span>(favorite.integer)</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a>favorite.numeric <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fl">8.8</span>)</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="fu">class</span>(favorite.numeric)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Numbers have different classes.
 <ul>
@@ -906,34 +928,34 @@ Byeong-Hak Choe
 </ul>
 </div>
 <div id="tabset-1-3">
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">class</span>(<span class="cn">TRUE</span>)</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">class</span>(<span class="cn">FALSE</span>)</span>
-<span id="cb9-3"><a href="#cb9-3"></a>favorite.numeric <span class="sc">==</span> <span class="fl">8.8</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a>favorite.numeric <span class="sc">==</span> <span class="fl">9.9</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="fu">class</span>(favorite.numeric <span class="sc">==</span> <span class="fl">8.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">class</span>(<span class="cn">TRUE</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">class</span>(<span class="cn">FALSE</span>)</span>
+<span id="cb11-3"><a href="#cb11-3"></a>favorite.numeric <span class="sc">==</span> <span class="fl">8.8</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>favorite.numeric <span class="sc">==</span> <span class="fl">9.9</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="fu">class</span>(favorite.numeric <span class="sc">==</span> <span class="fl">8.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">We use the <code>==</code> to test for equality in R</li>
 </ul>
 </div>
 <div id="tabset-1-4">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>  <span class="co"># colon operator</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"3"</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb10-3"><a href="#cb10-3"></a>beers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"BUD LIGHT"</span>, <span class="st">"BUSCH LIGHT"</span>, <span class="st">"COORS LIGHT"</span>, </span>
-<span id="cb10-4"><a href="#cb10-4"></a>           <span class="st">"MILLER LITE"</span>, <span class="st">"NATURAL LIGHT"</span>)</span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="fu">class</span>(a)</span>
-<span id="cb10-6"><a href="#cb10-6"></a><span class="fu">class</span>(b)</span>
-<span id="cb10-7"><a href="#cb10-7"></a><span class="fu">class</span>(beers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>  <span class="co"># colon operator</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"3"</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb12-3"><a href="#cb12-3"></a>beers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"BUD LIGHT"</span>, <span class="st">"BUSCH LIGHT"</span>, <span class="st">"COORS LIGHT"</span>, </span>
+<span id="cb12-4"><a href="#cb12-4"></a>           <span class="st">"MILLER LITE"</span>, <span class="st">"NATURAL LIGHT"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="fu">class</span>(a)</span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="fu">class</span>(b)</span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="fu">class</span>(beers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>We can create one-dimensional data structures called “vectors”.</p></li>
 <li class="fragment"><p><code>c(...)</code>: Returns a vector that is constructed from one or more arguments, with the order of the vector elements corresponding to the order of the arguments.</p></li>
 </ul>
 </div>
 <div id="tabset-1-5">
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>beers <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(beers)</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">class</span>(beers)</span>
-<span id="cb11-3"><a href="#cb11-3"></a></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="fu">levels</span>(beers)</span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="fu">nlevels</span>(beers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>beers <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(beers)</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">class</span>(beers)</span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="fu">levels</span>(beers)</span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="fu">nlevels</span>(beers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>Factors store categorical data.</p></li>
 <li class="fragment"><p>Under the hood, factors are actually integers that have a string label attached to each unique integer.</p>
@@ -945,10 +967,10 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="r-basics-9" class="slide level2">
+<section id="r-basics-10" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="workflow-quotation-marks-parentheses-and">Workflow: Quotation marks, parentheses, and <code>+</code></h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>x <span class="ot">&lt;-</span> <span class="st">"hello</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>x <span class="ot">&lt;-</span> <span class="st">"hello</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Quotation marks and parentheses must always come in a pair.
 <ul>
@@ -957,7 +979,7 @@ Byeong-Hak Choe
 <li class="fragment">The <code>+</code> tells you that R is waiting for more input; it doesn’t think you’re done yet.</li>
 </ul>
 </section>
-<section id="r-basics-10" class="slide level2">
+<section id="r-basics-11" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="functions">Functions</h3>
 <ul>
@@ -967,14 +989,14 @@ Byeong-Hak Choe
 <li class="fragment"><p>We will mostly use built-in functions.</p></li>
 </ul>
 </section>
-<section id="r-basics-11" class="slide level2">
+<section id="r-basics-12" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="functions-arguments-and-parameters">Functions, Arguments, and Parameters</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb13-2"><a href="#cb13-2"></a></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="co"># The function `str_c()`, provided by `tidyverse`, concatenates characters.</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="fu">str_c</span>(<span class="st">"Data"</span>, <span class="st">"Analytics"</span>)</span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="fu">str_c</span>(<span class="st">"Data"</span>, <span class="st">"Analytics"</span>, <span class="at">sep =</span> <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb15-2"><a href="#cb15-2"></a></span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="co"># The function `str_c()`, provided by `tidyverse`, concatenates characters.</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="fu">str_c</span>(<span class="st">"Data"</span>, <span class="st">"Analytics"</span>)</span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="fu">str_c</span>(<span class="st">"Data"</span>, <span class="st">"Analytics"</span>, <span class="at">sep =</span> <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>We invoke a function by entering its name and a pair of opening and closing parentheses.</p></li>
 <li class="fragment"><p>Much as a cooking recipe can accept ingredients, a function invocation can accept inputs called <strong>arguments</strong>.</p></li>
@@ -983,7 +1005,7 @@ Byeong-Hak Choe
 <li class="fragment"><p>A <em>default argument</em> is a fallback value that R passes to a parameter if the function invocation does not explicitly provide one.</p></li>
 </ul>
 </section>
-<section id="r-basics-12" class="slide level2">
+<section id="r-basics-13" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="arithmetic-operations-and-mathematical-functions">Arithmetic Operations and Mathematical Functions</h3>
 <div class="panel-tabset">
@@ -992,17 +1014,17 @@ Byeong-Hak Choe
 <div id="tabset-2-1">
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="dv">5</span> <span class="sc">-</span> <span class="dv">3</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="dv">5</span> <span class="sc">*</span> <span class="dv">3</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="dv">5</span> <span class="sc">/</span> <span class="dv">3</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a><span class="dv">5</span><span class="sc">^</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="dv">5</span> <span class="sc">-</span> <span class="dv">3</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="dv">5</span> <span class="sc">*</span> <span class="dv">3</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="dv">5</span> <span class="sc">/</span> <span class="dv">3</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="dv">5</span><span class="sc">^</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>( <span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span> )<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span><span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span><span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a>(<span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span>) <span class="sc">*</span> (<span class="dv">4</span> <span class="sc">+</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>( <span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span> )<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span><span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span><span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>(<span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span>) <span class="sc">*</span> (<span class="dv">4</span> <span class="sc">+</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -1013,12 +1035,12 @@ Byeong-Hak Choe
 <div id="tabset-2-2">
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="dv">5</span> <span class="sc">*</span> <span class="fu">abs</span>(<span class="sc">-</span><span class="dv">3</span>)</span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">sqrt</span>(<span class="dv">17</span>) <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="fu">exp</span>(<span class="dv">3</span>)</span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="fu">log</span>(<span class="dv">3</span>)</span>
-<span id="cb16-5"><a href="#cb16-5"></a><span class="fu">log</span>(<span class="fu">exp</span>(<span class="dv">3</span>))</span>
-<span id="cb16-6"><a href="#cb16-6"></a><span class="fu">exp</span>(<span class="fu">log</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="dv">5</span> <span class="sc">*</span> <span class="fu">abs</span>(<span class="sc">-</span><span class="dv">3</span>)</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">sqrt</span>(<span class="dv">17</span>) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="fu">exp</span>(<span class="dv">3</span>)</span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="fu">log</span>(<span class="dv">3</span>)</span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="fu">log</span>(<span class="fu">exp</span>(<span class="dv">3</span>))</span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="fu">exp</span>(<span class="fu">log</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">R has many built-in mathematical functions that facilitate calculations and data analysis.</li>
 </ul>
@@ -1035,17 +1057,17 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="r-basics-13" class="slide level2">
+<section id="r-basics-14" class="slide level2">
 <h2>R Basics</h2>
 <h3 id="vectorized-operations">Vectorized Operations</h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb17-2"><a href="#cb17-2"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb17-3"><a href="#cb17-3"></a></span>
-<span id="cb17-4"><a href="#cb17-4"></a>a <span class="sc">+</span> b</span>
-<span id="cb17-5"><a href="#cb17-5"></a>a <span class="sc">-</span> b</span>
-<span id="cb17-6"><a href="#cb17-6"></a>a <span class="sc">*</span> b</span>
-<span id="cb17-7"><a href="#cb17-7"></a>a <span class="sc">/</span> b</span>
-<span id="cb17-8"><a href="#cb17-8"></a><span class="fu">sqrt</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb19-2"><a href="#cb19-2"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a>a <span class="sc">+</span> b</span>
+<span id="cb19-5"><a href="#cb19-5"></a>a <span class="sc">-</span> b</span>
+<span id="cb19-6"><a href="#cb19-6"></a>a <span class="sc">*</span> b</span>
+<span id="cb19-7"><a href="#cb19-7"></a>a <span class="sc">/</span> b</span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="fu">sqrt</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Vectorized operations mean applying a function to every element of a vector without explicitly writing a loop.
 <ul>
@@ -1071,11 +1093,11 @@ Byeong-Hak Choe
 <section id="measures-of-central-tendency-1" class="slide level2">
 <h2>Measures of Central Tendency</h2>
 <h3 id="median">Median</h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb18-2"><a href="#cb18-2"></a></span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="fu">sum</span>(x)</span>
-<span id="cb18-4"><a href="#cb18-4"></a><span class="fu">mean</span>(x)</span>
-<span id="cb18-5"><a href="#cb18-5"></a><span class="fu">median</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb20-2"><a href="#cb20-2"></a></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="fu">sum</span>(x)</span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="fu">mean</span>(x)</span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="fu">median</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The <strong>median</strong> is the measure of center value in a given vector.
 <ul>
@@ -1155,42 +1177,19 @@ Byeong-Hak Choe
 <h2>Measures of Dispersion</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb19-2"><a href="#cb19-2"></a></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="fu">var</span>(x)</span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="fu">sd</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb21-2"><a href="#cb21-2"></a></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="fu">var</span>(x)</span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="fu">sd</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">quantile</span>(x)</span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="fu">quantile</span>(x, <span class="dv">0</span>) <span class="co"># minimum</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="fu">quantile</span>(x, <span class="fl">0.25</span>) <span class="co"># the first quartile</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a><span class="fu">quantile</span>(x, <span class="fl">0.5</span>) <span class="co"># the second quartile</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="fu">quantile</span>(x, <span class="fl">0.75</span>) <span class="co"># the third quartile</span></span>
-<span id="cb20-6"><a href="#cb20-6"></a><span class="fu">quantile</span>(x, <span class="dv">1</span>) <span class="co"># maximum</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">quantile</span>(x)</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="fu">quantile</span>(x, <span class="dv">0</span>) <span class="co"># minimum</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">quantile</span>(x, <span class="fl">0.25</span>) <span class="co"># the first quartile</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="fu">quantile</span>(x, <span class="fl">0.5</span>) <span class="co"># the second quartile</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="fu">quantile</span>(x, <span class="fl">0.75</span>) <span class="co"># the third quartile</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="fu">quantile</span>(x, <span class="dv">1</span>) <span class="co"># maximum</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section>
-<section id="r-basics-14" class="slide level2">
-<h2>R Basics</h2>
-<h3 id="casting-variables">Casting Variables</h3>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>orig_number <span class="ot">&lt;-</span> <span class="fl">4.39898498</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="fu">class</span>(orig_number)</span>
-<span id="cb21-3"><a href="#cb21-3"></a>mod_number <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(orig_number)</span>
-<span id="cb21-4"><a href="#cb21-4"></a><span class="fu">class</span>(mod_number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># TRUE converts to 1; FALSE does to 0.</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="fu">as.numeric</span>(<span class="cn">TRUE</span>)</span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">as.numeric</span>(<span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<ul>
-<li class="fragment"><p>Sometimes we need to explicitly cast a value from one type to another.</p>
-<ul>
-<li class="fragment">We can do this using built-in functions like <code>as.character()</code>, <code>as.integer()</code>, <code>as.numeric()</code>, and <code>as.factor()</code>.</li>
-<li class="fragment">If we try these, R will do its best to interpret the input and convert it to the output type we’d like and, if they can’t, the code will throw <code>NA</code>.</li>
-</ul></li>
-</ul>
 </section>
 <section id="r-basics-15" class="slide level2">
 <h2>R Basics</h2>

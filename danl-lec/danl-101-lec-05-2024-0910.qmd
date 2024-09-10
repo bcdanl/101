@@ -1,6 +1,6 @@
 ---
 title: Lecture 5
-subtitle: R Basics
+subtitle: R Basics; Descriptive Statistics
 format:
   clean-revealjs:
     self-contained: false
@@ -114,6 +114,7 @@ str_c("Data", "Analytics", sep = "!")
 ## R Basics
 ### Arithmetic Operations and Mathematical Functions
 
+::: {.nonincremental}
 ::: {.panel-tabset}
 
 ## Algebra
@@ -180,7 +181,7 @@ exp(log(3))
 
 
 :::
-
+:::
 
 
 
@@ -204,6 +205,45 @@ sqrt(a)
 
 
 
+## Descriptive Statistics
+
+
+<div style="text-align: center; width: 65%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/descriptive-stat-ex.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+- Descriptive statistics condense data into manageable summaries, making it easier to understand key characteristics of the data.
+
+  - They help reveal patterns, trends, and relationships within the data that might not be immediately apparent from raw numbers.
+
+
+## Descriptive Statistics
+
+- Data quality assessment:
+  - Descriptive statistics can highlight potential issues in data quality, such as outliers or unexpected distributions, prompting further investigation.
+
+
+-  Foundation for further analysis:
+  - Descriptive statistics often serve as a starting point for more advanced statistical analyses and predictive modeling.
+
+
+- Data visualization enhancement:
+  - Descriptive statistics often form the basis for effective data visualizations, making complex data more accessible and understandable.
+
+
+## Descriptive Statistics
+### Measures of Central Tendency
+
+- Measures of **centrality** are used to describe the central or typical value in a given vector.
+  - They represent the "center" or most representative value of a data set.
+
+- To describe this centrality, several statistical measures are commonly used:
+  - **Mean**: The arithmetic average of all values in the data set.
+  - **Median**: The middle value when the data set is ordered from least to greatest.
+  - **Mode**: The most frequently occurring value in the data set.
+
 
 ## Measures of Central Tendency
 ### Mean
@@ -212,33 +252,65 @@ $$
 \overline{x} = \frac{x_{1} + x_{2} + \cdots + x_{N}}{N}
 $$
 
+
+```{.r}
+x <- c(1, 2, 3, 4, 5)
+sum(x)
+mean(x)
+```
+
 - The **arithmetic mean** (or simply *mean* or *average*) is the sum of all the values divided by the number of observations in the data set.
   - `mean()` calculates the mean of the values in a vector.
-  - For a given vector $x$, if we happen to have $N$ observations $(x_{1}, x_{2}, \cdots , x_{N})$, we can write the arithmetic mean of the data sample as follows:
+  - For a given vector $x$, if we happen to have $N$ observations $(x_{1}, x_{2}, \cdots , x_{N})$, we can write the arithmetic mean of the data sample as above.
   
 
 ## Measures of Central Tendency
 ### Median
 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/median-formula.jpg" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+
+::: {.column width="50%"}
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/median_eg.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+:::
+::::
+
 ```{.r}
 x <- c(1, 2, 3, 4, 5)
-
-sum(x)
-mean(x)
 median(x)
 ```
+
 
 - The **median** is the measure of center value in a given vector.
   - `median()` calculates the **median** of the values in a vector.
 
-- In contrary to the mean, the median is not affected by outliers or skewed data.
+
+## Measures of Central Tendency
+### Mode
+
+- The **mode** is the value(s) that occurs most frequently in a given vector.
+
+- Mode is useful, although it is often not a very good representation of centrality.
+
+- The R package, `modest`, provides the `mfw(x)` function that calculate the mode of values in vector `x`.
 
 
-## Measures of Dispersion
+## Descriptive Statistics
+### Measures of Dispersion
 
 - Measures of **dispersion** are used to describe the degree of variation in a given vector.
-
-- They are a representation of the numerical spread of a given data set. 
+  - They are a representation of the numerical spread of a given data set. 
 
 - To describe this dispersion, a number of statistical measures are developed
   - Range
@@ -246,13 +318,22 @@ median(x)
   - Standard deviation
   - Quartile
 
+
+
 ## Measures of Dispersion
 ### Range
 
 $$
 (\text{range of x}) \,=\, (\text{maximum value in x}) \,-\, (\text{minimum value in x})
 $$
-- The **range** is the difference between the largest and the smallest values in a given vector. 
+
+```{.r}
+x <- c(1, 2, 3, 4, 5)
+max(x)
+min(x)
+range <- max(x) - min(x)
+```
+- The **range** is the difference between the largest and the smallest values in a given vector.
   - `max(x)` returns the maximum value of the values in a given vector $x$.
   - `min(x)` returns the minimum value of the values in a given vector $x$.
 
@@ -264,6 +345,10 @@ $$
 \overline{s}^{2} = \frac{(x_{1}-\overline{x})^{2} + (x_{2}-\overline{x})^{2} + \cdots + (x_{N}-\overline{x})^{2}}{N-1}\;\, 
 $$
 
+```{.r}
+x <- c(1, 2, 3, 4, 5)
+var(x)
+```
 - The **variance** is used to calculate the deviation of all data points in a given vector from the mean. 
   - The larger the variance, the more the data are spread out from the mean and the more variability one can observe in the data sample. 
   - To prevent the offsetting of negative and positive differences, the variance takes into account the square of the distances from the mean. 
@@ -276,55 +361,60 @@ $$
 \overline{s} = \sqrt{ \left( \frac{(x_{1}-\overline{x})^{2} + (x_{2}-\overline{x})^{2} + \cdots + (x_{N}-\overline{x})^{2}}{N-1}\;\, \right) }
 $$
 
-- The **standard deviation** (SD) is also a measure of the spread of values within a given vector.
-  - SD is simply the square root of the variance.
+```{.r}
+x <- c(1, 2, 3, 4, 5)
+sd(x)
+```
+- The **standard deviation** (SD)---the square root of the variance---is also a measure of the spread of values within a given vector.
   - `sd(x)` calculates the standard deviation  of the values in a vector $x$
   - SD helps us understand how representative the mean is of the data. 
-  - A low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean.
+    - A low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean.
   
   
 
 ## Measures of Dispersion
-### Quartiles and Interquartile Range
+### Quartiles
+
+```{.r}
+quantile(x)
+quantile(x, 0) # the minimum
+quantile(x, 0.25) # the 1st quartile
+quantile(x, 0.5) # the 2nd quartile
+quantile(x, 0.75) # the 3rd quartile
+quantile(x, 1) # the maximum
+```
 
 - A **quartile** is a quarter of the number of data points in a given vector. 
   - Quartiles are determined by first sorting the values and then splitting the sorted values into four disjoint smaller data sets. 
   - Quartiles are a useful measure of dispersion because they are much less affected by outliers or a skewness in the data set than the equivalent measures in the whole data set. 
-  
-- An **interquartile range** describes the difference between the third quartile (Q3) and the first quartile (Q1), telling us about the range of the middle half of the scores in the distribution.
-  - The quartile-driven descriptive measures (both centrality and dispersion) are best explained with a popular plot called a **box plot**.
+
 
 
 ## Measures of Dispersion
-:::: {.columns}
-::: {.column width="50%"}
-```{.r}
-x <- c(1, 2, 3, 4, 5)
+### Interquartile Range
 
-var(x)
-sd(x)
-```
+:::: {.columns}
+
+::: {.column width="45%"}
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/boxplot.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
 :::
 
-::: {.column width="50%"}
+::: {.column width="55%"}
+- An **interquartile range** describes the difference between the third quartile (Q3) and the first quartile (Q1), telling us about the range of the middle half of the scores in the distribution.
+  - The quartile-driven descriptive measures (both centrality and dispersion) are best explained with a popular plot called a **box plot**.
 
-```{.r}
-quantile(x)
-quantile(x, 0) # minimum
-quantile(x, 0.25) # the first quartile
-quantile(x, 0.5) # the second quartile
-quantile(x, 0.75) # the third quartile
-quantile(x, 1) # maximum
-```
 :::
 ::::
-
-
 
 
 ## R Basics
 ### Absolute vs. Relative Pathnames
 
+::: {.nonincremental}
 ::: {.panel-tabset}
 
 ## Absolute Path
@@ -332,20 +422,27 @@ quantile(x, 1) # maximum
 - Complete path from the root directory to the target file or directory.
 - Independent of the current working directory.
 
-- Example (Mac): `/Users/user/documents/data/car_data.csv`
-- Example (Windows): `C:\\Users\\user\\Documents\\data\\car_data.csv`
+- Example 
+  - Mac: 
+    - `/Users/user/documents/data/car_data.csv`
+  - Windows: 
+    - `C:\\Users\\user\\Documents\\data\\car_data.csv`
 
 
 ## Relative Path
 
-- Path relative to the current working directory.
-- Changes based on the current directory.
+- Path relative to the working directory.
+  - Relative path changes based on the working directory.
 <!-- - Uses '.' for current directory and '..' for parent directory. -->
-- Example: If the current directory is `/Users/user`, the relative path to `car_data.csv` would be `documents/dada/car_data.csv`
+- **Example**: 
+  - Absolute pathname for `car_data.csv` is `/Users/user/documents/data/car_data.csv`.
+  - Suppose the current directory is `/Users/user/documents/`. 
+  - Then, the relative pathname for `car_data.csv` is `dada/car_data.csv`.
 - For the Posit Cloud project, we can use a relative path.
+  - The current working directory in  is `/cloud/project/`
 
 :::
-
+:::
 
 ## R Basics
 ### Working with Data from Files
@@ -356,17 +453,18 @@ quantile(x, 1) # maximum
 
 1. Download the CSV file, `car_data.csv` from the Class Files module in our Brightspace.
 
-2. Find the path name for the file, `car_data.csv` from the File Explorer / Finder.
+2. Create a sub-directory, `data`, by clicking "New Folder" in the Files Pane in Posit Cloud.
 
-3. Provide the path name for the file, `car_data.csv`, to the `read_csv()` function.
+3. Upload the `car_data.csv` file to the sub-directory `data`.
+
+4. Provide the relative pathname for the file, `car_data.csv`, to the `read_csv()` function.
 
 ```{.r}
-uciCar <- read_csv('HERE WE PROVIDE A PATHNAME FOR car_data.csv')
+uciCar <- read_csv('HERE WE PROVIDE A RELATIVE PATHNAME FOR car_data.csv')
 View(uciCar)
 ```
 
-- `View()`/`view()` displays the data in a simple spreadsheet-like grid viewer.
-  - We can click the data.frame object, displayed in the Environment Pane.
+- `View()`/`view()` displays the data in a simple spreadsheet-like grid.
 
 :::
 

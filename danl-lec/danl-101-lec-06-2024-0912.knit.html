@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Byeong-Hak Choe">
+<meta name="dcterms.date" content="2024-09-12">
+
+<title>Home - Lecture 6</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../assets/css/font.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/geneseo-logo-squared.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index-home.html" rel="" target="">
+ <span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../blog-listing.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text"> </span></li>
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lecture 6</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/geneseo-logo-squared.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+ <span class="menu-text"><a href="./index.html"><font size="6"><b>Welcome! </b></font><font size="5" color="#194493"> <i class="fa fa-sun" aria-hidden="true"></i></font></a></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Lecture </b></font><font size="5" color="#194493"><i class="fa-solid fa-laptop" aria-label="laptop"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-qa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Q &amp; A </b></font><font size="5" color="#194493"><i class="fa-solid fa-commenting" aria-label="commenting"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-cw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Classwork </b></font><font size="5" color="#194493"><i class="fa-solid fa-keyboard" aria-label="keyboard"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-hw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Homework </b></font><font size="5" color="#194493"><i class="fa-solid fa-level-up" aria-label="level-up"></i></font></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="danl-101-lec-06-2024-0912.knit.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 6</h1>
+<p class="subtitle lead">R Basics; Descriptive Statistics</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Byeong-Hak Choe </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            SUNY Geneseo
+          </p>
+      </div>
+    </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 12, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="r-basics" class="level1" data-background-color="#1c4982">
+<h1 data-background-color="#1c4982">R Basics</h1>
+<section id="descriptive-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h2>
+<div style="text-align: center; width: 65%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/descriptive-stat-ex.jpg" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+<ul>
+<li><p>Descriptive statistics condense data into manageable summaries, making it easier to understand key characteristics of the data.</p>
+<ul>
+<li>They help reveal patterns, trends, and relationships within the data that might not be immediately apparent from raw numbers.</li>
+</ul></li>
+</ul>
+</section>
+<section id="descriptive-statistics-1" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics-1">Descriptive Statistics</h2>
+<ul>
+<li><strong>Data quality assessment</strong>:
+<ul>
+<li>Descriptive statistics can highlight potential issues in data quality, such as outliers or unexpected distributions, prompting further investigation.</li>
+</ul></li>
+<li><strong>Foundation for further analysis</strong>:
+<ul>
+<li>Descriptive statistics often serve as a starting point for more advanced statistical analyses and predictive modeling.</li>
+</ul></li>
+<li><strong>Data visualization enhancement</strong>:
+<ul>
+<li>Descriptive statistics often form the basis for effective data visualizations, making complex data more accessible and understandable.</li>
+</ul></li>
+</ul>
+</section>
+<section id="descriptive-statistics-2" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics-2">Descriptive Statistics</h2>
+<section id="measures-of-central-tendency" class="level3">
+<h3 class="anchored" data-anchor-id="measures-of-central-tendency">Measures of Central Tendency</h3>
+<ul>
+<li>Measures of <strong>centrality</strong> are used to describe the central or typical value in a given vector.
+<ul>
+<li>They represent the “center” or most representative value of a data set.</li>
+</ul></li>
+<li>To describe this centrality, several statistical measures are commonly used:
+<ul>
+<li><strong>Mean</strong>: The arithmetic average of all values in the data set.</li>
+<li><strong>Median</strong>: The middle value when the data set is ordered from least to greatest.</li>
+<li><strong>Mode</strong>: The most frequently occurring value in the data set.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="measures-of-central-tendency-1" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-central-tendency-1">Measures of Central Tendency</h2>
+<section id="mean" class="level3">
+<h3 class="anchored" data-anchor-id="mean">Mean</h3>
+<p><span class="math display">\[
+\overline{x} = \frac{x_{1} + x_{2} + \cdots + x_{N}}{N}
+\]</span></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <strong>arithmetic mean</strong> (or simply <em>mean</em> or <em>average</em>) is the sum of all the values divided by the number of observations in the data set.
+<ul>
+<li><code>mean()</code> calculates the mean of the values in a vector.</li>
+<li>For a given vector <span class="math inline">\(x\)</span>, if we happen to have <span class="math inline">\(N\)</span> observations <span class="math inline">\((x_{1}, x_{2}, \cdots , x_{N})\)</span>, we can write the arithmetic mean of the data sample as above.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="measures-of-central-tendency-2" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-central-tendency-2">Measures of Central Tendency</h2>
+<section id="median" class="level3">
+<h3 class="anchored" data-anchor-id="median">Median</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="text-align: center; width: 100%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/median-formula.jpg" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="text-align: center; width: 100%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/median_eg.png" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <strong>median</strong> is the measure of center value in a given vector.
+<ul>
+<li><code>median()</code> calculates the <strong>median</strong> of the values in a vector.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="measures-of-central-tendency-3" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-central-tendency-3">Measures of Central Tendency</h2>
+<section id="mode" class="level3">
+<h3 class="anchored" data-anchor-id="mode">Mode</h3>
+<ul>
+<li><p>The <strong>mode</strong> is the value(s) that occurs most frequently in a given vector.</p></li>
+<li><p>Mode is useful, although it is often not a very good representation of centrality.</p></li>
+<li><p>The R package, <code>modest</code>, provides the <code>mfw(x)</code> function that calculate the mode of values in vector <code>x</code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="descriptive-statistics-3" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics-3">Descriptive Statistics</h2>
+<section id="measures-of-dispersion" class="level3">
+<h3 class="anchored" data-anchor-id="measures-of-dispersion">Measures of Dispersion</h3>
+<ul>
+<li>Measures of <strong>dispersion</strong> are used to describe the degree of variation in a given vector.
+<ul>
+<li>They are a representation of the numerical spread of a given data set.</li>
+</ul></li>
+<li>To describe this dispersion, a number of statistical measures are developed
+<ul>
+<li>Range</li>
+<li>Variance</li>
+<li>Standard deviation</li>
+<li>Quartile</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="measures-of-dispersion-1" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-dispersion-1">Measures of Dispersion</h2>
+<section id="range" class="level3">
+<h3 class="anchored" data-anchor-id="range">Range</h3>
+<p><span class="math display">\[
+(\text{range of x}) \,=\, (\text{maximum value in x}) \,-\, (\text{minimum value in x})
+\]</span></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(x)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(x)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>range <span class="ot">&lt;-</span> <span class="fu">max</span>(x) <span class="sc">-</span> <span class="fu">min</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <strong>range</strong> is the difference between the largest and the smallest values in a given vector.
+<ul>
+<li><code>max(x)</code> returns the maximum value of the values in a given vector <span class="math inline">\(x\)</span>.</li>
+<li><code>min(x)</code> returns the minimum value of the values in a given vector <span class="math inline">\(x\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="measures-of-dispersion-2" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-dispersion-2">Measures of Dispersion</h2>
+<section id="variance" class="level3">
+<h3 class="anchored" data-anchor-id="variance">Variance</h3>
+<p><span class="math display">\[
+\overline{s}^{2} = \frac{(x_{1}-\overline{x})^{2} + (x_{2}-\overline{x})^{2} + \cdots + (x_{N}-\overline{x})^{2}}{N-1}\;\,
+\]</span></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <strong>variance</strong> is used to calculate the deviation of all data points in a given vector from the mean.
+<ul>
+<li>The larger the variance, the more the data are spread out from the mean and the more variability one can observe in the data sample.</li>
+<li>To prevent the offsetting of negative and positive differences, the variance takes into account the square of the distances from the mean.</li>
+</ul></li>
+<li><code>var(x)</code> calculates the variance of the values in a vector <span class="math inline">\(x\)</span>.</li>
+</ul>
+</section>
+</section>
+<section id="measures-of-dispersion-3" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-dispersion-3">Measures of Dispersion</h2>
+<section id="standard-deviation" class="level3">
+<h3 class="anchored" data-anchor-id="standard-deviation">Standard Deviation</h3>
+<p><span class="math display">\[
+\overline{s} = \sqrt{ \left( \frac{(x_{1}-\overline{x})^{2} + (x_{2}-\overline{x})^{2} + \cdots + (x_{N}-\overline{x})^{2}}{N-1}\;\, \right) }
+\]</span></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <strong>standard deviation</strong> (SD)—the square root of the variance—is also a measure of the spread of values within a given vector.
+<ul>
+<li><code>sd(x)</code> calculates the standard deviation of the values in a vector <span class="math inline">\(x\)</span></li>
+<li>SD helps us understand how representative the mean is of the data.
+<ul>
+<li>A low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="measures-of-dispersion-4" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-dispersion-4">Measures of Dispersion</h2>
+<section id="quartiles" class="level3">
+<h3 class="anchored" data-anchor-id="quartiles">Quartiles</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(x)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(x, <span class="dv">0</span>) <span class="co"># the minimum</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(x, <span class="fl">0.25</span>) <span class="co"># the 1st quartile</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(x, <span class="fl">0.5</span>) <span class="co"># the 2nd quartile</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(x, <span class="fl">0.75</span>) <span class="co"># the 3rd quartile</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(x, <span class="dv">1</span>) <span class="co"># the maximum</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>A <strong>quartile</strong> is a quarter of the number of data points in a given vector.
+<ul>
+<li>Quartiles are determined by first sorting the values and then splitting the sorted values into four disjoint smaller data sets.</li>
+<li>Quartiles are a useful measure of dispersion because they are much less affected by outliers or a skewness in the data set than the equivalent measures in the whole data set.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="measures-of-dispersion-5" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-dispersion-5">Measures of Dispersion</h2>
+<section id="interquartile-range" class="level3">
+<h3 class="anchored" data-anchor-id="interquartile-range">Interquartile Range</h3>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div style="text-align: center; width: 100%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/boxplot.png" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+</div><div class="column" style="width:55%;">
+<ul>
+<li>An <strong>interquartile range</strong> describes the difference between the third quartile (Q3) and the first quartile (Q1), telling us about the range of the middle half of the scores in the distribution.
+<ul>
+<li>The quartile-driven descriptive measures (both centrality and dispersion) are best explained with a popular plot called a <strong>box plot</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="r-basics-1" class="level2">
+<h2 class="anchored" data-anchor-id="r-basics-1">R Basics</h2>
+<section id="absolute-pathnames" class="level3">
+<h3 class="anchored" data-anchor-id="absolute-pathnames">Absolute Pathnames</h3>
+<ul>
+<li>Complete path from the root directory to the target file or directory.</li>
+<li>Independent of the working directory.
+<ul>
+<li><code>getwd()</code> returns the pathname of the working directory.</li>
+<li>The working directory for a <em>Posit Cloud</em> project is <code>/cloud/project/</code></li>
+</ul></li>
+<li>Example of absolute pathnames for <code>custdata_rev.csv</code>
+<ul>
+<li>Mac:
+<ul>
+<li><code>/Users/user/documents/data/custdata_rev.csv</code></li>
+</ul></li>
+<li>Windows:
+<ul>
+<li><code>C:\\Users\\user\\Documents\\data\\custdata_rev.csv</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="r-basics-2" class="level2">
+<h2 class="anchored" data-anchor-id="r-basics-2">R Basics</h2>
+<section id="relative-pathnames" class="level3">
+<h3 class="anchored" data-anchor-id="relative-pathnames">Relative Pathnames</h3>
+<ul>
+<li><p>Path relative to the working directory.</p></li>
+<li><p><strong>Example</strong>:</p>
+<ul>
+<li>Absolute pathname for <code>custdata_rev.csv</code> is <code>/Users/user/documents/data/custdata_rev.csv</code>.</li>
+<li>Suppose the working directory is <code>/Users/user/documents/</code>.</li>
+<li>Then, the relative pathname for <code>custdata_rev.csv</code> is <code>dada/custdata_rev.csv</code>.</li>
+</ul></li>
+<li><p>When using the Posit Cloud project, we can use a relative path to read a file.</p></li>
+</ul>
+</section>
+</section>
+<section id="r-basics-3" class="level2">
+<h2 class="anchored" data-anchor-id="r-basics-3">R Basics</h2>
+<section id="working-with-data-from-files" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-data-from-files">Working with Data from Files</h3>
+<div class="nonincremental">
+<ul>
+<li>We use the <code>read_csv()</code> function to read a comma-separated values (CSV) file.</li>
+</ul>
+<ol type="1">
+<li><p>Download the CSV file, <code>custdata_rev.csv</code> from the Class Files module in our Brightspace.</p></li>
+<li><p>Create a sub-directory, <code>data</code>, by clicking “New Folder” in the Files Pane in Posit Cloud.</p></li>
+<li><p>Upload the <code>custdata_rev.csv</code> file to the sub-directory <code>data</code>.</p></li>
+<li><p>Provide the relative pathname for the file, <code>custdata_rev.csv</code>, to the <code>read_csv()</code> function.</p></li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>custdata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'HERE WE PROVIDE A RELATIVE PATHNAME FOR custdata_rev.csv'</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(custdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>View()</code> displays the data in a simple spreadsheet-like grid.</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="r-basics-4" class="level2">
+<h2 class="anchored" data-anchor-id="r-basics-4">R Basics</h2>
+<section id="examining-data.frames" class="level3">
+<h3 class="anchored" data-anchor-id="examining-data.frames">Examining data.frames</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(custdata)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(custdata)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(custdata)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(custdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(custdata_rev)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(custdata_rev)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li><code>dim()</code> shows how many rows and columns are in the data for <code>data.frame</code>.</li>
+<li><code>nrow()</code> and <code>ncol()</code> shows the number of rows and columns for <code>data.frame</code> respectively.</li>
+<li><code>skimr::skim()</code> refers to the <code>skim()</code> function from the <code>skimr</code> package.
+<ul>
+<li>This provides a more comprehensive summary.</li>
+<li>It’s a more user-friendly alternative to functions like base-R’s <code>summary()</code>, offering both numerical and categorical summaries.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="r-basics-5" class="level2">
+<h2 class="anchored" data-anchor-id="r-basics-5">R Basics</h2>
+<section id="reading-data.frames-from-an-url" class="level3">
+<h3 class="anchored" data-anchor-id="reading-data.frames-from-an-url">Reading data.frames from an URL</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tvshows <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">'https://bcdanl.github.io/data/tvshows.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>We can import the CSV file from the web.</li>
+</ul>
+</section>
+</section>
+<section id="r-basics-6" class="level2">
+<h2 class="anchored" data-anchor-id="r-basics-6">R Basics</h2>
+<section id="tidy-data.frame-variables-observations-and-values" class="level3">
+<h3 class="anchored" data-anchor-id="tidy-data.frame-variables-observations-and-values">Tidy <code>data.frame</code>: Variables, Observations, and Values</h3>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/tidy-1.png">
+</p>
+<ul>
+<li><p>There are three rules which make a <code>data.frame</code> tidy:</p>
+<ol type="1">
+<li>Each <strong>variable</strong> must have its own <em>column</em>.</li>
+<li>Each <strong>observation</strong> must have its own <em>row</em>.</li>
+<li>Each <strong>value</strong> must have its own <em>cell</em>.</li>
+</ol></li>
+</ul>
+<!-- # Estimating the Price Elasticity of Orange Juice {background-color="#1c4982"} -->
+<!-- ## Data Science Workflow -->
+<!-- ### The Lifecycle of a Data Science Project -->
+<!-- <div style="text-align: center; width: 100%; margin: auto;"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/r4ds-fig1-1-whole-game.png" style="width: 45%; margin-bottom: -20px;"> -->
+<!--   <p style="font-weight: bold;"></p> -->
+<!-- </div> -->
+<!-- ::: {.nonincremental} -->
+<!-- - With the example of estimating the *price elasticity* of orange juice (OJ), this section rapidly overviews the main tools of data science:  -->
+<!--   - Importing, tidying, transforming, and visualizing data, as well as ML modeling. -->
+<!--   - Note: Price elasticity of demand is a measure of how *sensitive* the quantity demanded of a good or service is to a change in its price. -->
+<!-- $$ -->
+<!-- (\text{Price Elasticity of Demand}) = \frac{(\text{% Change in Quantity Demanded})}{(\text{% Change in Price})} -->
+<!-- $$ -->
+<p>:::</p>
+<!-- ## Price Elasticity of Orange Juice in Dominick's Supermarket -->
+<!-- ::::{.columns} -->
+<!-- ::: {.column width="40%"} -->
+<!-- <!-- <div style="text-align: center; width: 100%; margin: auto;"> -->
+<p>–&gt; <!-- <!--   <img src="https://bcdanl.github.io/lec_figs/dominicks.jpeg" style="width: 100%; margin-bottom: -20px;"> --> –&gt; <!-- <!--   <p style="font-weight: bold;"></p> --> –&gt; <!-- <!-- </div> --> –&gt; <!-- <div style="text-align: center; width: 100%; margin: auto;"> --> <!--   <img src="https://bcdanl.github.io/lec_figs/oj-tropicana-mm.png" style="width: 100%; margin-bottom: -20px;"> --> <!--   <p style="font-weight: bold;"></p> --> <!-- </div> --></p>
+<!-- ::: -->
+<!-- :::{.column width="60%"} -->
+<!-- - To estimate the price elasticity of OJ, we will use sales data for OJ from Dominick’s grocery stores in the 1990s. -->
+<!--   - Weekly `price` and `sales` (in number of cartons "sold") for three OJ brands---Tropicana, Minute Maid, Dominick's. -->
+<!--   - A dummy, `ad`, showing whether each `brand` was advertised (in store or flyer) that week. -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- ## Price Elasticity of Orange Juice in Dominick's Supermarket -->
+<!-- ### Descriptive Statitstics -->
+
+
+</section>
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+document.addEventListener('wheel', function(event) {
+    if (event.deltaY > 0) {
+        Reveal.next(); // Scroll down to go to the next slide
+    } else {
+        Reveal.prev(); // Scroll up to go to the previous slide
+    }
+}, false);
+
+window.onload = function() {
+    document.querySelectorAll('a').forEach(function(link) {
+        link.setAttribute('target', '_blank');
+    });
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Query all anchor tags within code blocks (adjust the selector as needed)
+  document.querySelectorAll('pre code a').forEach(function(element) {
+    element.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent the default anchor action
+      e.stopPropagation(); // Stop the event from bubbling up
+    });
+  });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Target all span elements within code blocks that have IDs starting with 'cb'
+    document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
+        element.addEventListener('mouseenter', function() {
+            // Apply yellow background color to the hovered span element
+            this.style.backgroundColor = '#FFFF99';
+        });
+        element.addEventListener('mouseleave', function() {
+            // Revert the background color when the mouse leaves the span element
+            this.style.backgroundColor = '';
+        });
+    });
+});
+
+
+
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">powered with github, quarto, and rstudio<br>byeong-hak choe, 2024</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

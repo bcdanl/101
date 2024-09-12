@@ -24,9 +24,9 @@ website:
       # - text: "Teaching {{< fa external-link >}}"
       #   href: https://bcdanl.github.io
       #   target: _blank
-      # - icon: github
-      #   href: https://github.com/bcdanl
-      #   target: _blank
+      - icon: github
+        href: https://github.com/bcdanl/101-04-R
+        target: _blank
     
   sidebar:
     title: "Welcome!"

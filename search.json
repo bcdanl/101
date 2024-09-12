@@ -56,6 +56,41 @@
     "text": "base-R provides the R object state.name. Write an R code to assign state.name to a variable, US_states.\nAnswer:"
   },
   {
+    "objectID": "danl-cw/danl-101-cw-01.html#question-1.",
+    "href": "danl-cw/danl-101-cw-01.html#question-1.",
+    "title": "R Basics",
+    "section": "",
+    "text": "base-R provides the R object state.name. Write an R code to assign state.name to a variable, US_states.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-01.html#question-2.",
+    "href": "danl-cw/danl-101-cw-01.html#question-2.",
+    "title": "R Basics",
+    "section": "Question 2.",
+    "text": "Question 2.\nThe temp_F vector contains the average high temperatures in January for the following cities: Seoul, Lagos, Paris, Rio de Janeiro, San Juan, and Rochester.\n\ntemp_F &lt;- c(35, 88, 42, 84, 81, 30)\n\nCreate a new vector named temp_C that stores the converted Celsius temperatures. Below is the conversion formula:\n\\[\nC = \\frac{5}{9}\\times(F - 32)\n\\]\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-01.html#question-3.",
+    "href": "danl-cw/danl-101-cw-01.html#question-3.",
+    "title": "R Basics",
+    "section": "Question 3.",
+    "text": "Question 3.\n\nWrite an R code to calculate the standard deviation (SD) of the integer vector x below manually. That is to calculate the SD without using the sd() function.\n\n\nx &lt;- 1:25\n\n\nAlso, write an R code to test whether the standard deviation you calculate manually above is equal to sd(x).\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-01.html#question-4.",
+    "href": "danl-cw/danl-101-cw-01.html#question-4.",
+    "title": "R Basics",
+    "section": "Question 4.",
+    "text": "Question 4.\n\nWrite an R code to read the CSV file, https://bcdanl.github.io/data/mlb_teams.csv using the tidyverse’s read_csv() function, and assign it to MLB_teams.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-01.html#question-5.",
+    "href": "danl-cw/danl-101-cw-01.html#question-5.",
+    "title": "R Basics",
+    "section": "Question 5.",
+    "text": "Question 5.\nWrite an R code to provide summary statistics—mean, standard deviation, minimum, first quartile, median, third quartile, and maximum—for variables in the MLB_teams data.frame.\nAnswer:"
+  },
+  {
     "objectID": "posts/starwars/starwars_df.html",
     "href": "posts/starwars/starwars_df.html",
     "title": "Exploring the Galaxy: A Data-Driven Journey Through the Star Wars Universe",
@@ -371,6 +406,314 @@
     "text": "Python vs. R"
   },
   {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nPosit Cloud\n\nPosit Cloud (formerly RStudio Cloud) is a web service that delivers a browser-based experience similar to RStudio, the standard IDE for the R language.\nFor our course, we use Posit Cloud for the R programming component.\n\nIf you want to install R and RStudio on your laptop, you use my office hours."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-1",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-1",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nScript Pane is where you write R commands in a script file that you can save.\n\nAn R script is simply a text file containing R commands.\nRStudio will color-code different elements of your code to make it easier to read."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-2",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-2",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-3",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-3",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\nType a &lt;- 1 in Console, and then hit Enter."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-4",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-4",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-5",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-5",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nR Packages and tidyverse\n\nR packages are collections of R functions, compiled code, and data that are combined in a structured format.\nSeveral R packages come with numerous pre-built functions that can perform a wide range of data analysis tasks."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-6",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-6",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\ntidyverse\n\n\n\nThe tidyverse is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.\n\n\n\ntidyverse includes a lot of R packages, including ggplot2, dplyr, and tidyr.\nThe tidyverse packages work harmoniously together to make data manipulation, exploration, and visualization more."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-7",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-7",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nInstalling R packages with install.packages(\"packageName\")\ninstall.packages(\"tidyverse\")\n\nR packages can be easily installed from within R using a base-R function install.packages(\"packageName\").\n\nTo install the R package tidyverse, type and run the following command from R console:\n\nWhile running the above codes, you may encounter the pop-up question, and you can answer “No”"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-8",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-8",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nLoading R packages with library(packageName)\nlibrary(tidyverse)\nmpg\n\nOnce installed, a package is loaded into an R session using a base-R function library(packageName) so that R package’s functions and data can be used.\n\nTo load the R package tidyverse, type and run the following commands from a R script:\n\nmpg is the data.frame provided by the R package ggplot2, one of the R pakcages in tidyverse.\n\nSince tidyverse is installed, ggplot2 package is already installed."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-9",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-9",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nRStudio Options Setting\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit:"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-10",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-10",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nWorkflow: Naming and File Management\n\nSave your class R script for each class.\nI use the following style of file name for class R script:\n\ne.g., danl-101-lec-04-2024-0905.R\n\nDo not have any space when you name a file.\n\nIt is recommended to use all lower cases."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-11",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-11",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nWorkflow: Code and comment style\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is R’s comment character.\n\nIn R scripts (*.R files), # indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-danl-tools-1",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-danl-tools-1",
+    "title": "Lecture 4",
+    "section": "Setting the DANL Tools",
+    "text": "Setting the DANL Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\n\n\n\nWindows\n\nAlt + - adds an assignment operator\nCtrl + Enter runs a current line of code\nCtrl + Shift + C makes a comment (#)\nCtrl + Shift + R makes a section (# Section - - - -)\n\n\n\n\nMac\n\noption + - adds an assignment operator\ncommand + return runs a current line of code\ncommand + shift + C makes a comment (#)\ncommand + shift + R makes a section (# Section - - - -)"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-12",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-12",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\nCtrl (command for Mac Users) + Z undoes the previous action.\nCtrl (command for Mac Users) + Shift + Z redoes when undo is executed."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-13",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-13",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\nCtrl (command for Mac Users) + F is useful when finding a phrase (and replace the phrase) in the RScript."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-14",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-14",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nWorkflow: Auto-completion\n\n\nlibr\n\n\n\n\n\n\n\nAuto-completion of command is useful.\n\nType libr in the RScript in RStudio and wait for a second."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-15",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-15",
+    "title": "Lecture 4",
+    "section": "Setting the Tools",
+    "text": "Setting the Tools\nWorkflow: STOP icon\n\n\n\n\nWhen the code is running, RStudio shows the STOP icon ( 🛑 ) at the top right corner in the Console Pane.\n\nDo not click it unless if you want to stop running the code."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-1",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-1",
+    "title": "Lecture 4",
+    "section": "R Basics",
+    "text": "R Basics\nValues, Variables, and Types\n\n\n\n\nA value is datum (literal) such as a number or text.\nThere are different types of values:\n\n352.3 is known as a float or double;\n22 is an integer;\n“Hello World!” is a string."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-2",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-2",
+    "title": "Lecture 4",
+    "section": "R Basics",
+    "text": "R Basics\nValues, Variables, and Types\na &lt;- 10    # The most popular assignment operator in R is `&lt;-`.\na\n\n\n\n\n\n\n\nA variable is a name that refers to a value.\n\nWe can think of a variable as a box that has a value, or multiple values, packed inside it.\n\nA variable is just a name!"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-3",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-3",
+    "title": "Lecture 4",
+    "section": "R Basics",
+    "text": "R Basics\nObjects\n\nSometimes you will hear variables referred to as objects.\nEverything that is not a literal value, such as 10, is an object."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-4",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-4",
+    "title": "Lecture 4",
+    "section": "R Basics",
+    "text": "R Basics\nAssignment\nx &lt;- 2\nx &lt; - 3\n\nWhat is going on here?\nThe shortcut for the assignment &lt;- is:\n\nWindows: Alt + -\nMac: option + -"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-5",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-5",
+    "title": "Lecture 4",
+    "section": "R Basics",
+    "text": "R Basics\nAssignment\nx &lt;- 2\ny &lt;- x + 12\n\nIn programming code, everything on the right side needs to have a value.\n\nThe right side can be a literal value, or a variable that has already been assigned a value, or a combination.\n\nWhen R reads y &lt;- x + 12, it does the following:\n\nSees the &lt;- in the middle.\nKnows that this is an assignment.\nCalculates the right side (gets the value of the object referred to by x and adds it to 12).\nAssigns the result to the left-side variable, y."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-6",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-6",
+    "title": "Lecture 4",
+    "section": "R Basics",
+    "text": "R Basics\nData Types\n\n\n\n\n\n\n\nLogical: TRUE or FALSE.\nNumeric: Numbers with decimals\nInteger: Integers\nCharacter: Text strings\nFactor: Categorical values.\n\nEach possible value of a factor is known as a level."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-7",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-7",
+    "title": "Lecture 4",
+    "section": "R Basics",
+    "text": "R Basics\nData Containers\n\n\n\n\n\n\n\n\n\nvector: 1D collection of variables of the same type\ndata.frame: 2D collection of variables of multiple types\n\nA data.frame is a collection of vectors."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-8",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-8",
+    "title": "Lecture 4",
+    "section": "R Basics",
+    "text": "R Basics\nData Types\n\n\norig_number &lt;- 4.39898498\nclass(orig_number)\nmod_number &lt;- as.integer(orig_number)\nclass(mod_number)\n\n# TRUE converts to 1; FALSE does to 0.\nas.numeric(TRUE)\nas.numeric(FALSE)\n\n\n\nSometimes we need to explicitly cast a value from one type to another.\n\nWe can do this using built-in functions like as.character(), as.integer(), as.numeric(), and as.factor()."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-9",
+    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-9",
+    "title": "Lecture 4",
+    "section": "R Basics",
+    "text": "R Basics\nData Types\n\nCharacterNumbersLogical (TRUE/FALSE)VectorsFactors\n\n\nmyname &lt;- \"my_name\"\nclass(myname) # returns the data **type** of an object.\n\nStrings are known as character in R.\nUse the double quotes (\") or single quotes (') to wrap around the string\n\nMost IDE, including RStudio, automatically provides a pair of quotes when typing just one quote.\n\n\n\n\nfavorite.integer &lt;- as.integer(2)\nclass(favorite.integer)\n\nfavorite.numeric &lt;- as.numeric(8.8)\nclass(favorite.numeric)\n\nNumbers have different classes.\n\nThe most common two are integer and numeric. Integers are whole numbers.\n\n\n\n\nclass(TRUE)\nclass(FALSE)\nfavorite.numeric == 8.8\nfavorite.numeric == 9.9\nclass(favorite.numeric == 8.8)\n\nWe use the == to test for equality in R\n\n\n\na &lt;- 1:10  # colon operator\nb &lt;- c(\"3\", 4, 5)\nbeers &lt;- c(\"BUD LIGHT\", \"BUSCH LIGHT\", \"COORS LIGHT\", \n           \"MILLER LITE\", \"NATURAL LIGHT\")\nclass(a)\nclass(b)\nclass(beers)\n\nWe can create one-dimensional data structures called “vectors”.\nc(...): Returns a vector that is constructed from one or more arguments, with the order of the vector elements corresponding to the order of the arguments.\n\n\n\nbeers &lt;- as.factor(beers)\nclass(beers)\n\nlevels(beers)\nnlevels(beers)\n\nFactors store categorical data.\nUnder the hood, factors are actually integers that have a string label attached to each unique integer.\n\nFor example, if we have a long list of Male/Female labels for each of our patients, this will be stored a “column” of zeros and ones by R."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics",
+    "title": "Lecture 6",
+    "section": "Descriptive Statistics",
+    "text": "Descriptive Statistics\n\n\n\n\n\n\nDescriptive statistics condense data into manageable summaries, making it easier to understand key characteristics of the data.\n\nThey help reveal patterns, trends, and relationships within the data that might not be immediately apparent from raw numbers."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-1",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-1",
+    "title": "Lecture 6",
+    "section": "Descriptive Statistics",
+    "text": "Descriptive Statistics\n\nData quality assessment:\n\nDescriptive statistics can highlight potential issues in data quality, such as outliers or unexpected distributions, prompting further investigation.\n\nFoundation for further analysis:\n\nDescriptive statistics often serve as a starting point for more advanced statistical analyses and predictive modeling.\n\nData visualization enhancement:\n\nDescriptive statistics often form the basis for effective data visualizations, making complex data more accessible and understandable."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-2",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-2",
+    "title": "Lecture 6",
+    "section": "Descriptive Statistics",
+    "text": "Descriptive Statistics\nMeasures of Central Tendency\n\nMeasures of centrality are used to describe the central or typical value in a given vector.\n\nThey represent the “center” or most representative value of a data set.\n\nTo describe this centrality, several statistical measures are commonly used:\n\nMean: The arithmetic average of all values in the data set.\nMedian: The middle value when the data set is ordered from least to greatest.\nMode: The most frequently occurring value in the data set."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-1",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-1",
+    "title": "Lecture 6",
+    "section": "Measures of Central Tendency",
+    "text": "Measures of Central Tendency\nMean\n\\[\n\\overline{x} = \\frac{x_{1} + x_{2} + \\cdots + x_{N}}{N}\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nsum(x)\nmean(x)\n\nThe arithmetic mean (or simply mean or average) is the sum of all the values divided by the number of observations in the data set.\n\nmean() calculates the mean of the values in a vector.\nFor a given vector \\(x\\), if we happen to have \\(N\\) observations \\((x_{1}, x_{2}, \\cdots , x_{N})\\), we can write the arithmetic mean of the data sample as above."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-2",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-2",
+    "title": "Lecture 6",
+    "section": "Measures of Central Tendency",
+    "text": "Measures of Central Tendency\nMedian\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx &lt;- c(1, 2, 3, 4, 5)\nmedian(x)\n\nThe median is the measure of center value in a given vector.\n\nmedian() calculates the median of the values in a vector."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-3",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-3",
+    "title": "Lecture 6",
+    "section": "Measures of Central Tendency",
+    "text": "Measures of Central Tendency\nMode\n\nThe mode is the value(s) that occurs most frequently in a given vector.\nMode is useful, although it is often not a very good representation of centrality.\nThe R package, modest, provides the mfw(x) function that calculate the mode of values in vector x."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-3",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-3",
+    "title": "Lecture 6",
+    "section": "Descriptive Statistics",
+    "text": "Descriptive Statistics\nMeasures of Dispersion\n\nMeasures of dispersion are used to describe the degree of variation in a given vector.\n\nThey are a representation of the numerical spread of a given data set.\n\nTo describe this dispersion, a number of statistical measures are developed\n\nRange\nVariance\nStandard deviation\nQuartile"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-1",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-1",
+    "title": "Lecture 6",
+    "section": "Measures of Dispersion",
+    "text": "Measures of Dispersion\nRange\n\\[\n(\\text{range of x}) \\,=\\, (\\text{maximum value in x}) \\,-\\, (\\text{minimum value in x})\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nmax(x)\nmin(x)\nrange &lt;- max(x) - min(x)\n\nThe range is the difference between the largest and the smallest values in a given vector.\n\nmax(x) returns the maximum value of the values in a given vector \\(x\\).\nmin(x) returns the minimum value of the values in a given vector \\(x\\)."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-2",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-2",
+    "title": "Lecture 6",
+    "section": "Measures of Dispersion",
+    "text": "Measures of Dispersion\nVariance\n\\[\n\\overline{s}^{2} = \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\,\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nvar(x)\n\nThe variance is used to calculate the deviation of all data points in a given vector from the mean.\n\nThe larger the variance, the more the data are spread out from the mean and the more variability one can observe in the data sample.\nTo prevent the offsetting of negative and positive differences, the variance takes into account the square of the distances from the mean.\n\nvar(x) calculates the variance of the values in a vector \\(x\\)."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-3",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-3",
+    "title": "Lecture 6",
+    "section": "Measures of Dispersion",
+    "text": "Measures of Dispersion\nStandard Deviation\n\\[\n\\overline{s} = \\sqrt{ \\left( \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\, \\right) }\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nsd(x)\n\nThe standard deviation (SD)—the square root of the variance—is also a measure of the spread of values within a given vector.\n\nsd(x) calculates the standard deviation of the values in a vector \\(x\\)\nSD helps us understand how representative the mean is of the data.\n\nA low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-4",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-4",
+    "title": "Lecture 6",
+    "section": "Measures of Dispersion",
+    "text": "Measures of Dispersion\nQuartiles\nquantile(x)\nquantile(x, 0) # the minimum\nquantile(x, 0.25) # the 1st quartile\nquantile(x, 0.5) # the 2nd quartile\nquantile(x, 0.75) # the 3rd quartile\nquantile(x, 1) # the maximum\n\nA quartile is a quarter of the number of data points in a given vector.\n\nQuartiles are determined by first sorting the values and then splitting the sorted values into four disjoint smaller data sets.\nQuartiles are a useful measure of dispersion because they are much less affected by outliers or a skewness in the data set than the equivalent measures in the whole data set."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-5",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-5",
+    "title": "Lecture 6",
+    "section": "Measures of Dispersion",
+    "text": "Measures of Dispersion\nInterquartile Range\n\n\n\n\n\n\n\n\n\nAn interquartile range describes the difference between the third quartile (Q3) and the first quartile (Q1), telling us about the range of the middle half of the scores in the distribution.\n\nThe quartile-driven descriptive measures (both centrality and dispersion) are best explained with a popular plot called a box plot."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-1",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-1",
+    "title": "Lecture 6",
+    "section": "R Basics",
+    "text": "R Basics\nCSV file\n\nA CSV (comma-separated values) file is a text file in which values are separated by commas.\nCSV files are most commonly encountered in spreadsheets and databases.\nExample\n\nhttps://bcdanl.github.io/data/tvshows.csv"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-2",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-2",
+    "title": "Lecture 6",
+    "section": "R Basics",
+    "text": "R Basics\nAbsolute Pathnames\n\nComplete path from the root directory to the target file or directory.\nIndependent of the working directory.\n\ngetwd() returns the pathname of the working directory.\nThe working directory for a Posit Cloud project is /cloud/project/\n\nExample of absolute pathnames for custdata_rev.csv\n\nMac:\n\n/Users/user/documents/data/custdata_rev.csv\n\nWindows:\n\nC:\\\\Users\\\\user\\\\Documents\\\\data\\\\custdata_rev.csv"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-3",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-3",
+    "title": "Lecture 6",
+    "section": "R Basics",
+    "text": "R Basics\nRelative Pathnames\n\nPath relative to the working directory.\nExample:\n\nAbsolute pathname for custdata_rev.csv is /Users/user/documents/data/custdata_rev.csv.\nSuppose the working directory is /Users/user/documents/.\nThen, the relative pathname for custdata_rev.csv is dada/custdata_rev.csv.\n\nWhen using the Posit Cloud project, we can use a relative path to read a file."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-4",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-4",
+    "title": "Lecture 6",
+    "section": "R Basics",
+    "text": "R Basics\nWorking with Data from Files\n\n\nWe use the read_csv() function to read a comma-separated values (CSV) file.\n\n\nDownload the CSV file, custdata_rev.csv from the Class Files module in our Brightspace.\nCreate a sub-directory, data, by clicking “New Folder” in the Files Pane in Posit Cloud.\nUpload the custdata_rev.csv file to the sub-directory data.\nProvide the relative pathname for the file, custdata_rev.csv, to the read_csv() function.\n\ncustdata &lt;- read_csv('HERE WE PROVIDE A RELATIVE PATHNAME FOR custdata_rev.csv')\nView(custdata)\n\nView() displays the data in a simple spreadsheet-like grid."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-5",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-5",
+    "title": "Lecture 6",
+    "section": "R Basics",
+    "text": "R Basics\nExamining data.frames\n\n\nclass(custdata)\ndim(custdata)\nnrow(custdata)\nncol(custdata)\n\nsummary(custdata_rev)\nlibrary(skimr)\nskim(custdata_rev)\n\n\n\ndim() shows how many rows and columns are in the data for data.frame.\nnrow() and ncol() shows the number of rows and columns for data.frame respectively.\nskimr::skim() refers to the skim() function from the skimr package.\n\nThis provides a more comprehensive summary.\nIt’s a more user-friendly alternative to functions like base-R’s summary(), offering both numerical and categorical summaries."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-6",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-6",
+    "title": "Lecture 6",
+    "section": "R Basics",
+    "text": "R Basics\nReading data.frames from an URL\ntvshows &lt;- read_csv(\n        'https://bcdanl.github.io/data/tvshows.csv')\n\nWe can import the CSV file from the web."
+  },
+  {
     "objectID": "danl-lec/danl-101-lec-02-2024-0829.html#sports-analytics",
     "href": "danl-lec/danl-101-lec-02-2024-0829.html#sports-analytics",
     "title": "Lecture 2",
@@ -467,6 +810,41 @@
     "title": "Lecture 2",
     "section": "Purpose of ML and BI in Business",
     "text": "Purpose of ML and BI in Business\n\nInformed Decision-Making: ML and BI provides insights from data to support strategic and operational decisions.\nPerformance Monitoring: Tracks key performance indicators and metrics to ensure goals are met.\nData Visualization: Transforms complex data into easy-to-understand visual formats like dashboards and reports.\nOperational Efficiency: Identifies inefficiencies and areas for improvement within business processes."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics",
+    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics",
+    "title": "Lecture 5",
+    "section": "R Basics",
+    "text": "R Basics\nWorkflow: Quotation marks, parentheses, and +\nx &lt;- \"hello\n\nQuotation marks and parentheses must always come in a pair.\n\nIf not, Console Pane will show you the continuation character +:\n\nThe + tells you that R is waiting for more input; it doesn’t think you’re done yet."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-1",
+    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-1",
+    "title": "Lecture 5",
+    "section": "R Basics",
+    "text": "R Basics\nFunctions\n\nA function can take any number and type of input parameters and return any number and type of output results.\nR ships a vast number of built-in functions.\nR also allows a user to define a new function.\nWe will mostly use built-in functions."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-2",
+    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-2",
+    "title": "Lecture 5",
+    "section": "R Basics",
+    "text": "R Basics\nFunctions, Arguments, and Parameters\nlibrary(tidyverse)\n\n# The function `str_c()`, provided by `tidyverse`, concatenates characters.\nstr_c(\"Data\", \"Analytics\")\nstr_c(\"Data\", \"Analytics\", sep = \"!\")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that R passes to a parameter if the function invocation does not explicitly provide one."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-3",
+    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-3",
+    "title": "Lecture 5",
+    "section": "R Basics",
+    "text": "R Basics\nArithmetic Operations and Mathematical Functions\n\n\nAlgebraMath functions\n\n\n\n\n5 + 3\n5 - 3\n5 * 3\n5 / 3\n5^3\n\n( 3 + 4 )^2\n3 + 4^2\n3 + 2 * 4^2\n3 + 2 * 4 + 2\n(3 + 2) * (4 + 2)\n\n\n\nAll of the basic operators with parentheses we see in mathematics are available to use.\nR can be used for a wide range of mathematical calculations.\n\n\n\n\n\n5 * abs(-3)\nsqrt(17) / 2\nexp(3)\nlog(3)\nlog(exp(3))\nexp(log(3))\n\nR has many built-in mathematical functions that facilitate calculations and data analysis.\n\n\n\nabs(x): the absolute value \\(|x|\\)\nsqrt(x): the square root \\(\\sqrt{x}\\)\nexp(x): the exponential value \\(e^x\\), where \\(e = 2.718...\\)\nlog(x): the natural logarithm \\(\\log_{e}(x)\\), or simply \\(\\log(x)\\)"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-4",
+    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-4",
+    "title": "Lecture 5",
+    "section": "R Basics",
+    "text": "R Basics\nVectorized Operations\na &lt;- c(1, 2, 3, 4, 5)\nb &lt;- c(5, 4, 3, 2, 1)\n\na + b\na - b\na * b\na / b\nsqrt(a)\n\nVectorized operations mean applying a function to every element of a vector without explicitly writing a loop.\n\nThis is possible because most functions in R are vectorized, meaning they are designed to operate on vectors element-wise.\nVectorized operations are a powerful feature of R, enabling efficient and concise code for data analysis and manipulation."
   },
   {
     "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#data-analytics-in-the-retail-sector-1",
@@ -579,286 +957,6 @@
     "title": "Lecture 3",
     "section": "Data Analytics vs. Data Science",
     "text": "Data Analytics vs. Data Science\nFuzzy Distinctions\n\nThe difference between professionals focusing on descriptive analytics and those engaged in all types of analytics is not clear-cut.\nGraduates of data-related programs often perform tasks aligned with data science."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nComputer Basics\n\nI expect you to know:\n\nWhere downloaded files are located in your laptop\n\nBy default, Downloads is the directory where downloaded files are stored.\n\nHow to extract a Zip file, a compressed file that supports lossless file compression and that can contain multiple files;\nHow to copy and paste files using short cuts\n\nCopy: Ctrl + C for Windows users; command + C for Mac users\nPaste: Ctrl + V for Windows users; command + V for Mac users"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-1",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-1",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nGetting a GitHub account\n\nCreate the GitHub account with your Geneseo email.\n\nGo to GitHub.\nClick “Sign up for GitHub”.\n\nChoose your GitHub username carefully:\n\nhttps://USERNAME.github.io will be the address for your website, if you want to have GitHub data portfolio in the future.\ne.g., Byeong-Hak’s GitHub username is bcdanl, so that Byeong-Hak owns the web address https://bcdanl.github.io.\n\nIt is better to have a username with all lower cases."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-2",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-2",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\nScript Pane is where you write an R script or a Quarto document that you can save.\n\nAn R script is simply a text file containing R commands.\n\n\n\n\n\n\n\n\nTo open an R script,\n\nFile \\(&gt;\\) New File \\(&gt;\\) R Script\n\n\n\n\n\n\nTo save the R script,\n\nFile \\(&gt;\\) Save"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-3",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-3",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-4",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-4",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\nType below in the Console Pane, and then hit Enter:\n\na &lt;- 1"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-5",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-5",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-6",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-6",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nR Packages and tidyverse\n\nR packages are collections of R functions, compiled code, and data that are combined in a structured format.\nSeveral R packages come with numerous pre-built functions that can perform a wide range of data analysis tasks."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-7",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-7",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\ntidyverse\n\n\n\nThe tidyverse is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.\n\n\n\ntidyverse includes a lot of R packages, including ggplot2, dplyr, and tidyr.\nThe tidyverse packages work harmoniously together to make data manipulation, exploration, and visualization more."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-8",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-8",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nInstalling R packages with install.packages(\"packageName\")\ninstall.packages(\"tidyverse\")\n\nR packages can be easily installed from within R using a base-R function install.packages(\"packageName\").\n\nTo install the R package tidyverse, type and run the following command from R console:\n\nWhile running the above codes, you may encounter the pop-up question, and you can answer “No”"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-9",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-9",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nLoading R packages with library(packageName)\nlibrary(tidyverse)\nmpg\n\nOnce installed, a package is loaded into an R session using a base-R function library(packageName) so that R package’s functions and data can be used.\n\nTo load the R package tidyverse, type and run the following commands from a R script:\n\nmpg is the data.frame provided by the R package ggplot2, one of the R pakcages in tidyverse.\n\nSince tidyverse is installed, ggplot2 package is already installed."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-10",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-10",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Options Setting\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit:"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-11",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-11",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nScript Pane is where you write R commands in a script file that you can save.\n\nAn R script is simply a text file containing R commands.\nRStudio will color-code different elements of your code to make it easier to read."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-12",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-12",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-13",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-13",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-14",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-14",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-15",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-15",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Code and comment style\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is R’s comment character.\n\nIn R scripts (*.R files), # indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to.\nCtrl/command + Shift + C is the shortcut for # (commenting)."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-16",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-16",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Shortcuts in RStudio\n\nCtrl (command for Mac Users) + Z undoes the previous action.\nCtrl (command for Mac Users) + Shift + Z redoes when undo is executed.\nCtrl (command for Mac Users) + F is useful when finding a phrase (and replace the phrase) in the RScript."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-17",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-17",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Auto-completion\n\n\nlibr\n\n\n\n\n\n\n\nAuto-completion of command is useful.\n\nType libr in the RScript in RStudio and wait for a second."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-18",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#setting-the-tools-18",
-    "title": "Lecture 3",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: STOP icon\n\n\n\n\nWhen the code is running, RStudio shows the STOP icon ( 🛑 ) at the top right corner in the Console Pane.\n\nDo not click it unless if you want to stop running the code."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-1",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-1",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nValues, Variables, and Types\n\n\n\n\nA value is datum (literal) such as a number or text.\nThere are different types of values:\n\n352.3 is known as a float or double;\n22 is an integer;\n“Hello World!” is a string."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-2",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-2",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nValues, Variables, and Types\na &lt;- 10    # The assignment operator in R is `&lt;-`.\na\n\n\n\n\n\n\n\nA variable is a name that refers to a value.\n\nWe can think of a variable as a box that has a value, or multiple values, packed inside it.\n\nA variable is just a name!"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-3",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-3",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nAssignment\nx &lt;- 2\nx &lt; - 3\n\nWhat is going on here?\nThe shortcut for the assignment &lt;- is:\n\nWindows: Alt + -\nMac: option + -"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-4",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-4",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nAssignment\nx &lt;- 2\ny &lt;- x + 12\n\nIn programming code, everything on the right side needs to have a value.\n\nThe right side can be a literal value, or a variable that has already been assigned a value, or a combination.\n\nWhen R reads y &lt;- x + 12, it does the following:\n\nSees the &lt;- in the middle.\nKnows that this is an assignment.\nCalculates the right side (gets the value of the object referred to by x and adds it to 12).\nAssigns the result to the left-side variable, y."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-5",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-5",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nValues, Variables, and Types\n\n\nSometimes you will hear variables referred to as objects.\nEverything that is not a literal value, such as 10, is an object."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-6",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-6",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nValues, Variables, and Types\n\nTypesData containers\n\n\n\n\n\n\n\n\n\nLogical: TRUE or FALSE.\nNumeric: Numbers with decimals\nInteger: Integers\nCharacter: Text strings\nFactor: Categorical values.\n\nEach possible value of a factor is known as a level.\n\n\n\n\n\n\n\n\n\n\n\n\n\nvector: 1D collection of variables of the same type\ndata.frame: 2D collection of variables of multiple types\n\nA data.frame is a collection of vectors."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-7",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-7",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nR Variable and Data Types\n\nCharacterNumbersLogical (TRUE/FALSE)VectorsFactors\n\n\nmyname &lt;- \"my_name\"\nclass(myname) # returns the data **type** of an object.\n\nStrings are known as character in R.\nUse the double quotes \" or single quotes ' to wrap around the string\n\n\n\nfavorite.integer &lt;- as.integer(2)\nclass(favorite.integer)\n\nfavorite.numeric &lt;- as.numeric(8.8)\nclass(favorite.numeric)\n\nNumbers have different classes.\n\nThe most common two are integer and numeric. Integers are whole numbers.\n\n\n\n\nclass(TRUE)\nclass(FALSE)\nfavorite.numeric == 8.8\nfavorite.numeric == 9.9\nclass(favorite.numeric == 8.8)\n\nWe use the == to test for equality in R\n\n\n\na &lt;- 1:10  # colon operator\nb &lt;- c(\"3\", 4, 5)\nbeers &lt;- c(\"BUD LIGHT\", \"BUSCH LIGHT\", \"COORS LIGHT\", \n           \"MILLER LITE\", \"NATURAL LIGHT\")\nclass(a)\nclass(b)\nclass(beers)\n\nWe can create one-dimensional data structures called “vectors”.\nc(...): Returns a vector that is constructed from one or more arguments, with the order of the vector elements corresponding to the order of the arguments.\n\n\n\nbeers &lt;- as.factor(beers)\nclass(beers)\n\nlevels(beers)\nnlevels(beers)\n\nFactors store categorical data.\nUnder the hood, factors are actually integers that have a string label attached to each unique integer.\n\nFor example, if we have a long list of Male/Female labels for each of our patients, this will be stored a “column” of zeros and ones by R."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-8",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-8",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nWorkflow: Quotation marks, parentheses, and +\nx &lt;- \"hello\n\nQuotation marks and parentheses must always come in a pair.\n\nIf not, Console Pane will show you the continuation character +:\n\nThe + tells you that R is waiting for more input; it doesn’t think you’re done yet."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-9",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-9",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nFunctions\n\nA function can take any number and type of input parameters and return any number and type of output results.\nR ships a vast number of built-in functions.\nR also allows a user to define a new function.\nWe will mostly use built-in functions."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-10",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-10",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nFunctions, Arguments, and Parameters\nlibrary(tidyverse)\n\n# The function `str_c()`, provided by `tidyverse`, concatenates characters.\nstr_c(\"Data\", \"Analytics\")\nstr_c(\"Data\", \"Analytics\", sep = \"!\")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that R passes to a parameter if the function invocation does not explicitly provide one."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-11",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-11",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nArithmetic Operations and Mathematical Functions\n\nAlgebraMath functions\n\n\n\n\n5 + 3\n5 - 3\n5 * 3\n5 / 3\n5^3\n\n( 3 + 4 )^2\n3 + 4^2\n3 + 2 * 4^2\n3 + 2 * 4 + 2\n(3 + 2) * (4 + 2)\n\n\n\nAll of the basic operators with parentheses we see in mathematics are available to use.\nR can be used for a wide range of mathematical calculations.\n\n\n\n\n\n5 * abs(-3)\nsqrt(17) / 2\nexp(3)\nlog(3)\nlog(exp(3))\nexp(log(3))\n\nR has many built-in mathematical functions that facilitate calculations and data analysis.\n\n\n\nabs(x): the absolute value \\(|x|\\)\nsqrt(x): the square root \\(\\sqrt{x}\\)\nexp(x): the exponential value \\(e^x\\), where \\(e = 2.718...\\)\nlog(x): the natural logarithm \\(\\log_{e}(x)\\), or simply \\(\\log(x)\\)"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-12",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-12",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nVectorized Operations\na &lt;- c(1, 2, 3, 4, 5)\nb &lt;- c(5, 4, 3, 2, 1)\n\na + b\na - b\na * b\na / b\nsqrt(a)\n\nVectorized operations mean applying a function to every element of a vector without explicitly writing a loop.\n\nThis is possible because most functions in R are vectorized, meaning they are designed to operate on vectors element-wise.\nVectorized operations are a powerful feature of R, enabling efficient and concise code for data analysis and manipulation."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-13",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-13",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nMore Math Functions\nx &lt;- c(1, 2, 3, 4, 5)\n\nsum(x)\nmean(x)\nsd(x)\n\nSumMeanStandard Deviation\n\n\n\nsum() calculates the sum of all numbers in a vector.\n\n\n\n\nmean() calculates the arithmetic mean of the values in a vector. \\[\n\\overline{x} = \\frac{x_{1} + x_{2} + \\cdots + x_{N}}{N}\n\\]\n\n\n\n\nsd() calculates the standard deviation (SD) of the values in a vector.\n\nSD measures the amount of variation or dispersion of a set of values. \\[\n\\overline{s} = \\sqrt{ \\left( \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\, \\right) }\n\\]"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-14",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-14",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nNULL and NA values\nc(c(), 1, NULL)\nc(\"a\", NA, \"c\")\n\nNULL is just an alias for c(), the empty vector.\nNA indicates missing or unavailable data."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-15",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-15",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nNULL and NA values\n\nis.na() is to check whether expression evaluates to NA.\n\n\n\n[1] TRUE\n\n\nlogical(0)\n\n\n[1] FALSE\n\n\n\nQ. Why does \"A\" == NA evaluate to NA?"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-16",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-16",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nCasting Variables\n\n\norig_number &lt;- 4.39898498\nclass(orig_number)\nmod_number &lt;- as.integer(orig_number)\nclass(mod_number)\n\n# TRUE converts to 1; FALSE does to 0.\nas.numeric(TRUE)\nas.numeric(FALSE)\n\n\n\nSometimes we need to explicitly cast a value from one type to another.\n\nWe can do this using built-in functions like as.character(), as.integer(), as.numeric(), and as.factor().\nIf we try these, R will do its best to interpret the input and convert it to the output type we’d like and, if they can’t, the code will throw NA."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-17",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-17",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nAbsolute vs. Relative Pathnames\n\nAbsolute PathRelative Path\n\n\n\nComplete path from the root directory to the target file or directory.\nIndependent of the current working directory.\nExample (Mac): /Users/user/documents/car_data.csv\nExample (Windows): C:\\\\Users\\\\user\\\\Documents\\\\car_data.csv\n\n\n\n\nPath relative to the current working directory.\nChanges based on the current directory. \nExample: If the current directory is /Users/user, the relative path to car_data.csv would be documents/car_data.csv\nFor the website R project, we can use a relative path."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-18",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-18",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nWorking with Data from Files\n\n\nWe use the read_csv() function to read a comma-separated values (CSV) file.\n\n\nDownload the CSV file, car_data.csv from the Class Files module in our Brightspace.\nFind the path name for the file, car_data.csv from the File Explorer / Finder.\nProvide the path name for the file, car_data.csv, to the read_csv() function.\n\nuciCar &lt;- read_csv('HERE WE PROVIDE A PATHNAME FOR car_data.csv')\nView(uciCar)\n\nView()/view() displays the data in a simple spreadsheet-like grid viewer.\n\nWe can click the data.frame object, displayed in the Environment Pane."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-19",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-19",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nExamining data.frames\n\n\ndim(uciCar)\nnrow(uciCar)\nncol(uciCar)\n\nclass(uciCar)\nlibrary(skimr)\nskim(uciCar)\n\n\n\ndim() shows how many rows and columns are in the data for data.frame.\nnrow() and ncol() shows the number of rows and columns for data.frame respectively.\nskimr::skim() provides a more detailed summary.\n\nskimr is the R package that provides the function skim()."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-20",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-20",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nReading data.frames from an URL\ntvshows &lt;- read_csv(\n        'https://bcdanl.github.io/data/tvshows.csv')\n\nWe can import the CSV file from the web."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-21",
-    "href": "danl-lec/danl-101-lec-03-2024-0903.html#r-basics-21",
-    "title": "Lecture 3",
-    "section": "R Basics",
-    "text": "R Basics\nTidy data.frame: Variables, Observations, and Values\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
   },
   {
     "objectID": "posts/nba/nba.html#salary-distribution-among-teams",
@@ -1078,822 +1176,10 @@
     "text": "Memberships\n\n\n\n\n\n2022—present\nSouthern Economic Association\n\n\n2018—present\nAssociation of Environmental and Resource Economists\n\n\n2017—present\nAmerican Economic Association\n\n\n2017—2019\nEconometric Society"
   },
   {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nPosit Cloud\n\nPosit Cloud (formerly RStudio Cloud) is a web service that delivers a browser-based experience similar to RStudio, the standard IDE for the R language.\nFor our course, we use Posit Cloud for the R programming component.\n\nIf you want to install R and RStudio on your laptop, you use my office hours."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-1",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-1",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nScript Pane is where you write R commands in a script file that you can save.\n\nAn R script is simply a text file containing R commands.\nRStudio will color-code different elements of your code to make it easier to read."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-2",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-2",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-3",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-3",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\nType a &lt;- 1 in Console, and then hit Enter."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-4",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-4",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Environment\n\n\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-5",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-5",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nR Packages and tidyverse\n\nR packages are collections of R functions, compiled code, and data that are combined in a structured format.\nSeveral R packages come with numerous pre-built functions that can perform a wide range of data analysis tasks."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-6",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-6",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\ntidyverse\n\n\n\nThe tidyverse is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.\n\n\n\ntidyverse includes a lot of R packages, including ggplot2, dplyr, and tidyr.\nThe tidyverse packages work harmoniously together to make data manipulation, exploration, and visualization more."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-7",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-7",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nInstalling R packages with install.packages(\"packageName\")\ninstall.packages(\"tidyverse\")\n\nR packages can be easily installed from within R using a base-R function install.packages(\"packageName\").\n\nTo install the R package tidyverse, type and run the following command from R console:\n\nWhile running the above codes, you may encounter the pop-up question, and you can answer “No”"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-8",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-8",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nLoading R packages with library(packageName)\nlibrary(tidyverse)\nmpg\n\nOnce installed, a package is loaded into an R session using a base-R function library(packageName) so that R package’s functions and data can be used.\n\nTo load the R package tidyverse, type and run the following commands from a R script:\n\nmpg is the data.frame provided by the R package ggplot2, one of the R pakcages in tidyverse.\n\nSince tidyverse is installed, ggplot2 package is already installed."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-9",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-9",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nRStudio Options Setting\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit:"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-10",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-10",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Naming and File Management\n\nSave your class R script for each class.\nI use the following style of file name for class R script:\n\ne.g., danl-101-lec-04-2024-0905.R\n\nDo not have any space when you name a file.\n\nIt is recommended to use all lower cases."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-11",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-11",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Code and comment style\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is R’s comment character.\n\nIn R scripts (*.R files), # indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-12",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-12",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\nCtrl (command for Mac Users) + Z undoes the previous action.\nCtrl (command for Mac Users) + Shift + Z redoes when undo is executed."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-13",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-13",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\nCtrl (command for Mac Users) + F is useful when finding a phrase (and replace the phrase) in the RScript."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-14",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-14",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Auto-completion\n\n\nlibr\n\n\n\n\n\n\n\nAuto-completion of command is useful.\n\nType libr in the RScript in RStudio and wait for a second."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-15",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-15",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: STOP icon\n\n\n\n\nWhen the code is running, RStudio shows the STOP icon ( 🛑 ) at the top right corner in the Console Pane.\n\nDo not click it unless if you want to stop running the code."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-16",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-16",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\nCtrl (command for Mac Users) + Z undoes the previous action.\nCtrl (command for Mac Users) + Shift + Z redoes when undo is executed."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-1",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-1",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nValues, Variables, and Types\n\n\n\n\nA value is datum (literal) such as a number or text.\nThere are different types of values:\n\n352.3 is known as a float or double;\n22 is an integer;\n“Hello World!” is a string."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-2",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-2",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nValues, Variables, and Types\na &lt;- 10    # The most popular assignment operator in R is `&lt;-`.\na\n\n\n\n\n\n\n\nA variable is a name that refers to a value.\n\nWe can think of a variable as a box that has a value, or multiple values, packed inside it.\n\nA variable is just a name!"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-3",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-3",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nObjects\n\nSometimes you will hear variables referred to as objects.\nEverything that is not a literal value, such as 10, is an object."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-4",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-4",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nAssignment\nx &lt;- 2\nx &lt; - 3\n\nWhat is going on here?\nThe shortcut for the assignment &lt;- is:\n\nWindows: Alt + -\nMac: option + -"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-5",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-5",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nAssignment\nx &lt;- 2\ny &lt;- x + 12\n\nIn programming code, everything on the right side needs to have a value.\n\nThe right side can be a literal value, or a variable that has already been assigned a value, or a combination.\n\nWhen R reads y &lt;- x + 12, it does the following:\n\nSees the &lt;- in the middle.\nKnows that this is an assignment.\nCalculates the right side (gets the value of the object referred to by x and adds it to 12).\nAssigns the result to the left-side variable, y."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-6",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-6",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nData Types\n\n\n\n\n\n\n\nLogical: TRUE or FALSE.\nNumeric: Numbers with decimals\nInteger: Integers\nCharacter: Text strings\nFactor: Categorical values.\n\nEach possible value of a factor is known as a level."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-7",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-7",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nData Containers\n\n\n\n\n\n\n\n\n\nvector: 1D collection of variables of the same type\ndata.frame: 2D collection of variables of multiple types\n\nA data.frame is a collection of vectors."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-8",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-8",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nData Types\n\n\norig_number &lt;- 4.39898498\nclass(orig_number)\nmod_number &lt;- as.integer(orig_number)\nclass(mod_number)\n\n# TRUE converts to 1; FALSE does to 0.\nas.numeric(TRUE)\nas.numeric(FALSE)\n\n\n\nSometimes we need to explicitly cast a value from one type to another.\n\nWe can do this using built-in functions like as.character(), as.integer(), as.numeric(), and as.factor()."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-9",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-9",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nData Types\n\nCharacterNumbersLogical (TRUE/FALSE)VectorsFactors\n\n\nmyname &lt;- \"my_name\"\nclass(myname) # returns the data **type** of an object.\n\nStrings are known as character in R.\nUse the double quotes (\") or single quotes (') to wrap around the string\n\nMost IDE, including RStudio, automatically provides a pair of quotes when typing just one quote.\n\n\n\n\nfavorite.integer &lt;- as.integer(2)\nclass(favorite.integer)\n\nfavorite.numeric &lt;- as.numeric(8.8)\nclass(favorite.numeric)\n\nNumbers have different classes.\n\nThe most common two are integer and numeric. Integers are whole numbers.\n\n\n\n\nclass(TRUE)\nclass(FALSE)\nfavorite.numeric == 8.8\nfavorite.numeric == 9.9\nclass(favorite.numeric == 8.8)\n\nWe use the == to test for equality in R\n\n\n\na &lt;- 1:10  # colon operator\nb &lt;- c(\"3\", 4, 5)\nbeers &lt;- c(\"BUD LIGHT\", \"BUSCH LIGHT\", \"COORS LIGHT\", \n           \"MILLER LITE\", \"NATURAL LIGHT\")\nclass(a)\nclass(b)\nclass(beers)\n\nWe can create one-dimensional data structures called “vectors”.\nc(...): Returns a vector that is constructed from one or more arguments, with the order of the vector elements corresponding to the order of the arguments.\n\n\n\nbeers &lt;- as.factor(beers)\nclass(beers)\n\nlevels(beers)\nnlevels(beers)\n\nFactors store categorical data.\nUnder the hood, factors are actually integers that have a string label attached to each unique integer.\n\nFor example, if we have a long list of Male/Female labels for each of our patients, this will be stored a “column” of zeros and ones by R."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-10",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-10",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nWorkflow: Quotation marks, parentheses, and +\nx &lt;- \"hello\n\nQuotation marks and parentheses must always come in a pair.\n\nIf not, Console Pane will show you the continuation character +:\n\nThe + tells you that R is waiting for more input; it doesn’t think you’re done yet."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-11",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-11",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nFunctions\n\nA function can take any number and type of input parameters and return any number and type of output results.\nR ships a vast number of built-in functions.\nR also allows a user to define a new function.\nWe will mostly use built-in functions."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-12",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-12",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nFunctions, Arguments, and Parameters\nlibrary(tidyverse)\n\n# The function `str_c()`, provided by `tidyverse`, concatenates characters.\nstr_c(\"Data\", \"Analytics\")\nstr_c(\"Data\", \"Analytics\", sep = \"!\")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that R passes to a parameter if the function invocation does not explicitly provide one."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-13",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-13",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nArithmetic Operations and Mathematical Functions\n\nAlgebraMath functions\n\n\n\n\n5 + 3\n5 - 3\n5 * 3\n5 / 3\n5^3\n\n( 3 + 4 )^2\n3 + 4^2\n3 + 2 * 4^2\n3 + 2 * 4 + 2\n(3 + 2) * (4 + 2)\n\n\n\nAll of the basic operators with parentheses we see in mathematics are available to use.\nR can be used for a wide range of mathematical calculations.\n\n\n\n\n\n5 * abs(-3)\nsqrt(17) / 2\nexp(3)\nlog(3)\nlog(exp(3))\nexp(log(3))\n\nR has many built-in mathematical functions that facilitate calculations and data analysis.\n\n\n\nabs(x): the absolute value \\(|x|\\)\nsqrt(x): the square root \\(\\sqrt{x}\\)\nexp(x): the exponential value \\(e^x\\), where \\(e = 2.718...\\)\nlog(x): the natural logarithm \\(\\log_{e}(x)\\), or simply \\(\\log(x)\\)"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-14",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-14",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nVectorized Operations\na &lt;- c(1, 2, 3, 4, 5)\nb &lt;- c(5, 4, 3, 2, 1)\n\na + b\na - b\na * b\na / b\nsqrt(a)\n\nVectorized operations mean applying a function to every element of a vector without explicitly writing a loop.\n\nThis is possible because most functions in R are vectorized, meaning they are designed to operate on vectors element-wise.\nVectorized operations are a powerful feature of R, enabling efficient and concise code for data analysis and manipulation."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-15",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-15",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nAbsolute vs. Relative Pathnames\n\nAbsolute PathRelative Path\n\n\n\nComplete path from the root directory to the target file or directory.\nIndependent of the current working directory.\nExample (Mac): /Users/user/documents/data/car_data.csv\nExample (Windows): C:\\\\Users\\\\user\\\\Documents\\\\data\\\\car_data.csv\n\n\n\n\nPath relative to the current working directory.\nChanges based on the current directory. \nExample: If the current directory is /Users/user, the relative path to car_data.csv would be documents/dada/car_data.csv\nFor the Posit Cloud project, we can use a relative path."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-16",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-16",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nWorking with Data from Files\n\n\nWe use the read_csv() function to read a comma-separated values (CSV) file.\n\n\nDownload the CSV file, car_data.csv from the Class Files module in our Brightspace.\nFind the path name for the file, car_data.csv from the File Explorer / Finder.\nProvide the path name for the file, car_data.csv, to the read_csv() function.\n\nuciCar &lt;- read_csv('HERE WE PROVIDE A PATHNAME FOR car_data.csv')\nView(uciCar)\n\nView()/view() displays the data in a simple spreadsheet-like grid viewer.\n\nWe can click the data.frame object, displayed in the Environment Pane."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-17",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-17",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nExamining data.frames\n\n\nclass(uciCar)\ndim(uciCar)\nnrow(uciCar)\nncol(uciCar)\n\nlibrary(skimr)\nskim(uciCar)\n\n\n\ndim() shows how many rows and columns are in the data for data.frame.\nnrow() and ncol() shows the number of rows and columns for data.frame respectively.\nskimr::skim() provides a more detailed summary.\n\nskimr is the R package that provides the function skim()."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-18",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-18",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nReading data.frames from an URL\ntvshows &lt;- read_csv(\n        'https://bcdanl.github.io/data/tvshows.csv')\n\nWe can import the CSV file from the web."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-19",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-19",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nTidy data.frame: Variables, Observations, and Values\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-20",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-20",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\n\nTidy data.frame: Variables, Observations, and Values\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-21",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#r-basics-21",
-    "title": "Lecture 4",
-    "section": "R Basics",
-    "text": "R Basics\nTidy data.frame: Variables, Observations, and Values\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html",
-    "title": "Lecture 4",
-    "section": "",
-    "text": "Script Pane is where you write an R script or a Quarto document that you can save.\n\nAn R script is simply a text file containing R commands.\n\n\n\n\n\n\n\n\nTo open an R script,\n\nFile \\(&gt;\\) New File \\(&gt;\\) R Script\n\n\n\n\n\n\nTo save the R script,\n\nFile \\(&gt;\\) Save\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\nType below in the Console Pane, and then hit Enter:\n\na &lt;- 1\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code.\n\n\n\n\n\n\n\n\n\n\nR packages are collections of R functions, compiled code, and data that are combined in a structured format.\nSeveral R packages come with numerous pre-built functions that can perform a wide range of data analysis tasks.\n\n\n\n\n\n\n\n\n\n\nThe tidyverse is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.\n\n\n\ntidyverse includes a lot of R packages, including ggplot2, dplyr, and tidyr.\nThe tidyverse packages work harmoniously together to make data manipulation, exploration, and visualization more.\n\n\n\n\n\n\n\n\n\n\n\n\ninstall.packages(\"tidyverse\")\n\nR packages can be easily installed from within R using a base-R function install.packages(\"packageName\").\n\nTo install the R package tidyverse, type and run the following command from R console:\n\nWhile running the above codes, you may encounter the pop-up question, and you can answer “No”\n\n\n\n\n\n\n\nlibrary(tidyverse)\nmpg\n\nOnce installed, a package is loaded into an R session using a base-R function library(packageName) so that R package’s functions and data can be used.\n\nTo load the R package tidyverse, type and run the following commands from a R script:\n\nmpg is the data.frame provided by the R package ggplot2, one of the R pakcages in tidyverse.\n\nSince tidyverse is installed, ggplot2 package is already installed.\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScript Pane is where you write R commands in a script file that you can save.\n\nAn R script is simply a text file containing R commands.\nRStudio will color-code different elements of your code to make it easier to read.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code.\n\n\n\n\n\n\n\n\n\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is R’s comment character.\n\nIn R scripts (*.R files), # indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to.\nCtrl/command + Shift + C is the shortcut for # (commenting).\n\n\n\n\n\n\n\n\n\nCtrl (command for Mac Users) + Z undoes the previous action.\nCtrl (command for Mac Users) + Shift + Z redoes when undo is executed.\nCtrl (command for Mac Users) + F is useful when finding a phrase (and replace the phrase) in the RScript.\n\n\n\n\n\n\n\n\n\nlibr\n\n\n\n\n\n\n\nAuto-completion of command is useful.\n\nType libr in the RScript in RStudio and wait for a second.\n\n\n\n\n\n\n\n\n\n\n\n\nWhen the code is running, RStudio shows the STOP icon ( 🛑 ) at the top right corner in the Console Pane.\n\nDo not click it unless if you want to stop running the code."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-central-tendency",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-central-tendency",
-    "title": "Lecture 4",
-    "section": "Measures of Central Tendency",
-    "text": "Measures of Central Tendency\nMean\n\\[\n\\overline{x} = \\frac{x_{1} + x_{2} + \\cdots + x_{N}}{N}\n\\]\n\nThe arithmetic mean (or simply mean or average) is the sum of all the values divided by the number of observations in the data set.\n\nmean() calculates the mean of the values in a vector.\nFor a given vector \\(x\\), if we happen to have \\(N\\) observations \\((x_{1}, x_{2}, \\cdots , x_{N})\\), we can write the arithmetic mean of the data sample as follows:"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-central-tendency-1",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-central-tendency-1",
-    "title": "Lecture 4",
-    "section": "Measures of Central Tendency",
-    "text": "Measures of Central Tendency\nMedian\nx &lt;- c(1, 2, 3, 4, 5)\n\nsum(x)\nmean(x)\nmedian(x)\n\nThe median is the measure of center value in a given vector.\n\nmedian() calculates the median of the values in a vector.\n\nIn contrary to the mean, the median is not affected by outliers or skewed data."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion",
-    "title": "Lecture 4",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\n\nMeasures of dispersion are used to describe the degree of variation in a given vector.\nThey are a representation of the numerical spread of a given data set.\nTo describe this dispersion, a number of statistical measures are developed\n\nRange\nVariance\nStandard deviation\nQuartile"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion-1",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion-1",
-    "title": "Lecture 4",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nRange\n\\[\n(\\text{range of x}) \\,=\\, (\\text{maximum value in x}) \\,-\\, (\\text{minimum value in x})\n\\] - The range is the difference between the largest and the smallest values in a given vector. - max(x) returns the maximum value of the values in a given vector \\(x\\). - min(x) returns the minimum value of the values in a given vector \\(x\\)."
-  },
-  {
-    "objectID": "danl-cw/danl-101-cw-01.html#question-1.",
-    "href": "danl-cw/danl-101-cw-01.html#question-1.",
-    "title": "R Basics",
-    "section": "",
-    "text": "base-R provides the R object state.name. Write an R code to assign state.name to a variable, US_states.\nAnswer:"
-  },
-  {
-    "objectID": "danl-cw/danl-101-cw-01.html#question-2.",
-    "href": "danl-cw/danl-101-cw-01.html#question-2.",
-    "title": "R Basics",
-    "section": "Question 2.",
-    "text": "Question 2.\nThe temp_F vector contains the average high temperatures in January for the following cities: Seoul, Lagos, Paris, Rio de Janeiro, San Juan, and Rochester.\n\ntemp_F &lt;- c(35, 88, 42, 84, 81, 30)\n\nCreate a new vector named temp_C that stores the converted Celsius temperatures. Below is the conversion formula:\n\\[\nC = \\frac{5}{9}\\times(F - 32)\n\\]\nAnswer:"
-  },
-  {
-    "objectID": "danl-cw/danl-101-cw-01.html#question-3.",
-    "href": "danl-cw/danl-101-cw-01.html#question-3.",
-    "title": "R Basics",
-    "section": "Question 3.",
-    "text": "Question 3.\n\nWrite an R code to calculate the standard deviation (SD) of the integer vector x below manually. That is to calculate the SD without using the sd() function.\n\n\nx &lt;- 1:25\n\n\nAlso, write an R code to test whether the standard deviation you calculate manually above is equal to sd(x).\n\nAnswer:"
-  },
-  {
-    "objectID": "danl-cw/danl-101-cw-01.html#question-4.",
-    "href": "danl-cw/danl-101-cw-01.html#question-4.",
-    "title": "R Basics",
-    "section": "Question 4.",
-    "text": "Question 4.\n\nWrite an R code to read the CSV file, https://bcdanl.github.io/data/mlb_teams.csv using the tidyverse’s read_csv() function, and assign it to MLB_teams.\n\nAnswer:"
-  },
-  {
-    "objectID": "danl-cw/danl-101-cw-01.html#question-5.",
-    "href": "danl-cw/danl-101-cw-01.html#question-5.",
-    "title": "R Basics",
-    "section": "Question 5.",
-    "text": "Question 5.\nWrite an R code to provide summary statistics—mean, standard deviation, minimum, first quartile, median, third quartile, and maximum—for variables in the MLB_teams data.frame.\nAnswer:"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-17",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-17",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\nCtrl (command for Mac Users) + F is useful when finding a phrase (and replace the phrase) in the RScript."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion-2",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion-2",
-    "title": "Lecture 4",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nVariance\n\\[\n\\overline{s}^{2} = \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\,\n\\]\n\nThe variance is used to calculate the deviation of all data points in a given vector from the mean.\n\nThe larger the variance, the more the data are spread out from the mean and the more variability one can observe in the data sample.\nTo prevent the offsetting of negative and positive differences, the variance takes into account the square of the distances from the mean.\n\nvar(x) calculates the variance of the values in a vector \\(x\\)."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion-3",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion-3",
-    "title": "Lecture 4",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nStandard Deviation\n\\[\n\\overline{s} = \\sqrt{ \\left( \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\, \\right) }\n\\]\n\nThe standard deviation (SD) is also a measure of the spread of values within a given vector.\n\nSD is simply the square root of the variance.\nsd(x) calculates the standard deviation of the values in a vector \\(x\\)\nSD helps us understand how representative the mean is of the data.\nA low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion-4",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion-4",
-    "title": "Lecture 4",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nQuartiles and Interquartile Range\n\nA quartile is a quarter of the number of data points in a given vector.\n\nQuartiles are determined by first sorting the values and then splitting the sorted values into four disjoint smaller data sets.\nQuartiles are a useful measure of dispersion because they are much less affected by outliers or a skewness in the data set than the equivalent measures in the whole data set.\n\nAn interquartile range describes the difference between the third quartile (Q3) and the first quartile (Q1), telling us about the range of the middle half of the scores in the distribution.\n\nThe quartile-driven descriptive measures (both centrality and dispersion) are best explained with a popular plot called a box plot."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion-5",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#measures-of-dispersion-5",
-    "title": "Lecture 4",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\n\n\nx &lt;- c(1, 2, 3, 4, 5)\n\nvar(x)\nsd(x)\n\nquantile(x)\nquantile(x, 0) # minimum\nquantile(x, 0.25) # the first quartile\nquantile(x, 0.5) # the second quartile\nquantile(x, 0.75) # the third quartile\nquantile(x, 1) # maximum"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-danl-tools-1",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-danl-tools-1",
-    "title": "Lecture 4",
-    "section": "Setting the DANL Tools",
-    "text": "Setting the DANL Tools\nWorkflow: Shortcuts in Posit Cloud (RStudio)\n\n\n\n\nWindows\n\nAlt + - adds an assignment operator\nCtrl + Enter runs a current line of code\nCtrl + Shift + C makes a comment (#)\nCtrl + Shift + R makes a section (# Section - - - -)\n\n\n\n\nMac\n\noption + - adds an assignment operator\ncommand + return runs a current line of code\ncommand + shift + C makes a comment (#)\ncommand + shift + R makes a section (# Section - - - -)"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-18",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-18",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: Auto-completion\n\n\nlibr\n\n\n\n\n\n\n\nAuto-completion of command is useful.\n\nType libr in the RScript in RStudio and wait for a second."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-19",
-    "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools-19",
-    "title": "Lecture 4",
-    "section": "Setting the Tools",
-    "text": "Setting the Tools\nWorkflow: STOP icon\n\n\n\n\nWhen the code is running, RStudio shows the STOP icon ( 🛑 ) at the top right corner in the Console Pane.\n\nDo not click it unless if you want to stop running the code."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics",
-    "title": "Lecture 5",
-    "section": "R Basics",
-    "text": "R Basics\nWorkflow: Quotation marks, parentheses, and +\nx &lt;- \"hello\n\nQuotation marks and parentheses must always come in a pair.\n\nIf not, Console Pane will show you the continuation character +:\n\nThe + tells you that R is waiting for more input; it doesn’t think you’re done yet."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-1",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-1",
-    "title": "Lecture 5",
-    "section": "R Basics",
-    "text": "R Basics\nFunctions\n\nA function can take any number and type of input parameters and return any number and type of output results.\nR ships a vast number of built-in functions.\nR also allows a user to define a new function.\nWe will mostly use built-in functions."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-2",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-2",
-    "title": "Lecture 5",
-    "section": "R Basics",
-    "text": "R Basics\nFunctions, Arguments, and Parameters\nlibrary(tidyverse)\n\n# The function `str_c()`, provided by `tidyverse`, concatenates characters.\nstr_c(\"Data\", \"Analytics\")\nstr_c(\"Data\", \"Analytics\", sep = \"!\")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that R passes to a parameter if the function invocation does not explicitly provide one."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-3",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-3",
-    "title": "Lecture 5",
-    "section": "R Basics",
-    "text": "R Basics\nArithmetic Operations and Mathematical Functions\n\n\nAlgebraMath functions\n\n\n\n\n5 + 3\n5 - 3\n5 * 3\n5 / 3\n5^3\n\n( 3 + 4 )^2\n3 + 4^2\n3 + 2 * 4^2\n3 + 2 * 4 + 2\n(3 + 2) * (4 + 2)\n\n\n\nAll of the basic operators with parentheses we see in mathematics are available to use.\nR can be used for a wide range of mathematical calculations.\n\n\n\n\n\n5 * abs(-3)\nsqrt(17) / 2\nexp(3)\nlog(3)\nlog(exp(3))\nexp(log(3))\n\nR has many built-in mathematical functions that facilitate calculations and data analysis.\n\n\n\nabs(x): the absolute value \\(|x|\\)\nsqrt(x): the square root \\(\\sqrt{x}\\)\nexp(x): the exponential value \\(e^x\\), where \\(e = 2.718...\\)\nlog(x): the natural logarithm \\(\\log_{e}(x)\\), or simply \\(\\log(x)\\)"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-4",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-4",
-    "title": "Lecture 5",
-    "section": "R Basics",
-    "text": "R Basics\nVectorized Operations\na &lt;- c(1, 2, 3, 4, 5)\nb &lt;- c(5, 4, 3, 2, 1)\n\na + b\na - b\na * b\na / b\nsqrt(a)\n\nVectorized operations mean applying a function to every element of a vector without explicitly writing a loop.\n\nThis is possible because most functions in R are vectorized, meaning they are designed to operate on vectors element-wise.\nVectorized operations are a powerful feature of R, enabling efficient and concise code for data analysis and manipulation."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-central-tendency",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-central-tendency",
-    "title": "Lecture 5",
-    "section": "Measures of Central Tendency",
-    "text": "Measures of Central Tendency\n\nMeasures of centrality are used to describe the central or typical value in a given vector.\n\nThey represent the “center” or most representative value of a data set.\n\nTo describe this centrality, several statistical measures are commonly used:\n\nMean: The arithmetic average of all values in the data set.\nMedian: The middle value when the data set is ordered from least to greatest.\nMode: The most frequently occurring value in the data set."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-central-tendency-1",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-central-tendency-1",
-    "title": "Lecture 5",
-    "section": "Measures of Central Tendency",
-    "text": "Measures of Central Tendency\nMean\n\\[\n\\overline{x} = \\frac{x_{1} + x_{2} + \\cdots + x_{N}}{N}\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nsum(x)\nmean(x)\n\nThe arithmetic mean (or simply mean or average) is the sum of all the values divided by the number of observations in the data set.\n\nmean() calculates the mean of the values in a vector.\nFor a given vector \\(x\\), if we happen to have \\(N\\) observations \\((x_{1}, x_{2}, \\cdots , x_{N})\\), we can write the arithmetic mean of the data sample as above."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion",
-    "title": "Lecture 5",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\n\nMeasures of dispersion are used to describe the degree of variation in a given vector.\n\nThey are a representation of the numerical spread of a given data set.\n\nTo describe this dispersion, a number of statistical measures are developed\n\nRange\nVariance\nStandard deviation\nQuartile"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion-1",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion-1",
-    "title": "Lecture 5",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nRange\n\\[\n(\\text{range of x}) \\,=\\, (\\text{maximum value in x}) \\,-\\, (\\text{minimum value in x})\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nmax(x)\nmin(x)\nrange &lt;- max(x) - min(x)\n\nThe range is the difference between the largest and the smallest values in a given vector.\n\nmax(x) returns the maximum value of the values in a given vector \\(x\\).\nmin(x) returns the minimum value of the values in a given vector \\(x\\)."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion-2",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion-2",
-    "title": "Lecture 5",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nVariance\n\\[\n\\overline{s}^{2} = \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\,\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nvar(x)\n\nThe variance is used to calculate the deviation of all data points in a given vector from the mean.\n\nThe larger the variance, the more the data are spread out from the mean and the more variability one can observe in the data sample.\nTo prevent the offsetting of negative and positive differences, the variance takes into account the square of the distances from the mean.\n\nvar(x) calculates the variance of the values in a vector \\(x\\)."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion-3",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion-3",
-    "title": "Lecture 5",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nStandard Deviation\n\\[\n\\overline{s} = \\sqrt{ \\left( \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\, \\right) }\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nsd(x)\n\nThe standard deviation (SD)—the square root of the variance—is also a measure of the spread of values within a given vector.\n\nsd(x) calculates the standard deviation of the values in a vector \\(x\\)\nSD helps us understand how representative the mean is of the data.\n\nA low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion-4",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion-4",
-    "title": "Lecture 5",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nQuartiles\nquantile(x)\nquantile(x, 0) # the minimum\nquantile(x, 0.25) # the 1st quartile\nquantile(x, 0.5) # the 2nd quartile\nquantile(x, 0.75) # the 3rd quartile\nquantile(x, 1) # the maximum\n\nA quartile is a quarter of the number of data points in a given vector.\n\nQuartiles are determined by first sorting the values and then splitting the sorted values into four disjoint smaller data sets.\nQuartiles are a useful measure of dispersion because they are much less affected by outliers or a skewness in the data set than the equivalent measures in the whole data set."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion-5",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-dispersion-5",
-    "title": "Lecture 5",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nInterquartile Range\n\n\n\n\n\n\n\n\n\nAn interquartile range describes the difference between the third quartile (Q3) and the first quartile (Q1), telling us about the range of the middle half of the scores in the distribution.\n\nThe quartile-driven descriptive measures (both centrality and dispersion) are best explained with a popular plot called a box plot."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-5",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-5",
-    "title": "Lecture 5",
-    "section": "R Basics",
-    "text": "R Basics\nAbsolute vs. Relative Pathnames\n\n\nAbsolute PathRelative Path\n\n\n\nComplete path from the root directory to the target file or directory.\nIndependent of the current working directory.\nExample\n\nMac:\n\n/Users/user/documents/data/car_data.csv\n\nWindows:\n\nC:\\\\Users\\\\user\\\\Documents\\\\data\\\\car_data.csv\n\n\n\n\n\n\nPath relative to the working directory.\n\nRelative path changes based on the working directory. \n\nExample:\n\nAbsolute pathname for car_data.csv is /Users/user/documents/data/car_data.csv.\nSuppose the current directory is /Users/user/documents/.\nThen, the relative pathname for car_data.csv is dada/car_data.csv.\n\nFor the Posit Cloud project, we can use a relative path.\n\nThe current working directory in is /cloud/project/"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-6",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-6",
-    "title": "Lecture 5",
-    "section": "R Basics",
-    "text": "R Basics\nWorking with Data from Files\n\n\nWe use the read_csv() function to read a comma-separated values (CSV) file.\n\n\nDownload the CSV file, car_data.csv from the Class Files module in our Brightspace.\nCreate a sub-directory, data, by clicking “New Folder” in the Files Pane in Posit Cloud.\nUpload the car_data.csv file to the sub-directory data.\nProvide the relative pathname for the file, car_data.csv, to the read_csv() function.\n\nuciCar &lt;- read_csv('HERE WE PROVIDE A RELATIVE PATHNAME FOR car_data.csv')\nView(uciCar)\n\nView()/view() displays the data in a simple spreadsheet-like grid."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-7",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-7",
-    "title": "Lecture 5",
-    "section": "R Basics",
-    "text": "R Basics\nExamining data.frames\n\n\nclass(uciCar)\ndim(uciCar)\nnrow(uciCar)\nncol(uciCar)\n\nlibrary(skimr)\nskim(uciCar)\n\n\n\ndim() shows how many rows and columns are in the data for data.frame.\nnrow() and ncol() shows the number of rows and columns for data.frame respectively.\nskimr::skim() provides a more detailed summary.\n\nskimr is the R package that provides the function skim()."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-8",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-8",
-    "title": "Lecture 5",
-    "section": "R Basics",
-    "text": "R Basics\nReading data.frames from an URL\ntvshows &lt;- read_csv(\n        'https://bcdanl.github.io/data/tvshows.csv')\n\nWe can import the CSV file from the web."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-9",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#r-basics-9",
-    "title": "Lecture 5",
-    "section": "R Basics",
-    "text": "R Basics\nTidy data.frame: Variables, Observations, and Values\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-central-tendency-2",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-central-tendency-2",
-    "title": "Lecture 5",
-    "section": "Measures of Central Tendency",
-    "text": "Measures of Central Tendency\nMedian\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx &lt;- c(1, 2, 3, 4, 5)\nmedian(x)\n\nThe median is the measure of center value in a given vector.\n\nmedian() calculates the median of the values in a vector."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-central-tendency-3",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#measures-of-central-tendency-3",
-    "title": "Lecture 5",
-    "section": "Measures of Central Tendency",
-    "text": "Measures of Central Tendency\nMode\n\nThe mode is the value(s) that occurs most frequently in a given vector.\nMode is useful, although it is often not a very good representation of centrality.\nThe R package, modest, provides the mfw(x) function that calculate the mode of values in vector x."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#descriptive-statistics",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#descriptive-statistics",
-    "title": "Lecture 5",
-    "section": "Descriptive Statistics",
-    "text": "Descriptive Statistics\n\n\n\n\n\n\nDescriptive statistics condense data into manageable summaries, making it easier to understand key characteristics of the data.\n\nThey help reveal patterns, trends, and relationships within the data that might not be immediately apparent from raw numbers."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#descriptive-statistics-1",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#descriptive-statistics-1",
-    "title": "Lecture 5",
-    "section": "Descriptive Statistics",
-    "text": "Descriptive Statistics\n\nData quality assessment:\n\nDescriptive statistics can highlight potential issues in data quality, such as outliers or unexpected distributions, prompting further investigation.\n\nFoundation for further analysis:\nDescriptive statistics often serve as a starting point for more advanced statistical analyses and predictive modeling.\nData visualization enhancement:\n\nDescriptive statistics often form the basis for effective data visualizations, making complex data more accessible and understandable."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#descriptive-statistics-2",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#descriptive-statistics-2",
-    "title": "Lecture 5",
-    "section": "Descriptive Statistics",
-    "text": "Descriptive Statistics\nMeasures of Central Tendency\n\nMeasures of centrality are used to describe the central or typical value in a given vector.\n\nThey represent the “center” or most representative value of a data set.\n\nTo describe this centrality, several statistical measures are commonly used:\n\nMean: The arithmetic average of all values in the data set.\nMedian: The middle value when the data set is ordered from least to greatest.\nMode: The most frequently occurring value in the data set."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-05-2024-0910.html#descriptive-statistics-3",
-    "href": "danl-lec/danl-101-lec-05-2024-0910.html#descriptive-statistics-3",
-    "title": "Lecture 5",
-    "section": "Descriptive Statistics",
-    "text": "Descriptive Statistics\nMeasures of Dispersion\n\nMeasures of dispersion are used to describe the degree of variation in a given vector.\n\nThey are a representation of the numerical spread of a given data set.\n\nTo describe this dispersion, a number of statistical measures are developed\n\nRange\nVariance\nStandard deviation\nQuartile"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics",
-    "title": "Lecture 6",
-    "section": "Descriptive Statistics",
-    "text": "Descriptive Statistics\n\n\n\n\n\n\nDescriptive statistics condense data into manageable summaries, making it easier to understand key characteristics of the data.\n\nThey help reveal patterns, trends, and relationships within the data that might not be immediately apparent from raw numbers."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-1",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-1",
-    "title": "Lecture 6",
-    "section": "Descriptive Statistics",
-    "text": "Descriptive Statistics\n\nData quality assessment:\n\nDescriptive statistics can highlight potential issues in data quality, such as outliers or unexpected distributions, prompting further investigation.\n\nFoundation for further analysis:\n\nDescriptive statistics often serve as a starting point for more advanced statistical analyses and predictive modeling.\n\nData visualization enhancement:\n\nDescriptive statistics often form the basis for effective data visualizations, making complex data more accessible and understandable."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-2",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-2",
-    "title": "Lecture 6",
-    "section": "Descriptive Statistics",
-    "text": "Descriptive Statistics\nMeasures of Central Tendency\n\nMeasures of centrality are used to describe the central or typical value in a given vector.\n\nThey represent the “center” or most representative value of a data set.\n\nTo describe this centrality, several statistical measures are commonly used:\n\nMean: The arithmetic average of all values in the data set.\nMedian: The middle value when the data set is ordered from least to greatest.\nMode: The most frequently occurring value in the data set."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-1",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-1",
-    "title": "Lecture 6",
-    "section": "Measures of Central Tendency",
-    "text": "Measures of Central Tendency\nMean\n\\[\n\\overline{x} = \\frac{x_{1} + x_{2} + \\cdots + x_{N}}{N}\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nsum(x)\nmean(x)\n\nThe arithmetic mean (or simply mean or average) is the sum of all the values divided by the number of observations in the data set.\n\nmean() calculates the mean of the values in a vector.\nFor a given vector \\(x\\), if we happen to have \\(N\\) observations \\((x_{1}, x_{2}, \\cdots , x_{N})\\), we can write the arithmetic mean of the data sample as above."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-2",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-2",
-    "title": "Lecture 6",
-    "section": "Measures of Central Tendency",
-    "text": "Measures of Central Tendency\nMedian\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx &lt;- c(1, 2, 3, 4, 5)\nmedian(x)\n\nThe median is the measure of center value in a given vector.\n\nmedian() calculates the median of the values in a vector."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-3",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-central-tendency-3",
-    "title": "Lecture 6",
-    "section": "Measures of Central Tendency",
-    "text": "Measures of Central Tendency\nMode\n\nThe mode is the value(s) that occurs most frequently in a given vector.\nMode is useful, although it is often not a very good representation of centrality.\nThe R package, modest, provides the mfw(x) function that calculate the mode of values in vector x."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-3",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#descriptive-statistics-3",
-    "title": "Lecture 6",
-    "section": "Descriptive Statistics",
-    "text": "Descriptive Statistics\nMeasures of Dispersion\n\nMeasures of dispersion are used to describe the degree of variation in a given vector.\n\nThey are a representation of the numerical spread of a given data set.\n\nTo describe this dispersion, a number of statistical measures are developed\n\nRange\nVariance\nStandard deviation\nQuartile"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-1",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-1",
-    "title": "Lecture 6",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nRange\n\\[\n(\\text{range of x}) \\,=\\, (\\text{maximum value in x}) \\,-\\, (\\text{minimum value in x})\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nmax(x)\nmin(x)\nrange &lt;- max(x) - min(x)\n\nThe range is the difference between the largest and the smallest values in a given vector.\n\nmax(x) returns the maximum value of the values in a given vector \\(x\\).\nmin(x) returns the minimum value of the values in a given vector \\(x\\)."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-2",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-2",
-    "title": "Lecture 6",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nVariance\n\\[\n\\overline{s}^{2} = \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\,\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nvar(x)\n\nThe variance is used to calculate the deviation of all data points in a given vector from the mean.\n\nThe larger the variance, the more the data are spread out from the mean and the more variability one can observe in the data sample.\nTo prevent the offsetting of negative and positive differences, the variance takes into account the square of the distances from the mean.\n\nvar(x) calculates the variance of the values in a vector \\(x\\)."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-3",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-3",
-    "title": "Lecture 6",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nStandard Deviation\n\\[\n\\overline{s} = \\sqrt{ \\left( \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\, \\right) }\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nsd(x)\n\nThe standard deviation (SD)—the square root of the variance—is also a measure of the spread of values within a given vector.\n\nsd(x) calculates the standard deviation of the values in a vector \\(x\\)\nSD helps us understand how representative the mean is of the data.\n\nA low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-4",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-4",
-    "title": "Lecture 6",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nQuartiles\nquantile(x)\nquantile(x, 0) # the minimum\nquantile(x, 0.25) # the 1st quartile\nquantile(x, 0.5) # the 2nd quartile\nquantile(x, 0.75) # the 3rd quartile\nquantile(x, 1) # the maximum\n\nA quartile is a quarter of the number of data points in a given vector.\n\nQuartiles are determined by first sorting the values and then splitting the sorted values into four disjoint smaller data sets.\nQuartiles are a useful measure of dispersion because they are much less affected by outliers or a skewness in the data set than the equivalent measures in the whole data set."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-5",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#measures-of-dispersion-5",
-    "title": "Lecture 6",
-    "section": "Measures of Dispersion",
-    "text": "Measures of Dispersion\nInterquartile Range\n\n\n\n\n\n\n\n\n\nAn interquartile range describes the difference between the third quartile (Q3) and the first quartile (Q1), telling us about the range of the middle half of the scores in the distribution.\n\nThe quartile-driven descriptive measures (both centrality and dispersion) are best explained with a popular plot called a box plot."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-1",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-1",
-    "title": "Lecture 6",
-    "section": "R Basics",
-    "text": "R Basics\nAbsolute Pathnames\n\nComplete path from the root directory to the target file or directory.\nIndependent of the working directory.\n\ngetwd() returns the pathname of the working directory.\nThe working directory for a Posit Cloud project is /cloud/project/\n\nExample of absolute pathnames for custdata_rev.csv\n\nMac:\n\n/Users/user/documents/data/custdata_rev.csv\n\nWindows:\n\nC:\\\\Users\\\\user\\\\Documents\\\\data\\\\custdata_rev.csv"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-2",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-2",
-    "title": "Lecture 6",
-    "section": "R Basics",
-    "text": "R Basics\nRelative Pathnames\n\nPath relative to the working directory.\nExample:\n\nAbsolute pathname for custdata_rev.csv is /Users/user/documents/data/custdata_rev.csv.\nSuppose the working directory is /Users/user/documents/.\nThen, the relative pathname for custdata_rev.csv is dada/custdata_rev.csv.\n\nWhen using the Posit Cloud project, we can use a relative path to read a file."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-3",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-3",
-    "title": "Lecture 6",
-    "section": "R Basics",
-    "text": "R Basics\nWorking with Data from Files\n\n\nWe use the read_csv() function to read a comma-separated values (CSV) file.\n\n\nDownload the CSV file, custdata_rev.csv from the Class Files module in our Brightspace.\nCreate a sub-directory, data, by clicking “New Folder” in the Files Pane in Posit Cloud.\nUpload the custdata_rev.csv file to the sub-directory data.\nProvide the relative pathname for the file, custdata_rev.csv, to the read_csv() function.\n\ncustdata &lt;- read_csv('HERE WE PROVIDE A RELATIVE PATHNAME FOR custdata_rev.csv')\nView(custdata)\n\nView() displays the data in a simple spreadsheet-like grid."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-4",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-4",
-    "title": "Lecture 6",
-    "section": "R Basics",
-    "text": "R Basics\nExamining data.frames\n\n\nclass(custdata)\ndim(custdata)\nnrow(custdata)\nncol(custdata)\n\nsummary(custdata_rev)\nlibrary(skimr)\nskim(custdata_rev)\n\n\n\ndim() shows how many rows and columns are in the data for data.frame.\nnrow() and ncol() shows the number of rows and columns for data.frame respectively.\nskimr::skim() refers to the skim() function from the skimr package.\n\nThis provides a more comprehensive summary.\nIt’s a more user-friendly alternative to functions like base-R’s summary(), offering both numerical and categorical summaries."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-5",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-5",
-    "title": "Lecture 6",
-    "section": "R Basics",
-    "text": "R Basics\nReading data.frames from an URL\ntvshows &lt;- read_csv(\n        'https://bcdanl.github.io/data/tvshows.csv')\n\nWe can import the CSV file from the web."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-6",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-6",
+    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-7",
+    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-7",
     "title": "Lecture 6",
     "section": "R Basics",
     "text": "R Basics\nTidy data.frame: Variables, Observations, and Values\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "Descriptive statistics condense data into manageable summaries, making it easier to understand key characteristics of the data.\n\nThey help reveal patterns, trends, and relationships within the data that might not be immediately apparent from raw numbers.\n\n\n\n\n\n\nData quality assessment:\n\nDescriptive statistics can highlight potential issues in data quality, such as outliers or unexpected distributions, prompting further investigation.\n\nFoundation for further analysis:\n\nDescriptive statistics often serve as a starting point for more advanced statistical analyses and predictive modeling.\n\nData visualization enhancement:\n\nDescriptive statistics often form the basis for effective data visualizations, making complex data more accessible and understandable.\n\n\n\n\n\n\n\n\nMeasures of centrality are used to describe the central or typical value in a given vector.\n\nThey represent the “center” or most representative value of a data set.\n\nTo describe this centrality, several statistical measures are commonly used:\n\nMean: The arithmetic average of all values in the data set.\nMedian: The middle value when the data set is ordered from least to greatest.\nMode: The most frequently occurring value in the data set.\n\n\n\n\n\n\n\n\n\\[\n\\overline{x} = \\frac{x_{1} + x_{2} + \\cdots + x_{N}}{N}\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nsum(x)\nmean(x)\n\nThe arithmetic mean (or simply mean or average) is the sum of all the values divided by the number of observations in the data set.\n\nmean() calculates the mean of the values in a vector.\nFor a given vector \\(x\\), if we happen to have \\(N\\) observations \\((x_{1}, x_{2}, \\cdots , x_{N})\\), we can write the arithmetic mean of the data sample as above.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx &lt;- c(1, 2, 3, 4, 5)\nmedian(x)\n\nThe median is the measure of center value in a given vector.\n\nmedian() calculates the median of the values in a vector.\n\n\n\n\n\n\n\n\n\nThe mode is the value(s) that occurs most frequently in a given vector.\nMode is useful, although it is often not a very good representation of centrality.\nThe R package, modest, provides the mfw(x) function that calculate the mode of values in vector x.\n\n\n\n\n\n\n\n\nMeasures of dispersion are used to describe the degree of variation in a given vector.\n\nThey are a representation of the numerical spread of a given data set.\n\nTo describe this dispersion, a number of statistical measures are developed\n\nRange\nVariance\nStandard deviation\nQuartile\n\n\n\n\n\n\n\n\n\\[\n(\\text{range of x}) \\,=\\, (\\text{maximum value in x}) \\,-\\, (\\text{minimum value in x})\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nmax(x)\nmin(x)\nrange &lt;- max(x) - min(x)\n\nThe range is the difference between the largest and the smallest values in a given vector.\n\nmax(x) returns the maximum value of the values in a given vector \\(x\\).\nmin(x) returns the minimum value of the values in a given vector \\(x\\).\n\n\n\n\n\n\n\n\n\\[\n\\overline{s}^{2} = \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\,\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nvar(x)\n\nThe variance is used to calculate the deviation of all data points in a given vector from the mean.\n\nThe larger the variance, the more the data are spread out from the mean and the more variability one can observe in the data sample.\nTo prevent the offsetting of negative and positive differences, the variance takes into account the square of the distances from the mean.\n\nvar(x) calculates the variance of the values in a vector \\(x\\).\n\n\n\n\n\n\n\n\\[\n\\overline{s} = \\sqrt{ \\left( \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\, \\right) }\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nsd(x)\n\nThe standard deviation (SD)—the square root of the variance—is also a measure of the spread of values within a given vector.\n\nsd(x) calculates the standard deviation of the values in a vector \\(x\\)\nSD helps us understand how representative the mean is of the data.\n\nA low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean.\n\n\n\n\n\n\n\n\n\nquantile(x)\nquantile(x, 0) # the minimum\nquantile(x, 0.25) # the 1st quartile\nquantile(x, 0.5) # the 2nd quartile\nquantile(x, 0.75) # the 3rd quartile\nquantile(x, 1) # the maximum\n\nA quartile is a quarter of the number of data points in a given vector.\n\nQuartiles are determined by first sorting the values and then splitting the sorted values into four disjoint smaller data sets.\nQuartiles are a useful measure of dispersion because they are much less affected by outliers or a skewness in the data set than the equivalent measures in the whole data set.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAn interquartile range describes the difference between the third quartile (Q3) and the first quartile (Q1), telling us about the range of the middle half of the scores in the distribution.\n\nThe quartile-driven descriptive measures (both centrality and dispersion) are best explained with a popular plot called a box plot.\n\n\n\n\n\n\n\n\n\n\n\nComplete path from the root directory to the target file or directory.\nIndependent of the working directory.\n\ngetwd() returns the pathname of the working directory.\nThe working directory for a Posit Cloud project is /cloud/project/\n\nExample of absolute pathnames for custdata_rev.csv\n\nMac:\n\n/Users/user/documents/data/custdata_rev.csv\n\nWindows:\n\nC:\\\\Users\\\\user\\\\Documents\\\\data\\\\custdata_rev.csv\n\n\n\n\n\n\n\n\n\n\nPath relative to the working directory.\nExample:\n\nAbsolute pathname for custdata_rev.csv is /Users/user/documents/data/custdata_rev.csv.\nSuppose the working directory is /Users/user/documents/.\nThen, the relative pathname for custdata_rev.csv is dada/custdata_rev.csv.\n\nWhen using the Posit Cloud project, we can use a relative path to read a file.\n\n\n\n\n\n\n\n\n\nWe use the read_csv() function to read a comma-separated values (CSV) file.\n\n\nDownload the CSV file, custdata_rev.csv from the Class Files module in our Brightspace.\nCreate a sub-directory, data, by clicking “New Folder” in the Files Pane in Posit Cloud.\nUpload the custdata_rev.csv file to the sub-directory data.\nProvide the relative pathname for the file, custdata_rev.csv, to the read_csv() function.\n\ncustdata &lt;- read_csv('HERE WE PROVIDE A RELATIVE PATHNAME FOR custdata_rev.csv')\nView(custdata)\n\nView() displays the data in a simple spreadsheet-like grid.\n\n\n\n\n\n\n\n\n\n\nclass(custdata)\ndim(custdata)\nnrow(custdata)\nncol(custdata)\n\nsummary(custdata_rev)\nlibrary(skimr)\nskim(custdata_rev)\n\n\n\ndim() shows how many rows and columns are in the data for data.frame.\nnrow() and ncol() shows the number of rows and columns for data.frame respectively.\nskimr::skim() refers to the skim() function from the skimr package.\n\nThis provides a more comprehensive summary.\nIt’s a more user-friendly alternative to functions like base-R’s summary(), offering both numerical and categorical summaries.\n\n\n\n\n\n\n\n\ntvshows &lt;- read_csv(\n        'https://bcdanl.github.io/data/tvshows.csv')\n\nWe can import the CSV file from the web.\n\n\n\n\n\n\n\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#descriptive-statistics",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#descriptive-statistics",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "Descriptive statistics condense data into manageable summaries, making it easier to understand key characteristics of the data.\n\nThey help reveal patterns, trends, and relationships within the data that might not be immediately apparent from raw numbers."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#descriptive-statistics-1",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#descriptive-statistics-1",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "Data quality assessment:\n\nDescriptive statistics can highlight potential issues in data quality, such as outliers or unexpected distributions, prompting further investigation.\n\nFoundation for further analysis:\n\nDescriptive statistics often serve as a starting point for more advanced statistical analyses and predictive modeling.\n\nData visualization enhancement:\n\nDescriptive statistics often form the basis for effective data visualizations, making complex data more accessible and understandable."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#descriptive-statistics-2",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#descriptive-statistics-2",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "Measures of centrality are used to describe the central or typical value in a given vector.\n\nThey represent the “center” or most representative value of a data set.\n\nTo describe this centrality, several statistical measures are commonly used:\n\nMean: The arithmetic average of all values in the data set.\nMedian: The middle value when the data set is ordered from least to greatest.\nMode: The most frequently occurring value in the data set."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-central-tendency-1",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-central-tendency-1",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "\\[\n\\overline{x} = \\frac{x_{1} + x_{2} + \\cdots + x_{N}}{N}\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nsum(x)\nmean(x)\n\nThe arithmetic mean (or simply mean or average) is the sum of all the values divided by the number of observations in the data set.\n\nmean() calculates the mean of the values in a vector.\nFor a given vector \\(x\\), if we happen to have \\(N\\) observations \\((x_{1}, x_{2}, \\cdots , x_{N})\\), we can write the arithmetic mean of the data sample as above."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-central-tendency-2",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-central-tendency-2",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "x &lt;- c(1, 2, 3, 4, 5)\nmedian(x)\n\nThe median is the measure of center value in a given vector.\n\nmedian() calculates the median of the values in a vector."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-central-tendency-3",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-central-tendency-3",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "The mode is the value(s) that occurs most frequently in a given vector.\nMode is useful, although it is often not a very good representation of centrality.\nThe R package, modest, provides the mfw(x) function that calculate the mode of values in vector x."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#descriptive-statistics-3",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#descriptive-statistics-3",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "Measures of dispersion are used to describe the degree of variation in a given vector.\n\nThey are a representation of the numerical spread of a given data set.\n\nTo describe this dispersion, a number of statistical measures are developed\n\nRange\nVariance\nStandard deviation\nQuartile"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-dispersion-1",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-dispersion-1",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "\\[\n(\\text{range of x}) \\,=\\, (\\text{maximum value in x}) \\,-\\, (\\text{minimum value in x})\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nmax(x)\nmin(x)\nrange &lt;- max(x) - min(x)\n\nThe range is the difference between the largest and the smallest values in a given vector.\n\nmax(x) returns the maximum value of the values in a given vector \\(x\\).\nmin(x) returns the minimum value of the values in a given vector \\(x\\)."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-dispersion-2",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-dispersion-2",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "\\[\n\\overline{s}^{2} = \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\,\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nvar(x)\n\nThe variance is used to calculate the deviation of all data points in a given vector from the mean.\n\nThe larger the variance, the more the data are spread out from the mean and the more variability one can observe in the data sample.\nTo prevent the offsetting of negative and positive differences, the variance takes into account the square of the distances from the mean.\n\nvar(x) calculates the variance of the values in a vector \\(x\\)."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-dispersion-3",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-dispersion-3",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "\\[\n\\overline{s} = \\sqrt{ \\left( \\frac{(x_{1}-\\overline{x})^{2} + (x_{2}-\\overline{x})^{2} + \\cdots + (x_{N}-\\overline{x})^{2}}{N-1}\\;\\, \\right) }\n\\]\nx &lt;- c(1, 2, 3, 4, 5)\nsd(x)\n\nThe standard deviation (SD)—the square root of the variance—is also a measure of the spread of values within a given vector.\n\nsd(x) calculates the standard deviation of the values in a vector \\(x\\)\nSD helps us understand how representative the mean is of the data.\n\nA low SD suggests that the mean is a good summary, while a high SD suggests greater variability around the mean."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-dispersion-4",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-dispersion-4",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "quantile(x)\nquantile(x, 0) # the minimum\nquantile(x, 0.25) # the 1st quartile\nquantile(x, 0.5) # the 2nd quartile\nquantile(x, 0.75) # the 3rd quartile\nquantile(x, 1) # the maximum\n\nA quartile is a quarter of the number of data points in a given vector.\n\nQuartiles are determined by first sorting the values and then splitting the sorted values into four disjoint smaller data sets.\nQuartiles are a useful measure of dispersion because they are much less affected by outliers or a skewness in the data set than the equivalent measures in the whole data set."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-dispersion-5",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#measures-of-dispersion-5",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "An interquartile range describes the difference between the third quartile (Q3) and the first quartile (Q1), telling us about the range of the middle half of the scores in the distribution.\n\nThe quartile-driven descriptive measures (both centrality and dispersion) are best explained with a popular plot called a box plot."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-1",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-1",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "Complete path from the root directory to the target file or directory.\nIndependent of the working directory.\n\ngetwd() returns the pathname of the working directory.\nThe working directory for a Posit Cloud project is /cloud/project/\n\nExample of absolute pathnames for custdata_rev.csv\n\nMac:\n\n/Users/user/documents/data/custdata_rev.csv\n\nWindows:\n\nC:\\\\Users\\\\user\\\\Documents\\\\data\\\\custdata_rev.csv"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-2",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-2",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "Path relative to the working directory.\nExample:\n\nAbsolute pathname for custdata_rev.csv is /Users/user/documents/data/custdata_rev.csv.\nSuppose the working directory is /Users/user/documents/.\nThen, the relative pathname for custdata_rev.csv is dada/custdata_rev.csv.\n\nWhen using the Posit Cloud project, we can use a relative path to read a file."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-3",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-3",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "We use the read_csv() function to read a comma-separated values (CSV) file.\n\n\nDownload the CSV file, custdata_rev.csv from the Class Files module in our Brightspace.\nCreate a sub-directory, data, by clicking “New Folder” in the Files Pane in Posit Cloud.\nUpload the custdata_rev.csv file to the sub-directory data.\nProvide the relative pathname for the file, custdata_rev.csv, to the read_csv() function.\n\ncustdata &lt;- read_csv('HERE WE PROVIDE A RELATIVE PATHNAME FOR custdata_rev.csv')\nView(custdata)\n\nView() displays the data in a simple spreadsheet-like grid."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-4",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-4",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "class(custdata)\ndim(custdata)\nnrow(custdata)\nncol(custdata)\n\nsummary(custdata_rev)\nlibrary(skimr)\nskim(custdata_rev)\n\n\n\ndim() shows how many rows and columns are in the data for data.frame.\nnrow() and ncol() shows the number of rows and columns for data.frame respectively.\nskimr::skim() refers to the skim() function from the skimr package.\n\nThis provides a more comprehensive summary.\nIt’s a more user-friendly alternative to functions like base-R’s summary(), offering both numerical and categorical summaries."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-5",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-5",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "tvshows &lt;- read_csv(\n        'https://bcdanl.github.io/data/tvshows.csv')\n\nWe can import the CSV file from the web."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-6",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.knit.html#r-basics-6",
-    "title": "Lecture 6",
-    "section": "",
-    "text": "There are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
   }
 ]

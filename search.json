@@ -18,7 +18,7 @@
     "href": "listing-danl-101-cw.html",
     "title": "DANL 101 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nR Basics\n\n\nClasswork 1\n\n\nSeptember 5, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nR Basics\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "blog-listing.html",
@@ -81,14 +81,14 @@
     "href": "danl-cw/danl-101-cw-01.html#question-4.",
     "title": "R Basics",
     "section": "Question 4.",
-    "text": "Question 4.\n\nWrite an R code to read the CSV file, https://bcdanl.github.io/data/mlb_teams.csv using the tidyverse’s read_csv() function, and assign it to MLB_teams.\n\nAnswer:"
+    "text": "Question 4.\n\nConsider the vectors:\n\n\nmy_vec &lt;- c(-10, -20, 30, 10, 50, 40, -100)\nbeers &lt;- c(\"BUD LIGHT\", \"BUSCH LIGHT\", \"COORS LIGHT\", \n           \"GENESEE LIGHT\", \"MILLER LITE\", \"NATURAL LIGHT\")\n\n\nWrite an R code to filter only the positive values in my_vec.\nWrite an R code to access the beers that are in positions 2, 4, and 6 using indexing."
   },
   {
     "objectID": "danl-cw/danl-101-cw-01.html#question-5.",
     "href": "danl-cw/danl-101-cw-01.html#question-5.",
     "title": "R Basics",
     "section": "Question 5.",
-    "text": "Question 5.\nWrite an R code to provide summary statistics—mean, standard deviation, minimum, first quartile, median, third quartile, and maximum—for variables in the MLB_teams data.frame.\nAnswer:"
+    "text": "Question 5.\n\nWrite an R code to read the CSV file, https://bcdanl.github.io/data/mlb_teams.csv using the tidyverse’s read_csv() function, and assign it to MLB_teams.\n\nAnswer:"
   },
   {
     "objectID": "posts/starwars/starwars_df.html",
@@ -1089,7 +1089,7 @@
     "href": "index.html#bullet-classwork",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nR Basics\n\n\nSeptember 5, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nR Basics\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -1181,5 +1181,12 @@
     "title": "Bio",
     "section": "Memberships",
     "text": "Memberships\n\n\n\n\n\n2022—present\nSouthern Economic Association\n\n\n2018—present\nAssociation of Environmental and Resource Economists\n\n\n2017—present\nAmerican Economic Association\n\n\n2017—2019\nEconometric Society"
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-01.html#question-6.",
+    "href": "danl-cw/danl-101-cw-01.html#question-6.",
+    "title": "R Basics",
+    "section": "Question 6.",
+    "text": "Question 6.\nWrite an R code to provide summary statistics—mean, standard deviation, minimum, first quartile, median, third quartile, and maximum—for variables in the MLB_teams data.frame.\nAnswer:"
   }
 ]

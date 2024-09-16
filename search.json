@@ -1075,7 +1075,7 @@
     "href": "index.html#bullet-lecture-slides",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 6\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 7\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-course-q-a",
@@ -1103,7 +1103,7 @@
     "href": "listing-danl-101-lec.html",
     "title": "DANL 101 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 6\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nRStudio; R Basics\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nData Analytics in the Retail Value Chain; Data Analytics vs. Data Science\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nIntroduction with Sports Analytics & Business Intelligence\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 7\n\n\nR Basics\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nRStudio; R Basics\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nData Analytics in the Retail Value Chain; Data Analytics vs. Data Science\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nIntroduction with Sports Analytics & Business Intelligence\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "econml.html",
@@ -1188,5 +1188,33 @@
     "title": "R Basics",
     "section": "Question 6.",
     "text": "Question 6.\nWrite an R code to provide summary statistics—mean, standard deviation, minimum, first quartile, median, third quartile, and maximum—for variables in the MLB_teams data.frame.\nAnswer:"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-1",
+    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-1",
+    "title": "Lecture 7",
+    "section": "R Basics",
+    "text": "R Basics\nAccessing Subsets of Vectors in R\nIndex\n\nA numerical or positional reference used to access individual elements within data structures like a vector or a data.frame.\n\nIn R, the index starts at 1.\n\nmy_vector &lt;- c(10, 20, 30, 40, 50)\nmy_vector[1]\nmy_vector[5]"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-2",
+    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-2",
+    "title": "Lecture 7",
+    "section": "R Basics",
+    "text": "R Basics\nAccessing Subsets of Vectors in R\nSlicing with a Range\n\nSelecting multiple elements by providing a range of indices.\n\n# Selects elements from index 2 to 4\nmy_vector[2:4]\n\n# Selects elements from index 3 to 5\nmy_vector[3:5]"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-3",
+    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-3",
+    "title": "Lecture 7",
+    "section": "R Basics",
+    "text": "R Basics\nAccessing Subsets of Vectors in R\nLogical Indexing\n\nUsing conditions to filter elements of a vector.\n\n# Selects elements greater than 10\nlogi_condition &lt;- my_vector &gt; 10\nmy_vector[ logi_condition ]"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-4",
+    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-4",
+    "title": "Lecture 7",
+    "section": "R Basics",
+    "text": "R Basics\nTidy data.frame: Variables, Observations, and Values\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
   }
 ]

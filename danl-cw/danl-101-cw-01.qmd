@@ -5,6 +5,7 @@ date: 2024-09-17
 from: markdown+emoji
 ---
 
+
 ## Question 1.
 base-R provides the R object `state.name`. Write an R code to assign `state.name` to a variable, `US_states`.
 

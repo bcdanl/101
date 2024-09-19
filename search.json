@@ -1075,7 +1075,7 @@
     "href": "index.html#bullet-lecture-slides",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 7\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 8\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-course-q-a",
@@ -1103,7 +1103,7 @@
     "href": "listing-danl-101-lec.html",
     "title": "DANL 101 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 7\n\n\nR Basics\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nRStudio; R Basics\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nData Analytics in the Retail Value Chain; Data Analytics vs. Data Science\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nIntroduction with Sports Analytics & Business Intelligence\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 8\n\n\nData Preparation and Management\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nR Basics\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nRStudio; R Basics\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nData Analytics in the Retail Value Chain; Data Analytics vs. Data Science\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nIntroduction with Sports Analytics & Business Intelligence\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "econml.html",
@@ -1223,5 +1223,208 @@
     "title": "Lecture 7",
     "section": "R Basics",
     "text": "R Basics\nTidy data.frame: Variables, Observations, and Values\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth",
+    "title": "Lecture 8",
+    "section": "Data Management Fuels Rapid Growth",
+    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nAirbnb attributes much of its growth from a small San Francisco startup to a $77.23 billion company (as of September 2024) to its effective use of data science and management.\nThe company shifted from using basic “cold numeric data” to leveraging complex data analysis for understanding individual user experiences and community trends."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-1",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-1",
+    "title": "Lecture 8",
+    "section": "Data Management Fuels Rapid Growth",
+    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nAirbnb developed the Dataportal, an integrated system that centralizes data resources, making it easier for employees to:\n\nAccess and analyze data quickly\nInform decision-making across various business aspects\nMaintain data consistency and accuracy"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-2",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-2",
+    "title": "Lecture 8",
+    "section": "Data Management Fuels Rapid Growth",
+    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nThe Dataportal solved internal data management challenges by:\n\nIntegrating multiple data tools (tables, dashboards, reports)\nReducing duplication of data resources\nProviding context and connections between different data sets"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-3",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-3",
+    "title": "Lecture 8",
+    "section": "Data Management Fuels Rapid Growth",
+    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nAirbnb’s data management strategy supports:\n\nImprovement of its search and booking systems\nEvaluation of user experiences\nInformed decision-making in hiring, product development, and site design"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-4",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-4",
+    "title": "Lecture 8",
+    "section": "Data Management Fuels Rapid Growth",
+    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nThe company’s success in data leverage is built on three pillars:\n\nA robust data management program (Dataportal)\nA team of creative data scientists\nA company-wide commitment to data-driven decision-making"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n\nBig data and analytics are likely to be significant components of future careers across various fields.\nBig data refers to enormous and complex data collections that traditional data management tools can’t handle effectively.\nFive key characteristics of big data (5 V’s):\n\nVolume\nVelocity\nValue\nVeracity\nVariety"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-1",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-1",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n1. Volume\n\nIn 2017, the digital universe contained an estimated 16.1 zettabytes of data.\nExpected to grow to 163 zettabytes by 2025.\nMuch new data will come from embedded systems in smart devices."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-2",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-2",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n1. Volume\n\n\n\n\n\nName\nSymbol\nValue\n\n\n\n\nKilobyte\nkB\n10³\n\n\nMegabyte\nMB\n10⁶\n\n\nGigabyte\nGB\n10⁹\n\n\nTerabyte\nTB\n10¹²\n\n\nPetabyte\nPB\n10¹⁵\n\n\nExabyte\nEB\n10¹⁸\n\n\nZettabyte\nZB\n10²¹\n\n\nYottabyte\nYB\n10²⁴\n\n\nBrontobyte*\nBB\n10²⁷\n\n\nGegobyte*\nGeB\n10³⁰\n\n\n\nNote: The asterisks (*) next to Brontobyte and Gegobyte in the original image have been preserved in this table. These likely indicate that these units are less commonly used or are proposed extensions to the standard system of byte units.\n\n\n\n\n\n\nIncrease in size of the global datasphere"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-3",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-3",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n2. Velocity\n\nRefers to the rate at which new data is generated.\nEstimated at 2.5 quintillion bytes each day.\n90% of the world’s data was generated in just the past two years."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-4",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-4",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n3. Value\n\nRefers to the worth of data in decision-making.\nEmphasizes the need to quickly identify and process relevant data."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-5",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-5",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n4. Veracity\n\nMeasures the quality of the data.\nConsiders accuracy, completeness, and currency of data.\nDetermines if the data can be trusted for good decision-making."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-6",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-6",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n5. Variety\n\n\n\n\n\n\nData comes in various formats.\nStructured data: Has a predefined format, fits into traditional databases.\nUnstructured data: Not organized in a predefined manner, comes from sources like documents, social media, emails, photos, videos, etc."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nCategorical Data\n\nRepresents labels of multiple classes used to divide a variable into specific groups\nExamples: race, sex, age group, educational level\nAlso called discrete data\nFinite number of values with no continuum\nNumbers can be symbols, not for math calculations"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-1",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-1",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nCategorical Data\n\nTypes of Categorical Data:\n\nNominal Data:\n\nSimple codes assigned as labels\nNo inherent order\nCan be binomial (two values) or multinomial (three or more values)\nExamples: marital status, yes/no questions\n\nOrdinal Data:\n\nCodes represent rank order\nExamples: credit score (low, medium, high), age groups, educational levels"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-2",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-2",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nNumeric Data\n\nRepresents specific numeric values\nCan be integer or real (fractional) numbers\nAlso called continuous data\nExamples: age, income, distance, temperature"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-3",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-3",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nNumeric Data\n\nTypes of Numeric Data:\n\nInterval Data:\n\nMeasured on interval scales\nNo absolute zero\nExample: Celsius temperature scale\n\nRatio Data:\n\nCommon in physical sciences and engineering\nHas a nonarbitrary zero value\nExamples: mass, length, time, Kelvin temperature scale"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-4",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-4",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nCategorical vs. Numeric\n\nKey Distinctions:\n\nCategorical (discrete) vs. Numeric (continuous)\nPresence or absence of inherent order\nAbility to perform mathematical operations\nPresence of an absolute zero point"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#sources-of-an-organizations-data",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#sources-of-an-organizations-data",
+    "title": "Lecture 8",
+    "section": "Sources of an Organization’s Data",
+    "text": "Sources of an Organization’s Data"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame",
+    "title": "Lecture 8",
+    "section": "Introduction to data.frame",
+    "text": "Introduction to data.frame\n\n\n\n\n\n\nDefinition: A data.frame is a table-like data structure in R used for storing data in a tabular format with rows and columns.\nStructure: Consists of:\n\nVariables (Columns)\nObservations (Rows)\nValues (Cells): Individual data points within each cell of the data.frame."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame",
+    "title": "Lecture 8",
+    "section": "Variables, Observations, and Values in a data.frame",
+    "text": "Variables, Observations, and Values in a data.frame\nValues\n\nDefinition: Individual data points within each cell of the data.frame.\nExamples:\n\nStudent Data: “Alice” (Name), 23 (Age), “A” (Grade)\nEmployee Data: 101 (EmployeeID), “Alice” (Name), 30 (Age)"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-1",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-1",
+    "title": "Lecture 8",
+    "section": "Variables, Observations, and Values in a data.frame",
+    "text": "Variables, Observations, and Values in a data.frame\nObservations\n\nDefinition: Rows in a data.frame, each representing a single record or entity.\nExamples:\n\nStudent Data: Each row represents an individual student.\nEmployee Data: Each row represents an individual employee."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-2",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-2",
+    "title": "Lecture 8",
+    "section": "Variables, Observations, and Values in a data.frame",
+    "text": "Variables, Observations, and Values in a data.frame\nValues\n\nDefinition: Individual data points within each cell of the data.frame.\nExamples:\n\nStudent Data: “Alice” (Name), 23 (Age), “A” (Grade)\nEmployee Data: 101 (EmployeeID), “Alice” (Name), 30 (Age)"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-3",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-3",
+    "title": "Lecture 8",
+    "section": "Variables, Observations, and Values in a data.frame",
+    "text": "Variables, Observations, and Values in a data.frame\nUnit of Observation\n1. Definition of Unit of Observation\n\nDefinition: The fundamental entity or unit for which data is collected and recorded.\nImportance: Determines the focus of the data and the structure of analysis.\n\n2. Examples of Units of Observation\n\nIndividual-Level Data:\n\nExample: Student Data (data.frame), where each row represents a student.\n\nHousehold-Level Data:\n\nExample: Survey data, where each row represents a household.\n\nTemporal Data:\n\nExample: Weather data, where each row represents a specific day."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-4",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-4",
+    "title": "Lecture 8",
+    "section": "Variables, Observations, and Values in a data.frame",
+    "text": "Variables, Observations, and Values in a data.frame\nUnit of Observation\n3. Identifying the Unit of Observation\n\nQuestions to Ask:\n\nWhat entity is being measured?\nWhat does each row represent?\nHow should the data be analyzed based on the unit of observation?\n\n\n# Sample `data.frame` with Unit of Observation\ndf_employee &lt;- data.frame(\n  EmployeeID = c(101, 102, 103),\n  Name = c(\"Alice\", \"Bob\", \"Charlie\"),\n  Age = c(30, 35, 28),\n  Department = c(\"HR\", \"Finance\", \"IT\")\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-1",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-1",
+    "title": "Lecture 8",
+    "section": "Introduction to data.frame",
+    "text": "Introduction to data.frame\nVariables\n\nDefinition: Columns in a data.frame, representing a specific attribute or characteristic measured across different units of observation.\nExamples:\n\nStudent Data: Name, Age, Grade, Major\nEmployee Data: EmployeeID, Name, Age, Department"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-2",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-2",
+    "title": "Lecture 8",
+    "section": "Introduction to data.frame",
+    "text": "Introduction to data.frame\nObservations\n\nDefinition: Rows in a data.frame, each representing a single entity or unit for which data is collected and recorded.\nExamples:\n\nStudent Information: Each row represents an individual student.\nEmployee Information: Each row represents an individual employee.\nDaily S&P 500 Index Data: Each row represents a specific day.\nHousehold Survey Data: Each row represents a household."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-3",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-3",
+    "title": "Lecture 8",
+    "section": "Introduction to data.frame",
+    "text": "Introduction to data.frame\nUnit of Observation\n1. Definition of Unit of Observation\n\nDefinition: The fundamental entity or unit for which data is collected and recorded.\nImportance: Determines the focus of the data and the structure of analysis.\n\n2. Examples of Units of Observation\n\nIndividual-Level Data:\n\nExample: Student Data (data.frame), where each row represents a student.\n\nHousehold-Level Data:\n\nExample: Survey data, where each row represents a household.\n\nTemporal Data:\n\nExample: Weather data, where each row represents a specific day."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-4",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-4",
+    "title": "Lecture 8",
+    "section": "Introduction to data.frame",
+    "text": "Introduction to data.frame\nUnit of Observation\n3. Identifying the Unit of Observation\n\nQuestions to Ask:\n\nWhat entity is being measured?\nWhat does each row represent?\nHow should the data be analyzed based on the unit of observation?\n\n\n# Sample `data.frame` with Unit of Observation\ndf_employee &lt;- data.frame(\n  EmployeeID = c(101, 102, 103),\n  Name = c(\"Alice\", \"Bob\", \"Charlie\"),\n  Age = c(30, 35, 28),\n  Department = c(\"HR\", \"Finance\", \"IT\")\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-5",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-5",
+    "title": "Lecture 8",
+    "section": "Introduction to data.frame",
+    "text": "Introduction to data.frame\nUnit of Observation\n3. Identifying the Unit of Observation\n\nQuestions to Ask:\n\nWhat entity is being measured?\nWhat does each row represent?\nHow should the data be analyzed based on the unit of observation?\n\n\n# Sample `data.frame` with Unit of Observation\ndf_employee &lt;- data.frame(\n  EmployeeID = c(101, 102, 103),\n  Name = c(\"Alice\", \"Bob\", \"Charlie\"),\n  Age = c(30, 35, 28),\n  Department = c(\"HR\", \"Finance\", \"IT\")\n)"
   }
 ]

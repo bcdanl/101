@@ -182,22 +182,23 @@ Note: The asterisks (*) next to Brontobyte and Gegobyte in the original image ha
 ## Big Data
 ### 2. Velocity
   - Refers to the rate at which new data is generated.
-  - Estimated at 2.5 quintillion bytes each day.
+  - Estimated at 0.33 zetabytes each day (120 zetabytes annually).
   - 90% of the world's data was generated in just the past two years.
 
 ## Big Data
 ### 3. Value
-  - Refers to the worth of data in decision-making.
+  - Refers to the *worth* of data in decision-making.
   - Emphasizes the need to quickly identify and process relevant data.
+  - Users may be able to find more patterns and interesting anomalies from "big" data than from "small" data.
 
 
 
 
 ## Big Data
 ### 4. Veracity
-- Measures the quality of the data.
+- Measures the *quality* of the data.
 - Considers accuracy, completeness, and currency of data.
-- Determines if the data can be trusted for good decision-making.
+- Determines if the data can be *trusted* for good decision-making.
 
 
 

@@ -1285,14 +1285,14 @@
     "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-3",
     "title": "Lecture 8",
     "section": "Big Data",
-    "text": "Big Data\n2. Velocity\n\nRefers to the rate at which new data is generated.\nEstimated at 2.5 quintillion bytes each day.\n90% of the world’s data was generated in just the past two years."
+    "text": "Big Data\n2. Velocity\n\nRefers to the rate at which new data is generated.\nEstimated at 0.33 zetabytes each day (120 zetabytes annually).\n90% of the world’s data was generated in just the past two years."
   },
   {
     "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-4",
     "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-4",
     "title": "Lecture 8",
     "section": "Big Data",
-    "text": "Big Data\n3. Value\n\nRefers to the worth of data in decision-making.\nEmphasizes the need to quickly identify and process relevant data."
+    "text": "Big Data\n3. Value\n\nRefers to the worth of data in decision-making.\nEmphasizes the need to quickly identify and process relevant data.\nUsers may be able to find more patterns and interesting anomalies from “big” data than from “small” data."
   },
   {
     "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-5",

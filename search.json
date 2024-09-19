@@ -1313,35 +1313,35 @@
     "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data",
     "title": "Lecture 8",
     "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nCategorical Data\n\nRepresents labels of multiple classes used to divide a variable into specific groups\nExamples: race, sex, age group, educational level\nAlso called discrete data\nFinite number of values with no continuum\nNumbers can be symbols, not for math calculations"
+    "text": "A Simple Taxonomy of Data\nData Types Overview\n\n\n\n\nCategorical Data: Data that can be divided into distinct categories based on some qualitative attribute.\n\nNominal Data\nOrdinal Data\n\n\n\n\nNumeric Data: Data that represents measurable quantities and can be subjected to mathematical algebra.\n\nInterval Data\nRatio Data"
   },
   {
     "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-1",
     "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-1",
     "title": "Lecture 8",
     "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nCategorical Data\n\nTypes of Categorical Data:\n\nNominal Data:\n\nSimple codes assigned as labels\nNo inherent order\nCan be binomial (two values) or multinomial (three or more values)\nExamples: marital status, yes/no questions\n\nOrdinal Data:\n\nCodes represent rank order\nExamples: credit score (low, medium, high), age groups, educational levels"
+    "text": "A Simple Taxonomy of Data\nCategorical Data - Nominal\n\n\n\nID\nAnimal\n\n\n\n\n1\nDog\n\n\n2\nCat\n\n\n3\nBird\n\n\n\n\nNominal Data: Categorical data where the categories have no intrinsic order or ranking.\nNo Order: Categories are simply different; there is no logical sequence.\nExamples:\n\nColors: Red, Blue, Green\nTypes of Animals: Dog, Cat, Bird"
   },
   {
     "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-2",
     "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-2",
     "title": "Lecture 8",
     "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nNumeric Data\n\nRepresents specific numeric values\nCan be integer or real (fractional) numbers\nAlso called continuous data\nExamples: age, income, distance, temperature"
+    "text": "A Simple Taxonomy of Data\nCategorical Data - Ordinal\n\n\n\nID\nEducation Level\n\n\n\n\n1\nBachelor’s\n\n\n2\nMaster’s\n\n\n3\nPhD\n\n\n\n\nOrdinal Data: Categorical data where the categories have a meaningful order or ranking.\nOrder Matters: Categories can be ranked or ordered, but the differences between categories are not necessarily uniform.\nExamples:\n\nEducation Levels: High School, Bachelor’s, Master’s, PhD\nCustomer Satisfaction: Poor, Fair, Good, Excellent"
   },
   {
     "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-3",
     "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-3",
     "title": "Lecture 8",
     "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nNumeric Data\n\nTypes of Numeric Data:\n\nInterval Data:\n\nMeasured on interval scales\nNo absolute zero\nExample: Celsius temperature scale\n\nRatio Data:\n\nCommon in physical sciences and engineering\nHas a nonarbitrary zero value\nExamples: mass, length, time, Kelvin temperature scale"
+    "text": "A Simple Taxonomy of Data\nNumeric Data - Interval\n\n\n\nID\nTemperature (°F)\n\n\n\n\n1\n70\n\n\n2\n80\n\n\n3\n90\n\n\n\n\nInterval Data: Numeric data where the differences between values are meaningful, but there is no true zero point.\nMeaningful Intervals: The difference between values is consistent.\nNo True Zero: Zero does not indicate the absence of the quantity.\nExamples:\n\nTemperature (°F): Zero degrees does not mean no temperature.\nTime of Day in a 12-Hour Clock: Differences are meaningful, but there is no absolute zero."
   },
   {
     "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-4",
     "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-4",
     "title": "Lecture 8",
     "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nCategorical vs. Numeric\n\nKey Distinctions:\n\nCategorical (discrete) vs. Numeric (continuous)\nPresence or absence of inherent order\nAbility to perform mathematical operations\nPresence of an absolute zero point"
+    "text": "A Simple Taxonomy of Data\nNumeric Data - Ratio\n\n\n\nID\nHeight (cm)\nWeight (kg)\n\n\n\n\n1\n160\n55\n\n\n2\n175\n70\n\n\n3\n170\n65\n\n\n\n\nRatio Data: Numeric data with a true zero point, allowing for a full range of mathematical operations.\nMeaningful Ratios: Comparisons like twice as much or half as much are valid.\nTrue Zero: Zero indicates the absence of the quantity.\nExamples:\n\nHeight in Centimeters: Zero means no height.\nWeight in Kilograms: Zero means no weight."
   },
   {
     "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#sources-of-an-organizations-data",
@@ -1426,5 +1426,54 @@
     "title": "Lecture 8",
     "section": "Introduction to data.frame",
     "text": "Introduction to data.frame\nUnit of Observation\n3. Identifying the Unit of Observation\n\nQuestions to Ask:\n\nWhat entity is being measured?\nWhat does each row represent?\nHow should the data be analyzed based on the unit of observation?\n\n\n# Sample `data.frame` with Unit of Observation\ndf_employee &lt;- data.frame(\n  EmployeeID = c(101, 102, 103),\n  Name = c(\"Alice\", \"Bob\", \"Charlie\"),\n  Age = c(30, 35, 28),\n  Department = c(\"HR\", \"Finance\", \"IT\")\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-5",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-5",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nInterval Data\n\nInterval Data: Numeric data where the differences between values are meaningful, but there is no true zero point.\nEqual Intervals: The difference between values is consistent.\nNo True Zero: Zero does not indicate the absence of the quantity.\nExamples:\n\nTemperature in Fahrenheit: Zero degrees does not mean no temperature.\nIQ Scores: Differences are meaningful, but there is no absolute zero.\n\n\n\n\n\nID\nTemperature (°F)\n\n\n\n\n1\n70\n\n\n2\n80\n\n\n3\n90\n\n\n\nKey Point: Interval data allows for meaningful addition and subtraction but not multiplication or division."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-6",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-6",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nRatio Data\n\nRatio Data: Numeric data with a true zero point, allowing for a full range of mathematical operations.\nTrue Zero: Zero indicates the absence of the quantity.\nMeaningful Ratios: Comparisons like twice as much or half as much are valid.\nExamples:\n\nHeight in Centimeters: Zero means no height.\nWeight in Kilograms: Zero means no weight.\n\n\n\n\n\nID\nHeight (cm)\nWeight (kg)\n\n\n\n\n1\n160\n55\n\n\n2\n175\n70\n\n\n3\n170\n65\n\n\n\nKey Point: Ratio data supports all arithmetic operations, including ratios and proportions."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-7",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-7",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nCategorical Data\n\nRepresents labels of multiple classes used to divide a variable into specific groups\nExamples: race, sex, age group, educational level\nAlso called discrete data\nFinite number of values with no continuum\nNumbers can be symbols, not for math calculations"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-8",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-8",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nCategorical Data\n\nTypes of Categorical Data:\n\nNominal Data:\n\nSimple codes assigned as labels\nNo inherent order\nCan be binomial (two values) or multinomial (three or more values)\nExamples: marital status, yes/no questions\n\nOrdinal Data:\n\nCodes represent rank order\nExamples: credit score (low, medium, high), age groups, educational levels"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-9",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-9",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nNumeric Data\n\nRepresents specific numeric values\nCan be integer or real (fractional) numbers\nAlso called continuous data\nExamples: age, income, distance, temperature"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-10",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-10",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nNumeric Data\n\nTypes of Numeric Data:\n\nInterval Data:\n\nMeasured on interval scales\nNo absolute zero\nExample: Celsius temperature scale\n\nRatio Data:\n\nCommon in physical sciences and engineering\nHas a nonarbitrary zero value\nExamples: mass, length, time, Kelvin temperature scale"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-11",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-11",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nCategorical vs. Numeric\n\nKey Distinctions:\n\nCategorical (discrete) vs. Numeric (continuous)\nPresence or absence of inherent order\nAbility to perform mathematical operations\nPresence of an absolute zero point"
   }
 ]

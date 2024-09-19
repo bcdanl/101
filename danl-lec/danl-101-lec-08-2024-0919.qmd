@@ -249,56 +249,101 @@ Note: The asterisks (*) next to Brontobyte and Gegobyte in the original image ha
 
 
 ## A Simple Taxonomy of Data
-### Categorical Data
-  - Represents labels of multiple classes used to divide a variable into specific groups
-  - Examples: race, sex, age group, educational level
-  - Also called *discrete* data
-  - Finite number of values with no continuum
-  - Numbers can be symbols, not for math calculations
+### Data Types Overview
+
+:::: {.nonincremental}
+:::: {.columns}
+::: {.column width="50%"}
+
+- **Categorical Data**: Data that can be divided into distinct categories based on some qualitative attribute.
+  - **Nominal Data**
+  - **Ordinal Data**
+
+:::
+
+::: {.column width="50%"}
+
+- **Numeric Data**: Data that represents measurable quantities and can be subjected to mathematical algebra.
+  - **Interval Data**
+  - **Ratio Data**
+
+:::
+::::
+::::
+
+## A Simple Taxonomy of Data
+### Categorical Data - Nominal
+
+
+
+| ID | Animal |
+|----|--------|
+| 1  | Dog    |
+| 2  | Cat    |
+| 3  | Bird   |
+
+- **Nominal Data**: Categorical data where the categories have no intrinsic order or ranking.
+- **No Order**: Categories are simply different; there is no logical sequence.
+- **Examples**:
+  - **Colors**: Red, Blue, Green
+  - **Types of Animals**: Dog, Cat, Bird
+
 
 
 ## A Simple Taxonomy of Data
-### Categorical Data
-- Types of Categorical Data:
-  1. Nominal Data:
-     - Simple codes assigned as labels
-     - No inherent order
-     - Can be binomial (two values) or multinomial (three or more values)
-     - Examples: marital status, yes/no questions
+### Categorical Data - Ordinal
 
-  2. Ordinal Data:
-     - Codes represent rank order
-     - Examples: credit score (low, medium, high), age groups, educational levels
+| ID | Education Level |
+|----|-----------------|
+| 1  | Bachelor’s      |
+| 2  | Master’s        |
+| 3  | PhD             |
+
+- **Ordinal Data**: Categorical data where the categories have a meaningful order or ranking.
+
+- **Order Matters**: Categories can be ranked or ordered, but the differences between categories are not necessarily uniform.
+- **Examples**:
+  - **Education Levels**: High School, Bachelor’s, Master’s, PhD
+  - **Customer Satisfaction**: Poor, Fair, Good, Excellent
 
 
-## A Simple Taxonomy of Data
-### Numeric Data
-  - Represents specific numeric values
-  - Can be integer or real (fractional) numbers
-  - Also called *continuous* data
-  - Examples: age, income, distance, temperature
+
 
 
 ## A Simple Taxonomy of Data
-### Numeric Data
-- Types of Numeric Data:
-  1. Interval Data:
-     - Measured on interval scales
-     - No absolute zero
-     - Example: Celsius temperature scale
+### Numeric Data - Interval
 
-  2. Ratio Data:
-     - Common in physical sciences and engineering
-     - Has a nonarbitrary zero value
-     - Examples: mass, length, time, Kelvin temperature scale
+| ID | Temperature (°F) |
+|----|------------------|
+| 1  | 70               |
+| 2  | 80               |
+| 3  | 90               |
+
+- **Interval Data**: Numeric data where the differences between values are meaningful, but there is no true zero point.
+
+- **Meaningful Intervals**: The difference between values is consistent.
+- **No True Zero**: Zero does not indicate the absence of the quantity.
+- **Examples**:
+  - **Temperature (°F)**: Zero degrees does not mean no temperature.
+  - **Time of Day in a 12-Hour Clock**: Differences are meaningful, but there is no absolute zero.
+
 
 ## A Simple Taxonomy of Data
-### Categorical vs. Numeric 
-- Key Distinctions:
-  - Categorical (discrete) vs. Numeric (continuous)
-  - Presence or absence of inherent order
-  - Ability to perform mathematical operations
-  - Presence of an absolute zero point
+### Numeric Data - Ratio
+
+| ID | Height (cm) | Weight (kg) |
+|----|-------------|-------------|
+| 1  | 160         | 55          |
+| 2  | 175         | 70          |
+| 3  | 170         | 65          |
+
+- **Ratio Data**: Numeric data with a true zero point, allowing for a full range of mathematical operations.
+
+- **Meaningful Ratios**: Comparisons like twice as much or half as much are valid.
+- **True Zero**: Zero indicates the absence of the quantity.
+- **Examples**:
+  - **Height in Centimeters**: Zero means no height.
+  - **Weight in Kilograms**: Zero means no weight.
 
 
 

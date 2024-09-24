@@ -8,14 +8,22 @@
   {
     "listing": "/listing-danl-101-hw.html",
     "items": [
+      "/danl-hw/danl-101-hw-02.html",
       "/danl-hw/danl-101-hw-01.html"
     ]
   },
   {
-    "listing": "/listing-danl-101-cw.html",
+    "listing": "/listing-danl-101-lec.html",
     "items": [
-      "/danl-cw/danl-101-cw-02.html",
-      "/danl-cw/danl-101-cw-01.html"
+      "/danl-lec/danl-101-lec-09-2024-0924.html",
+      "/danl-lec/danl-101-lec-08-2024-0919.html",
+      "/danl-lec/danl-101-lec-07-2024-0917.html",
+      "/danl-lec/danl-101-lec-06-2024-0912.html",
+      "/danl-lec/danl-101-lec-05-2024-0910.html",
+      "/danl-lec/danl-101-lec-04-2024-0905.html",
+      "/danl-lec/danl-101-lec-03-2024-0903.html",
+      "/danl-lec/danl-101-lec-02-2024-0829.html",
+      "/danl-lec/danl-101-lec-01-2024-0827.html"
     ]
   },
   {
@@ -29,8 +37,16 @@
     ]
   },
   {
+    "listing": "/listing-danl-101-cw.html",
+    "items": [
+      "/danl-cw/danl-101-cw-02.html",
+      "/danl-cw/danl-101-cw-01.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
+      "/danl-lec/danl-101-lec-09-2024-0924.html",
       "/danl-lec/danl-101-lec-08-2024-0919.html",
       "/danl-lec/danl-101-lec-07-2024-0917.html",
       "/danl-lec/danl-101-lec-06-2024-0912.html",
@@ -39,23 +55,9 @@
       "/danl-lec/danl-101-lec-03-2024-0903.html",
       "/danl-lec/danl-101-lec-02-2024-0829.html",
       "/danl-lec/danl-101-lec-01-2024-0827.html",
-      "/danl-qa/danl-101-04-qa.html",
       "/danl-cw/danl-101-cw-02.html",
       "/danl-cw/danl-101-cw-01.html",
       "/danl-hw/danl-101-hw-01.html"
-    ]
-  },
-  {
-    "listing": "/listing-danl-101-lec.html",
-    "items": [
-      "/danl-lec/danl-101-lec-08-2024-0919.html",
-      "/danl-lec/danl-101-lec-07-2024-0917.html",
-      "/danl-lec/danl-101-lec-06-2024-0912.html",
-      "/danl-lec/danl-101-lec-05-2024-0910.html",
-      "/danl-lec/danl-101-lec-04-2024-0905.html",
-      "/danl-lec/danl-101-lec-03-2024-0903.html",
-      "/danl-lec/danl-101-lec-02-2024-0829.html",
-      "/danl-lec/danl-101-lec-01-2024-0827.html"
     ]
   }
 ]

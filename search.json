@@ -11,42 +11,84 @@
     "href": "listing-danl-101-hw.html",
     "title": "DANL 101 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 1\n\n\n\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 2\n\n\n\n\n\nSeptember 24, 2024\n\n\n\n\nHomework Assignment 1\n\n\n\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
-    "objectID": "listing-danl-101-cw.html",
-    "href": "listing-danl-101-cw.html",
-    "title": "DANL 101 - Classwork",
+    "objectID": "danl-hw/danl-101-hw-02.html",
+    "href": "danl-hw/danl-101-hw-02.html",
+    "title": "Homework Assignment 2",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Please answer all of the following questions thoroughly, ensuring that none are left unanswered.\nFor Homework Assignment 2, the use of any generative artificial intelligence (AI) tools is strictly prohibited.\nOnce you have completed the assignment, click the “Submit” button at the bottom of this page to have it evaluated.\n\nAfter clicking “Submit” button, wait for the message, “Data submitted successfully!”.\nA confirmation email will be sent to the email address that you provide on this homework page once your submission is received.\n\nYou may submit multiple times, but only your most recent submission will be evaluated.\nThe due is October 7, 9:30 A.M., 2024, Monday, Eastern Time."
   },
   {
-    "objectID": "blog-listing.html",
-    "href": "blog-listing.html",
-    "title": "Big & tiny insights through data",
+    "objectID": "econml.html",
+    "href": "econml.html",
+    "title": "Causal Machine Learning Bookmarks",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNBA\n\n\n3 min\n\n\n\nByeong-Hak Choe\n\n\nFebruary 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Basics\n\n\n1 min\n\n\n\nByeong-Hak Choe\n\n\nFebruary 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploring the Galaxy: A Data-Driven Journey Through the Star Wars Universe\n\n\n8 min\n\n\n\nByeong-Hak Choe\n\n\nFebruary 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBeer Markets\n\n\n5 min\n\n\n\nByeong-Hak Choe\n\n\nNovember 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n1 min\n\n\n\nByeong-Hak Choe\n\n\nOctober 27, 2023\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Dive into Causal Machine Learning, The World Bank and Pontificia Universidad Católica del Perú, Alexander Quispe et. al. \nMIT 14.388: Inference on Causal and Structural Parameters Using ML and AI, Department of Economics, MIT, Victor Chernozukhov\n\nPython Website\nJulia Website \n\nMGTECON 634: ML-based Causal Inference, Stanford, Susan Athey \nMachine Learning & Causal Inference: A Short Course, Stanford, Susan Athey, Jan Spiess, and Stefan Wager\n\nTutorial\nYouTube \n\n2018 American Economic Association Continuing Education: Machine Learning and Econometrics, Susan Athey and Guido Imbens \nCausal Inference and Machine Learning in Practice with EconML and CausalML: Industrial Use Cases at Microsoft, TripAdvisor, Uber \nDoubleML: Python and R Packages for the Double/Debiased Machine Learning Framework, P. Bach, V. Chernozhukov, M. S. Kurz, and M. Spindler \nEconML: A Python Package for ML-based Heterogeneous Treatment Effects Estimation, Microsoft \nCausalML: A Python Package for ML-based Causal Inference, Uber"
   },
   {
-    "objectID": "danl-qa/danl-101-04-qa.html",
-    "href": "danl-qa/danl-101-04-qa.html",
-    "title": "Setting the Tool",
+    "objectID": "econml.html#causal-machine-learning",
+    "href": "econml.html#causal-machine-learning",
+    "title": "Causal Machine Learning Bookmarks",
     "section": "",
-    "text": "Welcome to our Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the course materials.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions to Byeong-Hak (@bcdanl) or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+    "text": "Dive into Causal Machine Learning, The World Bank and Pontificia Universidad Católica del Perú, Alexander Quispe et. al. \nMIT 14.388: Inference on Causal and Structural Parameters Using ML and AI, Department of Economics, MIT, Victor Chernozukhov\n\nPython Website\nJulia Website \n\nMGTECON 634: ML-based Causal Inference, Stanford, Susan Athey \nMachine Learning & Causal Inference: A Short Course, Stanford, Susan Athey, Jan Spiess, and Stefan Wager\n\nTutorial\nYouTube \n\n2018 American Economic Association Continuing Education: Machine Learning and Econometrics, Susan Athey and Guido Imbens \nCausal Inference and Machine Learning in Practice with EconML and CausalML: Industrial Use Cases at Microsoft, TripAdvisor, Uber \nDoubleML: Python and R Packages for the Double/Debiased Machine Learning Framework, P. Bach, V. Chernozhukov, M. S. Kurz, and M. Spindler \nEconML: A Python Package for ML-based Heterogeneous Treatment Effects Estimation, Microsoft \nCausalML: A Python Package for ML-based Causal Inference, Uber"
   },
   {
-    "objectID": "index-home.html",
-    "href": "index-home.html",
-    "title": "Byeong-Hak Choe",
+    "objectID": "econml.html#machine-learning-and-big-data",
+    "href": "econml.html#machine-learning-and-big-data",
+    "title": "Causal Machine Learning Bookmarks",
+    "section": "Machine Learning and Big Data",
+    "text": "Machine Learning and Big Data\n\n2023 American Economic Association Continuing Education: Machine Learning and Big Data, Melissa Dell and Matthew Harding \nMachine Learning for Economists (ml4econ), Bank of Israel, Itamar Caspi and Ariel Mansura"
+  },
+  {
+    "objectID": "econml.html#causal-inference",
+    "href": "econml.html#causal-inference",
+    "title": "Causal Machine Learning Bookmarks",
+    "section": "Causal Inference",
+    "text": "Causal Inference\n\nCausal Inference: The Mixtape, Scott Cunningham \nCausal Inference for the Brave and True, Matheus Facure \nCausal Inference and Its Applications in Online Industry, Alex Deng \nApplied Empirical Methods, Yale SOM, Paul Goldsmith-Pinkham\n\nYouTube \n\nCausal Inference with Panel Data, Department of Political Science, Stanford, Yiqing Xu\n\nYouTube \n\nCausal Inference: What If, Miguel A. Hernán and James M. Robins \nRecent Developments in Difference-in-Differences, Vienna University of Economics and Business, Asjad Naqvi \nDifference-in-Differences Blog \nGov 2003: Causal Inference, Department of Government, Harvard, Matthew Blackwell"
+  },
+  {
+    "objectID": "econml.html#researchers-in-causal-machine-learning",
+    "href": "econml.html#researchers-in-causal-machine-learning",
+    "title": "Causal Machine Learning Bookmarks",
+    "section": "Researchers in Causal Machine Learning",
+    "text": "Researchers in Causal Machine Learning\n\nSusan Athey \nAlexandre Belloni \nVictor Chernozhukov \nCarlos Cinelli \nChristian Hansen \nGuido Imbens\nJann Spiess \nStefan Wager"
+  },
+  {
+    "objectID": "listing-danl-101-lec.html",
+    "href": "listing-danl-101-lec.html",
+    "title": "DANL 101 - Lecture",
     "section": "",
-    "text": "Hello! 👋\nI am an assistant professor of data analytics and economics at School of Business at SUNY Geneseo.\nMy research interests lie in economics of the environment and climate change."
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 9\n\n\nData Preparation and Management\n\n\nSeptember 24, 2024\n\n\n\n\nLecture 8\n\n\nData Preparation and Management\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nR Basics\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nRStudio; R Basics\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nData Analytics in the Retail Value Chain; Data Analytics vs. Data Science\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nIntroduction with Sports Analytics & Business Intelligence\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
-    "objectID": "index-home.html#research",
-    "href": "index-home.html#research",
-    "title": "Byeong-Hak Choe",
-    "section": "Research",
-    "text": "Research\n\nWorking papers\n1️⃣ Social Media Campaign, Lobbying, and Legislation: Evidence from #cliamtechange and Energy Lobbies\n2️⃣ Climate Finance under Conflicts and Renegotiations: A Dynamic Contract Approach\n\n\nWork in progress\n🌟 ‘Hiding Behind a Small Cake’ in an Online Dictator Game: The Way You Hide Matters!, (with Tabaré Capitan (1st author) , Jason Shogren, and Benjamin White).\n🌟 Estimating the Value of Statistical Life through Big Data, (with Stephen Newbold and Alexander James).\n\n\nBook chapters\n💡 Governance and Climate Finance in the Developing World (with Tilsa Oré-Monago).\n- In Wu, F., Zhang, D., and Ji, Q. (Eds.), Climate Finance: Supporting a Sustainable Energy Transition, Chapter 7, Springer Nature (July, 2024)."
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
+    "section": "",
+    "text": "Welcome! 👋\n\\(-\\) Explore, Learn, and Grow with Data Analytics! 🌟"
+  },
+  {
+    "objectID": "index.html#bullet-lecture-slides",
+    "href": "index.html#bullet-lecture-slides",
+    "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
+    "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 9\n\n\nSeptember 24, 2024\n\n\n\n\nLecture 8\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#bullet-classwork",
+    "href": "index.html#bullet-classwork",
+    "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
+    "section": "\\(\\bullet\\,\\) Classwork ⌨️",
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#bullet-homework",
+    "href": "index.html#bullet-homework",
+    "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
+    "section": "\\(\\bullet\\,\\) Homework 💻",
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 1\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "danl-cw/danl-101-cw-01.html",
@@ -89,6 +131,13 @@
     "title": "R Basics I",
     "section": "Question 5.",
     "text": "Question 5.\n\nWrite an R code to read the CSV file, https://bcdanl.github.io/data/mlb_teams.csv using the tidyverse’s read_csv() function, and assign it to MLB_teams.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-01.html#question-6.",
+    "href": "danl-cw/danl-101-cw-01.html#question-6.",
+    "title": "R Basics I",
+    "section": "Question 6.",
+    "text": "Question 6.\nWrite an R code to provide summary statistics—mean, standard deviation, minimum, first quartile, median, third quartile, and maximum—for variables in the MLB_teams data.frame.\nAnswer:"
   },
   {
     "objectID": "posts/starwars/starwars_df.html",
@@ -406,6 +455,41 @@
     "text": "Python vs. R"
   },
   {
+    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-1",
+    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-1",
+    "title": "Lecture 7",
+    "section": "R Basics",
+    "text": "R Basics\nAccessing Subsets of Vectors in R\n\n\nAn important aspect of working with R objects is knowing how to “index” them.\n\nIndexing enables the filtering of data subsets for further analysis.\n\nWe focus on two primary types of vector indexing: positional and logical.\nTo access elements in a vector vec, use vec[] with one of these methods:\n\nSingle index: vec[n] where n is a positive integer\nVector of indices: vec[c(i, j, k)] where i, j, k are positive integers\nLogical condition: vec[condition] where condition is a logical expression"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-2",
+    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-2",
+    "title": "Lecture 7",
+    "section": "R Basics",
+    "text": "R Basics\nAccessing Subsets of Vectors in R\nPositional Indexing\n\nAn index is a positional reference (e.g., 1, 2, 3) used to access individual elements within data structures like a vector.\n\nIn R, the index is positive integer, starting at 1.\n\nmy_vector &lt;- c(10, 20, 30, 40, 50, 60)\nmy_vector[2]\nmy_vector[4]\nmy_vector[6]"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-3",
+    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-3",
+    "title": "Lecture 7",
+    "section": "R Basics",
+    "text": "R Basics\nAccessing Subsets of Vectors in R\nA Vector of Indices\n\nSelecting multiple elements by providing a vector of indices\n\nmy_vector[ c(3,4,5) ]\nmy_vector[ 3:5 ]"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-4",
+    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-4",
+    "title": "Lecture 7",
+    "section": "R Basics",
+    "text": "R Basics\nAccessing Subsets of Vectors in R\nLogical Indexing\n\nUsing conditions to filter elements of a vector.\n\n# Filter elements greater than 10\nis_greater_than_10 &lt;- my_vector &gt; 10  # Creates logical vector\nmy_vector[ is_greater_than_10 ]"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-5",
+    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-5",
+    "title": "Lecture 7",
+    "section": "R Basics",
+    "text": "R Basics\nTidy data.frame: Variables, Observations, and Values\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
+  },
+  {
     "objectID": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools",
     "href": "danl-lec/danl-101-lec-04-2024-0905.html#setting-the-tools",
     "title": "Lecture 4",
@@ -714,11 +798,305 @@
     "text": "R Basics\nReading data.frames from an URL\ntvshows &lt;- read_csv(\n        'https://bcdanl.github.io/data/tvshows.csv')\n\nWe can import the CSV file from the web."
   },
   {
-    "objectID": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-7",
-    "href": "danl-lec/danl-101-lec-06-2024-0912.html#r-basics-7",
-    "title": "Lecture 6",
-    "section": "R Basics",
-    "text": "R Basics\nTidy data.frame: Variables, Observations, and Values\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#a-simple-taxonomy-of-data",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#a-simple-taxonomy-of-data",
+    "title": "Lecture 9",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nData Types Overview\n\n\n\n\nCategorical Data: Data that can be divided into distinct categories based on some qualitative attribute.\n\nNominal Data\nOrdinal Data\n\n\n\n\nNumeric Data: Data that represents measurable quantities and can be subjected to mathematical algebra.\n\nInterval Data\nRatio Data"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#a-simple-taxonomy-of-data-1",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#a-simple-taxonomy-of-data-1",
+    "title": "Lecture 9",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nCategorical Data - Nominal\n\n\n\n\nID\nAnimal\n\n\n\n\n1\nDog\n\n\n2\nCat\n\n\n3\nBird\n\n\n\n\nNominal Data: Categorical data where the categories have no intrinsic order or ranking.\nNo Order: Categories are simply different; there is no logical sequence.\nExamples:\n\nColors: Red, Blue, Green\nTypes of Animals: Dog, Cat, Bird"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#a-simple-taxonomy-of-data-2",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#a-simple-taxonomy-of-data-2",
+    "title": "Lecture 9",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nCategorical Data - Ordinal\n\n\n\n\nID\nEducation Level\n\n\n\n\n1\nBachelor’s\n\n\n2\nMaster’s\n\n\n3\nPhD\n\n\n\n\nOrdinal Data: Categorical data where the categories have a meaningful order or ranking.\nOrder Matters: Categories can be ranked or ordered, but the differences between categories are not necessarily uniform.\nExamples:\n\nEducation Levels: High School, Bachelor’s, Master’s, PhD\nCustomer Satisfaction: Poor, Fair, Good, Excellent"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#a-simple-taxonomy-of-data-3",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#a-simple-taxonomy-of-data-3",
+    "title": "Lecture 9",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nNumeric Data - Interval\n\n\n\n\nID\nTemperature (°F)\n\n\n\n\n1\n70\n\n\n2\n80\n\n\n3\n90\n\n\n\n\nInterval Data: Numeric data where the differences between values are meaningful, but there is no true zero point.\nMeaningful Intervals: The difference between values is consistent.\nNo True Zero: Zero does not indicate the absence of the quantity.\nExamples:\n\nTemperature (°F): Zero degrees does not mean no temperature.\nTime of Day in a 12-Hour Clock: Differences are meaningful, but there is no absolute zero."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#a-simple-taxonomy-of-data-4",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#a-simple-taxonomy-of-data-4",
+    "title": "Lecture 9",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nNumeric Data - Ratio\n\n\n\n\nID\nHeight (cm)\nWeight (kg)\n\n\n\n\n1\n160\n55\n\n\n2\n175\n70\n\n\n3\n170\n65\n\n\n\n\nRatio Data: Numeric data with a true zero point, allowing for a full range of mathematical operations.\nMeaningful Ratios: Comparisons like twice as much or half as much are valid.\nTrue Zero: Zero indicates the absence of the quantity.\nExamples:\n\nHeight in Centimeters: Zero means no height.\nWeight in Kilograms: Zero means no weight."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#sources-of-an-organizations-data",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#sources-of-an-organizations-data",
+    "title": "Lecture 9",
+    "section": "Sources of an Organization’s Data",
+    "text": "Sources of an Organization’s Data"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#free-sources-of-useful-big-data",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#free-sources-of-useful-big-data",
+    "title": "Lecture 9",
+    "section": "Free Sources of Useful (Big) Data",
+    "text": "Free Sources of Useful (Big) Data\nEconomics/Finance\n\n\n\n\nData Source\nDescription\nURL\n\n\n\n\nBureau of Labor Statistics (BLS)\nProvides access to data on inflation and prices, wages and benefits, employment, spending and time use, productivity, and workplace injuries\nBLS\n\n\nFRED (Federal Reserve Economic Data)\nProvides access to a vast collection of U.S. economic data, including interest rates, GDP, inflation, employment, and more\nFRED\n\n\nYahoo Finance\nProvides comprehensive financial news, data, and analysis, including stock quotes, market data, and financial reports\nYahoo Finance\n\n\nIMF (International Monetary Fund)\nProvides access to a range of economic data and reports on countries’ economies\nIMF Data\n\n\nWorld Bank Open Data\nFree and open access to global development data, including world development indicators\nWorld Bank Open Data\n\n\nOECD Data\nProvides access to economic, environmental, and social data and indicators from OECD member countries\nOECD Data"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#free-sources-of-useful-big-data-1",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#free-sources-of-useful-big-data-1",
+    "title": "Lecture 9",
+    "section": "Free Sources of Useful (Big) Data",
+    "text": "Free Sources of Useful (Big) Data\nGovernment/Public Data\n\n\n\n\nData Source\nDescription\nURL\n\n\n\n\nData.gov\nPortal providing access to over 186,000 government data sets, related to topics such as agriculture, education, health, and public safety\nData.gov\n\n\nCIA World Factbook\nPortal to information on the economy, government, history, infrastructure, military, and population of 267 countries\nCIA World Factbook\n\n\nU.S. Census Bureau\nPortal to a huge variety of government statistics and data relating to the U.S. economy and its population\nU.S. Census Bureau\n\n\nEuropean Union Open Data Portal\nProvides access to public data from EU institutions\nEU Open Data Portal\n\n\nNew York City Open Data\nProvides access to datasets from New York City, covering a wide range of topics such as public safety, transportation, and health\nNYC Open Data\n\n\nLos Angeles Open Data\nPortal for accessing public data from the City of Los Angeles, including transportation, public safety, and city services\nLA Open Data\n\n\nChicago Data Portal\nOffers access to datasets from the City of Chicago, including crime data, transportation, and health statistics\nChicago Data Portal"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#free-sources-of-useful-big-data-2",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#free-sources-of-useful-big-data-2",
+    "title": "Lecture 9",
+    "section": "Free Sources of Useful (Big) Data",
+    "text": "Free Sources of Useful (Big) Data\nHealth, Climate/Environment, and Social Data\n\n\n\n\nData Source\nDescription\nURL\n\n\n\n\nHealthdata.gov\nPortal to 125 years of U.S. health care data, including national health care expenditures, claim-level Medicare data, and other topics\nHealthdata.gov\n\n\nWorld Health Organization (WHO)\nPortal to data and statistics on global health issues\nWHO Data\n\n\nNational Centers for Environmental Information (NOAA)\nPortal for accessing a variety of climate and weather data sets\nNCEI\n\n\nNOAA National Weather Service\nProvides weather, water, and climate data, forecasts and warnings\nNOAA NWS\n\n\nFAO (Food and Agriculture Organization)\nProvides access to data on food and agriculture, including data on production, trade, food security, and sustainability\nFAOSTAT\n\n\nPew Research Center Internet & Technology\nPortal to research on U.S. politics, media and news, social trends, religion, Internet and technology, science, Hispanic, and global topics\nPew Research\n\n\nData for Good from Facebook\nProvides access to anonymized data from Facebook to help non-profits and research communities with insights on crises, health, and well-being\nFacebook Data for Good\n\n\nData for Good from Canada\nProvides open access to datasets that address pressing social challenges across Canada\nData for Good Canada"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#free-sources-of-useful-big-data-3",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#free-sources-of-useful-big-data-3",
+    "title": "Lecture 9",
+    "section": "Free Sources of Useful (Big) Data",
+    "text": "Free Sources of Useful (Big) Data\nGeneral Data Repositories\n\n\n\n\nData Source\nDescription\nURL\n\n\n\n\nAmazon Web Services (AWS) public data sets\nPortal to a huge repository of public data, including climate data, the million song dataset, and data from the 1000 Genomes project\nAWS Datasets\n\n\nGapminder\nPortal to data from the World Health Organization and World Bank on economic, medical, and social issues\nGapminder\n\n\nGoogle Dataset Search\nHelps find datasets stored across the web\nGoogle Dataset Search\n\n\nKaggle Datasets\nA community-driven platform with datasets from various fields, useful for machine learning and data science projects\nKaggle Datasets\n\n\nUCI Machine Learning Repository\nA collection of databases, domain theories, and datasets used for machine learning research\nUCI ML Repository\n\n\nUnited Nations Data\nProvides access to global statistical data compiled by the United Nations\nUN Data\n\n\nHumanitarian Data Exchange (HDX)\nProvides humanitarian data from the United Nations, NGOs, and other organizations\nHDX\n\n\nDemocratizing Data from data.org\nA platform providing access to high-impact datasets, tools, and resources aimed at solving critical global challenges\nDemocratizing Data\n\n\nJustia Federal District Court Opinions and Orders database\nA free searchable database of full-text opinions and orders from civil cases heard in U.S. Federal District Courts\nJustia"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-1",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-1",
+    "title": "Lecture 9",
+    "section": "Challenges of Big Data",
+    "text": "Challenges of Big Data\nInformation Overload\n\nDifficulty in Finding Information\n\nSearch Challenges: With so much data, traditional search methods become inefficient.\nIndexing Issues: Properly cataloging data to make retrieval efficient is complex.\n\nTrust Issues\n\nData Validity: Users may question the accuracy and timeliness of available data.\nSource Credibility: Differentiating between reliable and unreliable data sources."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-2",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-2",
+    "title": "Lecture 9",
+    "section": "Challenges of Big Data",
+    "text": "Challenges of Big Data\nInformation Overload\n\nData from Diverse Sources\n\nIntegration Complexity: Combining data from internal and external sources can be technically challenging.\nData Formats: Managing different data types, such as structured, unstructured, and semi-structured data."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-3",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-3",
+    "title": "Lecture 9",
+    "section": "Challenges of Big Data",
+    "text": "Challenges of Big Data\nCompliance and Regulations\n\nRisk of Non-Compliance\n\nLegal Penalties: Organizations may face fines, sanctions, or legal action.\nReputation Damage: Public trust can be eroded by non-compliance incidents.\n\nImpact on Organizations\n\nOperational Costs: Investing in compliance measures can be resource-intensive.\nProcess Adjustments: Policies and procedures may need significant changes to meet regulatory standards."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-4",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-4",
+    "title": "Lecture 9",
+    "section": "Challenges of Big Data",
+    "text": "Challenges of Big Data\nCompliance and Regulations\n\nNeed for Vigilance\n\nEvolving Laws: Regulations frequently update, requiring continuous monitoring.\nEmployee Training: Staff must be educated on compliance requirements and best practices."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-5",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-5",
+    "title": "Lecture 9",
+    "section": "Challenges of Big Data",
+    "text": "Challenges of Big Data\nPrivacy Concerns\n\nData Harvesting\n\nCollection Methods: Corporations gather personal data through various means, often without explicit user consent.\nScope of Data: Information ranges from basic demographics to detailed behavioral patterns.\n\nExtensive Profiling\n\nUser Tracking: Monitoring online activities to build comprehensive profiles.\nThird-Party Sharing: Data sold or shared with other organizations, amplifying privacy risks."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-6",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#challenges-of-big-data-6",
+    "title": "Lecture 9",
+    "section": "Challenges of Big Data",
+    "text": "Challenges of Big Data\nPrivacy Concerns\n\nEthical Implications\n\nConsent and Transparency: Lack of clear communication about data usage.\nRight to Privacy: Debates over how much personal data companies should access and store."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#technologies-used-to-manage-and-process-big-data-1",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#technologies-used-to-manage-and-process-big-data-1",
+    "title": "Lecture 9",
+    "section": "Technologies Used to Manage and Process Big Data",
+    "text": "Technologies Used to Manage and Process Big Data\n\nDefinition of Big Data\n\nData sets so large and complex that traditional data management tools are inadequate.\n\nThe Need for Advanced Technologies\n\nEmerging technologies are essential to manage, process, and analyze big data effectively.\n\nOverview of Topics\n\nData Warehouses\nExtract, Transform, Load (ETL) Process\nData Marts\nData Lakes\nHadoop"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#technologies-used-to-manage-and-process-big-data-2",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#technologies-used-to-manage-and-process-big-data-2",
+    "title": "Lecture 9",
+    "section": "Technologies Used to Manage and Process Big Data",
+    "text": "Technologies Used to Manage and Process Big Data\nChallenges with Traditional Data Management\n\nLimitations\n\nTraditional software and hardware can’t handle the volume, velocity, and variety of big data.\n\nImpact\n\nInability to store massive data volumes efficiently.\nDifficulty in processing and analyzing data in a timely manner.\n\nSolution\n\nAdoption of new technologies specifically designed for big data management."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes",
+    "title": "Lecture 9",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nData Warehouses\n\n\n\n\n\n\nDefinition\n\nA large database that holds business information from many sources across the enterprise.\n\nPurpose\n\nSupports decision-making processes by providing a comprehensive view of the organization’s data."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-1",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-1",
+    "title": "Lecture 9",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nData Warehouses Characteristics\n\n\n\n\n\n\n\nCharacteristic\nDescription\n\n\n\n\nLarge\nHolds billions of records and petabytes of data\n\n\nMultiple Sources\nData comes from many internal and external sources via the ETL process\n\n\nHistorical\nTypically contains data spanning 5 years or more\n\n\nCross-Organizational Access and Analysis\nData accessed and analyzed by users across the organization to support multiple business processes and decision-making\n\n\nSupports Various Analyses and Reporting\nEnables drill-down analysis, metric development, trend identification"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-2",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-2",
+    "title": "Lecture 9",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nData Warehouse Architecture\n\nData Sources\n\nInternal Systems: Online transaction processing systems, customer relationship management, enterprise resource planning.\nExternal Systems: Social media, government databases, etc.\n\nETL Process\n\nExtract, Transform, Load (to be discussed in detail).\n\nData Storage\n\nCentralized repository optimized for query and analysis.\n\nData Access\n\nUsed by various departments for reporting, analysis, and decision-making."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-3",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-3",
+    "title": "Lecture 9",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nExamples of Data Warehouse Usage\n\n\n\n\n\n\n\n\n\nWalmart\n\nEarly adopter; used data warehouse to gain a competitive advantage in supply chain management.\nHeld transaction data from over 11,000 stores and 25,000 suppliers.\nFirst commercial data warehouse to reach 1 terabyte in 1992.\nCollects data over 2.5 petabytes per hour in 2024."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-4",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-4",
+    "title": "Lecture 9",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nExamples of Data Warehouse Usage\n\n\n\n\n\n\n\n\n\nWHOOP Wearable Device\n\nCollects massive biometric data from athletes.\nData warehouse stores sensor data collected 100 times per second.\nProvides insights on strain, recovery, and sleep to optimize performance."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-5",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-5",
+    "title": "Lecture 9",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nExamples of Data Warehouse Usage\n\n\n\n\n\n\n\n\n\nAmerican Airlines\n\nFlight attendants access customer data to enhance in-flight service.\nAbility to resolve issues by offering free miles or travel vouchers based on customer history."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-6",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-warehouses-data-marts-and-data-lakes-6",
+    "title": "Lecture 9",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nData Quality in Data Warehouses\n\nChallenges\n\nData Inconsistencies: Duplicate or missing data leading to incorrect analyses.\nDirty Data: Inaccurate, incomplete, or outdated information.\nMisleading statistics: “Garbage in, garbage out”\n\nImportance\n\nEnsuring high data quality is critical to avoid misleading conclusions.\n\nSolution\n\nImplement robust ETL processes to cleanse and standardize data."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#extract-transform-load-etl-process",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#extract-transform-load-etl-process",
+    "title": "Lecture 9",
+    "section": "Extract, Transform, Load (ETL) Process",
+    "text": "Extract, Transform, Load (ETL) Process\nOverview of ETL Process\n\nPurpose\n\nIntegral process for populating data warehouses with clean, consistent data.\n\nStages\n\nExtract\n\nCollecting data from multiple sources.\n\nTransform\n\nCleaning and converting data into a suitable format.\n\nLoad\n\nInserting transformed data into the data warehouse."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#extract-transform-load-etl-process-1",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#extract-transform-load-etl-process-1",
+    "title": "Lecture 9",
+    "section": "Extract, Transform, Load (ETL) Process",
+    "text": "Extract, Transform, Load (ETL) Process\nExtract Stage\n\nData Sources\n\nVarious internal and external systems.\n\nProcess\n\nData Extraction: Pulling data from different systems.\nData Validation: Rejecting data that doesn’t meet quality standards (e.g., missing values, invalid formats).\n\nChallenges\n\nDealing with heterogeneous data formats and structures."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#extract-transform-load-etl-process-2",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#extract-transform-load-etl-process-2",
+    "title": "Lecture 9",
+    "section": "Extract, Transform, Load (ETL) Process",
+    "text": "Extract, Transform, Load (ETL) Process\nTransform Stage\n\nPurpose\n\nConvert extracted data into a standardized format suitable for analysis.\n\nProcesses\n\nData Cleaning: Correcting errors and inconsistencies.\nData Integration: Combining data from different sources.\nData Aggregation: Summarizing data to reduce processing time.\nExample Transformation:\n\nConverting customer address information into a sales district or census tract."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#extract-transform-load-etl-process-3",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#extract-transform-load-etl-process-3",
+    "title": "Lecture 9",
+    "section": "Extract, Transform, Load (ETL) Process",
+    "text": "Extract, Transform, Load (ETL) Process\nLoad Stage\n\nProcess\n\nData Loading: Inserting transformed data into the data warehouse.\nIndexing: Creating indices to improve query performance.\nConstraint Checking: Ensuring data integrity according to database schema.\n\nChallenges\n\nThe loading process for large data warehouses can take days.\n\nOutcome\n\nThe data warehouse is updated with high-quality, consistent data ready for analysis."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-marts",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-marts",
+    "title": "Lecture 9",
+    "section": "Data Marts",
+    "text": "Data Marts\nDefinition of Data Marts\n\nSubset of Data Warehouse\n\nFocused on a specific business area or department.\n\nPurpose\n\nProvides relevant data to a specific group without the complexity of the entire data warehouse.\n\nAdvantages\n\nCost-Effective: Less expensive to implement and maintain.\nFaster Access: Optimized for departmental needs.\nSimplified Analysis: Easier to query and analyze due to reduced data volume."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-marts-1",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-marts-1",
+    "title": "Lecture 9",
+    "section": "Data Marts",
+    "text": "Data Marts\nData Mart Use Cases\n\nDepartmental Focus\n\nFinance: Financial reporting and analysis.\nMarketing: Customer segmentation and campaign analysis.\nInventory: Stock levels and supply chain management.\n\nSmall to Medium-Sized Businesses\n\nAn affordable alternative to a full-scale data warehouse."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-marts-2",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-marts-2",
+    "title": "Lecture 9",
+    "section": "Data Marts",
+    "text": "Data Marts\nData Marts vs. Data Warehouses\n\n\n\n\n\n\n\n\nFeature\nData Mart\nData Warehouse\n\n\n\n\nScope\nSpecific department or business area\nEntire enterprise\n\n\nData Volume\nSmaller\nLarger\n\n\nComplexity\nLess complex\nMore complex\n\n\nImplementation Time\nShorter\nLonger\n\n\nCost\nLower\nHigher"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-lakes",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-lakes",
+    "title": "Lecture 9",
+    "section": "Data Lakes",
+    "text": "Data Lakes\nDefinition of Data Lakes\n\n“Store Everything” Approach\n\nStores all data in its raw, unaltered form.\n\nPurpose\n\nProvides a centralized repository for all data, accommodating future analytical needs.\n\nCharacteristics\n\nData Variety: Includes structured, semi-structured, and unstructured data.\nFlexibility: Data is available for any type of analysis at any time."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-lakes-1",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-lakes-1",
+    "title": "Lecture 9",
+    "section": "Data Lakes",
+    "text": "Data Lakes\nData Lakes vs. Data Warehouses\n\n\n\n\n\n\n\n\nFeature\nData Lake\nData Warehouse\n\n\n\n\nData Processing\nSchema-on-read (processed when accessed)\nSchema-on-write (processed before storage)\n\n\nData State\nRaw, unprocessed\nCleaned, transformed\n\n\nData Types\nAll data types\nPrimarily structured\n\n\nFlexibility\nHigh\nModerate"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-lakes-2",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-lakes-2",
+    "title": "Lecture 9",
+    "section": "Data Lakes",
+    "text": "Data Lakes\nCase Study: Bechtel Corporation\n\n\n\n\n\n\nAbout Bechtel\n\nGlobal engineering, construction, and project management company.\n\nImplementation\n\nBuilt a 5-petabyte data lake consolidating years of project data."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#data-lakes-3",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#data-lakes-3",
+    "title": "Lecture 9",
+    "section": "Data Lakes",
+    "text": "Data Lakes\nCase Study: Bechtel Corporation\n\nBenefits\n\nHistorical Insights: Access to data from hundreds of projects worldwide.\nImproved Forecasting: Better predictions of project outcomes.\nCost Reduction: Identifying inefficiencies to cut costs.\nCompetitive Advantage: Enhanced ability to win new contracts through data-driven insights."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop",
+    "title": "Lecture 9",
+    "section": "Hadoop",
+    "text": "Hadoop\nIntroduction to Hadoop\n\n\n\n\n\n\nDefinition\n\nAn open-source software framework for storing and processing large data sets.\n\nComponents\n\nHadoop Distributed File System (HDFS): Distributed data storage.\nMapReduce: Data processing model."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-1",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-1",
+    "title": "Lecture 9",
+    "section": "Hadoop",
+    "text": "Hadoop\nIntroduction to Hadoop\n\n\n\n\n\n\nPurpose\n\nEnables distributed processing of large data sets across clusters of computers."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-2",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-2",
+    "title": "Lecture 9",
+    "section": "Hadoop",
+    "text": "Hadoop\nHadoop Architecture - HDFS\n\n\n\n\n\n\n\n\n\nHDFS\n\nDivides data into blocks and distributes them across different servers for processing.\nProvides a highly redundant computing environment\n\nAllows the application to keep running even if individual servers fail."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-3",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-3",
+    "title": "Lecture 9",
+    "section": "Hadoop",
+    "text": "Hadoop\nHadoop Architecture - MapReduce\n\nMapReduce\n\nMap Phase: Filters and sorts data.\n\ne.g., Sorting customer orders based on their product IDs, with each group corresponding to a specific product ID.\n\nReduce Phase: Summarizes and aggregates results.\n\ne.g., Counting the number of orders within each group, thereby determining the frequency of each product ID."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-4",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-4",
+    "title": "Lecture 9",
+    "section": "Hadoop",
+    "text": "Hadoop\nHow Hadoop Works\n\nData Distribution\n\nLarge data sets are split into smaller blocks.\n\nData Storage\n\nBlocks are stored across multiple servers in the cluster.\n\nProcessing with MapReduce\n\nMap Tasks: Executed on servers where data resides, minimizing data movement.\nReduce Tasks: Combine results from map tasks to produce final output.\n\nFault Tolerance\n\nData replication ensures processing continues even if servers fail."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-5",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-5",
+    "title": "Lecture 9",
+    "section": "Hadoop",
+    "text": "Hadoop\nExtending Hadoop for Real-Time Processing\n\nLimitation of Hadoop\n\nHadoop was originally designed for batch processing.\n\nBatch Processing: Data or tasks are collected over a period of time and then processed all at once, typically at scheduled times or during periods of low activity.\n\n\nReal-Time Processing Limitation:\n\nHadoop cannot natively process real-time streaming data (e.g., stock prices flowing into stock exchanges, live sensor data)\n\nExtending Hadoop’s Capabilities\n\nBoth Apache Storm and Apache Spark can run on top of Hadoop clusters, utilizing HDFS for storage."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-6",
+    "href": "danl-lec/danl-101-lec-09-2024-0924.html#hadoop-6",
+    "title": "Lecture 9",
+    "section": "Hadoop",
+    "text": "Hadoop\nApache Storm and Apache Spark\n\n\nApache Storm\n\nFunctionality:\n\nProcesses real-time data streams.\nHandles unbounded streams of data reliably and efficiently.\n\nUse Cases:\n\nReal-time analytics\nOnline machine learning\nContinuous computation\nReal-time data integration\n\n\n\nApache Spark\n\nFunctionality:\n\nProvides in-memory computations for increased speed.\nSupports both batch and streaming data processing through Spark Streaming.\n\nUse Cases:\n\nInteractive queries\nMachine learning"
   },
   {
     "objectID": "danl-lec/danl-101-lec-02-2024-0829.html#sports-analytics",
@@ -966,6 +1344,153 @@
     "text": "Data Analytics vs. Data Science\nFuzzy Distinctions\n\nThe difference between professionals focusing on descriptive analytics and those engaged in all types of analytics is not clear-cut.\nGraduates of data-related programs often perform tasks aligned with data science."
   },
   {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth",
+    "title": "Lecture 8",
+    "section": "Data Management Fuels Rapid Growth",
+    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nAirbnb attributes much of its growth from a small San Francisco startup to a $77.23 billion company (as of September 2024) to its effective use of data science and management.\nThe company shifted from using basic “cold numeric data” to leveraging complex data analysis for understanding individual user experiences and community trends."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-1",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-1",
+    "title": "Lecture 8",
+    "section": "Data Management Fuels Rapid Growth",
+    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nAirbnb developed the Dataportal, an integrated system that centralizes data resources, making it easier for employees to:\n\nAccess and analyze data quickly\nInform decision-making across various business aspects\nMaintain data consistency and accuracy"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-2",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-2",
+    "title": "Lecture 8",
+    "section": "Data Management Fuels Rapid Growth",
+    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nThe Dataportal solved internal data management challenges by:\n\nIntegrating multiple data tools (tables, dashboards, reports)\nReducing duplication of data resources\nProviding context and connections between different data sets"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-3",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-3",
+    "title": "Lecture 8",
+    "section": "Data Management Fuels Rapid Growth",
+    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nAirbnb’s data management strategy supports:\n\nImprovement of its search and booking systems\nEvaluation of user experiences\nInformed decision-making in hiring, product development, and site design"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-4",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-4",
+    "title": "Lecture 8",
+    "section": "Data Management Fuels Rapid Growth",
+    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nThe company’s success in data leverage is built on three pillars:\n\nA robust data management program (Dataportal)\nA team of creative data scientists\nA company-wide commitment to data-driven decision-making"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n\nBig data and analytics are likely to be significant components of future careers across various fields.\nBig data refers to enormous and complex data collections that traditional data management tools can’t handle effectively.\nFive key characteristics of big data (5 V’s):\n\nVolume\nVelocity\nValue\nVeracity\nVariety"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-1",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-1",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n1. Volume\n\nIn 2017, the digital universe contained an estimated 16.1 zettabytes of data.\nExpected to grow to 163 zettabytes by 2025.\nMuch new data will come from embedded systems in smart devices."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-2",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-2",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n1. Volume\n\n\n\n\n\nName\nSymbol\nValue\n\n\n\n\nKilobyte\nkB\n10³\n\n\nMegabyte\nMB\n10⁶\n\n\nGigabyte\nGB\n10⁹\n\n\nTerabyte\nTB\n10¹²\n\n\nPetabyte\nPB\n10¹⁵\n\n\nExabyte\nEB\n10¹⁸\n\n\nZettabyte\nZB\n10²¹\n\n\nYottabyte\nYB\n10²⁴\n\n\nBrontobyte*\nBB\n10²⁷\n\n\nGegobyte*\nGeB\n10³⁰\n\n\n\nNote: The asterisks (*) next to Brontobyte and Gegobyte in the original image have been preserved in this table. These likely indicate that these units are less commonly used or are proposed extensions to the standard system of byte units.\n\n\n\n\n\n\nIncrease in size of the global datasphere"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-3",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-3",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n2. Velocity\n\nRefers to the rate at which new data is generated.\nEstimated at 0.33 zetabytes each day (120 zetabytes annually).\n90% of the world’s data was generated in just the past two years."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-4",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-4",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n3. Value\n\nRefers to the worth of data in decision-making.\nEmphasizes the need to quickly identify and process relevant data.\nUsers may be able to find more patterns and interesting anomalies from “big” data than from “small” data."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-5",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-5",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n4. Veracity\n\nMeasures the quality of the data.\nConsiders accuracy, completeness, and currency of data.\nDetermines if the data can be trusted for good decision-making."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-6",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-6",
+    "title": "Lecture 8",
+    "section": "Big Data",
+    "text": "Big Data\n5. Variety\n\n\n\n\n\n\nData comes in various formats.\nStructured data: Has a predefined format, fits into traditional databases.\nUnstructured data: Not organized in a predefined manner, comes from sources like documents, social media, emails, photos, videos, etc."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame",
+    "title": "Lecture 8",
+    "section": "Introduction to data.frame",
+    "text": "Introduction to data.frame\n\n\n\n\n\n\nDefinition: A data.frame is a table-like data structure in R used for storing data in a tabular format with rows and columns.\nStructure: Consists of:\n\nVariables (Columns)\nObservations (Rows)\nValues (Cells): Individual data points within each cell of the data.frame."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-1",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-1",
+    "title": "Lecture 8",
+    "section": "Introduction to data.frame",
+    "text": "Introduction to data.frame\nVariables\n\nDefinition: Columns in a data.frame, representing a specific attribute or characteristic measured across different units of observation.\nExamples:\n\nStudent Data: Name, Age, Grade, Major\nEmployee Data: EmployeeID, Name, Age, Department"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-2",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-2",
+    "title": "Lecture 8",
+    "section": "Introduction to data.frame",
+    "text": "Introduction to data.frame\nObservations\n\nDefinition: Rows in a data.frame, each representing a single entity or unit for which data is collected and recorded.\nExamples:\n\nStudent Information: Each row represents an individual student.\nEmployee Information: Each row represents an individual employee.\nDaily S&P 500 Index Data: Each row represents a specific day.\nHousehold Survey Data: Each row represents a household."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nData Types Overview\n\n\n\n\nCategorical Data: Data that can be divided into distinct categories based on some qualitative attribute.\n\nNominal Data\nOrdinal Data\n\n\n\n\nNumeric Data: Data that represents measurable quantities and can be subjected to mathematical algebra.\n\nInterval Data\nRatio Data"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-1",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-1",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nCategorical Data - Nominal\n\n\n\nID\nAnimal\n\n\n\n\n1\nDog\n\n\n2\nCat\n\n\n3\nBird\n\n\n\n\nNominal Data: Categorical data where the categories have no intrinsic order or ranking.\nNo Order: Categories are simply different; there is no logical sequence.\nExamples:\n\nColors: Red, Blue, Green\nTypes of Animals: Dog, Cat, Bird"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-2",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-2",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nCategorical Data - Ordinal\n\n\n\nID\nEducation Level\n\n\n\n\n1\nBachelor’s\n\n\n2\nMaster’s\n\n\n3\nPhD\n\n\n\n\nOrdinal Data: Categorical data where the categories have a meaningful order or ranking.\nOrder Matters: Categories can be ranked or ordered, but the differences between categories are not necessarily uniform.\nExamples:\n\nEducation Levels: High School, Bachelor’s, Master’s, PhD\nCustomer Satisfaction: Poor, Fair, Good, Excellent"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-3",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-3",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nNumeric Data - Interval\n\n\n\nID\nTemperature (°F)\n\n\n\n\n1\n70\n\n\n2\n80\n\n\n3\n90\n\n\n\n\nInterval Data: Numeric data where the differences between values are meaningful, but there is no true zero point.\nMeaningful Intervals: The difference between values is consistent.\nNo True Zero: Zero does not indicate the absence of the quantity.\nExamples:\n\nTemperature (°F): Zero degrees does not mean no temperature.\nTime of Day in a 12-Hour Clock: Differences are meaningful, but there is no absolute zero."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-4",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-4",
+    "title": "Lecture 8",
+    "section": "A Simple Taxonomy of Data",
+    "text": "A Simple Taxonomy of Data\nNumeric Data - Ratio\n\n\n\nID\nHeight (cm)\nWeight (kg)\n\n\n\n\n1\n160\n55\n\n\n2\n175\n70\n\n\n3\n170\n65\n\n\n\n\nRatio Data: Numeric data with a true zero point, allowing for a full range of mathematical operations.\nMeaningful Ratios: Comparisons like twice as much or half as much are valid.\nTrue Zero: Zero indicates the absence of the quantity.\nExamples:\n\nHeight in Centimeters: Zero means no height.\nWeight in Kilograms: Zero means no weight."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#sources-of-an-organizations-data",
+    "href": "danl-lec/danl-101-lec-08-2024-0919.html#sources-of-an-organizations-data",
+    "title": "Lecture 8",
+    "section": "Sources of an Organization’s Data",
+    "text": "Sources of an Organization’s Data"
+  },
+  {
     "objectID": "posts/nba/nba.html#salary-distribution-among-teams",
     "href": "posts/nba/nba.html#salary-distribution-among-teams",
     "title": "NBA",
@@ -1064,419 +1589,6 @@
     "text": "Promotional Impact on Quantity Purchased\nWe’ll assess the impact of promotions on the quantity of beer purchased. For this analysis, we can calculate the average quantity purchased with and without promotions and visualize the difference. We’ll do this for each brand to see which brands are most affected by promotions.\nLet’s begin this analysis by looking at the average quantity purchased with and without promotions for each brand.\n\n\nCode\n# Calculate average quantity purchased with and without promotions for each brand\npromo_impact = beer_data.groupby(['brand', 'promo']).agg({'quantity':'mean'}).reset_index()\n\n# Pivot the data to have promo and non-promo side by side for each brand\npromo_impact_pivot = promo_impact.pivot(index='brand', columns='promo', values='quantity').reset_index()\npromo_impact_pivot.columns = ['brand', 'non_promo', 'promo']\n\n# Calculate the difference in average quantity purchased between promo and non-promo\npromo_impact_pivot['promo_impact'] = promo_impact_pivot['promo'] - promo_impact_pivot['non_promo']\n\n# Sort by the impact of promo\npromo_impact_pivot_sorted = promo_impact_pivot.sort_values('promo_impact', ascending=False)\n\n# Plotting the difference in average quantity purchased between promo and non-promo for each brand\nplt.figure(figsize=(12, 10))\nsns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\nplt.title('Impact of Promotions on Average Quantity Purchased by Brand')\nplt.xlabel('Difference in Average Quantity Purchased (Promo - Non-Promo)')\nplt.ylabel('Brand')\nplt.show()\n\n\n\n\n\nThe bar chart illustrates the impact of promotions on the average quantity of beer purchased by brand. A positive value indicates that, on average, more beer is purchased when there is a promotion compared to when there isn’t. Some brands appear to be significantly more influenced by promotions, with customers buying more when the products are on sale or promotion.\nThis comprehensive analysis has provided insights into purchase patterns, demographic preferences, price sensitivity, and the impact of promotions on beer purchases."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
-    "section": "",
-    "text": "Welcome! 👋\n\\(-\\) Explore, Learn, and Grow with Data Analytics! 🌟"
-  },
-  {
-    "objectID": "index.html#bullet-lecture-slides",
-    "href": "index.html#bullet-lecture-slides",
-    "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
-    "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 8\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#bullet-course-q-a",
-    "href": "index.html#bullet-course-q-a",
-    "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
-    "section": "\\(\\bullet\\,\\) Course Q & A ❓",
-    "text": "\\(\\bullet\\,\\) Course Q & A ❓\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nSetting the Tool\n\n\nSeptember 3, 2024\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#bullet-classwork",
-    "href": "index.html#bullet-classwork",
-    "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
-    "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#bullet-homework",
-    "href": "index.html#bullet-homework",
-    "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
-    "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 1\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "listing-danl-101-lec.html",
-    "href": "listing-danl-101-lec.html",
-    "title": "DANL 101 - Lecture",
-    "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 8\n\n\nData Preparation and Management\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nR Basics\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nRStudio; R Basics\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nData Analytics in the Retail Value Chain; Data Analytics vs. Data Science\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nIntroduction with Sports Analytics & Business Intelligence\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "econml.html",
-    "href": "econml.html",
-    "title": "Causal Machine Learning Bookmarks",
-    "section": "",
-    "text": "Dive into Causal Machine Learning, The World Bank and Pontificia Universidad Católica del Perú, Alexander Quispe et. al. \nMIT 14.388: Inference on Causal and Structural Parameters Using ML and AI, Department of Economics, MIT, Victor Chernozukhov\n\nPython Website\nJulia Website \n\nMGTECON 634: ML-based Causal Inference, Stanford, Susan Athey \nMachine Learning & Causal Inference: A Short Course, Stanford, Susan Athey, Jan Spiess, and Stefan Wager\n\nTutorial\nYouTube \n\n2018 American Economic Association Continuing Education: Machine Learning and Econometrics, Susan Athey and Guido Imbens \nCausal Inference and Machine Learning in Practice with EconML and CausalML: Industrial Use Cases at Microsoft, TripAdvisor, Uber \nDoubleML: Python and R Packages for the Double/Debiased Machine Learning Framework, P. Bach, V. Chernozhukov, M. S. Kurz, and M. Spindler \nEconML: A Python Package for ML-based Heterogeneous Treatment Effects Estimation, Microsoft \nCausalML: A Python Package for ML-based Causal Inference, Uber"
-  },
-  {
-    "objectID": "econml.html#causal-machine-learning",
-    "href": "econml.html#causal-machine-learning",
-    "title": "Causal Machine Learning Bookmarks",
-    "section": "",
-    "text": "Dive into Causal Machine Learning, The World Bank and Pontificia Universidad Católica del Perú, Alexander Quispe et. al. \nMIT 14.388: Inference on Causal and Structural Parameters Using ML and AI, Department of Economics, MIT, Victor Chernozukhov\n\nPython Website\nJulia Website \n\nMGTECON 634: ML-based Causal Inference, Stanford, Susan Athey \nMachine Learning & Causal Inference: A Short Course, Stanford, Susan Athey, Jan Spiess, and Stefan Wager\n\nTutorial\nYouTube \n\n2018 American Economic Association Continuing Education: Machine Learning and Econometrics, Susan Athey and Guido Imbens \nCausal Inference and Machine Learning in Practice with EconML and CausalML: Industrial Use Cases at Microsoft, TripAdvisor, Uber \nDoubleML: Python and R Packages for the Double/Debiased Machine Learning Framework, P. Bach, V. Chernozhukov, M. S. Kurz, and M. Spindler \nEconML: A Python Package for ML-based Heterogeneous Treatment Effects Estimation, Microsoft \nCausalML: A Python Package for ML-based Causal Inference, Uber"
-  },
-  {
-    "objectID": "econml.html#machine-learning-and-big-data",
-    "href": "econml.html#machine-learning-and-big-data",
-    "title": "Causal Machine Learning Bookmarks",
-    "section": "Machine Learning and Big Data",
-    "text": "Machine Learning and Big Data\n\n2023 American Economic Association Continuing Education: Machine Learning and Big Data, Melissa Dell and Matthew Harding \nMachine Learning for Economists (ml4econ), Bank of Israel, Itamar Caspi and Ariel Mansura"
-  },
-  {
-    "objectID": "econml.html#causal-inference",
-    "href": "econml.html#causal-inference",
-    "title": "Causal Machine Learning Bookmarks",
-    "section": "Causal Inference",
-    "text": "Causal Inference\n\nCausal Inference: The Mixtape, Scott Cunningham \nCausal Inference for the Brave and True, Matheus Facure \nCausal Inference and Its Applications in Online Industry, Alex Deng \nApplied Empirical Methods, Yale SOM, Paul Goldsmith-Pinkham\n\nYouTube \n\nCausal Inference with Panel Data, Department of Political Science, Stanford, Yiqing Xu\n\nYouTube \n\nCausal Inference: What If, Miguel A. Hernán and James M. Robins \nRecent Developments in Difference-in-Differences, Vienna University of Economics and Business, Asjad Naqvi \nDifference-in-Differences Blog \nGov 2003: Causal Inference, Department of Government, Harvard, Matthew Blackwell"
-  },
-  {
-    "objectID": "econml.html#researchers-in-causal-machine-learning",
-    "href": "econml.html#researchers-in-causal-machine-learning",
-    "title": "Causal Machine Learning Bookmarks",
-    "section": "Researchers in Causal Machine Learning",
-    "text": "Researchers in Causal Machine Learning\n\nSusan Athey \nAlexandre Belloni \nVictor Chernozhukov \nCarlos Cinelli \nChristian Hansen \nGuido Imbens\nJann Spiess \nStefan Wager"
-  },
-  {
-    "objectID": "danl-hw/danl-101-hw-01.html",
-    "href": "danl-hw/danl-101-hw-01.html",
-    "title": "Homework Assignment 1",
-    "section": "",
-    "text": "Please answer all of the following questions thoroughly, ensuring that none are left unanswered.\nFor Homework Assignment 1, the use of any generative artificial intelligence (AI) tools is strictly prohibited.\nOnce you have completed the assignment, click the “Submit” button at the bottom of this page to have it evaluated.\n\nAfter clicking “Submit” button, wait for the message, “Data submitted successfully!”.\nA confirmation email will be sent to the email address that you provide on this homework page once your submission is received.\n\nYou may submit multiple times, but only your most recent submission will be evaluated.\nThe due is September 23, 9:30 A.M., 2024, Monday, Eastern Time.\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "cv/cv.html",
-    "href": "cv/cv.html",
-    "title": "Bio",
-    "section": "",
-    "text": "I view myself as an applied economist with interest in environmental economics and a particular focus on climate change. Methodologically, I make use of causal inference/econometrics/machine learning methods, and other data science tools to conduct empirical analysis. I also use computational methods to solve integrated assessment models of climate change and theoretical economic models, such as dynamic contracts.\nMy research focuses on how to improve effectiveness of climate policy at both micro and macro levels. In particular, I am interested in building relevant climate-economy models that analyze the interaction between economies and the climate under risks arising from (1) climate change and (2) a transition to carbon-neutral economies.\nAs an economics and data science teacher, my goal is to equip students with the essential tools of machine learning, econometrics, and data science to think critically about business and real-world socioeconomic issues. In this regard, I teach students to use those tools to address important business strategies, socioeconomic issues, and individual decision-making."
-  },
-  {
-    "objectID": "cv/cv.html#working-papers",
-    "href": "cv/cv.html#working-papers",
-    "title": "Bio",
-    "section": "Working papers",
-    "text": "Working papers\n\n\n\n\n\n\n\n\nGovernance and Climate Finance in the Developing World (with Tilsa Ore-Monago) (Forthcoming in Springer Nature)\n Abstract : We investigate the relationship between governance and climate finance, particularly in the context of the energy transition in developing countries. Our aim is to examine how governance qualities in developing countries impact financial contributions from contributor countries that intend to fund mitigation projects in the energy sector. We have compiled a dataset of yearly climate finance contributions at the project level spanning from 2011 to 2019. Our analysis, which utilizes random forests and LASSO estimations, reveals that climate finance contributions, particularly those for energy-related projects, are significantly linked to good governance, including a robust legal system, rule of law, and accountability. Ultimately, this study provides valuable insights into the dynamics between governance and climate finance in developing countries and informs policy decisions to support effective climate action in the energy sector. (One of the chapters in the book, \"Climate Finance: Supporting a Sustainable Energy Transition,\" Springer Nature. 2024).\n\n\nSocial Media Campaigns, Lobbying and Legislation: Evidence from #climatechange/#globalwarming and Energy Lobbies\n Abstract : To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation? In this article, I estimate the effect of social media campaigns on a congressperson's legislative activities against climate change actions during the U.S. Congresses (January 2013-January 2019). I find that (1) a 1% increase in the per-capita level of activities of climate change campaigns using Twitter decreases Democrats' tendency to support climate-unfriendly legislation by 0.9%, while it increases Republicans' one by 0.2%; and (2) a 1% increase in the fossil fuel industry's lobbying expenditure relative to the rest of industries' lobbying expenditure increases Republicans' tendency to support climate-unfriendly legislation by 1.1%. I also find that negative sentiment in social media campaigns contributes to affecting congresspersons' support for climate-unfriendly legislation.\n\n\nClimate Finance under Conflicts and Renegotiations: A Dynamic Contract Approach (AEA 2019 poster) \n Abstract : Considering climate funds (e.g. the Green Climate Fund) as the financial mechanism to provide funding to developing countries, this paper examines a long-term climate funding relationship between two agents---the rich country and the poor country. Conflicts between the rich and poor countries arise when determining 1) the size of climate funding that the rich country contributes to the poor country, and 2) the funding allocation between climate adaptation and mitigation projects in the poor country. In addition, the rich country cannot be forced to commit contractual contributions to the poor country, and the climate funding relationship can be repeatedly renegotiated. This paper derives the following results: (1) climate funds converge to the first-best in the long-run, in terms of the size of climate funding and its balance between adaptation and mitigation projects, if and only if climate damage becomes sufficiently severe. (2) funding allocation between adaptation and mitigation projects becomes more favorable to the poor country if marginal climate costs in the poor country grow faster than in the rich country. (3) fewer conflicts and fewer renegotiations between the rich and poor countries make climate funding contracts more efficient, remedying inequality between the poor and rich countries."
-  },
-  {
-    "objectID": "cv/cv.html#work-in-progress",
-    "href": "cv/cv.html#work-in-progress",
-    "title": "Bio",
-    "section": "Work in progress",
-    "text": "Work in progress\n\n\n\n\n\n\n\n\nHiding Behind a Small Cake' in an Online Dictator Game: The Way You Hide Matters!, (with Tabare Capitan (1st author) , Jason Shogren, and Benjamin White) \n Abstract : Using an online dictator game in which receivers have incomplete information of the size of the endowment (big or small), the article, ''Hiding behind a small cake' in a newspaper dictator game (Ockenfels and Werner (2012))'' shows that a few givers who received the big endowment use their giving to signal they received the small endowment (i.e., to lie). In other words, even though a giver will never meet the corresponding receiver, he cares enough about how he could be perceived by others to lie (i.e., second-order beliefs enters his utility function). In our experiment we provide givers with the opportunity to lie about the size of the endowment without using their giving. Similar to Ockenfels and Werner (2012) we find that (i) few take the opportunity to lie---but those who do give less when their giving is not constrained by its role as a signal---and (ii) givers are more likely to lie when the lie is private. However, using a second stage in the experimental design, we show that liars are the most responsive group of givers to a simple message stating the expectation of the receiver."
-  },
-  {
-    "objectID": "cv/cv.html#presentations",
-    "href": "cv/cv.html#presentations",
-    "title": "Bio",
-    "section": "Presentations",
-    "text": "Presentations\n\n\n\n\n\n2023\nSouthern Economic Association Annual Meeting, New Orleans, Louisiana\n\n\n2022\nInterdisciplinary Data Science Workshop, Brigham Young University, Provo, Utah\n\n\n2021\nOnline Seminar, Department of Environmental and Business Economics, University of Southern Denmark\n\n\n2019\nUniversity of Wyoming & Colorado State University Economics Graduate Student Symposium, Laramie, Wyoming\n\n\n2019\nAmerican Economic Association Annual Meeting (poster session), Atlanta, Georgia\n\n\n2018\nThe 29th International Conference on Game Theory, Stony Brook, New York"
-  },
-  {
-    "objectID": "cv/cv.html#memberships",
-    "href": "cv/cv.html#memberships",
-    "title": "Bio",
-    "section": "Memberships",
-    "text": "Memberships\n\n\n\n\n\n2022—present\nSouthern Economic Association\n\n\n2018—present\nAssociation of Environmental and Resource Economists\n\n\n2017—present\nAmerican Economic Association\n\n\n2017—2019\nEconometric Society"
-  },
-  {
-    "objectID": "danl-cw/danl-101-cw-01.html#question-6.",
-    "href": "danl-cw/danl-101-cw-01.html#question-6.",
-    "title": "R Basics I",
-    "section": "Question 6.",
-    "text": "Question 6.\nWrite an R code to provide summary statistics—mean, standard deviation, minimum, first quartile, median, third quartile, and maximum—for variables in the MLB_teams data.frame.\nAnswer:"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-1",
-    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-1",
-    "title": "Lecture 7",
-    "section": "R Basics",
-    "text": "R Basics\nAccessing Subsets of Vectors in R\n\n\nAn important aspect of working with R objects is knowing how to “index” them.\n\nIndexing enables the filtering of data subsets for further analysis.\n\nWe focus on two primary types of vector indexing: positional and logical.\nTo access elements in a vector vec, use vec[] with one of these methods:\n\nSingle index: vec[n] where n is a positive integer\nVector of indices: vec[c(i, j, k)] where i, j, k are positive integers\nLogical condition: vec[condition] where condition is a logical expression"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-2",
-    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-2",
-    "title": "Lecture 7",
-    "section": "R Basics",
-    "text": "R Basics\nAccessing Subsets of Vectors in R\nPositional Indexing\n\nAn index is a positional reference (e.g., 1, 2, 3) used to access individual elements within data structures like a vector.\n\nIn R, the index is positive integer, starting at 1.\n\nmy_vector &lt;- c(10, 20, 30, 40, 50, 60)\nmy_vector[2]\nmy_vector[4]\nmy_vector[6]"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-3",
-    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-3",
-    "title": "Lecture 7",
-    "section": "R Basics",
-    "text": "R Basics\nAccessing Subsets of Vectors in R\nA Vector of Indices\n\nSelecting multiple elements by providing a vector of indices\n\nmy_vector[ c(3,4,5) ]\nmy_vector[ 3:5 ]"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-4",
-    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-4",
-    "title": "Lecture 7",
-    "section": "R Basics",
-    "text": "R Basics\nAccessing Subsets of Vectors in R\nLogical Indexing\n\nUsing conditions to filter elements of a vector.\n\n# Filter elements greater than 10\nis_greater_than_10 &lt;- my_vector &gt; 10  # Creates logical vector\nmy_vector[ is_greater_than_10 ]"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-5",
-    "href": "danl-lec/danl-101-lec-07-2024-0917.html#r-basics-5",
-    "title": "Lecture 7",
-    "section": "R Basics",
-    "text": "R Basics\nTidy data.frame: Variables, Observations, and Values\n\n\n\n\nThere are three rules which make a data.frame tidy:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n–&gt;  –&gt;  –&gt;  –&gt;"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth",
-    "title": "Lecture 8",
-    "section": "Data Management Fuels Rapid Growth",
-    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nAirbnb attributes much of its growth from a small San Francisco startup to a $77.23 billion company (as of September 2024) to its effective use of data science and management.\nThe company shifted from using basic “cold numeric data” to leveraging complex data analysis for understanding individual user experiences and community trends."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-1",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-1",
-    "title": "Lecture 8",
-    "section": "Data Management Fuels Rapid Growth",
-    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nAirbnb developed the Dataportal, an integrated system that centralizes data resources, making it easier for employees to:\n\nAccess and analyze data quickly\nInform decision-making across various business aspects\nMaintain data consistency and accuracy"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-2",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-2",
-    "title": "Lecture 8",
-    "section": "Data Management Fuels Rapid Growth",
-    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nThe Dataportal solved internal data management challenges by:\n\nIntegrating multiple data tools (tables, dashboards, reports)\nReducing duplication of data resources\nProviding context and connections between different data sets"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-3",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-3",
-    "title": "Lecture 8",
-    "section": "Data Management Fuels Rapid Growth",
-    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nAirbnb’s data management strategy supports:\n\nImprovement of its search and booking systems\nEvaluation of user experiences\nInformed decision-making in hiring, product development, and site design"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-4",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#data-management-fuels-rapid-growth-4",
-    "title": "Lecture 8",
-    "section": "Data Management Fuels Rapid Growth",
-    "text": "Data Management Fuels Rapid Growth\nAirBnB\n\n\n\n\n\n\nThe company’s success in data leverage is built on three pillars:\n\nA robust data management program (Dataportal)\nA team of creative data scientists\nA company-wide commitment to data-driven decision-making"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data",
-    "title": "Lecture 8",
-    "section": "Big Data",
-    "text": "Big Data\n\nBig data and analytics are likely to be significant components of future careers across various fields.\nBig data refers to enormous and complex data collections that traditional data management tools can’t handle effectively.\nFive key characteristics of big data (5 V’s):\n\nVolume\nVelocity\nValue\nVeracity\nVariety"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-1",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-1",
-    "title": "Lecture 8",
-    "section": "Big Data",
-    "text": "Big Data\n1. Volume\n\nIn 2017, the digital universe contained an estimated 16.1 zettabytes of data.\nExpected to grow to 163 zettabytes by 2025.\nMuch new data will come from embedded systems in smart devices."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-2",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-2",
-    "title": "Lecture 8",
-    "section": "Big Data",
-    "text": "Big Data\n1. Volume\n\n\n\n\n\nName\nSymbol\nValue\n\n\n\n\nKilobyte\nkB\n10³\n\n\nMegabyte\nMB\n10⁶\n\n\nGigabyte\nGB\n10⁹\n\n\nTerabyte\nTB\n10¹²\n\n\nPetabyte\nPB\n10¹⁵\n\n\nExabyte\nEB\n10¹⁸\n\n\nZettabyte\nZB\n10²¹\n\n\nYottabyte\nYB\n10²⁴\n\n\nBrontobyte*\nBB\n10²⁷\n\n\nGegobyte*\nGeB\n10³⁰\n\n\n\nNote: The asterisks (*) next to Brontobyte and Gegobyte in the original image have been preserved in this table. These likely indicate that these units are less commonly used or are proposed extensions to the standard system of byte units.\n\n\n\n\n\n\nIncrease in size of the global datasphere"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-3",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-3",
-    "title": "Lecture 8",
-    "section": "Big Data",
-    "text": "Big Data\n2. Velocity\n\nRefers to the rate at which new data is generated.\nEstimated at 0.33 zetabytes each day (120 zetabytes annually).\n90% of the world’s data was generated in just the past two years."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-4",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-4",
-    "title": "Lecture 8",
-    "section": "Big Data",
-    "text": "Big Data\n3. Value\n\nRefers to the worth of data in decision-making.\nEmphasizes the need to quickly identify and process relevant data.\nUsers may be able to find more patterns and interesting anomalies from “big” data than from “small” data."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-5",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-5",
-    "title": "Lecture 8",
-    "section": "Big Data",
-    "text": "Big Data\n4. Veracity\n\nMeasures the quality of the data.\nConsiders accuracy, completeness, and currency of data.\nDetermines if the data can be trusted for good decision-making."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-6",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#big-data-6",
-    "title": "Lecture 8",
-    "section": "Big Data",
-    "text": "Big Data\n5. Variety\n\n\n\n\n\n\nData comes in various formats.\nStructured data: Has a predefined format, fits into traditional databases.\nUnstructured data: Not organized in a predefined manner, comes from sources like documents, social media, emails, photos, videos, etc."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nData Types Overview\n\n\n\n\nCategorical Data: Data that can be divided into distinct categories based on some qualitative attribute.\n\nNominal Data\nOrdinal Data\n\n\n\n\nNumeric Data: Data that represents measurable quantities and can be subjected to mathematical algebra.\n\nInterval Data\nRatio Data"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-1",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-1",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nCategorical Data - Nominal\n\n\n\nID\nAnimal\n\n\n\n\n1\nDog\n\n\n2\nCat\n\n\n3\nBird\n\n\n\n\nNominal Data: Categorical data where the categories have no intrinsic order or ranking.\nNo Order: Categories are simply different; there is no logical sequence.\nExamples:\n\nColors: Red, Blue, Green\nTypes of Animals: Dog, Cat, Bird"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-2",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-2",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nCategorical Data - Ordinal\n\n\n\nID\nEducation Level\n\n\n\n\n1\nBachelor’s\n\n\n2\nMaster’s\n\n\n3\nPhD\n\n\n\n\nOrdinal Data: Categorical data where the categories have a meaningful order or ranking.\nOrder Matters: Categories can be ranked or ordered, but the differences between categories are not necessarily uniform.\nExamples:\n\nEducation Levels: High School, Bachelor’s, Master’s, PhD\nCustomer Satisfaction: Poor, Fair, Good, Excellent"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-3",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-3",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nNumeric Data - Interval\n\n\n\nID\nTemperature (°F)\n\n\n\n\n1\n70\n\n\n2\n80\n\n\n3\n90\n\n\n\n\nInterval Data: Numeric data where the differences between values are meaningful, but there is no true zero point.\nMeaningful Intervals: The difference between values is consistent.\nNo True Zero: Zero does not indicate the absence of the quantity.\nExamples:\n\nTemperature (°F): Zero degrees does not mean no temperature.\nTime of Day in a 12-Hour Clock: Differences are meaningful, but there is no absolute zero."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-4",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-4",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nNumeric Data - Ratio\n\n\n\nID\nHeight (cm)\nWeight (kg)\n\n\n\n\n1\n160\n55\n\n\n2\n175\n70\n\n\n3\n170\n65\n\n\n\n\nRatio Data: Numeric data with a true zero point, allowing for a full range of mathematical operations.\nMeaningful Ratios: Comparisons like twice as much or half as much are valid.\nTrue Zero: Zero indicates the absence of the quantity.\nExamples:\n\nHeight in Centimeters: Zero means no height.\nWeight in Kilograms: Zero means no weight."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#sources-of-an-organizations-data",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#sources-of-an-organizations-data",
-    "title": "Lecture 8",
-    "section": "Sources of an Organization’s Data",
-    "text": "Sources of an Organization’s Data"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame",
-    "title": "Lecture 8",
-    "section": "Introduction to data.frame",
-    "text": "Introduction to data.frame\n\n\n\n\n\n\nDefinition: A data.frame is a table-like data structure in R used for storing data in a tabular format with rows and columns.\nStructure: Consists of:\n\nVariables (Columns)\nObservations (Rows)\nValues (Cells): Individual data points within each cell of the data.frame."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame",
-    "title": "Lecture 8",
-    "section": "Variables, Observations, and Values in a data.frame",
-    "text": "Variables, Observations, and Values in a data.frame\nValues\n\nDefinition: Individual data points within each cell of the data.frame.\nExamples:\n\nStudent Data: “Alice” (Name), 23 (Age), “A” (Grade)\nEmployee Data: 101 (EmployeeID), “Alice” (Name), 30 (Age)"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-1",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-1",
-    "title": "Lecture 8",
-    "section": "Variables, Observations, and Values in a data.frame",
-    "text": "Variables, Observations, and Values in a data.frame\nObservations\n\nDefinition: Rows in a data.frame, each representing a single record or entity.\nExamples:\n\nStudent Data: Each row represents an individual student.\nEmployee Data: Each row represents an individual employee."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-2",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-2",
-    "title": "Lecture 8",
-    "section": "Variables, Observations, and Values in a data.frame",
-    "text": "Variables, Observations, and Values in a data.frame\nValues\n\nDefinition: Individual data points within each cell of the data.frame.\nExamples:\n\nStudent Data: “Alice” (Name), 23 (Age), “A” (Grade)\nEmployee Data: 101 (EmployeeID), “Alice” (Name), 30 (Age)"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-3",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-3",
-    "title": "Lecture 8",
-    "section": "Variables, Observations, and Values in a data.frame",
-    "text": "Variables, Observations, and Values in a data.frame\nUnit of Observation\n1. Definition of Unit of Observation\n\nDefinition: The fundamental entity or unit for which data is collected and recorded.\nImportance: Determines the focus of the data and the structure of analysis.\n\n2. Examples of Units of Observation\n\nIndividual-Level Data:\n\nExample: Student Data (data.frame), where each row represents a student.\n\nHousehold-Level Data:\n\nExample: Survey data, where each row represents a household.\n\nTemporal Data:\n\nExample: Weather data, where each row represents a specific day."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-4",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#variables-observations-and-values-in-a-data.frame-4",
-    "title": "Lecture 8",
-    "section": "Variables, Observations, and Values in a data.frame",
-    "text": "Variables, Observations, and Values in a data.frame\nUnit of Observation\n3. Identifying the Unit of Observation\n\nQuestions to Ask:\n\nWhat entity is being measured?\nWhat does each row represent?\nHow should the data be analyzed based on the unit of observation?\n\n\n# Sample `data.frame` with Unit of Observation\ndf_employee &lt;- data.frame(\n  EmployeeID = c(101, 102, 103),\n  Name = c(\"Alice\", \"Bob\", \"Charlie\"),\n  Age = c(30, 35, 28),\n  Department = c(\"HR\", \"Finance\", \"IT\")\n)"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-1",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-1",
-    "title": "Lecture 8",
-    "section": "Introduction to data.frame",
-    "text": "Introduction to data.frame\nVariables\n\nDefinition: Columns in a data.frame, representing a specific attribute or characteristic measured across different units of observation.\nExamples:\n\nStudent Data: Name, Age, Grade, Major\nEmployee Data: EmployeeID, Name, Age, Department"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-2",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-2",
-    "title": "Lecture 8",
-    "section": "Introduction to data.frame",
-    "text": "Introduction to data.frame\nObservations\n\nDefinition: Rows in a data.frame, each representing a single entity or unit for which data is collected and recorded.\nExamples:\n\nStudent Information: Each row represents an individual student.\nEmployee Information: Each row represents an individual employee.\nDaily S&P 500 Index Data: Each row represents a specific day.\nHousehold Survey Data: Each row represents a household."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-3",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-3",
-    "title": "Lecture 8",
-    "section": "Introduction to data.frame",
-    "text": "Introduction to data.frame\nUnit of Observation\n1. Definition of Unit of Observation\n\nDefinition: The fundamental entity or unit for which data is collected and recorded.\nImportance: Determines the focus of the data and the structure of analysis.\n\n2. Examples of Units of Observation\n\nIndividual-Level Data:\n\nExample: Student Data (data.frame), where each row represents a student.\n\nHousehold-Level Data:\n\nExample: Survey data, where each row represents a household.\n\nTemporal Data:\n\nExample: Weather data, where each row represents a specific day."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-4",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-4",
-    "title": "Lecture 8",
-    "section": "Introduction to data.frame",
-    "text": "Introduction to data.frame\nUnit of Observation\n3. Identifying the Unit of Observation\n\nQuestions to Ask:\n\nWhat entity is being measured?\nWhat does each row represent?\nHow should the data be analyzed based on the unit of observation?\n\n\n# Sample `data.frame` with Unit of Observation\ndf_employee &lt;- data.frame(\n  EmployeeID = c(101, 102, 103),\n  Name = c(\"Alice\", \"Bob\", \"Charlie\"),\n  Age = c(30, 35, 28),\n  Department = c(\"HR\", \"Finance\", \"IT\")\n)"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-5",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#introduction-to-data.frame-5",
-    "title": "Lecture 8",
-    "section": "Introduction to data.frame",
-    "text": "Introduction to data.frame\nUnit of Observation\n3. Identifying the Unit of Observation\n\nQuestions to Ask:\n\nWhat entity is being measured?\nWhat does each row represent?\nHow should the data be analyzed based on the unit of observation?\n\n\n# Sample `data.frame` with Unit of Observation\ndf_employee &lt;- data.frame(\n  EmployeeID = c(101, 102, 103),\n  Name = c(\"Alice\", \"Bob\", \"Charlie\"),\n  Age = c(30, 35, 28),\n  Department = c(\"HR\", \"Finance\", \"IT\")\n)"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-5",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-5",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nInterval Data\n\nInterval Data: Numeric data where the differences between values are meaningful, but there is no true zero point.\nEqual Intervals: The difference between values is consistent.\nNo True Zero: Zero does not indicate the absence of the quantity.\nExamples:\n\nTemperature in Fahrenheit: Zero degrees does not mean no temperature.\nIQ Scores: Differences are meaningful, but there is no absolute zero.\n\n\n\n\n\nID\nTemperature (°F)\n\n\n\n\n1\n70\n\n\n2\n80\n\n\n3\n90\n\n\n\nKey Point: Interval data allows for meaningful addition and subtraction but not multiplication or division."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-6",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-6",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nRatio Data\n\nRatio Data: Numeric data with a true zero point, allowing for a full range of mathematical operations.\nTrue Zero: Zero indicates the absence of the quantity.\nMeaningful Ratios: Comparisons like twice as much or half as much are valid.\nExamples:\n\nHeight in Centimeters: Zero means no height.\nWeight in Kilograms: Zero means no weight.\n\n\n\n\n\nID\nHeight (cm)\nWeight (kg)\n\n\n\n\n1\n160\n55\n\n\n2\n175\n70\n\n\n3\n170\n65\n\n\n\nKey Point: Ratio data supports all arithmetic operations, including ratios and proportions."
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-7",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-7",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nCategorical Data\n\nRepresents labels of multiple classes used to divide a variable into specific groups\nExamples: race, sex, age group, educational level\nAlso called discrete data\nFinite number of values with no continuum\nNumbers can be symbols, not for math calculations"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-8",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-8",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nCategorical Data\n\nTypes of Categorical Data:\n\nNominal Data:\n\nSimple codes assigned as labels\nNo inherent order\nCan be binomial (two values) or multinomial (three or more values)\nExamples: marital status, yes/no questions\n\nOrdinal Data:\n\nCodes represent rank order\nExamples: credit score (low, medium, high), age groups, educational levels"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-9",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-9",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nNumeric Data\n\nRepresents specific numeric values\nCan be integer or real (fractional) numbers\nAlso called continuous data\nExamples: age, income, distance, temperature"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-10",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-10",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nNumeric Data\n\nTypes of Numeric Data:\n\nInterval Data:\n\nMeasured on interval scales\nNo absolute zero\nExample: Celsius temperature scale\n\nRatio Data:\n\nCommon in physical sciences and engineering\nHas a nonarbitrary zero value\nExamples: mass, length, time, Kelvin temperature scale"
-  },
-  {
-    "objectID": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-11",
-    "href": "danl-lec/danl-101-lec-08-2024-0919.html#a-simple-taxonomy-of-data-11",
-    "title": "Lecture 8",
-    "section": "A Simple Taxonomy of Data",
-    "text": "A Simple Taxonomy of Data\nCategorical vs. Numeric\n\nKey Distinctions:\n\nCategorical (discrete) vs. Numeric (continuous)\nPresence or absence of inherent order\nAbility to perform mathematical operations\nPresence of an absolute zero point"
-  },
-  {
     "objectID": "danl-cw/danl-101-cw-02.html",
     "href": "danl-cw/danl-101-cw-02.html",
     "title": "R Basics II",
@@ -1524,5 +1636,89 @@
     "title": "R Basics II",
     "section": "Question 6.",
     "text": "Question 6.\n\nWrite an R code to concatenate two character vectors, first_names &lt;- c(\"John\", \"Jane\") and last_names &lt;- c(\"Doe\", \"Smith\"), to create a vector full_names containing the full names using the str_c() function for vectorized string operations.\n\n\nfirst_names &lt;- c(\"John\", \"Jane\")\nlast_names &lt;- c(\"Doe\", \"Smith\")\n\nAnswer:"
+  },
+  {
+    "objectID": "index-home.html",
+    "href": "index-home.html",
+    "title": "Byeong-Hak Choe",
+    "section": "",
+    "text": "Hello! 👋\nI am an assistant professor of data analytics and economics at School of Business at SUNY Geneseo.\nMy research interests lie in economics of the environment and climate change."
+  },
+  {
+    "objectID": "index-home.html#research",
+    "href": "index-home.html#research",
+    "title": "Byeong-Hak Choe",
+    "section": "Research",
+    "text": "Research\n\nWorking papers\n1️⃣ Social Media Campaign, Lobbying, and Legislation: Evidence from #cliamtechange and Energy Lobbies\n2️⃣ Climate Finance under Conflicts and Renegotiations: A Dynamic Contract Approach\n\n\nWork in progress\n🌟 ‘Hiding Behind a Small Cake’ in an Online Dictator Game: The Way You Hide Matters!, (with Tabaré Capitan (1st author) , Jason Shogren, and Benjamin White).\n🌟 Estimating the Value of Statistical Life through Big Data, (with Stephen Newbold and Alexander James).\n\n\nBook chapters\n💡 Governance and Climate Finance in the Developing World (with Tilsa Oré-Monago).\n- In Wu, F., Zhang, D., and Ji, Q. (Eds.), Climate Finance: Supporting a Sustainable Energy Transition, Chapter 7, Springer Nature (July, 2024)."
+  },
+  {
+    "objectID": "danl-qa/danl-101-04-qa.html",
+    "href": "danl-qa/danl-101-04-qa.html",
+    "title": "Setting the Tool",
+    "section": "",
+    "text": "Welcome to our Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the course materials.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions to Byeong-Hak (@bcdanl) or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog-listing.html",
+    "href": "blog-listing.html",
+    "title": "Big & tiny insights through data",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNBA\n\n\n3 min\n\n\n\nByeong-Hak Choe\n\n\nFebruary 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Basics\n\n\n1 min\n\n\n\nByeong-Hak Choe\n\n\nFebruary 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploring the Galaxy: A Data-Driven Journey Through the Star Wars Universe\n\n\n8 min\n\n\n\nByeong-Hak Choe\n\n\nFebruary 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBeer Markets\n\n\n5 min\n\n\n\nByeong-Hak Choe\n\n\nNovember 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n1 min\n\n\n\nByeong-Hak Choe\n\n\nOctober 27, 2023\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "listing-danl-101-cw.html",
+    "href": "listing-danl-101-cw.html",
+    "title": "DANL 101 - Classwork",
+    "section": "",
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-01.html",
+    "href": "danl-hw/danl-101-hw-01.html",
+    "title": "Homework Assignment 1",
+    "section": "",
+    "text": "Please answer all of the following questions thoroughly, ensuring that none are left unanswered.\nFor Homework Assignment 1, the use of any generative artificial intelligence (AI) tools is strictly prohibited.\nOnce you have completed the assignment, click the “Submit” button at the bottom of this page to have it evaluated.\n\nAfter clicking “Submit” button, wait for the message, “Data submitted successfully!”.\nA confirmation email will be sent to the email address that you provide on this homework page once your submission is received.\n\nYou may submit multiple times, but only your most recent submission will be evaluated.\nThe due is September 23, 9:30 A.M., 2024, Monday, Eastern Time.\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "cv/cv.html",
+    "href": "cv/cv.html",
+    "title": "Bio",
+    "section": "",
+    "text": "I view myself as an applied economist with interest in environmental economics and a particular focus on climate change. Methodologically, I make use of causal inference/econometrics/machine learning methods, and other data science tools to conduct empirical analysis. I also use computational methods to solve integrated assessment models of climate change and theoretical economic models, such as dynamic contracts.\nMy research focuses on how to improve effectiveness of climate policy at both micro and macro levels. In particular, I am interested in building relevant climate-economy models that analyze the interaction between economies and the climate under risks arising from (1) climate change and (2) a transition to carbon-neutral economies.\nAs an economics and data science teacher, my goal is to equip students with the essential tools of machine learning, econometrics, and data science to think critically about business and real-world socioeconomic issues. In this regard, I teach students to use those tools to address important business strategies, socioeconomic issues, and individual decision-making."
+  },
+  {
+    "objectID": "cv/cv.html#working-papers",
+    "href": "cv/cv.html#working-papers",
+    "title": "Bio",
+    "section": "Working papers",
+    "text": "Working papers\n\n\n\n\n\n\n\n\nGovernance and Climate Finance in the Developing World (with Tilsa Ore-Monago) (Forthcoming in Springer Nature)\n Abstract : We investigate the relationship between governance and climate finance, particularly in the context of the energy transition in developing countries. Our aim is to examine how governance qualities in developing countries impact financial contributions from contributor countries that intend to fund mitigation projects in the energy sector. We have compiled a dataset of yearly climate finance contributions at the project level spanning from 2011 to 2019. Our analysis, which utilizes random forests and LASSO estimations, reveals that climate finance contributions, particularly those for energy-related projects, are significantly linked to good governance, including a robust legal system, rule of law, and accountability. Ultimately, this study provides valuable insights into the dynamics between governance and climate finance in developing countries and informs policy decisions to support effective climate action in the energy sector. (One of the chapters in the book, \"Climate Finance: Supporting a Sustainable Energy Transition,\" Springer Nature. 2024).\n\n\nSocial Media Campaigns, Lobbying and Legislation: Evidence from #climatechange/#globalwarming and Energy Lobbies\n Abstract : To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation? In this article, I estimate the effect of social media campaigns on a congressperson's legislative activities against climate change actions during the U.S. Congresses (January 2013-January 2019). I find that (1) a 1% increase in the per-capita level of activities of climate change campaigns using Twitter decreases Democrats' tendency to support climate-unfriendly legislation by 0.9%, while it increases Republicans' one by 0.2%; and (2) a 1% increase in the fossil fuel industry's lobbying expenditure relative to the rest of industries' lobbying expenditure increases Republicans' tendency to support climate-unfriendly legislation by 1.1%. I also find that negative sentiment in social media campaigns contributes to affecting congresspersons' support for climate-unfriendly legislation.\n\n\nClimate Finance under Conflicts and Renegotiations: A Dynamic Contract Approach (AEA 2019 poster) \n Abstract : Considering climate funds (e.g. the Green Climate Fund) as the financial mechanism to provide funding to developing countries, this paper examines a long-term climate funding relationship between two agents---the rich country and the poor country. Conflicts between the rich and poor countries arise when determining 1) the size of climate funding that the rich country contributes to the poor country, and 2) the funding allocation between climate adaptation and mitigation projects in the poor country. In addition, the rich country cannot be forced to commit contractual contributions to the poor country, and the climate funding relationship can be repeatedly renegotiated. This paper derives the following results: (1) climate funds converge to the first-best in the long-run, in terms of the size of climate funding and its balance between adaptation and mitigation projects, if and only if climate damage becomes sufficiently severe. (2) funding allocation between adaptation and mitigation projects becomes more favorable to the poor country if marginal climate costs in the poor country grow faster than in the rich country. (3) fewer conflicts and fewer renegotiations between the rich and poor countries make climate funding contracts more efficient, remedying inequality between the poor and rich countries."
+  },
+  {
+    "objectID": "cv/cv.html#work-in-progress",
+    "href": "cv/cv.html#work-in-progress",
+    "title": "Bio",
+    "section": "Work in progress",
+    "text": "Work in progress\n\n\n\n\n\n\n\n\nHiding Behind a Small Cake' in an Online Dictator Game: The Way You Hide Matters!, (with Tabare Capitan (1st author) , Jason Shogren, and Benjamin White) \n Abstract : Using an online dictator game in which receivers have incomplete information of the size of the endowment (big or small), the article, ''Hiding behind a small cake' in a newspaper dictator game (Ockenfels and Werner (2012))'' shows that a few givers who received the big endowment use their giving to signal they received the small endowment (i.e., to lie). In other words, even though a giver will never meet the corresponding receiver, he cares enough about how he could be perceived by others to lie (i.e., second-order beliefs enters his utility function). In our experiment we provide givers with the opportunity to lie about the size of the endowment without using their giving. Similar to Ockenfels and Werner (2012) we find that (i) few take the opportunity to lie---but those who do give less when their giving is not constrained by its role as a signal---and (ii) givers are more likely to lie when the lie is private. However, using a second stage in the experimental design, we show that liars are the most responsive group of givers to a simple message stating the expectation of the receiver."
+  },
+  {
+    "objectID": "cv/cv.html#presentations",
+    "href": "cv/cv.html#presentations",
+    "title": "Bio",
+    "section": "Presentations",
+    "text": "Presentations\n\n\n\n\n\n2023\nSouthern Economic Association Annual Meeting, New Orleans, Louisiana\n\n\n2022\nInterdisciplinary Data Science Workshop, Brigham Young University, Provo, Utah\n\n\n2021\nOnline Seminar, Department of Environmental and Business Economics, University of Southern Denmark\n\n\n2019\nUniversity of Wyoming & Colorado State University Economics Graduate Student Symposium, Laramie, Wyoming\n\n\n2019\nAmerican Economic Association Annual Meeting (poster session), Atlanta, Georgia\n\n\n2018\nThe 29th International Conference on Game Theory, Stony Brook, New York"
+  },
+  {
+    "objectID": "cv/cv.html#memberships",
+    "href": "cv/cv.html#memberships",
+    "title": "Bio",
+    "section": "Memberships",
+    "text": "Memberships\n\n\n\n\n\n2022—present\nSouthern Economic Association\n\n\n2018—present\nAssociation of Environmental and Resource Economists\n\n\n2017—present\nAmerican Economic Association\n\n\n2017—2019\nEconometric Society"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-02.html#data-preparation-and-management-with-r",
+    "href": "danl-hw/danl-101-hw-02.html#data-preparation-and-management-with-r",
+    "title": "Homework Assignment 2",
+    "section": "Data Preparation and Management with R",
+    "text": "Data Preparation and Management with R\n\nlibrary(tidyverse)\nnyc_payroll_new &lt;- read_csv(\"https://bcdanl.github.io/data/nyc_payroll_2024.csv\")\n\n\nQuestion 1\nHow can you filter the data to show only the records where the Base_Salary is greater than $100,000?\nComplete the code by filling in the blank:\n\nlibrary(dplyr)\n\nnyc_payroll_new |&gt; \n  filter(__BLANK__ &gt; 100000)\n\n\n\nQuestion 2\nHow can you select only distinct combinations of Agency_Name and Title_Description?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  distinct(__BLANK 1__, __BLANK 2__)\n\n\n\nQuestion 3\nHow would you arrange the data by Regular_Gross_Paid in descending order, showing the highest paid employees first?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  arrange(desc(__BLANK__))\n\n\n\nQuestion 4\nHow can you select and rename the Last_Name column to Surname and the First_Name column to Given_Name?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  rename(Surname = __BLANK 1__, Given_Name = __BLANK 2__)\n\n\n\nQuestion 5\nHow would you relocate the Base_Salary column to be right after the First_Name column?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  relocate(__BLANK 1__, .after = __BLANK 2__)\n\n\n\nQuestion 6\nHow can you filter the data to show only records for the POLICE DEPARTMENT agency and arrange it by Total_OT_Paid in ascending order?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  filter(__BLANK 1__ == \"POLICE DEPARTMENT\") |&gt; \n  arrange(__BLANK 2__)\n\n\n\nQuestion 7\nHow can you select distinct Work_Location_Borough values and arrange them alphabetically?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  distinct(__BLANK 1__) |&gt; \n  arrange(__BLANK 2__)\n\n\n\nQuestion 8\nHow can you filter the data to include only those records where the Pay_Basis is per Annum and then select only the First_Name, Last_Name, and Base_Salary columns?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  filter(__BLANK 1__ == \"per Annum\") |&gt; \n  select(__BLANK 2__, __BLANK 3__, __BLANK 4__)\n\n\n\nQuestion 9\nHow would you rename the Work_Location_Borough column to Borough and then arrange the data by Borough and Base_Salary in descending order?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  rename(Borough = __BLANK 1__) |&gt; \n  arrange(__BLANK 2__, desc(__BLANK 3__))\n\n\n\nQuestion 10\nHow can you filter for records from the fiscal year 2023, relocate the Total_OT_Paid column to be the first column, and then select distinct rows based on Last_Name and Total_OT_Paid?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  filter(__BLANK 1__ == 2023) |&gt; \n  relocate(__BLANK 2__, .before = __BLANK 3__) |&gt; \n  distinct(__BLANK 4__, __BLANK 5__)"
   }
 ]

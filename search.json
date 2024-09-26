@@ -1978,14 +1978,14 @@
     "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-3",
     "title": "Lecture 10",
     "section": "Filter observations with filter()",
-    "text": "Filter observations with filter()\nlogical conditions"
+    "text": "Filter observations with filter()\nLogical Operations\n\n\n\n\n\n\nx is the left-hand circle, y is the right-hand circle, and the shaded region show which parts each operator selects."
   },
   {
     "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-4",
     "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-4",
     "title": "Lecture 10",
     "section": "Filter observations with filter()",
-    "text": "Filter observations with filter()\nBoolean Operations\n\n\n\n\n\n\nx is the left-hand circle, y is the right-hand circle, and the shaded region show which parts each operator selects."
+    "text": "Filter observations with filter()\nlogical conditions with equality and inequality"
   },
   {
     "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-5",
@@ -2098,5 +2098,12 @@
     "title": "Lecture 10",
     "section": "Apache Storm and Apache Spark",
     "text": "Apache Storm and Apache Spark\nMedscape: Real-Time Medical News for Healthcare Professionals"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#relational-data",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#relational-data",
+    "title": "Lecture 10",
+    "section": "Relational Data",
+    "text": "Relational Data\n\n\n\nx |&gt;\n  left_join(y)\n\nA left join keeps all observations in x.\n\nThe left join is most commonly used.\n\nNote: NA stands for “not available” (i.e., a missing value)."
   }
 ]

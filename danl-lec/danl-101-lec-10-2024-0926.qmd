@@ -464,6 +464,15 @@ theme_set(theme_fivethirtyeight()+
 
 
 ## Hadoop
+### Hadoop Architecture - MapReduce
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/map-reduce.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"> </p>
+</div>
+
+## Hadoop
 ### How Hadoop Works
 
 1. **Data Distribution**
@@ -530,6 +539,8 @@ theme_set(theme_fivethirtyeight()+
 - [What is a Data Mart?](https://aws.amazon.com/what-is/data-mart/)
 - [What is a Data Lake?](https://aws.amazon.com/what-is/data-lake/)
 - [What is Hadoop?](https://aws.amazon.com/what-is/hadoop/)
+- [What is (Apache) Hadoop?](https://cloud.google.com/learn/what-is-hadoop?hl=en#)
+
 
 
 # Joining Relational `data.frame`s with `left_join()` {background-color="#1c4982"}

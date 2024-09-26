@@ -534,13 +534,14 @@ theme_set(theme_fivethirtyeight()+
 
 
 ## References
-
+:::{.nonincremental}
 - [What is a Data Warehouse?](https://aws.amazon.com/what-is/data-warehouse/)
 - [What is a Data Mart?](https://aws.amazon.com/what-is/data-mart/)
 - [What is a Data Lake?](https://aws.amazon.com/what-is/data-lake/)
 - [What is Hadoop?](https://aws.amazon.com/what-is/hadoop/)
 - [What is (Apache) Hadoop?](https://cloud.google.com/learn/what-is-hadoop?hl=en#)
 
+:::
 
 
 # Joining Relational `data.frame`s with `left_join()` {background-color="#1c4982"}

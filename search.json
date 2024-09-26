@@ -60,7 +60,7 @@
     "href": "listing-danl-101-lec.html",
     "title": "DANL 101 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 9\n\n\nData Preparation and Management\n\n\nSeptember 24, 2024\n\n\n\n\nLecture 8\n\n\nData Preparation and Management\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nR Basics\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nRStudio; R Basics\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nData Analytics in the Retail Value Chain; Data Analytics vs. Data Science\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nIntroduction with Sports Analytics & Business Intelligence\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 10\n\n\nData Preparation and Management\n\n\nSeptember 26, 2024\n\n\n\n\nLecture 9\n\n\nData Preparation and Management\n\n\nSeptember 24, 2024\n\n\n\n\nLecture 8\n\n\nData Preparation and Management\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nR Basics\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nR Basics; Descriptive Statistics\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nRStudio; R Basics\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nData Analytics in the Retail Value Chain; Data Analytics vs. Data Science\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nIntroduction with Sports Analytics & Business Intelligence\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "index.html",
@@ -74,7 +74,7 @@
     "href": "index.html#bullet-lecture-slides",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 9\n\n\nSeptember 24, 2024\n\n\n\n\nLecture 8\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 10\n\n\nSeptember 26, 2024\n\n\n\n\nLecture 9\n\n\nSeptember 24, 2024\n\n\n\n\nLecture 8\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-classwork",
@@ -1720,5 +1720,334 @@
     "title": "Homework Assignment 2",
     "section": "Data Preparation and Management with R",
     "text": "Data Preparation and Management with R\nFor the questions in the R section, consider the data.frame nyc_payroll_new. For detailed descriptions of the variables in this data.frame, please refer to the following link: Citywide Payroll Data (Fiscal Year).\n\nlibrary(tidyverse)\nlibrary(skimr)\nnyc_payroll_new &lt;- read_csv(\"https://bcdanl.github.io/data/nyc_payroll_2024.csv\")\n\n\nQuestion 1\nHow can you filter the data to calculate descriptive statistics (mean and standard deviation) of Base_Salary for workers in the work_location_borough “Manhattan”? Similarly, how can you filter the data to calculate these statistics for workers in the work_location_borough “Queens”?\nProvide the R code for performing these calculations and then report the mean and standard deviation of base_salary for workers in both “Manhattan” and “Queens”.\n\n\nQuestion 2\nHow can you filter the data.frame nyc_payroll_new to show only the records where the base_salary is greater than or equal to $100,000?\nComplete the code by filling in the blank:\n\nnyc_payroll_new |&gt; \n  filter(__BLANK__)\n\n\n\nQuestion 3\nHow can you select only distinct combinations of agency_name and title_description?\nComplete the code by filling in the blank:\n\nnyc_payroll_new |&gt; \n  __BLANK__\n\n\n\nQuestion 4\nHow would you arrange the data by regular_gross_paid in descending order, showing the highest paid employees first?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  __BLANK__\n\n\n\nQuestion 5\nHow can you select and rename the title_description variable to title?\nComplete the code by filling in the blank:\n\nnyc_payroll_new |&gt; \n  rename(__BLANK__)\n\n\n\nQuestion 6\nHow can you filter the data to show only records for the “POLICE DEPARTMENT” agency_name and arrange it by total_ot_paid in ascending order?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  filter(__BLANK 1__) |&gt; \n  arrange(__BLANK 2__)\n\n\n\nQuestion 7\nHow can you filter the data to include only those records where the pay_basis is “per Annum” and then select only the first_name, last_name, and base_salary variables?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  filter(__BLANK 1__) |&gt; \n  select(__BLANK 2__, __BLANK 3__, __BLANK 4__)\n\n\n\nQuestion 8\nHow would you arrange the data.frame by borough in ascending order and base_salary in descending order?\nComplete the code by filling in the blanks:\n\nnyc_payroll_new |&gt; \n  __BLANK__\n\n\n\nQuestion 9\nHow can you filter the nyc_payroll_new data.frame to remove observations where the base_salary variable has NA values? After filtering, how would you calculate the total number of remaining observations?\nProvide the R code needed to perform these data extraction tasks."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#technologies-used-to-manage-and-process-big-data-1",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#technologies-used-to-manage-and-process-big-data-1",
+    "title": "Lecture 10",
+    "section": "Technologies Used to Manage and Process Big Data",
+    "text": "Technologies Used to Manage and Process Big Data\n\nDefinition of Big Data\n\nData sets so large and complex that traditional data management tools are inadequate.\n\nThe Need for Advanced Technologies\n\nEmerging technologies are essential to manage, process, and analyze big data effectively.\n\nOverview of Topics\n\nData Warehouses\nExtract, Transform, Load (ETL) Process\nData Marts\nData Lakes\nHadoop"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#technologies-used-to-manage-and-process-big-data-2",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#technologies-used-to-manage-and-process-big-data-2",
+    "title": "Lecture 10",
+    "section": "Technologies Used to Manage and Process Big Data",
+    "text": "Technologies Used to Manage and Process Big Data\nChallenges with Traditional Data Management\n\nLimitations\n\nTraditional software and hardware can’t handle the volume, velocity, and variety of big data.\n\nImpact\n\nInability to store massive data volumes efficiently.\nDifficulty in processing and analyzing data in a timely manner.\n\nSolution\n\nAdoption of new technologies specifically designed for big data management."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes",
+    "title": "Lecture 10",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nData Warehouses\n\n\n\n\n\n\nDefinition\n\nA large database that holds business information from many sources across the enterprise.\n\nPurpose\n\nSupports decision-making processes by providing a comprehensive view of the organization’s data."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-1",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-1",
+    "title": "Lecture 10",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nData Warehouses Characteristics\n\n\n\n\n\n\n\nCharacteristic\nDescription\n\n\n\n\nLarge\nHolds billions of records and petabytes of data\n\n\nMultiple Sources\nData comes from many internal and external sources via the ETL process\n\n\nHistorical\nTypically contains data spanning 5 years or more\n\n\nCross-Organizational Access and Analysis\nData accessed and analyzed by users across the organization to support multiple business processes and decision-making\n\n\nSupports Various Analyses and Reporting\nEnables drill-down analysis, metric development, trend identification"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-2",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-2",
+    "title": "Lecture 10",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nData Warehouse Architecture\n\nData Sources\n\nInternal Systems: Online transaction processing systems, customer relationship management, enterprise resource planning.\nExternal Systems: Social media, government databases, etc.\n\nETL Process\n\nExtract, Transform, Load (to be discussed in detail).\n\nData Storage\n\nCentralized repository optimized for query and analysis.\n\nData Access\n\nUsed by various departments for reporting, analysis, and decision-making."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-3",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-3",
+    "title": "Lecture 10",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nExamples of Data Warehouse Usage\n\n\n\n\n\n\n\n\n\nWalmart\n\nEarly adopter; used data warehouse to gain a competitive advantage in supply chain management.\nHeld transaction data from over 11,000 stores and 25,000 suppliers.\nFirst commercial data warehouse to reach 1 terabyte in 1992.\nCollects data over 2.5 petabytes per hour in 2024."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-4",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-4",
+    "title": "Lecture 10",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nExamples of Data Warehouse Usage\n\n\n\n\n\n\n\n\n\nWHOOP Wearable Device\n\nCollects massive biometric data from athletes.\nData warehouse stores sensor data collected 100 times per second.\nProvides insights on strain, recovery, and sleep to optimize performance."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-5",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-5",
+    "title": "Lecture 10",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nExamples of Data Warehouse Usage\n\n\n\n\n\n\n\n\n\nAmerican Airlines\n\nFlight attendants access customer data to enhance in-flight service.\nAbility to resolve issues by offering free miles or travel vouchers based on customer history."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-6",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-warehouses-data-marts-and-data-lakes-6",
+    "title": "Lecture 10",
+    "section": "Data Warehouses, Data Marts, and Data Lakes",
+    "text": "Data Warehouses, Data Marts, and Data Lakes\nData Quality in Data Warehouses\n\nChallenges\n\nData Inconsistencies: Duplicate or missing data leading to incorrect analyses.\nDirty Data: Inaccurate, incomplete, or outdated information.\nMisleading statistics: “Garbage in, garbage out”\n\nImportance\n\nEnsuring high data quality is critical to avoid misleading conclusions.\n\nSolution\n\nImplement robust ETL processes to cleanse and standardize data."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#extract-transform-load-etl-process",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#extract-transform-load-etl-process",
+    "title": "Lecture 10",
+    "section": "Extract, Transform, Load (ETL) Process",
+    "text": "Extract, Transform, Load (ETL) Process\nOverview of ETL Process\n\nPurpose\n\nIntegral process for populating data warehouses with clean, consistent data.\n\nStages\n\nExtract\n\nCollecting data from multiple sources.\n\nTransform\n\nCleaning and converting data into a suitable format.\n\nLoad\n\nInserting transformed data into the data warehouse."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#extract-transform-load-etl-process-1",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#extract-transform-load-etl-process-1",
+    "title": "Lecture 10",
+    "section": "Extract, Transform, Load (ETL) Process",
+    "text": "Extract, Transform, Load (ETL) Process\nExtract Stage\n\nData Sources\n\nVarious internal and external systems.\n\nProcess\n\nData Extraction: Pulling data from different systems.\nData Validation: Rejecting data that doesn’t meet quality standards (e.g., missing values, invalid formats).\n\nChallenges\n\nDealing with heterogeneous data formats and structures."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#extract-transform-load-etl-process-2",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#extract-transform-load-etl-process-2",
+    "title": "Lecture 10",
+    "section": "Extract, Transform, Load (ETL) Process",
+    "text": "Extract, Transform, Load (ETL) Process\nTransform Stage\n\nPurpose\n\nConvert extracted data into a standardized format suitable for analysis.\n\nProcesses\n\nData Cleaning: Correcting errors and inconsistencies.\nData Integration: Combining data from different sources.\nData Aggregation: Summarizing data to reduce processing time.\nExample Transformation:\n\nConverting customer address information into a sales district or census tract."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#extract-transform-load-etl-process-3",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#extract-transform-load-etl-process-3",
+    "title": "Lecture 10",
+    "section": "Extract, Transform, Load (ETL) Process",
+    "text": "Extract, Transform, Load (ETL) Process\nLoad Stage\n\nProcess\n\nData Loading: Inserting transformed data into the data warehouse.\nIndexing: Creating indices to improve query performance.\nConstraint Checking: Ensuring data integrity according to database schema.\n\nChallenges\n\nThe loading process for large data warehouses can take days.\n\nOutcome\n\nThe data warehouse is updated with high-quality, consistent data ready for analysis."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-marts",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-marts",
+    "title": "Lecture 10",
+    "section": "Data Marts",
+    "text": "Data Marts\nDefinition of Data Marts\n\nSubset of Data Warehouse\n\nFocused on a specific business area or department.\n\nPurpose\n\nProvides relevant data to a specific group without the complexity of the entire data warehouse.\n\nAdvantages\n\nCost-Effective: Less expensive to implement and maintain.\nFaster Access: Optimized for departmental needs.\nSimplified Analysis: Easier to query and analyze due to reduced data volume."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-marts-1",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-marts-1",
+    "title": "Lecture 10",
+    "section": "Data Marts",
+    "text": "Data Marts\nData Mart Use Cases\n\nDepartmental Focus\n\nFinance: Financial reporting and analysis.\nMarketing: Customer segmentation and campaign analysis.\nInventory: Stock levels and supply chain management.\n\nSmall to Medium-Sized Businesses\n\nAn affordable alternative to a full-scale data warehouse."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-marts-2",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-marts-2",
+    "title": "Lecture 10",
+    "section": "Data Marts",
+    "text": "Data Marts\nData Marts vs. Data Warehouses\n\n\n\n\n\n\n\n\nFeature\nData Mart\nData Warehouse\n\n\n\n\nScope\nSpecific department or business area\nEntire enterprise\n\n\nData Volume\nSmaller\nLarger\n\n\nComplexity\nLess complex\nMore complex\n\n\nImplementation Time\nShorter\nLonger\n\n\nCost\nLower\nHigher"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-lakes",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-lakes",
+    "title": "Lecture 10",
+    "section": "Data Lakes",
+    "text": "Data Lakes\nDefinition of Data Lakes\n\n“Store Everything” Approach\n\nStores all data in its raw, unaltered form.\n\nPurpose\n\nProvides a centralized repository for all data, accommodating future analytical needs.\n\nCharacteristics\n\nData Variety: Includes structured, semi-structured, and unstructured data.\nFlexibility: Data is available for any type of analysis at any time."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-lakes-1",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-lakes-1",
+    "title": "Lecture 10",
+    "section": "Data Lakes",
+    "text": "Data Lakes\nData Lakes vs. Data Warehouses\n\n\n\n\n\n\n\n\nFeature\nData Lake\nData Warehouse\n\n\n\n\nData Processing\nSchema-on-read (processed when accessed)\nSchema-on-write (processed before storage)\n\n\nData State\nRaw, unprocessed\nCleaned, transformed\n\n\nData Types\nAll data types\nPrimarily structured\n\n\nFlexibility\nHigh\nModerate"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-lakes-2",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-lakes-2",
+    "title": "Lecture 10",
+    "section": "Data Lakes",
+    "text": "Data Lakes\nCase Study: Bechtel Corporation\n\n\n\n\n\n\nAbout Bechtel\n\nGlobal engineering, construction, and project management company.\n\nImplementation\n\nBuilt a 5-petabyte data lake consolidating years of project data."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-lakes-3",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-lakes-3",
+    "title": "Lecture 10",
+    "section": "Data Lakes",
+    "text": "Data Lakes\nCase Study: Bechtel Corporation\n\nBenefits\n\nHistorical Insights: Access to data from hundreds of projects worldwide.\nImproved Forecasting: Better predictions of project outcomes.\nCost Reduction: Identifying inefficiencies to cut costs.\nCompetitive Advantage: Enhanced ability to win new contracts through data-driven insights."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#relational-databases",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#relational-databases",
+    "title": "Lecture 10",
+    "section": "Relational Databases",
+    "text": "Relational Databases\n\nSometimes, one data set is scattered across multiple files.\n\nThe size of the files can be huge.\nThe data collection process can be scattered across time and space.\nE.g., data.frame for county-level data and data.frame for geographic information, such as longitude and latitude.\n\nSometimes we want to combine two or more data.frame based on common data values in those data.frame.\n\nThis task is known in the database world as performing a “join.”"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#relational-databases-1",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#relational-databases-1",
+    "title": "Lecture 10",
+    "section": "Relational Databases",
+    "text": "Relational Databases\n\n\n\n\n\n\nThe relational database model is a simple but highly useful way to organize data into collections of two-dimensional tables called relations."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#relational-databases-2",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#relational-databases-2",
+    "title": "Lecture 10",
+    "section": "Relational Databases",
+    "text": "Relational Databases\nCharacteristics\n\nData is organized into collections of two-dimensional tables called relations.\nEach row in the table represents an entity and each column represents an attribute of that entity.\nEach row in a table is uniquely identified by a key.\nThe key variable enables relationships between the tables to be defined.\nUser queries are used to perform operations on the database like adding, changing, or deleting data and selecting, and joining existing data in existing tables."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop",
+    "title": "Lecture 10",
+    "section": "Hadoop",
+    "text": "Hadoop\nIntroduction to Hadoop\n\n\n\n\n\n\nDefinition\n\nAn open-source software framework for storing and processing large data sets.\n\nComponents\n\nHadoop Distributed File System (HDFS): Distributed data storage.\nMapReduce: Data processing model."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-1",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-1",
+    "title": "Lecture 10",
+    "section": "Hadoop",
+    "text": "Hadoop\nIntroduction to Hadoop\n\n\n\n\n\n\nPurpose\n\nEnables distributed processing of large data sets across clusters of computers."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-2",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-2",
+    "title": "Lecture 10",
+    "section": "Hadoop",
+    "text": "Hadoop\nHadoop Architecture - HDFS\n\n\n\n\n\n\n\n\n\nHDFS\n\nDivides data into blocks and distributes them across different servers for processing.\nProvides a highly redundant computing environment\n\nAllows the application to keep running even if individual servers fail."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-3",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-3",
+    "title": "Lecture 10",
+    "section": "Hadoop",
+    "text": "Hadoop\nHadoop Architecture - MapReduce\n\nMapReduce\n\nMap Phase: Filters and sorts data.\n\ne.g., Sorting customer orders based on their product IDs, with each group corresponding to a specific product ID.\n\nReduce Phase: Summarizes and aggregates results.\n\ne.g., Counting the number of orders within each group, thereby determining the frequency of each product ID."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-4",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-4",
+    "title": "Lecture 10",
+    "section": "Hadoop",
+    "text": "Hadoop\nHow Hadoop Works\n\nData Distribution\n\nLarge data sets are split into smaller blocks.\n\nData Storage\n\nBlocks are stored across multiple servers in the cluster.\n\nProcessing with MapReduce\n\nMap Tasks: Executed on servers where data resides, minimizing data movement.\nReduce Tasks: Combine results from map tasks to produce final output.\n\nFault Tolerance\n\nData replication ensures processing continues even if servers fail."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-5",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-5",
+    "title": "Lecture 10",
+    "section": "Hadoop",
+    "text": "Hadoop\nExtending Hadoop for Real-Time Processing\n\nLimitation of Hadoop\n\nHadoop was originally designed for batch processing.\n\nBatch Processing: Data or tasks are collected over a period of time and then processed all at once, typically at scheduled times or during periods of low activity.\n\n\nReal-Time Processing Limitation:\n\nHadoop cannot natively process real-time streaming data (e.g., stock prices flowing into stock exchanges, live sensor data)\n\nExtending Hadoop’s Capabilities\n\nBoth Apache Storm and Apache Spark can run on top of Hadoop clusters, utilizing HDFS for storage."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-6",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#hadoop-6",
+    "title": "Lecture 10",
+    "section": "Hadoop",
+    "text": "Hadoop\nApache Storm and Apache Spark\n\n\nApache Storm\n\nFunctionality:\n\nProcesses real-time data streams.\nHandles unbounded streams of data reliably and efficiently.\n\nUse Cases:\n\nReal-time analytics\nOnline machine learning\nContinuous computation\nReal-time data integration\n\n\n\nApache Spark\n\nFunctionality:\n\nProvides in-memory computations for increased speed.\nSupports both batch and streaming data processing through Spark Streaming.\n\nUse Cases:\n\nInteractive queries\nMachine learning"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#references",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#references",
+    "title": "Lecture 10",
+    "section": "References",
+    "text": "References\n\nWhat is a Data Warehouse?\nWhat is a Data Mart?\nWhat is a Data Lake?\nWhat is Hadoop?"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-transformation",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-transformation",
+    "title": "Lecture 10",
+    "section": "Data Transformation",
+    "text": "Data Transformation\n\n\nBecause the first argument is a data.frame and the output is a data.frame, dplyr verbs work well with the pipe, |&gt;\n\nCtrl + Shift + M for Windows; command + Shift + M for Mac.\n\nThe pipe (|&gt;) takes the thing on its left and passes it along to the function on its right so that\n\nf(x, y) is equivalent to x |&gt; f(y).\ne.g., filter(DATA_FRAME, LOGICAL_STATEMENT) is equivalent to DATA_FRAME |&gt;  filter(LOGICAL_STATEMENT).\n\nThe easiest way to pronounce the pipe (|&gt;) is “then”.\n\nThe pipe (|&gt;) is super useful when we have a chain of data transforming operations to do."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-transformation-1",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-transformation-1",
+    "title": "Lecture 10",
+    "section": "Data Transformation",
+    "text": "Data Transformation\n\nTo use the (native) pipe operator (|&gt;), we should set the option as follows:\n\nTools &gt; Global Options &gt; Code from the side menu &gt; Choose “Use native pipe operator, |&gt;”."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#data-transformation-2",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#data-transformation-2",
+    "title": "Lecture 10",
+    "section": "Data Transformation",
+    "text": "Data Transformation\ndplyr basics\n\nDATA_FRAME |&gt; filter(LOGICAL_CONDITIONS)\nDATA_FRAME |&gt; arrange(VARIABLES)\nDATA_FRAME |&gt; select(VARIABLES)\nDATA_FRAME |&gt; rename(NEW_VARIABLE = EXISTING_VARIABLE)\nDATA_FRAME |&gt; mutate(NEW_VARIABLE = ... )\nThe subsequent arguments describe what to do with the data.frame, mostly using the variable names.\nThe result is a data.frame."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-1",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-1",
+    "title": "Lecture 10",
+    "section": "Filter observations with filter()",
+    "text": "Filter observations with filter()\njan1 &lt;- flights |&gt; \n  filter(month == 1, day == 1)\n\ndec25 &lt;- flights |&gt; \n  filter(month == 12, day == 25)\n\nclass(flights$month == 1)\n\nfilter() allows us to subset observations based on the value of logical conditions, which are either TRUE or FALSE."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-2",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-2",
+    "title": "Lecture 10",
+    "section": "Filter observations with filter()",
+    "text": "Filter observations with filter()\nLogicals and Conditions\n\n\n\n\n\n\n\n\nLogical variables have either TRUE or FALSE value.\nConditions are expressions that evaluate as logical\nWhat logical operations do is combining logical conditions, which returns a logical value when executed."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-3",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-3",
+    "title": "Lecture 10",
+    "section": "Filter observations with filter()",
+    "text": "Filter observations with filter()\nlogical conditions"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-4",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-4",
+    "title": "Lecture 10",
+    "section": "Filter observations with filter()",
+    "text": "Filter observations with filter()\nBoolean Operations\n\n\n\n\n\n\nx is the left-hand circle, y is the right-hand circle, and the shaded region show which parts each operator selects."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-5",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-5",
+    "title": "Lecture 10",
+    "section": "Filter observations with filter()",
+    "text": "Filter observations with filter()\nlogical conditions\n\n\n\ndf &lt;- data.frame(\n  num = c(8, 9, 10, 11),\n  chr = c(\"A\", \"C\", \"B\", \"A\"))\n\n\n\n\n\n\n\n\ndf |&gt; filter(num &gt; 8 & \n             num &lt; 11)\n                \ndf |&gt; filter(num &gt; 8,\n             num &lt; 11)"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-6",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-6",
+    "title": "Lecture 10",
+    "section": "Filter observations with filter()",
+    "text": "Filter observations with filter()\nlogical conditions\n\n\n\ndf &lt;- data.frame(\n  num = c(8, 9, 10, 11),\n  chr = c(\"A\", \"C\", \"B\", \"A\"))\n\n\n\n\n\n\n\n\ndf |&gt; filter(num &lt; 10 & \n             chr == \"A\")\n\ndf |&gt; filter(num &lt; 10, \n             chr == \"A\")"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-7",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-7",
+    "title": "Lecture 10",
+    "section": "Filter observations with filter()",
+    "text": "Filter observations with filter()\nlogical conditions\n\n\n\ndf &lt;- data.frame(\n  num = c(8, 9, 10, 11),\n  chr = c(\"A\", \"C\", \"B\", \"A\"))\n\n\n\n\n\n\n\n\ndf |&gt; filter(num &lt; 10 | \n             chr == \"A\")"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-8",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-8",
+    "title": "Lecture 10",
+    "section": "Filter observations with filter()",
+    "text": "Filter observations with filter()\n%in% operator\n\n\nWhen the or operator | is repeatedly used, we can consider using the %in% operator instead.\n\n\n\n\nflights |&gt; \n  filter( month == 10 | \n          month == 11 | \n          month == 12 )\n\nflights |&gt; \n  filter(month %in% c(10, 11, 12))"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-9",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-9",
+    "title": "Lecture 10",
+    "section": "Filter observations with filter()",
+    "text": "Filter observations with filter()\nMissing values (NA)\n\n\nAlmost any operation involving an unknown value (NA) will also be unknown.\n\nNA &gt; 5\n10 == NA\nNA + 10\nNA / 2\n\nNA == NA"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-10",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-10",
+    "title": "Lecture 10",
+    "section": "Filter observations with filter()",
+    "text": "Filter observations with filter()\nMissing values (NA)\n\n\nLet x be Mary’s age. We don’t know how old she is.\nLet y be John’s age. We don’t know how old he is.\nAre John and Mary the same age?\n\n\nx &lt;- NA\ny &lt;- NA\nx == y"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#find-all-unique-observations-with-distinct-1",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#find-all-unique-observations-with-distinct-1",
+    "title": "Lecture 10",
+    "section": "Find all unique observations with distinct()",
+    "text": "Find all unique observations with distinct()\n\n\n# Remove duplicate observations, \n#  if any\nflights |&gt; \n  distinct()\n\n# Find all unique \n#  origin and destination pairs\nflights |&gt; \n  distinct(origin, dest)\n\n# If we want to keep other variables\nflights |&gt; \n  distinct(origin, dest, \n           .keep_all = TRUE)\n\n\n\ndistinct() finds all the unique observations in a data.frame.\n\nWe can also optionally provide variable names to distinct()."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#arrange-observations-with-arrange-1",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#arrange-observations-with-arrange-1",
+    "title": "Lecture 10",
+    "section": "Arrange observations with arrange()",
+    "text": "Arrange observations with arrange()\nflights |&gt; \n  arrange(year, month, day)\n\n# re-order observations by `dep_delay` in descending order.\nflights |&gt; \n  arrange([?])\n\narrange() sorts out observations.\n\nIf we provide more than one variable name, each additional variable will be used to break ties in the values of preceding variables.\n\nUse desc() to re-order by a column in descending order.\n\nAdding - before a numeric variable (-NUMERIC_VARIABLE) also works."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-11",
+    "href": "danl-lec/danl-101-lec-10-2024-0926.html#filter-observations-with-filter-11",
+    "title": "Lecture 10",
+    "section": "Filter observations with filter()",
+    "text": "Filter observations with filter()\nis.na()\n\n\nIf we want to determine if a value is missing, use is.na().\nIf we want to preserve missing values, ask filter() for them explicitly.\n\n\n\n\nx &lt;- NA\nis.na(x) # is x NA?\n\ny &lt;- \"missing\"\nis.na(y) # is y NA?\n\ndf &lt;- data.frame(y = c(1, NA, 3))\n\ndf |&gt; \n  filter(y &gt; 1)\n\ndf |&gt; \n  filter( is.na(y) | y &gt; 1 )"
   }
 ]

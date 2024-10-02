@@ -2314,7 +2314,7 @@
     "href": "danl-lec/danl-101-lec-12-2024-1003.html#data-transformation",
     "title": "Lecture 12",
     "section": "Data Transformation",
-    "text": "Data Transformation\n\n\nDATA.FRAME |&gt; filter(LOGICAL_CONDITIONS)\nDATA.FRAME |&gt; arrange(VARIABLES)\nDATA.FRAME |&gt; distinct(VARIABLES)\nDATA.FRAME |&gt; select(VARIABLES)\nDATA.FRAME |&gt; rename(NEW_VARIABLE = EXISTING_VARIABLE)\nDATA.FRAME |&gt; mutate(NEW_VARIABLE = ... )\nThe subsequent arguments describe what to do with the data.frame, mostly using the variable names.\nThe result is a data.frame."
+    "text": "Data Transformation\n\n\nDATA.FRAME |&gt; filter(LOGICAL_CONDITIONS)\nDATA.FRAME |&gt; arrange(VARIABLES)\nDATA.FRAME |&gt; distinct(VARIABLES)\nDATA.FRAME |&gt; select(VARIABLES)\nDATA.FRAME |&gt; rename(NEW_VARIABLE = EXISTING_VARIABLE)\nThe subsequent arguments describe what to do with the data.frame, mostly using the variable names.\nThe result is a data.frame."
   },
   {
     "objectID": "danl-lec/danl-101-lec-12-2024-1003.html#filter-observations-with-filter-1",

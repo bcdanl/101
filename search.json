@@ -81,7 +81,7 @@
     "href": "index.html#bullet-classwork",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nSeptember 30, 2024\n\n\n\n\nJoining data.frames\n\n\nSeptember 26, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 2, 2024\n\n\n\n\nJoining data.frames\n\n\nSeptember 26, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -1670,7 +1670,7 @@
     "href": "listing-danl-101-cw.html",
     "title": "DANL 101 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nClasswork 4\n\n\nSeptember 30, 2024\n\n\n\n\nJoining data.frames\n\n\nClasswork 3\n\n\nSeptember 26, 2024\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nClasswork 4\n\n\nOctober 2, 2024\n\n\n\n\nJoining data.frames\n\n\nClasswork 3\n\n\nSeptember 26, 2024\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-101-hw-01.html",
@@ -2251,14 +2251,14 @@
     "href": "danl-cw/danl-101-cw-04.html",
     "title": "filter(), arrange(), and distinct()",
     "section": "",
-    "text": "Find all flights that\n\nHad an arrival delay of two or more hours\nFlew to Houston (IAH or HOU)\nDeparted in summer (July, August, and September)\nArrived more than two hours late, but didn’t leave late\nDeparted between midnight and 6am (inclusive)\n\n\nAnswer:"
+    "text": "Find all flights that had an arrival delay of two or more hours\nFind all flights that flew to Houston (IAH or HOU)\nFind all flights that departed in summer (July, August, and September)\nFind all flights that arrived more than two hours late, but didn’t leave late\nFind all flights that departed between midnight and 6am (inclusive)\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-101-cw-04.html#question-1",
     "href": "danl-cw/danl-101-cw-04.html#question-1",
     "title": "filter(), arrange(), and distinct()",
     "section": "",
-    "text": "Find all flights that\n\nHad an arrival delay of two or more hours\nFlew to Houston (IAH or HOU)\nDeparted in summer (July, August, and September)\nArrived more than two hours late, but didn’t leave late\nDeparted between midnight and 6am (inclusive)\n\n\nAnswer:"
+    "text": "Find all flights that had an arrival delay of two or more hours\nFind all flights that flew to Houston (IAH or HOU)\nFind all flights that departed in summer (July, August, and September)\nFind all flights that arrived more than two hours late, but didn’t leave late\nFind all flights that departed between midnight and 6am (inclusive)\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-101-cw-04.html#question-2",

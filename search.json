@@ -2321,7 +2321,7 @@
     "href": "danl-lec/danl-101-lec-12-2024-1003.html#filter-observations-with-filter-1",
     "title": "Lecture 12",
     "section": "Filter observations with filter()",
-    "text": "Filter observations with filter()\nMissing values (NA)\n\n\nAlmost any operation involving an unknown value (NA) will also be unknown.\n\nNA &gt; 5\n10 == NA\nNA + 10\nNA / 2\n(1 + 2 + NA) / 3"
+    "text": "Filter observations with filter()\nMissing values (NA)\n\n\nAlmost any operation involving an unknown value (NA) will also be unknown.\n\nNA &gt; 5\n10 == NA\nNA + 10\nNA / 2\n(1 + NA + 3) / 3\nmean( c(1, NA, 3) )\nsd( c(1, NA, 3) )"
   },
   {
     "objectID": "danl-lec/danl-101-lec-12-2024-1003.html#filter-observations-with-filter-2",
@@ -2335,7 +2335,7 @@
     "href": "danl-lec/danl-101-lec-12-2024-1003.html#filter-observations-with-filter-3",
     "title": "Lecture 12",
     "section": "Filter observations with filter()",
-    "text": "Filter observations with filter()\nis.na()\n\n\nIf we want to determine if a value is missing, use is.na().\nIf we want to preserve missing values, ask filter() for them explicitly.\n\n\n\n\nx &lt;- NA\nis.na(x) # is x NA?\n\ny &lt;- \"missing\"\nis.na(y) # is y NA?\n\ndf &lt;- data.frame(y = c(1, NA, 3))\n\ndf |&gt; \n  filter(y &gt; 1)\n\ndf |&gt; \n  filter( is.na(y) | y &gt; 1 )"
+    "text": "Filter observations with filter()\nis.na()\n\n\nIf we want to determine if a value is missing, use is.na().\nIf we want to preserve missing values, ask filter() for them explicitly.\n\n\n\n\nx &lt;- NA\nis.na(x) # is x NA?\n\ny &lt;- \"missing\"\nis.na(y) # is y NA?\n\nv1 &lt;- c(1, NA, 3)\nis.na(v1) # is v1 NA?\n\ndf &lt;- data.frame(v1 = c(1, NA, 3),\n                 v2 = c(1, 2, 3))\n\ndf |&gt; \n  filter( is.na(v1) )\n\ndf |&gt; \n  filter( !is.na(v1) )"
   },
   {
     "objectID": "danl-lec/danl-101-lec-12-2024-1003.html#filter-observations-with-filter-4",
@@ -2398,14 +2398,14 @@
     "href": "danl-lec/danl-101-lec-12-2024-1003.html#arrange-observations-with-arrange-1",
     "title": "Lecture 12",
     "section": "Arrange observations with arrange()",
-    "text": "Arrange observations with arrange()\ndf &lt;- data.frame(\n  year = c(2021, 2024, 2024, 2023, 2024),\n  month = c(10, 7, 7, 1, 4),\n  day = c(19, 20, 15, 3, 9)\n)\n\ndf |&gt; \n  arrange(year, month, day)\n\narrange() sorts out observations.\n\nIf we provide more than one variable name, each additional variable will be used to break ties in the values of preceding variables."
+    "text": "Arrange observations with arrange()\n# arrange observations by `dep_delay` in ascending order.\nflights |&gt; \n  arrange(dep_delay)\n\narrange() sorts out observations."
   },
   {
     "objectID": "danl-lec/danl-101-lec-12-2024-1003.html#arrange-observations-with-arrange-2",
     "href": "danl-lec/danl-101-lec-12-2024-1003.html#arrange-observations-with-arrange-2",
     "title": "Lecture 12",
     "section": "Arrange observations with arrange()",
-    "text": "Arrange observations with arrange()\nDescending order with desc()\n# re-order observations by `dep_delay` in descending order.\nflights |&gt; \n  arrange(desc(dep_delay))\n  \nflights |&gt; \n  arrange(-dep_delay)\n\nUse desc(VARIABLE) to re-order by a VARIABLE in descending order.\n\nAdding - before a numeric variable (-NUMERIC_VARIABLE) also works."
+    "text": "Arrange observations with arrange()\nDescending order with desc()\n# arrange observations by `dep_delay` in descending order.\nflights |&gt; \n  arrange(desc(dep_delay))\n  \nflights |&gt; \n  arrange(-dep_delay)\n\nUse desc(VARIABLE) to re-order by a VARIABLE in descending order.\n\nAdding - before a numeric variable (-NUMERIC_VARIABLE) also works."
   },
   {
     "objectID": "danl-lec/danl-101-lec-12-2024-1003.html#select-variables-with-select-1",
@@ -2553,5 +2553,12 @@
     "title": "Lecture 12",
     "section": "Find all unique observations with distinct()",
     "text": "Find all unique observations with distinct()\n# Find all unique \n#  origin and destination pairs\nflights |&gt; \n  distinct(origin, dest)\n\nWe can also provide variable names to distinct()."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-12-2024-1003.html#arrange-observations-with-arrange-3",
+    "href": "danl-lec/danl-101-lec-12-2024-1003.html#arrange-observations-with-arrange-3",
+    "title": "Lecture 12",
+    "section": "Arrange observations with arrange()",
+    "text": "Arrange observations with arrange()\n\n\n\ndf &lt;- data.frame(\n  year = c(2024, 2021, 2024, 2024),\n  month = c(7, 10, 7, 4),\n  day = c(20, 19, 15, 9)\n)\n\n\n\n\n\n\n\n\ndf |&gt; \n  arrange(year, month, day)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf we provide more than one variable name, each additional variable will be used to break ties in the values of preceding variables."
   }
 ]

@@ -89,7 +89,9 @@ NA > 5
 10 == NA
 NA + 10
 NA / 2
-(1 + 2 + NA) / 3
+(1 + NA + 3) / 3
+mean( c(1, NA, 3) )
+sd( c(1, NA, 3) )
 ```
 :::
 
@@ -121,33 +123,42 @@ x == y
 :::
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="45%"}
 ```{.r}
 x <- NA
 is.na(x) # is x NA?
 
 y <- "missing"
 is.na(y) # is y NA?
+
+v1 <- c(1, NA, 3)
+is.na(v1) # is v1 NA?
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column width="55%"}
 ```{.r}
-df <- data.frame(y = c(1, NA, 3))
+df <- data.frame(v1 = c(1, NA, 3),
+                 v2 = c(1, 2, 3))
 
 df |> 
-  filter(y > 1)
+  filter( is.na(v1) )
 
 df |> 
-  filter( is.na(y) | y > 1 )
+  filter( !is.na(v1) )
 ```
 :::
 
 ::::
 
+
+
+
+
 # Find all unique observations with `distinct()` {background-color="#1c4982"}
 
 ## Find all unique observations with `distinct()`
+
 
 
 :::: {.columns}
@@ -199,25 +210,18 @@ flights |>
 
 ## Arrange observations with `arrange()`
 ```{.r}
-df <- data.frame(
-  year = c(2021, 2024, 2024, 2023, 2024),
-  month = c(10, 7, 7, 1, 4),
-  day = c(19, 20, 15, 3, 9)
-)
-
-df |> 
-  arrange(year, month, day)
+# arrange observations by `dep_delay` in ascending order.
+flights |> 
+  arrange(dep_delay)
 ```
 
-
 - `arrange()` sorts out observations.
-  - If we provide more than one variable name, each additional variable will be used to break ties in the values of preceding variables.
 
 
 ## Arrange observations with `arrange()`
 ### Descending order with `desc()`
 ```{.r}
-# re-order observations by `dep_delay` in descending order.
+# arrange observations by `dep_delay` in descending order.
 flights |> 
   arrange(desc(dep_delay))
   
@@ -228,6 +232,154 @@ flights |>
 
 - Use `desc(VARIABLE)` to re-order by a `VARIABLE` in descending order.
   - Adding `-` before a numeric variable (`-NUMERIC_VARIABLE`) also works.
+
+
+
+## Arrange observations with `arrange()`
+
+<!-- - The `==` is an operator that compares the objects on either side and returns `TRUE` if they have the same values. -->
+
+:::: {.columns}
+
+::: {.column width="52%"}
+
+```{.r}
+df <- data.frame(
+  year = c(2024, 2021, 2024, 2024),
+  month = c(7, 10, 7, 4),
+  day = c(20, 19, 15, 9)
+)
+```
+
+
+```{r}
+#| echo: false
+df <- data.frame(
+  year = c(2024, 2021, 2024, 2024),
+  month = c(7, 10, 7, 4),
+  day = c(20, 19, 15, 9)
+)
+# Create a DT datatable without search box and 'Show entries' dropdown
+DT::datatable(df, rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
+  $('tbody tr').css('color', 'black');
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
+```
+
+:::
+
+
+
+
+::: {.column width="48%"}
+
+```{.r}
+df |> 
+  arrange(year, month, day)
+```
+
+<br>
+<div style="display:block; margin:47px;"></div>
+
+```{r}
+#| echo: false
+# Create a DT datatable without search box and 'Show entries' dropdown
+
+df <- data.frame(
+  year = c(2024, 2021, 2024, 2024),
+  month = c(7, 10, 7, 4),
+  day = c(20, 19, 15, 9)
+)
+
+
+
+DT::datatable(df |> 
+  arrange(year, month, day), rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
+  $('tbody tr').css('color', 'black');
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
+```
+
+:::
+
+::::
+
+
+- If we provide more than one variable name, each additional variable will be used to break ties in the values of preceding variables.
 
 
 
@@ -287,6 +439,4 @@ flights |>
   - `DATA_FRAME |> rename(NEW_VARIABLE = EXISTING_VARIABLE)`
 
 :::
-
-
 

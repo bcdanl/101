@@ -423,8 +423,6 @@ flights |>
 
 
 # Rename variables with `rename()` {background-color="#1c4982"}
-
-
 ## Rename variables with `rename()`
 
 ```{.r}

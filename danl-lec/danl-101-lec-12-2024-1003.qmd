@@ -151,7 +151,7 @@ df |>
 
 
 :::: {.columns}
-::: {.column width="55%"}
+::: {.column width="50%"}
 ```{.r}
 df <- data.frame(
   v1 = c("USA", "Korea", "USA"),
@@ -166,10 +166,10 @@ df |>
 ```
 :::
 
-::: {.column width="45%"}
+::: {.column width="50%"}
 ```{.r}
 # Remove duplicate observations, 
-#  if any
+# if any
 
 flights |> 
   distinct()

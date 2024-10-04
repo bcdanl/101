@@ -81,7 +81,7 @@
     "href": "index.html#bullet-classwork",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nselect() and rename()\n\n\nOctober 2, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 2, 2024\n\n\n\n\nJoining data.frames\n\n\nSeptember 26, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nQuiz 1 - data.frame, left_join(), and filter()\n\n\nOctober 3, 2024\n\n\n\n\nQuiz 1 - data.frame, left_join(), and filter()\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 2, 2024\n\n\n\n\nJoining data.frames\n\n\nSeptember 26, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -1670,7 +1670,7 @@
     "href": "listing-danl-101-cw.html",
     "title": "DANL 101 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nselect() and rename()\n\n\nClasswork 5\n\n\nOctober 2, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nClasswork 4\n\n\nOctober 2, 2024\n\n\n\n\nJoining data.frames\n\n\nClasswork 3\n\n\nSeptember 26, 2024\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nQuiz 1 - data.frame, left_join(), and filter()\n\n\nClasswork 6\n\n\nOctober 3, 2024\n\n\n\n\nQuiz 1 - data.frame, left_join(), and filter()\n\n\nClasswork 6\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nClasswork 4\n\n\nOctober 2, 2024\n\n\n\n\nJoining data.frames\n\n\nClasswork 3\n\n\nSeptember 26, 2024\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-101-hw-01.html",
@@ -2508,9 +2508,9 @@
   {
     "objectID": "danl-cw/danl-101-cw-05.html",
     "href": "danl-cw/danl-101-cw-05.html",
-    "title": "select() and rename()",
+    "title": "Quiz 1 - data.frame, left_join(), and filter()",
     "section": "",
-    "text": "For this Classwork 5, consider the following data.frame, nyc_payroll_new.\nlibrary(tidyverse)\nnyc_payroll_new &lt;- read_csv(\"https://bcdanl.github.io/data/nyc_payroll_2024.csv\")\nFor detailed descriptions of the variables in this data.frame, please refer to the following link: Citywide Payroll Data (Fiscal Year)"
+    "text": "Question 1. data.frame\n\n\nDiscussion\nWelcome to our Classwork 5 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 5.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) or peer classmate (@GitHub-Username) regarding the Classwork 1 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-101-cw-05.html#question-1",
@@ -2595,5 +2595,12 @@
     "title": "Homework Assignment 1 - Example Answers",
     "section": "Short Eassay",
     "text": "Short Eassay\n\nWhy are R and Python considered important tools for data analytics?\n\nR and Python are popular because they have a wide range of libraries and packages for data manipulation, visualization, and machine learning. They also support a large user community and are open-source, making them accessible and adaptable. \n\nExplain why understanding the output of Generative AI tools like ChatGPT is important for data analysts or data scientists.\n\nData analysts need to interpret the output of generative AI tools to ensure that the generated information is relevant, accurate, and aligned with the specific context of their analysis. This understanding helps prevent misinterpretation and misuse of AI-generated insights. \n\nHow does dynamic ticket pricing work in sports analytics?\n\nDynamic ticket pricing adjusts the price of tickets in real-time based on demand, opponent strength, weather conditions, and other factors. This approach maximizes revenue by charging more when demand is high and less when demand is low. \n\nHow do business intelligence (BI) tools assist in decision-making for businesses?\n\nBI tools help businesses collect, process, and visualize data to support informed decision-making. They provide insights into trends, performance metrics, and areas of improvement, enabling businesses to make data-driven decisions."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-06.html",
+    "href": "danl-cw/danl-101-cw-06.html",
+    "title": "Quiz 1 - data.frame, left_join(), and filter()",
+    "section": "",
+    "text": "Question 1. data.frame\nIn a data frame, what form does a variable take?\nAnswer: Column\n\nThis slide in Lecture 7 explains what make a data.frame tidy. In our course, all given data.frames are tidy.\n\n\n\nQuestion 2.\n\ndf_joined &lt;- df_1 |&gt; ___(df_2)\n\n\nFill in the blank (___) to join the two related data.frames, df_1 and df_2, in a way that keeps all observations and variables in the data.frame df_1.\n\nAnswer: left_join\n\ndf_joined &lt;- df_1 |&gt; left_join(df_2)\n\n\n\nDiscussion\nWelcome to our Classwork 6 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 6.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) or peer classmate (@GitHub-Username) regarding the Classwork 1 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
   }
 ]

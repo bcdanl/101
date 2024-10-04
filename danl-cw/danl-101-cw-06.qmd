@@ -23,7 +23,7 @@ DT::datatable(data.frame(
                '== (equality operator)',
                '!= (not-equal operator)',
                '| (or operator)'),
-  Percentage = c(76.32, 69.44, 78.38, 76.47, 71.43)
+  Percentage = c(76.32, 69.44, 78.38, 76.47, 60.00)
 ))
 
 ```

@@ -88,7 +88,7 @@ non_dec <- df |> filter(month ___ 12)
 non_dec <- df |> filter(month != 12)
 ```
 
-- [This slide](https://bcdanl.github.io/101/danl-lec/danl-101-lec-11-2024-1001.html#/filter-observations-with-filter-4) and [Line 105-106 in this class R script slide](https://github.com/bcdanl/101-04-R/blob/master/danl-101-04-2024-1001.R) in Lecture 11 explain a not-equal operator, `!=` (not equal to).
+- [This slide](https://bcdanl.github.io/101/danl-lec/danl-101-lec-11-2024-1001.html#/filter-observations-with-filter-4) and [Line 105-106 in this class R script](https://github.com/bcdanl/101-04-R/blob/master/danl-101-04-2024-1001.R) in Lecture 11 explain a not-equal operator, `!=` (not equal to).
 
 
 

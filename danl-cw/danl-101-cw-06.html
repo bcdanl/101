@@ -9,7 +9,7 @@
 <meta name="author" content="Byeong-Hak Choe">
 <meta name="dcterms.date" content="2024-10-03">
 
-<title>left_join() | Byeong-Hak Choe</title>
+<title>Quiz 1 | Byeong-Hak Choe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -65,11 +99,21 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+<script src="../site_libs/htmlwidgets-1.6.3/htmlwidgets.js"></script>
+<link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="../site_libs/datatables-binding-0.33/datatables.js"></script>
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<link href="../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/css/font.css">
-<meta property="og:title" content="left_join() | Byeong-Hak Choe">
-<meta property="og:description" content="Classwork 3">
+<meta property="og:title" content="Quiz 1 | Byeong-Hak Choe">
+<meta property="og:description" content="Classwork 6">
 <meta property="og:image" content="/assets/img/posts.png">
 <meta property="og:site-name" content="Home">
 </head>
@@ -121,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><code>left_join()</code></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quiz 1</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -175,8 +219,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1">Question 1</a></li>
-  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link active" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a></li>
+  <li><a href="#question-1.-data.frame" id="toc-question-1.-data.frame" class="nav-link" data-scroll-target="#question-1.-data.frame">Question 1. <code>data.frame</code></a></li>
+  <li><a href="#question-2.-left_join" id="toc-question-2.-left_join" class="nav-link" data-scroll-target="#question-2.-left_join">Question 2. <code>left_join()</code></a></li>
+  <li><a href="#question-3.-equality-operator" id="toc-question-3.-equality-operator" class="nav-link" data-scroll-target="#question-3.-equality-operator">Question 3. <code>==</code> (Equality operator)</a></li>
+  <li><a href="#question-4.-not-equal-operator" id="toc-question-4.-not-equal-operator" class="nav-link" data-scroll-target="#question-4.-not-equal-operator">Question 4. <code>!=</code> (Not-equal operator)</a></li>
+  <li><a href="#question-5.-or-operator" id="toc-question-5.-or-operator" class="nav-link" data-scroll-target="#question-5.-or-operator">Question 5. <code>|</code> (Or operator)</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
@@ -186,8 +234,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><code>left_join()</code></h1>
-<p class="subtitle lead">Classwork 3</p>
+<h1 class="title">Quiz 1</h1>
+<p class="subtitle lead">Classwork 6</p>
 </div>
 
 
@@ -220,32 +268,103 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="question-1" class="level2">
-<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<ul>
-<li>Install the <code>nycflights13</code> R package and load it into your R session in your Posit Cloud project.</li>
-</ul>
-<p><em>Answer</em>:</p>
+<section id="descriptive-statistics" class="level1">
+<h1>Descriptive Statistics</h1>
+<p>The following provides the percentage of the correct answers for each question in Quiz 1:</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-b76ed7f2016d8b9c79f8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b76ed7f2016d8b9c79f8">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["data.frame-variable","left_join()","== (equality operator)","!= (not-equal operator)","| (or operator)"],[76.31999999999999,69.44,78.38,76.47,71.43000000000001]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Question<\/th>\n      <th>Percentage<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Question","targets":1},{"name":"Percentage","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 <p><br><br></p>
 </section>
-<section id="question-2" class="level2">
-<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<section id="question-1.-data.frame" class="level1">
+<h1>Question 1. <code>data.frame</code></h1>
+<p>In a data frame, what form does a variable take?</p>
+<p><strong>Answer</strong>: Column</p>
 <ul>
-<li>The <code>nycflights13</code> package provides two data.frames: <code>flights</code> and <code>airlines</code>, which are related by the <code>carrier</code> variable.
-<ul>
-<li><code>carrier</code>: A two-letter abbreviation indicating the full name of the airline.</li>
-</ul></li>
-<li>Use the <code>left_join()</code> function to create a new data.frame, <code>flight_airline</code>, that includes all observations and variables from the <code>flights</code> data.frame, along with the <code>name</code> variable from the <code>airlines</code> data.frame that corresponds to the <code>carrier</code> variable in the <code>flights</code> data.frame.</li>
+<li><a href="https://bcdanl.github.io/101/danl-lec/danl-101-lec-07-2024-0917.html#/r-basics-5">This slide</a> in Lecture 7 explains what make a data.frame tidy. In our course, all given data.frames are tidy.</li>
 </ul>
-<p><em>Answer</em>:</p>
+<p><br><br></p>
+</section>
+<section id="question-2.-left_join" class="level1">
+<h1>Question 2. <code>left_join()</code></h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df_joined <span class="ot">&lt;-</span> df_1 <span class="sc">|&gt;</span> <span class="fu">___</span>(df_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Fill in the blank (___) to join the two related data.frames, <code>df_1</code> and <code>df_2</code>, in a way that keeps all observations and variables in the data.frame <code>df_1</code>.</li>
+</ul>
+<p><strong>Answer</strong>: <code>left_join</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_joined <span class="ot">&lt;-</span> df_1 <span class="sc">|&gt;</span> <span class="fu">left_join</span>(df_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><a href="https://bcdanl.github.io/101/danl-lec/danl-101-lec-10-2024-0926.html#/relational-databases">This slide</a> in Lecture 10 and <a href="https://bcdanl.github.io/101/danl-lec/danl-101-lec-11-2024-1001.html#/relational-data">this slide</a> in Lecture 11 explain <strong>join</strong> and <code>left_join()</code>.</li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="question-3.-equality-operator" class="level1">
+<h1>Question 3. <code>==</code> (Equality operator)</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(num __ <span class="dv">9</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Fill in the blank (___) to keep observations, in which the value of the <code>num</code> variable is equal to 9.</li>
+</ul>
+<p><strong>Answer</strong>: <code>==</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(num <span class="sc">==</span> <span class="dv">9</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><a href="https://bcdanl.github.io/101/danl-lec/danl-101-lec-11-2024-1001.html#/filter-observations-with-filter-1">This slide</a> and <a href="https://bcdanl.github.io/101/danl-lec/danl-101-lec-11-2024-1001.html#/filter-observations-with-filter-4">this slide</a> in Lecture 11 explain an equality operator, <code>==</code> (equal to).</li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="question-4.-not-equal-operator" class="level1">
+<h1>Question 4. <code>!=</code> (Not-equal operator)</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>non_dec <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(month ___ <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Fill in the blank (___) to keep observations, in which the value of the <code>month</code> is not equal to 12 in the data.frame <code>df</code></li>
+</ul>
+<p><strong>Answer</strong>: <code>!=</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>non_dec <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(month <span class="sc">!=</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><a href="https://bcdanl.github.io/101/danl-lec/danl-101-lec-11-2024-1001.html#/filter-observations-with-filter-4">This slide</a> and <a href="https://github.com/bcdanl/101-04-R/blob/master/danl-101-04-2024-1001.R">Line 105-106 in this class R script slide</a> in Lecture 11 explain a not-equal operator, <code>!=</code> (not equal to).</li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="question-5.-or-operator" class="level1">
+<h1>Question 5. <code>|</code> (Or operator)</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(subject <span class="sc">==</span> <span class="st">"DANL"</span> ___ subject <span class="sc">==</span> <span class="st">"ECON"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Fill in the blank (___) to keep observations, in which the value of the <code>subject</code> variable is either “DANL” or “ECON”</li>
+</ul>
+<p><strong>Answer</strong>: <code>|</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(subject <span class="sc">==</span> <span class="st">"DANL"</span> <span class="sc">|</span> subject <span class="sc">==</span> <span class="st">"ECON"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p><a href="https://bcdanl.github.io/101/danl-lec/danl-101-lec-11-2024-1001.html#/filter-observations-with-filter-2">This slide</a> and <a href="https://bcdanl.github.io/101/danl-lec/danl-101-lec-11-2024-1001.html#/filter-observations-with-filter-7">this slide</a> in Lecture 11 explain logical operation, <code>|</code> (or).</p></li>
+<li><p>Please note that <code>|</code> is not the letter “I” or “l,” but a vertical bar character.</p></li>
+<li><p>On a keyboard, <code>|</code> is located above the <em>Enter/Return</em> key.</p></li>
+</ul>
 <p><br><br></p>
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
-<p><font size="5">Welcome to our Classwork 3 Discussion Board! 👋 </font></p>
-<p>This space is designed for you to engage with your classmates about the material covered in Classwork 3.</p>
+<p><font size="5">Welcome to our Quiz 1 Discussion Board! 👋 </font></p>
+<p>This space is designed for you to engage with your classmates about the material covered in Quiz 1.</p>
 <p>Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.</p>
-<p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) or peer classmate (<span class="citation" data-cites="GitHub-Username">@GitHub-Username</span>) regarding the Classwork 1 materials or need clarification on any points, don’t hesitate to ask here.</p>
+<p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) or peer classmate (<span class="citation" data-cites="GitHub-Username">@GitHub-Username</span>) regarding the Quiz 1 materials or need clarification on any points, don’t hesitate to ask here.</p>
 <p>Let’s collaborate and learn from each other!</p>
 
 

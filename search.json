@@ -81,7 +81,7 @@
     "href": "index.html#bullet-classwork",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nQuiz 1 - data.frame, left_join(), and filter()\n\n\nOctober 3, 2024\n\n\n\n\nQuiz 1 - data.frame, left_join(), and filter()\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 2, 2024\n\n\n\n\nJoining data.frames\n\n\nSeptember 26, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nQuiz 1\n\n\nOctober 3, 2024\n\n\n\n\nQuiz 1 - data.frame, left_join(), and filter()\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 3, 2024\n\n\n\n\nleft_join()\n\n\nOctober 3, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -1670,7 +1670,7 @@
     "href": "listing-danl-101-cw.html",
     "title": "DANL 101 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nQuiz 1 - data.frame, left_join(), and filter()\n\n\nClasswork 6\n\n\nOctober 3, 2024\n\n\n\n\nQuiz 1 - data.frame, left_join(), and filter()\n\n\nClasswork 6\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nClasswork 4\n\n\nOctober 2, 2024\n\n\n\n\nJoining data.frames\n\n\nClasswork 3\n\n\nSeptember 26, 2024\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nQuiz 1\n\n\nClasswork 6\n\n\nOctober 3, 2024\n\n\n\n\nQuiz 1 - data.frame, left_join(), and filter()\n\n\nClasswork 6\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nClasswork 4\n\n\nOctober 3, 2024\n\n\n\n\nleft_join()\n\n\nClasswork 3\n\n\nOctober 3, 2024\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-101-hw-01.html",
@@ -2228,21 +2228,21 @@
   {
     "objectID": "danl-cw/danl-101-cw-03.html",
     "href": "danl-cw/danl-101-cw-03.html",
-    "title": "Joining data.frames",
+    "title": "left_join()",
     "section": "",
     "text": "Install the nycflights13 R package and load it into your R session in your Posit Cloud project.\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-101-cw-03.html#question-1",
     "href": "danl-cw/danl-101-cw-03.html#question-1",
-    "title": "Joining data.frames",
+    "title": "left_join()",
     "section": "",
     "text": "Install the nycflights13 R package and load it into your R session in your Posit Cloud project.\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-101-cw-03.html#question-2",
     "href": "danl-cw/danl-101-cw-03.html#question-2",
-    "title": "Joining data.frames",
+    "title": "left_join()",
     "section": "Question 2",
     "text": "Question 2\n\nThe nycflights13 package provides two data.frames: flights and airlines, which are related by the carrier variable.\n\ncarrier: A two-letter abbreviation indicating the full name of the airline.\n\nUse the left_join() function to create a new data.frame, flight_airline, that includes all observations and variables from the flights data.frame, along with the name variable from the airlines data.frame that corresponds to the carrier variable in the flights data.frame.\n\nAnswer:"
   },
@@ -2599,8 +2599,8 @@
   {
     "objectID": "danl-cw/danl-101-cw-06.html",
     "href": "danl-cw/danl-101-cw-06.html",
-    "title": "Quiz 1 - data.frame, left_join(), and filter()",
+    "title": "Quiz 1",
     "section": "",
-    "text": "Question 1. data.frame\nIn a data frame, what form does a variable take?\nAnswer: Column\n\nThis slide in Lecture 7 explains what make a data.frame tidy. In our course, all given data.frames are tidy.\n\n\n\nQuestion 2.\n\ndf_joined &lt;- df_1 |&gt; ___(df_2)\n\n\nFill in the blank (___) to join the two related data.frames, df_1 and df_2, in a way that keeps all observations and variables in the data.frame df_1.\n\nAnswer: left_join\n\ndf_joined &lt;- df_1 |&gt; left_join(df_2)\n\n\n\nDiscussion\nWelcome to our Classwork 6 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 6.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) or peer classmate (@GitHub-Username) regarding the Classwork 1 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
+    "text": "Descriptive Statistics\nThe following provides the percentage of the correct answers for each question in Quiz 1:\n\n\n\n\n\n\n\n\n\n\nQuestion 1. data.frame\nIn a data frame, what form does a variable take?\nAnswer: Column\n\nThis slide in Lecture 7 explains what make a data.frame tidy. In our course, all given data.frames are tidy.\n\n\n\n\nQuestion 2. left_join()\n\ndf_joined &lt;- df_1 |&gt; ___(df_2)\n\n\nFill in the blank (___) to join the two related data.frames, df_1 and df_2, in a way that keeps all observations and variables in the data.frame df_1.\n\nAnswer: left_join\n\ndf_joined &lt;- df_1 |&gt; left_join(df_2)\n\n\nThis slide in Lecture 10 and this slide in Lecture 11 explain join and left_join().\n\n\n\n\nQuestion 3. == (Equality operator)\n\ndf_filtered &lt;- df |&gt; filter(num __ 9) \n\n\nFill in the blank (___) to keep observations, in which the value of the num variable is equal to 9.\n\nAnswer: ==\n\ndf_filtered &lt;- df |&gt; filter(num == 9) \n\n\nThis slide and this slide in Lecture 11 explain an equality operator, == (equal to).\n\n\n\n\nQuestion 4. != (Not-equal operator)\n\nnon_dec &lt;- df |&gt; filter(month ___ 12)\n\n\nFill in the blank (___) to keep observations, in which the value of the month is not equal to 12 in the data.frame df\n\nAnswer: !=\n\nnon_dec &lt;- df |&gt; filter(month != 12)\n\n\nThis slide and Line 105-106 in this class R script slide in Lecture 11 explain a not-equal operator, != (not equal to).\n\n\n\n\nQuestion 5. | (Or operator)\n\ndf_filtered &lt;- df |&gt; filter(subject == \"DANL\" ___ subject == \"ECON\")\n\n\nFill in the blank (___) to keep observations, in which the value of the subject variable is either “DANL” or “ECON”\n\nAnswer: |\n\ndf_filtered &lt;- df |&gt; filter(subject == \"DANL\" | subject == \"ECON\")\n\n\nThis slide and this slide in Lecture 11 explain logical operation, | (or).\nPlease note that | is not the letter “I” or “l,” but a vertical bar character.\nOn a keyboard, | is located above the Enter/Return key.\n\n\n\n\nDiscussion\nWelcome to our Quiz 1 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Quiz 1.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) or peer classmate (@GitHub-Username) regarding the Quiz 1 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
   }
 ]

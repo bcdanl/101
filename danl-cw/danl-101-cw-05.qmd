@@ -6,7 +6,7 @@ from: markdown+emoji
 
 execute: 
   eval: true
-  echo: false
+  echo: true
 ---
 
 For this Classwork 5, consider the following data.frame, `nyc_payroll_new`.

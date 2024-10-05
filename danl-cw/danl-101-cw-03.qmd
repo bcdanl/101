@@ -18,7 +18,7 @@ library(nycflights13)
 ## Question 1
 - Install the `nycflights13` R package and load it into your R session in your Posit Cloud project.
 
-*Answer*:
+**Answer**:
 ```{r}
 #| eval: false
 # Install the nycflights13 package
@@ -28,7 +28,6 @@ install.packages("nycflights13")
 library(nycflights13)
 ```
 
-**Answer**:
 In this step, we first install the `nycflights13` package using `install.packages()`, which contains datasets related to flights in and out of New York City in 2013. Once installed, we load the package into the R session with `library(nycflights13)`, making the `flights` and `airlines` data.frames available for analysis.
 
 <br><br>
@@ -39,7 +38,7 @@ In this step, we first install the `nycflights13` package using `install.package
   
 - Use the `left_join()` function to create a new data.frame, `flight_airline`, that includes all observations and variables from the `flights` data.frame, along with the `name` variable from the `airlines` data.frame that corresponds to the `carrier` variable in the `flights` data.frame.
 
-*Answer*:
+**Answer**:
 ```{r}
 library(tidyverse)
 
@@ -50,7 +49,6 @@ flight_airline <- flights |> left_join(airlines)
 head(flight_airline)
 ```
 
-**Answer**:
 Here, we use the `left_join()` function from the one of the packages in `tidyverse`. The `left_join()` function merges two data.frames based on a common key variable—in this case, the `carrier` variable, which is present in both the `flights` and `airlines` data.frames. This operation adds the `name` variable (airline name) from the `airlines` data.frame to the `flights` data.frame, while keeping all observations and variables from `flights`. The result is stored in `flight_airline`.
 
 <br><br>

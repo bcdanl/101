@@ -13,7 +13,7 @@ from: markdown+emoji
 - Find all flights that arrived more than two hours late, but didn’t leave late
 - Find all flights that departed between midnight and 6am (inclusive) [Challenging]
 
-*Answer*:
+**Answer**:
 ```{r}
 library(tidyverse)
 flights <- nycflights13::flights
@@ -34,7 +34,6 @@ late_arrival_on_time_departure <- flights |> filter( arr_delay > 120 & dep_delay
 early_morning_flights <- flights |> filter( (dep_time >= 0 & dep_time <= 600) | dep_time == 2400 )
 ```
 
-**Answer**:
 
 - `filter(arr_delay >= 120)`: Finds flights with an arrival delay of two or more hours.
 - `filter( dest == "IAH" | dest == "HOU" )`: Filters flights flying to Houston by checking if the `dest` variable matches "IAH" or "HOU".
@@ -48,14 +47,14 @@ early_morning_flights <- flights |> filter( (dep_time >= 0 & dep_time <= 600) | 
 ## Question 2
 - How many flights have a missing `dep_time`?
 
-*Answer*:
+**Answer**:
 ```{r}
 missing_dep_time_flights <- flights |> filter(is.na(dep_time))
 n_missing_dep_time <- nrow(missing_dep_time_flights)
 n_missing_dep_time
 ```
 
-**Answer**:
+
 We use `filter(is.na(dep_time))` to find flights where the `dep_time` is missing, and `nrow()` to count the number of such flights.
 
 <br><br>
@@ -63,13 +62,12 @@ We use `filter(is.na(dep_time))` to find flights where the `dep_time` is missing
 ## Question 3
 - Sort flights to find the most delayed flights.
 
-*Answer*:
+**Answer**:
 ```{r}
 # either dep_delay, arr_delay, or both can be used for this task
 most_delayed_flights <- flights |> arrange(desc(dep_delay)) 
 ```
 
-**Answer**:
 `arrange(desc(dep_delay))` sorts flights in descending order of departure delay (`dep_delay`), placing the flights with the longest departure delays at the top.
 
 
@@ -85,7 +83,7 @@ DT::datatable(most_delayed_flights |> slice(1:100))
 ## Question 4
 - Was there a flight on every day of 2013?
 
-*Answer*:
+**Answer**:
 ```{r}
 # checking there is only one unique value in year variable, that is 2013.
 flights |> distinct(year) # tibble is another name of data.frame in R tidyverse
@@ -95,7 +93,7 @@ num_days_2013 <- nrow(flights_per_day)
 num_days_2013 == 365
 ```
 
-**Answer**:
+
 - We use `distinct(month, day)` to find unique combinations of `month` and `day`, and then count the number of distinct days using `nrow()`. We check if this equals 365 to determine if there was a flight on every day of the year.
   -  `nrow()` returns the number of observations in a data.frame.
 

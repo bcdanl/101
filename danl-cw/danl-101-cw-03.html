@@ -259,7 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Install the <code>nycflights13</code> R package and load it into your R session in your Posit Cloud project.</li>
 </ul>
-<p><em>Answer</em>:</p>
+<p><strong>Answer</strong>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the nycflights13 package</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"nycflights13"</span>)</span>
@@ -267,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the package into your R session</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Answer</strong>: In this step, we first install the <code>nycflights13</code> package using <code>install.packages()</code>, which contains datasets related to flights in and out of New York City in 2013. Once installed, we load the package into the R session with <code>library(nycflights13)</code>, making the <code>flights</code> and <code>airlines</code> data.frames available for analysis.</p>
+<p>In this step, we first install the <code>nycflights13</code> package using <code>install.packages()</code>, which contains datasets related to flights in and out of New York City in 2013. Once installed, we load the package into the R session with <code>library(nycflights13)</code>, making the <code>flights</code> and <code>airlines</code> data.frames available for analysis.</p>
 <p><br><br></p>
 </section>
 <section id="question-2" class="level2">
@@ -279,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Use the <code>left_join()</code> function to create a new data.frame, <code>flight_airline</code>, that includes all observations and variables from the <code>flights</code> data.frame, along with the <code>name</code> variable from the <code>airlines</code> data.frame that corresponds to the <code>carrier</code> variable in the <code>flights</code> data.frame.</li>
 </ul>
-<p><em>Answer</em>:</p>
+<p><strong>Answer</strong>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -303,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;, name &lt;chr&gt;</code></pre>
 </div>
 </div>
-<p><strong>Answer</strong>: Here, we use the <code>left_join()</code> function from the one of the packages in <code>tidyverse</code>. The <code>left_join()</code> function merges two data.frames based on a common key variable—in this case, the <code>carrier</code> variable, which is present in both the <code>flights</code> and <code>airlines</code> data.frames. This operation adds the <code>name</code> variable (airline name) from the <code>airlines</code> data.frame to the <code>flights</code> data.frame, while keeping all observations and variables from <code>flights</code>. The result is stored in <code>flight_airline</code>.</p>
+<p>Here, we use the <code>left_join()</code> function from the one of the packages in <code>tidyverse</code>. The <code>left_join()</code> function merges two data.frames based on a common key variable—in this case, the <code>carrier</code> variable, which is present in both the <code>flights</code> and <code>airlines</code> data.frames. This operation adds the <code>name</code> variable (airline name) from the <code>airlines</code> data.frame to the <code>flights</code> data.frame, while keeping all observations and variables from <code>flights</code>. The result is stored in <code>flight_airline</code>.</p>
 <p><br><br></p>
 </section>
 <section id="discussion" class="level1">

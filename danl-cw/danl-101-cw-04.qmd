@@ -75,7 +75,7 @@ most_delayed_flights <- flights |> arrange(desc(dep_delay))
 ```{r}
 #| echo: false
 
-DT::datatable(most_delayed_flights |>  select(year:arr_delay))
+DT::datatable(most_delayed_flights |> slice(1:100))
 ```
 
 

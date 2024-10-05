@@ -40,7 +40,8 @@ early_morning_flights <- flights |> filter( (dep_time >= 0 & dep_time <= 600) | 
 - `filter( dest == "IAH" | dest == "HOU" )`: Filters flights flying to Houston by checking if the `dest` variable matches "IAH" or "HOU".
 - `filter( month == 7 | month == 8 | month == 9 )`: Filters flights based on the `month` variable for July, August, and September.
 - `filter(arr_delay > 120 & dep_delay <= 0)`: Filters flights that arrived more than two hours late but left on time or early.
-- `filter((dep_time >= 0 & dep_time <= 600) | dep_time == 2400)`: Filters flights departing between midnight and 6am (using military time). The condition `dep_time == 2400` is included because, in this data.frame, midnight is represented as `2400` rather than `0`.
+- `filter( (dep_time >= 0 & dep_time <= 600) | dep_time == 2400)`: Filters flights departing between midnight and 6am (using military time). The condition `dep_time == 2400` is included because, in this data.frame, midnight is represented as `2400` rather than `0`.
+	-	This last question involves more advanced techniques, so it won’t be included in the exams at this level.
 
 <br><br>
 

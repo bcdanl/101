@@ -40,12 +40,13 @@ df <- nyc_payroll_new |>
          Base_Salary)
 ```
 
+**Answer**:
+Here, we use the `select()` function from one of the packages in `tidyverse` to choose only the specified variables (`Fiscal_Year`, `Agency_Name`, `First_Name`, `Last_Name`, and `Base_Salary`) from the `nyc_payroll_new` data.frame. The result is assigned to a new data.frame name `df` containing only these variables, reducing the dataset for further analysis.
+
 ```{r}
 #| echo: false
-
 DT::datatable(df)
 ```
-
 
 <br><br>
 
@@ -58,13 +59,13 @@ Given the data.frame `df` with a variable named `Agency_Name`, how would you ren
 df_renamed <- df |> rename(Agency = Agency_Name)
 ```
 
+**Answer**:
+The `rename()` function allows us to change the name of an existing variable. In this case, we rename the `Agency_Name` variable to `Agency` in the `df` data.frame. The result is a new data.frame, `df_renamed`, where `Agency_Name` is now simply `Agency`.
 
 ```{r}
 #| echo: false
-
 DT::datatable(df_renamed)
 ```
-
 
 <br><br>
 
@@ -77,11 +78,11 @@ How would you remove the `Fiscal_Year` variable using `select()`?
 df_dropped <- df |> select(-Fiscal_Year)
 ```
 
-
+**Answer**:
+To remove a column from a data.frame, we use the `select()` function with the `-` sign before the variable name. In this case, `select(-Fiscal_Year)` removes the `Fiscal_Year` variable from the `df` data.frame, resulting in `df_dropped`, which contains all variables except `Fiscal_Year`.
 
 ```{r}
 #| echo: false
-
 DT::datatable(df_dropped)
 ```
 
@@ -89,9 +90,7 @@ DT::datatable(df_dropped)
 
 # Discussion 
 
-
 <font size = "5">Welcome to our Classwork 5 Discussion Board! 👋 </font>
-
 
 This space is designed for you to engage with your classmates about the material covered in Classwork 5.
 
@@ -100,4 +99,3 @@ Whether you are looking to delve deeper into the content, share insights, or hav
 If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Classwork 1 materials or need clarification on any points, don't hesitate to ask here. 
 
 Let's collaborate and learn from each other!
-

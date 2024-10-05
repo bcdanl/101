@@ -11,12 +11,36 @@ from: markdown+emoji
 - Find all flights that flew to Houston (`IAH` or `HOU`)
 - Find all flights that departed in summer (July, August, and September)
 - Find all flights that arrived more than two hours late, but didn’t leave late
-- Find all flights that departed between midnight and 6am (inclusive)
-  
+- Find all flights that departed between midnight and 6am (inclusive) [Challenging]
+
 *Answer*:
 ```{r}
+library(tidyverse)
+flights <- nycflights13::flights
 
+# Flights with arrival delay of 2 or more hours
+delayed_flights <- flights |> filter(arr_delay >= 120)  # The unit of the `arr_delay` variable is in a minute.
+
+# Flights to Houston (IAH or HOU)
+houston_flights <- flights |> filter( dest == "IAH" | dest == "HOU" )
+
+# Flights that departed in summer (July, August, September)
+summer_flights <- flights |> filter( month == 7 | month == 8 | month == 9 )
+
+# Flights that arrived more than two hours late but didn’t leave late
+late_arrival_on_time_departure <- flights |> filter( arr_delay > 120 & dep_delay <= 0 )
+
+# Flights that departed between midnight and 6am (inclusive)
+early_morning_flights <- flights |> filter( (dep_time >= 0 & dep_time <= 600) | dep_time == 2400 )
 ```
+
+**Answer**:
+
+- `filter(arr_delay >= 120)`: Finds flights with an arrival delay of two or more hours.
+- `filter( dest == "IAH" | dest == "HOU" )`: Filters flights flying to Houston by checking if the `dest` variable matches "IAH" or "HOU".
+- `filter( month == 7 | month == 8 | month == 9 )`: Filters flights based on the `month` variable for July, August, and September.
+- `filter(arr_delay > 120 & dep_delay <= 0)`: Filters flights that arrived more than two hours late but left on time or early.
+- `filter((dep_time >= 0 & dep_time <= 600) | dep_time == 2400)`: Filters flights departing between midnight and 6am (using military time). The condition `dep_time == 2400` is included because, in this data.frame, midnight is represented as `2400` rather than `0`.
 
 <br><br>
 
@@ -25,19 +49,35 @@ from: markdown+emoji
 
 *Answer*:
 ```{r}
-
+missing_dep_time_flights <- flights |> filter(is.na(dep_time))
+n_missing_dep_time <- nrow(missing_dep_time_flights)
+n_missing_dep_time
 ```
+
+**Answer**:
+We use `filter(is.na(dep_time))` to find flights where the `dep_time` is missing, and `nrow()` to count the number of such flights.
 
 <br><br>
 
-
 ## Question 3
-- Sort flights to find the most delayed flights. 
+- Sort flights to find the most delayed flights.
 
 *Answer*:
 ```{r}
-
+# either dep_delay, arr_delay, or both can be used for this task
+most_delayed_flights <- flights |> arrange(desc(dep_delay)) 
 ```
+
+**Answer**:
+`arrange(desc(dep_delay))` sorts flights in descending order of departure delay (`dep_delay`), placing the flights with the longest departure delays at the top.
+
+
+```{r}
+#| echo: false
+
+DT::datatable(most_delayed_flights |>  select(year:arr_delay))
+```
+
 
 <br><br>
 
@@ -46,16 +86,23 @@ from: markdown+emoji
 
 *Answer*:
 ```{r}
+# checking there is only one unique value in year variable, that is 2013.
+flights |> distinct(year) # tibble is another name of data.frame in R tidyverse
 
+flights_per_day <- flights |> distinct(month, day)
+num_days_2013 <- nrow(flights_per_day)
+num_days_2013 == 365
 ```
+
+**Answer**:
+- We use `distinct(month, day)` to find unique combinations of `month` and `day`, and then count the number of distinct days using `nrow()`. We check if this equals 365 to determine if there was a flight on every day of the year.
+  -  `nrow()` returns the number of observations in a data.frame.
 
 <br><br>
 
 # Discussion 
 
-
 <font size = "5">Welcome to our Classwork 4 Discussion Board! 👋 </font>
-
 
 This space is designed for you to engage with your classmates about the material covered in Classwork 4.
 
@@ -64,4 +111,3 @@ Whether you are looking to delve deeper into the content, share insights, or hav
 If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Classwork 4 materials or need clarification on any points, don't hesitate to ask here. 
 
 Let's collaborate and learn from each other!
-

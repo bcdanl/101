@@ -121,6 +121,7 @@ The Royal Swedish Academy of Sciences has decided to award the 2024 Nobel Prize 
 :::{.incremental}
 - The Scale of Modern AI:
   - Deep neural networks now contain billions to trillions of parameters
+  - [Hugging Face](https://huggingface.co): Open-source community for ML and AI
 
 - Applications: Voice assistants, self-driving cars, medical diagnostics, and so on.
 

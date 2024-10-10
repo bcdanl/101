@@ -3210,21 +3210,21 @@
     "href": "danl-lec/danl-101-lec-13-2024-1010.html#nobel-prizes-laying-the-foundations-for-ml-3",
     "title": "Lecture 13",
     "section": "2024 Nobel Prizes: Laying the Foundations for ML",
-    "text": "2024 Nobel Prizes: Laying the Foundations for ML\nDemis Hassabis’s Story: From Chess to AI Mastery\n\n\n\n\n\n\n\n\n\nBoardgame Master Enters the Protein Olympics:\nEarly Life:\n\nStarted playing chess at age 4, achieved master level at 13\nTransitioned to programming and video game development as a teenager"
+    "text": "2024 Nobel Prizes: Laying the Foundations for ML\nDemis Hassabis’s Story: From Chess to AI Mastery\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoardgame Master Enters the Protein Olympics:\nEarly Life:\n\nStarted playing chess at age 4, achieved master level at 13\nTransitioned to programming and video game development as a teenager"
   },
   {
     "objectID": "danl-lec/danl-101-lec-13-2024-1010.html#nobel-prizes-laying-the-foundations-for-ml-4",
     "href": "danl-lec/danl-101-lec-13-2024-1010.html#nobel-prizes-laying-the-foundations-for-ml-4",
     "title": "Lecture 13",
     "section": "2024 Nobel Prizes: Laying the Foundations for ML",
-    "text": "2024 Nobel Prizes: Laying the Foundations for ML\nDemis Hassabis’s Story: From Chess to AI Mastery\n\n\nCo-founded DeepMind in 2010, a company that revolutionized AI for boardgames\nDeepMind’s Global Attention:\n\nSold to Google in 2014\nIn 2016, DeepMind’s AI defeated the world champion of Go, a breakthrough in AI’s problem-solving abilities\n\nAI’s True Purpose for Hassabis:\n\nGames were just a stepping stone to developing AI for more meaningful applications, like predicting protein structures"
+    "text": "2024 Nobel Prizes: Laying the Foundations for ML\nDemis Hassabis’s Story: From Chess to AI Mastery\n\n\n\n\n\n\n\n\n\n\nCo-founded DeepMind in 2010, a company that revolutionized AI for boardgames\nDeepMind’s Global Attention:\n\nSold to Google in 2014\nIn 2016, DeepMind’s AI defeated the world champion of Go, a breakthrough in AI’s problem-solving abilities"
   },
   {
     "objectID": "danl-lec/danl-101-lec-13-2024-1010.html#nobel-prizes-laying-the-foundations-for-ml-5",
     "href": "danl-lec/danl-101-lec-13-2024-1010.html#nobel-prizes-laying-the-foundations-for-ml-5",
     "title": "Lecture 13",
     "section": "2024 Nobel Prizes: Laying the Foundations for ML",
-    "text": "2024 Nobel Prizes: Laying the Foundations for ML\nThe Future of Machine Learning\n\n\nWhat’s Next?:\n\nAI is rapidly evolving, expanding into areas like business, economics, climate science, healthcare, personalized medicine, and so on.\nChallenges include transparency, ethics, and responsible AI development\n\nEthical Considerations:\n\nHow do we ensure AI benefits humanity and minimizes harm?\n\nFinal Thoughts:\n\nAs AI continues to grow, it holds the potential to solve many of humanity’s greatest challenges"
+    "text": "2024 Nobel Prizes: Laying the Foundations for ML\nDemis Hassabis’s Story: From Chess to AI Mastery\n\n\n\n\n\n\n\n\n\nAI’s True Purpose for Hassabis:\n\nGames were just a stepping stone to developing AI for more meaningful applications, like predicting protein structures"
   },
   {
     "objectID": "danl-lec/danl-101-lec-13-2024-1010.html#question-31",
@@ -3239,5 +3239,12 @@
     "title": "Lecture 13",
     "section": "Question 32",
     "text": "Question 32\nWhich of the following expressions correctly keeps observations from df where the age variable has missing values?\n\ndf |&gt; filter(is.na(age))\ndf |&gt; filter(!is.na(age))\ndf |&gt; filter(age == NA)\ndf |&gt; filter(age != NA)\nBoth a and c\nBoth b and d"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-13-2024-1010.html#nobel-prizes-laying-the-foundations-for-ml-6",
+    "href": "danl-lec/danl-101-lec-13-2024-1010.html#nobel-prizes-laying-the-foundations-for-ml-6",
+    "title": "Lecture 13",
+    "section": "2024 Nobel Prizes: Laying the Foundations for ML",
+    "text": "2024 Nobel Prizes: Laying the Foundations for ML\nThe Future of Machine Learning\n\n\nWhat’s Next?:\n\nAI is rapidly evolving, expanding into areas like business, economics, climate science, healthcare, personalized medicine, and so on.\nChallenges include transparency, ethics, and responsible AI development\n\nEthical Considerations:\n\nHow do we ensure AI benefits humanity and minimizes harm?\n\nFinal Thoughts:\n\nAs AI continues to grow, it holds the potential to solve many of humanity’s greatest challenges"
   }
 ]

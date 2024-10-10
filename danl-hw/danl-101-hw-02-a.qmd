@@ -37,6 +37,21 @@ iqr_value <- q3 - q1
 ```
 
 
+# Descriptive Statistics
+
+The following provides the descriptive statistics for each part of the homework, as well as the final score of HW2:
+
+```{r}
+#| echo: false
+#| eval: true
+sum <- readr::read_csv("https://bcdanl.github.io/data/danl-101-hw2-dist-fall-2024.csv")
+DT::datatable(sum, options = list(pageLength = 25))
+```
+
+
+<br><br>
+
+
 # Short-Answer Questions
 
 ## True or False

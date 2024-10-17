@@ -76,7 +76,7 @@ theme_set(theme_fivethirtyeight()+
 ## DANL Career Session
 ### Q. What challenges have you encountered in your role at the workplace?
 
-[***Marcie Hogan, Class of 2023**](https://drive.google.com/file/d/1fA6Wb8pTyx8poKdCp-EyuTlyg3zImSzb/view?usp=share_link)
+[**Marcie Hogan, Class of 2023**](https://drive.google.com/file/d/1fA6Wb8pTyx8poKdCp-EyuTlyg3zImSzb/view?usp=share_link)
 
 [**Jason Rappazzo, Class of 2023**](https://drive.google.com/file/d/1APSLYyWAkI_cD7k66mONipYoJ9pWgcAq/view?usp=share_link)
 
@@ -346,7 +346,14 @@ theme_set(theme_fivethirtyeight()+
   - **Passion Alignment**: Combining data analytics skills with personal interests leads to a more fulfilling career.
   - **Practical Experience**: Engaging in projects, internships, and leveraging academic opportunities enhances employability.
   
-  
+
+## 
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/demystifying-careers-danl.png" style="width: 45%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+ 
 ## DANL Career Session
 ### Useful Skills for DANL Students  
 - Data Analysis with Python and R

@@ -226,7 +226,7 @@ theme_set(theme_fivethirtyeight()+
 - **Projects**
   - **SG&A Dashboard**: Acted as the project manager for a dashboard visualizing the company’s Selling, General, and Administrative expenses.
   - **Digital Growth Dashboard**: Visualizes online sales data and tracks the company’s shift toward automated online product sales.
-  - Regularly combines data from various tables into coherent views for analysis and presentation.
+  - Regularly combines data from various ERP-related tables into coherent views for analysis and presentation.
 
 
 ## DANL Career Session

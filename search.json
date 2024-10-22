@@ -81,7 +81,7 @@
     "href": "index.html#bullet-classwork",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nQuiz 1 - Addendum\n\n\nOctober 21, 2024\n\n\n\n\nMidterm Exam 1\n\n\nOctober 9, 2024\n\n\n\n\nQuiz 1\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 1, 2024\n\n\n\n\nleft_join()\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nQuiz 1 - Addendum\n\n\nOctober 21, 2024\n\n\n\n\nMidterm Exam 1\n\n\nOctober 22, 2024\n\n\n\n\nQuiz 1\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 1, 2024\n\n\n\n\nleft_join()\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -1670,7 +1670,7 @@
     "href": "listing-danl-101-cw.html",
     "title": "DANL 101 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nQuiz 1 - Addendum\n\n\nClasswork 8\n\n\nOctober 21, 2024\n\n\n\n\nMidterm Exam 1\n\n\nClasswork 7\n\n\nOctober 9, 2024\n\n\n\n\nQuiz 1\n\n\nClasswork 6\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nClasswork 5\n\n\nOctober 3, 2024\n\n\n\n\nleft_join()\n\n\nClasswork 3\n\n\nOctober 1, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nClasswork 4\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nMidterm Exam 1\n\n\nClasswork 7\n\n\nOctober 22, 2024\n\n\n\n\nQuiz 1 - Addendum\n\n\nClasswork 8\n\n\nOctober 21, 2024\n\n\n\n\nQuiz 1\n\n\nClasswork 6\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nClasswork 5\n\n\nOctober 3, 2024\n\n\n\n\nleft_join()\n\n\nClasswork 3\n\n\nOctober 1, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nClasswork 4\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-101-hw-01.html",
@@ -3588,28 +3588,28 @@
     "href": "danl-cw/danl-101-cw-07.html",
     "title": "Midterm Exam 1",
     "section": "",
-    "text": "Data analytics and data science have clear-cut distinctions with no overlap in activities or skill sets.\n\nTrue\nFalse\n\nExplanation: Data analytics and data science overlap in activities and skill sets. While data science may involve more advanced techniques like machine learning, both fields focus on extracting insights from data.\n\n\n\nData lakes use a schema-on-write approach, processing data before storage.\n\nTrue\nFalse\n\nExplanation: Data lakes use a schema-on-read approach, storing data in its raw form and applying structure only when the data is read. Schema-on-write, which processes data before storage, is used by data warehouses.\n\n\n\nIn the MapReduce framework in Hadoop, the Reduce phase occurs before the Map phase.\n\nTrue\nFalse\n\nExplanation: In Hadoop’s MapReduce framework, the Map phase occurs first to process and generate intermediate data, followed by the Reduce phase, which aggregates and processes the results from the Map phase."
+    "text": "The following provides the descriptive statistics for each part of the Midterm Exam 1 questions:\n\n\n\n\n\n\n\nThe following describes the distribution of Midterm Exam 1 score:"
   },
   {
     "objectID": "danl-cw/danl-101-cw-07.html#question-1",
     "href": "danl-cw/danl-101-cw-07.html#question-1",
     "title": "Midterm Exam 1",
-    "section": "",
-    "text": "Data analytics and data science have clear-cut distinctions with no overlap in activities or skill sets.\n\nTrue\nFalse\n\nExplanation: Data analytics and data science overlap in activities and skill sets. While data science may involve more advanced techniques like machine learning, both fields focus on extracting insights from data."
+    "section": "Question 1",
+    "text": "Question 1\nData analytics and data science have clear-cut distinctions with no overlap in activities or skill sets.\n\nTrue\nFalse\n\nExplanation: Data analytics and data science overlap in activities and skill sets. While data science may involve more advanced techniques like machine learning, both fields focus on extracting insights from data."
   },
   {
     "objectID": "danl-cw/danl-101-cw-07.html#question-2",
     "href": "danl-cw/danl-101-cw-07.html#question-2",
     "title": "Midterm Exam 1",
-    "section": "",
-    "text": "Data lakes use a schema-on-write approach, processing data before storage.\n\nTrue\nFalse\n\nExplanation: Data lakes use a schema-on-read approach, storing data in its raw form and applying structure only when the data is read. Schema-on-write, which processes data before storage, is used by data warehouses."
+    "section": "Question 2",
+    "text": "Question 2\nData lakes use a schema-on-write approach, processing data before storage.\n\nTrue\nFalse\n\nExplanation: Data lakes use a schema-on-read approach, storing data in its raw form and applying structure only when the data is read. Schema-on-write, which processes data before storage, is used by data warehouses."
   },
   {
     "objectID": "danl-cw/danl-101-cw-07.html#question-3",
     "href": "danl-cw/danl-101-cw-07.html#question-3",
     "title": "Midterm Exam 1",
-    "section": "",
-    "text": "In the MapReduce framework in Hadoop, the Reduce phase occurs before the Map phase.\n\nTrue\nFalse\n\nExplanation: In Hadoop’s MapReduce framework, the Map phase occurs first to process and generate intermediate data, followed by the Reduce phase, which aggregates and processes the results from the Map phase."
+    "section": "Question 3",
+    "text": "Question 3\nIn the MapReduce framework in Hadoop, the Reduce phase occurs before the Map phase.\n\nTrue\nFalse\n\nExplanation: In Hadoop’s MapReduce framework, the Map phase occurs first to process and generate intermediate data, followed by the Reduce phase, which aggregates and processes the results from the Map phase."
   },
   {
     "objectID": "danl-cw/danl-101-cw-07.html#question-4",

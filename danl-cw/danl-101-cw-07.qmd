@@ -341,7 +341,7 @@ d. Both b and c
 
 **Answer**: c. `df$age`
 
-**Explanation**: In R, the $ operator is used to access specific variables (columns) within a data frame. The df$age expression will return the age column from df. The other options use invalid syntax.
+**Explanation**: In R, the `$` operator is used to access specific variables (columns) within a data frame. The `df$age` expression will return the `age` column from `df`. The other options use invalid syntax.
 
 
 ## Question 24

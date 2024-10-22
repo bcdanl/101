@@ -188,7 +188,7 @@ knitr::kable(netflix_data |> select(AccountMonths:Language))
 6. `HoursWatched`: Average hours watched per week
 7. `LastLoginTime`: Time of last login in hours since midnight
 8. `AccountMonths`: Age of the account in months
-9. `Rating`: User satisfaction rating (1 to 5 stars)
+9. `Satisfaction`: User satisfaction rating (1 to 5 stars)
 10.	`nDevices`: Number of devices connected
 11.	`LastMovieRating`: Rating of the last watched movie (1.0 to 10.0)
 12.	`nProfiles`: Number of profiles on the account

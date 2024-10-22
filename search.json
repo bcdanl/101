@@ -4015,7 +4015,7 @@
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-15",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\nBar Chart"
+    "text": "Data Storytelling\nTitanic"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-16",
@@ -4029,28 +4029,28 @@
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-17",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\nStacked Bar Chart"
+    "text": "Data Storytelling\nBar Chart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-18",
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-18",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\n100% Stacked Bar Chart"
+    "text": "Data Storytelling\nStacked Bar Chart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-19",
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-19",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\nClustered Bar Chart"
+    "text": "Data Storytelling\n100% Stacked Bar Chart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-20",
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-20",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\nHistogram"
+    "text": "Data Storytelling\nClustered Bar Chart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-21",
@@ -4064,35 +4064,35 @@
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-22",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\nBoxplot"
+    "text": "Data Storytelling\nHistogram"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-23",
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-23",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\nRelationship\n\nFrom the plots with two numeric variables, we want to see co-variation, the tendency for the values of two or more variables to vary together in a related way.\nWhat type of co-variation occurs between variables?\n\nAre they positively associated?\nAre they negatively associated?\nAre there no association between them?\n\nCommon visualizations:\n\nScatterplot\nFitted curves/line"
+    "text": "Data Storytelling\nBoxplot"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-24",
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-24",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\nScatterplot"
+    "text": "Data Storytelling\nRelationship\n\nFrom the plots with two numeric variables, we want to see co-variation, the tendency for the values of two or more variables to vary together in a related way.\nWhat type of co-variation occurs between variables?\n\nAre they positively associated?\nAre they negatively associated?\nAre there no association between them?\n\nCommon visualizations:\n\nScatterplot\nFitted curves/line"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-25",
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-25",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\nScatterplot with Fitted Line"
+    "text": "Data Storytelling\nOrange Juice Sales"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-26",
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-26",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\nScatterplot with Fitted Line"
+    "text": "Data Storytelling\nScatterplot"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-27",
@@ -4113,18 +4113,60 @@
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-29",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\nTime Trend\n\nA time trend plot, (also known as a time series plot), is used to visualize trends, patterns, and fluctuations in a variable over a specific time period.\n\nThe x-axis typically represents time, while the y-axis represents the variable being measured.\n\nWe can check the overall direction in which the time-series variable are moving—upwards, downwards, or staying relatively constant over time.\nCommon visualizations:\n\nLine chart"
+    "text": "Data Storytelling\nMPG"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-30",
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-30",
     "title": "Lecture 15",
     "section": "Data Storytelling",
-    "text": "Data Storytelling\nLine charts"
+    "text": "Data Storytelling\nScatterplot with Fitted Line"
   },
   {
     "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-31",
     "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-31",
+    "title": "Lecture 15",
+    "section": "Data Storytelling",
+    "text": "Data Storytelling\nWeather"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-32",
+    "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-32",
+    "title": "Lecture 15",
+    "section": "Data Storytelling",
+    "text": "Data Storytelling\nScatterplot with Fitted Line"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-33",
+    "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-33",
+    "title": "Lecture 15",
+    "section": "Data Storytelling",
+    "text": "Data Storytelling\nTime Trend\n\nA time trend plot, (also known as a time series plot), is used to visualize trends, patterns, and fluctuations in a variable over a specific time period.\n\nThe x-axis typically represents time, while the y-axis represents the variable being measured.\n\nWe can check the overall direction in which the time-series variable are moving—upwards, downwards, or staying relatively constant over time.\nCommon visualizations:\n\nLine chart\nFitted Curve"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-34",
+    "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-34",
+    "title": "Lecture 15",
+    "section": "Data Storytelling",
+    "text": "Data Storytelling\nNVDA Stock Price"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-35",
+    "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-35",
+    "title": "Lecture 15",
+    "section": "Data Storytelling",
+    "text": "Data Storytelling\nLine Chart"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-36",
+    "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-36",
+    "title": "Lecture 15",
+    "section": "Data Storytelling",
+    "text": "Data Storytelling\nLine Chart with Fitted Curve"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-37",
+    "href": "danl-lec/danl-101-lec-15-2024-1022.html#data-storytelling-37",
     "title": "Lecture 15",
     "section": "Data Storytelling",
     "text": "Data Storytelling\nVisualization Tools\n\nMany tools for visualizing data – Power BI, Tableau, Excel, Python, R, and more\nPower BI and Tableau have drag-and-drop interfaces, making them accessible to users with little to no coding experience.\nIn R, there are multiple packages for creating data visualizations—ggplot2 is the most widely used one.\n\nWhile we will briefly use Power BI and Excel for visualization, the primary visualization tool for this course will be ggplot2 in R.\n\nUsing ggplot2 helps develop important coding and data skills, which are critical for more advanced data analytics work."

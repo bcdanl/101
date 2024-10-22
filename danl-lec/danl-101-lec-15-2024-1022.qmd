@@ -35,6 +35,7 @@ library(skimr)
 library(ggthemes)
 library(hrbrthemes)
 library(viridis)
+library(rmarkdown)
 
 titanic <- read_csv("https://bcdanl.github.io/data/titanic_cleaned.csv")
 oj <- read_csv("https://bcdanl.github.io/data/dominick_oj_feat.csv")
@@ -325,6 +326,17 @@ theme_set(theme_fivethirtyeight() +
 
 
 ## Data Storytelling
+### Titanic
+
+```{r}
+#| results: asis
+DT::datatable(titanic, options = list(
+  pageLength = 5
+))
+```
+
+
+## Data Storytelling
 ### Bar Chart
 
 ```{r}
@@ -482,6 +494,18 @@ ggplot(data = titanic) +
 - Common visualizations: 
   - **Scatterplot**
   - **Fitted curves/line**
+
+
+
+## Data Storytelling
+### Orange Juice Sales
+
+```{r}
+#| results: asis
+DT::datatable(oj, options = list(
+  pageLength = 5
+))
+```
   
 
 ## Data Storytelling
@@ -538,6 +562,19 @@ ggplot(data = oj,
 ```
 
 
+
+
+## Data Storytelling
+### MPG
+
+```{r}
+#| results: asis
+DT::datatable(mpg, options = list(
+  pageLength = 5
+))
+```
+  
+  
 ## Data Storytelling
 ### Scatterplot with Fitted Line
 ```{r}
@@ -556,6 +593,17 @@ ggplot(data = mpg,
 
 
 
+## Data Storytelling
+### Weather
+
+```{r}
+#| results: asis
+DT::datatable(weather_indep, options = list(
+  pageLength = 5
+))
+```
+  
+  
 ## Data Storytelling
 ### Scatterplot with Fitted Line
 ```{r}
@@ -584,10 +632,23 @@ ggplot(data = weather_indep,
 
 - Common visualizations: 
   - **Line chart**
+  - **Fitted Curve**
   
 
+
 ## Data Storytelling
-### Line charts
+### NVDA Stock Price
+
+```{r}
+#| results: asis
+DT::datatable(nvda |> select(Date, Close), options = list(
+  pageLength = 5
+))
+```
+  
+  
+## Data Storytelling
+### Line Chart
 
 ```{r}
 #| echo: false
@@ -596,6 +657,25 @@ ggplot(data = nvda,
                 aes(x = Date, 
                     y = Close)) + 
   geom_line() +
+  geom_point(size = .1) +
+  labs(x = "Date",
+       y = "Price",
+       title = "How is the daily trend of Nvidia's stock price since 2015?")
+```
+
+
+  
+## Data Storytelling
+### Line Chart with Fitted Curve
+
+```{r}
+#| echo: false
+ggplot(data = nvda,
+       mapping = 
+                aes(x = Date, 
+                    y = Close)) + 
+  geom_line() +
+  geom_smooth() +
   geom_point(size = .1) +
   labs(x = "Date",
        y = "Price",

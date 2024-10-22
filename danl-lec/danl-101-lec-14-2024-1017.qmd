@@ -126,6 +126,9 @@ theme_set(theme_fivethirtyeight()+
 
 
 
+# DANL Career Session {background-color="#1c4982"}
+
+
 ## DANL Career Session - 1. Marcie Hogan
 
 - **Background**
@@ -135,7 +138,7 @@ theme_set(theme_fivethirtyeight()+
 
 - **Career Path**
   - At Crown Castle, Marcie managed database operations for spatial data, frequently working with Python and spatial packages.
-  - In July 2024, she began a new role at Meta as a Community Project Manager within the Maps Organization, working on a contract basis.
+  - In July 2024, she began a new role at Meta as a **Community Project Manager** within the Maps Organization, working on a contract basis.
 
 
 
@@ -160,7 +163,7 @@ theme_set(theme_fivethirtyeight()+
 
 ## DANL Career Session - 2. Jaehyung Lee (Andy)
 - **Invisible Technologies**
-  - Works at Invisible Technologies, a fast-growing startup that partners with leading AI platforms like OpenAI, Cohere, Google, and Character.AI.
+  - Works as **Analytics Associate** at Invisible Technologies, a fast-growing startup that partners with leading AI platforms like OpenAI, Cohere, Google, and Character.AI.
   - The company specializes in refining AI models through techniques like **Reinforcement Learning** from Human Feedback (RLHF) and Supervised Fine-Tuning (SFT).
 
 
@@ -199,7 +202,7 @@ theme_set(theme_fivethirtyeight()+
   - Served as a tutor in the Data Analytics Lab and was part of the track team alongside Marcie.
 
 - **Role at Momentive**
-  - Works as an Automation and Reporting Analyst in the IT department of a chemical manufacturing company.
+  - Works as a **data analyst** in the Global IT Automation and Reporting at Momentive, a chemical manufacturing company.
   - The company produces a wide array of products found in everyday items, from tires to mattresses and aerospace components.
   - Responsible for automating manual business processes and turning complex data into actionable insights.
   
@@ -264,6 +267,16 @@ theme_set(theme_fivethirtyeight()+
   - Believes **AI applications will expand across various sectors**, including geospatial data and map-making.
   - Emphasized **the importance of having industry-specific knowledge** to optimize AI models effectively.
 
+
+## DANL Career Session
+### Insights on AI
+- **Andy**
+  - Acknowledged **the hype surrounding AI** and the possibility of an AI bubble.
+  - Mentioned that his company is preparing by **diversifying into other industries beyond AI**.
+  - Believes **AI will become more prominent across all businesses**, requiring **adaptability** and **broader skill sets**.
+
+
+
 ## DANL Career Session
 ### Most Fulfilling Aspects
 
@@ -271,15 +284,6 @@ theme_set(theme_fivethirtyeight()+
   - Finds fulfillment when **her work aligns with her passions**, particularly in geospatial data and map-making.
   - Enjoys seeing the **direct impact of her insights on public-facing products and contributing to an interconnected world**.
   - Prefers roles where she can witness the end results and user impact of her work.
-
-
-## DANL Career Session
-### Insights on AI
-- Andy
-  - Acknowledged **the hype surrounding AI** and the possibility of an AI bubble.
-  - Mentioned that his company is preparing by **diversifying into other industries beyond AI**.
-  - Believes **AI will become more prominent across all businesses**, requiring **adaptability** and **broader skill sets**.
-
 
 
 
@@ -347,14 +351,8 @@ theme_set(theme_fivethirtyeight()+
   - **Practical Experience**: Engaging in projects, internships, and leveraging academic opportunities enhances employability.
   
 
-## 
-
-<div style="text-align: center; width: 100%; margin: auto;">
-  <img src="https://bcdanl.github.io/lec_figs/demystifying-careers-danl.png" style="width: 45%; margin-bottom: -20px;">
-  <p style="font-weight: bold;"></p>
-</div>
  
-## DANL Career Session
+## DANL Career
 ### Useful Skills for DANL Students  
 - Data Analysis with Python and R
 - Data Science with Python and R
@@ -365,7 +363,7 @@ theme_set(theme_fivethirtyeight()+
 - Prompt Engineering in Generative AI 
 
 
-## DANL Career Session
+## DANL Career
 ### Data Analytics-related Certificates on [Coursera](https://www.coursera.org)  
 
 1. General Data Analytics, SQL, and Business Intelligence
@@ -380,3 +378,4 @@ theme_set(theme_fivethirtyeight()+
 3. Generative AI
    - [Google AI Essentials](https://www.coursera.org/learn/google-ai-essentials/)
    - [IBM Generative AI: Prompt Engineering Basics](https://www.coursera.org/learn/generative-ai-prompt-engineering-for-everyone)
+   

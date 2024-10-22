@@ -28,6 +28,8 @@ DT::datatable(sum, rownames = F,
               options = list(pageLength = 45))
 ```
 
+<br>
+
 The following describes the distribution of Midterm Exam 1 score:
 
 

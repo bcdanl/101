@@ -61,7 +61,145 @@ theme_set(theme_fivethirtyeight() +
                 legend.title = element_text(size = rel(1.5))
                 )
           )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_fill_discrete <- function(...) scale_fill_viridis_d(...)
+
 ```
+
+
+## Grading
+
+$$
+\begin{align}
+(\text{Total Percentage Grade}) =&\;\, 0.05\times(\text{Attendance}) \notag\\
+&\,+\, 0.15\times(\text{Quiz & Class Participation})\notag\\ 
+& \,+\, 0.15\times(\text{Homework})\notag\\  
+&\,+\, 0.15\times(\text{Presentation})\notag\\
+& \,+\, 0.50\times(\text{Exam}).\notag
+\end{align}
+$$
+
+## Grading
+
+
+## Grading
+
+- You are allowed up to 6 absences without penalty. 
+  - Send me an email if you have standard excused reasons (illness, family emergency, transportation problems, etc.).
+
+- For each absence beyond the initial six, there will be a deduction of 1% from the Total Percentage Grade.
+
+- The single lowest homework score will be dropped when calculating the total homework score. 
+  - Each homework except for the homework with the lowest score accounts for 20% of the total homework score.
+
+
+## Grading
+
+$$
+\begin{align}
+&(\text{Total Exam Score}) \\
+=\, &\text{max}\,\left\{0.50\times(\text{Midterm Exam Score}) \,+\, 0.50\times(\text{Final Exam Score})\right.,\notag\\ 
+&\qquad\;\,\left.0.25\times(\text{Midterm Exam Score}) \,+\, 0.75\times(\text{Final Exam Score})\right\}.\notag
+\end{align}
+$$
+
+
+
+- The total exam score is the maximum between 
+  1. the simple average of the midterm exam score and the final exam score and
+  2. the weighted average of them with one-fourth weight on the midterm exam score and three-third weight on the final exam score:
+
+
+
+
+## Grading
+
+$$
+\begin{align}
+&(\text{Total Midterm Exam}) \\
+=\, &\text{max}\,\left\{0.50\times(\text{Midterm Exam 1}) \,+\, 0.50\times(\text{Midterm Exam 2})\right.,\notag\\ 
+&\qquad\;\,\left.0.25\times(\text{Midterm Exam 1}) \,+\, 0.75\times(\text{Midterm Exam 2})\right\}.\notag
+\end{align}
+$$
+
+
+
+- The total midterm exam score is the maximum between 
+  1. the simple average of the midterm exam 1 score and the midterm exam 2 score and
+  2. the weighted average of them with one-fourth weight on the midterm exam 1 score and three-third weight on the midterm exam 2 score:
+
+## Grading
+- **Scenario 1**
+  - Suppose your $(\text{Total Exam Score})$ is taken from:
+$$
+\begin{align}
+&0.25\times(\text{Midterm Exam 1}) \,+\, 0.75\times(\text{Midterm Exam 2})\\
+&0.25\times(\text{Midterm Exam}) \,+\, 0.75\times(\text{Final Exam})
+\end{align}
+$$
+  - $(\text{Midterm Exam 1})$ will then account for only **6.25%** of your $\text{Total Exam Score}$.
+  
+## Grading
+- **Scenario 2**
+  - Suppose your $(\text{Total Exam Score})$ is taken from:
+$$
+\begin{align}
+&0.5\times(\text{Midterm Exam 1}) \,+\, 0.5\times(\text{Midterm Exam 2})\\
+&0.25\times(\text{Midterm Exam}) \,+\, 0.75\times(\text{Final Exam})
+\end{align}
+$$
+  - $(\text{Midterm Exam 1})$ will then account for only **12.5%** of your $\text{Total Exam Score}$.
+  
+
+  
+
+
+
+## Data Storytelling
+
+<!-- <div style="text-align: center; width: 100%; margin: auto;"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/data-storytelling.png" style="width: 46%; margin-bottom: -20px;"> -->
+<!--   <p style="font-weight: bold;"></p> -->
+<!-- </div> -->
+
+<!-- - **Data Visualization**: Convert data into meaningful graphics for better understanding of data. -->
+
+<!-- - **Data Transformation**: Use key functions to filter observations, select variables, create new variables, and compute summaries. -->
+
+<!-- - **Exploratory Data Analysis (EDA)**: Combine **descriptive statistics** (`skim()`), **visualization**, and **transformation** with curiosity and skepticism to explore and discover insights. -->
+
+- *"The <u>narrative</u> is the key vehicle to convey insights, and the <u>visualizations</u> are important proof points to back up the narrative."* Ryan Fuller, Corporate Vice President, M365 Data Strategy at Microsoft
+
+- **Data visualizations** are useful for showing "what" is happening in the data.
+  - However, they often fall short in explaining the "why" and the "how" or providing the necessary context to uncover underlying reasons.
+
+<!-- - **Data storytelling** links the **visualization** with a **narrative** to answer the "why" and the "how" question, and conveys **insights** to the audience to make data-driven decision. -->
+
+-	**Data Storytelling**: Bridge the gap between **data** and **insights** by incorporating **descriptive statistics**, **visualization**, and **narration** within the appropriate **audience context** to effectively present your findings and drive data-informed decisions.
+
+<!-- - 	•	Data Storytelling: Bridge the gap between data and insights by incorporating descriptive statistics, visualizations, and narration within the appropriate context—by aligning who your audience is, what you want them to understand or act upon, and how you present your findings—to drive data-informed decisions. -->
+
+# Data Visualization {background-color="#1c4982"}
+
+
+## Data Storytelling
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/data-storytelling.png" style="width: 60%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+## Data Visualization
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/data-storytelling-visual.png" style="width: 60%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
 
 
 ## Data Visualization
@@ -151,8 +289,7 @@ ggplot(data = titanic) +
            show.legend = F) +
   labs(x = "Survival Status",
        y = "Number of\n People",
-       title = "How is the distribution of survival status in Titanic?") + 
-  scale_fill_viridis_d()
+       title = "How is the distribution of survival status in Titanic?")
 ```
 
 
@@ -169,8 +306,7 @@ ggplot(data = titanic) +
            show.legend = F) +
   labs(y = "Survival Status",
        x = "Number of\n People",
-       title = "How is the distribution of survival status in Titanic?") + 
-  scale_fill_viridis_d()
+       title = "How is the distribution of survival status in Titanic?") 
 ```
 
 
@@ -187,8 +323,7 @@ ggplot(data = titanic) +
   labs(y = "Ticket\n Class",
        x = "Number of\n People",
        fill = "Survival Status",
-       title = "How does the distribution of survival status varies by ticket class\n in Titanic?") + 
-  scale_fill_viridis_d()
+       title = "How does the distribution of survival status varies by ticket class\n in Titanic?") 
 ```
 
 
@@ -206,8 +341,7 @@ ggplot(data = titanic) +
   labs(y = "Ticket\n Class",
        x = "Number of\n People",
        fill = "Survival Status",
-       title = "How does the distribution of survival status varies by ticket class\n in Titanic?") + 
-  scale_fill_viridis_d()
+       title = "How does the distribution of survival status varies by ticket class\n in Titanic?") 
 ```
 
 
@@ -225,8 +359,7 @@ ggplot(data = titanic) +
   labs(y = "Ticket\n Class",
        x = "Number of\n People",
        fill = "Survival Status",
-       title = "How does the distribution of survival status varies by ticket class\n in Titanic?") + 
-  scale_fill_viridis_d()
+       title = "How does the distribution of survival status varies by ticket class\n in Titanic?") 
 
 ```
 
@@ -247,9 +380,9 @@ ggplot(data = titanic) +
                ) +
   labs(y = "Number of\n People",
        x = "Age",
-       title = "How is the distribution of age in Titanic?") + 
-  scale_fill_viridis_c()
+       title = "How is the distribution of age in Titanic?")
 ```
+
 
 
 ## Data Visualization
@@ -265,8 +398,7 @@ ggplot(data = titanic) +
   facet_grid(.~survived) +
   labs(y = "Number of\n People",
        x = "Age",
-       title = "How does the distribution of age varies by survival status\n in Titanic?") + 
-  scale_fill_viridis_d()
+       title = "How does the distribution of age varies by survival status\n in Titanic?") 
 ```
 
 
@@ -365,8 +497,7 @@ ggplot(data = oj,
   geom_smooth(method = lm) +
   labs(y = "Price (in log)",
        x = "Quantity (in log)",
-       title = "How does the relationship between OJ sales and its price\n varies by brand?") +
-  scale_color_viridis_d()
+       title = "How does the relationship between OJ sales and its price\n varies by brand?")
 ```
 
 
@@ -589,9 +720,9 @@ ggplot( data = DATA.FRAME,
   - It’s common practice to place the **input variable** along the x-axis and the **outcome variable** along the y-axis.
 
 
--	**Input Variable**: It’s like the "cause."
--	**Outcome Variable**: It’s like the "effect."
-  - **Example**: a company’s advertising budget and sales revenue.
+-	**Input Variable**: Represents the potential “cause.”
+-	**Outcome Variable**: Represents the potential “effect.”
+  - **Example**: Advertising budget (input) and sales revenue (outcome).
   
   
 
@@ -599,12 +730,12 @@ ggplot( data = DATA.FRAME,
 ### Correlation does not imply causation
 
 <div style="text-align: center; width: 100%; margin: auto;">
-  <img src="https://bcdanl.github.io/lec_figs/corr-causal.png" style="width: 50%; margin-bottom: -20px;">
+  <img src="https://bcdanl.github.io/lec_figs/corr-causal.png" style="width: 45%; margin-bottom: -20px;">
   <p style="font-weight: bold;"></p>
 </div>
 
 - Just because you uncover a relationship doesn't mean you've identified the "causal" relationship.
-
+  - **Causal inference** is the study of identifying cause-and-effect relationships from data, beyond simple correlations.
 
 
 

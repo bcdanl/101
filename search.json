@@ -81,7 +81,7 @@
     "href": "index.html#bullet-classwork",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nQuiz 1 - Addendum\n\n\nOctober 21, 2024\n\n\n\n\nMidterm Exam 1\n\n\nOctober 22, 2024\n\n\n\n\nQuiz 1\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 1, 2024\n\n\n\n\nleft_join()\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nRelationship Plots\n\n\nOctober 28, 2024\n\n\n\n\nQuiz 1 - Addendum\n\n\nOctober 21, 2024\n\n\n\n\nMidterm Exam 1\n\n\nOctober 22, 2024\n\n\n\n\nQuiz 1\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 1, 2024\n\n\n\n\nleft_join()\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -1670,7 +1670,7 @@
     "href": "listing-danl-101-cw.html",
     "title": "DANL 101 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nMidterm Exam 1\n\n\nClasswork 7\n\n\nOctober 22, 2024\n\n\n\n\nQuiz 1 - Addendum\n\n\nClasswork 8\n\n\nOctober 21, 2024\n\n\n\n\nQuiz 1\n\n\nClasswork 6\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nClasswork 5\n\n\nOctober 3, 2024\n\n\n\n\nleft_join()\n\n\nClasswork 3\n\n\nOctober 1, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nClasswork 4\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nRelationship Plots\n\n\nClasswork 9\n\n\nOctober 28, 2024\n\n\n\n\nMidterm Exam 1\n\n\nClasswork 7\n\n\nOctober 22, 2024\n\n\n\n\nQuiz 1 - Addendum\n\n\nClasswork 8\n\n\nOctober 21, 2024\n\n\n\n\nQuiz 1\n\n\nClasswork 6\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nClasswork 5\n\n\nOctober 3, 2024\n\n\n\n\nleft_join()\n\n\nClasswork 3\n\n\nOctober 1, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nClasswork 4\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nClasswork 2\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nClasswork 1\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-101-hw-01.html",
@@ -4863,5 +4863,40 @@
     "title": "Lecture 17",
     "section": "Facets",
     "text": "Facets\nfacet_wrap(  ~ VAR )\n\n\nggplot(data = mpg) + \n  geom_point(mapping = \n               aes(x = displ, \n                   y = hwy), \n             alpha = .5) + \n  facet_wrap(  ~ class , nrow = 2)\n\n\n\n\n\n\n\nnrow (ncol) determines the number of rows (columns) to use when laying out the facets."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-09.html",
+    "href": "danl-cw/danl-101-cw-09.html",
+    "title": "Relationship Plots",
+    "section": "",
+    "text": "Consider the data.frame, df, the dataset recording monthly ice cream sales and drowning incidents.\n\ndf &lt;- read_csv(\"http://bcdanl.github.io/data/icecream-drowning.csv\")\n\n\n\n\n\n\n\n\n\n\n\nProvide both ggplot() and comment to describe the relationship between ice cream sales (IceCreamSales) and drowning incidents (DrowningIncidents).\n\n\n\n\n\n\nIs the relationship correlation or causation? Why?"
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-09.html#q1a",
+    "href": "danl-cw/danl-101-cw-09.html#q1a",
+    "title": "Relationship Plots",
+    "section": "",
+    "text": "Provide both ggplot() and comment to describe the relationship between ice cream sales (IceCreamSales) and drowning incidents (DrowningIncidents)."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-09.html#q1b",
+    "href": "danl-cw/danl-101-cw-09.html#q1b",
+    "title": "Relationship Plots",
+    "section": "",
+    "text": "Is the relationship correlation or causation? Why?"
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-09.html#q2a",
+    "href": "danl-cw/danl-101-cw-09.html#q2a",
+    "title": "Relationship Plots",
+    "section": "Q2a",
+    "text": "Q2a\n\nProvide both ggplot() and comment to describe the relationship between GDP per capita (gdpPercap) and life expectancy (lifeExp)."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-09.html#q2b",
+    "href": "danl-cw/danl-101-cw-09.html#q2b",
+    "title": "Relationship Plots",
+    "section": "Q2b",
+    "text": "Q2b\n\nProvide both ggplot() and comment to describe how the relationship between GDP per capita (gdpPercap) and life expectancy (lifeExp) varies by continent."
   }
 ]

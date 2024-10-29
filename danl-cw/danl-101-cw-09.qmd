@@ -1,0 +1,113 @@
+---
+title: Relationship Plots
+subtitle: Classwork 9
+date: last-modified
+from: markdown+emoji
+
+execute: 
+  eval: true
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(gapminder)
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_fill_discrete <- function(...) scale_fill_viridis_d(...)
+
+```
+
+# Ice Cream Sales and Drowning Incidents
+Consider the data.frame, `df`, the dataset recording monthly ice cream sales and drowning incidents. 
+
+```{r}
+df <- read_csv("http://bcdanl.github.io/data/icecream-drowning.csv")
+```
+
+
+```{r}
+#| echo: false
+
+DT::datatable(df, options = list(
+  pageLength = 12
+))
+```
+
+
+## Q1a
+- Provide both `ggplot()` and comment to describe the relationship between ice cream sales (`IceCreamSales`) and drowning incidents (`DrowningIncidents`).
+
+<br>
+
+## Q1b
+- Is the relationship correlation or causation? Why?
+
+<br><br>
+
+
+
+# GDP per capita and Life Expectancy 
+
+For this Section, please install the R package, `gapminder`:
+```{r}
+#| eval: false
+
+install.packages("gapminder")
+??gapminder
+```
+
+The `gapminder` package provides the data.frame object, `gapminder`. Let's assign this to `df_gapminder`:
+
+```{r}
+df_gapminder <- gapminder::gapminder
+```
+
+
+```{r}
+#| echo: false
+
+DT::datatable(df_gapminder, options = list(
+  pageLength = 12
+))
+```
+
+
+## Q2a
+- Provide both `ggplot()` and comment to describe the relationship between GDP per capita (`gdpPercap`) and life expectancy (`lifeExp`).
+
+<br>
+
+## Q2b
+- Provide both `ggplot()` and comment to describe how the relationship between GDP per capita (`gdpPercap`) and life expectancy (`lifeExp`) varies by `continent`.
+
+<br>

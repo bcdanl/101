@@ -1,0 +1,802 @@
+---
+title: Lecture 17
+subtitle: Data Visualization
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-10-29
+execute: 
+  eval: true
+  echo: false
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+library(gapminder)
+
+titanic <- read_csv("https://bcdanl.github.io/data/titanic_cleaned.csv")
+oj <- read_csv("https://bcdanl.github.io/data/dominick_oj_feat.csv")
+nvda <- read_csv("https://bcdanl.github.io/data/nvda_2015_2024.csv")
+nbc <- read_csv("https://bcdanl.github.io/data/nbc_show.csv")
+weather_indep <- read_csv("https://bcdanl.github.io/data/Completely_Independent_Variables__Rainfall_and_Temperature.csv")
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_fill_discrete <- function(...) scale_fill_viridis_d(...)
+
+```
+
+
+# Data Visualization with `ggplot` {background-color="#1c4982"}
+
+
+## Grammar of Graphics
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/grammar-of-graphics.png" style="width: 75%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+- A **grammar of graphics** is a tool that enables us to concisely describe the components of a graphic.
+  
+## Data Visualization - First Steps
+
+```{.r}
+library(tidyverse)
+mpg
+?mpg
+```
+
+- The `mpg` data frame, provided by `ggplot2`, contains observations collected by the US Environmental Protection Agency on 38 models of car.
+
+- Q. Do cars with big engines use more fuel than cars with small engines?
+  - `displ`: a car's engine size, in liters.
+  - `hwy`: a car's fuel efficiency on the highway, in miles per gallon (mpg). 
+
+
+-  What does the relationship between engine size and fuel efficiency look like?
+
+
+## Data Visualization - First Steps
+### Creating a Scatterplot with `ggplot`
+
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point()
+```
+
+
+- To plot `mpg`, run the above code to put `displ` on the `x`-axis and `hwy` on the `y`-axis.
+
+
+## Data Visualization - First Steps
+### Components in the Grammar of Graphics
+
+
+```{.r}
+ggplot( data = DATA.FRAME,
+        mapping = 
+          aes( MAPPINGS ) ) + 
+  GEOM_FUNCTION()
+```
+
+
+<!-- - To make a ggplot plot, replace the capitalized components in the code above with a `data.frame`, a `geom` function, or a collection of mappings such as `x = variable_1` and `y = variable_2`. -->
+
+- A `ggplot` graphic is a `mapping` of variables in `data` to `aes`thetic attributes of `geom`etric objects.
+
+
+- **Three Essential Components in `ggplot()` Graphics**:
+  1. `data`: **data.frame** containing the variables of interest.
+  2. `geom_*()`:  **geometric object** in the plot (e.g., point, line, bar, histogram, boxplot).
+  3. `aes()`: **aesthetic attributes** of the geometric object (e.g., `x`-axis, `y`-axis, `color`, `shape`, `size`, `fill`) mapped to variables in the data.frame.
+
+
+
+
+## Data Visualization - First Steps
+### Creating a Scatterplot with `ggplot`
+
+```{r}
+#| echo: true
+#| eval: false
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point()
+```
+
+- **Three Essential Components in This Particular `ggplot()`**:
+  1. `data = mpg`
+  2. `geom_point()`
+  3. `aes(x = displ, y = hwy)`
+
+
+# Relationship `ggplot()` {background-color="#1c4982"}
+
+
+## Relationship `ggplot()`
+### Scatterplot with `geom_point()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point()
+```
+
+
+
+## Relationship `ggplot()`
+### Fitted Curve with `geom_smooth()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_smooth()
+```
+
+
+
+
+## Relationship `ggplot()`
+### `geom_point()` with `geom_smooth()`
+
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+
+# To add a layer of 
+# a `ggplot()` component, 
+# we can simply add it to 
+# the `ggplot()` with `+`.
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point() + 
+  geom_smooth()
+```
+
+- The geometric object `geom_smooth()` draws a smooth curve fitted to the data.
+
+
+
+## `ggplot()` workflow
+### Common problems in `ggplot()`
+
+```{.r}
+ggplot(data = mpg,
+       mapping = 
+          aes(x = displ, 
+              y = hwy) ) +
+ geom_point()
+ + geom_smooth()
+```
+
+- One common problem when creating `ggplot2` graphics is to put the `+` in the wrong place.
+  - **Correct Approach**: Always place the `+` at the end of the previous line, NOT at the beginning of the next line.
+
+
+
+## Relationship `ggplot()`
+### About `geom_smooth()`
+
+
+- Using **regression**---one of the **machine learning** methods---the `geom_smooth()` visualizes the **predicted** value of the `y` variable for a given value of the `x` variable.
+
+- **What Does the Grey Ribbon Represent?**
+  - The grey ribbon illustrates the **uncertainty** around the estimated prediction curve.
+  - We are **95% confident** that the actual relationship between `x` and `y` variables falls within the grey ribbon.
+
+
+
+## Relationship `ggplot()`
+### `geom_point()` with `geom_smooth(method = lm)`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+
+```
+
+- `method = "lm"` specifies that a linear model (`lm`), called a **linear regression** model.
+
+
+
+## Relationship `ggplot()`
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-align: center
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point()
+```
+
+- How many points are in this plot?
+- How many observations are in the `mpg` data.frame?
+
+
+
+## Relationship `ggplot()`
+### Overplotting problem
+
+- Many points overlap each other. 
+  - This problem is known as **overplotting**. 
+
+- When points overlap, it's hard to know how many data points are at a particular location. 
+
+- Overplotting can obscure patterns and outliers, leading to potentially misleading conclusions. 
+
+
+
+## Relationship `ggplot()`
+### Overplotting and Transparency with `alpha`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+
+# alpha = 0.33 should be located
+# within the geom function,
+# NOT within the aesthetic function
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point( alpha = 0.33 ) 
+```
+
+- We can set a transparency level (`alpha`) between **0** (full transparency) and **1** (no transparency) manually.
+
+
+
+## Relationship `ggplot()`
+### Overplotting and Transparency with `alpha`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point( alpha = .33 )
+```
+
+- We can set an aesthetic property manually, as seen above, not within the `aes()` function but within the `geom_*()` function.
+
+
+
+
+
+## Relationship `ggplot()`
+- **Be mindful of the variable placement on the axes.**
+  - It’s common practice to place the **input variable** along the x-axis and the **outcome variable** along the y-axis.
+
+-	**Input Variable**: Represents the potential “cause.”
+-	**Outcome Variable**: Represents the potential “effect.”
+  - **Example**: Advertising budget (input) and sales revenue (outcome).
+
+
+## Relationship `ggplot()`
+### Correlation does not imply causation
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/corr-causal.png" style="width: 50%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+- Just because you uncover a relationship doesn't mean you've identified the "causal" relationship.
+  <!-- - **Causal inference** is the study of identifying cause-and-effect relationships from data, beyond simple correlations. -->
+
+
+
+
+## Relationship `ggplot()`
+
+- **Caution**: Correlation does not imply causation
+  - A strong correlation does not imply that one variable causes the other to change.
+  
+- **Correlation** measures the **strength and direction** of a linear relationship between two variables.
+  - Positive/negative correlation
+  - Strong/weak correlation
+  - No correlation
+
+- **Causation**: Indicates that one variable directly influences or causes a change in another
+  - Establishing causation requires controlled experimentation or additional evidence
+  - E.g., Smoking causes an increase in lung cancer risk (causation)
+  
+
+
+# Aesthetic Mappings {background-color="#1c4982"}
+
+## Aesthetic Mappings
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/r4s_330_1.png" width="600px">
+</p>
+
+
+
+- In the plot above, one group of points (highlighted in red) seems to fall outside of the linear trend. 
+
+  - How can you explain these cars? Are those hybrids?
+
+
+
+## Aesthetic Mappings
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/r4s_330_2.png" width="600px">
+</p>
+
+- An aesthetic is a visual property (e.g., `size`, `shape`, `color`) of the objects (e.g., `class`) in your plot.
+
+- You can display a point in different ways by changing the values of its aesthetic properties. 
+
+## Aesthetic Mappings
+### Adding a `color` to the plot
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              color = class) ) + 
+  geom_point()
+```
+
+
+## Aesthetic Mappings
+### Adding a `shape` to the plot
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              shape = class) ) + 
+  geom_point()
+```
+
+
+
+
+## Aesthetic Mappings
+### Adding a `size` to the plot
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              size = class) ) + 
+  geom_point()
+```
+
+
+
+
+## Aesthetic Mappings
+### Specifying a `color` to the plot, manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_point(color = "blue")
+```
+
+
+
+
+## Aesthetic Mappings
+### Specifying a `size` to the plot, manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_point(size = 3)  # in *mm*
+```
+
+
+
+
+
+## Aesthetic Mappings
+### Specifying an `alpha` to the plot, manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_point(alpha = .3)
+```
+
+
+## Aesthetic Mappings
+### Mapping Aesthetics vs. Setting Them Manually
+
+:::: {.columns}
+
+::: {.column width="50%"}
+#### **Aesthetic Mapping**
+  - Links data variables to visible properties on the graph
+  - Different categories → different colors or shapes
+
+:::
+
+::: {.column width="50%"}
+
+#### **Setting Aesthetics Manually**
+  - Customize visual properties directly in `geom_*()` outside of `aes()`
+  - Useful for setting fixed colors, sizes, or transparency unrelated to data variables
+
+:::
+::::
+
+
+## Visualization Principle
+### Clutter is Your Enemy!
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = gdpPercap,
+             y = lifeExp)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = lm) +
+  labs(x = "GDP per capita",
+       y = "Life Expectancy")
+```
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = log10(gdpPercap),
+             y = lifeExp)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = lm) +
+  labs(x = "GDP per capita (in base-10 logarithm)",
+       y = "Life Expectancy")
+
+```
+
+:::
+::::
+
+- Which one do you like it more?
+
+
+## Visualization Principle
+### Cognitive Load
+
+- Every element added to a page or screen demands **cognitive load**
+  - **Cognitive load**: the mental effort needed to process information
+- Extra elements = extra brain power for the audience to process
+  - **Example**: Overly complex slides or graphs can overwhelm viewers
+- Excessive load can lead to disengagement and confusion
+  - **Goal**: minimize this load while conveying the necessary information and insight
+
+
+## Visualization Principle
+### Why Reduce Clutter?
+
+- **Clutter**: Visual elements that occupy space but do not improve understanding
+- Clutter makes information harder to process and can confuse the viewer
+- Simplified visuals encourage engagement and improve comprehension
+- Less clutter = clearer message, more focused audience
+
+
+## Log Transformation: Reducing Clutter in Scatterplots
+
+- **Problem**: When data points are densely packed, it can obscure insights
+  - Often due to extreme values or skewed distributions
+  - Dense clusters of points become visual clutter, hiding patterns
+
+- **Solution**: Apply a log transformation!
+  - **Reduces clutter**: Points become evenly distributed across the plot
+    - Prevents overlapping data points and enhances readability
+  - **Reduces influence of outliers**, clarifying patterns
+    - **Improves interpretability** by revealing underlying relationships
+  - Supports focused, informative data communication without extra elements
+
+
+## A Little Bit of Math for Logarithm
+### log functions
+
+:::{.nonincremental}
+- The logarithm function, $y = \log_{b}\,(\,x\,)$, looks like ....
+
+:::
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/logarithm_plots.png" style="width: 60%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+## A Little Bit of Math for Logarithm
+### log examples
+- $\log_{10}\,(\,100\,)$: the base $10$ logarithm of $100$ is $2$, because $10^{2} = 100$
+
+- $\log_{e}\,(\,x\,)$: the base $e$ logarithm is called the natural log, where $e = 2.718\cdots$ is the mathematical constant,  the Euler's number.
+
+- $\log\,(\,x\,)$ or $\ln\,(\,x\,)$: the natural log of $x$ .
+
+- $\log_{e}\,(\,7.389\cdots\,)$: the natural log of $7.389\cdots$ is $2$, because $e^{2} = 7.389\cdots$.
+
+
+- In R,
+  - `log(x)`: log of `x` with base e, called natural log.
+  - `log10(x)`: log of `x` with base 10.
+
+## The Use of Logarithm
+###  Percentage Change
+
+:::{.nonincremental}
+1. We should consider using a logarithmic scale when percent change is more important than changes in absolute units.
+
+  - For small changes in variable $x$ from $x_{0}$ to $x_{1}$, the following can be shown: 
+  
+$$\Delta \log(x) \,= \, \log(x_{1}) \,-\, \log(x_{0}) 
+\approx\, \frac{x_{1} \,-\, x_{0}}{x_{0}} 
+\,=\, \frac{\Delta\, x}{x_{0}}.$$
+
+:::
+
+- For example, a difference in `gdpPercap` of $1,000 means something very different across people with different income/wealth levels across countries.
+
+
+
+## The Use of Logarithm
+###  Wide Range of Skewed Data
+:::{.nonincremental}
+2. We should consider using a log scale when a variable is heavily skewed.
+  - It can help visualize both small and large values effectively.
+
+:::
+
+<div style="display:block; margin:-20px;"></div>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = gdpPercap,
+             y = lifeExp)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = lm) +
+  labs(x = "GDP per capita",
+       y = "Life Expectancy")
+```
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = log10(gdpPercap),
+             y = lifeExp)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = lm) +
+  labs(x = "GDP per capita (in base-10 log)",
+       y = "Life Expectancy")
+
+```
+
+:::
+::::
+
+
+# Facets {background-color="#1c4982"}
+
+## Facets 
+
+- One way to add a variable, particularly useful for categorical variables, is to use **facets** to split our plot into facets, subplots that each display one subset of the data.
+
+
+## Facets 
+### `facet_wrap(  ~ VAR )`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = mpg) + 
+  geom_point(mapping = 
+               aes(x = displ, 
+                   y = hwy), 
+             alpha = .5) + 
+  facet_wrap(  ~ class )
+```
+
+
+- To facet our plot by a *single variable*, we can use `facet_wrap()`.
+
+
+
+## Facets 
+### `facet_wrap(  ~ VAR )`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = mpg) + 
+  geom_point(mapping = 
+               aes(x = displ, 
+                   y = hwy), 
+             alpha = .5) + 
+  facet_wrap(  ~ class , nrow = 2)
+```
+
+
+- `nrow` (`ncol`) determines the number of rows (columns) to use when laying out the facets.
+
+
+# Time Trend `ggplot()` {background-color="#1c4982"}
+
+
+# Distribution `ggplot()` - Histogram {background-color="#1c4982"}
+
+
+# Distribution `ggplot()` - Boxplot {background-color="#1c4982"}
+
+
+# Distribution `ggplot()` - Bar Chart {background-color="#1c4982"}
+
+
+
+
+
+
+
+
+<!-- # Geometric Objects {background-color="#1c4982"} -->
+
+<!-- ## Geometric Objects -->
+<!-- - In order to keep things simple, we'll focus only on six different types of geometric objects, each with a commonly given name: -->
+<!--   - Scatterplot with `geom_point()` -->
+<!--   - Fitted curve/line with `geom_smooth()` -->
+<!--   - Histogram with `geom_histogram()` -->
+<!--   - Bar chart with `geom_bar()` -->
+<!--   - Boxplot with `geom_boxplot()` -->
+<!--   - Lineplot with `geom_line()` -->
+

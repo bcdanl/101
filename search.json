@@ -11,7 +11,7 @@
     "href": "listing-danl-101-hw.html",
     "title": "DANL 101 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 2 - Example Answers\n\n\n\n\n\nOctober 10, 2024\n\n\n\n\nHomework Assignment 1 - Example Answers\n\n\n\n\n\nOctober 3, 2024\n\n\n\n\nHomework Assignment 2\n\n\n\n\n\nSeptember 24, 2024\n\n\n\n\nHomework Assignment 1\n\n\n\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 3\n\n\n\n\n\nOctober 29, 2024\n\n\n\n\nHomework Assignment 2 - Example Answers\n\n\n\n\n\nOctober 10, 2024\n\n\n\n\nHomework Assignment 1 - Example Answers\n\n\n\n\n\nOctober 3, 2024\n\n\n\n\nHomework Assignment 2\n\n\n\n\n\nSeptember 24, 2024\n\n\n\n\nHomework Assignment 1\n\n\n\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-101-hw-02.html",
@@ -88,7 +88,7 @@
     "href": "index.html#bullet-homework",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 2 - Example Answers\n\n\nOctober 10, 2024\n\n\n\n\nHomework Assignment 1 - Example Answers\n\n\nOctober 3, 2024\n\n\n\n\nHomework Assignment 2\n\n\nSeptember 24, 2024\n\n\n\n\nHomework Assignment 1\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 3\n\n\nOctober 29, 2024\n\n\n\n\nHomework Assignment 2 - Example Answers\n\n\nOctober 10, 2024\n\n\n\n\nHomework Assignment 1 - Example Answers\n\n\nOctober 3, 2024\n\n\n\n\nHomework Assignment 2\n\n\nSeptember 24, 2024\n\n\n\n\nHomework Assignment 1\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "danl-cw/danl-101-cw-01.html",
@@ -4190,168 +4190,168 @@
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-3",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nDistribution\n\nDistribution refers to how the values of a variable are spread out or grouped within a data.frame.\n\nIt visualizes what type of variation occurs within a variable.\n\nVariation is the tendency of the values of a variable to change from measurement to measurement.\n\nWe can see variation easily in real life; if we measure any numeric variable twice, we will be likely to get two different numbers.\nWhich values are the most common? Why?\n\nThe mode of a variable is the value that appears most frequently within the set of that variable’s values.\n\nWhich values are rare? Why? Does that match your expectations?"
+    "text": "Data Visualization\n\nDistribution\n\nDistribution refers to how the values of a variable are spread out or grouped within a data.frame.\n\nIt visualizes what type of variation occurs within a variable.\n\nVariation is the tendency of the values of a variable to change from measurement to measurement.\n\nWe can see variation easily in real life; if we measure any numeric variable twice, we will be likely to get two different numbers.\nWhich values are the most common? Why?\n\nThe mode of a variable is the value that appears most frequently within the set of that variable’s values.\n\nWhich values are rare? Why? Does that match your expectations?"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-4",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-4",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nDistribution\n\nHow you visualize the distribution of a variable depends on the type of variable: categorical or numerical.\n\n\n\n\nCategorical Variables: Represent categories or groups (e.g., colors, departments, types)\n\nCommon visualizations:\nBar charts\nExample: Distribution of favorite sports among students\n\n\n\n\nNumerical Variables: Represent numbers with meaningful values (e.g., age, income, temperature)\n\nCommon visualizations: Histograms, Box plots\nExample: Distribution of heights in a class"
+    "text": "Data Visualization\n\nDistribution\n\nHow you visualize the distribution of a variable depends on the type of variable: categorical or numerical.\n\n\n\n\nCategorical Variables: Represent categories or groups (e.g., colors, departments, types)\n\nCommon visualizations:\nBar charts\nExample: Distribution of favorite sports among students\n\n\n\n\nNumerical Variables: Represent numbers with meaningful values (e.g., age, income, temperature)\n\nCommon visualizations: Histograms, Box plots\nExample: Distribution of heights in a class"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-5",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-5",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nSkewness\n\n\nFor a histogram, we can consider a measure of the asymmetry of the distribution—skewness."
+    "text": "Data Visualization\n\nSkewness\n\n\nFor a histogram, we can consider a measure of the asymmetry of the distribution—skewness."
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-6",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-6",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nTitanic"
+    "text": "Data Visualization\n\nTitanic"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-7",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-7",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nBar Chart"
+    "text": "Data Visualization\n\nBar Chart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-8",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-8",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nBar Chart"
+    "text": "Data Visualization\n\nBar Chart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-9",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-9",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nStacked Bar Chart"
+    "text": "Data Visualization\n\nStacked Bar Chart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-10",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-10",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\n100% Stacked Bar Chart"
+    "text": "Data Visualization\n\n100% Stacked Bar Chart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-11",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-11",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nClustered Bar Chart"
+    "text": "Data Visualization\n\nClustered Bar Chart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-12",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-12",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nHistogram"
+    "text": "Data Visualization\n\nHistogram"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-13",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-13",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nHistogram"
+    "text": "Data Visualization\n\nHistogram"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-14",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-14",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nBoxplot"
+    "text": "Data Visualization\n\nBoxplot"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-15",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-15",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nRelationship\n\nFrom the plots with two numeric variables, we want to see co-variation, the tendency for the values of two or more variables to vary together in a related way.\nWhat type of co-variation occurs between variables?\n\nAre they positively associated?\nAre they negatively associated?\nAre there no association between them?\n\nCommon visualizations:\n\nScatterplot\nFitted curves/line"
+    "text": "Data Visualization\n\nRelationship\n\nFrom the plots with two numeric variables, we want to see co-variation, the tendency for the values of two or more variables to vary together in a related way.\nWhat type of co-variation occurs between variables?\n\nAre they positively associated?\nAre they negatively associated?\nAre there no association between them?\n\nCommon visualizations:\n\nScatterplot\nFitted curves/line"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-16",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-16",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nOrange Juice Sales"
+    "text": "Data Visualization\n\nOrange Juice Sales"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-17",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-17",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nScatterplot"
+    "text": "Data Visualization\n\nScatterplot"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-18",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-18",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nScatterplot with Fitted Line"
+    "text": "Data Visualization\n\nScatterplot with Fitted Line"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-19",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-19",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nScatterplot with Fitted Line"
+    "text": "Data Visualization\n\nScatterplot with Fitted Line"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-20",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-20",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nMPG"
+    "text": "Data Visualization\n\nMPG"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-21",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-21",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nScatterplot with Fitted Line"
+    "text": "Data Visualization\n\nScatterplot with Fitted Line"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-22",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-22",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nWeather"
+    "text": "Data Visualization\n\nWeather"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-23",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-23",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nScatterplot with Fitted Line"
+    "text": "Data Visualization\n\nScatterplot with Fitted Line"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-24",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-24",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nTime Trend\n\nA time trend plot, (also known as a time series plot), is used to visualize trends, patterns, and fluctuations in a variable over a specific time period.\n\nThe x-axis typically represents time, while the y-axis represents the variable being measured.\n\nWe can check the overall direction in which the time-series variable are moving—upwards, downwards, or staying relatively constant over time.\nCommon visualizations:\n\nLine chart\nFitted Curve"
+    "text": "Data Visualization\n\nTime Trend\n\nA time trend plot, (also known as a time series plot), is used to visualize trends, patterns, and fluctuations in a variable over a specific time period.\n\nThe x-axis typically represents time, while the y-axis represents the variable being measured.\n\nWe can check the overall direction in which the time-series variable are moving—upwards, downwards, or staying relatively constant over time.\nCommon visualizations:\n\nLine chart\nFitted Curve"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-25",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-25",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nNVDA Stock Price"
+    "text": "Data Visualization\n\nNVDA Stock Price"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-26",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-26",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nLine Chart"
+    "text": "Data Visualization\n\nLine Chart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization",
@@ -4379,14 +4379,14 @@
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization---first-steps-1",
     "title": "Lecture 16",
     "section": "Data Visualization - First Steps",
-    "text": "Data Visualization - First Steps\nCreating a ggplot\n\n\nggplot( data = mpg,\n        mapping = \n          aes(x = displ, \n              y = hwy) ) + \n  geom_point()\n\n\n\n\n\n\n\nTo plot mpg, run the above code to put displ on the x-axis and hwy on the y-axis."
+    "text": "Data Visualization - First Steps\n\nCreating a ggplot\n\nggplot( data = mpg,\n        mapping = \n          aes(x = displ, \n              y = hwy) ) + \n  geom_point()\n\n\n\n\n\nTo plot mpg, run the above code to put displ on the x-axis and hwy on the y-axis."
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization---first-steps-2",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization---first-steps-2",
     "title": "Lecture 16",
     "section": "Data Visualization - First Steps",
-    "text": "Data Visualization - First Steps\nComponents of the Grammar of Graphics\nggplot( data = DATA.FRAME,\n        mapping = \n          aes( MAPPINGS ) ) + \n  GEOM_FUNCTION()\n\n\nA statistical graphic is a mapping of data variables to aesthetic attributes of geometric objects.\nThree Essential Components:\n\ndata: The data.frame containing the variables of interest.\ngeom_*(): The geometric object in the plot (e.g., points, lines, bars).\naes(): Aesthetic attributes of the geometric object (e.g., x-axis, y-axis, color, shape, size) mapped to variables in the data.frame."
+    "text": "Data Visualization - First Steps\n\nComponents of the Grammar of Graphics\nggplot( data = DATA.FRAME,\n        mapping = \n          aes( MAPPINGS ) ) + \n  GEOM_FUNCTION()\n\n\nA statistical graphic is a mapping of data variables to aesthetic attributes of geometric objects.\nThree Essential Components:\n\ndata: The data.frame containing the variables of interest.\ngeom_*(): The geometric object in the plot (e.g., points, lines, bars).\naes(): Aesthetic attributes of the geometric object (e.g., x-axis, y-axis, color, shape, size) mapped to variables in the data.frame."
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#scatterplot-1",
@@ -4400,7 +4400,7 @@
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#scatterplot-2",
     "title": "Lecture 16",
     "section": "Scatterplot",
-    "text": "Scatterplot\nCorrelation does not imply causation\n\n\n\n\n\n\nJust because you uncover a relationship doesn’t mean you’ve identified the “causal” relationship.\n\nCausal inference is the study of identifying cause-and-effect relationships from data, beyond simple correlations."
+    "text": "Scatterplot\n\nCorrelation does not imply causation\n\n\n\n\n\n\nJust because you uncover a relationship doesn’t mean you’ve identified the “causal” relationship.\n\nCausal inference is the study of identifying cause-and-effect relationships from data, beyond simple correlations."
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#aesthetic-mappings-1",
@@ -4421,35 +4421,35 @@
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#aesthetic-mappings-3",
     "title": "Lecture 16",
     "section": "Aesthetic Mappings",
-    "text": "Aesthetic Mappings\nAdding a color to the plot\n\n\nggplot( data = mpg,\n        mapping = \n          aes(x = displ,\n              y = hwy, \n              color = class) ) + \n  geom_point()"
+    "text": "Aesthetic Mappings\n\nAdding a color to the plot\n\nggplot( data = mpg,\n        mapping = \n          aes(x = displ,\n              y = hwy, \n              color = class) ) + \n  geom_point()"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#aesthetic-mappings-4",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#aesthetic-mappings-4",
     "title": "Lecture 16",
     "section": "Aesthetic Mappings",
-    "text": "Aesthetic Mappings\nAdding a shape to the plot\n\n\nggplot( data = mpg,\n        mapping = \n          aes(x = displ,\n              y = hwy, \n              shape = class) ) + \n  geom_point()"
+    "text": "Aesthetic Mappings\n\nAdding a shape to the plot\n\nggplot( data = mpg,\n        mapping = \n          aes(x = displ,\n              y = hwy, \n              shape = class) ) + \n  geom_point()"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#aesthetic-mappings-5",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#aesthetic-mappings-5",
     "title": "Lecture 16",
     "section": "Aesthetic Mappings",
-    "text": "Aesthetic Mappings\nAdding a size to the plot\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ,\n             y = hwy, \n             size = class) ) + \n  geom_point()"
+    "text": "Aesthetic Mappings\n\nAdding a size to the plot\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ,\n             y = hwy, \n             size = class) ) + \n  geom_point()"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#aesthetic-mappings-6",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#aesthetic-mappings-6",
     "title": "Lecture 16",
     "section": "Aesthetic Mappings",
-    "text": "Aesthetic Mappings\nAdding an alpha (transparency) to the plot\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ,\n             y = hwy, \n             alpha = class) ) + \n  geom_point()"
+    "text": "Aesthetic Mappings\n\nAdding an alpha (transparency) to the plot\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ,\n             y = hwy, \n             alpha = class) ) + \n  geom_point()"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#aesthetic-mappings-7",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#aesthetic-mappings-7",
     "title": "Lecture 16",
     "section": "Aesthetic Mappings",
-    "text": "Aesthetic Mappings\nSpecifying a color to the plot, manually\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ, \n             y = hwy) ) + \n  geom_point(color = \"blue\")"
+    "text": "Aesthetic Mappings\n\nSpecifying a color to the plot, manually\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ, \n             y = hwy) ) + \n  geom_point(color = \"blue\")"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#aesthetic-mappings-8",
@@ -4463,14 +4463,14 @@
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#scatterplot-3",
     "title": "Lecture 16",
     "section": "Scatterplot",
-    "text": "Scatterplot\nOverplotting problem\n\nMany points overlap each other.\n\nThis problem is known as overplotting.\n\nWhen points overlap, it’s hard to know how many data points are at a particular location.\nOverplotting can obscure patterns and outliers, leading to potentially misleading conclusions.\nWe can set a transparency level (alpha) between 0 (full transparency) and 1 (no transparency)."
+    "text": "Scatterplot\n\nOverplotting problem\n\nMany points overlap each other.\n\nThis problem is known as overplotting.\n\nWhen points overlap, it’s hard to know how many data points are at a particular location.\nOverplotting can obscure patterns and outliers, leading to potentially misleading conclusions.\nWe can set a transparency level (alpha) between 0 (full transparency) and 1 (no transparency)."
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#scatterplot-4",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#scatterplot-4",
     "title": "Lecture 16",
     "section": "Scatterplot",
-    "text": "Scatterplot\nOverplotting and alpha\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ, \n             y = hwy) ) + \n  geom_point(alpha = .33)"
+    "text": "Scatterplot\n\nOverplotting and alpha\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ, \n             y = hwy) ) + \n  geom_point(alpha = .33)"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#common-problems-in-ggplot",
@@ -4491,21 +4491,21 @@
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#geometric-objects-2",
     "title": "Lecture 16",
     "section": "Geometric Objects",
-    "text": "Geometric Objects\nScatterplot with geom_point()\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ, \n             y = hwy) ) + \n  geom_point(alpha = 0.33)\n\n\n\n\n\n\n\nA scatterplot visualizes the relationship between two numerical variables."
+    "text": "Geometric Objects\n\nScatterplot with geom_point()\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ, \n             y = hwy) ) + \n  geom_point(alpha = 0.33)\n\n\n\n\n\nA scatterplot visualizes the relationship between two numerical variables."
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#geometric-objects-3",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#geometric-objects-3",
     "title": "Lecture 16",
     "section": "Geometric Objects",
-    "text": "Geometric Objects\nFitted line with geom_smooth()\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ, \n             y = hwy) ) + \n  geom_smooth()\n\n\n\n\n\n\n\nA fitted curve visualizes the relationship between two numerical variables."
+    "text": "Geometric Objects\n\nFitted line with geom_smooth()\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ, \n             y = hwy) ) + \n  geom_smooth()\n\n\n\n\n\nA fitted curve visualizes the relationship between two numerical variables."
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#geometric-objects-4",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#geometric-objects-4",
     "title": "Lecture 16",
     "section": "Geometric Objects",
-    "text": "Geometric Objects\ngeom_point() with geom_smooth(method = lm)\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ,\n             y = hwy)) + \n  geom_point(alpha = 0.33) + \n  geom_smooth(method = lm)\n\n\n\n\n\n\n\nUsing geom_point() and geom_smooth() together is an excellent option."
+    "text": "Geometric Objects\n\ngeom_point() with geom_smooth(method = lm)\n\nggplot(data = mpg,\n       mapping = \n         aes(x = displ,\n             y = hwy)) + \n  geom_point(alpha = 0.33) + \n  geom_smooth(method = lm)\n\n\n\n\n\nUsing geom_point() and geom_smooth() together is an excellent option."
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-storytelling",
@@ -4526,21 +4526,21 @@
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-27",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nLine Chart with Fitted Curve"
+    "text": "Data Visualization\n\nLine Chart with Fitted Curve"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-28",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#data-visualization-28",
     "title": "Lecture 16",
     "section": "Data Visualization",
-    "text": "Data Visualization\nVisualization Tools\n\nMany tools for visualizing data – Power BI, Tableau, Excel, Python, R, and more\nPower BI and Tableau have drag-and-drop interfaces, making them accessible to users with little to no coding experience.\nIn R, there are multiple packages for creating data visualizations—ggplot2 is the most widely used one.\n\nWhile we will briefly use Power BI and Excel for visualization, the primary visualization tool for this course will be ggplot2 in R.\n\nUsing ggplot2 helps develop important coding and data skills, which are critical for more advanced data analytics work."
+    "text": "Data Visualization\n\nVisualization Tools\n\nMany tools for visualizing data – Power BI, Tableau, Excel, Python, R, and more\nPower BI and Tableau have drag-and-drop interfaces, making them accessible to users with little to no coding experience.\nIn R, there are multiple packages for creating data visualizations—ggplot2 is the most widely used one.\n\nWhile we will briefly use Power BI and Excel for visualization, the primary visualization tool for this course will be ggplot2 in R.\n\nUsing ggplot2 helps develop important coding and data skills, which are critical for more advanced data analytics work."
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#grading",
     "href": "danl-lec/danl-101-lec-16-2024-1024.html#grading",
     "title": "Lecture 16",
-    "section": "Grading",
-    "text": "Grading\n\\[\n\\begin{align}\n(\\text{Total Percentage Grade}) =&\\;\\, 0.05\\times(\\text{Attendance}) \\notag\\\\\n&\\,+\\, 0.15\\times(\\text{Quiz & Class Participation})\\notag\\\\\n& \\,+\\, 0.15\\times(\\text{Homework})\\notag\\\\  \n&\\,+\\, 0.15\\times(\\text{Presentation})\\notag\\\\\n& \\,+\\, 0.50\\times(\\text{Exam}).\\notag\n\\end{align}\n\\]"
+    "section": "",
+    "text": "\\[\n\\begin{align}\n(\\text{Total Percentage Grade}) =&\\;\\, 0.05\\times(\\text{Attendance}) \\notag\\\\\n&\\,+\\, 0.15\\times(\\text{Quiz & Class Participation})\\notag\\\\\n& \\,+\\, 0.15\\times(\\text{Homework})\\notag\\\\  \n&\\,+\\, 0.15\\times(\\text{Presentation})\\notag\\\\\n& \\,+\\, 0.50\\times(\\text{Exam}).\\notag\n\\end{align}\n\\]"
   },
   {
     "objectID": "danl-lec/danl-101-lec-16-2024-1024.html#grading-1",
@@ -4583,5 +4583,19 @@
     "title": "Lecture 16",
     "section": "Grading",
     "text": "Grading\n\nScenario 2\n\nSuppose your \\((\\text{Total Exam Score})\\) is taken from: \\[\n\\begin{align}\n&0.5\\times(\\text{Midterm Exam 1}) \\,+\\, 0.5\\times(\\text{Midterm Exam 2})\\\\\n&0.25\\times(\\text{Midterm Exam}) \\,+\\, 0.75\\times(\\text{Final Exam})\n\\end{align}\n\\]\n\\((\\text{Midterm Exam 1})\\) will then account for only 12.5% of your \\(\\text{Total Exam Score}\\)."
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-03.html",
+    "href": "danl-hw/danl-101-hw-03.html",
+    "title": "Homework Assignment 3",
+    "section": "",
+    "text": "Please answer all of the following questions thoroughly, ensuring that none are left unanswered.\nFor Homework Assignment 3, the use of any generative artificial intelligence (AI) tools is strictly prohibited.\nCraft your answers in a separate document (such as an R script, Word file, or Google Doc) and paste them into this page when you are ready to submit.\nOnce you have completed the assignment, click the “Submit” button at the bottom of this page to have it evaluated.\n\nAfter clicking “Submit” button, wait for the message, “Data submitted successfully!”.\nA confirmation email will be sent to the email address that you provide on this homework page once your submission is received.\n\nYou may submit multiple times, but only your most recent submission will be evaluated.\nThe due is November 8, 9:30 A.M., 2024, Friday, Eastern Time.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-16-2024-1024.html",
+    "href": "danl-lec/danl-101-lec-16-2024-1024.html",
+    "title": "Lecture 16",
+    "section": "",
+    "text": "\\[\n\\begin{align}\n(\\text{Total Percentage Grade}) =&\\;\\, 0.05\\times(\\text{Attendance}) \\notag\\\\\n&\\,+\\, 0.15\\times(\\text{Quiz & Class Participation})\\notag\\\\\n& \\,+\\, 0.15\\times(\\text{Homework})\\notag\\\\  \n&\\,+\\, 0.15\\times(\\text{Presentation})\\notag\\\\\n& \\,+\\, 0.50\\times(\\text{Exam}).\\notag\n\\end{align}\n\\]"
   }
 ]

@@ -1,6 +1,6 @@
 ---
 title: Lecture 16
-subtitle: Data Visualization
+subtitle: Data Visualization - Overview
 format:
   clean-revealjs:
     self-contained: false

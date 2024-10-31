@@ -1,0 +1,913 @@
+---
+title: Lecture 18
+subtitle: Data Visualization
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-10-31
+execute: 
+  eval: true
+  echo: false
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+library(gapminder)
+
+titanic <- read_csv("https://bcdanl.github.io/data/titanic_cleaned.csv")
+oj <- read_csv("https://bcdanl.github.io/data/dominick_oj_feat.csv")
+nvda <- read_csv("https://bcdanl.github.io/data/nvda_2015_2024.csv")
+nbc <- read_csv("https://bcdanl.github.io/data/nbc_show.csv")
+weather_indep <- read_csv("https://bcdanl.github.io/data/Completely_Independent_Variables__Rainfall_and_Temperature.csv")
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_colour_colorblind(...)
+scale_fill_discrete <- function(...) scale_fill_colorblind(...)
+
+```
+
+
+# Happy Halloween, everyone! 🎃👻🎃👻🎃👻🎃👻🎃👻🎃👻 {background-color="#FF8119"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/spooky.gif" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+::: {.column width="50%"}
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/spooky-danl.gif" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+:::
+::::
+
+# Aesthetic Mappings {background-color="#1c4982"}
+
+## Aesthetic Mappings
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/r4s_330_1.png" width="600px">
+</p>
+
+
+
+- In the plot above, one group of points (highlighted in red) seems to fall outside of the linear trend. 
+
+  - How can you explain these cars? Are those hybrids?
+
+
+
+## Aesthetic Mappings
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/r4s_330_2.png" width="600px">
+</p>
+
+- An aesthetic is a visual property (e.g., `size`, `shape`, `color`) of the objects (e.g., `class`) in your plot.
+
+- You can display a point in different ways by changing the values of its aesthetic properties. 
+
+
+## Aesthetic Mappings
+### Adding a `color` to the plot
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              color = class) ) + 
+  geom_point()
+```
+
+
+## Aesthetic Mappings
+### Adding a `shape` to the plot
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              shape = class) ) + 
+  geom_point()
+```
+
+
+
+
+## Aesthetic Mappings
+### Adding a `size` to the plot
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              size = class) ) + 
+  geom_point()
+```
+
+
+
+
+## Aesthetic Mappings
+### Specifying a `color` to the plot, manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_point(color = "blue")
+```
+
+
+
+## Aesthetic Mappings
+### Specifying an `color` to the plot, manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_smooth(color = "darkorange") 
+```
+
+
+
+## Aesthetic Mappings
+### Specifying an `fill` to the plot, manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_smooth(color = "darkorange",
+              fill = "darkorange") 
+```
+
+- In general, each `geom_*()` has a different set of aesthetic parameters.
+  - E.g., `fill` is available for `geom_smooth()`, not `geom_point()`.
+
+
+
+
+## Aesthetic Mappings
+### Specifying a `size` to the plot, manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_point(size = 3)  # in *mm*
+```
+
+
+
+## Aesthetic Mappings
+### Specifying an `alpha` to the plot, manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_point(alpha = .3) 
+```
+
+- We've done this to address the issue of **overplotting** in the scatterplot.
+
+
+
+
+
+## Aesthetic Mappings
+### Mapping Aesthetics vs. Setting Them Manually
+
+:::: {.columns}
+
+::: {.column width="50%"}
+#### **Aesthetic Mapping**
+  - Links data variables to visible properties on the graph
+  - Different categories → different colors or shapes
+
+:::
+
+::: {.column width="50%"}
+
+#### **Setting Aesthetics Manually**
+  - Customize visual properties directly in `geom_*()` outside of `aes()`
+  - Useful for setting fixed colors, sizes, or transparency unrelated to data variables
+
+:::
+::::
+
+
+## Clutter is Your Enemy!
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = gdpPercap,
+             y = lifeExp)) +
+  geom_point(size = 2,
+             alpha = .3) +
+  labs(x = "GDP per capita",
+       y = "Life Expectancy") +
+  labs(x = "GDP per capita",
+       y = "Life Expectancy") 
+  # guides(color = guide_legend(reverse = F,
+  #                           title.position = "top",
+  #                           title.hjust = .5,
+  #                           label.position = "bottom",
+  #                           keywidth = 3,
+  #                           nrow = 1)) +
+  # theme(legend.position = "top")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = log10(gdpPercap),
+             y = lifeExp)) +
+  geom_point(size = 2,
+             alpha = .3) +
+  labs(x = "GDP per capita (in base-10 logarithm)",
+       y = "Life Expectancy") 
+  # guides(color = guide_legend(reverse = F,
+  #                           title.position = "top",
+  #                           title.hjust = .5,
+  #                           label.position = "bottom",
+  #                           keywidth = 3,
+  #                           nrow = 1)) +
+  # theme(legend.position = "top")
+
+```
+:::
+::::
+
+- Which one do you prefer?
+
+
+## Visualization Principle
+### Cognitive Load
+
+
+
+## Visualization Principle
+### Cognitive Load
+
+- Every element added to a page or screen demands **cognitive load**
+  - **Cognitive load**: the mental effort needed to process information
+- Extra elements = extra brain power for the audience to process
+  - **Example**: Overly complex slides or graphs can overwhelm viewers
+- Excessive load can lead to disengagement and confusion
+  - **Goal**: a graphic should display as much information as it can, with the lowest possible cognitive strain to the viewer.
+
+
+
+
+## Visualization Principle
+### Why Reduce Clutter?
+
+- **Clutter**: Visual elements that occupy space but do not improve understanding
+- Clutter makes information harder to process and can confuse the viewer
+- **Strive for clarity**: Simplified visuals encourage engagement and improve comprehension
+  - Less clutter = clearer message, more focused audience
+
+- **Tips**
+  - Avoid having the data all skewed to one side or the other of your graph.
+  - Avoid too many superimposed elements, such as too many curves (>4) in the same graphing space.
+
+
+## Log Transformation: Reducing Clutter in Scatterplots
+
+- **Problem**: When data points are densely packed, it can obscure insights
+  - Often due to extreme values or skewed distributions
+  - Dense clusters of points become visual clutter, hiding patterns
+
+- **Solution**: Apply a log transformation!
+  - **Reduces clutter**: Points become evenly distributed across the plot
+    - Prevents overlapping data points and enhances readability
+  - **Reduces influence of outliers**, clarifying patterns
+    - **Improves interpretability** by revealing underlying relationships
+  - Supports focused, informative data communication without extra elements
+
+
+
+
+## Log Transformation: Reducing Clutter in Scatterplots
+### A Little Bit of Math for Logarithm
+
+:::{.nonincremental}
+- The logarithm function, $y = \log_{b}\,(\,x\,)$, looks like ....
+
+:::
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/logarithm_plots.png" style="width: 50%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+## Log Transformation: Reducing Clutter in Scatterplots
+### A Little Bit of Math for Logarithm
+- $\log_{10}\,(\,100\,)$: the base $10$ logarithm of $100$ is $2$, because $10^{2} = 100$
+
+- $\log_{e}\,(\,x\,)$: the base $e$ logarithm is called the natural log, where $e = 2.718\cdots$ is the mathematical constant,  the Euler's number.
+
+- $\log\,(\,x\,)$ or $\ln\,(\,x\,)$: the natural log of $x$ .
+
+- $\log_{e}\,(\,7.389\cdots\,)$: the natural log of $7.389\cdots$ is $2$, because $e^{2} = 7.389\cdots$.
+
+
+- In R,
+  - `log(x)`: log of `x` with base e, called natural log.
+  - `log10(x)`: log of `x` with base 10.
+
+
+
+## Log Transformation: Reducing Clutter in Scatterplots
+### The Use of Logarithm: Wide Range of Skewed Data
+:::{.nonincremental}
+1. We should consider using a log scale when a variable is heavily skewed.
+  - It can help visualize both small and large values effectively.
+
+:::
+
+<div style="display:block; margin:-20px;"></div>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+gapminder |> 
+  ggplot(aes(x = gdpPercap)) +
+  geom_histogram() +
+  labs(x = "GDP per capita")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+gapminder |> 
+  ggplot(aes(x = log10(gdpPercap))) +
+  geom_histogram() +
+  labs(x = "GDP per capita (in base-10 logarithm)")
+```
+:::
+
+::::
+
+
+## Log Transformation: Reducing Clutter in Scatterplots
+### The Use of Logarithm: Percentage Change
+
+2. Consider using a logarithmic scale when percentage changes are more meaningful than changes in absolute units.
+
+<div style="display:block; margin:-15px;"></div>
+
+-	Percentage changes are widely used in various fields to better interpret relative differences. Examples include:
+	-	**Stock prices**: Percentage changes reflect the magnitude of gains or losses relative to the initial price.
+	-	**Housing prices**: Percentage changes show market trends consistently across different neighborhoods or regions.
+	-	**GDP growth**: Expressed as a percentage to indicate economic performance over time.
+	-	**Income levels**: A $1,000 increase has a greater impact on a lower-income individual compared to someone with a significantly higher income.
+
+
+## Log Transformation: Reducing Clutter in Scatterplots
+### The Use of Logarithm: Percentage Change
+
+:::{.nonincremental}
+
+-	For small changes in variable $x$ from $x_{0}$ to $x_{1}$, we have:
+
+$$
+\Delta \log(x) = \log(x_{1}) - \log(x_{0})
+\approx \frac{x_{1} - x_{0}}{x_{0}}
+= \frac{\Delta x}{x_{0}}.
+$$
+
+:::
+
+-	This shows that a log transformation effectively represents percentage change!
+
+
+## Visualization Principle
+### Clutter is Your Enemy!
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = gdpPercap,
+             y = lifeExp)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = lm) +
+  scale_y_continuous(breaks = seq(30,140,10)) +
+  labs(x = "GDP per capita",
+       y = "Life Expectancy")
+```
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = log(gdpPercap),
+             y = lifeExp)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = lm) +
+  scale_x_continuous(breaks = 6:11) +
+  scale_y_continuous(breaks = seq(30,80,10)) +
+  labs(x = "GDP per capita (in natural logarithm)",
+       y = "Life Expectancy")
+
+```
+
+:::
+::::
+
+
+
+## Visualization Principle
+### Design with Colorblind in Mind
+
+:::: {.columns}
+::: {.column width="50%"}
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/types-of-color-blindness.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;">Types of Colorblindness</p>
+</div>
+:::
+
+::: {.column width="50%"}
+- Roughly 8% of men and half a percent of women are colorblind. 
+
+- There are several techniques to make visualization more colorblind-friendly:
+  1. Use color palettes that are colorblind-friendly
+  2. Use `shape` for scatterplots and `linetype` for line charts
+  3. Have some additional visual cue to set the important numbers apart
+
+:::
+::::
+
+
+## Colorblind-Friendly Color Palettes
+### `ggthemes` package
+
+```{r}
+#| eval: false
+install.packages("ggthemes")
+library(ggthemes)
+```
+
+- The `ggthemes` package provides various themes for `ggplot2` visualization:
+  - Accessible color palettes, including those optimized for colorblind viewers.
+    - E.g., `scale_color_colorblind()`, `scale_color_tableau()`
+  - Unique, predefined themes for specific styles
+    - E.g., `theme_economist()`, `theme_wsj()`
+
+
+
+## Colorblind-Friendly Color Palettes
+### `ggthemes::scale_color_colorblind()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              color = class) ) + 
+  geom_point(size = 3) +
+  scale_color_colorblind()
+```
+
+- When mapping `color` in `aes()`, we can use `scale_color_*()`
+
+## Colorblind-Friendly Color Palettes
+### `ggthemes::scale_color_tableau()` 
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              color = class) ) + 
+  geom_point(size = 3) +
+  scale_color_tableau()
+```
+
+- `scale_color_tableau()` provides color palettes used in Tableau.
+
+
+## `ggplot` Themes
+### `ggthemes::theme_economist()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              color = class) ) + 
+  geom_point(size = 3) +
+  scale_color_colorblind() +
+  theme_economist()
+```
+
+- `theme_economist()` approximates the style of The Economist.
+
+## `ggplot` Themes
+### `ggthemes::theme_wsj()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              color = class) ) + 
+  geom_point(size = 3) +
+  scale_color_colorblind() +
+  theme_wsj()
+```
+
+- `theme_wsj()` approximates the style of The Wall Street Journal.
+
+
+# Facets {background-color="#1c4982"}
+
+## Facets 
+
+- One way to add a variable, particularly useful for categorical variables, is to use **facets** to split our plot into facets, subplots that each display one subset of the data.
+
+
+## Facets 
+### `facet_wrap(~ VAR)`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = mpg) + 
+  geom_point(mapping = 
+               aes(x = displ, 
+                   y = hwy), 
+             alpha = .5) + 
+  facet_wrap( ~ class)
+```
+
+
+- To facet our plot by a *single variable*, we can use `facet_wrap()`.
+
+
+
+## Facets 
+### `facet_wrap(~ VAR)` with `nrow`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = mpg) + 
+  geom_point(mapping = 
+               aes(x = displ, 
+                   y = hwy), 
+             alpha = .5) + 
+  facet_wrap( ~ class, 
+              nrow = 2)
+```
+
+
+- `nrow` determines the number of rows to use when laying out the facets.
+
+
+## Facets 
+### `facet_wrap(~ VAR)` with `ncol`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = mpg) + 
+  geom_point(mapping = 
+               aes(x = displ, 
+                   y = hwy), 
+             alpha = .5) + 
+  facet_wrap( ~ class, 
+              ncol = 4)
+```
+
+
+- `ncol` determines the number of columns to use when laying out the facets.
+
+
+
+## Facets 
+### `facet_wrap(~ VAR)` with `scales`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = mpg) + 
+  geom_point(mapping = 
+               aes(x = displ, 
+                   y = hwy), 
+             alpha = .5) + 
+  facet_wrap( ~ class, 
+              scales = "free_x")
+```
+
+- `scales = "free_x"` allow for different scales of x-axis
+
+
+## Facets 
+### `facet_wrap(~ VAR)` with `scales`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = mpg) + 
+  geom_point(mapping = 
+               aes(x = displ, 
+                   y = hwy), 
+             alpha = .5) + 
+  facet_wrap( ~ class, 
+              scales = "free_y")
+```
+
+- `scales = "free_y"` allow for different scales of y-axis
+
+
+## Facets 
+### `facet_wrap(~ VAR)` with `scales`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = mpg) + 
+  geom_point(mapping = 
+               aes(x = displ, 
+                   y = hwy), 
+             alpha = .5) + 
+  facet_wrap( ~ class, 
+              scales = "free")
+```
+
+- `scales = "free"` allow for different scales of both x-axis and y-axis
+
+
+
+# Time Trend `ggplot()` {background-color="#1c4982"}
+
+
+## Time Trend `ggplot()`
+### NVDA Stock Price
+
+```{r}
+#| results: asis
+DT::datatable(nvda |> select(Date, Close), options = list(
+  pageLength = 4
+))
+```
+
+- The `nvda` data.frame includes NVIDIA's stock information from `2019-01-02` to `2024-10-18`.
+
+  
+## Time Trend `ggplot()`
+### Scatterplot for Time Trend?
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+path <- 
+  "https://bcdanl.github.io/data/nvda_2015_2024.csv"
+nvda <- read_csv(path)
+
+ggplot( data = nvda,
+        mapping = aes(
+          x = Date, 
+          y = Close) ) + 
+  geom_point(size = .5)
+```
+
+
+## Time Trend `ggplot()`
+### Line Chart with `geom_line()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+path <- 
+  "https://bcdanl.github.io/data/nvda_2015_2024.csv"
+nvda <- read_csv(path)
+
+ggplot( data = nvda,
+        mapping = aes(
+          x = Date, 
+          y = Close) ) + 
+  geom_point(size = .5) +
+  geom_line()
+```
+- `geom_line()` draws a line by connecting data points in order of the variable on the `x`-axis.
+
+## Time Trend `ggplot()`
+### Line Chart with `geom_line()` and `geom_smooth()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+path <- 
+  "https://bcdanl.github.io/data/nvda_2015_2024.csv"
+nvda <- read_csv(path)
+
+ggplot( data = nvda,
+        mapping = aes(
+          x = Date, 
+          y = Close) ) + 
+  geom_point(size = .5) +
+  geom_line() +
+  geom_smooth()
+```
+
+- `geom_smooth()` can also be useful for illustrating overall time trends.
+
+## Time Trend `ggplot()`
+### The Connection Principle
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/gestalt-principle-connection.png" style="width: 60%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+- We tend to think of objects that are physically connected as part of a group.
+- Look at this figure.
+  - Your eyes probably pair the shapes connected by lines rather than similar color, size, or shape!
+
+- We frequently leverage the **connection principle** is in line charts, to help our eyes see order in the data.
+
+
+
+# Distribution `ggplot()` - Histogram {background-color="#1c4982"}
+
+
+# Distribution `ggplot()` - Boxplot {background-color="#1c4982"}
+
+
+# Distribution `ggplot()` - Bar Chart {background-color="#1c4982"}
+
+
+
+
+
+
+
+
+<!-- # Geometric Objects {background-color="#1c4982"} -->
+
+<!-- ## Geometric Objects -->
+<!-- - In order to keep things simple, we'll focus only on six different types of geometric objects, each with a commonly given name: -->
+<!--   - Scatterplot with `geom_point()` -->
+<!--   - Fitted curve/line with `geom_smooth()` -->
+<!--   - Histogram with `geom_histogram()` -->
+<!--   - Bar chart with `geom_bar()` -->
+<!--   - Boxplot with `geom_boxplot()` -->
+<!--   - Lineplot with `geom_line()` -->

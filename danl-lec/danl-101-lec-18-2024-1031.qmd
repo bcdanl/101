@@ -671,7 +671,7 @@ ggplot( data = mpg,
 #| fig-align: center
 
 gapminder |> 
-  ggplot(aes(x = log(gdpPercap), 
+  ggplot(aes(x = log10(gdpPercap), 
              y = lifeExp,
              color = continent)) +
   geom_point(size = 1.75)
@@ -690,12 +690,12 @@ gapminder |>
 #| fig-asp: .85
 #| output-location: column-fragment
 
-ggplot(data = mpg) + 
-  geom_point(mapping = 
-               aes(x = displ, 
-                   y = hwy), 
-             alpha = .5) + 
-  facet_wrap( ~ class)
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent)
 ```
 
 
@@ -711,13 +711,13 @@ ggplot(data = mpg) +
 #| fig-asp: .85
 #| output-location: column-fragment
 
-ggplot(data = mpg) + 
-  geom_point(mapping = 
-               aes(x = displ, 
-                   y = hwy), 
-             alpha = .5) + 
-  facet_wrap( ~ class, 
-              nrow = 2)
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent,
+              nrow = 1)
 ```
 
 
@@ -732,13 +732,13 @@ ggplot(data = mpg) +
 #| fig-asp: .85
 #| output-location: column-fragment
 
-ggplot(data = mpg) + 
-  geom_point(mapping = 
-               aes(x = displ, 
-                   y = hwy), 
-             alpha = .5) + 
-  facet_wrap( ~ class, 
-              ncol = 4)
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent,
+              ncol = 1)
 ```
 
 
@@ -754,12 +754,12 @@ ggplot(data = mpg) +
 #| fig-asp: .85
 #| output-location: column-fragment
 
-ggplot(data = mpg) + 
-  geom_point(mapping = 
-               aes(x = displ, 
-                   y = hwy), 
-             alpha = .5) + 
-  facet_wrap( ~ class, 
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent,
               scales = "free_x")
 ```
 
@@ -774,12 +774,12 @@ ggplot(data = mpg) +
 #| fig-asp: .85
 #| output-location: column-fragment
 
-ggplot(data = mpg) + 
-  geom_point(mapping = 
-               aes(x = displ, 
-                   y = hwy), 
-             alpha = .5) + 
-  facet_wrap( ~ class, 
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent,
               scales = "free_y")
 ```
 
@@ -794,12 +794,12 @@ ggplot(data = mpg) +
 #| fig-asp: .85
 #| output-location: column-fragment
 
-ggplot(data = mpg) + 
-  geom_point(mapping = 
-               aes(x = displ, 
-                   y = hwy), 
-             alpha = .5) + 
-  facet_wrap( ~ class, 
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent,
               scales = "free")
 ```
 

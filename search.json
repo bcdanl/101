@@ -5072,14 +5072,14 @@
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#facets-2",
     "title": "Lecture 18",
     "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR)\n\n\nggplot(data = mpg) + \n  geom_point(mapping = \n               aes(x = displ, \n                   y = hwy), \n             alpha = .5) + \n  facet_wrap( ~ class)\n\n\n\n\n\n\n\nTo facet our plot by a single variable, we can use facet_wrap()."
+    "text": "Facets\nfacet_wrap(~ VAR)\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent)\n\n\n\n\n\n\n\nTo facet our plot by a single variable, we can use facet_wrap()."
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#facets-3",
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#facets-3",
     "title": "Lecture 18",
     "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR) with nrow\n\n\nggplot(data = mpg) + \n  geom_point(mapping = \n               aes(x = displ, \n                   y = hwy), \n             alpha = .5) + \n  facet_wrap( ~ class, \n              nrow = 2)\n\n\n\n\n\n\n\nnrow determines the number of rows to use when laying out the facets."
+    "text": "Facets\nfacet_wrap(~ VAR) with nrow\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              nrow = 1)\n\n\n\n\n\n\n\nnrow determines the number of rows to use when laying out the facets."
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#time-trend-ggplot-1",
@@ -5121,28 +5121,28 @@
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#facets-4",
     "title": "Lecture 18",
     "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR) with ncol\n\n\nggplot(data = mpg) + \n  geom_point(mapping = \n               aes(x = displ, \n                   y = hwy), \n             alpha = .5) + \n  facet_wrap( ~ class, \n              ncol = 4)\n\n\n\n\n\n\n\nncol determines the number of columns to use when laying out the facets."
+    "text": "Facets\nfacet_wrap(~ VAR) with ncol\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              ncol = 1)\n\n\n\n\n\n\n\nncol determines the number of columns to use when laying out the facets."
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#facets-5",
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#facets-5",
     "title": "Lecture 18",
     "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR) with scales\n\n\nggplot(data = mpg) + \n  geom_point(mapping = \n               aes(x = displ, \n                   y = hwy), \n             alpha = .5) + \n  facet_wrap( ~ class, \n              scales = \"free_x\")\n\n\n\n\n\n\n\nscales = \"free_x\" allow for different scales of x-axis"
+    "text": "Facets\nfacet_wrap(~ VAR) with scales\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free_x\")\n\n\n\n\n\n\n\nscales = \"free_x\" allow for different scales of x-axis"
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#facets-6",
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#facets-6",
     "title": "Lecture 18",
     "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR) with scales\n\n\nggplot(data = mpg) + \n  geom_point(mapping = \n               aes(x = displ, \n                   y = hwy), \n             alpha = .5) + \n  facet_wrap( ~ class, \n              scales = \"free_y\")\n\n\n\n\n\n\n\nscales = \"free_y\" allow for different scales of y-axis"
+    "text": "Facets\nfacet_wrap(~ VAR) with scales\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free_y\")\n\n\n\n\n\n\n\nscales = \"free_y\" allow for different scales of y-axis"
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#facets-7",
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#facets-7",
     "title": "Lecture 18",
     "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR) with scales\n\n\nggplot(data = mpg) + \n  geom_point(mapping = \n               aes(x = displ, \n                   y = hwy), \n             alpha = .5) + \n  facet_wrap( ~ class, \n              scales = \"free\")\n\n\n\n\n\n\n\nscales = \"free\" allow for different scales of both x-axis and y-axis"
+    "text": "Facets\nfacet_wrap(~ VAR) with scales\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free\")\n\n\n\n\n\n\n\nscales = \"free\" allow for different scales of both x-axis and y-axis"
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#aesthetic-mappings-10",

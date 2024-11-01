@@ -5065,7 +5065,7 @@
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#facets-1",
     "title": "Lecture 18",
     "section": "Facets",
-    "text": "Facets\n\n\nAdding too many aesthetic mappings to a plot makes it cluttered and difficult to make sense of.\n\n\n\n\nOne way to add a variable, particularly useful for categorical variables, is to use facets to split our plot into facets, subplots that each display one subset of the data."
+    "text": "Facets\n\n\nAdding too many aesthetics to a plot makes it cluttered and difficult to make sense of.\n\n\n\n\nOne way to add a variable, particularly useful for categorical variables, is to use facets to split our plot into facets, subplots that each display one subset of the data."
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#facets-2",

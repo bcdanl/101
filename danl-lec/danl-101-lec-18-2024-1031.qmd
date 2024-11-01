@@ -662,7 +662,7 @@ ggplot( data = mpg,
 
 ## Facets 
 :::{.nonincremental}
-- Adding too many aesthetic mappings to a plot makes it cluttered and difficult to make sense of.
+- Adding too many aesthetics to a plot makes it cluttered and difficult to make sense of.
 
 :::
 ```{r}

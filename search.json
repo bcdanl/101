@@ -4967,21 +4967,21 @@
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#visualization-principle",
     "title": "Lecture 18",
     "section": "Visualization Principle",
-    "text": "Visualization Principle\nCognitive Load"
+    "text": "Visualization Principle\nCognitive Load\n\nEvery element added to a page or screen demands cognitive load\n\nCognitive load: the mental effort needed to process information\n\nExtra elements = extra brain power for the audience to process\n\nExample: Overly complex slides or graphs can overwhelm viewers\n\nExcessive load can lead to disengagement and confusion\n\nGoal: a graphic should display as much information as it can, with the lowest possible cognitive strain to the viewer."
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#visualization-principle-1",
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#visualization-principle-1",
     "title": "Lecture 18",
     "section": "Visualization Principle",
-    "text": "Visualization Principle\nCognitive Load\n\nEvery element added to a page or screen demands cognitive load\n\nCognitive load: the mental effort needed to process information\n\nExtra elements = extra brain power for the audience to process\n\nExample: Overly complex slides or graphs can overwhelm viewers\n\nExcessive load can lead to disengagement and confusion\n\nGoal: a graphic should display as much information as it can, with the lowest possible cognitive strain to the viewer."
+    "text": "Visualization Principle\nWhy Reduce Clutter?\n\nClutter: Visual elements that occupy space but do not improve understanding\nClutter makes information harder to process and can confuse the viewer\nStrive for clarity: Simplified visuals encourage engagement and improve comprehension\n\nLess clutter = clearer message, more focused audience\n\nTips\n\nAvoid having the data all skewed to one side or the other of your graph.\nAvoid too many superimposed elements, such as too many curves (&gt;4) in the same graphing space."
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#visualization-principle-2",
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#visualization-principle-2",
     "title": "Lecture 18",
     "section": "Visualization Principle",
-    "text": "Visualization Principle\nWhy Reduce Clutter?\n\nClutter: Visual elements that occupy space but do not improve understanding\nClutter makes information harder to process and can confuse the viewer\nStrive for clarity: Simplified visuals encourage engagement and improve comprehension\n\nLess clutter = clearer message, more focused audience\n\nTips\n\nAvoid having the data all skewed to one side or the other of your graph.\nAvoid too many superimposed elements, such as too many curves (&gt;4) in the same graphing space."
+    "text": "Visualization Principle\nClutter is Your Enemy!"
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#log-transformation-reducing-clutter-in-scatterplots",
@@ -5023,7 +5023,7 @@
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#visualization-principle-3",
     "title": "Lecture 18",
     "section": "Visualization Principle",
-    "text": "Visualization Principle\nClutter is Your Enemy!"
+    "text": "Visualization Principle\nDesign with Colorblind in Mind\n\n\n\n\n\nTypes of Colorblindness\n\n\n\n\nRoughly 8% of men and half a percent of women are colorblind.\nThere are several techniques to make visualization more colorblind-friendly:\n\nUse color palettes that are colorblind-friendly\nUse shape for scatterplots and linetype for line charts\nHave some additional visual cue to set the important numbers apart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#colorblind-friendly-color-palettes",
@@ -5065,7 +5065,7 @@
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#facets-1",
     "title": "Lecture 18",
     "section": "Facets",
-    "text": "Facets\n\nOne way to add a variable, particularly useful for categorical variables, is to use facets to split our plot into facets, subplots that each display one subset of the data."
+    "text": "Facets\n\n\nAdding too many aesthetic mappings to a plot makes it cluttered and difficult to make sense of.\n\n\n\n\nOne way to add a variable, particularly useful for categorical variables, is to use facets to split our plot into facets, subplots that each display one subset of the data."
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#facets-2",
@@ -5170,7 +5170,7 @@
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#log-transformation-reducing-clutter-in-scatterplots-5",
     "title": "Lecture 18",
     "section": "Log Transformation: Reducing Clutter in Scatterplots",
-    "text": "Log Transformation: Reducing Clutter in Scatterplots\nThe Use of Logarithm: Percentage Change\n\n\nFor small changes in variable \\(x\\) from \\(x_{0}\\) to \\(x_{1}\\), we have:\n\n\\[\n\\Delta \\log(x) = \\log(x_{1}) - \\log(x_{0})\n\\approx \\frac{x_{1} - x_{0}}{x_{0}}\n= \\frac{\\Delta x}{x_{0}}.\n\\]\n\n\nThis shows that a log transformation effectively represents percentage change!"
+    "text": "Log Transformation: Reducing Clutter in Scatterplots\nThe Use of Logarithm: Percentage Change\n\n\nFor a small change in variable \\(x\\) from \\(x_{0}\\) to \\(x_{1}\\), we have:\n\n\\[\n\\Delta \\log(x) = \\log(x_{1}) - \\log(x_{0})\n\\approx \\frac{x_{1} - x_{0}}{x_{0}}\n= \\frac{\\Delta x}{x_{0}}.\n\\]\n\n\nThis shows that a log transformation effectively represents percentage change!"
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#log-transformation-reducing-clutter-in-scatterplots-6",
@@ -5189,6 +5189,13 @@
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#clutter-is-your-enemy",
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#clutter-is-your-enemy",
+    "title": "Lecture 18",
+    "section": "Clutter is Your Enemy!",
+    "text": "Clutter is Your Enemy!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich one do you prefer?"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#clutter-is-your-enemy-1",
+    "href": "danl-lec/danl-101-lec-18-2024-1031.html#clutter-is-your-enemy-1",
     "title": "Lecture 18",
     "section": "Clutter is Your Enemy!",
     "text": "Clutter is Your Enemy!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich one do you prefer?"

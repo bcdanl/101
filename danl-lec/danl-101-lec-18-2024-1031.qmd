@@ -286,6 +286,37 @@ ggplot(data = mpg,
 ::::
 
 
+
+# Clutter is Your Enemy! {background-color="#1c4982"}
+
+
+## Visualization Principle
+### Cognitive Load
+
+- Every element added to a page or screen demands **cognitive load**
+  - **Cognitive load**: the mental effort needed to process information
+- Extra elements = extra brain power for the audience to process
+  - **Example**: Overly complex slides or graphs can overwhelm viewers
+- Excessive load can lead to disengagement and confusion
+  - **Goal**: a graphic should display as much information as it can, with the lowest possible cognitive strain to the viewer.
+
+
+
+
+## Visualization Principle
+### Why Reduce Clutter?
+
+- **Clutter**: Visual elements that occupy space but do not improve understanding
+- Clutter makes information harder to process and can confuse the viewer
+- **Strive for clarity**: Simplified visuals encourage engagement and improve comprehension
+  - Less clutter = clearer message, more focused audience
+
+- **Tips**
+  - Avoid having the data all skewed to one side or the other of your graph.
+  - Avoid too many superimposed elements, such as too many curves (>4) in the same graphing space.
+
+
+
 ## Clutter is Your Enemy!
 
 
@@ -342,37 +373,6 @@ gapminder |>
 ::::
 
 - Which one do you prefer?
-
-
-## Visualization Principle
-### Cognitive Load
-
-
-
-## Visualization Principle
-### Cognitive Load
-
-- Every element added to a page or screen demands **cognitive load**
-  - **Cognitive load**: the mental effort needed to process information
-- Extra elements = extra brain power for the audience to process
-  - **Example**: Overly complex slides or graphs can overwhelm viewers
-- Excessive load can lead to disengagement and confusion
-  - **Goal**: a graphic should display as much information as it can, with the lowest possible cognitive strain to the viewer.
-
-
-
-
-## Visualization Principle
-### Why Reduce Clutter?
-
-- **Clutter**: Visual elements that occupy space but do not improve understanding
-- Clutter makes information harder to process and can confuse the viewer
-- **Strive for clarity**: Simplified visuals encourage engagement and improve comprehension
-  - Less clutter = clearer message, more focused audience
-
-- **Tips**
-  - Avoid having the data all skewed to one side or the other of your graph.
-  - Avoid too many superimposed elements, such as too many curves (>4) in the same graphing space.
 
 
 ## Log Transformation: Reducing Clutter in Scatterplots
@@ -479,7 +479,7 @@ gapminder |>
 
 :::{.nonincremental}
 
--	For small changes in variable $x$ from $x_{0}$ to $x_{1}$, we have:
+-	For a small change in variable $x$ from $x_{0}$ to $x_{1}$, we have:
 
 $$
 \Delta \log(x) = \log(x_{1}) - \log(x_{0})
@@ -661,8 +661,25 @@ ggplot( data = mpg,
 # Facets {background-color="#1c4982"}
 
 ## Facets 
+:::{.nonincremental}
+- Adding too many aesthetic mappings to a plot makes it cluttered and difficult to make sense of.
 
-- One way to add a variable, particularly useful for categorical variables, is to use **facets** to split our plot into facets, subplots that each display one subset of the data.
+:::
+```{r}
+#| echo: false
+#| eval: true
+#| fig-align: center
+
+gapminder |> 
+  ggplot(aes(x = log(gdpPercap), 
+             y = lifeExp,
+             color = continent)) +
+  geom_point(size = 1.75)
+```
+
+
+- One way to add a variable, particularly useful for *categorical variables*, is to use **facets** to split our plot into facets, subplots that each display one subset of the data.
+
 
 
 ## Facets 

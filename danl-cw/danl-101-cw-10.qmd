@@ -1,0 +1,90 @@
+---
+title: Color vs. Facet
+subtitle: Classwork 10
+date: 2024-11-05
+from: markdown+emoji
+
+execute: 
+  eval: true
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(gapminder)
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_fill_discrete <- function(...) scale_fill_viridis_d(...)
+
+```
+
+# NBC Show Data
+
+The `nbc_show` data is from NBC’s TV pilots:
+
+```{r}
+library(tidyverse)
+nbc_show <- read_csv("https://bcdanl.github.io/data/nbc_show.csv")
+```
+
+- Gross Ratings Points (`GRP`): estimated total viewership of the show, which measures broadcast marketability.
+  - A higher GRP suggests broader exposure and a potentially more marketable show.
+
+- Projected Engagement (`PE`): how engaged viewers were after watching a show, a more suitable measure of audience.
+  - After watching a show, a viewer is quizzed on order and detail.
+  - This measures their engagement with the show (and ads!).
+  - High PE values suggest strong engagement.
+
+```{r}
+#| echo: false
+
+DT::datatable(nbc_show, options = list(
+  pageLength = 40
+))
+```
+
+
+## Q1a
+- Provide `ggplot()` code to describe the relationship between `GRP` and `PE`.
+
+<br>
+
+
+## Q1b
+- Provide `ggplot()` code to describe how the relationship between `GRP` and `PE` varies by `Genre`.
+
+<br>
+
+## Q1c
+- What are the advantages to using faceting instead of the `color` aesthetic? What are the disadvantages? How might the balance change if you had a larger dataset?
+
+<br>

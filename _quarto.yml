@@ -54,6 +54,9 @@ website:
       - text: &nbsp;
       - text: <font size ="5" ><b>- Q & A </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
         href: listing-danl-101-qa.qmd
+      - text: &nbsp;
+      - text: <font size ="5" ><b>- Team Project </b></font><font size ="5" color="#194493">{{< fa solid brain >}}</font>
+        href: danl-101-team-project.qmd
       # - text: &nbsp;
       # - text: <font size ="5" ><b>- Class Notes </b></font><font size ="5" color="#194493">{{< fa solid pencil >}}</font>
       #   href: listing-danl-101-class.qmd

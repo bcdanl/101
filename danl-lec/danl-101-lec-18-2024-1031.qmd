@@ -355,7 +355,7 @@ gapminder |>
 
 gapminder |> 
   ggplot(aes(x = log10(gdpPercap),
-             y = lifeExp)) +
+             y =lifeExp)) +
   geom_point(size = 2,
              alpha = .3) +
   labs(x = "GDP per capita (in base-10 logarithm)",
@@ -526,6 +526,12 @@ gapminder |>
              y = lifeExp)) +
   geom_point(alpha = .3) +
   geom_smooth(method = lm) +
+  geom_label(data = data.frame(x = 10, y = 35, label = "Slope = 8.40"),
+            mapping = aes(x = x, y = y, label = label)
+            ) +
+  geom_text(data = data.frame(x = 10.25, y = 30, label = "A 1-unit increase in log(gdpPercap) corresponds to\n a 100% increase in gdpPercap"),
+            mapping = aes(x = x, y = y, label = label)
+            ) +
   scale_x_continuous(breaks = 6:11) +
   scale_y_continuous(breaks = seq(30,80,10)) +
   labs(x = "GDP per capita (in natural logarithm)",
@@ -536,6 +542,9 @@ gapminder |>
 :::
 ::::
 
+- One percent increase in GDP per capita is associated with an increase in life expectancy by 0.084 year (30.66 days)!
+
+# Design with Colorblind in Mind {background-color="#1c4982"}
 
 
 ## Visualization Principle
@@ -658,273 +667,3 @@ ggplot( data = mpg,
 - `theme_wsj()` approximates the style of The Wall Street Journal.
 
 
-# Facets {background-color="#1c4982"}
-
-## Facets 
-:::{.nonincremental}
-- Adding too many aesthetics to a plot makes it cluttered and difficult to make sense of.
-
-:::
-```{r}
-#| echo: false
-#| eval: true
-#| fig-align: center
-
-gapminder |> 
-  ggplot(aes(x = log10(gdpPercap), 
-             y = lifeExp,
-             color = continent)) +
-  geom_point(size = 1.75)
-```
-
-
-- One way to add a variable, particularly useful for *categorical variables*, is to use **facets** to split our plot into facets, subplots that each display one subset of the data.
-
-
-
-## Facets 
-### `facet_wrap(~ VAR)`
-
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column-fragment
-
-ggplot(data = gapminder,
-       mapping = 
-         aes(x = log10(gdpPercap), 
-             y =lifeExp)) + 
-  geom_point(alpha = .4) + 
-  facet_wrap( ~ continent)
-```
-
-
-- To facet our plot by a *single variable*, we can use `facet_wrap()`.
-
-
-
-## Facets 
-### `facet_wrap(~ VAR)` with `nrow`
-
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column-fragment
-
-ggplot(data = gapminder,
-       mapping = 
-         aes(x = log10(gdpPercap), 
-             y =lifeExp)) + 
-  geom_point(alpha = .4) + 
-  facet_wrap( ~ continent,
-              nrow = 1)
-```
-
-
-- `nrow` determines the number of rows to use when laying out the facets.
-
-
-## Facets 
-### `facet_wrap(~ VAR)` with `ncol`
-
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column-fragment
-
-ggplot(data = gapminder,
-       mapping = 
-         aes(x = log10(gdpPercap), 
-             y =lifeExp)) + 
-  geom_point(alpha = .4) + 
-  facet_wrap( ~ continent,
-              ncol = 1)
-```
-
-
-- `ncol` determines the number of columns to use when laying out the facets.
-
-
-
-## Facets 
-### `facet_wrap(~ VAR)` with `scales`
-
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column-fragment
-
-ggplot(data = gapminder,
-       mapping = 
-         aes(x = log10(gdpPercap), 
-             y =lifeExp)) + 
-  geom_point(alpha = .4) + 
-  facet_wrap( ~ continent,
-              scales = "free_x")
-```
-
-- `scales = "free_x"` allow for different scales of x-axis
-
-
-## Facets 
-### `facet_wrap(~ VAR)` with `scales`
-
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column-fragment
-
-ggplot(data = gapminder,
-       mapping = 
-         aes(x = log10(gdpPercap), 
-             y =lifeExp)) + 
-  geom_point(alpha = .4) + 
-  facet_wrap( ~ continent,
-              scales = "free_y")
-```
-
-- `scales = "free_y"` allow for different scales of y-axis
-
-
-## Facets 
-### `facet_wrap(~ VAR)` with `scales`
-
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column-fragment
-
-ggplot(data = gapminder,
-       mapping = 
-         aes(x = log10(gdpPercap), 
-             y =lifeExp)) + 
-  geom_point(alpha = .4) + 
-  facet_wrap( ~ continent,
-              scales = "free")
-```
-
-- `scales = "free"` allow for different scales of both x-axis and y-axis
-
-
-
-# Time Trend `ggplot()` {background-color="#1c4982"}
-
-
-## Time Trend `ggplot()`
-### NVDA Stock Price
-
-```{r}
-#| results: asis
-DT::datatable(nvda |> select(Date, Close), options = list(
-  pageLength = 4
-))
-```
-
-- The `nvda` data.frame includes NVIDIA's stock information from `2019-01-02` to `2024-10-18`.
-
-  
-## Time Trend `ggplot()`
-### Scatterplot for Time Trend?
-
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column
-
-path <- 
-  "https://bcdanl.github.io/data/nvda_2015_2024.csv"
-nvda <- read_csv(path)
-
-ggplot( data = nvda,
-        mapping = aes(
-          x = Date, 
-          y = Close) ) + 
-  geom_point(size = .5)
-```
-
-
-## Time Trend `ggplot()`
-### Line Chart with `geom_line()`
-
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column
-
-path <- 
-  "https://bcdanl.github.io/data/nvda_2015_2024.csv"
-nvda <- read_csv(path)
-
-ggplot( data = nvda,
-        mapping = aes(
-          x = Date, 
-          y = Close) ) + 
-  geom_point(size = .5) +
-  geom_line()
-```
-- `geom_line()` draws a line by connecting data points in order of the variable on the `x`-axis.
-
-## Time Trend `ggplot()`
-### Line Chart with `geom_line()` and `geom_smooth()`
-
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column
-
-path <- 
-  "https://bcdanl.github.io/data/nvda_2015_2024.csv"
-nvda <- read_csv(path)
-
-ggplot( data = nvda,
-        mapping = aes(
-          x = Date, 
-          y = Close) ) + 
-  geom_point(size = .5) +
-  geom_line() +
-  geom_smooth()
-```
-
-- `geom_smooth()` can also be useful for illustrating overall time trends.
-
-## Time Trend `ggplot()`
-### The Connection Principle
-
-<div style="text-align: center; width: 100%; margin: auto;">
-  <img src="https://bcdanl.github.io/lec_figs/gestalt-principle-connection.png" style="width: 60%; margin-bottom: -20px;">
-  <p style="font-weight: bold;"></p>
-</div>
-
-- We tend to think of objects that are physically connected as part of a group.
-- Look at this figure.
-  - Your eyes probably pair the shapes connected by lines rather than similar color, size, or shape!
-
-- We frequently leverage the **connection principle** is in line charts, to help our eyes see order in the data.
-
-
-
-# Distribution `ggplot()` - Histogram {background-color="#1c4982"}
-
-
-# Distribution `ggplot()` - Boxplot {background-color="#1c4982"}
-
-
-# Distribution `ggplot()` - Bar Chart {background-color="#1c4982"}
-
-
-
-
-
-
-
-
-<!-- # Geometric Objects {background-color="#1c4982"} -->
-
-<!-- ## Geometric Objects -->
-<!-- - In order to keep things simple, we'll focus only on six different types of geometric objects, each with a commonly given name: -->
-<!--   - Scatterplot with `geom_point()` -->
-<!--   - Fitted curve/line with `geom_smooth()` -->
-<!--   - Histogram with `geom_histogram()` -->
-<!--   - Bar chart with `geom_bar()` -->
-<!--   - Boxplot with `geom_boxplot()` -->
-<!--   - Lineplot with `geom_line()` -->

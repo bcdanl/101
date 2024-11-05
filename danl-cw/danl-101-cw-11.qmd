@@ -1,0 +1,80 @@
+---
+title: Time Trend Plots
+subtitle: Classwork 11
+date: last-modified
+from: markdown+emoji
+
+execute: 
+  eval: true
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(gapminder)
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_fill_discrete <- function(...) scale_fill_viridis_d(...)
+
+```
+
+# Trend in GDP per capita
+
+The `gapminder` package provides the data.frame object, `gapminder`. Let's assign this to `df_gapminder`:
+
+```{r}
+library(gapminder)
+df_gapminder <- gapminder::gapminder
+```
+
+
+```{r}
+#| echo: false
+
+DT::datatable(df_gapminder, options = list(
+  pageLength = 12
+))
+```
+
+
+## Q1a
+- Provide `ggplot()` code to describe the time trend of GDP per capita (`gdpPercap`).
+  - How would you take into account country-level data structure?
+
+<br>
+
+
+## Q1b
+- Provide `ggplot()` code to describe how the *overall* time trend of GDP per capita (`gdpPercap`) varies by `continent`.
+
+
+<br>

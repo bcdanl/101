@@ -1,26 +1,51 @@
 [
   {
-    "listing": "/listing-danl-101-lec.html",
+    "listing": "/listing-danl-101-qa.html",
     "items": [
-      "/danl-lec/danl-101-lec-19-2024-1105.html",
-      "/danl-lec/danl-101-lec-18-2024-1031.html",
-      "/danl-lec/danl-101-lec-17-2024-1029.html",
-      "/danl-lec/danl-101-lec-16-2024-1024.html",
-      "/danl-lec/danl-101-lec-15-2024-1022.html",
-      "/danl-lec/danl-101-lec-14-2024-1017.html",
-      "/danl-lec/danl-101-lec-13-2024-1010.html",
-      "/danl-lec/danl-101-lec-12-2024-1003.html",
-      "/danl-lec/danl-101-lec-11-2024-1001.html",
-      "/danl-lec/danl-101-lec-10-2024-0926.html",
-      "/danl-lec/danl-101-lec-09-2024-0924.html",
-      "/danl-lec/danl-101-lec-08-2024-0919.html",
-      "/danl-lec/danl-101-lec-07-2024-0917.html",
-      "/danl-lec/danl-101-lec-06-2024-0912.html",
-      "/danl-lec/danl-101-lec-05-2024-0910.html",
-      "/danl-lec/danl-101-lec-04-2024-0905.html",
-      "/danl-lec/danl-101-lec-03-2024-0903.html",
-      "/danl-lec/danl-101-lec-02-2024-0829.html",
-      "/danl-lec/danl-101-lec-01-2024-0827.html"
+      "/danl-qa/danl-101-04-qa.html"
+    ]
+  },
+  {
+    "listing": "/listing-danl-101-hw.html",
+    "items": [
+      "/danl-hw/danl-101-hw-03.html",
+      "/danl-hw/danl-101-hw-02-a.html",
+      "/danl-hw/danl-101-hw-01-a.html",
+      "/danl-hw/danl-101-hw-02.html",
+      "/danl-hw/danl-101-hw-01.html"
+    ]
+  },
+  {
+    "listing": "/listing-danl-101-cw.html",
+    "items": [
+      "/danl-cw/danl-101-cw-11.html",
+      "/danl-cw/danl-101-cw-10.html",
+      "/danl-cw/danl-101-cw-09.html",
+      "/danl-cw/danl-101-cw-07.html",
+      "/danl-cw/danl-101-cw-08.html",
+      "/danl-cw/danl-101-cw-06.html",
+      "/danl-cw/danl-101-cw-05.html",
+      "/danl-cw/danl-101-cw-03.html",
+      "/danl-cw/danl-101-cw-04.html",
+      "/danl-cw/danl-101-cw-02.html",
+      "/danl-cw/danl-101-cw-01.html"
+    ]
+  },
+  {
+    "listing": "/blog-listing.html",
+    "items": [
+      "/posts/nba/nba.html",
+      "/posts/py-basic/blog-python-basics.html",
+      "/posts/starwars/starwars_df.html",
+      "/posts/beer-markets/beer-markets.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/listing-danl-101-rw.html",
+    "items": [
+      "/danl-rw/danl-101-team-project.html",
+      "/danl-rw/danl-101-proj-topic.html"
     ]
   },
   {
@@ -64,45 +89,27 @@
     ]
   },
   {
-    "listing": "/blog-listing.html",
+    "listing": "/listing-danl-101-lec.html",
     "items": [
-      "/posts/nba/nba.html",
-      "/posts/py-basic/blog-python-basics.html",
-      "/posts/starwars/starwars_df.html",
-      "/posts/beer-markets/beer-markets.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/listing-danl-101-cw.html",
-    "items": [
-      "/danl-cw/danl-101-cw-11.html",
-      "/danl-cw/danl-101-cw-10.html",
-      "/danl-cw/danl-101-cw-09.html",
-      "/danl-cw/danl-101-cw-07.html",
-      "/danl-cw/danl-101-cw-08.html",
-      "/danl-cw/danl-101-cw-06.html",
-      "/danl-cw/danl-101-cw-05.html",
-      "/danl-cw/danl-101-cw-03.html",
-      "/danl-cw/danl-101-cw-04.html",
-      "/danl-cw/danl-101-cw-02.html",
-      "/danl-cw/danl-101-cw-01.html"
-    ]
-  },
-  {
-    "listing": "/listing-danl-101-hw.html",
-    "items": [
-      "/danl-hw/danl-101-hw-03.html",
-      "/danl-hw/danl-101-hw-02-a.html",
-      "/danl-hw/danl-101-hw-01-a.html",
-      "/danl-hw/danl-101-hw-02.html",
-      "/danl-hw/danl-101-hw-01.html"
-    ]
-  },
-  {
-    "listing": "/listing-danl-101-qa.html",
-    "items": [
-      "/danl-qa/danl-101-04-qa.html"
+      "/danl-lec/danl-101-lec-19-2024-1105.html",
+      "/danl-lec/danl-101-lec-18-2024-1031.html",
+      "/danl-lec/danl-101-lec-17-2024-1029.html",
+      "/danl-lec/danl-101-lec-16-2024-1024.html",
+      "/danl-lec/danl-101-lec-15-2024-1022.html",
+      "/danl-lec/danl-101-lec-14-2024-1017.html",
+      "/danl-lec/danl-101-lec-13-2024-1010.html",
+      "/danl-lec/danl-101-lec-12-2024-1003.html",
+      "/danl-lec/danl-101-lec-11-2024-1001.html",
+      "/danl-lec/danl-101-lec-10-2024-0926.html",
+      "/danl-lec/danl-101-lec-09-2024-0924.html",
+      "/danl-lec/danl-101-lec-08-2024-0919.html",
+      "/danl-lec/danl-101-lec-07-2024-0917.html",
+      "/danl-lec/danl-101-lec-06-2024-0912.html",
+      "/danl-lec/danl-101-lec-05-2024-0910.html",
+      "/danl-lec/danl-101-lec-04-2024-0905.html",
+      "/danl-lec/danl-101-lec-03-2024-0903.html",
+      "/danl-lec/danl-101-lec-02-2024-0829.html",
+      "/danl-lec/danl-101-lec-01-2024-0827.html"
     ]
   }
 ]

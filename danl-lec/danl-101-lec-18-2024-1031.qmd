@@ -492,8 +492,9 @@ $$
 -	This shows that a log transformation effectively represents percentage change!
 
 
-## Visualization Principle
-### Clutter is Your Enemy!
+
+## Log Transformation: Reducing Clutter in Scatterplots
+### The Use of Logarithm: Percentage Change
 
 :::: {.columns}
 

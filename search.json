@@ -3203,7 +3203,7 @@
     "href": "danl-lec/danl-101-lec-18-2024-1031.html#visualization-principle-2",
     "title": "Lecture 18",
     "section": "Visualization Principle",
-    "text": "Visualization Principle\nClutter is Your Enemy!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOne percent increase in GDP per capita is associated with an increase in life expectancy by 0.084 year (30.66 days)!"
+    "text": "Visualization Principle\nDesign with Colorblind in Mind\n\n\n\n\n\nTypes of Colorblindness\n\n\n\n\nRoughly 8% of men and half a percent of women are colorblind.\nThere are several techniques to make visualization more colorblind-friendly:\n\nUse color palettes that are colorblind-friendly\nUse shape for scatterplots and linetype for line charts\nHave some additional visual cue to set the important numbers apart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#visualization-principle-3",
@@ -3981,5 +3981,12 @@
     "title": "Lecture 19",
     "section": "Boxplot with geom_boxplot()",
     "text": "Boxplot with geom_boxplot()\nSorted Boxplot with fct_reorder(CATEGORICAL, NUMERICAL)\n\n\n# labs() can label\n#   x-axis, y-axis, and more\n\nggplot(data = mpg,\n       mapping = \n        aes(x = hwy,\n            y = \n             fct_reorder(class, hwy),\n            fill = class)) + \n  geom_boxplot(\n    show.legend = FALSE) +\n  scale_fill_tableau() +\n  labs(x = \"Highway MPG\",\n       y = \"Class\") \n\n\n\n\n\n\n\nfct_reorder(CATEGORICAL, NUMERICAL): Reorders the categories of the CATEGORICAL by the median of the NUMERICAL."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-18-2024-1031.html#log-transformation-reducing-clutter-in-scatterplots-6",
+    "href": "danl-lec/danl-101-lec-18-2024-1031.html#log-transformation-reducing-clutter-in-scatterplots-6",
+    "title": "Lecture 18",
+    "section": "Log Transformation: Reducing Clutter in Scatterplots",
+    "text": "Log Transformation: Reducing Clutter in Scatterplots\nThe Use of Logarithm: Percentage Change\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOne percent increase in GDP per capita is associated with an increase in life expectancy by 0.084 year (30.66 days)!"
   }
 ]

@@ -1,6 +1,6 @@
 ---
 title: Lecture 17
-subtitle: Data Visualization
+subtitle: Data Visualization with `ggplot`; Relationship `ggplot()`
 format:
   clean-revealjs:
     self-contained: false

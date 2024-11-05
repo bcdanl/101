@@ -1,6 +1,6 @@
 ---
 title: Lecture 19
-subtitle: Data Visualization
+subtitle: Facets; Time Trend `ggplot()`; Histogram `ggplot()`
 format:
   clean-revealjs:
     self-contained: false
@@ -400,6 +400,7 @@ ggplot( data = tech_october,
 ```{r}
 #| echo: false
 #| eval: true
+#| fig-align: center
 ggplot(data = titanic,
        mapping = 
          aes(x = age )) + 
@@ -455,11 +456,11 @@ ggplot(data = titanic,
 ggplot(data = titanic,
        mapping = 
          aes(x = age)) + 
-  geom_histogram(bins = 20)
+  geom_histogram(bins = 10)
 ```
 
 -	`bins`: Specifies the number of bins
-
+  - The shape of histogram is sensitive to the number of bins!
 
 ## Histogram with `geom_histogram()` with `binwidth`
 
@@ -475,10 +476,10 @@ ggplot(data = titanic,
 ```
 
 -	`binwidth`: Specifies the width of each bin
-
+  - We choose either the `bins` option or the `binwidth` option
 
 ## Histogram with `geom_histogram()`
-### Customizing the Appearance
+### Customizing the Aesthetics
 
 ```{r}
 #| echo: true
@@ -489,8 +490,8 @@ ggplot(data = titanic,
        mapping = 
          aes(x = age)) + 
   geom_histogram(
-    binwidth = 1,
-    fill = 'blue',
+    binwidth = 2,
+    fill = 'lightblue',
     color = 'black')
 ```
 
@@ -510,7 +511,7 @@ ggplot(data = titanic,
        mapping = 
          aes(x = age)) + 
   geom_histogram(
-    binwidth = 1,
+    binwidth = 2,
     fill = 'lightblue') +
   facet_wrap(~survived)
 ```
@@ -522,22 +523,30 @@ ggplot(data = titanic,
 
 ## Boxplot with `geom_boxplot()`
 
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column
 
-ggplot(data = mpg,
-       mapping = 
-         aes(x = hwy,
-             y = class)) + 
-  geom_boxplot() 
-```
+:::: {.columns}
+
+::: {.column width="50%"}
+:::{.nonincremental}
 
 
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/boxplot-cat2.jpg" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+:::
+
+::: {.column width="50%"}
+
+- Boxplots can be used to visualize how the **distribution** of a numeric variable varies by a categorical variable.
+- Boxplots display the median, quartiles, and potential outliers in the data.
+
+:::
+::::
 
 ## Boxplot with `geom_boxplot()`
-
 
 ```{r}
 #| echo: true
@@ -550,10 +559,12 @@ ggplot(data = mpg,
              y = hwy)) + 
   geom_boxplot() 
 ```
+- `geom_boxplot()` creates a boxplot;
+  - **Mappings**: _one numeric variable_ and _one categorical variable_ to the `x` and `y` aesthetics
 
 
 ## Boxplot with `geom_boxplot()`
-
+### Horizontal Boxplots
 ```{r}
 #| echo: true
 #| fig-asp: .85
@@ -562,16 +573,68 @@ ggplot(data = mpg,
 ggplot(data = mpg,
        mapping = 
          aes(x = hwy,
-             y = fct_reorder(class, hwy),
+             y = class)) + 
+  geom_boxplot() 
+```
+- Boxplots can be **horizontal** or **vertical**. 
+  - A horizontal boxplot is a good option for long category names
+
+
+## Boxplot with `geom_boxplot()`
+### Customizing the Aesthetics
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+# 1. `show.legend = FALSE` turns off 
+#     the legend information
+
+# 2. `scale_fill_colorblind()` or
+#    `scale_fill_tableau()`
+#     applies a color-blind friendly 
+#     palette to the `fill` aesthetic
+
+ggplot(data = mpg,
+       mapping = 
+         aes(x = hwy,
+             y = class,
              fill = class)) + 
   geom_boxplot(
     show.legend = FALSE) +
-  scale_fill_tableau()
+  scale_fill_tableau() 
 ```
 
-- `show.legend = FALSE` turns off the legend information.
+-	`fill`: Maps a variable to the fill color of the boxes.
+- `scale_fill_tableau()`: A color-blind friendly palette to the `fill` aesthetic.
 
 
+## Boxplot with `geom_boxplot()`
+### Sorted Boxplot with `fct_reorder(CATEGORICAL, NUMERICAL)`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+# labs() can label
+#   x-axis, y-axis, and more
+
+ggplot(data = mpg,
+       mapping = 
+        aes(x = hwy,
+            y = 
+             fct_reorder(class, hwy),
+            fill = class)) + 
+  geom_boxplot(
+    show.legend = FALSE) +
+  scale_fill_tableau() +
+  labs(x = "Highway MPG",
+       y = "Class") 
+```
+
+- `fct_reorder(CATEGORICAL, NUMERICAL)`: Reorders the categories of the CATEGORICAL by the median of the NUMERICAL.
 
 # Distribution `ggplot()` - Bar Chart {background-color="#1c4982"}
 

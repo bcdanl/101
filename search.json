@@ -1054,49 +1054,49 @@
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-with-bins",
     "title": "Lecture 19",
     "section": "Histogram with geom_histogram() with bins",
-    "text": "Histogram with geom_histogram() with bins\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(bins = 20)\n\n\n\n\n\n\n\nbins: Specifies the number of bins"
+    "text": "Histogram with geom_histogram() with bins\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(bins = 10)\n\n\n\n\n\n\n\nbins: Specifies the number of bins\nThe shape of histogram is sensitive to the number of bins!"
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-with-binwidth",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-with-binwidth",
     "title": "Lecture 19",
     "section": "Histogram with geom_histogram() with binwidth",
-    "text": "Histogram with geom_histogram() with binwidth\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(binwidth = 1)\n\n\n\n\n\n\n\nbinwidth: Specifies the width of each bin"
+    "text": "Histogram with geom_histogram() with binwidth\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(binwidth = 1)\n\n\n\n\n\n\n\nbinwidth: Specifies the width of each bin\nWe choose either the bins option or the binwidth option"
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-2",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-2",
     "title": "Lecture 19",
     "section": "Histogram with geom_histogram()",
-    "text": "Histogram with geom_histogram()\nCustomizing the Appearance\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(\n    binwidth = 1,\n    fill = 'blue',\n    color = 'black')\n\n\n\n\n\n\n\nfill: Fills the bars with a specific color.\ncolor: Adds an outline of a specific color to the bars."
+    "text": "Histogram with geom_histogram()\nCustomizing the Aesthetics\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(\n    binwidth = 2,\n    fill = 'lightblue',\n    color = 'black')\n\n\n\n\n\n\n\nfill: Fills the bars with a specific color.\ncolor: Adds an outline of a specific color to the bars."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-3",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-3",
     "title": "Lecture 19",
     "section": "Histogram with geom_histogram()",
-    "text": "Histogram with geom_histogram()\nCustomizing the Appearance\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(\n    binwidth = 1,\n    fill = 'lightblue') +\n  facet_wrap(~survived)\n\n\n\n\n\n\n\nfacet_wrap() works well with any geom_*()."
+    "text": "Histogram with geom_histogram()\nCustomizing the Appearance\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(\n    binwidth = 2,\n    fill = 'lightblue') +\n  facet_wrap(~survived)\n\n\n\n\n\n\n\nfacet_wrap() works well with any geom_*()."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot",
     "title": "Lecture 19",
     "section": "Boxplot with geom_boxplot()",
-    "text": "Boxplot with geom_boxplot()\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = hwy,\n             y = class)) + \n  geom_boxplot()"
+    "text": "Boxplot with geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n\nBoxplots can be used to visualize how the distribution of a numeric variable varies by a categorical variable.\nBoxplots display the median, quartiles, and potential outliers in the data."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-1",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-1",
     "title": "Lecture 19",
     "section": "Boxplot with geom_boxplot()",
-    "text": "Boxplot with geom_boxplot()\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = class,\n             y = hwy)) + \n  geom_boxplot()"
+    "text": "Boxplot with geom_boxplot()\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = class,\n             y = hwy)) + \n  geom_boxplot() \n\n\n\n\n\n\n\ngeom_boxplot() creates a boxplot;\n\nMappings: one numeric variable and one categorical variable to the x and y aesthetics"
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-2",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-2",
     "title": "Lecture 19",
     "section": "Boxplot with geom_boxplot()",
-    "text": "Boxplot with geom_boxplot()\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = hwy,\n             y = fct_reorder(class, hwy),\n             fill = class)) + \n  geom_boxplot(\n    show.legend = FALSE) +\n  scale_fill_tableau()\n\n\n\n\n\n\n\nshow.legend = FALSE turns off the legend information."
+    "text": "Boxplot with geom_boxplot()\nHorizontal Boxplots\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = hwy,\n             y = class)) + \n  geom_boxplot() \n\n\n\n\n\n\n\nBoxplots can be horizontal or vertical.\n\nA horizontal boxplot is a good option for long category names"
   },
   {
     "objectID": "danl-lec/danl-101-lec-14-2024-1017.html#danl-career-session-1",
@@ -3967,5 +3967,19 @@
     "title": "Bio",
     "section": "Memberships",
     "text": "Memberships\n\n\n\n\n\n2022—present\nSouthern Economic Association\n\n\n2018—present\nAssociation of Environmental and Resource Economists\n\n\n2017—present\nAmerican Economic Association\n\n\n2017—2019\nEconometric Society"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-3",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-3",
+    "title": "Lecture 19",
+    "section": "Boxplot with geom_boxplot()",
+    "text": "Boxplot with geom_boxplot()\nCustomizing the Aesthetics\n\n\n# 1. `show.legend = FALSE` turns off \n#     the legend information\n\n# 2. `scale_fill_colorblind()` or\n#    `scale_fill_tableau()`\n#     applies a color-blind friendly \n#     palette to the `fill` aesthetic\n\nggplot(data = mpg,\n       mapping = \n         aes(x = hwy,\n             y = class,\n             fill = class)) + \n  geom_boxplot(\n    show.legend = FALSE) +\n  scale_fill_tableau() \n\n\n\n\n\n\n\nfill: Maps a variable to the fill color of the boxes.\nscale_fill_tableau(): A color-blind friendly palette to the fill aesthetic."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-4",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-4",
+    "title": "Lecture 19",
+    "section": "Boxplot with geom_boxplot()",
+    "text": "Boxplot with geom_boxplot()\nSorted Boxplot with fct_reorder(CATEGORICAL, NUMERICAL)\n\n\n# labs() can label\n#   x-axis, y-axis, and more\n\nggplot(data = mpg,\n       mapping = \n        aes(x = hwy,\n            y = \n             fct_reorder(class, hwy),\n            fill = class)) + \n  geom_boxplot(\n    show.legend = FALSE) +\n  scale_fill_tableau() +\n  labs(x = \"Highway MPG\",\n       y = \"Class\") \n\n\n\n\n\n\n\nfct_reorder(CATEGORICAL, NUMERICAL): Reorders the categories of the CATEGORICAL by the median of the NUMERICAL."
   }
 ]

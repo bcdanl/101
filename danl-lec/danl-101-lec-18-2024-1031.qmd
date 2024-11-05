@@ -1,6 +1,6 @@
 ---
 title: Lecture 18
-subtitle: Data Visualization
+subtitle: Aesthetic Mappings; Clutter is Your Enemy!; Design with Colorblind in Mind
 format:
   clean-revealjs:
     self-contained: false

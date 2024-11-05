@@ -4,42 +4,42 @@
     "href": "danl-101-team-project.html",
     "title": "Data Storytelling Team Project",
     "section": "",
-    "text": "You are welcome to use your own dataset for the project; however, here are some suggested topics with corresponding data for your convenience.\n\nDataset Approval: If your team decides to use a dataset that is not suggested by Byeong-Hak, you must obtain approval in advance.\nDataset Submission:\n\nOnce your dataset is approved, make sure to send the dataset files to Byeong-Hak.\nIf your team adds any additional datasets to the suggested topic you have chosen, please also submit those additional dataset files to Byeong-Hak.\n\n\nThe suggested data frames are quite large.\n\nFeel free to transform the data as needed to focus on the story your team wants to tell.\n\n\n\n\n\nThe beer_markets data frame contains detailed information about household beer purchases across different brands and markets in the United States. It includes purchase details, product attributes, promotional information, and demographic data of the households.\n\nbeer_markets &lt;- read_csv(\"https://bcdanl.github.io/data/beer_markets_all.csv\")\n\n\n\n\n  \n\n\n\n\n\nhh: an identifier of the household;\nX_purchase_desc: details on the purchased item;\nquantity: the number of items purchased;\nbrand: Bud Light, Busch Light, Coors Light, Miller Lite, or Natural Light;\ndollar_spent: total dollar value of purchase;\nbeer_floz: total volume of beer, in fluid ounces;\nprice_floz: price per fl.oz. (i.e., dollar_spent/beer_floz);\ncontainer: the type of container;\npromo: Whether the item was promoted (coupon or otherwise);\nregion: US region\nstate: US state\nmarket: Scan-track market (or state if rural);\ndemographic data, including gender, marital status, household income, class of work, race, education, age, the size of household, and whether or not the household has a microwave or a dishwasher.\n\n\n\n\n\n\nThe nyc_housing_sales data frame includes property sale transactions in New York City from 2003 to 2024. It provides detailed information about each sale, including property characteristics, sales prices, and building classifications.\n\nnyc_housing_sales &lt;- read_csv(\"https://bcdanl.github.io/data/nyc_housing_sales_2003-2024.csv\")\n\n\n\n\n  \n\n\n\n\n\nFor the description of variables in the nyc_housing_sales data.frame, please refer to the following webpage:\n\nhttps://www.nyc.gov/site/finance/property/glossary-property-sales.page\n\nFor the variables of building class code, please refer to the following webpage:\n\nhttps://www.nyc.gov/assets/finance/jump/hlpbldgcode.html\n\n\n\n\n\n\n\n\n\nThe stock_markets data frame contains daily trading data for publicly traded companies, including information about stock prices, trading volume, dividends, and stock splits, obtained from Yahoo! Finance.\n\nstock_markets &lt;- read_csv(\"https://bcdanl.github.io/data/stock_history_2024_10.csv\")\n\n\n\n\n  \n\n\n\n\n\nDate: The specific date for the recorded stock data.\nTicker: The unique symbol assigned to a publicly traded company’s stock. It is used to identify the stock on financial markets (631 unique values).\nClose: The stock’s price at the end of the trading day. It does not account for adjustments like dividends or splits.\nDividends: The cash dividend paid per share on the given date, if applicable. It represents the portion of a company’s earnings distributed to shareholders.\nHigh: The highest price at which the stock traded during the trading day.\nLow: The lowest price at which the stock traded during the trading day.\nOpen: The stock’s price at the beginning of the trading day.\nStock_Splits: The ratio of any stock split that occurred on the given date. A stock split increases the number of shares outstanding while reducing the price per share proportionally.\nVolume: The total number of shares traded during the day. It reflects the activity level and liquidity of the stock.\n\n\nThe esg_info data frame provides ESG scores and company details, including sector, industry, and market capitalization, obtained from Yahoo! Finance.\n\nesg_info &lt;- read_csv(\"https://bcdanl.github.io/data/stock_esg_list.csv\")\n\n\n\n\n  \n\n\n\n\n\n\nTicker: The stock symbol used to uniquely identify a publicly traded company on financial markets.\nCompany_Name: The full name of the company corresponding to the ticker symbol.\nSector: The broader industry category to which the company belongs, such as Technology, Healthcare, or Financials.\nIndustry: A more specific category within the sector that describes the company’s line of business. For example, within the Technology sector, an industry could be Semiconductors or Software.\nMarket_Cap: The total market value of the company’s outstanding shares. It is calculated by multiplying the current stock price by the total number of outstanding shares and is used to classify companies as small-cap, mid-cap, or large-cap.\nCountry: The country where the company is headquartered. This variable helps identify the geographical location of the company’s operations.\nIPO_Year: The year in which the company went public and its shares were first offered on a stock exchange.\ntotal_esg: The company’s overall Environmental, Social, and Governance (ESG) score. It reflects how well the company is performing in terms of sustainability and ethical impact.\nenvironmental: The company’s score related to environmental practices, such as energy efficiency, waste management, and carbon footprint.\nsocial: The company’s score related to social practices, including employee relations, diversity, community impact, and human rights.\ngovernance: The company’s score related to governance practices, like board structure, executive pay, and shareholder rights.\ncontroversy: A score reflecting the level of public controversies associated with the company, which may impact its reputation. A higher score often indicates more significant controversies.\n\n\n(Optional) The income_stmts data frame contains income statement details for each company, including revenue, expenses, and net income.\n\nincome_stmts &lt;- read_csv(\"https://bcdanl.github.io/data/stock_income_stmts_2024_10.csv\")\n\n\n\n\n  \n\n\n\n(Optional) The balance_sheets data frame contains balance sheet details, including assets, liabilities, and shareholder equity.\n\nbalance_sheets &lt;- read_csv(\"https://bcdanl.github.io/data/stock_balance_sheets_2024_10.csv\")\n\n\n\n\n  \n\n\n\n\n\n\n\nThe compressed chesscom_3100.zip file includes chesscom_3100.csv, containing records of high-level blitz or bullet games on Chess.com, played by 171 players with a peak rating of at least 3100.\n\nDownload the compressed zip file, extract it (this can be automatically extracted), and upload it to your team project in Posit Cloud.\n\n\n\n\n\nDate: The date on which the chess game was played, formatted as YYYY-MM-DD.\nYear: The year of the game, extracted from the date (e.g., 2017).\nMonth: The month of the game, extracted from the date (e.g., 2 for February).\nDay: The day of the month on which the game was played, extracted from the date (e.g., 13).\nWhite: The username of the player who played with the white pieces.\nBlack: The username of the player who played with the black pieces.\nResult: The outcome of the game from White’s perspective, with options like:\n\n“1-0” indicating a win for White.\n“0-1” indicating a win for Black.\n“1/2-1/2” indicating a draw.\n\nWhiteElo: The Elo rating of the player playing White at the time of the game.\nBlackElo: The Elo rating of the player playing Black at the time of the game.\nECO: The ECO (Encyclopaedia of Chess Openings) code that classifies the opening used in the game, such as D02 or E36.\nECO_name: A description or detailed name of the chess opening corresponding to the ECO code, which may include the opening variation.\nECO_moves: The sequence of the opening moves for the chess opening corresponding to the ECO code\nTermination: The method by which the game ended, such as “won by resignation,” “drawn by insufficient material,” or “won on time.”\nTimeControl: The total time control for the game in seconds (e.g., 180 indicates a three-minute game).\n\n\nThe rating_3100_players data frame provides 71 players’ profiles, including rankings, ratings, titles, and follower counts on Chess.com.\n\nrating_3100_players &lt;- read_csv(\"https://bcdanl.github.io/data/chesscom_GMs_profile.csv\")\n\n\n\n\n  \n\n\n\n\n\n\nusername: The unique username associated with the player on Chess.com.\nname: The real name of the player, if available.\nusername_raw: The original or unformatted version of the player’s username.\ncountry: The country where the player is located or registered.\nrank_classical: The player’s ranking position in Classical chess format.\nrank_rapid: The player’s ranking position in Rapid chess format.\nrank_blitz: The player’s ranking position in Blitz chess format.\nrating_classical: The player’s Elo rating in Classical chess format.\nrating_rapid: The player’s Elo rating in Rapid chess format.\nrating_blitz: The player’s Elo rating in Blitz chess format.\ntitle: The official chess title held by the player, such as GM (Grandmaster), IM (International Master), etc.\nprofile_name: The full name displayed on the player’s profile page.\nprofile_username: The URL or link to the player’s profile on Chess.com.\nprofile_image: The URL to the player’s profile image.\nfollowers: The number of followers the player has on Chess.com.\nis_streamer: Indicates whether the player is a streamer (TRUE or FALSE).\nstatus: The account status, such as “premium” or other types of account membership.\ndate_joined: The date when the player joined Chess.com, formatted as YYYY-MM-DD.\n\n\n\n\n\n\n\nSports data can be quite complex. If your team wants to work with sports data, please schedule a meeting with Byeong-Hak for guidance at your earliest convenience.\nByeong-Hak can assist with data for:\n\nMajor League Baseball (MLB)\nNational Basketball Association (NBA)\nNational Football League (NFL)\nNational Hockey League (NHL)\nSoccer (EPL, La Liga, Serie A, Bundesliga, MLS)\nGolf"
+    "text": "Each team will deliver a 10-minute presentation, including time for Q&A, during one of the following class sessions:\n\nDecember 3, Tuesday: Six teams\nDecember 5, Thursday: Four teams\n\nThe order of team presentations will be determined by a random draw during class.\n\nIf multiple teams choose the same topic, I will try to schedule these teams in different sessions to minimize repetition within a single class.\n\nTo ensure fairness and equal participation, each student must contribute evenly to the presentation."
   },
   {
     "objectID": "danl-101-team-project.html#beer-market",
     "href": "danl-101-team-project.html#beer-market",
     "title": "Data Storytelling Team Project",
-    "section": "",
-    "text": "The beer_markets data frame contains detailed information about household beer purchases across different brands and markets in the United States. It includes purchase details, product attributes, promotional information, and demographic data of the households.\n\nbeer_markets &lt;- read_csv(\"https://bcdanl.github.io/data/beer_markets_all.csv\")\n\n\n\n\n  \n\n\n\n\n\nhh: an identifier of the household;\nX_purchase_desc: details on the purchased item;\nquantity: the number of items purchased;\nbrand: Bud Light, Busch Light, Coors Light, Miller Lite, or Natural Light;\ndollar_spent: total dollar value of purchase;\nbeer_floz: total volume of beer, in fluid ounces;\nprice_floz: price per fl.oz. (i.e., dollar_spent/beer_floz);\ncontainer: the type of container;\npromo: Whether the item was promoted (coupon or otherwise);\nregion: US region\nstate: US state\nmarket: Scan-track market (or state if rural);\ndemographic data, including gender, marital status, household income, class of work, race, education, age, the size of household, and whether or not the household has a microwave or a dishwasher."
+    "section": "1. Beer Market",
+    "text": "1. Beer Market\nThe beer_markets data frame contains detailed information about household beer purchases across different brands and markets in the United States. It includes purchase details, product attributes, promotional information, and demographic data of the households.\n\nbeer_markets &lt;- read_csv(\"https://bcdanl.github.io/data/beer_markets_all.csv\")\n\n\n\n\n  \n\n\n\nVariable Description\n\nhh: an identifier of the household;\nX_purchase_desc: details on the purchased item;\nquantity: the number of items purchased;\nbrand: Bud Light, Busch Light, Coors Light, Miller Lite, or Natural Light;\ndollar_spent: total dollar value of purchase;\nbeer_floz: total volume of beer, in fluid ounces;\nprice_floz: price per fl.oz. (i.e., dollar_spent/beer_floz);\ncontainer: the type of container;\npromo: Whether the item was promoted (coupon or otherwise);\nregion: US region\nstate: US state\nmarket: Scan-track market (or state if rural);\ndemographic data, including gender, marital status, household income, class of work, race, education, age, the size of household, and whether or not the household has a microwave or a dishwasher."
   },
   {
     "objectID": "danl-101-team-project.html#nyc-housing-sales-data",
     "href": "danl-101-team-project.html#nyc-housing-sales-data",
     "title": "Data Storytelling Team Project",
-    "section": "",
-    "text": "The nyc_housing_sales data frame includes property sale transactions in New York City from 2003 to 2024. It provides detailed information about each sale, including property characteristics, sales prices, and building classifications.\n\nnyc_housing_sales &lt;- read_csv(\"https://bcdanl.github.io/data/nyc_housing_sales_2003-2024.csv\")\n\n\n\n\n  \n\n\n\n\n\nFor the description of variables in the nyc_housing_sales data.frame, please refer to the following webpage:\n\nhttps://www.nyc.gov/site/finance/property/glossary-property-sales.page\n\nFor the variables of building class code, please refer to the following webpage:\n\nhttps://www.nyc.gov/assets/finance/jump/hlpbldgcode.html"
+    "section": "2. NYC Housing Sales Data",
+    "text": "2. NYC Housing Sales Data\nThe nyc_housing_sales data frame includes property sale transactions in New York City from 2003 to 2024. It provides detailed information about each sale, including property characteristics, sales prices, and building classifications.\n\nnyc_housing_sales &lt;- read_csv(\"https://bcdanl.github.io/data/nyc_housing_sales_2003-2024.csv\")\n\n\n\n\n  \n\n\n\nVariable Description\n\nFor the description of variables in the nyc_housing_sales data.frame, please refer to the following webpage:\n\nhttps://www.nyc.gov/site/finance/property/glossary-property-sales.page\n\nFor the variables of building class code, please refer to the following webpage:\n\nhttps://www.nyc.gov/assets/finance/jump/hlpbldgcode.html"
   },
   {
     "objectID": "danl-101-team-project.html#stock-markets-and-esg-environmental-social-and-governance",
     "href": "danl-101-team-project.html#stock-markets-and-esg-environmental-social-and-governance",
     "title": "Data Storytelling Team Project",
-    "section": "",
-    "text": "The stock_markets data frame contains daily trading data for publicly traded companies, including information about stock prices, trading volume, dividends, and stock splits, obtained from Yahoo! Finance.\n\nstock_markets &lt;- read_csv(\"https://bcdanl.github.io/data/stock_history_2024_10.csv\")\n\n\n\n\n  \n\n\n\n\n\nDate: The specific date for the recorded stock data.\nTicker: The unique symbol assigned to a publicly traded company’s stock. It is used to identify the stock on financial markets (631 unique values).\nClose: The stock’s price at the end of the trading day. It does not account for adjustments like dividends or splits.\nDividends: The cash dividend paid per share on the given date, if applicable. It represents the portion of a company’s earnings distributed to shareholders.\nHigh: The highest price at which the stock traded during the trading day.\nLow: The lowest price at which the stock traded during the trading day.\nOpen: The stock’s price at the beginning of the trading day.\nStock_Splits: The ratio of any stock split that occurred on the given date. A stock split increases the number of shares outstanding while reducing the price per share proportionally.\nVolume: The total number of shares traded during the day. It reflects the activity level and liquidity of the stock.\n\n\nThe esg_info data frame provides ESG scores and company details, including sector, industry, and market capitalization, obtained from Yahoo! Finance.\n\nesg_info &lt;- read_csv(\"https://bcdanl.github.io/data/stock_esg_list.csv\")\n\n\n\n\n  \n\n\n\n\n\n\nTicker: The stock symbol used to uniquely identify a publicly traded company on financial markets.\nCompany_Name: The full name of the company corresponding to the ticker symbol.\nSector: The broader industry category to which the company belongs, such as Technology, Healthcare, or Financials.\nIndustry: A more specific category within the sector that describes the company’s line of business. For example, within the Technology sector, an industry could be Semiconductors or Software.\nMarket_Cap: The total market value of the company’s outstanding shares. It is calculated by multiplying the current stock price by the total number of outstanding shares and is used to classify companies as small-cap, mid-cap, or large-cap.\nCountry: The country where the company is headquartered. This variable helps identify the geographical location of the company’s operations.\nIPO_Year: The year in which the company went public and its shares were first offered on a stock exchange.\ntotal_esg: The company’s overall Environmental, Social, and Governance (ESG) score. It reflects how well the company is performing in terms of sustainability and ethical impact.\nenvironmental: The company’s score related to environmental practices, such as energy efficiency, waste management, and carbon footprint.\nsocial: The company’s score related to social practices, including employee relations, diversity, community impact, and human rights.\ngovernance: The company’s score related to governance practices, like board structure, executive pay, and shareholder rights.\ncontroversy: A score reflecting the level of public controversies associated with the company, which may impact its reputation. A higher score often indicates more significant controversies.\n\n\n(Optional) The income_stmts data frame contains income statement details for each company, including revenue, expenses, and net income.\n\nincome_stmts &lt;- read_csv(\"https://bcdanl.github.io/data/stock_income_stmts_2024_10.csv\")\n\n\n\n\n  \n\n\n\n(Optional) The balance_sheets data frame contains balance sheet details, including assets, liabilities, and shareholder equity.\n\nbalance_sheets &lt;- read_csv(\"https://bcdanl.github.io/data/stock_balance_sheets_2024_10.csv\")"
+    "section": "3. Stock Markets and ESG (Environmental, Social, and Governance)",
+    "text": "3. Stock Markets and ESG (Environmental, Social, and Governance)\nThe stock_markets data frame contains daily trading data for publicly traded companies, including information about stock prices, trading volume, dividends, and stock splits, obtained from Yahoo! Finance.\n\nstock_markets &lt;- read_csv(\"https://bcdanl.github.io/data/stock_history_2024_10.csv\")\n\n\n\n\n  \n\n\n\nDescription of Variables in the stock_markets data frame\n\nDate: The specific date for the recorded stock data.\nTicker: The unique symbol assigned to a publicly traded company’s stock. It is used to identify the stock on financial markets (631 unique values).\nClose: The stock’s price at the end of the trading day. It does not account for adjustments like dividends or splits.\nDividends: The cash dividend paid per share on the given date, if applicable. It represents the portion of a company’s earnings distributed to shareholders.\nHigh: The highest price at which the stock traded during the trading day.\nLow: The lowest price at which the stock traded during the trading day.\nOpen: The stock’s price at the beginning of the trading day.\nStock_Splits: The ratio of any stock split that occurred on the given date. A stock split increases the number of shares outstanding while reducing the price per share proportionally.\nVolume: The total number of shares traded during the day. It reflects the activity level and liquidity of the stock.\n\n\nThe esg_info data frame provides ESG scores and company details, including sector, industry, and market capitalization, obtained from Yahoo! Finance.\n\nesg_info &lt;- read_csv(\"https://bcdanl.github.io/data/stock_esg_list.csv\")\n\n\n\n\n  \n\n\n\n\nDescription of Variables in the esg_info data frame\n\nTicker: The stock symbol used to uniquely identify a publicly traded company on financial markets.\nCompany_Name: The full name of the company corresponding to the ticker symbol.\nSector: The broader industry category to which the company belongs, such as Technology, Healthcare, or Financials.\nIndustry: A more specific category within the sector that describes the company’s line of business. For example, within the Technology sector, an industry could be Semiconductors or Software.\nMarket_Cap: The total market value of the company’s outstanding shares. It is calculated by multiplying the current stock price by the total number of outstanding shares and is used to classify companies as small-cap, mid-cap, or large-cap.\nCountry: The country where the company is headquartered. This variable helps identify the geographical location of the company’s operations.\nIPO_Year: The year in which the company went public and its shares were first offered on a stock exchange.\ntotal_esg: The company’s overall Environmental, Social, and Governance (ESG) score. It reflects how well the company is performing in terms of sustainability and ethical impact.\nenvironmental: The company’s score related to environmental practices, such as energy efficiency, waste management, and carbon footprint.\nsocial: The company’s score related to social practices, including employee relations, diversity, community impact, and human rights.\ngovernance: The company’s score related to governance practices, like board structure, executive pay, and shareholder rights.\ncontroversy: A score reflecting the level of public controversies associated with the company, which may impact its reputation. A higher score often indicates more significant controversies.\n\n\n(Optional) The income_stmts data frame contains income statement details for each company, including revenue, expenses, and net income.\n\nincome_stmts &lt;- read_csv(\"https://bcdanl.github.io/data/stock_income_stmts_2024_10.csv\")\n\n\n\n\n  \n\n\n\n(Optional) The balance_sheets data frame contains balance sheet details, including assets, liabilities, and shareholder equity.\n\nbalance_sheets &lt;- read_csv(\"https://bcdanl.github.io/data/stock_balance_sheets_2024_10.csv\")"
   },
   {
     "objectID": "danl-101-team-project.html#chess",
     "href": "danl-101-team-project.html#chess",
     "title": "Data Storytelling Team Project",
-    "section": "",
-    "text": "The compressed chesscom_3100.zip file includes chesscom_3100.csv, containing records of high-level blitz or bullet games on Chess.com, played by 171 players with a peak rating of at least 3100.\n\nDownload the compressed zip file, extract it (this can be automatically extracted), and upload it to your team project in Posit Cloud.\n\n\n\n\n\nDate: The date on which the chess game was played, formatted as YYYY-MM-DD.\nYear: The year of the game, extracted from the date (e.g., 2017).\nMonth: The month of the game, extracted from the date (e.g., 2 for February).\nDay: The day of the month on which the game was played, extracted from the date (e.g., 13).\nWhite: The username of the player who played with the white pieces.\nBlack: The username of the player who played with the black pieces.\nResult: The outcome of the game from White’s perspective, with options like:\n\n“1-0” indicating a win for White.\n“0-1” indicating a win for Black.\n“1/2-1/2” indicating a draw.\n\nWhiteElo: The Elo rating of the player playing White at the time of the game.\nBlackElo: The Elo rating of the player playing Black at the time of the game.\nECO: The ECO (Encyclopaedia of Chess Openings) code that classifies the opening used in the game, such as D02 or E36.\nECO_name: A description or detailed name of the chess opening corresponding to the ECO code, which may include the opening variation.\nECO_moves: The sequence of the opening moves for the chess opening corresponding to the ECO code\nTermination: The method by which the game ended, such as “won by resignation,” “drawn by insufficient material,” or “won on time.”\nTimeControl: The total time control for the game in seconds (e.g., 180 indicates a three-minute game).\n\n\nThe rating_3100_players data frame provides 71 players’ profiles, including rankings, ratings, titles, and follower counts on Chess.com.\n\nrating_3100_players &lt;- read_csv(\"https://bcdanl.github.io/data/chesscom_GMs_profile.csv\")\n\n\n\n\n  \n\n\n\n\n\n\nusername: The unique username associated with the player on Chess.com.\nname: The real name of the player, if available.\nusername_raw: The original or unformatted version of the player’s username.\ncountry: The country where the player is located or registered.\nrank_classical: The player’s ranking position in Classical chess format.\nrank_rapid: The player’s ranking position in Rapid chess format.\nrank_blitz: The player’s ranking position in Blitz chess format.\nrating_classical: The player’s Elo rating in Classical chess format.\nrating_rapid: The player’s Elo rating in Rapid chess format.\nrating_blitz: The player’s Elo rating in Blitz chess format.\ntitle: The official chess title held by the player, such as GM (Grandmaster), IM (International Master), etc.\nprofile_name: The full name displayed on the player’s profile page.\nprofile_username: The URL or link to the player’s profile on Chess.com.\nprofile_image: The URL to the player’s profile image.\nfollowers: The number of followers the player has on Chess.com.\nis_streamer: Indicates whether the player is a streamer (TRUE or FALSE).\nstatus: The account status, such as “premium” or other types of account membership.\ndate_joined: The date when the player joined Chess.com, formatted as YYYY-MM-DD."
+    "section": "4. Chess",
+    "text": "4. Chess\nThe compressed chesscom_3100.zip file includes chesscom_3100.csv, containing records of high-level blitz or bullet games on Chess.com, played by 171 players with a peak rating of at least 3100.\n\nDownload the compressed zip file, extract it (this can be automatically extracted), and upload it to your team project in Posit Cloud.\n\n\n\nDescription of Variables in the chesscom_3100.csv file\n\nDate: The date on which the chess game was played, formatted as YYYY-MM-DD.\nYear: The year of the game, extracted from the date (e.g., 2017).\nMonth: The month of the game, extracted from the date (e.g., 2 for February).\nDay: The day of the month on which the game was played, extracted from the date (e.g., 13).\nWhite: The username of the player who played with the white pieces.\nBlack: The username of the player who played with the black pieces.\nResult: The outcome of the game from White’s perspective, with options like:\n\n“1-0” indicating a win for White.\n“0-1” indicating a win for Black.\n“1/2-1/2” indicating a draw.\n\nWhiteElo: The Elo rating of the player playing White at the time of the game.\nBlackElo: The Elo rating of the player playing Black at the time of the game.\nECO: The ECO (Encyclopaedia of Chess Openings) code that classifies the opening used in the game, such as D02 or E36.\nECO_name: A description or detailed name of the chess opening corresponding to the ECO code, which may include the opening variation.\nECO_moves: The sequence of the opening moves for the chess opening corresponding to the ECO code\nTermination: The method by which the game ended, such as “won by resignation,” “drawn by insufficient material,” or “won on time.”\nTimeControl: The total time control for the game in seconds (e.g., 180 indicates a three-minute game).\n\n\nThe rating_3100_players data frame provides 71 players’ profiles, including rankings, ratings, titles, and follower counts on Chess.com.\n\nrating_3100_players &lt;- read_csv(\"https://bcdanl.github.io/data/chesscom_GMs_profile.csv\")\n\n\n\n\n  \n\n\n\n\nVariable Description in the rating_3100_players data frame\n\nusername: The unique username associated with the player on Chess.com.\nname: The real name of the player, if available.\nusername_raw: The original or unformatted version of the player’s username.\ncountry: The country where the player is located or registered.\nrank_classical: The player’s ranking position in Classical chess format.\nrank_rapid: The player’s ranking position in Rapid chess format.\nrank_blitz: The player’s ranking position in Blitz chess format.\nrating_classical: The player’s Elo rating in Classical chess format.\nrating_rapid: The player’s Elo rating in Rapid chess format.\nrating_blitz: The player’s Elo rating in Blitz chess format.\ntitle: The official chess title held by the player, such as GM (Grandmaster), IM (International Master), etc.\nprofile_name: The full name displayed on the player’s profile page.\nprofile_username: The URL or link to the player’s profile on Chess.com.\nprofile_image: The URL to the player’s profile image.\nfollowers: The number of followers the player has on Chess.com.\nis_streamer: Indicates whether the player is a streamer (TRUE or FALSE).\nstatus: The account status, such as “premium” or other types of account membership.\ndate_joined: The date when the player joined Chess.com, formatted as YYYY-MM-DD."
   },
   {
     "objectID": "danl-101-team-project.html#sports",
     "href": "danl-101-team-project.html#sports",
     "title": "Data Storytelling Team Project",
-    "section": "",
-    "text": "Sports data can be quite complex. If your team wants to work with sports data, please schedule a meeting with Byeong-Hak for guidance at your earliest convenience.\nByeong-Hak can assist with data for:\n\nMajor League Baseball (MLB)\nNational Basketball Association (NBA)\nNational Football League (NFL)\nNational Hockey League (NHL)\nSoccer (EPL, La Liga, Serie A, Bundesliga, MLS)\nGolf"
+    "section": "5. Sports",
+    "text": "5. Sports\n\nSports data can be quite complex. If your team wants to work with sports data, please schedule a meeting with Byeong-Hak for guidance at your earliest convenience.\nByeong-Hak can assist with data for:\n\nMajor League Baseball (MLB)\nNational Basketball Association (NBA)\nNational Football League (NFL)\nNational Hockey League (NHL)\nSoccer (EPL, La Liga, Serie A, Bundesliga, MLS)\nGolf"
   },
   {
     "objectID": "danl-101-team-project.html#rubric-for-the-data-storytelling-project",
@@ -3867,105 +3867,182 @@
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#facets-1",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#facets-1",
     "title": "Lecture 19",
-    "section": "Facets",
-    "text": "Facets\n\n\nAdding too many aesthetics to a plot makes it cluttered and difficult to make sense of.\n\n\n\n\nOne way to add a variable, particularly useful for categorical variables, is to use facets to split our plot into facets, subplots that each display one subset of the data."
+    "section": "",
+    "text": "Adding too many aesthetics to a plot makes it cluttered and difficult to make sense of.\n\n\n\n\n\n\n\n\n\n\n\n\nOne way to add a variable, particularly useful for categorical variables, is to use facets to split our plot into facets, subplots that each display one subset of the data."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#facets-2",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#facets-2",
     "title": "Lecture 19",
-    "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR)\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent)\n\n\n\n\n\n\n\nTo facet our plot by a single variable, we can use facet_wrap()."
+    "section": "",
+    "text": "ggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent)\n\n\n\n\n\nTo facet our plot by a single variable, we can use facet_wrap()."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#facets-3",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#facets-3",
     "title": "Lecture 19",
-    "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR) with nrow\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              nrow = 1)\n\n\n\n\n\n\n\nnrow determines the number of rows to use when laying out the facets."
+    "section": "",
+    "text": "ggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              nrow = 1)\n\n\n\n\n\nnrow determines the number of rows to use when laying out the facets."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#facets-4",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#facets-4",
     "title": "Lecture 19",
-    "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR) with ncol\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              ncol = 1)\n\n\n\n\n\n\n\nncol determines the number of columns to use when laying out the facets."
+    "section": "",
+    "text": "ggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              ncol = 1)\n\n\n\n\n\nncol determines the number of columns to use when laying out the facets."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#facets-5",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#facets-5",
     "title": "Lecture 19",
-    "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR) with scales\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free_x\")\n\n\n\n\n\n\n\nscales = \"free_x\" allow for different scales of x-axis"
+    "section": "",
+    "text": "ggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free_x\")\n\n\n\n\n\nscales = \"free_x\" allow for different scales of x-axis"
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#facets-6",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#facets-6",
     "title": "Lecture 19",
-    "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR) with scales\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free_y\")\n\n\n\n\n\n\n\nscales = \"free_y\" allow for different scales of y-axis"
+    "section": "",
+    "text": "ggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free_y\")\n\n\n\n\n\nscales = \"free_y\" allow for different scales of y-axis"
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#facets-7",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#facets-7",
     "title": "Lecture 19",
-    "section": "Facets",
-    "text": "Facets\nfacet_wrap(~ VAR) with scales\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free\")\n\n\n\n\n\n\n\nscales = \"free\" allow for different scales of both x-axis and y-axis"
+    "section": "",
+    "text": "ggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free\")\n\n\n\n\n\nscales = \"free\" allow for different scales of both x-axis and y-axis"
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-1",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-1",
     "title": "Lecture 19",
     "section": "Time Trend ggplot()",
-    "text": "Time Trend ggplot()\nNVDA Stock Price\n\n\n\n\n\n\nThe nvda data.frame includes NVIDIA’s stock information from 2019-01-02 to 2024-10-18."
+    "text": "Time Trend ggplot()\n\nNVDA Stock Price\n\n\n\n\n\n\nThe nvda data.frame includes NVIDIA’s stock information from 2019-01-02 to 2024-10-18."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-2",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-2",
     "title": "Lecture 19",
     "section": "Time Trend ggplot()",
-    "text": "Time Trend ggplot()\nScatterplot for Time Trend?\n\n\npath &lt;- \n  \"https://bcdanl.github.io/data/nvda_2015_2024.csv\"\nnvda &lt;- read_csv(path)\n\nggplot( data = nvda,\n        mapping = aes(\n          x = Date, \n          y = Close) ) + \n  geom_point(size = .5)"
+    "text": "Time Trend ggplot()\n\nScatterplot for Time Trend?\n\npath &lt;- \n  \"https://bcdanl.github.io/data/nvda_2015_2024.csv\"\nnvda &lt;- read_csv(path)\n\nggplot( data = nvda,\n        mapping = aes(\n          x = Date, \n          y = Close) ) + \n  geom_point(size = .5)"
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-3",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-3",
     "title": "Lecture 19",
     "section": "Time Trend ggplot()",
-    "text": "Time Trend ggplot()\nLine Chart with geom_line()\n\n\npath &lt;- \n  \"https://bcdanl.github.io/data/nvda_2015_2024.csv\"\nnvda &lt;- read_csv(path)\n\nggplot( data = nvda,\n        mapping = aes(\n          x = Date, \n          y = Close) ) + \n  geom_point(size = .5) +\n  geom_line()\n\n\n\n\n\n\n\ngeom_line() draws a line by connecting data points in order of the variable on the x-axis."
+    "text": "Time Trend ggplot()\n\nLine Chart with geom_line()\n\npath &lt;- \n  \"https://bcdanl.github.io/data/nvda_2015_2024.csv\"\nnvda &lt;- read_csv(path)\n\nggplot( data = nvda,\n        mapping = aes(\n          x = Date, \n          y = Close) ) + \n  geom_point(size = .5) +\n  geom_line()\n\n\n\n\n\ngeom_line() draws a line by connecting data points in order of the variable on the x-axis."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-4",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-4",
     "title": "Lecture 19",
     "section": "Time Trend ggplot()",
-    "text": "Time Trend ggplot()\nThe Connection Principle\n\n\n\n\n\n\nWe tend to think of objects that are physically connected as part of a group.\nLook at this figure.\n\nYour eyes probably pair the shapes connected by lines rather than similar color, size, or shape!\n\nWe frequently leverage the connection principle is in line charts, to help our eyes see order in the data."
+    "text": "Time Trend ggplot()\n\nThe Connection Principle\n\n\n\n\n\n\nWe tend to think of objects that are physically connected as part of a group.\nLook at this figure.\n\nYour eyes probably pair the shapes connected by lines rather than similar color, size, or shape!\n\nWe frequently leverage the connection principle is in line charts, to help our eyes see order in the data."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-5",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-5",
     "title": "Lecture 19",
     "section": "Time Trend ggplot()",
-    "text": "Time Trend ggplot()\nLine Chart with geom_line() and geom_smooth()\n\n\npath &lt;- \n  \"https://bcdanl.github.io/data/nvda_2015_2024.csv\"\nnvda &lt;- read_csv(path)\n\nggplot( data = nvda,\n        mapping = aes(\n          x = Date, \n          y = Close) ) + \n  geom_point(size = .5) +\n  geom_line() +\n  geom_smooth()\n\n\n\n\n\n\n\ngeom_smooth() can also be useful for illustrating overall time trends."
+    "text": "Time Trend ggplot()\n\nLine Chart with geom_line() and geom_smooth()\n\npath &lt;- \n  \"https://bcdanl.github.io/data/nvda_2015_2024.csv\"\nnvda &lt;- read_csv(path)\n\nggplot( data = nvda,\n        mapping = aes(\n          x = Date, \n          y = Close) ) + \n  geom_point(size = .5) +\n  geom_line() +\n  geom_smooth()\n\n\n\n\n\ngeom_smooth() can also be useful for illustrating overall time trends."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-6",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-6",
     "title": "Lecture 19",
     "section": "Time Trend ggplot()",
-    "text": "Time Trend ggplot()\nNVDA Stock Price\n\n\n\n\n\n\nThe tech_october data.frame includes stock information about AAPL, NVDA, META, and TSLA in October 2024."
+    "text": "Time Trend ggplot()\n\nNVDA Stock Price\n\n\n\n\n\n\nThe tech_october data.frame includes stock information about AAPL, NVDA, META, and TSLA in October 2024."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-7",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-7",
     "title": "Lecture 19",
     "section": "Time Trend ggplot()",
-    "text": "Time Trend ggplot()\nTech Stock Price\n\n\ntech_october &lt;- \n  read_csv(\n    \"https://bcdanl.github.io/data/tech_stocks_2024_10.csv\"\n    )\n\nggplot( data = tech_october,\n        mapping = aes(\n          x = Date, \n          y = Close) ) + \n  geom_line() \n\n\n\n\n\n\n\nSomething has gone wrong. What happened?"
+    "text": "Time Trend ggplot()\n\nTech Stock Price\n\ntech_october &lt;- \n  read_csv(\n    \"https://bcdanl.github.io/data/tech_stocks_2024_10.csv\"\n    )\n\nggplot( data = tech_october,\n        mapping = aes(\n          x = Date, \n          y = Close) ) + \n  geom_line() \n\n\n\n\n\nSomething has gone wrong. What happened?"
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-8",
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-8",
     "title": "Lecture 19",
     "section": "Time Trend ggplot()",
-    "text": "Time Trend ggplot()\nTech Stock Price\n\n\n# `ggplot` needs to be \n# explicitly informed that \n# daily observations are grouped \n# by `Ticker`\n# for it to understand \n# the grouping structure\n\nggplot( data = tech_october,\n        mapping = aes(\n          x = Date, \n          y = Close,\n          color = Ticker) ) + \n  geom_line() \n\n\n\n\n\n\n\nWe can use either group or color aethetic to tell ggplot explicitly about this firm-level structure."
+    "text": "Time Trend ggplot()\n\nTech Stock Price\n\n# `ggplot` needs to be \n# explicitly informed that \n# daily observations are grouped \n# by `Ticker`\n# for it to understand \n# the grouping structure\n\nggplot( data = tech_october,\n        mapping = aes(\n          x = Date, \n          y = Close,\n          color = Ticker) ) + \n  geom_line() \n\n\n\n\n\nWe can use either group, color, or linetype aethetic to tell ggplot explicitly about this firm-level structure."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram",
+    "title": "Lecture 19",
+    "section": "Histogram with geom_histogram()",
+    "text": "Histogram with geom_histogram()\n\n\nHistograms are used to visualize the distribution of a numeric variable.\nHistograms divide data into bins and count the number of observations in each bin."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#data-visualization",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#data-visualization",
+    "title": "Lecture 19",
+    "section": "Data Visualization",
+    "text": "Data Visualization\n\nTitanic"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-1",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-1",
+    "title": "Lecture 19",
+    "section": "Histogram with geom_histogram()",
+    "text": "Histogram with geom_histogram()\n\ntitanic &lt;- \n  read_csv(\n    \"https://bcdanl.github.io/data/titanic_cleaned.csv\")\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram()\n\n\n\n\n\ngeom_histogram() creates a histogram.\n\nWe map the x aesthetic to the variable."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-with-bins",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-with-bins",
+    "title": "Lecture 19",
+    "section": "Histogram with geom_histogram() with bins",
+    "text": "Histogram with geom_histogram() with bins\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(bins = 20)\n\n\n\n\n\nbins: Specifies the number of bins"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-with-binwidth",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-with-binwidth",
+    "title": "Lecture 19",
+    "section": "Histogram with geom_histogram() with binwidth",
+    "text": "Histogram with geom_histogram() with binwidth\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(binwidth = 1)\n\n\n\n\n\nbinwidth: Specifies the width of each bin"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-2",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-2",
+    "title": "Lecture 19",
+    "section": "Histogram with geom_histogram()",
+    "text": "Histogram with geom_histogram()\n\nCustomizing the Appearance\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(\n    binwidth = 1,\n    fill = 'blue',\n    color = 'black')\n\n\n\n\n\nfill: Fills the bars with a specific color.\ncolor: Adds an outline of a specific color to the bars."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-3",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram-3",
+    "title": "Lecture 19",
+    "section": "Histogram with geom_histogram()",
+    "text": "Histogram with geom_histogram()\n\nCustomizing the Appearance\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(\n    binwidth = 1,\n    fill = 'lightblue') +\n  facet_wrap(~survived)\n\n\n\n\n\nfacet_wrap() works well with any geom_*()."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html",
+    "title": "Lecture 19",
+    "section": "",
+    "text": "Adding too many aesthetics to a plot makes it cluttered and difficult to make sense of.\n\n\n\n\n\n\n\n\n\n\n\n\nOne way to add a variable, particularly useful for categorical variables, is to use facets to split our plot into facets, subplots that each display one subset of the data.\n\n\n\n\n\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent)\n\n\n\n\n\nTo facet our plot by a single variable, we can use facet_wrap().\n\n\n\n\n\n\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              nrow = 1)\n\n\n\n\n\nnrow determines the number of rows to use when laying out the facets.\n\n\n\n\n\n\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              ncol = 1)\n\n\n\n\n\nncol determines the number of columns to use when laying out the facets.\n\n\n\n\n\n\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free_x\")\n\n\n\n\n\nscales = \"free_x\" allow for different scales of x-axis\n\n\n\n\n\n\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free_y\")\n\n\n\n\n\nscales = \"free_y\" allow for different scales of y-axis\n\n\n\n\n\n\n\n\nggplot(data = gapminder,\n       mapping = \n         aes(x = log10(gdpPercap), \n             y =lifeExp)) + \n  geom_point(alpha = .4) + \n  facet_wrap( ~ continent,\n              scales = \"free\")\n\n\n\n\n\nscales = \"free\" allow for different scales of both x-axis and y-axis"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot",
+    "title": "Lecture 19",
+    "section": "Boxplot with geom_boxplot()",
+    "text": "Boxplot with geom_boxplot()\n\nggplot(data = mpg,\n       mapping = \n         aes(x = hwy,\n             y = class)) + \n  geom_boxplot()"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-1",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-1",
+    "title": "Lecture 19",
+    "section": "Boxplot with geom_boxplot()",
+    "text": "Boxplot with geom_boxplot()\n\nggplot(data = mpg,\n       mapping = \n         aes(x = class,\n             y = hwy)) + \n  geom_boxplot()"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-2",
+    "href": "danl-lec/danl-101-lec-19-2024-1105.html#boxplot-with-geom_boxplot-2",
+    "title": "Lecture 19",
+    "section": "Boxplot with geom_boxplot()",
+    "text": "Boxplot with geom_boxplot()\n\nggplot(data = mpg,\n       mapping = \n         aes(x = hwy,\n             y = fct_reorder(class, hwy),\n             fill = class)) + \n  geom_boxplot(\n    show.legend = FALSE) +\n  scale_fill_tableau()\n\n\n\n\n\nshow.legend = FALSE turns off the legend information."
   }
 ]

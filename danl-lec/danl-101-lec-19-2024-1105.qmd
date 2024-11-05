@@ -382,14 +382,195 @@ ggplot( data = tech_october,
   geom_line() 
 ```
 
-- We can use either `group` or `color` aethetic to tell ggplot explicitly about this firm-level structure.
+- We can use either `group`, `color`, or `linetype` aethetic to tell ggplot explicitly about this firm-level structure.
 
 
 # Distribution `ggplot()` - Histogram {background-color="#1c4982"}
 
+## Histogram with `geom_histogram()`
+
+:::{.nonincremental}
+
+- Histograms are used to visualize the **distribution** of a numeric variable.
+
+- Histograms divide data into *bins* and count the number of observations in each bin.
+
+:::
+
+```{r}
+#| echo: false
+#| eval: true
+ggplot(data = titanic,
+       mapping = 
+         aes(x = age )) + 
+  geom_histogram(,
+               color = 'black',
+               fill = 'lightblue'
+               ) +
+  labs(y = "Number of\n People",
+       x = "Age",
+       title = "How is the distribution of age in Titanic?")
+```
+
+
+## Data Visualization
+### Titanic
+
+```{r}
+#| results: asis
+DT::datatable(titanic, options = list(
+  pageLength = 5
+))
+```
+
+
+## Histogram with `geom_histogram()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+titanic <- 
+  read_csv(
+    "https://bcdanl.github.io/data/titanic_cleaned.csv")
+
+ggplot(data = titanic,
+       mapping = 
+         aes(x = age)) + 
+  geom_histogram()
+```
+- `geom_histogram()` creates a histogram.
+  - We map the `x` aesthetic to the variable.
+
+
+
+## Histogram with `geom_histogram()` with `bins`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = titanic,
+       mapping = 
+         aes(x = age)) + 
+  geom_histogram(bins = 20)
+```
+
+-	`bins`: Specifies the number of bins
+
+
+## Histogram with `geom_histogram()` with `binwidth`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = titanic,
+       mapping = 
+         aes(x = age)) + 
+  geom_histogram(binwidth = 1)
+```
+
+-	`binwidth`: Specifies the width of each bin
+
+
+## Histogram with `geom_histogram()`
+### Customizing the Appearance
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = titanic,
+       mapping = 
+         aes(x = age)) + 
+  geom_histogram(
+    binwidth = 1,
+    fill = 'blue',
+    color = 'black')
+```
+
+-	`fill`: Fills the bars with a specific color.
+-	`color`: Adds an outline of a specific color to the bars.
+
+
+## Histogram with `geom_histogram()`
+### Customizing the Appearance
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = titanic,
+       mapping = 
+         aes(x = age)) + 
+  geom_histogram(
+    binwidth = 1,
+    fill = 'lightblue') +
+  facet_wrap(~survived)
+```
+
+-	`facet_wrap()` works well with any `geom_*()`.
 
 
 # Distribution `ggplot()` - Boxplot {background-color="#1c4982"}
+
+## Boxplot with `geom_boxplot()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = mpg,
+       mapping = 
+         aes(x = hwy,
+             y = class)) + 
+  geom_boxplot() 
+```
+
+
+
+## Boxplot with `geom_boxplot()`
+
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = mpg,
+       mapping = 
+         aes(x = class,
+             y = hwy)) + 
+  geom_boxplot() 
+```
+
+
+## Boxplot with `geom_boxplot()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = mpg,
+       mapping = 
+         aes(x = hwy,
+             y = fct_reorder(class, hwy),
+             fill = class)) + 
+  geom_boxplot(
+    show.legend = FALSE) +
+  scale_fill_tableau()
+```
+
+- `show.legend = FALSE` turns off the legend information.
+
 
 
 # Distribution `ggplot()` - Bar Chart {background-color="#1c4982"}

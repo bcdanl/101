@@ -41,6 +41,18 @@ scale_colour_discrete <- function(...) scale_color_colorblind(...)
 scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 ```
 
+
+# Presentation Schedule and Format
+- Each team will deliver a 10-minute presentation, including time for Q&A, during one of the following class sessions:
+  - **December 3, Tuesday**: Six teams
+  - **December 5, Thursday**: Four teams
+- The order of team presentations will be determined by a random draw during class.
+  -	If multiple teams choose the same topic, I will try to schedule these teams in different sessions to minimize repetition within a single class.
+-	To ensure fairness and equal participation, **each student must contribute evenly** to the presentation. 
+
+
+<br><br>
+
 # Suggested Topics
 - You are welcome to use your own dataset for the project; however, here are some suggested topics with corresponding data for your convenience.
   - **Dataset Approval**: If your team decides to use a dataset that is not suggested by Byeong-Hak, you must obtain approval in advance.
@@ -362,11 +374,4 @@ rmarkdown::paged_table(rating_3100_players)
   - **Error Handling**: Make sure your code runs smoothly without errors.
   
   
-<br><br>
-
-# Presentation Schedule
-- Each team will make 10-minute presentation during one of the following class time:
-  - December 3, Tuesday: Six teams
-  - December 5, Thursday: Four teams
-- The order of team presentations will be determined by a random draw during class.
 

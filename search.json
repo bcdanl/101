@@ -88,7 +88,7 @@
     "href": "danl-hw/danl-101-hw-03.html",
     "title": "Homework Assignment 3",
     "section": "",
-    "text": "Please answer all of the following questions thoroughly, ensuring that none are left unanswered.\nFor Homework Assignment 3, the use of any generative artificial intelligence (AI) tools is strictly prohibited.\nCraft your answers in a separate document (such as an R script, Word file, or Google Doc) and paste them into this page when you are ready to submit.\nOnce you have completed the assignment, click the “Submit” button at the bottom of this page to have it evaluated.\n\nAfter clicking “Submit” button, wait for the message, “Data submitted successfully!”.\nA confirmation email will be sent to the email address that you provide on this homework page once your submission is received.\n\nYou may submit multiple times, but only your most recent submission will be evaluated.\nThe due is November 8, 9:30 A.M., 2024, Friday, Eastern Time.\n\n\n\n\n\n\n Back to top"
+    "text": "Please answer all of the following questions thoroughly, ensuring that none are left unanswered.\nFor Homework Assignment 3, the use of any generative artificial intelligence (AI) tools is strictly prohibited.\nCraft your answers in a separate document (such as an R script, Word file, or Google Doc) and paste them into this page when you are ready to submit.\nOnce you have completed the assignment, click the “Submit” button at the bottom of this page to have it evaluated.\n\nAfter clicking “Submit” button, wait for the message, “Data submitted successfully!”.\nA confirmation email will be sent to the email address that you provide on this homework page once your submission is received.\n\nYou may submit multiple times, but only your most recent submission will be evaluated.\nThe due is November 8, 11:59 P.M., 2024, Friday, Eastern Time.\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "listing-danl-101-cw.html",
@@ -1026,7 +1026,7 @@
     "href": "danl-lec/danl-101-lec-19-2024-1105.html#time-trend-ggplot-8",
     "title": "Lecture 19",
     "section": "Time Trend ggplot()",
-    "text": "Time Trend ggplot()\nTech Stock Price\n\n\n# `ggplot` needs to be \n# explicitly informed that \n# daily observations are grouped \n# by `Ticker`\n# for it to understand \n# the grouping structure\n\nggplot( data = tech_october,\n        mapping = aes(\n          x = Date, \n          y = Close,\n          color = Ticker) ) + \n  geom_line() \n\n\n\n\n\n\n\nWe can use either group, color, or linetype aethetic to tell ggplot explicitly about this firm-level structure."
+    "text": "Time Trend ggplot()\nTech Stock Price\n\n\n# `ggplot` needs to be \n# explicitly informed that \n# daily observations are grouped \n# by `Ticker`\n# for it to understand \n# the grouping structure\n\nggplot( data = tech_october,\n        mapping = aes(\n          x = Date, \n          y = Close,\n          color = Ticker) ) + \n  geom_line(size = 2) # thicker lines\n\n\n\n\n\n\n\nWe can use either group, color, or linetype aesthetic to tell ggplot explicitly about this firm-level structure."
   },
   {
     "objectID": "danl-lec/danl-101-lec-19-2024-1105.html#histogram-with-geom_histogram",
@@ -3770,21 +3770,21 @@
     "href": "index.html#bullet-lecture-slides",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 19\n\n\nNovember 5, 2024\n\n\n\n\nLecture 18\n\n\nOctober 31, 2024\n\n\n\n\nLecture 17\n\n\nOctober 29, 2024\n\n\n\n\nLecture 16\n\n\nOctober 24, 2024\n\n\n\n\nLecture 15\n\n\nOctober 22, 2024\n\n\n\n\nLecture 14\n\n\nOctober 17, 2024\n\n\n\n\nLecture 13\n\n\nOctober 10, 2024\n\n\n\n\nLecture 12\n\n\nOctober 3, 2024\n\n\n\n\nLecture 11\n\n\nOctober 1, 2024\n\n\n\n\nLecture 10\n\n\nSeptember 26, 2024\n\n\n\n\nLecture 9\n\n\nSeptember 24, 2024\n\n\n\n\nLecture 8\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 20\n\n\nNovember 7, 2024\n\n\n\n\nLecture 19\n\n\nNovember 5, 2024\n\n\n\n\nLecture 18\n\n\nOctober 31, 2024\n\n\n\n\nLecture 17\n\n\nOctober 29, 2024\n\n\n\n\nLecture 16\n\n\nOctober 24, 2024\n\n\n\n\nLecture 15\n\n\nOctober 22, 2024\n\n\n\n\nLecture 14\n\n\nOctober 17, 2024\n\n\n\n\nLecture 13\n\n\nOctober 10, 2024\n\n\n\n\nLecture 12\n\n\nOctober 3, 2024\n\n\n\n\nLecture 11\n\n\nOctober 1, 2024\n\n\n\n\nLecture 10\n\n\nSeptember 26, 2024\n\n\n\n\nLecture 9\n\n\nSeptember 24, 2024\n\n\n\n\nLecture 8\n\n\nSeptember 19, 2024\n\n\n\n\nLecture 7\n\n\nSeptember 17, 2024\n\n\n\n\nLecture 6\n\n\nSeptember 12, 2024\n\n\n\n\nLecture 5\n\n\nSeptember 10, 2024\n\n\n\n\nLecture 4\n\n\nSeptember 5, 2024\n\n\n\n\nLecture 3\n\n\nSeptember 3, 2024\n\n\n\n\nLecture 2\n\n\nAugust 29, 2024\n\n\n\n\nLecture 1\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-classwork",
     "href": "index.html#bullet-classwork",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nTime Trend Plots\n\n\nNovember 5, 2024\n\n\n\n\nColor vs. Facet\n\n\nNovember 5, 2024\n\n\n\n\nRelationship Plots\n\n\nOctober 29, 2024\n\n\n\n\nMidterm Exam 1\n\n\nOctober 22, 2024\n\n\n\n\nQuiz 1 - Addendum\n\n\nOctober 21, 2024\n\n\n\n\nQuiz 1\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 1, 2024\n\n\n\n\nleft_join()\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nTime Trend Plots\n\n\nNovember 7, 2024\n\n\n\n\nColor vs. Facet\n\n\nNovember 5, 2024\n\n\n\n\nRelationship Plots\n\n\nOctober 29, 2024\n\n\n\n\nMidterm Exam 1\n\n\nOctober 22, 2024\n\n\n\n\nQuiz 1 - Addendum\n\n\nOctober 21, 2024\n\n\n\n\nQuiz 1\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 1, 2024\n\n\n\n\nleft_join()\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
     "href": "index.html#bullet-homework",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 3\n\n\nOctober 29, 2024\n\n\n\n\nHomework Assignment 2 - Example Answers\n\n\nOctober 10, 2024\n\n\n\n\nHomework Assignment 1 - Example Answers\n\n\nOctober 3, 2024\n\n\n\n\nHomework Assignment 2\n\n\nSeptember 24, 2024\n\n\n\n\nHomework Assignment 1\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 3\n\n\nNovember 6, 2024\n\n\n\n\nHomework Assignment 2 - Example Answers\n\n\nOctober 10, 2024\n\n\n\n\nHomework Assignment 1 - Example Answers\n\n\nOctober 3, 2024\n\n\n\n\nHomework Assignment 2\n\n\nSeptember 24, 2024\n\n\n\n\nHomework Assignment 1\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-101-lec.html",
@@ -3988,5 +3988,89 @@
     "title": "Lecture 18",
     "section": "Log Transformation: Reducing Clutter in Scatterplots",
     "text": "Log Transformation: Reducing Clutter in Scatterplots\nThe Use of Logarithm: Percentage Change\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOne percent increase in GDP per capita is associated with an increase in life expectancy by 0.084 year (30.66 days)!"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram",
+    "title": "Lecture 20",
+    "section": "Histogram with geom_histogram()",
+    "text": "Histogram with geom_histogram()\n\n\nHistograms are used to visualize the distribution of a numeric variable.\nHistograms divide data into bins and count the number of observations in each bin."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#data-visualization",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#data-visualization",
+    "title": "Lecture 20",
+    "section": "Data Visualization",
+    "text": "Data Visualization\nTitanic"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-1",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-1",
+    "title": "Lecture 20",
+    "section": "Histogram with geom_histogram()",
+    "text": "Histogram with geom_histogram()\n\n\ntitanic &lt;- \n  read_csv(\n    \"https://bcdanl.github.io/data/titanic_cleaned.csv\")\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram()\n\n\n\n\n\n\n\ngeom_histogram() creates a histogram.\n\nWe map the x aesthetic to the variable."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-with-bins",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-with-bins",
+    "title": "Lecture 20",
+    "section": "Histogram with geom_histogram() with bins",
+    "text": "Histogram with geom_histogram() with bins\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(bins = 5)\n\n\n\n\n\n\n\nbins: Specifies the number of bins\nThe shape of a histogram can be sensitive to the number of bins!"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-with-binwidth",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-with-binwidth",
+    "title": "Lecture 20",
+    "section": "Histogram with geom_histogram() with binwidth",
+    "text": "Histogram with geom_histogram() with binwidth\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(binwidth = 1)\n\n\n\n\n\n\n\nbinwidth: Specifies the width of each bin\nWe choose either the bins option or the binwidth option"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-2",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-2",
+    "title": "Lecture 20",
+    "section": "Histogram with geom_histogram()",
+    "text": "Histogram with geom_histogram()\nCustomizing the Aesthetics\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(\n    binwidth = 2,\n    fill = 'lightblue',\n    color = 'black')\n\n\n\n\n\n\n\nfill: Fills the bars with a specific color.\ncolor: Adds an outline of a specific color to the bars."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-3",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-3",
+    "title": "Lecture 20",
+    "section": "Histogram with geom_histogram()",
+    "text": "Histogram with geom_histogram()\nCustomizing the Appearance\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(\n    binwidth = 2,\n    fill = 'lightblue') +\n  facet_wrap(~survived)\n\n\n\n\n\n\n\nfacet_wrap() works well with any geom_*()."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot",
+    "title": "Lecture 20",
+    "section": "Boxplot with geom_boxplot()",
+    "text": "Boxplot with geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n\nBoxplots can be used to visualize how the distribution of a numeric variable varies by a categorical variable.\nBoxplots display the median, quartiles, and potential outliers in the data."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot-1",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot-1",
+    "title": "Lecture 20",
+    "section": "Boxplot with geom_boxplot()",
+    "text": "Boxplot with geom_boxplot()\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = class,\n             y = hwy)) + \n  geom_boxplot() \n\n\n\n\n\n\n\ngeom_boxplot() creates a boxplot;\n\nMappings: one numeric variable and one categorical variable to the x and y aesthetics"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot-2",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot-2",
+    "title": "Lecture 20",
+    "section": "Boxplot with geom_boxplot()",
+    "text": "Boxplot with geom_boxplot()\nHorizontal Boxplots\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = hwy,\n             y = class)) + \n  geom_boxplot() \n\n\n\n\n\n\n\nBoxplots can be horizontal or vertical.\n\nA horizontal boxplot is a good option for long category names"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot-3",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot-3",
+    "title": "Lecture 20",
+    "section": "Boxplot with geom_boxplot()",
+    "text": "Boxplot with geom_boxplot()\nCustomizing the Aesthetics\n\n\n# 1. `show.legend = FALSE` turns off \n#     the legend information\n\n# 2. `scale_fill_colorblind()` or\n#    `scale_fill_tableau()`\n#     applies a color-blind friendly \n#     palette to the `fill` aesthetic\n\nggplot(data = mpg,\n       mapping = \n         aes(x = hwy,\n             y = class,\n             fill = class)) + \n  geom_boxplot(\n    show.legend = FALSE) +\n  scale_fill_tableau() \n\n\n\n\n\n\n\nfill: Maps a variable to the fill color of the boxes.\nscale_fill_tableau(): A color-blind friendly palette to the fill aesthetic."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot-4",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot-4",
+    "title": "Lecture 20",
+    "section": "Boxplot with geom_boxplot()",
+    "text": "Boxplot with geom_boxplot()\nSorted Boxplot with fct_reorder(CATEGORICAL, NUMERICAL)\n\n\n# labs() can label\n#   x-axis, y-axis, and more\n\nggplot(data = mpg,\n       mapping = \n        aes(x = hwy,\n            y = \n             fct_reorder(class, hwy),\n            fill = class)) + \n  geom_boxplot(\n    show.legend = FALSE) +\n  scale_fill_tableau() +\n  labs(x = \"Highway MPG\",\n       y = \"Class\") \n\n\n\n\n\n\n\nfct_reorder(CATEGORICAL, NUMERICAL): Reorders the categories of the CATEGORICAL by the median of the NUMERICAL."
   }
 ]

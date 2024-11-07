@@ -82,7 +82,7 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 
 :::{.nonincremental}
 
-- Histograms are used to visualize the **distribution** of a numeric variable.
+- Histograms are used to visualize the **distribution** of a *numeric* variable.
 
 - Histograms divide data into *bins* and count the number of observations in each bin.
 
@@ -105,8 +105,8 @@ ggplot(data = titanic,
 ```
 
 
-## Data Visualization
-### Titanic
+## Histogram with `geom_histogram()`
+### Titanic Dataset
 
 ```{r}
 #| results: asis
@@ -167,7 +167,7 @@ ggplot(data = titanic,
 ```
 
 -	`binwidth`: Specifies the width of each bin
-  - We choose either the `bins` option or the `binwidth` option
+  - We choose either the `bins` option or the `binwidth` option.
 
 ## Histogram with `geom_histogram()`
 ### Customizing the Aesthetics
@@ -189,25 +189,6 @@ ggplot(data = titanic,
 -	`fill`: Fills the bars with a specific color.
 -	`color`: Adds an outline of a specific color to the bars.
 
-
-## Histogram with `geom_histogram()`
-### Customizing the Appearance
-
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column
-
-ggplot(data = titanic,
-       mapping = 
-         aes(x = age)) + 
-  geom_histogram(
-    binwidth = 2,
-    fill = 'lightblue') +
-  facet_wrap(~survived)
-```
-
--	`facet_wrap()` works well with any `geom_*()`.
 
 
 # Distribution `ggplot()` - Boxplot {background-color="#1c4982"}
@@ -268,7 +249,7 @@ ggplot(data = mpg,
   geom_boxplot() 
 ```
 - Boxplots can be **horizontal** or **vertical**. 
-  - A horizontal boxplot is a good option for long category names
+  - A horizontal boxplot is a good option for long category names.
 
 
 ## Boxplot with `geom_boxplot()`
@@ -329,12 +310,173 @@ ggplot(data = mpg,
 
 # Distribution `ggplot()` - Bar Chart {background-color="#1c4982"}
 
+## Bar Chart with `geom_bar()`
+
+:::{.nonincremental}
+
+- Bar charts are used to visualize the **distribution** of a *categorical* variable.
+
+- `geom_bar()` divides data into *bins* and count the number of observations in each bin.
+
+:::
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-align: center
+
+ggplot(data = diamonds,
+       mapping = aes(x = cut)) + 
+  geom_bar()
+```
+
+
+## Bar Chart with `geom_bar()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = diamonds,
+       mapping = aes(x = cut)) + 
+  geom_bar()
+```
+- `geom_bar()` creates a bar chart.
+  - We map the `x` or `y` aesthetic to the variable.
+
+
+## Bar Chart with `geom_bar()`
+### Horizontal Bar Chart
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = diamonds,
+       mapping = aes(y = cut)) + 
+  geom_bar()
+```
+- Bar charts can be **horizontal** or **vertical**. 
+  - A horizontal bar chart is a good option for long category names.
 
 
 
+## Bar Chart with `geom_bar()`
+### `count(CATEGORICAL)` the occurrences of each category in CATEGORICAL 
+:::{.nonincremental}
+
+- The figure below describes how this process works with `geom_bar()`.
+
+:::
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/r4s_370_1.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+- `diamonds |> count(cut)`
+
+
+## Bar Chart with `geom_bar()`
+### Customizing the Aesthetics
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = cut)) + 
+  geom_bar()
+```
+
+- We can color a bar chart using the `fill` aesthetic.
+
+
+## Bar Chart with `geom_bar()`
+### Stacked Bar Charts
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar()
+```
+
+- We can create a stacked bar chart by mapping the `fill` aesthetic to other CATEGORICAL variable.
 
 
 
+## Bar Chart with `geom_bar()`
+### Stacked Bar Charts
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "stack")
+```
+- The `stack`ing is performed automatically by the **position adjustment** specified by the `position` argument. 
+
+
+
+## Bar Chart with `geom_bar()`
+### 100% Stacked Bar Charts
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "fill") +
+  labs(y = "Proportion")
+```
+
+
+
+## Bar Chart with `geom_bar()`
+### Pie Charts: Alternative to Bar Charts?
+
+```{r}
+#| echo: false
+#| eval: true
+
+
+diamonds |>
+  count(cut) |>
+  arrange(desc(cut)) |>
+  mutate(prop = n / sum(n) * 100) |>
+  mutate(ypos = cumsum(prop) - 0.5 * prop) |>
+  ggplot(aes(x = "", y = prop, fill = cut)) +
+  geom_bar(stat = "identity", width = 1, color = "white",
+           show.legend = F) +
+  coord_polar("y", start = 0) +
+  theme_void() +
+  # geom_text(aes(y = ypos, label = paste0(cut, "\n (", round(prop, 1), "%)")), 
+  #           color = "black", size = 3.5) +
+  geom_text(aes(y = ypos, label = paste0(cut, "\n(", n, ")")), 
+            color = "black", size = 3.5) +
+  scale_fill_tableau()
+```
+
+- I recommend avoiding it!
 
 <!-- # Geometric Objects {background-color="#1c4982"} -->
 

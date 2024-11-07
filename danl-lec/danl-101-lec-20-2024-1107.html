@@ -431,22 +431,22 @@ Byeong-Hak Choe
 <h2>Histogram with <code>geom_histogram()</code></h2>
 <div>
 <ul>
-<li><p>Histograms are used to visualize the <strong>distribution</strong> of a numeric variable.</p></li>
+<li><p>Histograms are used to visualize the <strong>distribution</strong> of a <em>numeric</em> variable.</p></li>
 <li><p>Histograms divide data into <em>bins</em> and count the number of observations in each bin.</p></li>
 </ul>
 </div>
 
 <img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"></section>
-<section id="data-visualization" class="slide level2">
-<h2>Data Visualization</h2>
-<h3 id="titanic">Titanic</h3>
+<section id="histogram-with-geom_histogram-1" class="slide level2">
+<h2>Histogram with <code>geom_histogram()</code></h2>
+<h3 id="titanic-dataset">Titanic Dataset</h3>
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-1121dbeab2647defac08" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-1121dbeab2647defac08">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294","295","296","297","298","299","300","301","302","303","304","305","306","307","308","309","310","311","312","313","314","315","316","317","318","319","320","321","322","323","324","325","326","327","328","329","330","331","332","333","334","335","336","337","338","339","340","341","342","343","344","345","346","347","348","349","350","351","352","353","354","355","356","357","358","359","360","361","362","363","364","365","366","367","368","369","370","371","372","373","374","375","376","377","378","379","380","381","382","383","384","385","386","387","388","389","390","391","392","393","394","395","396","397","398","399","400","401","402","403","404","405","406","407","408","409","410","411","412","413","414","415","416","417","418","419","420","421","422","423","424","425","426","427","428","429","430","431","432","433","434","435","436","437","438","439","440","441","442","443","444","445","446","447","448","449","450","451","452","453","454","455","456","457","458","459","460","461","462","463","464","465","466","467","468","469","470","471","472","473","474","475","476","477","478","479","480","481","482","483","484","485","486","487","488","489","490","491","492","493","494","495","496","497","498","499","500","501","502","503","504","505","506","507","508","509","510","511","512","513","514","515","516","517","518","519","520","521","522","523","524","525","526","527","528","529","530","531","532","533","534","535","536","537","538","539","540","541","542","543","544","545","546","547","548","549","550","551","552","553","554","555","556","557","558","559","560","561","562","563","564","565","566","567","568","569","570","571","572","573","574","575","576","577","578","579","580","581","582","583","584","585","586","587","588","589","590","591","592","593","594","595","596","597","598","599","600","601","602","603","604","605","606","607","608","609","610","611","612","613","614","615","616","617","618","619","620","621","622","623","624","625","626","627","628","629","630","631","632","633","634","635","636","637","638","639","640","641","642","643","644","645","646","647","648","649","650","651","652","653","654","655","656","657","658","659","660","661","662","663","664","665","666","667","668","669","670","671","672","673","674","675","676","677","678","679","680","681","682","683","684","685","686","687","688","689","690","691","692","693","694","695","696","697","698","699","700","701","702","703","704","705","706","707","708","709","710","711","712","713","714","715","716","717","718","719","720","721","722","723","724","725","726","727","728","729","730","731","732","733","734","735","736","737","738","739","740","741","742","743","744","745","746","747","748","749","750","751","752","753","754","755","756"],["1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd"],[29,2,30,25,0.92,47,63,39,58,71,47,19,50,24,36,37,47,26,25,25,19,28,45,39,30,58,45,22,41,48,44,59,60,45,53,58,36,33,36,36,14,11,49,36,46,47,27,31,27,26,64,37,39,55,70,69,36,39,38,27,31,27,31,17,4,27,50,48,49,48,39,23,53,36,30,24,19,28,23,64,60,49,44,22,60,48,37,35,47,22,45,49,71,54,38,19,58,45,23,46,25,21,48,49,45,36,55,52,24,16,44,51,42,35,35,38,35,50,49,46,58,41,42,40,42,55,50,16,29,21,30,15,30,46,54,36,28,65,33,44,37,55,47,36,58,31,23,19,64,64,22,28,22,18,17,52,46,56,43,31,33,27,55,54,61,48,18,13,21,34,40,36,50,39,56,28,56,56,24,18,24,23,45,40,6,57,32,62,54,43,52,62,67,63,61,46,52,39,18,48,49,39,17,46,31,61,47,64,60,60,55,54,21,57,45,31,50,50,27,20,51,21,36,40,32,33,30,28,18,34,32,57,18,23,36,28,51,32,19,28,36,4,1,12,34,19,23,26,27,15,45,40,20,25,36,25,42,26,26,0.83,31,19,54,44,52,30,30,29,29,27,24,35,31,8,22,30,20,21,49,8,28,18,28,22,25,18,32,18,42,34,8,23,21,19,38,38,35,35,38,24,16,26,45,24,21,22,34,30,50,30,23,1,44,28,6,30,43,45,7,24,24,49,48,34,32,21,18,53,23,21,52,42,36,21,41,33,17,23,34,22,45,31,30,26,34,26,22,1,3,25,48,57,2,27,19,30,20,45,46,41,13,19,30,48,71,54,64,32,18,2,32,3,26,19,20,29,39,22,24,28,50,20,40,42,21,32,34,33,2,8,36,34,30,28,23,0.8,25,3,50,21,25,18,20,30,59,30,35,22,25,41,25,14,50,22,27,29,27,30,22,35,30,28,23,12,40,36,28,32,29,4,2,36,33,32,26,30,24,18,42,13,16,35,16,25,18,20,30,26,40,24,41,18,0.83,23,20,25,35,17,32,20,39,39,6,2,17,38,9,26,11,4,20,26,25,18,24,35,40,38,5,9,3,13,23,5,45,23,17,27,23,20,32,33,3,18,40,26,15,45,18,27,22,19,26,22,20,32,21,18,26,6,9,40,32,26,18,20,29,22,22,35,21,20,19,18,18,38,30,17,21,21,21,24,33,33,28,16,37,28,24,21,32,29,26,18,20,19,24,24,36,31,31,30,22,43,35,27,19,30,36,3,9,59,19,44,17,45,22,19,29,30,34,28,0.33,27,25,24,22,21,17,26,33,1,0.17,25,36,36,30,23,26,19,65,42,43,32,19,30,24,23,24,24,23,22,18,16,45,47,5,21,18,9,48,16,25,38,22,16,33,9,41,38,40,43,14,16,9,10,6,11,40,32,20,37,28,19,24,17,28,24,20,41,45,26,21,27,18,26,23,22,28,22,2,43,27,42,27,25,27,19,20,48,17,34,22,33,32,29,26,49,1,33,4,24,19,32,27,21,32,20,17,21,30,21,23,22,4,39,20,21,44,42,21,24,25,22,22,39,26,4,22,26,1.5,36,18,25,37,22,20,26,29,29,22,32,21,21,36,39,25,45,36,30,20,23,21,1.5,25,18,63,18,31,31,15,28,36,28,10,36,30,22,29,47,14,22,51,18,45,28,21,27,36,27,15,27,26,22,24,29],["female","female","male","female","male","male","female","male","female","male","male","female","female","male","male","male","female","male","male","male","female","male","male","male","female","female","female","female","male","male","female","female","female","male","female","female","male","male","male","female","female","male","male","male","male","female","male","female","male","female","female","male","female","female","male","female","female","male","female","male","male","female","male","female","male","female","male","female","male","female","male","female","female","female","male","female","male","female","female","male","female","male","male","female","male","female","male","female","male","female","female","male","male","male","male","female","female","female","male","male","male","female","male","female","male","female","male","female","female","female","female","female","male","female","male","male","female","female","male","male","male","male","male","female","male","female","female","female","male","female","male","female","male","male","male","male","male","male","female","male","female","male","male","male","male","female","female","female","male","male","female","male","male","male","female","male","male","female","female","male","female","female","male","female","male","female","female","male","female","male","female","male","male","female","male","male","male","male","male","female","male","female","male","female","male","male","male","male","male","female","female","female","male","female","male","female","male","female","female","male","male","female","male","male","male","male","male","male","female","male","female","male","male","male","female","female","male","female","male","female","male","male","female","male","male","male","male","female","male","male","female","male","male","male","female","male","male","male","female","male","female","female","male","female","male","female","male","male","male","female","male","female","female","male","female","male","female","male","female","male","female","male","male","female","male","male","female","male","male","male","male","male","female","female","female","female","male","male","female","male","female","male","male","female","male","male","female","female","male","female","male","male","male","male","male","female","male","male","male","female","male","male","male","male","male","male","male","male","male","male","female","male","male","male","female","male","male","female","female","female","female","male","female","male","male","male","female","female","male","female","male","male","female","male","male","male","female","female","male","female","female","male","male","female","female","male","female","female","female","male","male","female","male","male","female","male","male","male","male","female","female","male","male","male","male","male","male","male","female","male","male","male","male","male","male","female","male","male","male","male","female","male","male","female","male","female","male","female","female","female","male","male","female","female","male","male","female","male","female","female","female","female","female","female","male","female","male","male","male","male","male","male","female","male","female","male","female","male","male","female","male","female","male","female","female","female","male","female","female","female","male","male","female","male","female","male","female","male","male","male","male","female","female","male","female","male","male","male","female","male","male","female","male","male","male","male","male","male","male","male","male","female","female","female","female","female","female","male","female","male","male","male","male","female","male","male","male","female","male","male","male","male","male","female","female","male","female","male","male","male","male","female","female","female","male","male","female","female","female","female","male","male","male","male","male","male","male","male","male","male","female","male","female","male","female","female","male","male","male","male","male","female","male","female","male","male","male","male","female","male","male","male","male","male","male","female","female","male","male","male","male","male","male","male","male","male","male","male","male","male","male","female","female","male","male","male","male","male","female","male","male","male","male","male","female","male","female","male","male","female","male","female","male","male","male","male","male","male","male","male","female","male","female","male","male","female","male","male","male","female","male","male","male","male","male","female","female","female","female","male","male","female","male","male","male","male","female","female","male","female","female","male","male","female","male","female","male","male","male","male","male","female","male","female","male","female","male","male","male","male","male","male","male","male","female","female","male","female","male","male","female","male","male","male","female","female","female","female","female","female","female","male","female","male","female","female","male","female","male","male","male","male","male","male","male","male","male","male","female","male","male","female","male","male","male","female","male","female","male","male","male","male","male","male","female","male","male","female","male","male","female","male","male","male","male","male","female","female","female","male","female","female","male","male","female","female","male","male","male","male","male","male","male","female","male","male","female","female","male","female","male","female","male","female","male","female","female","female","male","female","male","male","male","male","female","male","female","male","male","male","female","male","male","male","female","male","male","male","male","male","female","male","male","male","male","male"],[true,false,false,false,true,true,true,false,true,false,false,true,true,false,false,true,true,true,false,true,true,true,false,true,true,true,true,true,false,false,true,true,true,false,true,true,true,false,true,true,true,true,false,false,false,true,true,true,false,true,true,false,true,true,false,true,true,false,true,true,false,true,true,true,true,true,false,true,true,true,false,true,true,false,false,true,false,true,true,false,true,true,true,true,true,true,false,true,false,true,true,true,false,true,false,true,true,true,true,false,true,true,true,true,false,true,false,true,true,true,true,true,false,true,true,true,true,false,true,false,false,false,true,true,false,true,true,true,false,true,false,true,false,false,false,true,false,false,true,false,true,false,false,false,false,true,true,true,false,false,true,false,false,false,true,true,false,true,true,false,true,true,false,true,false,true,true,true,true,true,true,true,false,true,true,true,false,false,false,true,true,true,true,true,true,false,true,false,true,true,true,true,false,false,false,true,false,true,true,true,false,true,true,false,true,false,false,false,true,false,true,false,false,false,true,true,false,true,false,true,false,true,true,false,false,false,false,true,false,false,true,false,false,false,true,false,false,true,true,false,true,true,true,true,true,true,false,false,false,true,false,true,true,false,true,false,true,true,true,true,true,false,false,false,false,false,false,false,false,false,true,false,true,true,false,false,false,false,true,true,true,false,false,true,false,false,true,true,false,true,true,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true,true,false,false,true,true,false,true,true,true,true,false,true,false,false,false,false,true,false,true,false,false,true,false,true,false,true,true,false,false,true,false,false,false,true,false,true,true,true,false,false,false,true,false,true,false,false,false,false,true,true,true,false,false,false,false,false,false,true,true,false,true,false,false,true,true,false,true,false,false,true,false,false,true,false,true,false,true,true,true,false,false,true,true,false,true,true,true,true,true,true,true,true,true,false,true,false,false,false,false,false,false,true,false,true,false,false,false,false,true,false,true,false,true,true,true,false,true,true,true,true,false,true,true,true,false,true,false,false,false,false,true,true,true,true,true,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true,false,true,true,true,false,false,false,false,false,false,true,true,true,false,false,true,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,true,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,true,false,false,false,false,false,true,true,true,false,false,false,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,true,true,true,false,true,true,true,false,false,true,false,false,false,false,true,true,false,true,true,true,false,true,false,false,false,false,true,false,false,false,false,false,false,true,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true,false,false,true,false,true,false,true,false,true,false,false,true,false,false,false,true,true,false,false,false,false,false,false,true,false,true,false,true,false,true,false,false,true,false,false,true,false,false,false,false,true,false,false,true,false,false,true,false,false,true,false,false,false,false,true,false,true,false,false,false,false,false,true,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,true,false,false,false,false,false,true,false,false,false,false,false]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>class<\/th>\n      <th>age<\/th>\n      <th>gender<\/th>\n      <th>survived<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"class","targets":1},{"name":"age","targets":2},{"name":"gender","targets":3},{"name":"survived","targets":4}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-66a74c9e27da827e9ec8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-66a74c9e27da827e9ec8">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294","295","296","297","298","299","300","301","302","303","304","305","306","307","308","309","310","311","312","313","314","315","316","317","318","319","320","321","322","323","324","325","326","327","328","329","330","331","332","333","334","335","336","337","338","339","340","341","342","343","344","345","346","347","348","349","350","351","352","353","354","355","356","357","358","359","360","361","362","363","364","365","366","367","368","369","370","371","372","373","374","375","376","377","378","379","380","381","382","383","384","385","386","387","388","389","390","391","392","393","394","395","396","397","398","399","400","401","402","403","404","405","406","407","408","409","410","411","412","413","414","415","416","417","418","419","420","421","422","423","424","425","426","427","428","429","430","431","432","433","434","435","436","437","438","439","440","441","442","443","444","445","446","447","448","449","450","451","452","453","454","455","456","457","458","459","460","461","462","463","464","465","466","467","468","469","470","471","472","473","474","475","476","477","478","479","480","481","482","483","484","485","486","487","488","489","490","491","492","493","494","495","496","497","498","499","500","501","502","503","504","505","506","507","508","509","510","511","512","513","514","515","516","517","518","519","520","521","522","523","524","525","526","527","528","529","530","531","532","533","534","535","536","537","538","539","540","541","542","543","544","545","546","547","548","549","550","551","552","553","554","555","556","557","558","559","560","561","562","563","564","565","566","567","568","569","570","571","572","573","574","575","576","577","578","579","580","581","582","583","584","585","586","587","588","589","590","591","592","593","594","595","596","597","598","599","600","601","602","603","604","605","606","607","608","609","610","611","612","613","614","615","616","617","618","619","620","621","622","623","624","625","626","627","628","629","630","631","632","633","634","635","636","637","638","639","640","641","642","643","644","645","646","647","648","649","650","651","652","653","654","655","656","657","658","659","660","661","662","663","664","665","666","667","668","669","670","671","672","673","674","675","676","677","678","679","680","681","682","683","684","685","686","687","688","689","690","691","692","693","694","695","696","697","698","699","700","701","702","703","704","705","706","707","708","709","710","711","712","713","714","715","716","717","718","719","720","721","722","723","724","725","726","727","728","729","730","731","732","733","734","735","736","737","738","739","740","741","742","743","744","745","746","747","748","749","750","751","752","753","754","755","756"],["1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","1st","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","2nd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd","3rd"],[29,2,30,25,0.92,47,63,39,58,71,47,19,50,24,36,37,47,26,25,25,19,28,45,39,30,58,45,22,41,48,44,59,60,45,53,58,36,33,36,36,14,11,49,36,46,47,27,31,27,26,64,37,39,55,70,69,36,39,38,27,31,27,31,17,4,27,50,48,49,48,39,23,53,36,30,24,19,28,23,64,60,49,44,22,60,48,37,35,47,22,45,49,71,54,38,19,58,45,23,46,25,21,48,49,45,36,55,52,24,16,44,51,42,35,35,38,35,50,49,46,58,41,42,40,42,55,50,16,29,21,30,15,30,46,54,36,28,65,33,44,37,55,47,36,58,31,23,19,64,64,22,28,22,18,17,52,46,56,43,31,33,27,55,54,61,48,18,13,21,34,40,36,50,39,56,28,56,56,24,18,24,23,45,40,6,57,32,62,54,43,52,62,67,63,61,46,52,39,18,48,49,39,17,46,31,61,47,64,60,60,55,54,21,57,45,31,50,50,27,20,51,21,36,40,32,33,30,28,18,34,32,57,18,23,36,28,51,32,19,28,36,4,1,12,34,19,23,26,27,15,45,40,20,25,36,25,42,26,26,0.83,31,19,54,44,52,30,30,29,29,27,24,35,31,8,22,30,20,21,49,8,28,18,28,22,25,18,32,18,42,34,8,23,21,19,38,38,35,35,38,24,16,26,45,24,21,22,34,30,50,30,23,1,44,28,6,30,43,45,7,24,24,49,48,34,32,21,18,53,23,21,52,42,36,21,41,33,17,23,34,22,45,31,30,26,34,26,22,1,3,25,48,57,2,27,19,30,20,45,46,41,13,19,30,48,71,54,64,32,18,2,32,3,26,19,20,29,39,22,24,28,50,20,40,42,21,32,34,33,2,8,36,34,30,28,23,0.8,25,3,50,21,25,18,20,30,59,30,35,22,25,41,25,14,50,22,27,29,27,30,22,35,30,28,23,12,40,36,28,32,29,4,2,36,33,32,26,30,24,18,42,13,16,35,16,25,18,20,30,26,40,24,41,18,0.83,23,20,25,35,17,32,20,39,39,6,2,17,38,9,26,11,4,20,26,25,18,24,35,40,38,5,9,3,13,23,5,45,23,17,27,23,20,32,33,3,18,40,26,15,45,18,27,22,19,26,22,20,32,21,18,26,6,9,40,32,26,18,20,29,22,22,35,21,20,19,18,18,38,30,17,21,21,21,24,33,33,28,16,37,28,24,21,32,29,26,18,20,19,24,24,36,31,31,30,22,43,35,27,19,30,36,3,9,59,19,44,17,45,22,19,29,30,34,28,0.33,27,25,24,22,21,17,26,33,1,0.17,25,36,36,30,23,26,19,65,42,43,32,19,30,24,23,24,24,23,22,18,16,45,47,5,21,18,9,48,16,25,38,22,16,33,9,41,38,40,43,14,16,9,10,6,11,40,32,20,37,28,19,24,17,28,24,20,41,45,26,21,27,18,26,23,22,28,22,2,43,27,42,27,25,27,19,20,48,17,34,22,33,32,29,26,49,1,33,4,24,19,32,27,21,32,20,17,21,30,21,23,22,4,39,20,21,44,42,21,24,25,22,22,39,26,4,22,26,1.5,36,18,25,37,22,20,26,29,29,22,32,21,21,36,39,25,45,36,30,20,23,21,1.5,25,18,63,18,31,31,15,28,36,28,10,36,30,22,29,47,14,22,51,18,45,28,21,27,36,27,15,27,26,22,24,29],["female","female","male","female","male","male","female","male","female","male","male","female","female","male","male","male","female","male","male","male","female","male","male","male","female","female","female","female","male","male","female","female","female","male","female","female","male","male","male","female","female","male","male","male","male","female","male","female","male","female","female","male","female","female","male","female","female","male","female","male","male","female","male","female","male","female","male","female","male","female","male","female","female","female","male","female","male","female","female","male","female","male","male","female","male","female","male","female","male","female","female","male","male","male","male","female","female","female","male","male","male","female","male","female","male","female","male","female","female","female","female","female","male","female","male","male","female","female","male","male","male","male","male","female","male","female","female","female","male","female","male","female","male","male","male","male","male","male","female","male","female","male","male","male","male","female","female","female","male","male","female","male","male","male","female","male","male","female","female","male","female","female","male","female","male","female","female","male","female","male","female","male","male","female","male","male","male","male","male","female","male","female","male","female","male","male","male","male","male","female","female","female","male","female","male","female","male","female","female","male","male","female","male","male","male","male","male","male","female","male","female","male","male","male","female","female","male","female","male","female","male","male","female","male","male","male","male","female","male","male","female","male","male","male","female","male","male","male","female","male","female","female","male","female","male","female","male","male","male","female","male","female","female","male","female","male","female","male","female","male","female","male","male","female","male","male","female","male","male","male","male","male","female","female","female","female","male","male","female","male","female","male","male","female","male","male","female","female","male","female","male","male","male","male","male","female","male","male","male","female","male","male","male","male","male","male","male","male","male","male","female","male","male","male","female","male","male","female","female","female","female","male","female","male","male","male","female","female","male","female","male","male","female","male","male","male","female","female","male","female","female","male","male","female","female","male","female","female","female","male","male","female","male","male","female","male","male","male","male","female","female","male","male","male","male","male","male","male","female","male","male","male","male","male","male","female","male","male","male","male","female","male","male","female","male","female","male","female","female","female","male","male","female","female","male","male","female","male","female","female","female","female","female","female","male","female","male","male","male","male","male","male","female","male","female","male","female","male","male","female","male","female","male","female","female","female","male","female","female","female","male","male","female","male","female","male","female","male","male","male","male","female","female","male","female","male","male","male","female","male","male","female","male","male","male","male","male","male","male","male","male","female","female","female","female","female","female","male","female","male","male","male","male","female","male","male","male","female","male","male","male","male","male","female","female","male","female","male","male","male","male","female","female","female","male","male","female","female","female","female","male","male","male","male","male","male","male","male","male","male","female","male","female","male","female","female","male","male","male","male","male","female","male","female","male","male","male","male","female","male","male","male","male","male","male","female","female","male","male","male","male","male","male","male","male","male","male","male","male","male","male","female","female","male","male","male","male","male","female","male","male","male","male","male","female","male","female","male","male","female","male","female","male","male","male","male","male","male","male","male","female","male","female","male","male","female","male","male","male","female","male","male","male","male","male","female","female","female","female","male","male","female","male","male","male","male","female","female","male","female","female","male","male","female","male","female","male","male","male","male","male","female","male","female","male","female","male","male","male","male","male","male","male","male","female","female","male","female","male","male","female","male","male","male","female","female","female","female","female","female","female","male","female","male","female","female","male","female","male","male","male","male","male","male","male","male","male","male","female","male","male","female","male","male","male","female","male","female","male","male","male","male","male","male","female","male","male","female","male","male","female","male","male","male","male","male","female","female","female","male","female","female","male","male","female","female","male","male","male","male","male","male","male","female","male","male","female","female","male","female","male","female","male","female","male","female","female","female","male","female","male","male","male","male","female","male","female","male","male","male","female","male","male","male","female","male","male","male","male","male","female","male","male","male","male","male"],[true,false,false,false,true,true,true,false,true,false,false,true,true,false,false,true,true,true,false,true,true,true,false,true,true,true,true,true,false,false,true,true,true,false,true,true,true,false,true,true,true,true,false,false,false,true,true,true,false,true,true,false,true,true,false,true,true,false,true,true,false,true,true,true,true,true,false,true,true,true,false,true,true,false,false,true,false,true,true,false,true,true,true,true,true,true,false,true,false,true,true,true,false,true,false,true,true,true,true,false,true,true,true,true,false,true,false,true,true,true,true,true,false,true,true,true,true,false,true,false,false,false,true,true,false,true,true,true,false,true,false,true,false,false,false,true,false,false,true,false,true,false,false,false,false,true,true,true,false,false,true,false,false,false,true,true,false,true,true,false,true,true,false,true,false,true,true,true,true,true,true,true,false,true,true,true,false,false,false,true,true,true,true,true,true,false,true,false,true,true,true,true,false,false,false,true,false,true,true,true,false,true,true,false,true,false,false,false,true,false,true,false,false,false,true,true,false,true,false,true,false,true,true,false,false,false,false,true,false,false,true,false,false,false,true,false,false,true,true,false,true,true,true,true,true,true,false,false,false,true,false,true,true,false,true,false,true,true,true,true,true,false,false,false,false,false,false,false,false,false,true,false,true,true,false,false,false,false,true,true,true,false,false,true,false,false,true,true,false,true,true,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true,true,false,false,true,true,false,true,true,true,true,false,true,false,false,false,false,true,false,true,false,false,true,false,true,false,true,true,false,false,true,false,false,false,true,false,true,true,true,false,false,false,true,false,true,false,false,false,false,true,true,true,false,false,false,false,false,false,true,true,false,true,false,false,true,true,false,true,false,false,true,false,false,true,false,true,false,true,true,true,false,false,true,true,false,true,true,true,true,true,true,true,true,true,false,true,false,false,false,false,false,false,true,false,true,false,false,false,false,true,false,true,false,true,true,true,false,true,true,true,true,false,true,true,true,false,true,false,false,false,false,true,true,true,true,true,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true,false,true,true,true,false,false,false,false,false,false,true,true,true,false,false,true,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,true,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,true,false,false,false,false,false,true,true,true,false,false,false,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,true,true,true,false,true,true,true,false,false,true,false,false,false,false,true,true,false,true,true,true,false,true,false,false,false,false,true,false,false,false,false,false,false,true,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true,false,false,true,false,true,false,true,false,true,false,false,true,false,false,false,true,true,false,false,false,false,false,false,true,false,true,false,true,false,true,false,false,true,false,false,true,false,false,false,false,true,false,false,true,false,false,true,false,false,true,false,false,false,false,true,false,true,false,false,false,false,false,true,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,true,false,false,false,false,false,true,false,false,false,false,false]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>class<\/th>\n      <th>age<\/th>\n      <th>gender<\/th>\n      <th>survived<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"class","targets":1},{"name":"age","targets":2},{"name":"gender","targets":3},{"name":"survived","targets":4}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </section>
-<section id="histogram-with-geom_histogram-1" class="slide level2">
+<section id="histogram-with-geom_histogram-2" class="slide level2">
 <h2>Histogram with <code>geom_histogram()</code></h2>
 <div class="cell columns column-output-location" data-fig.asp="0.85">
 <div class="column">
@@ -506,10 +506,10 @@ Byeong-Hak Choe
 </div>
 <ul>
 <li class="fragment"><code>binwidth</code>: Specifies the width of each bin</li>
-<li class="fragment">We choose either the <code>bins</code> option or the <code>binwidth</code> option</li>
+<li class="fragment">We choose either the <code>bins</code> option or the <code>binwidth</code> option.</li>
 </ul>
 </section>
-<section id="histogram-with-geom_histogram-2" class="slide level2">
+<section id="histogram-with-geom_histogram-3" class="slide level2">
 <h2>Histogram with <code>geom_histogram()</code></h2>
 <h3 id="customizing-the-aesthetics">Customizing the Aesthetics</h3>
 <div class="cell columns column-output-location" data-fig.asp="0.85">
@@ -530,28 +530,6 @@ Byeong-Hak Choe
 <ul>
 <li class="fragment"><code>fill</code>: Fills the bars with a specific color.</li>
 <li class="fragment"><code>color</code>: Adds an outline of a specific color to the bars.</li>
-</ul>
-</section>
-<section id="histogram-with-geom_histogram-3" class="slide level2">
-<h2>Histogram with <code>geom_histogram()</code></h2>
-<h3 id="customizing-the-appearance">Customizing the Appearance</h3>
-<div class="cell columns column-output-location" data-fig.asp="0.85">
-<div class="column">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> titanic,</span>
-<span id="cb5-2"><a href="#cb5-2"></a>       <span class="at">mapping =</span> </span>
-<span id="cb5-3"><a href="#cb5-3"></a>         <span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span> </span>
-<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb5-5"><a href="#cb5-5"></a>    <span class="at">binwidth =</span> <span class="dv">2</span>,</span>
-<span id="cb5-6"><a href="#cb5-6"></a>    <span class="at">fill =</span> <span class="st">'lightblue'</span>) <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>survived)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column">
-<div class="cell-output-display">
-<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment"><code>facet_wrap()</code> works well with any <code>geom_*()</code>.</li>
 </ul>
 </section></section>
 <section>
@@ -582,14 +560,14 @@ Byeong-Hak Choe
 <h2>Boxplot with <code>geom_boxplot()</code></h2>
 <div class="cell columns column-output-location" data-fig.asp="0.85">
 <div class="column">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb6-2"><a href="#cb6-2"></a>       <span class="at">mapping =</span> </span>
-<span id="cb6-3"><a href="#cb6-3"></a>         <span class="fu">aes</span>(<span class="at">x =</span> class,</span>
-<span id="cb6-4"><a href="#cb6-4"></a>             <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">geom_boxplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
+<span id="cb5-2"><a href="#cb5-2"></a>       <span class="at">mapping =</span> </span>
+<span id="cb5-3"><a href="#cb5-3"></a>         <span class="fu">aes</span>(<span class="at">x =</span> class,</span>
+<span id="cb5-4"><a href="#cb5-4"></a>             <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">geom_boxplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
-<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -605,21 +583,21 @@ Byeong-Hak Choe
 <h3 id="horizontal-boxplots">Horizontal Boxplots</h3>
 <div class="cell columns column-output-location" data-fig.asp="0.85">
 <div class="column">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb7-2"><a href="#cb7-2"></a>       <span class="at">mapping =</span> </span>
-<span id="cb7-3"><a href="#cb7-3"></a>         <span class="fu">aes</span>(<span class="at">x =</span> hwy,</span>
-<span id="cb7-4"><a href="#cb7-4"></a>             <span class="at">y =</span> class)) <span class="sc">+</span> </span>
-<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">geom_boxplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
+<span id="cb6-2"><a href="#cb6-2"></a>       <span class="at">mapping =</span> </span>
+<span id="cb6-3"><a href="#cb6-3"></a>         <span class="fu">aes</span>(<span class="at">x =</span> hwy,</span>
+<span id="cb6-4"><a href="#cb6-4"></a>             <span class="at">y =</span> class)) <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">geom_boxplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
-<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
 </div>
 </div>
 </div>
 <ul>
 <li class="fragment">Boxplots can be <strong>horizontal</strong> or <strong>vertical</strong>.
 <ul>
-<li class="fragment">A horizontal boxplot is a good option for long category names</li>
+<li class="fragment">A horizontal boxplot is a good option for long category names.</li>
 </ul></li>
 </ul>
 </section>
@@ -628,25 +606,25 @@ Byeong-Hak Choe
 <h3 id="customizing-the-aesthetics-1">Customizing the Aesthetics</h3>
 <div class="cell columns column-output-location" data-fig.asp="0.85">
 <div class="column">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># 1. `show.legend = FALSE` turns off </span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="co">#     the legend information</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># 2. `scale_fill_colorblind()` or</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#    `scale_fill_tableau()`</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="co">#     applies a color-blind friendly </span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="co">#     palette to the `fill` aesthetic</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb8-10"><a href="#cb8-10"></a>       <span class="at">mapping =</span> </span>
-<span id="cb8-11"><a href="#cb8-11"></a>         <span class="fu">aes</span>(<span class="at">x =</span> hwy,</span>
-<span id="cb8-12"><a href="#cb8-12"></a>             <span class="at">y =</span> class,</span>
-<span id="cb8-13"><a href="#cb8-13"></a>             <span class="at">fill =</span> class)) <span class="sc">+</span> </span>
-<span id="cb8-14"><a href="#cb8-14"></a>  <span class="fu">geom_boxplot</span>(</span>
-<span id="cb8-15"><a href="#cb8-15"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb8-16"><a href="#cb8-16"></a>  <span class="fu">scale_fill_tableau</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># 1. `show.legend = FALSE` turns off </span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="co">#     the legend information</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># 2. `scale_fill_colorblind()` or</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co">#    `scale_fill_tableau()`</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co">#     applies a color-blind friendly </span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co">#     palette to the `fill` aesthetic</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
+<span id="cb7-10"><a href="#cb7-10"></a>       <span class="at">mapping =</span> </span>
+<span id="cb7-11"><a href="#cb7-11"></a>         <span class="fu">aes</span>(<span class="at">x =</span> hwy,</span>
+<span id="cb7-12"><a href="#cb7-12"></a>             <span class="at">y =</span> class,</span>
+<span id="cb7-13"><a href="#cb7-13"></a>             <span class="at">fill =</span> class)) <span class="sc">+</span> </span>
+<span id="cb7-14"><a href="#cb7-14"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb7-15"><a href="#cb7-15"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">scale_fill_tableau</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
-<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -660,23 +638,23 @@ Byeong-Hak Choe
 <h3 id="sorted-boxplot-with-fct_reordercategorical-numerical">Sorted Boxplot with <code>fct_reorder(CATEGORICAL, NUMERICAL)</code></h3>
 <div class="cell columns column-output-location" data-fig.asp="0.85">
 <div class="column">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># labs() can label</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="co">#   x-axis, y-axis, and more</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb9-5"><a href="#cb9-5"></a>       <span class="at">mapping =</span> </span>
-<span id="cb9-6"><a href="#cb9-6"></a>        <span class="fu">aes</span>(<span class="at">x =</span> hwy,</span>
-<span id="cb9-7"><a href="#cb9-7"></a>            <span class="at">y =</span> </span>
-<span id="cb9-8"><a href="#cb9-8"></a>             <span class="fu">fct_reorder</span>(class, hwy),</span>
-<span id="cb9-9"><a href="#cb9-9"></a>            <span class="at">fill =</span> class)) <span class="sc">+</span> </span>
-<span id="cb9-10"><a href="#cb9-10"></a>  <span class="fu">geom_boxplot</span>(</span>
-<span id="cb9-11"><a href="#cb9-11"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb9-12"><a href="#cb9-12"></a>  <span class="fu">scale_fill_tableau</span>() <span class="sc">+</span></span>
-<span id="cb9-13"><a href="#cb9-13"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Highway MPG"</span>,</span>
-<span id="cb9-14"><a href="#cb9-14"></a>       <span class="at">y =</span> <span class="st">"Class"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># labs() can label</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="co">#   x-axis, y-axis, and more</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
+<span id="cb8-5"><a href="#cb8-5"></a>       <span class="at">mapping =</span> </span>
+<span id="cb8-6"><a href="#cb8-6"></a>        <span class="fu">aes</span>(<span class="at">x =</span> hwy,</span>
+<span id="cb8-7"><a href="#cb8-7"></a>            <span class="at">y =</span> </span>
+<span id="cb8-8"><a href="#cb8-8"></a>             <span class="fu">fct_reorder</span>(class, hwy),</span>
+<span id="cb8-9"><a href="#cb8-9"></a>            <span class="at">fill =</span> class)) <span class="sc">+</span> </span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb8-11"><a href="#cb8-11"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>  <span class="fu">scale_fill_tableau</span>() <span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Highway MPG"</span>,</span>
+<span id="cb8-14"><a href="#cb8-14"></a>       <span class="at">y =</span> <span class="st">"Class"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
-<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -684,8 +662,164 @@ Byeong-Hak Choe
 <li class="fragment"><code>fct_reorder(CATEGORICAL, NUMERICAL)</code>: Reorders the categories of the CATEGORICAL by the median of the NUMERICAL.</li>
 </ul>
 </section></section>
+<section>
 <section id="distribution-ggplot---bar-chart" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1>Distribution <code>ggplot()</code> - Bar Chart</h1>
+
+</section>
+<section id="bar-chart-with-geom_bar" class="slide level2">
+<h2>Bar Chart with <code>geom_bar()</code></h2>
+<div>
+<ul>
+<li><p>Bar charts are used to visualize the <strong>distribution</strong> of a <em>categorical</em> variable.</p></li>
+<li><p><code>geom_bar()</code> divides data into <em>bins</em> and count the number of observations in each bin.</p></li>
+</ul>
+</div>
+
+<img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="bar-chart-with-geom_bar-1" class="slide level2">
+<h2>Bar Chart with <code>geom_bar()</code></h2>
+<div class="cell columns column-output-location" data-fig.asp="0.85">
+<div class="column">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds,</span>
+<span id="cb9-2"><a href="#cb9-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cut)) <span class="sc">+</span> </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment">
+<div class="cell-output-display">
+<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment"><code>geom_bar()</code> creates a bar chart.
+<ul>
+<li class="fragment">We map the <code>x</code> or <code>y</code> aesthetic to the variable.</li>
+</ul></li>
+</ul>
+</section>
+<section id="bar-chart-with-geom_bar-2" class="slide level2">
+<h2>Bar Chart with <code>geom_bar()</code></h2>
+<h3 id="horizontal-bar-chart">Horizontal Bar Chart</h3>
+<div class="cell columns column-output-location" data-fig.asp="0.85">
+<div class="column">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds,</span>
+<span id="cb10-2"><a href="#cb10-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> cut)) <span class="sc">+</span> </span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment">
+<div class="cell-output-display">
+<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Bar charts can be <strong>horizontal</strong> or <strong>vertical</strong>.
+<ul>
+<li class="fragment">A horizontal bar chart is a good option for long category names.</li>
+</ul></li>
+</ul>
+</section>
+<section id="bar-chart-with-geom_bar-3" class="slide level2">
+<h2>Bar Chart with <code>geom_bar()</code></h2>
+<h3 id="countcategorical-the-occurrences-of-each-category-in-categorical"><code>count(CATEGORICAL)</code> the occurrences of each category in CATEGORICAL</h3>
+<div>
+<ul>
+<li>The figure below describes how this process works with <code>geom_bar()</code>.</li>
+</ul>
+</div>
+<div style="text-align: center; width: 100%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/r4s_370_1.png" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+<ul>
+<li class="fragment"><code>diamonds |&gt; count(cut)</code></li>
+</ul>
+</section>
+<section id="bar-chart-with-geom_bar-4" class="slide level2">
+<h2>Bar Chart with <code>geom_bar()</code></h2>
+<h3 id="customizing-the-aesthetics-2">Customizing the Aesthetics</h3>
+<div class="cell columns column-output-location" data-fig.asp="0.85">
+<div class="column">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds,</span>
+<span id="cb11-2"><a href="#cb11-2"></a>       <span class="at">mapping =</span> </span>
+<span id="cb11-3"><a href="#cb11-3"></a>         <span class="fu">aes</span>(<span class="at">x =</span> cut, </span>
+<span id="cb11-4"><a href="#cb11-4"></a>             <span class="at">fill =</span> cut)) <span class="sc">+</span> </span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">We can color a bar chart using the <code>fill</code> aesthetic.</li>
+</ul>
+</section>
+<section id="bar-chart-with-geom_bar-5" class="slide level2">
+<h2>Bar Chart with <code>geom_bar()</code></h2>
+<h3 id="stacked-bar-charts">Stacked Bar Charts</h3>
+<div class="cell columns column-output-location" data-fig.asp="0.85">
+<div class="column">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds,</span>
+<span id="cb12-2"><a href="#cb12-2"></a>       <span class="at">mapping =</span> </span>
+<span id="cb12-3"><a href="#cb12-3"></a>         <span class="fu">aes</span>(<span class="at">x =</span> cut, </span>
+<span id="cb12-4"><a href="#cb12-4"></a>             <span class="at">fill =</span> clarity)) <span class="sc">+</span> </span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">We can create a stacked bar chart by mapping the <code>fill</code> aesthetic to other CATEGORICAL variable.</li>
+</ul>
+</section>
+<section id="bar-chart-with-geom_bar-6" class="slide level2">
+<h2>Bar Chart with <code>geom_bar()</code></h2>
+<h3 id="stacked-bar-charts-1">Stacked Bar Charts</h3>
+<div class="cell columns column-output-location" data-fig.asp="0.85">
+<div class="column">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds,</span>
+<span id="cb13-2"><a href="#cb13-2"></a>       <span class="at">mapping =</span> </span>
+<span id="cb13-3"><a href="#cb13-3"></a>         <span class="fu">aes</span>(<span class="at">x =</span> cut, </span>
+<span id="cb13-4"><a href="#cb13-4"></a>             <span class="at">fill =</span> clarity)) <span class="sc">+</span> </span>
+<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"stack"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">The <code>stack</code>ing is performed automatically by the <strong>position adjustment</strong> specified by the <code>position</code> argument.</li>
+</ul>
+</section>
+<section id="bar-chart-with-geom_bar-7" class="slide level2">
+<h2>Bar Chart with <code>geom_bar()</code></h2>
+<h3 id="stacked-bar-charts-2">100% Stacked Bar Charts</h3>
+<div class="cell columns column-output-location" data-fig.asp="0.85">
+<div class="column">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds,</span>
+<span id="cb14-2"><a href="#cb14-2"></a>       <span class="at">mapping =</span> </span>
+<span id="cb14-3"><a href="#cb14-3"></a>         <span class="fu">aes</span>(<span class="at">x =</span> cut, </span>
+<span id="cb14-4"><a href="#cb14-4"></a>             <span class="at">fill =</span> clarity)) <span class="sc">+</span> </span>
+<span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="bar-chart-with-geom_bar-8" class="slide level2">
+<h2>Bar Chart with <code>geom_bar()</code></h2>
+<h3 id="pie-charts-alternative-to-bar-charts">Pie Charts: Alternative to Bar Charts?</h3>
+
+<img data-src="danl-101-lec-20-2024-1107_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"><ul>
+<li class="fragment">I recommend avoiding it!</li>
+</ul>
 <!-- # Geometric Objects {background-color="#1c4982"} -->
 <!-- ## Geometric Objects -->
 <!-- - In order to keep things simple, we'll focus only on six different types of geometric objects, each with a commonly given name: -->
@@ -699,7 +833,7 @@ Byeong-Hak Choe
 <div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

@@ -4008,7 +4008,7 @@
     "href": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-1",
     "title": "Lecture 20",
     "section": "Histogram with geom_histogram()",
-    "text": "Histogram with geom_histogram()\n\n\ntitanic &lt;- \n  read_csv(\n    \"https://bcdanl.github.io/data/titanic_cleaned.csv\")\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram()\n\n\n\n\n\n\n\ngeom_histogram() creates a histogram.\n\nWe map the x aesthetic to the variable."
+    "text": "Histogram with geom_histogram()\nTitanic Dataset"
   },
   {
     "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-with-bins",
@@ -4022,21 +4022,21 @@
     "href": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-with-binwidth",
     "title": "Lecture 20",
     "section": "Histogram with geom_histogram() with binwidth",
-    "text": "Histogram with geom_histogram() with binwidth\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(binwidth = 1)\n\n\n\n\n\n\n\nbinwidth: Specifies the width of each bin\nWe choose either the bins option or the binwidth option"
+    "text": "Histogram with geom_histogram() with binwidth\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(binwidth = 1)\n\n\n\n\n\n\n\nbinwidth: Specifies the width of each bin\nWe choose either the bins option or the binwidth option."
   },
   {
     "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-2",
     "href": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-2",
     "title": "Lecture 20",
     "section": "Histogram with geom_histogram()",
-    "text": "Histogram with geom_histogram()\nCustomizing the Aesthetics\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(\n    binwidth = 2,\n    fill = 'lightblue',\n    color = 'black')\n\n\n\n\n\n\n\nfill: Fills the bars with a specific color.\ncolor: Adds an outline of a specific color to the bars."
+    "text": "Histogram with geom_histogram()\n\n\ntitanic &lt;- \n  read_csv(\n    \"https://bcdanl.github.io/data/titanic_cleaned.csv\")\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram()\n\n\n\n\n\n\n\ngeom_histogram() creates a histogram.\n\nWe map the x aesthetic to the variable."
   },
   {
     "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-3",
     "href": "danl-lec/danl-101-lec-20-2024-1107.html#histogram-with-geom_histogram-3",
     "title": "Lecture 20",
     "section": "Histogram with geom_histogram()",
-    "text": "Histogram with geom_histogram()\nCustomizing the Appearance\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(\n    binwidth = 2,\n    fill = 'lightblue') +\n  facet_wrap(~survived)\n\n\n\n\n\n\n\nfacet_wrap() works well with any geom_*()."
+    "text": "Histogram with geom_histogram()\nCustomizing the Aesthetics\n\n\nggplot(data = titanic,\n       mapping = \n         aes(x = age)) + \n  geom_histogram(\n    binwidth = 2,\n    fill = 'lightblue',\n    color = 'black')\n\n\n\n\n\n\n\nfill: Fills the bars with a specific color.\ncolor: Adds an outline of a specific color to the bars."
   },
   {
     "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot",
@@ -4057,7 +4057,7 @@
     "href": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot-2",
     "title": "Lecture 20",
     "section": "Boxplot with geom_boxplot()",
-    "text": "Boxplot with geom_boxplot()\nHorizontal Boxplots\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = hwy,\n             y = class)) + \n  geom_boxplot() \n\n\n\n\n\n\n\nBoxplots can be horizontal or vertical.\n\nA horizontal boxplot is a good option for long category names"
+    "text": "Boxplot with geom_boxplot()\nHorizontal Boxplots\n\n\nggplot(data = mpg,\n       mapping = \n         aes(x = hwy,\n             y = class)) + \n  geom_boxplot() \n\n\n\n\n\n\n\nBoxplots can be horizontal or vertical.\n\nA horizontal boxplot is a good option for long category names."
   },
   {
     "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#boxplot-with-geom_boxplot-3",
@@ -4072,5 +4072,68 @@
     "title": "Lecture 20",
     "section": "Boxplot with geom_boxplot()",
     "text": "Boxplot with geom_boxplot()\nSorted Boxplot with fct_reorder(CATEGORICAL, NUMERICAL)\n\n\n# labs() can label\n#   x-axis, y-axis, and more\n\nggplot(data = mpg,\n       mapping = \n        aes(x = hwy,\n            y = \n             fct_reorder(class, hwy),\n            fill = class)) + \n  geom_boxplot(\n    show.legend = FALSE) +\n  scale_fill_tableau() +\n  labs(x = \"Highway MPG\",\n       y = \"Class\") \n\n\n\n\n\n\n\nfct_reorder(CATEGORICAL, NUMERICAL): Reorders the categories of the CATEGORICAL by the median of the NUMERICAL."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar",
+    "title": "Lecture 20",
+    "section": "Bar Chart with geom_bar()",
+    "text": "Bar Chart with geom_bar()\n\n\nBar charts are used to visualize the distribution of a categorical variable.\ngeom_bar() divides data into bins and count the number of observations in each bin."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-1",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-1",
+    "title": "Lecture 20",
+    "section": "Bar Chart with geom_bar()",
+    "text": "Bar Chart with geom_bar()\n\n\nggplot(data = diamonds,\n       mapping = aes(x = cut)) + \n  geom_bar()\n\n\n\n\n\n\n\ngeom_bar() creates a bar chart.\n\nWe map the x or y aesthetic to the variable."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-2",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-2",
+    "title": "Lecture 20",
+    "section": "Bar Chart with geom_bar()",
+    "text": "Bar Chart with geom_bar()\nHorizontal Bar Chart\n\n\nggplot(data = diamonds,\n       mapping = aes(y = cut)) + \n  geom_bar()\n\n\n\n\n\n\n\nBar charts can be horizontal or vertical.\n\nA horizontal bar chart is a good option for long category names."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-3",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-3",
+    "title": "Lecture 20",
+    "section": "Bar Chart with geom_bar()",
+    "text": "Bar Chart with geom_bar()\ncount(CATEGORICAL) the occurrences of each category in CATEGORICAL\n\n\nThe figure below describes how this process works with geom_bar().\n\n\n\n\n\n\n\n\ndiamonds |&gt; count(cut)"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-4",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-4",
+    "title": "Lecture 20",
+    "section": "Bar Chart with geom_bar()",
+    "text": "Bar Chart with geom_bar()\nCustomizing the Aesthetics\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = cut)) + \n  geom_bar()\n\n\n\n\n\n\n\nWe can color a bar chart using the fill aesthetic."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-5",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-5",
+    "title": "Lecture 20",
+    "section": "Bar Chart with geom_bar()",
+    "text": "Bar Chart with geom_bar()\nStacked Bar Charts\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar()\n\n\n\n\n\n\n\nWe can create a stacked bar chart by mapping the fill aesthetic to other CATEGORICAL variable."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-6",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-6",
+    "title": "Lecture 20",
+    "section": "Bar Chart with geom_bar()",
+    "text": "Bar Chart with geom_bar()\nStacked Bar Charts\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar(position = \"stack\")\n\n\n\n\n\n\n\nThe stacking is performed automatically by the position adjustment specified by the position argument."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-7",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-7",
+    "title": "Lecture 20",
+    "section": "Bar Chart with geom_bar()",
+    "text": "Bar Chart with geom_bar()\n100% Stacked Bar Charts\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar(position = \"fill\") +\n  labs(y = \"Proportion\")"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-8",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-8",
+    "title": "Lecture 20",
+    "section": "Bar Chart with geom_bar()",
+    "text": "Bar Chart with geom_bar()\nPie Charts: Alternative to Bar Charts?\n\n\nI recommend avoiding it!"
   }
 ]

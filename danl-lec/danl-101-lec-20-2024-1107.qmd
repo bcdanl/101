@@ -620,10 +620,9 @@ diamonds |>
 ## Pie Charts: Alternative to Bar Charts?
 :::{.nonincremental}
 
-- Pie charts are only rarely the best option for your data.
-  - Humans are better at judging lengths than angles.
-  - It is sometimes a good idea to use a pie chart.
-
+- Humans are better at judging lengths than angles.
+  - However, it is sometimes a good idea to use a pie chart.
+  
 1. Pie charts work well only if you only have a few categories---four max.
 
 2. Pie charts work well if the goal is to emphasize simple fractions (e.g., 25%, 50%, or 75%). 

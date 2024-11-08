@@ -37,6 +37,7 @@ library(hrbrthemes)
 library(viridis)
 library(rmarkdown)
 library(gapminder)
+library(ggrepel)
 
 titanic <- read_csv("https://bcdanl.github.io/data/titanic_cleaned.csv")
 oj <- read_csv("https://bcdanl.github.io/data/dominick_oj_feat.csv")
@@ -262,12 +263,12 @@ ggplot(data = mpg,
 
 # 1. `show.legend = FALSE` turns off 
 #     the legend information
-
 # 2. `scale_fill_colorblind()` or
 #    `scale_fill_tableau()`
 #     applies a color-blind friendly 
 #     palette to the `fill` aesthetic
-
+# To use the scale_fill_tableau():
+library(ggthemes) 
 ggplot(data = mpg,
        mapping = 
          aes(x = hwy,
@@ -331,6 +332,20 @@ ggplot(data = diamonds,
 ```
 
 
+
+## Bar Chart with `geom_bar()`
+### Diamond Dataset
+
+```{r}
+#| results: asis
+DT::datatable(diamonds, options = list(
+  pageLength = 5
+))
+```
+
+
+
+
 ## Bar Chart with `geom_bar()`
 
 ```{r}
@@ -343,7 +358,7 @@ ggplot(data = diamonds,
   geom_bar()
 ```
 - `geom_bar()` creates a bar chart.
-  - We map the `x` or `y` aesthetic to the variable.
+  - We map either the `x` or `y` aesthetic to the variable.
 
 
 ## Bar Chart with `geom_bar()`
@@ -358,15 +373,15 @@ ggplot(data = diamonds,
   geom_bar()
 ```
 - Bar charts can be **horizontal** or **vertical**. 
-  - A horizontal bar chart is a good option for long category names.
+  - A horizontal bar chart is a good option for *long category names*.
 
 
 
 ## Bar Chart with `geom_bar()`
-### `count(CATEGORICAL)` the occurrences of each category in CATEGORICAL 
+### Counting Occurrences of Each Category in a Categorical Variable
 :::{.nonincremental}
 
-- The figure below describes how this process works with `geom_bar()`.
+- The figure below demonstrates how the counting process works with `geom_bar()`.
 
 :::
 
@@ -375,11 +390,49 @@ ggplot(data = diamonds,
   <p style="font-weight: bold;"></p>
 </div>
 
-- `diamonds |> count(cut)`
+
+
+## `count()`: Counting Occurrences of Each Category in a Categorical Variable
+
+
+```{.r}
+DATA.FRAME |> count(CATERIGOCAL_VARIABLE)
+```
+
+:::{.nonincremental}
+
+- The data transformation function `count()` is a quick and efficient way to calculate the frequency of each unique value in a categorical variable.
+
+:::	
+
+
+```{.r}
+diamonds |> count(cut)
+```
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| results: asis
+
+DT::datatable(diamonds |> count(cut),
+              options = list(dom = 't'))
+```
+:::
+::: {.column width="50%"}
+
+- `diamonds |> count(cut)` returns the **data.frame** with the two variables, `cut` and `n`:
+  - The occurrences of each unique value in the `cut` variable in the `diamonds` data.frame
+
+:::
+::::
 
 
 ## Bar Chart with `geom_bar()`
-### Customizing the Aesthetics
+### Colorful Bar Chart with the `fill` Aesthetic
 
 ```{r}
 #| echo: true
@@ -390,19 +443,27 @@ ggplot(data = diamonds,
        mapping = 
          aes(x = cut, 
              fill = cut)) + 
-  geom_bar()
+  geom_bar(
+    show.legend = FALSE
+    ) 
 ```
 
 - We can color a bar chart using the `fill` aesthetic.
 
 
+
+
 ## Bar Chart with `geom_bar()`
-### Stacked Bar Charts
+### Stacked Bar Charts using the `fill` Aesthetic
 
 ```{r}
 #| echo: true
 #| fig-asp: .85
 #| output-location: column
+
+# Mapping the `fill` aesthetic 
+# to other CATEGORICAL variable
+# gives a stacked bar chart
 
 ggplot(data = diamonds,
        mapping = 
@@ -411,30 +472,12 @@ ggplot(data = diamonds,
   geom_bar()
 ```
 
-- We can create a stacked bar chart by mapping the `fill` aesthetic to other CATEGORICAL variable.
+- This describes how the distribution of `clarity` varies by `cut`.
 
 
 
 ## Bar Chart with `geom_bar()`
-### Stacked Bar Charts
-
-```{r}
-#| echo: true
-#| fig-asp: .85
-#| output-location: column
-
-ggplot(data = diamonds,
-       mapping = 
-         aes(x = cut, 
-             fill = clarity)) + 
-  geom_bar(position = "stack")
-```
-- The `stack`ing is performed automatically by the **position adjustment** specified by the `position` argument. 
-
-
-
-## Bar Chart with `geom_bar()`
-### 100% Stacked Bar Charts
+### 100% Stacked Bar Charts using the `fill` Aesthetic and the `position = "fill"`
 
 ```{r}
 #| echo: true
@@ -451,13 +494,73 @@ ggplot(data = diamonds,
 
 
 
+
 ## Bar Chart with `geom_bar()`
-### Pie Charts: Alternative to Bar Charts?
+### Clustered Bar Charts using the `fill` Aesthetic and the `position = "dodge"`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "dodge")
+```
+
+
+## Bar Chart with `geom_bar()`
+### Stacked Bar Charts using the `fill` Aesthetic and the `position = "stack"`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "stack")
+```
+- The default `position` option is `position = "stack"`
+
+
+
+
+## Pie Charts: Alternative to Bar Charts?
+
+<div style="display:block; margin:-20px;"></div>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<div style="display:block; margin:20px;"></div>
 
 ```{r}
 #| echo: false
 #| eval: true
 
+diamonds |> 
+  count(cut) |> 
+  mutate(prop = n/sum(n)) |> 
+  ggplot(mapping = 
+           aes(x = cut, 
+               y = prop,
+               fill = cut)) + 
+  geom_col(show.legend = F) +
+  scale_y_percent() +
+  labs(y = "")
+```
+
+:::
+::: {.column width="55%"}
+
+```{r}
+#| echo: false
+#| eval: true
 
 diamonds |>
   count(cut) |>
@@ -465,27 +568,98 @@ diamonds |>
   mutate(prop = n / sum(n) * 100) |>
   mutate(ypos = cumsum(prop) - 0.5 * prop) |>
   ggplot(aes(x = "", y = prop, fill = cut)) +
-  geom_bar(stat = "identity", width = 1, color = "white",
-           show.legend = F) +
+  geom_bar(stat = "identity", width = 1, color = "white", show.legend = FALSE) +
+  geom_text(aes(y = ypos, label = ifelse(cut %in% c("Good", "Fair"), "", 
+                                         paste0(cut, "\n (", round(prop, 1), "%)"))),
+            color = "black", size = 4) +
+  geom_text_repel(aes(y = ypos, label = ifelse(cut %in% c("Good", "Fair"), 
+                                                paste0(cut, "\n (", round(prop, 1), "%)"), "")),
+                   nudge_x = 0.75, color = "black", size = 4, box.padding = 0.5, 
+                   show.legend = FALSE) +
   coord_polar("y", start = 0) +
   theme_void() +
-  # geom_text(aes(y = ypos, label = paste0(cut, "\n (", round(prop, 1), "%)")), 
-  #           color = "black", size = 3.5) +
-  geom_text(aes(y = ypos, label = paste0(cut, "\n(", n, ")")), 
-            color = "black", size = 3.5) +
-  scale_fill_tableau()
+  theme(strip.background = element_rect(fill = "lightgray"))
 ```
+:::
+::::
 
-- I recommend avoiding it!
 
-<!-- # Geometric Objects {background-color="#1c4982"} -->
+:::: {.columns}
 
-<!-- ## Geometric Objects -->
-<!-- - In order to keep things simple, we'll focus only on six different types of geometric objects, each with a commonly given name: -->
-<!--   - Scatterplot with `geom_point()` -->
-<!--   - Fitted curve/line with `geom_smooth()` -->
-<!--   - Histogram with `geom_histogram()` -->
-<!--   - Bar chart with `geom_bar()` -->
-<!--   - Boxplot with `geom_boxplot()` -->
-<!--   - Lineplot with `geom_line()` -->
+::: {.column width="45%"}
 
+```{r}
+#| echo: false
+#| eval: true
+diamonds |> 
+  mutate(cat = "") |> 
+  ggplot(mapping = 
+           aes(y = cat, 
+               fill = cut)) + 
+  geom_bar(position = "fill") +
+  labs(x = "", y = "", fill = "Cut") +
+  scale_x_percent()
+```
+:::
+
+::: {.column width="55%"}
+
+:::{.nonincremental}
+
+- **Pie charts** show the proportions of a whole. 
+  - Each slice represents a part of the total.
+  - Is a pie chart a proper alternative to a bar chart?
+
+:::  
+:::
+
+
+::::
+
+
+## Pie Charts: Alternative to Bar Charts?
+:::{.nonincremental}
+
+- Pie charts are only rarely the best option for your data.
+  - Humans are better at judging lengths than angles.
+  - It is sometimes a good idea to use a pie chart.
+
+1. Pie charts work well only if you only have a few categories---four max.
+
+2. Pie charts work well if the goal is to emphasize simple fractions (e.g., 25%, 50%, or 75%). 
+
+<div style="text-align: center; width: 45%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/pie-vs-bar-1.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+:::
+
+## Pie Charts: Alternative to Bar Charts?
+::::{.nonincremental}
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+3. Pie charts are not the best choice if you want audiences to compare the size of shares.
+
+<div style="display:block; margin:40px;"></div>
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/pie-vs-bar-2.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+:::
+
+::: {.column width="50%"}
+
+4. Pie charts are not the best choice if you want audiences to compare the distribution across categories.
+
+<div style="display:block; margin:40px;"></div>
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/pie-vs-bar-3.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+:::
+::::
+
+::::

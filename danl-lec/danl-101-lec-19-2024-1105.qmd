@@ -321,7 +321,7 @@ ggplot( data = nvda,
 
 
 ## Time Trend `ggplot()`
-### NVDA Stock Price
+### Tech Stocks' Prices in October
 
 ```{r}
 #| results: asis

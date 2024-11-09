@@ -4239,7 +4239,7 @@
     "href": "danl-hw/danl-101-hw-04.html#question-5",
     "title": "Homework Assignment 4",
     "section": "Question 5",
-    "text": "Question 5\nThe equation \\(\\Delta\\log(x) \\approx \\Delta x / x_{0}\\) demonstrates that a small change in the natural logarithm of \\(x\\), from an initial value \\(x_0\\) to an ending value \\(x_{1}\\), where \\(\\Delta x = x_{1} - x_{0}\\), can be approximated by:\n\n  \n     The absolute change in \\(x\\)\n  \n  \n     The percentage change in \\(x\\)\n  \n  \n     The square of \\(x\\)\n  \n  \n     The reciprocal of \\(x\\)"
+    "text": "Question 5\nThe equation \\(\\Delta\\log(x) \\approx \\Delta x / x_{0}\\) demonstrates that a small change in the natural logarithm of \\(x\\), from an initial value \\(\\log(x_0)\\) to an ending value \\(\\log(x_{1})\\), where the change in \\(x\\) is given by \\(\\Delta x = x_{1} - x_{0}\\), can be approximated by:\n\n  \n     The absolute change in \\(x\\)\n  \n  \n     The percentage change in \\(x\\)\n  \n  \n     The square of \\(x\\)\n  \n  \n     The reciprocal of \\(x\\)"
   },
   {
     "objectID": "danl-hw/danl-101-hw-04.html#question-6",

@@ -491,7 +491,7 @@ ggplot(data = diamonds,
   geom_bar(position = "fill") +
   labs(y = "Proportion")
 ```
-
+- This makes it easier to compare proportions across groups.
 
 
 
@@ -509,6 +509,7 @@ ggplot(data = diamonds,
              fill = clarity)) + 
   geom_bar(position = "dodge")
 ```
+- This makes it easier to compare individual values.
 
 
 ## Bar Chart with `geom_bar()`
@@ -662,3 +663,43 @@ diamonds |>
 ::::
 
 ::::
+
+
+
+## Proportion Bar Chart with `geom_bar()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             y = after_stat(prop),
+             group = 1)) + 
+  geom_bar()
+```
+
+- `after_stat(prop)`: Calculates the proportion of the total count.
+- `group = 1`: Ensures the proportions are calculated over the entire data.frame, not within each group of `cut`
+
+## Bar Chart with `geom_col()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+df <- diamonds |> 
+  count(cut)
+
+ggplot(data = df,
+       mapping = 
+         aes(x = cut, 
+             y = n)) + 
+  geom_col()
+```
+
+- `geom_col()` creates bar charts where the height of bars directly represents values in a `col`umn in a given data.frame.
+  - `geom_col()` requires both `x`- and `y`- aesthetics.

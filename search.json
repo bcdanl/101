@@ -3784,7 +3784,7 @@
     "href": "index.html#bullet-homework",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 3\n\n\nNovember 6, 2024\n\n\n\n\nHomework Assignment 2 - Example Answers\n\n\nOctober 10, 2024\n\n\n\n\nHomework Assignment 1 - Example Answers\n\n\nOctober 3, 2024\n\n\n\n\nHomework Assignment 2\n\n\nSeptember 24, 2024\n\n\n\n\nHomework Assignment 1\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 4\n\n\nNovember 9, 2024\n\n\n\n\nHomework Assignment 3\n\n\nNovember 6, 2024\n\n\n\n\nHomework Assignment 2 - Example Answers\n\n\nOctober 10, 2024\n\n\n\n\nHomework Assignment 1 - Example Answers\n\n\nOctober 3, 2024\n\n\n\n\nHomework Assignment 2\n\n\nSeptember 24, 2024\n\n\n\n\nHomework Assignment 1\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-101-lec.html",
@@ -4127,14 +4127,14 @@
     "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-7",
     "title": "Lecture 20",
     "section": "Bar Chart with geom_bar()",
-    "text": "Bar Chart with geom_bar()\n100% Stacked Bar Charts using the fill Aesthetic and the position = \"fill\"\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar(position = \"fill\") +\n  labs(y = \"Proportion\")"
+    "text": "Bar Chart with geom_bar()\n100% Stacked Bar Charts using the fill Aesthetic and the position = \"fill\"\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar(position = \"fill\") +\n  labs(y = \"Proportion\")\n\n\n\n\n\n\n\nThis makes it easier to compare proportions across groups."
   },
   {
     "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-8",
     "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-8",
     "title": "Lecture 20",
     "section": "Bar Chart with geom_bar()",
-    "text": "Bar Chart with geom_bar()\nClustered Bar Charts using the fill Aesthetic and the position = \"dodge\"\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar(position = \"dodge\")"
+    "text": "Bar Chart with geom_bar()\nClustered Bar Charts using the fill Aesthetic and the position = \"dodge\"\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\nThis makes it easier to compare individual values."
   },
   {
     "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#count-counting-occurrences-of-each-category-in-a-categorical-variable",
@@ -4170,5 +4170,124 @@
     "title": "Lecture 20",
     "section": "Pie Charts: Alternative to Bar Charts?",
     "text": "Pie Charts: Alternative to Bar Charts?\n\n\n\n\nPie charts are not the best choice if you want audiences to compare the size of shares.\n\n\n\n\n\n\n\n\n\n\n\nPie charts are not the best choice if you want audiences to compare the distribution across categories."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-10",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_bar-10",
+    "title": "Lecture 20",
+    "section": "Bar Chart with geom_bar()",
+    "text": "Bar Chart with geom_bar()\nProportion Bar Chart\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             y = after_stat(prop),\n             group = 1)) + \n  geom_bar()\n\n\n\n\n\n\n\nafter_stat(prop): Allows for using the proportion of the total count.\ngroup = 1: Ensures the proportions are calculated over the entire data.frame, not within each group of cut"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_col",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#bar-chart-with-geom_col",
+    "title": "Lecture 20",
+    "section": "Bar Chart with geom_col()",
+    "text": "Bar Chart with geom_col()\n\n\ndf &lt;- diamonds |&gt; \n  count(cut)\n\nggplot(data = df,\n       mapping = \n         aes(x = cut, \n             y = n)) + \n  geom_col()\n\n\n\n\n\n\n\ngeom_col() creates bar charts where the height of bars directly represents values in a column in a given data.frame.\n\ngeom_col() requires both x- and y- aesthetics."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#proportion-bar-chart-with-geom_bar-aesafter_statprop-group-1",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#proportion-bar-chart-with-geom_bar-aesafter_statprop-group-1",
+    "title": "Lecture 20",
+    "section": "Proportion Bar Chart with geom_bar( aes(after_stat(prop), group = 1 ) )",
+    "text": "Proportion Bar Chart with geom_bar( aes(after_stat(prop), group = 1 ) )\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             y = after_stat(prop),\n             group = 1)) + \n  geom_bar()\n\n\n\n\n\n\n\nafter_stat(prop): Allows for using the proportion of the total count.\ngroup = 1: Ensures the proportions are calculated over the entire data.frame, not within each group of cut"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-20-2024-1107.html#proportion-bar-chart-with-geom_bar",
+    "href": "danl-lec/danl-101-lec-20-2024-1107.html#proportion-bar-chart-with-geom_bar",
+    "title": "Lecture 20",
+    "section": "Proportion Bar Chart with geom_bar()",
+    "text": "Proportion Bar Chart with geom_bar()\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             y = after_stat(prop),\n             group = 1)) + \n  geom_bar()\n\n\n\n\n\n\n\nafter_stat(prop): Calculates the proportion of the total count.\ngroup = 1: Ensures the proportions are calculated over the entire data.frame, not within each group of cut"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html",
+    "href": "danl-hw/danl-101-hw-04.html",
+    "title": "Homework Assignment 4",
+    "section": "",
+    "text": "Please answer all of the following questions thoroughly, ensuring that none are left unanswered.\nFor Homework Assignment 4, the use of any generative artificial intelligence (AI) tools is strictly prohibited.\nCraft your answers in a separate document (such as an R script, Word file, or Google Doc) and paste them into this page when you are ready to submit.\nOnce you have completed the assignment, click the “Submit” button at the bottom of this page to have it evaluated.\n\nAfter clicking “Submit” button, wait for the message, “Data submitted successfully!”.\nA confirmation email will be sent to the email address that you provide on this homework page once your submission is received.\n\nYou may submit multiple times, but only your most recent submission will be evaluated.\nThe due is November 16, 5:00 P.M., 2024, Saturday, Eastern Time."
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#question-1",
+    "href": "danl-hw/danl-101-hw-04.html#question-1",
+    "title": "Homework Assignment 4",
+    "section": "Question 1",
+    "text": "Question 1\nWhich of the following is a core technology behind language models like ChatGPT, as mentioned in the lecture?\n\n  \n     Decision Trees\n  \n  \n     Deep Learning\n  \n  \n     Linear Regression\n  \n  \n     All of the Above"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#question-2",
+    "href": "danl-hw/danl-101-hw-04.html#question-2",
+    "title": "Homework Assignment 4",
+    "section": "Question 2",
+    "text": "Question 2\nWhat is the primary purpose of storyboarding in data storytelling?\n\n\n  \n     To collect data from stakeholders\n  \n  \n     To provide a visual outline for content structure\n  \n  \n     To design complex data visualizations\n  \n  \n     To perform statistical analysis"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#question-3",
+    "href": "danl-hw/danl-101-hw-04.html#question-3",
+    "title": "Homework Assignment 4",
+    "section": "Question 3",
+    "text": "Question 3\nWhich of the following statements about data visualizations is true?\n\n  \n     They always explain the underlying reasons behind data trends.\n  \n  \n     They are sufficient on their own to drive data-informed decisions.\n  \n  \n     They are useful for showing “what” is happening in the data.\n  \n  \n     They eliminate the need for narratives in data storytelling."
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#question-4",
+    "href": "danl-hw/danl-101-hw-04.html#question-4",
+    "title": "Homework Assignment 4",
+    "section": "Question 4",
+    "text": "Question 4\nIn the ggplot2 syntax ggplot(data, aes(x, y)) + geom_point(), what does aes() stand for?\n\n  \n     Aesthetic mappings\n  \n  \n     Arithmetic expressions\n  \n  \n     Axis equal scaling\n  \n  \n     Average error squares"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#question-5",
+    "href": "danl-hw/danl-101-hw-04.html#question-5",
+    "title": "Homework Assignment 4",
+    "section": "Question 5",
+    "text": "Question 5\nThe equation \\(\\Delta\\log(x) \\approx \\Delta x / x_{0}\\) demonstrates that a small change in the natural logarithm of \\(x\\) approximates:\n\n  \n     The absolute change in \\(x\\)\n  \n  \n     The percentage change in \\(x\\)\n  \n  \n     The square of \\(x\\)\n  \n  \n     The reciprocal of \\(x\\)"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#question-6",
+    "href": "danl-hw/danl-101-hw-04.html#question-6",
+    "title": "Homework Assignment 4",
+    "section": "Question 6",
+    "text": "Question 6\nWhich of the following statements about mapping and setting aesthetics in ggplot2 is FALSE?\n\n  \n     Mapping aesthetics involves linking data variables to visual properties within aes()\n  \n  \n     Setting aesthetics manually is done outside of aes() to set fixed visual properties.\n  \n  \n     You can set aesthetics manually within aes() by assigning fixed values.\n  \n  \n     Mapping aesthetics allows different categories to be represented by different colors or shapes."
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#question-7",
+    "href": "danl-hw/danl-101-hw-04.html#question-7",
+    "title": "Homework Assignment 4",
+    "section": "Question 7",
+    "text": "Question 7\nWhich of the following is NOT a way to explicitly inform ggplot about the grouping structure in a line plot?\n\n  \n     Using the group aesthetic.\n  \n  \n     Using the color aesthetic.\n  \n  \n     Using the linetype aesthetic.\n  \n  \n     Using the size aesthetic."
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#question-8",
+    "href": "danl-hw/danl-101-hw-04.html#question-8",
+    "title": "Homework Assignment 4",
+    "section": "Question 8",
+    "text": "Question 8\nIf you have a data frame with a date variable and want to plot a time series for each category in a variable called group_var, what is the minimal aesthetic mapping required in ggplot2 to correctly plot separate lines for each group?\n\n  \n     mapping = aes(x = date_var, y = value_var)\n  \n  \n     mapping = aes(x = date_var, y = value_var, color = group_var)\n  \n  \n     mapping = aes(x = date_var, y = value_var, group = group_var)\n  \n  \n     Both mapping = aes(x = date_var, y = value_var, color = group_var) and mapping = aes(x = date_var, y = value_var, group = group_var)"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#question-9",
+    "href": "danl-hw/danl-101-hw-04.html#question-9",
+    "title": "Homework Assignment 4",
+    "section": "Question 9",
+    "text": "Question 9\nWhen creating a vertical boxplot in ggplot2, which of the following mappings is correct?\n\n  \n     Map both the x and y aesthetics to categorical variables.\n  \n  \n     Map a numeric variable to x and a categorical variable to y.\n  \n  \n     Map a categorical variable to x and a numeric variable to y.\n  \n  \n     Map both the x and y aesthetics to numeric variables."
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#question-10",
+    "href": "danl-hw/danl-101-hw-04.html#question-10",
+    "title": "Homework Assignment 4",
+    "section": "Question 10",
+    "text": "Question 10\nWhich of the following functions is used to apply a color-blind friendly palette to the fill aesthetic in ggplot2?\n\n\n  \n     scale_fill_manual()\n  \n  \n     scale_fill_tableau()\n  \n  \n     scale_color_gradient()\n  \n  \n     scale_x_continuous()"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#questions-11-17",
+    "href": "danl-hw/danl-101-hw-04.html#questions-11-17",
+    "title": "Homework Assignment 4",
+    "section": "Questions 11-17",
+    "text": "Questions 11-17\nConsider the following titanic data.frame for Questions 11-17:\n\ntitanic &lt;- read_csv(\"https://bcdanl.github.io/data/titanic_cleaned.csv\")\n\n\n\n\n\n  \n\n\n\n\n\nQuestion 11\nHow would you create the following data.frame, titanic_class_survival?\n\n\n\n  \n\n\n\nThe titanic_class_survival data.frame counts the number of passengers who survived and those who did not survive within each class in the titanic data.frame.\n\nComplete the code by filling in the blanks.\n\n__BLANK 1__ &lt;- titanic |&gt; \n  count(__BLANK 2__)\n\n\n  \n    \n  \n\n  \n    \n  \n\n\n\n\nQuestion 12\nHow would you describe the variation in the distribution of age across classes and genders?\nComplete the code by filling in the blanks.\n\nggplot(data = __BLANK 1__,\n       mapping = aes(x = gender,\n                     __BLANK 2__ = age,\n                     __BLANK 3__ = gender)) +\n  __BLANK 4__(show.legend = F) +\n  __BLANK 5__(~class) +\n  scale_fill_tableau()\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n    \n    \n  \n\n  \n    \n    \n  \n\n\n\n\nQuestion 13\nProvide a comment on the variation in the distribution of age across classes and genders.\n\n  \n\n\n\n\nQuestion 14\nHow would you describe the variation in the distribution of survived across classes and genders?\nComplete the code by filling in the blanks.\n\nggplot(data = __BLANK 1__,\n       mapping = aes(__BLANK 2__ = class,\n                     __BLANK 3__ = survived)) +\n  __BLANK 4__() +\n  __BLANK 5__(~gender) +\n  labs(x = \"Proportion\") +\n  scale_fill_tableau()\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n    \n    \n  \n\n  \n    \n    \n  \n\n\n\n\nQuestion 15\nHow would you describe the variation in the distribution of survived across classes and genders?\nComplete the code by filling in the blanks.\n\nggplot(data = __BLANK 1__,\n       mapping = aes(__BLANK 2__ = class,\n                     __BLANK 3__ = survived)) +\n  __BLANK 4__(position = __BLANK 5__) +\n  __BLANK 6__(~gender) +\n  labs(x = \"Proportion\") +\n  scale_fill_tableau()\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n    \n    \n  \n\n  \n    \n    \n    \n  \n\n\n\n\nQuestion 16\nHow would you describe the variation in the distribution of survived across classes and genders?\nComplete the code by filling in the blanks.\n\nggplot(data = __BLANK 1__,\n       mapping = aes(__BLANK 2__ = class,\n                     __BLANK 3__ = survived)) +\n  __BLANK 4__(position = __BLANK 5__) +\n  __BLANK 6__(~gender) +\n  scale_fill_tableau()\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n    \n    \n  \n\n  \n    \n    \n    \n  \n\n\n\n\nQuestion 17\nProvide a comment on the variation in the distribution of survived across classes and genders."
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-04.html#questions-18-20",
+    "href": "danl-hw/danl-101-hw-04.html#questions-18-20",
+    "title": "Homework Assignment 4",
+    "section": "Questions 18-20",
+    "text": "Questions 18-20\nConsider the following nyc_dogs data.frame for Questions 18-20:\n\nnyc_dogs &lt;- read_csv(\"https://bcdanl.github.io/data/nyc_dogs_cleaned.csv\")\n\n\n\n\n\n  \n\n\n\n\nThe nyc_dogs data.frame contains data on licensed dogs in New York city.\n\n\n\nQuestion 18\nHow would you create the following data.frame, nyc_dogs_breeds?\n\n\n\n  \n\n\n\nThe nyc_dogs_breeds data.frame counts the number of occurrences for each value in the breed variable in the nyc_dogs data.frame.\n\nThe nyc_dogs_breeds data.frame keeps observations if\n\nThe number of occurrences (n) is greater than or equal to 2000;\nThe value of breed is not missing.\n\nThe observations in the nyc_dogs_breeds data.frame is arranged by n in descending order.\n\n\nComplete the code by filling in the blanks.\n\n__BLANK 1__ &lt;- nyc_dogs |&gt; \n  __BLANK 2__ |&gt; \n  filter(__BLANK 3__(breed)) |&gt; \n  filter(__BLANK 4__) |&gt; \n  arrange(__BLANK 5__)\n\n\n  \n    \n    \n    \n  \n\n  \n    \n    \n  \n\n\n\n\nQuestion 19\nHow would you describe the distribution of breed using the nyc_dogs_breeds data.frame?\nComplete the code by filling in the blanks.\n\nggplot(data = __BLANK 1__,\n       mapping = aes(x = __BLANK 1__,\n                     __BLANK 3__)) +\n  __BLANK 4__()\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n    \n  \n\n  \n    \n    \n  \n\n\n\n\nQuestion 20\nHow would you describe the distribution of breed using the nyc_dogs_breeds data.frame?\nComplete the code by filling in the blanks.\n\nggplot(data = __BLANK 1__,\n       mapping = aes(x = __BLANK 1__,\n                     __BLANK 3__)) +\n  __BLANK 4__() +\n  labs(y = \"Breed\")\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n    \n  \n\n  \n    \n    \n  \n\n\n\n  \n    \n      Submit\n    \n  \n  \n    \n      Cancel"
   }
 ]

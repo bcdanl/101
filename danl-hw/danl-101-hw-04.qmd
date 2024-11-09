@@ -255,7 +255,7 @@ In the ggplot2 syntax `ggplot(data, aes(x, y)) + geom_point()`, what does `aes()
 <br>
 
 ## Question 5
-The equation $\Delta\log(x) \approx \Delta x / x_{0}$ demonstrates that a small change in the natural logarithm of $x$, starting from an initial value $x_0$, approximates:
+The equation $\Delta\log(x) \approx \Delta x / x_{0}$ demonstrates that a small change in the natural logarithm of $x$, from an initial value $x_0$ to an ending value $x_{1}$, where $\Delta x = x_{1} - x_{0}$, can be approximated by:
 
 
 ```{=html}

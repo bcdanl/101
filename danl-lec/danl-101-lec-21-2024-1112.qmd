@@ -262,7 +262,7 @@ DT::datatable(diamonds |> count(cut, clarity),
 
 
 ## Bar Chart with `geom_bar()`
-### Stacked Bar Charts using the `fill` Aesthetic
+### Stacked Bar Charts with the `fill` Aesthetic
 
 ```{r}
 #| echo: true
@@ -280,12 +280,10 @@ ggplot(data = diamonds,
   geom_bar()
 ```
 
-- This describes how the distribution of `clarity` varies by `cut`.
-
-
+- This describes how the distribution of `clarity` varies by `cut`, with total bar height for overall count and segments for each `clarity` level.
 
 ## Bar Chart with `geom_bar()`
-### 100% Stacked Bar Charts using the `fill` Aesthetic and the `position = "fill"`
+### 100% Stacked Bar Charts with the `fill` Aesthetic & the `position="fill"`
 
 ```{r}
 #| echo: true
@@ -300,12 +298,14 @@ ggplot(data = diamonds,
   labs(y = "Proportion")
 ```
 
-- This makes it easier to compare proportions across groups.
+- This describes how the distribution of `clarity` varies by `cut`, displaying the proportion of each `clarity` within each `cut`.
+
+<!-- - This makes it easier to compare proportions across groups. -->
 
 
 
 ## Bar Chart with `geom_bar()`
-### Clustered Bar Charts using the `fill` Aesthetic and the `position = "dodge"`
+### Clustered Bar Charts with the `fill` Aesthetic & the `position="dodge"`
 
 ```{r}
 #| echo: true
@@ -318,7 +318,205 @@ ggplot(data = diamonds,
              fill = clarity)) + 
   geom_bar(position = "dodge")
 ```
-- This makes it easier to compare individual values.
+
+- This shows how the distribution of `clarity` varies by `cut`, with separate bars for each `clarity` level within each `cut` category.
+
+
+<!-- - This makes it easier to compare individual values. -->
+
+
+
+## Stacked vs. 100% Stacked vs. Clustered
+### Choosing the Right Bar Chart for Comparing Components and Totals
+<div style="display:block; margin:-20px;"></div>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| eval: true
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar() +
+  labs(y = "Count",
+       title = "Stacked Bar Chart")
+```
+
+:::
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| eval: true
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "fill") +
+  labs(y = "Proportion",
+       title = "100% Stacked Bar Chart")
+```
+:::
+::::
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| eval: true
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "dodge2") +
+  labs(y = "Count",
+       title = "Clustered Bar Chart")
+```
+:::
+
+::: {.column width="50%"}
+
+
+- Which type of bar chart is most effective for your data?
+
+- Which type of bar chart best meets your visualization goals?
+
+:::
+
+
+::::
+
+
+## Choosing the Right Bar Chart
+### Stacked Bar Chart
+
+:::: {.columns}
+
+
+::: {.column width="50%"}
+
+- Best for showing the breakdown of subcomponents within a category alongside the overall total.
+- Useful when your primary focus is on the total bar height while also showing subcomponent contributions.
+- **Tip**: Be cautious using stacked bars if the goal is to make precise comparisons between subcomponents across different bars, as they don’t all start from the same baseline.
+  
+:::
+
+::: {.column width="50%"}
+
+<div style="display:block; margin:-25px;"></div>
+```{r}
+#| echo: false
+#| eval: true
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar() +
+  labs(y = "Count",
+       title = "Stacked Bar Chart")
+```
+
+- If you need to emphasize **total values** along with component contributions, use a **Stacked Bar Chart**
+
+:::
+::::
+
+
+<!-- This is useful for showing the composition of a category across bars without focusing on overall size. -->
+
+
+## Choosing the Right Bar Chart
+### 100% Stacked Bar Chart
+
+:::: {.columns}
+
+
+::: {.column width="50%"}
+
+- Shows the proportion of subcomponents within each category as a percentage of the total, normalizing all bars to the same height.
+- Allows for easier comparison between categories for subcomponent proportions, as each segment starts from a consistent baseline.
+- **Ideal Use**: When you want to compare relative percentages rather than absolute totals.
+  
+:::
+
+::: {.column width="50%"}
+<div style="display:block; margin:-25px;"></div>
+
+```{r}
+#| echo: false
+#| eval: true
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "fill") +
+  labs(y = "Proportion",
+       title = "100% Stacked Bar Chart")
+```
+- For comparing **relative proportions** between categories, a **100% Stacked Bar Chart** is ideal.
+
+:::
+::::
+
+
+
+
+
+## Choosing the Right Bar Chart
+### Clustered Bar Chart
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- Plots each subcomponent as a separate bar, grouped by category, allowing for precise comparisons of each component across categories.
+
+<div style="display:block; margin:25px;"></div>
+
+- **Ideal Use**: When your main goal is to compare individual subcomponents side by side rather than focusing on an overall total or relative percentage.
+  
+:::
+::: {.column width="50%"}
+<div style="display:block; margin:-25px;"></div>
+
+```{r}
+#| echo: false
+#| eval: true
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "dodge2") +
+  labs(y = "Count",
+       title = "Clustered Bar Chart")
+```
+
+- When **directly comparing individual subcomponents** across categories, opt for a **Clustered Bar Chart**.
+
+:::
+::::
+
+
+
+
+
+<!-- ### Summary -->
+<!-- - If you need to emphasize **total values** along with component contributions, use a **Stacked Bar Chart**. -->
+<!-- - For comparing **relative proportions** between categories, a **100% Stacked Bar Chart** is ideal. -->
+<!-- - When **directly comparing individual subcomponents** across categories, opt for a **Clustered Bar Chart**. -->
+
 
 
 ## Bar Chart with `geom_bar()`
@@ -376,6 +574,8 @@ ggplot(data = df,
 
 - `geom_col()` creates bar charts where the height of bars directly represents values in a `col`umn in a given data.frame.
   - `geom_col()` requires both `x`- and `y`- aesthetics.
+
+
 
 
 ## Pie Charts: Alternative to Bar Charts?
@@ -512,3 +712,14 @@ diamonds |>
 ::::
 
 
+
+## Distribution of an Integer Variable
+- For data visualization, `integer`-type variables could be treated as either categorical or numeric (continuous), depending on the context of analysis.
+
+- If the values of an integer-type variable means an intensity or an order, the integer variable could be numeric.
+  - A variable of age integers (18, 19, 20, 21, ...) could be numeric.
+  - A variable of integer-valued MPG (27, 28, 29, 30, ...) could be numeric.
+
+- If not, the integer variable is categorical.
+  - A variable of month integers (1, ,2, ..., 12) could be categorical.
+  

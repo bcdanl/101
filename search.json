@@ -4421,21 +4421,21 @@
     "href": "danl-lec/danl-101-lec-21-2024-1112.html#bar-chart-with-geom_bar-6",
     "title": "Lecture 21",
     "section": "Bar Chart with geom_bar()",
-    "text": "Bar Chart with geom_bar()\nStacked Bar Charts using the fill Aesthetic\n\n\n# Mapping the `fill` aesthetic \n# to other CATEGORICAL variable\n# gives a stacked bar chart\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar()\n\n\n\n\n\n\n\nThis describes how the distribution of clarity varies by cut."
+    "text": "Bar Chart with geom_bar()\nStacked Bar Charts with the fill Aesthetic\n\n\n# Mapping the `fill` aesthetic \n# to other CATEGORICAL variable\n# gives a stacked bar chart\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar()\n\n\n\n\n\n\n\nThis describes how the distribution of clarity varies by cut, with total bar height for overall count and segments for each clarity level."
   },
   {
     "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#bar-chart-with-geom_bar-7",
     "href": "danl-lec/danl-101-lec-21-2024-1112.html#bar-chart-with-geom_bar-7",
     "title": "Lecture 21",
     "section": "Bar Chart with geom_bar()",
-    "text": "Bar Chart with geom_bar()\n100% Stacked Bar Charts using the fill Aesthetic and the position = \"fill\"\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar(position = \"fill\") +\n  labs(y = \"Proportion\")\n\n\n\n\n\n\n\nThis makes it easier to compare proportions across groups."
+    "text": "Bar Chart with geom_bar()\n100% Stacked Bar Charts with the fill Aesthetic & the position=\"fill\"\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar(position = \"fill\") +\n  labs(y = \"Proportion\")\n\n\n\n\n\n\n\nThis describes how the distribution of clarity varies by cut, displaying the proportion of each clarity within each cut."
   },
   {
     "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#bar-chart-with-geom_bar-8",
     "href": "danl-lec/danl-101-lec-21-2024-1112.html#bar-chart-with-geom_bar-8",
     "title": "Lecture 21",
     "section": "Bar Chart with geom_bar()",
-    "text": "Bar Chart with geom_bar()\nClustered Bar Charts using the fill Aesthetic and the position = \"dodge\"\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\nThis makes it easier to compare individual values."
+    "text": "Bar Chart with geom_bar()\nClustered Bar Charts with the fill Aesthetic & the position=\"dodge\"\n\n\nggplot(data = diamonds,\n       mapping = \n         aes(x = cut, \n             fill = clarity)) + \n  geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\nThis shows how the distribution of clarity varies by cut, with separate bars for each clarity level within each cut category."
   },
   {
     "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#bar-chart-with-geom_bar-9",
@@ -4625,5 +4625,117 @@
     "title": "Homework Assignment 3 - Example Answers",
     "section": "General Tips on Describing the Time Trend of a Variable",
     "text": "General Tips on Describing the Time Trend of a Variable\n\nHere are some general tips for describing the time trend of a variable:\n\nStart with Identifying the Overall Trend: Look for the general direction of the trend over time.\n\n\nIs it moving upward, downward, or remaining relatively constant?\nBe specific: A comment like “The trend shows the evolution of hitting techniques in the MLB over time” simply rephrases the question, and does not actually answer it at all.\n\nNote Patterns and Cycles: Identify any repeating patterns, such as seasonal fluctuations (e.g., monthly or quarterly changes) or long-term cycles. These patterns can indicate regular influences on the variable over time.\nHighlight Any Significant Fluctuations: Describe any sharp increases, decreases, or irregular spikes in the data.\n\n\n\nAdd Narration if Available: If possible, connect trends to real-world events or factors and/or your idea that could explain them, helping to interpret why the trend behaves a certain way over time."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-bar-chart-vs.-100-stacked-bar-chart-vs.-clustered-bar-chart",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-bar-chart-vs.-100-stacked-bar-chart-vs.-clustered-bar-chart",
+    "title": "Lecture 21",
+    "section": "Stacked Bar Chart vs. 100% Stacked Bar Chart vs. Clustered Bar Chart",
+    "text": "Stacked Bar Chart vs. 100% Stacked Bar Chart vs. Clustered Bar Chart\nChoosing the Right Chart for Comparing Components and Totals\n\n100% Stacked Bar Chart:\n\nShows the proportion of subcomponents within each category as a percentage of the total, normalizing all bars to the same height.\nAllows for easier comparison between categories for subcomponent proportions, as each segment starts from a consistent baseline.\nIdeal Use: When you want to compare relative percentages rather than absolute totals. This is useful for showing the composition of a category across bars without focusing on overall size."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-bar-chart-vs.-100-stacked-bar-chart-vs.-clustered-bar-chart-1",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-bar-chart-vs.-100-stacked-bar-chart-vs.-clustered-bar-chart-1",
+    "title": "Lecture 21",
+    "section": "Stacked Bar Chart vs. 100% Stacked Bar Chart vs. Clustered Bar Chart",
+    "text": "Stacked Bar Chart vs. 100% Stacked Bar Chart vs. Clustered Bar Chart\nChoosing the Right Chart for Comparing Components and Totals\n\nClustered Bar Chart (Grouped Bar Chart):\n\nPlots each subcomponent as a separate bar, grouped by category, allowing for precise comparisons of each component across categories.\nIdeal Use: When your main goal is to compare individual subcomponents side by side rather than focusing on an overall total or relative percentage."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-bars-vs.-100-stacked-bars-vs.-clustered-bars",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-bars-vs.-100-stacked-bars-vs.-clustered-bars",
+    "title": "Lecture 21",
+    "section": "Stacked Bars vs. 100% Stacked Bars vs. Clustered Bars",
+    "text": "Stacked Bars vs. 100% Stacked Bars vs. Clustered Bars"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-bar-chart-vs.-100-stacked-bar-chart-vs.-clustered-bar-chart-2",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-bar-chart-vs.-100-stacked-bar-chart-vs.-clustered-bar-chart-2",
+    "title": "Lecture 21",
+    "section": "Stacked Bar Chart vs. 100% Stacked Bar Chart vs. Clustered Bar Chart",
+    "text": "Stacked Bar Chart vs. 100% Stacked Bar Chart vs. Clustered Bar Chart\nChoosing the Right Chart for Comparing Components and Totals\n\nClustered Bar Chart (Grouped Bar Chart):\n\nPlots each subcomponent as a separate bar, grouped by category, allowing for precise comparisons of each component across categories.\nIdeal Use: When your main goal is to compare individual subcomponents side by side rather than focusing on an overall total or relative percentage."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#bar-charts-stacked-vs.-100-stacked-vs.-clustered",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#bar-charts-stacked-vs.-100-stacked-vs.-clustered",
+    "title": "Lecture 21",
+    "section": "Bar Charts: Stacked vs. 100% Stacked vs. Clustered",
+    "text": "Bar Charts: Stacked vs. 100% Stacked vs. Clustered\nChoosing the Right Chart for Comparing Components and Totals\n\nStacked Bar Chart:\n\nBest for showing the breakdown of subcomponents within a category alongside the overall total.\nUseful when your primary focus is on the total bar height while also showing subcomponent contributions.\nTip: Be cautious using stacked bars if the goal is to make precise comparisons between subcomponents across different bars, as they don’t all start from the same baseline."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-vs.-100-stacked-vs.-clustered",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-vs.-100-stacked-vs.-clustered",
+    "title": "Lecture 21",
+    "section": "Stacked vs. 100% Stacked vs. Clustered",
+    "text": "Stacked vs. 100% Stacked vs. Clustered\nChoosing the Right Bar Chart for Comparing Components and Totals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich type of bar chart is most effective for your data?\nWhich type of bar chart best meets your visualization goals?"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-vs.-100-stacked-vs.-clustered-1",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-vs.-100-stacked-vs.-clustered-1",
+    "title": "Lecture 21",
+    "section": "Stacked vs. 100% Stacked vs. Clustered",
+    "text": "Stacked vs. 100% Stacked vs. Clustered\nChoosing the Right Bar Chart for Comparing Components and Totals\n\n\n\nBest for showing the breakdown of subcomponents within a category alongside the overall total.\nUseful when your primary focus is on the total bar height while also showing subcomponent contributions.\nTip: Be cautious using stacked bars if the goal is to make precise comparisons between subcomponents across different bars, as they don’t all start from the same baseline.\n\n\n\n\n\n\n\n\nIf you need to emphasize total values along with component contributions, use a Stacked Bar Chart"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-vs.-100-stacked-vs.-clustered-2",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-vs.-100-stacked-vs.-clustered-2",
+    "title": "Lecture 21",
+    "section": "Stacked vs. 100% Stacked vs. Clustered",
+    "text": "Stacked vs. 100% Stacked vs. Clustered\nChoosing the Right Bar Chart for Comparing Components and Totals\n\n\n\nShows the proportion of subcomponents within each category as a percentage of the total, normalizing all bars to the same height.\nAllows for easier comparison between categories for subcomponent proportions, as each segment starts from a consistent baseline.\nIdeal Use: When you want to compare relative percentages rather than absolute totals. This is useful for showing the composition of a category across bars without focusing on overall size.\n\n\n\n\n\n\n\n\nFor comparing relative proportions between categories, a 100% Stacked Bar Chart is ideal."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-vs.-100-stacked-vs.-clustered-3",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#stacked-vs.-100-stacked-vs.-clustered-3",
+    "title": "Lecture 21",
+    "section": "Stacked vs. 100% Stacked vs. Clustered",
+    "text": "Stacked vs. 100% Stacked vs. Clustered\nChoosing the Right Bar Chart for Comparing Components and Totals\n\n\n\nPlots each subcomponent as a separate bar, grouped by category, allowing for precise comparisons of each component across categories.\nIdeal Use: When your main goal is to compare individual subcomponents side by side rather than focusing on an overall total or relative percentage.\n\n\n\n\n\n\n\n\nWhen directly comparing individual subcomponents across categories, opt for a Clustered Bar Chart."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart-for-comparing-components-and-totals-1",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart-for-comparing-components-and-totals-1",
+    "title": "Lecture 21",
+    "section": "Choosing the Right Bar Chart for Comparing Components and Totals",
+    "text": "Choosing the Right Bar Chart for Comparing Components and Totals\nStacked Bar Chart\n\n\n\nBest for showing the breakdown of subcomponents within a category alongside the overall total.\nUseful when your primary focus is on the total bar height while also showing subcomponent contributions.\nTip: Be cautious using stacked bars if the goal is to make precise comparisons between subcomponents across different bars, as they don’t all start from the same baseline.\n\n\n\n\n\n\n\n\nIf you need to emphasize total values along with component contributions, use a Stacked Bar Chart"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart-for-comparing-components-and-totals-2",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart-for-comparing-components-and-totals-2",
+    "title": "Lecture 21",
+    "section": "Choosing the Right Bar Chart for Comparing Components and Totals",
+    "text": "Choosing the Right Bar Chart for Comparing Components and Totals\n100% Stacked Bar Chart\n\n\n\nShows the proportion of subcomponents within each category as a percentage of the total, normalizing all bars to the same height.\nAllows for easier comparison between categories for subcomponent proportions, as each segment starts from a consistent baseline.\nIdeal Use: When you want to compare relative percentages rather than absolute totals. This is useful for showing the composition of a category across bars without focusing on overall size.\n\n\n\n\n\n\n\n\nFor comparing relative proportions between categories, a 100% Stacked Bar Chart is ideal."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart-for-comparing-components-and-totals-3",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart-for-comparing-components-and-totals-3",
+    "title": "Lecture 21",
+    "section": "Choosing the Right Bar Chart for Comparing Components and Totals",
+    "text": "Choosing the Right Bar Chart for Comparing Components and Totals\nClustered Bar Chart\n\n\n\nPlots each subcomponent as a separate bar, grouped by category, allowing for precise comparisons of each component across categories.\nIdeal Use: When your main goal is to compare individual subcomponents side by side rather than focusing on an overall total or relative percentage.\n\n\n\n\n\n\n\n\nWhen directly comparing individual subcomponents across categories, opt for a Clustered Bar Chart."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart",
+    "title": "Lecture 21",
+    "section": "Choosing the Right Bar Chart",
+    "text": "Choosing the Right Bar Chart\nStacked Bar Chart\n\n\n\nBest for showing the breakdown of subcomponents within a category alongside the overall total.\nUseful when your primary focus is on the total bar height while also showing subcomponent contributions.\nTip: Be cautious using stacked bars if the goal is to make precise comparisons between subcomponents across different bars, as they don’t all start from the same baseline.\n\n\n\n\n\n\n\n\n\n\n\nIf you need to emphasize total values along with component contributions, use a Stacked Bar Chart"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart-1",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart-1",
+    "title": "Lecture 21",
+    "section": "Choosing the Right Bar Chart",
+    "text": "Choosing the Right Bar Chart\n100% Stacked Bar Chart\n\n\n\nShows the proportion of subcomponents within each category as a percentage of the total, normalizing all bars to the same height.\nAllows for easier comparison between categories for subcomponent proportions, as each segment starts from a consistent baseline.\nIdeal Use: When you want to compare relative percentages rather than absolute totals.\n\n\n\n\n\n\n\n\n\n\n\nFor comparing relative proportions between categories, a 100% Stacked Bar Chart is ideal."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart-2",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#choosing-the-right-bar-chart-2",
+    "title": "Lecture 21",
+    "section": "Choosing the Right Bar Chart",
+    "text": "Choosing the Right Bar Chart\nClustered Bar Chart\n\n\n\nPlots each subcomponent as a separate bar, grouped by category, allowing for precise comparisons of each component across categories.\n\n\n\n\n\nIdeal Use: When your main goal is to compare individual subcomponents side by side rather than focusing on an overall total or relative percentage.\n\n\n\n\n\n\n\n\n\n\n\nWhen directly comparing individual subcomponents across categories, opt for a Clustered Bar Chart."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#distribution-of-an-integer-variable",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#distribution-of-an-integer-variable",
+    "title": "Lecture 21",
+    "section": "Distribution of an Integer Variable",
+    "text": "Distribution of an Integer Variable\n\nFor data visualization, integer-type variables could be treated as either categorical or numeric (continuous), depending on the context of analysis.\nIf the values of an integer-type variable means an intensity or an order, the integer variable could be numeric.\n\nA variable of age integers (18, 19, 20, 21, …) could be numeric.\nA variable of integer-valued MPG (27, 28, 29, 30, …) could be numeric.\n\nIf not, the integer variable is categorical.\n\nA variable of month integers (1, ,2, …, 12) could be categorical."
   }
 ]

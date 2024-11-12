@@ -714,7 +714,7 @@ diamonds |>
 
 
 ## Distribution of an Integer Variable
-- For data visualization, `integer`-type variables could be treated as either categorical or numeric (continuous), depending on the context of analysis.
+- For data visualization, `integer`-type variables could be treated as either categorical (discrete) or numeric (continuous), depending on the context of analysis.
 
 - If the values of an integer-type variable means an intensity or an order, the integer variable could be numeric.
   - A variable of age integers (18, 19, 20, 21, ...) could be numeric.

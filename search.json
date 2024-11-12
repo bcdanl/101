@@ -4736,6 +4736,6 @@
     "href": "danl-lec/danl-101-lec-21-2024-1112.html#distribution-of-an-integer-variable",
     "title": "Lecture 21",
     "section": "Distribution of an Integer Variable",
-    "text": "Distribution of an Integer Variable\n\nFor data visualization, integer-type variables could be treated as either categorical or numeric (continuous), depending on the context of analysis.\nIf the values of an integer-type variable means an intensity or an order, the integer variable could be numeric.\n\nA variable of age integers (18, 19, 20, 21, …) could be numeric.\nA variable of integer-valued MPG (27, 28, 29, 30, …) could be numeric.\n\nIf not, the integer variable is categorical.\n\nA variable of month integers (1, ,2, …, 12) could be categorical."
+    "text": "Distribution of an Integer Variable\n\nFor data visualization, integer-type variables could be treated as either categorical (discrete) or numeric (continuous), depending on the context of analysis.\nIf the values of an integer-type variable means an intensity or an order, the integer variable could be numeric.\n\nA variable of age integers (18, 19, 20, 21, …) could be numeric.\nA variable of integer-valued MPG (27, 28, 29, 30, …) could be numeric.\n\nIf not, the integer variable is categorical.\n\nA variable of month integers (1, ,2, …, 12) could be categorical."
   }
 ]

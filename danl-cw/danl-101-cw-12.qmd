@@ -1,0 +1,252 @@
+---
+title: Distribution Plots
+subtitle: Classwork 12
+date: 2024-11-11
+from: markdown+emoji
+
+execute: 
+  eval: false
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(gapminder)
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+library(nycflights13)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_fill_discrete <- function(...) scale_fill_viridis_d(...)
+
+```
+
+
+For this classwork, consider the `flights` data.frame
+
+```{r}
+#| eval: true
+library(tidyverse)
+library(ggthemes)
+library(nycflights13)
+
+flights <- flights
+```
+
+
+```{r}
+#| echo: false
+
+rmarkdown::paged_table(flights)
+```
+
+
+## Description of Variables in `flights`
+
+Use `??flights` to see the description of variables in the `flights` data.frame.
+
+<br>
+
+## Q1a
+- Provide `ggplot()` code to describe the distribution of `air_time` (amount of time spent in the air, in minutes).
+
+```{r}
+ggplot(data = __BLANK 1__,
+       mapping = aes(__BLANK 2__)) +
+  __BLANK 3__()
+```
+
+
+<br>
+
+
+## Q1b
+- Provide `ggplot()` code to describe how the distribution of `air_time` varies by `origin`.
+
+```{r}
+ggplot(data = __BLANK 1__,
+       mapping = aes(__BLANK 2__)) +
+  __BLANK 3__() +
+  facet_wrap(__BLANK 4__)
+```
+
+
+<br>
+
+
+
+## Q1c
+- Create the data.frame, `top5_n`, which include the two variables and 5 observations:
+  - `carrier`: the value of the top 5 carriers in terms of the number of flights.
+  - `n`: the number of flights operated by each of the top 5 carriers.
+
+```{r}
+#| echo: false
+#| eval: true
+top5_n <- flights |> 
+  count(carrier) |> 
+  arrange(-n) |> 
+  head(5)
+
+rmarkdown::paged_table(top5_n)
+```
+
+
+```{r}
+top5_n <- flights |> 
+  __BLANK__ |> 
+  arrange(-n) |> 
+  head(5)  # returns the first 5 observations of the new data.frame
+```
+
+<br>
+
+
+## Q1d
+- Create the data.frame, `top5_carriers`, which includes all the flights operated by only the top 5 carriers found in Q1c.
+
+```{r}
+top5_carriers <- flights |> 
+  filter(carrier == "__BLANK 1__" |
+         carrier == "__BLANK 2__" |
+         carrier == "__BLANK 3__" |
+         carrier == "__BLANK 4__" |
+         carrier == "__BLANK 5__" ) 
+```
+
+
+<br>
+
+
+## Q1e
+- Provide `ggplot()` code to describe the distribution of `carrier` using the `top5_carriers` data.frame.
+
+```{r}
+ggplot(data = __BLANK 1__,
+       mapping = aes(__BLANK 2__)) +
+  __BLANK 3__()
+```
+
+
+<br>
+
+## Q1f
+- Provide `ggplot()` code to describe how the distribution of `carrier` varies by `origin` using the `top5_carriers` data.frame.
+
+### Stacked Bar Chart
+```{r}
+ggplot(data = __BLANK 1__,
+       mapping = aes(y = __BLANK 2__,
+                     __BLANK 3__)) +
+  geom_bar()
+```
+
+### 100% Stacked Bar Chart
+```{r}
+ggplot(data = __BLANK 1__,
+       mapping = aes(y = __BLANK 2__,
+                     __BLANK 3__)) +
+  geom_bar(position = __BLANK 4__) +
+  labs(x = "Proportion")
+```
+
+### Clustered Bar Chart
+```{r}
+ggplot(data = __BLANK 1__,
+       mapping = aes(y = __BLANK 2__,
+                     __BLANK 3__)) +
+  geom_bar(position = __BLANK 4__)
+```
+
+### Facetted Bar Chart
+```{r}
+ggplot(data = __BLANK 1__,
+       mapping = aes(y = __BLANK 2__,
+                     __BLANK 3__)) +
+  geom_bar(show.legend = F) +
+  facet_wrap(__BLANK 4__)
+```
+
+<br>
+
+## Q1g
+- Provide `ggplot()` code to describe the distribution of `carrier` using the `top5_n` data.frame.
+
+```{r}
+ggplot(data = top5_n,
+       mapping = aes(x = __BLANK 1__,
+                     y = __BLANK 2__)) +
+  __BLANK 3__()
+```
+
+<br>
+
+
+## Q1h
+- Provide `ggplot()` code to describe the **sorted** distribution of  `carrier`' using the `top5_n` data.frame.
+
+```{r}
+ggplot(data = top5_n,
+       mapping = aes(x = __BLANK 1__,
+                     y = __BLANK 2__)) +
+  __BLANK 2__()
+```
+
+<br>
+
+
+
+## Q1i
+-	Create the following data frame named `carrier_per_origin` with the following three variables:
+	-	`origin`: the origin airport
+	-	`carrier`: the airline carrier
+	-	`n`: the number of flights operated by each **carrier** from each **origin** airport
+-	The `carrier_per_origin` data frame should contain the count of flights operated by each **carrier** departing from each **origin** airport.
+
+
+```{r}
+#| echo: false
+#| eval: true
+carrier_per_origin <- flights |> 
+  count(origin, carrier) |> 
+  arrange(origin, -n)
+
+rmarkdown::paged_table(carrier_per_origin)
+```
+
+
+```{r}
+carrier_per_origin <- flights |> 
+  __BLANK__ |> 
+  arrange(origin, -n)
+```
+
+<br>
+

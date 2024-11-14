@@ -562,18 +562,43 @@ ggplot(data = diamonds,
 #| fig-asp: .85
 #| output-location: column
 
-df <- diamonds |> 
-  count(cut)
+df <- mpg |> 
+  count(class)
 
 ggplot(data = df,
        mapping = 
-         aes(x = cut, 
-             y = n)) + 
+         aes(x = n, 
+             y = class)) + 
   geom_col()
 ```
 
 - `geom_col()` creates bar charts where the height of bars directly represents values in a `col`umn in a given data.frame.
   - `geom_col()` requires both `x`- and `y`- aesthetics.
+
+
+## Bar Chart with `geom_col()`
+### Sorted Bar Chart with `fct_reorder(CATEGORICAL, NUMERICAL)`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+df <- mpg |> 
+  count(class)
+
+ggplot(data = df,
+       mapping = 
+         aes(x = n,
+             y = 
+               fct_reorder(class, n))
+       ) + 
+  geom_col() +
+  labs(y = "Class")
+```
+
+- `fct_reorder(CATEGORICAL, NUMERICAL)`: Reorders the categories of the CATEGORICAL by the median of the NUMERICAL.
+
 
 
 
@@ -669,7 +694,7 @@ diamonds |>
 :::{.nonincremental}
 
 - Humans are better at judging lengths than angles.
-  - However, it is sometimes a good idea to use a pie chart.
+  - Occasionally, using a pie chart can be a good idea.
 
 1. Pie charts work well only if you only have a few categories---four max.
 
@@ -714,6 +739,8 @@ diamonds |>
 
 
 ## Distribution of an Integer Variable
+<div style="display:block; margin:-10px;"></div>
+
 - For data visualization, `integer`-type variables could be treated as either categorical (discrete) or numeric (continuous), depending on the context of analysis.
 
 - If the values of an integer-type variable means an intensity or an order, the integer variable could be numeric.
@@ -723,3 +750,70 @@ diamonds |>
 - If not, the integer variable is categorical.
   - A variable of month integers (1, ,2, ..., 12) could be categorical.
   
+
+
+## Distribution of an Integer Variable
+
+<div style="display:block; margin:-10px;"></div>
+:::: {.columns}
+
+::: {.column width="50%"}
+#### Bar Chart for the `age` variable
+<div style="display:block; margin:-20px;"></div>
+```{r}
+#| echo: false
+#| eval: true
+
+df <- read_csv("https://bcdanl.github.io/data/integer_age.csv")
+
+df |> 
+  mutate(Age = as.character(Age)) |> 
+  ggplot(aes(x = Age)) +
+  geom_bar(fill = "steelblue")
+```
+
+:::
+
+
+::: {.column width="50%"}
+
+#### Histogram for the `age` variable
+<div style="display:block; margin:-20px;"></div>
+```{r}
+#| echo: false
+#| eval: true
+
+df <- read_csv("https://bcdanl.github.io/data/integer_age.csv")
+
+df |> 
+  ggplot(aes(x = Age)) +
+  geom_histogram(fill = "steelblue")
+```
+:::
+::::
+
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| eval: true
+
+df <- read_csv("https://bcdanl.github.io/data/integer_age.csv")
+DT::datatable(df |> select(Name, Age),
+              options = list(dom = 't',
+                             pageLength = 3))
+```
+
+:::
+
+
+::: {.column width="60%"}
+-	In **ggplot**, the distribution of an integer variable can appear quite similar when using `geom_bar()` and `geom_histogram()`.
+	-	In **Python** or others, they can be quite different, as shown above.
+
+:::
+::::
+
+
+

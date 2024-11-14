@@ -4456,7 +4456,7 @@
     "href": "danl-lec/danl-101-lec-21-2024-1112.html#pie-charts-alternative-to-bar-charts-1",
     "title": "Lecture 21",
     "section": "Pie Charts: Alternative to Bar Charts?",
-    "text": "Pie Charts: Alternative to Bar Charts?\n\n\nHumans are better at judging lengths than angles.\n\nHowever, it is sometimes a good idea to use a pie chart.\n\n\n\nPie charts work well only if you only have a few categories—four max.\nPie charts work well if the goal is to emphasize simple fractions (e.g., 25%, 50%, or 75%)."
+    "text": "Pie Charts: Alternative to Bar Charts?\n\n\nHumans are better at judging lengths than angles.\n\nOccasionally, using a pie chart can be a good idea.\n\n\n\nPie charts work well only if you only have a few categories—four max.\nPie charts work well if the goal is to emphasize simple fractions (e.g., 25%, 50%, or 75%)."
   },
   {
     "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#pie-charts-alternative-to-bar-charts-2",
@@ -4477,7 +4477,7 @@
     "href": "danl-lec/danl-101-lec-21-2024-1112.html#bar-chart-with-geom_col",
     "title": "Lecture 21",
     "section": "Bar Chart with geom_col()",
-    "text": "Bar Chart with geom_col()\n\n\ndf &lt;- diamonds |&gt; \n  count(cut)\n\nggplot(data = df,\n       mapping = \n         aes(x = cut, \n             y = n)) + \n  geom_col()\n\n\n\n\n\n\n\ngeom_col() creates bar charts where the height of bars directly represents values in a column in a given data.frame.\n\ngeom_col() requires both x- and y- aesthetics."
+    "text": "Bar Chart with geom_col()\n\n\ndf &lt;- mpg |&gt; \n  count(class)\n\nggplot(data = df,\n       mapping = \n         aes(x = n, \n             y = class)) + \n  geom_col()\n\n\n\n\n\n\n\ngeom_col() creates bar charts where the height of bars directly represents values in a column in a given data.frame.\n\ngeom_col() requires both x- and y- aesthetics."
   },
   {
     "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#count-counting-occurrences-across-two-categorical-variables",
@@ -4736,6 +4736,20 @@
     "href": "danl-lec/danl-101-lec-21-2024-1112.html#distribution-of-an-integer-variable",
     "title": "Lecture 21",
     "section": "Distribution of an Integer Variable",
-    "text": "Distribution of an Integer Variable\n\nFor data visualization, integer-type variables could be treated as either categorical (discrete) or numeric (continuous), depending on the context of analysis.\nIf the values of an integer-type variable means an intensity or an order, the integer variable could be numeric.\n\nA variable of age integers (18, 19, 20, 21, …) could be numeric.\nA variable of integer-valued MPG (27, 28, 29, 30, …) could be numeric.\n\nIf not, the integer variable is categorical.\n\nA variable of month integers (1, ,2, …, 12) could be categorical."
+    "text": "Distribution of an Integer Variable\n\n\n\n\nFor data visualization, integer-type variables could be treated as either categorical (discrete) or numeric (continuous), depending on the context of analysis.\nIf the values of an integer-type variable means an intensity or an order, the integer variable could be numeric.\n\nA variable of age integers (18, 19, 20, 21, …) could be numeric.\nA variable of integer-valued MPG (27, 28, 29, 30, …) could be numeric.\n\nIf not, the integer variable is categorical.\n\nA variable of month integers (1, ,2, …, 12) could be categorical."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#bar-chart-with-geom_col-1",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#bar-chart-with-geom_col-1",
+    "title": "Lecture 21",
+    "section": "Bar Chart with geom_col()",
+    "text": "Bar Chart with geom_col()\nSorted Bar Chart with fct_reorder(CATEGORICAL, NUMERICAL)\n\n\ndf &lt;- mpg |&gt; \n  count(class)\n\nggplot(data = df,\n       mapping = \n         aes(x = n,\n             y = \n               fct_reorder(class, n))\n       ) + \n  geom_col() +\n  labs(y = \"Class\")\n\n\n\n\n\n\n\nfct_reorder(CATEGORICAL, NUMERICAL): Reorders the categories of the CATEGORICAL by the median of the NUMERICAL."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-21-2024-1112.html#distribution-of-an-integer-variable-1",
+    "href": "danl-lec/danl-101-lec-21-2024-1112.html#distribution-of-an-integer-variable-1",
+    "title": "Lecture 21",
+    "section": "Distribution of an Integer Variable",
+    "text": "Distribution of an Integer Variable\n\n\n\n\n\nBar Chart for the age variable\n\n\n\n\n\n\n\n\n\nHistogram for the age variable\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn ggplot, the distribution of an integer variable can appear quite similar when using geom_bar() and geom_histogram().\n\nIn Python or others, they can be quite different, as shown above."
   }
 ]

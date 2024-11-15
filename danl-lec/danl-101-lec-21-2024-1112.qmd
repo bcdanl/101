@@ -769,7 +769,8 @@ df <- read_csv("https://bcdanl.github.io/data/integer_age.csv")
 df |> 
   mutate(Age = as.character(Age)) |> 
   ggplot(aes(x = Age)) +
-  geom_bar(fill = "steelblue")
+  geom_bar(fill = "steelblue",
+           color = "black")
 ```
 
 :::

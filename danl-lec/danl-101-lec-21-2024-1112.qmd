@@ -787,7 +787,9 @@ df <- read_csv("https://bcdanl.github.io/data/integer_age.csv")
 
 df |> 
   ggplot(aes(x = Age)) +
-  geom_histogram(fill = "steelblue")
+  geom_histogram(fill = "steelblue",
+                 color = "black") +
+  scale_x_continuous(breaks = seq(0,100,10))
 ```
 :::
 ::::

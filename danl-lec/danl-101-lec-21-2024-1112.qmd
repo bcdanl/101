@@ -758,7 +758,7 @@ diamonds |>
 :::: {.columns}
 
 ::: {.column width="50%"}
-#### Bar Chart for the `age` variable
+#### Bar Chart for the `Age` variable
 <div style="display:block; margin:-20px;"></div>
 ```{r}
 #| echo: false
@@ -777,7 +777,7 @@ df |>
 
 ::: {.column width="50%"}
 
-#### Histogram for the `age` variable
+#### Histogram for the `Age` variable
 <div style="display:block; margin:-20px;"></div>
 ```{r}
 #| echo: false

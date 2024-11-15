@@ -4750,6 +4750,6 @@
     "href": "danl-lec/danl-101-lec-21-2024-1112.html#distribution-of-an-integer-variable-1",
     "title": "Lecture 21",
     "section": "Distribution of an Integer Variable",
-    "text": "Distribution of an Integer Variable\n\n\n\n\n\nBar Chart for the age variable\n\n\n\n\n\n\n\n\n\nHistogram for the age variable\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn ggplot, the distribution of an integer variable can appear quite similar when using geom_bar() and geom_histogram().\n\nIn Python or others, they can be quite different, as shown above."
+    "text": "Distribution of an Integer Variable\n\n\n\n\n\nBar Chart for the Age variable\n\n\n\n\n\n\n\n\n\nHistogram for the Age variable\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn ggplot, the distribution of an integer variable can appear quite similar when using geom_bar() and geom_histogram().\n\nIn Python or others, they can be quite different, as shown above."
   }
 ]

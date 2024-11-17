@@ -1,9 +1,10 @@
 ---
 title: Color vs. Facet
 subtitle: Classwork 10
-date: 2024-11-05
+date: 2024-11-04
 from: markdown+emoji
 
+fig-width: 9
 execute: 
   eval: true
   echo: true
@@ -42,8 +43,8 @@ theme_set(theme_fivethirtyeight() +
 
 
 # Set global options for color-blind-friendly scales
-scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
-scale_fill_discrete <- function(...) scale_fill_viridis_d(...)
+scale_colour_discrete <- function(...) scale_color_tableau(...)
+scale_fill_discrete <- function(...) scale_fill_tableau(...)
 
 ```
 
@@ -76,15 +77,77 @@ DT::datatable(nbc_show, options = list(
 ## Q1a
 - Provide `ggplot()` code to describe the relationship between `GRP` and `PE`.
 
+**Answer:**
+
+```{r}
+ggplot(data = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE)) +
+  geom_point() +
+  geom_smooth()
+```
+
+
+```{r}
+ggplot(data = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+
 <br>
 
 
 ## Q1b
 - Provide `ggplot()` code to describe how the relationship between `GRP` and `PE` varies by `Genre`.
 
+**Answer:**
+
+```{r}
+ggplot(data = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE,
+                     color = Genre)) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              se = FALSE)   # se = FALSE turns off the ribbon
+```
+
+
+```{r}
+ggplot(data = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE,
+                     color = Genre)) +
+  geom_point(show.legend = FALSE) +
+  geom_smooth(method = "lm",
+              show.legend = FALSE,
+              se = FALSE) +  # se = FALSE turns off the ribbon
+  facet_wrap(~Genre)
+```
+
+
 <br>
 
 ## Q1c
 - What are the advantages to using faceting instead of the `color` aesthetic? What are the disadvantages? How might the balance change if you had a larger dataset?
+
+**Answer:**
+
+
+- Advantages of Faceting
+	1. Clarity for Multiple Categories: Faceting avoids the visual clutter of overlapping points and lines, especially when the number of categories (e.g., `Genre`) is large.
+	2. Highlights Individual Patterns: By splitting the data into separate plots, it’s easier to observe specific trends or outliers within each genre.
+	3. Improved Readability: Each genre gets its own visual space, avoiding the need to distinguish between multiple colors.
+
+- Disadvantages of Faceting
+	- Difficult Cross-Category Comparison: Observations in separate facets cannot be directly compared. Audiences need to read through all facets.
+
+- Impact with Larger Dataset
+	-	More Data Points: Overlapping increases, making faceting a more practical option to reduce clutter. Color aesthetics may struggle to show patterns with dense data points.
+	-	More Categories: Differentiating between colors becomes harder as the number of categories increases. In such cases, faceting is clearer.
+	-	Transparency Issues: Using transparency (`alpha`) with many overlapping points and colors can result in a loss of clear category identification.
 
 <br>

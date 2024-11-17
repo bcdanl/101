@@ -1,9 +1,10 @@
 ---
 title: Time Trend Plots
 subtitle: Classwork 11
-date: 2024-11-07
+date: 2024-11-06
 from: markdown+emoji
 
+fig-width: 10
 execute: 
   eval: true
   echo: true
@@ -28,10 +29,11 @@ theme_set(theme_fivethirtyeight() +
                                size = rel(1.75),
                                margin = margin(10,0,0,0)),
                 axis.title.y = 
-                  element_text(angle = 0,
+                  element_text(angle = 90,
                                size = rel(1.75),
                                margin = margin(0,10,0,0)),
-                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.x = element_text(size = rel(1.75),
+                                           angle = 45),
                 axis.text.y = element_text(size = rel(1.75)),
                 strip.text = element_text(size = rel(1.5)),
                 legend.position = "top",
@@ -70,11 +72,107 @@ DT::datatable(df_gapminder, options = list(
 - Provide `ggplot()` code to describe the time trend of GDP per capita (`gdpPercap`).
   - How would you take into account country-level data structure?
 
+**Answer:**
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = gdpPercap)) +
+  geom_point(size = .5) +
+  geom_line()
+```
+
+- Something has gone wrong. What happened? While ggplot will make a pretty good guess as to the structure of the data, it does not know that the yearly observations in the data are grouped by country. 
+  - It starts with an observation for 1952 in the first row of the data. It doesn’t know this belongs to Afghanistan. Instead of going to Afghanistan 1953, it finds there are a series of 1952 observations, so it joins all of those up first, alphabetically by country, all the way down to the 1952 observation that belongs to Zimbabwe. Then it moves to the first observation in the next year, 1957.
+
+- In this case, we can use the `group` or `color` aesthetic to tell ggplot explicitly about this country-level structure.
+
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = gdpPercap,
+                     group = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom_line()
+```
+
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = gdpPercap,
+                     color = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom_line(show.legend = FALSE)
+```
+
+- The plot here is still fairly rough, but it is showing the data properly, with each line representing the trajectory of a country over time. 
+  - The gigantic outlier is Kuwait, in case you are interested.
+
+
+
 <br>
 
 
 ## Q1b
 - Provide `ggplot()` code to describe how the *overall* time trend of GDP per capita (`gdpPercap`) varies by `continent`.
 
+**Answer:**
+
+- We can use `facet_wrap()` to split our plot by `continent`
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = gdpPercap,
+                     group = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom_line(show.legend = FALSE) +
+  facet_wrap(~continent)
+```
+
+- Because we have only five continents it might be worth seeing if we can fit them on a single row (which means we’ll have five columns). 
+
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = gdpPercap,
+                     group = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom_line(show.legend = FALSE) +
+  facet_wrap(~continent, 
+             nrow = 1)
+```
+
+- Since GDP per capita is highly skewed, let's take a log transformation on it:
+
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = log(gdpPercap),
+                     group = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom_line(show.legend = FALSE) +
+  facet_wrap(~continent, 
+             nrow = 1)
+```
+
+- In addition, we can add a smooth curve to each continent, and a few cosmetic enhancements that make the graph a little more effective. 
+  - In particular we will make the country trends a light gray color. 
+  - This make audience clearly see the **overall time trend** of GDP per capital across continents.
+
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = log(gdpPercap))) +
+  geom_line(show.legend = FALSE,
+            color = 'grey',
+            mapping = aes(group = country)) + # Advanced ggplot: we can add a specific aes() to a specific geom.
+  geom_smooth() +
+  facet_wrap(~continent, 
+             nrow = 1)
+```
 
 <br>

@@ -1,9 +1,10 @@
 ---
 title: Relationship Plots
 subtitle: Classwork 9
-date: 2024-10-29
+date: 2024-10-28
 from: markdown+emoji
 
+fig-width: 9
 execute: 
   eval: true
   echo: true
@@ -42,8 +43,8 @@ theme_set(theme_fivethirtyeight() +
 
 
 # Set global options for color-blind-friendly scales
-scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
-scale_fill_discrete <- function(...) scale_fill_viridis_d(...)
+scale_colour_discrete <- function(...) scale_colour_tableau(...)
+scale_fill_discrete <- function(...) scale_fill_tableau(...)
 
 ```
 
@@ -67,10 +68,49 @@ DT::datatable(df, options = list(
 ## Q1a
 - Provide both `ggplot()` and comment to describe the relationship between ice cream sales (`IceCreamSales`) and drowning incidents (`DrowningIncidents`).
 
+
+**Answer:**
+
+```{r}
+ggplot(data = df,
+       mapping = aes(x = IceCreamSales,
+                     y = DrowningIncidents)) +
+  geom_point() +
+  geom_smooth()
+```
+
+- The scatterplot along with the fitted line shows a positive linear relationship between ice cream sales and drowning incidents. This trend is highlighted by the fitted line in the plot. 
+
+- As ice cream sales increase, the number of drowning incidents also tends to increase. 
+
 <br>
 
 ## Q1b
 - Is the relationship correlation or causation? Why?
+
+**Answer:**
+
+- The observed relationship is correlation, not causation. While the data shows that higher ice cream sales are associated with more drowning incidents, this does not imply that buying more ice cream causes more drownings. 
+
+- This correlation could be due to a confounding factor, such as warmer weather, which increases both ice cream consumption and water-related activities, leading to more drowning incidents.
+
+```{r}
+ggplot(data = df,
+       mapping = aes(x = Month,
+                     y = IceCreamSales)) +
+  geom_point() +
+  geom_line()
+```
+
+```{r}
+ggplot(data = df,
+       mapping = aes(x = Month,
+                     y = DrowningIncidents)) +
+  geom_point() +
+  geom_line()
+```
+
+
 
 <br><br>
 
@@ -105,9 +145,81 @@ DT::datatable(df_gapminder, options = list(
 ## Q2a
 - Provide both `ggplot()` and comment to describe the relationship between GDP per capita (`gdpPercap`) and life expectancy (`lifeExp`).
 
+**Answer:**
+
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = gdpPercap,
+                     y = lifeExp)) +
+  geom_point(alpha = .1) + # Add transparency to reduce overplotting
+  geom_smooth(color = "darkorange") +
+  geom_smooth(method = "lm")
+```
+
+- There is a positive association between GDP per capita and life expectancy, 
+  - But the relationship may not be linear. Life expectancy increases with GDP per capita at a decreasing rate.
+  - Additionally, developing countries appear to cluster near relatively lower life expectancy values.
+
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = log(gdpPercap),
+                     y = lifeExp)) +
+  geom_point(alpha = .2) + # Add transparency to reduce overplotting
+  geom_smooth(color = "darkorange") +
+  geom_smooth(method = "lm")
+```
+
+- Log transformation reduces visual clutter---a highly dense cluster of points has now disappeared. 
+  - Additionally, the linear model now fits well into the data.
+
+
 <br>
 
 ## Q2b
 - Provide both `ggplot()` and comment to describe how the relationship between GDP per capita (`gdpPercap`) and life expectancy (`lifeExp`) varies by `continent`.
+
+**Answer:**
+
+
+
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = log(gdpPercap),
+                     y = lifeExp,
+                     color = continent)) +  # different colors are used to distinguish continents
+  geom_point(alpha = .5)  # Add transparency to reduce overplotting
+```
+
+- While transparency (`alpha`) in the scatterplot partially reduces overplotting, it does not fully address the issue, especially in dense regions. 
+- This is because, in general, the mixing of overlapping transparent colors may be no longer represent the colors of the categories. 
+- Adding fitted lines clarifies the differences in relationships across continents.
+
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = log(gdpPercap),
+                     y = lifeExp,
+                     color = continent)) +  # different colors are used to distinguish continents
+  geom_point(alpha = .5) + # Add transparency to reduce overplotting
+  geom_smooth(method = "lm")
+```
+
+- The different slopes of the fitted lines across continents imply that the relationship between GDP per capita and life expectancy differs by continent. 
+  - Continents like the Americas and Oceania display steeper slopes, indicating a stronger positive association between GDP per capita and life expectancy. 
+  - This suggests that for the same percentage increase in GDP per capita, the improvement in life expectancy is greater in these regions compared to others.
+
+
+```{r}
+ggplot(data = df_gapminder,
+       mapping = aes(x = log(gdpPercap),
+                     y = lifeExp,
+                     color = continent)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~continent)
+```
+
+- The faceted view significantly reduces overplotting and provides a more detailed look at regional differences.
+  - However, using `color` only can make it easier to compare the slope of the fitted lines across continents.
+
 
 <br>

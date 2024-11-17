@@ -523,6 +523,9 @@
 </div>
 </div>
 <ul>
+  
+<br>
+
 <li>The <code>nyc_dogs_breeds</code> data.frame counts the number of occurrences for each value in the <code>breed</code> variable in the <code>nyc_dogs</code> data.frame.
 <ul>
 <li>The <code>nyc_dogs_breeds</code> data.frame keeps observations if
@@ -855,6 +858,157 @@ document.getElementById("form").addEventListener("submit", function (e) {
   .textarea {
     width: 300px;
     height: 100px;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all div elements with data-pagedtable="false"
+    const containers = document.querySelectorAll('div[data-pagedtable="false"]');
+
+    containers.forEach(container => {
+      const script = container.querySelector('script[data-pagedtable-source]');
+      if (!script) return; // Skip if no script found
+      
+      // Parse JSON data
+      const tableData = JSON.parse(script.textContent);
+      const columns = tableData.columns;
+      const rows = tableData.data;
+      const rowsPerPage = 10;
+      let currentPage = 1;
+
+      // Create the table element
+      const table = document.createElement('table');
+      table.className = 'paged-table';
+
+      // Create the table header
+      const thead = document.createElement('thead');
+      const headerRow = document.createElement('tr');
+      columns.forEach(col => {
+        const th = document.createElement('th');
+        th.textContent = col.label[0];
+        th.style.textAlign = col.align[0];
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
+
+      // Create the table body
+      const tbody = document.createElement('tbody');
+      table.appendChild(tbody);
+      container.appendChild(table);
+
+      // Create pagination controls
+      const paginationControls = document.createElement('div');
+      paginationControls.className = 'pagination-controls';
+      container.appendChild(paginationControls);
+
+      // Function to render rows for the current page
+      function renderRows() {
+        tbody.innerHTML = ''; // Clear existing rows
+        const startIndex = (currentPage - 1) * rowsPerPage;
+        const endIndex = Math.min(startIndex + rowsPerPage, rows.length);
+
+        for (let i = startIndex; i < endIndex; i++) {
+          const tr = document.createElement('tr');
+          columns.forEach(col => {
+            const td = document.createElement('td');
+            const colName = col.name[0];
+            td.textContent = rows[i][colName];
+            td.style.textAlign = col.align[0];
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        }
+      }
+
+      // Function to create pagination buttons
+      function createPaginationButtons() {
+        paginationControls.innerHTML = ''; // Clear existing buttons
+        const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+        function createButton(page) {
+          const button = document.createElement('button');
+          button.textContent = page;
+          button.className = 'pagination-button';
+          if (page === currentPage) {
+            button.disabled = true;
+          }
+          button.addEventListener('click', () => {
+            currentPage = page;
+            renderRows();
+            createPaginationButtons();
+          });
+          paginationControls.appendChild(button);
+        }
+
+        // Show first 5 pages or all if total is less than 5
+        for (let i = 1; i <= Math.min(5, totalPages); i++) {
+          createButton(i);
+        }
+
+        // Add ellipsis if there are more than 6 pages
+        if (totalPages > 6 && currentPage <= totalPages - 5) {
+          const ellipsis = document.createElement('span');
+          ellipsis.textContent = '...';
+          ellipsis.className = 'pagination-ellipsis';
+          paginationControls.appendChild(ellipsis);
+        }
+
+        // Add last page button
+        if (totalPages > 5) {
+          createButton(totalPages);
+        }
+      }
+
+      // Initial render
+      renderRows();
+      createPaginationButtons();
+    });
+  });
+</script>
+
+<style>
+  /* Basic table styling */
+  .paged-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove double borders */
+    margin-top: 10px;
+  }
+
+  /* Add borders to cells */
+  .paged-table th,
+  .paged-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  /* Header styling */
+  .paged-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  /* Alternate row colors */
+  .paged-table tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light grey for odd rows */
+  }
+
+  .paged-table tr:nth-child(even) {
+    background-color: #ffffff; /* White for even rows */
+  }
+
+  /* Add space between columns */
+  .paged-table td,
+  .paged-table th {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Highlight row on hover */
+  .paged-table tr:hover {
+    background-color: #e8f0fe; /* Light blue */
   }
 </style>
 

@@ -52,13 +52,13 @@ scale_fill_discrete <- function(...) scale_fill_tableau(...)
   - After clicking **"Submit"** button, wait for the message, **"Data submitted successfully!"**.
   - A **confirmation email** will be sent to the email address that you provide on this homework page once your submission is received.
 - You may submit multiple times, but only your most recent submission will be evaluated.
-- The due is <u>November 16, 5:00 P.M., 2024, Saturday, Eastern Time</u>.
+- The due is <u>November 19, 3:30 P.M., 2024, Tuesday, Eastern Time</u>.
 
 <br>
 
 
 ```{=html}
-<iframe id="contentFrame" width="100%" height="15000px" frameborder="no"
+<iframe id="contentFrame" width="100%" height="16250px" frameborder="no"
   src="danl-101-hw-04-google-sheet.html" style="overflow: hidden;">
 </iframe>
 ```

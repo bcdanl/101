@@ -58,7 +58,7 @@ scale_fill_discrete <- function(...) scale_fill_tableau(...)
 
 
 ```{=html}
-<iframe id="contentFrame" width="100%" height="16250px" frameborder="no"
+<iframe id="contentFrame" width="100%" height="16500px" frameborder="no"
   src="danl-101-hw-04-google-sheet.html" style="overflow: hidden;">
 </iframe>
 ```

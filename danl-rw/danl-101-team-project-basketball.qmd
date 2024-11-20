@@ -39,7 +39,7 @@ theme_set(theme_ipsum() +
 scale_colour_discrete <- function(...) scale_color_colorblind(...)
 scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 ```
-
+ 
 # Data
 The following lists data frames about NBA for the 2022-23 season:
 
@@ -49,6 +49,8 @@ The following lists data frames about NBA for the 2022-23 season:
 - `nba_games_adv_ff`: Joined data.frame (Game Logs + Advanced Statistics + Four Factors)
   - `nba_games_adv_ff <- nba_games |> left_join(nba_adv) |> left_join(nba_ff)` by `c("team_id", "team_abbreviation", "game_id", "min")`
   - Turnovers committed per possession is included here.
+- `nba_players`: NBA Player Statistics
+  - While the above data.frames are team-level data, this `nba_players` data.frame is player-level data.
 
 
 
@@ -56,7 +58,7 @@ The following lists data frames about NBA for the 2022-23 season:
 ## NBA Game Logs (`nba_games`)
 
 - `nba_games`: NBA Game Logs
-  - A data frame with 2460 rows and 29 variables:
+  - A data frame with 2460 observations and 29 variables:
 
 ```{r}
 nba_games <- read_csv("http://bcdanl.github.io/data/nba_games.csv")
@@ -171,7 +173,7 @@ Logical if game video exists
 
 ## NBA Advanced Statistics (`nba_adv`)
 - `nba_adv`: NBA Advanced Statistics
-  - A data frame with 2460 rows and 29 variables
+  - A data frame with 2460 observations and 29 variables
 
 ```{r}
 nba_adv <- read_csv("http://bcdanl.github.io/data/nba_adv.csv")
@@ -279,7 +281,7 @@ Player impact estimate
 ## NBA Four Factors (`nba_ff`)
 
 - `nba_ff`: NBA Team-level Four Factors---(1) Effective field goal percentage, (2) Turnovers committed per possession, (3) Offensive rebounding percentage, and (4) Free throw rate
-  - A data frame with 2460 rows and 14 variables
+  - A data frame with 2460 observations and 14 variables
 
 ```{r}
 nba_ff <- read_csv("http://bcdanl.github.io/data/nba_ff.csv")
@@ -339,6 +341,9 @@ Offensive rebound percentage of opponent
 
 ## NBA Game Logs + Advanced Statistics + Four Factors (`nba_games_adv_ff`)
 
+- `nba_games_adv_ff` is the data.frame that contains all the information in the `nba_games`, `nba_adv`, and `nba_ff` data.frames.
+  - Turnovers committed per possession is included here.
+
 ```{r}
 nba_games_adv_ff <- read_csv("http://bcdanl.github.io/data/nba_games_adv_ff.csv")
 ```
@@ -355,6 +360,175 @@ Turnovers committed per possession (TPP). The number of turnovers committed rela
 - `tov` comes from game log data.frame 
 - `poss` comes from advanced statistics data.frame
 
+
+## NBA Player Statistics (`nba_players`)
+
+- `nba_players`: NBA Player Statistics
+  - A data frame with 467 observations and 51 variables
+
+
+```{r}
+nba_players <- read_csv("http://bcdanl.github.io/data/nba_players.csv")
+```
+
+```{r}
+#| echo: false
+rmarkdown::paged_table(nba_players)
+```
+
+<br>
+
+`PlayerName`
+Player Name
+
+`Salary`
+Salary in US Dollars
+
+`Position`
+Position of Player
+
+`Age`
+Age
+
+`Team`
+Team(s) Played for in 2022-23 Season
+
+`GP`
+Games Played
+
+`GS`
+Games Started
+
+`MP`
+Minutes Per Game
+
+`FG`
+Field Goals Made Per Game
+
+`FGA`
+Field Goal Attempts Per Game
+
+`FG_pct` 
+Field Goal Percentage
+
+`3P`
+Three Point Field Goals Made Per Game
+
+`3PA`
+Three Point Field Goal Attempts Per Game
+
+`3P_pct` 
+Three Point Percentage
+
+`2P`
+Two Point Field Goals Made Per Game
+
+`2PA`
+Two Point Field Goal Attempts Per Game
+
+`eFG_pct` 
+Effective Field Goal Percentage
+
+`FT`
+Free Throws Made Per Game
+
+`FTA`
+Free Throw Attempts Per Game
+
+`FT_pct` 
+Free Throw Percentage
+
+`ORB`
+Offensive Rebounds Per Game
+
+`DRB`
+Defensive Rebounds Per Game
+
+`TRB`
+Total Rebounds Per Game
+
+`AST`
+Assists Per Game
+
+`STL`
+Steals Per Game
+
+`BLK`
+Blocks Per Game
+
+`TOV`
+Turnovers Per Game
+
+`PF`
+Personal Fouls Per Game
+
+``PTS``
+Points Per Game
+
+`TotalMinutes`
+Total Minutes Played in the Season
+
+``PER``
+Player Efficiency Rating
+
+`TS_pct` 
+True Shooting Percentage
+
+`3PAr`
+Three Point Attempt Rate
+
+`FTr`
+Free Throw Rate
+
+`ORB_pct` 
+Offensive Rebound Percentage
+
+`DRB_pct` 
+Defensive Rebound Percentage
+
+`TRB_pct` 
+Total Rebound Percentage
+
+`AST_pct` 
+Assist Percentage
+
+`STL_pct` 
+Steal Percentage
+
+`BLK_pct` 
+Block Percentage
+
+`TOV_pct` 
+Turnover Percentage
+
+`USG_pct` 
+Usage Rate
+
+`OWS`
+Offensive Win Shares
+
+`DWS`
+Defensive Win Shares
+
+`WS`
+Win Shares
+
+`WS_per_48`
+Win Shares Per 48 Minutes
+
+`OBPM`
+Offensive Box Plus/Minus
+
+`DBPM`
+Defensive Box Plus/Minus
+
+`BPM`
+Box Plus/Minus
+ 
+`VORP`
+Value Over Replacement Player
+
+<br><br>
 
 # Basketball Metrics
 

@@ -1,0 +1,422 @@
+---
+title: Data Storytelling Team Project - Basketball
+author: Byeong-Hak Choe
+institute: SUNY Geneseo
+date: last-modified
+
+toc: true
+toc-depth: 2
+toc-expand: true
+toc-title: Contents
+number-sections: false
+number-depth: 3
+
+code-fold: false
+
+execute:
+  echo: true
+  eval: true
+  message: false
+  warning: false
+  fig-width: 9
+  fig-height: 6
+---
+```{r}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(broom)
+library(hrbrthemes)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5) ),
+                axis.title.y = element_text(size = rel(1.5) ))
+          )
+
+# Set global options for color-blind-friendly scales
+# scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_colour_discrete <- function(...) scale_color_colorblind(...)
+scale_fill_discrete <- function(...) scale_fill_colorblind(...)
+```
+
+# Data
+The following lists data frames about NBA for the 2022-23 season:
+
+- `nba_games`: NBA Game Logs
+- `nba_adv`: NBA Advanced Statistics
+- `nba_ff`: NBA Four Factors---(1) Effective field goal percentage, (2) Turnovers committed per possession, (3) Offensive rebounding percentage, and (4) Free throw rate
+- `nba_games_adv_ff`: Joined data.frame (Game Logs + Advanced Statistics + Four Factors)
+  - `nba_games_adv_ff <- nba_games |> left_join(nba_adv) |> left_join(nba_ff)` by `c("team_id", "team_abbreviation", "game_id", "min")`
+  - Turnovers committed per possession is included here.
+
+
+
+
+## NBA Game Logs (`nba_games`)
+
+- `nba_games`: NBA Game Logs
+  - A data frame with 2460 rows and 29 variables:
+
+```{r}
+nba_games <- read_csv("http://bcdanl.github.io/data/nba_games.csv")
+```
+
+```{r}
+#| echo: false
+rmarkdown::paged_table(nba_games)
+```
+
+<br>
+
+`season_id`
+Season in which the game was played (YYYY)
+
+`team_id`
+Team ID on nba.com
+
+`team_abbreviation`
+Team abbreviation on nba.com
+
+`team_name`
+Team name on nba.com
+
+`game_id`
+Game ID on nba.com
+
+`game_date`
+Date in YYYY-MM-DD
+
+`matchup`
+Team One vs. Team Two
+
+`wl`
+Win or Loss
+
+`min`
+Minutes in the game
+
+`fgm`
+Team Field goals made
+
+`fga`
+Team Field goal attempts
+
+
+`fg_pct`
+Team field goal percentage
+
+`fg3m`
+Team three point field goals made
+
+`fg3a`
+Team three point field goal attempts
+
+`fg3_pct`
+Team three point field goal percentage
+
+`efg`
+Effective field goal percentage
+`efg = (fg2m + 1.5*fg3m)/(fga)`
+It adjusts the traditional field goal percentage to account for the fact that three-point field goals are worth more than two-point field goals.
+
+
+`ftm`
+Team free throws made
+
+`fta`
+Team free throw attempts
+
+`ftr`
+Free throw rate (FTR). The ratio of free throw attempts (`fta`) to field goal attempts (`fga`) `ftr = fta / fga`
+
+`ft_pct`
+Team free throw percentage
+
+`oreb`
+Team offensive rebounds
+
+`dreb`
+Team defensive rebounds
+
+`reb`
+Team total rebounds
+
+`ast`
+Team total assists
+
+`stl`
+Team total steals
+
+`blk`
+Team total blocks
+
+`tov`
+Team total turnovers
+
+`pf`
+Team total personal fouls
+
+`pts`
+Team total points scored
+
+`plus_minus`
+Margin of game as Team score minus Opponent score
+
+`video_available`
+Logical if game video exists
+
+
+<br>
+
+## NBA Advanced Statistics (`nba_adv`)
+- `nba_adv`: NBA Advanced Statistics
+  - A data frame with 2460 rows and 29 variables
+
+```{r}
+nba_adv <- read_csv("http://bcdanl.github.io/data/nba_adv.csv")
+```
+
+```{r}
+#| echo: false
+rmarkdown::paged_table(nba_adv)
+```
+
+<br>
+
+`game_id`
+Game ID on nba.com
+
+`team_id`
+Team ID on nba.com
+
+`team_name`
+Team name
+
+`team_abbreviation`
+Team abbreviation
+
+`team_city`
+Team city
+
+`min`
+Total minutes in the game
+
+`e_off_rating`
+Offensive rating (effective ?)
+
+`off_rating`
+Offensive rating
+
+`e_def_rating`
+Defensive rating (effective ?)
+
+`def_rating`
+Defensive rating
+
+`e_net_rating`
+Net rating (effective ?)
+
+`net_rating`
+Net rating
+
+`ast_pct`
+Assist percentage
+
+`ast_tov`
+Assists to turnover ratio
+
+`ast_ratio`
+Assist ratio
+
+`oreb_pct`
+Offensive rebound percentage
+
+`dreb_pct`
+Defensive rebound percentage
+
+`reb_pct`
+Total rebound percentage
+
+`e_tm_tov_pct`
+Turnover percentage (effective?)
+
+`tm_tov_pct`
+Turnover percentage
+
+`efg_pct`
+Effective field goal percentage
+
+`ts_pct`
+True Shooting percentage
+
+`usg_pct`
+Usage percentage
+
+`e_usg_pct`
+Usage percentage (effective?)
+
+`e_pace`
+Pace (effective ?)
+
+`pace`
+Pace
+
+`pace_per40`
+Pace per forty minutes
+
+`poss`
+Team possessions in game
+
+`pie`
+Player impact estimate
+
+
+
+<br>
+
+
+## NBA Four Factors (`nba_ff`)
+
+- `nba_ff`: NBA Team-level Four Factors---(1) Effective field goal percentage, (2) Turnovers committed per possession, (3) Offensive rebounding percentage, and (4) Free throw rate
+  - A data frame with 2460 rows and 14 variables
+
+```{r}
+nba_ff <- read_csv("http://bcdanl.github.io/data/nba_ff.csv")
+```
+
+```{r}
+#| echo: false
+rmarkdown::paged_table(nba_ff)
+```
+
+<br>
+
+`game_id`
+Game ID on nba.com
+
+`team_id`
+Team ID on nba.com
+
+`team_name`
+Team name on nba.com
+
+`team_abbreviation`
+Team abbreviation on nba.com
+
+`team_city`
+Team city
+
+`min`
+Minutes in the game
+
+`efg_pct`
+Effective field goal percentage
+
+`fta_rate`
+Free throw rate of team
+
+`tm_tov_pct`
+Turnover percentage of opponent
+
+`oreb_pct`
+Offensive rebound percentage of opponent
+
+`opp_efg_pct`
+Effective field goal percentage of opponent
+
+`opp_fta_rate`
+Free throw rate of opponent
+
+`opp_tov_pct`
+Turnover percentage of opponent
+
+`opp_oreb_pct`
+Offensive rebound percentage of opponent
+
+
+<br>
+
+## NBA Game Logs + Advanced Statistics + Four Factors (`nba_games_adv_ff`)
+
+```{r}
+nba_games_adv_ff <- read_csv("http://bcdanl.github.io/data/nba_games_adv_ff.csv")
+```
+
+```{r}
+#| echo: false
+rmarkdown::paged_table(nba_games_adv_ff)
+```
+
+`tpp` 
+Turnovers committed per possession (TPP). The number of turnovers committed relative to the number of possessions the team had during the game.
+`tpp = tov / poss`. 
+
+- `tov` comes from game log data.frame 
+- `poss` comes from advanced statistics data.frame
+
+
+# Basketball Metrics
+
+## Offensive Statistics
+
+| Statistic                  | Definition                                                                 |
+|----------------------------|---------------------------------------------------------------------------|
+| **Points Scored**          | Total points scored by a player                                           |
+| **Minutes Played**         | Amount of game time a player is one of the five active players on the court|
+| **Field Goal Percentage**  | Number of shots made divided by the number of shots attempted (FG% = Made ÷ Attempted) |
+| **Free Throw Percentage**  | Number of free throws made divided by the number of free throws attempted (FT% = Made ÷ Attempted) |
+| **Assists**                | Passes that directly result in a teammate scoring a field goal            |
+| **Three-Point Shots**      | Shots made from behind the three-point line                               |
+
+## Defensive Statistics
+
+| Statistic                  | Definition                                                                 |
+|----------------------------|---------------------------------------------------------------------------|
+| **Defensive Rebounds**     | Catching the ball after an opponent's missed shot                         |
+| **Blocks**                 | Swatting the ball away as it leaves the opponent's hand                   |
+| **Steals**                 | Taking the ball away from an opponent without committing a foul           |
+| **Fouls**                  | Breaking the rules of permissible conduct, usually involving physical contact during a shot |
+| **Turnovers**              | Actions that cause the other team to gain possession, excluding fouls or missed shots (e.g., bad passes out of bounds) |
+| **Plus/Minus**             | The net number of points your team scored versus allowed while you were in the game |
+
+
+## Four Factors
+The “four factors” concept, developed by Dean Oliver and detailed in his book Basketball on Paper (available at basketballonpaper.com), outlines the key elements contributing to a team’s success. Oliver originally assigned the following weights to these factors: shooting (40%), turnovers (25%), rebounding (20%), and free throws (15%). While the exact weighting is often debated, the importance of these four factors is widely recognized. They are critical not only for understanding a team’s offensive efficiency but also for evaluating defensive performance (e.g., analyzing the opponent’s effective field goal percentage). The four factors are:
+
+1.	Effective Field Goal Percentage (EFG%)
+2.	Turnovers Committed per Possession
+3.	Offensive Rebounding Percentage (ORP)
+4.	Free Throw Rate (FTR)
+
+### Effective Field Goal Percentage (EFG%)
+Effective field goal percentage adjusts for the difference in value between two-point and three-point shots, giving three-pointers 50% more weight since they are worth 50% more points. The formula for EFG% is:
+
+$$
+EFG = \frac{fg2m + 1.5 \times fg3m}{fga}
+$$
+Where 
+
+-	`fg2m`: Number of two-point field goals made
+-	`fg3m`: Number of three-point field goals made
+-	`fga`: Total field goals attempted
+
+### Turnovers Committed per Possession
+This metric measures how often a team turns the ball over relative to the number of possessions they have in a game. It highlights a team’s ball-handling efficiency by considering turnovers (`tov`) in relation to total possessions (`poss`).
+
+### Offensive Rebounding Percentage
+Offensive rebounding percentage evaluates a team’s ability to secure offensive rebounds compared to the total number of available offensive rebounds. The formula is:
+
+$$
+ORP = \frac{\text{Team Offensive Rebounds}}{\text{Team Offensive Rebounds + Opponent Offensive Rebounds}}
+$$
+
+### Free Throw Rate
+Free throw rate measures how frequently a team attempts free throws compared to its total field goal attempts. The formula is:
+
+$$
+FTR = \frac{\text{Free Throw Attempts (fta)}}{\text{Field Goal Attempts (fga)}}
+$$
+
+<br>
+

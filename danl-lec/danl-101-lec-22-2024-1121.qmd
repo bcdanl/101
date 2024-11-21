@@ -1,0 +1,256 @@
+---
+title: Lecture 22
+subtitle: Team Project
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-11-21
+execute: 
+  eval: true
+  echo: false
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+library(gapminder)
+library(ggrepel)
+
+
+nwsl <- read_csv("https://bcdanl.github.io/data/nwsl_player_stats.csv")
+
+nwsl_num <- nwsl |> 
+  select(-(player:squad))
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+# scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_colour_discrete <- function(...) scale_color_colorblind(...)
+scale_fill_discrete <- function(...) scale_fill_colorblind(...)
+```
+
+
+
+
+# Data Storytelling Project {background-color="#1c4982"}
+
+
+## Craft a Compelling Narrative Using Data
+
+- **Tell a Story, Not Just Show Numbers**:  
+  - Data storytelling goes beyond presenting facts. 
+  - A narrative connects the data to real-world insights, engages the audience, and makes the findings memorable.  
+  - Identify a central theme or question your data addresses.  
+  - Frame the story around a problem, trend, or decision-making process.  
+  - Use storytelling elements like cause and effect, conflict, and resolution.  
+
+
+## Craft a Compelling Narrative Using Data
+- **Explain "Why It Matters"**:  
+  - Highlight the significance of the data.  
+  - Relate findings to real-world scenarios or challenges.  
+  - Address questions like: 
+    - *What does this mean? How does it impact the audience or stakeholders?*  
+
+- **Leverage Background Knowledge**  
+  - **Understand the Context of Your Data**:  
+    - Research the topic or industry related to your data.  
+    - Know key concepts, definitions, and common trends.  
+    - Example: If analyzing sales data, understand seasonal patterns, market dynamics, and customer behavior.  
+
+
+
+## Craft a Compelling Narrative Using Data
+- **Ask Meaningful Questions**:  
+  - Background knowledge allows you to formulate insightful questions to guide your analysis, such as:  
+    - *Why is this trend happening?*  
+    - *What factors contribute to this outcome?*  
+    - *What actionable insights can be derived?*
+
+- **Bridge Data and Audience Understanding**:  
+  - Background knowledge helps translate complex data into insights that are accessible to your audience.  
+  - It allows you to anticipate questions and provide thoughtful answers.
+
+
+
+## Data Transformation Techniques
+
+- **Make Data Work for Your Story**:  
+  - Use filtering, sorting, counting, and selecting to refine raw data.  
+    - **Filtering**: Narrow down data to specific conditions/categories
+    - **Sorting**: Arrange data in a particular order
+    - **Counting**: Quantify occurrences or frequencies
+    - **Selecting**: Choose specific variables of interest
+  - Focus on data points that align with your narrative.
+
+- Feel free to get data transformation support from Byeong-Hak
+
+
+## Data Visualization
+
+- **Types of Data Visualizations**
+  - **Bar Charts**: Compare quantities across categories
+  - **Line Graphs**: Show trends over time
+  - **Scatter Plots**: Display relationships between two numerical variables
+  - **Histograms**: Illustrate distributions of numerical data
+  - **Box Plots**: Summarize distributions and identify outliers
+
+- Feel free to use any other types of data visualizations.
+
+
+## Data Visualization
+
+- **Best Practices**
+  - Ensure visuals are clear, properly labeled, and easy to interpret
+  - Use appropriate chart types for the data being presented
+  - Maintain consistency in styling and formatting
+  - Make visualization colorblind-friendly
+
+
+## Getting Started
+
+1. **Identify Variables of Interest**
+   - Select variables that are relevant to your story
+   - Understand the context and meaning of each variable
+
+2. **Use Descriptive Statistics**
+   - Summarize data using measures like mean, median, and mode
+   - Calculate measures of variability such as range, variance, and standard deviation
+   - Identify any outliers or anomalies in the data
+   - Gain initial insights into central tendencies and dispersion
+
+
+## Visualizing Data
+
+1. **Examine Distributions**
+   - Analyze how data points are spread across different values
+   - Utilize histograms and box plots to visualize distributions
+
+2. **Explore Relationships Between Variables**
+   - Investigate how variables interact with each other
+   - Use scatterplots and fitted lines
+
+3. **Analyze Time Trends**
+   - Observe changes in variables over time
+   - Implement line charts and/or fitted lines to illustrate trends
+
+ 
+
+## Delving Deeper
+
+- **Distribution by Categories**
+  - Compare how distributions vary across different groups or categories
+  - Employ faceted histograms or box plots for comparison
+
+- **Relationships by Categories**
+  - Examine if relationships between variables differ among groups
+  - Use color-coded scatter plots or facets to highlight differences
+
+- **Time Trends by Categories**
+  - Analyze temporal trends within specific categories
+  - Create multiple line charts for each category
+
+ 
+
+## Incorporating Visual Aids
+
+- **Enhancing Your Story with Images**
+  - Insert pictures or graphics related to your narrative
+  - Use images to provide context or evoke emotions
+
+- **Types of Visual Aids**
+  - Photographs
+  - Illustrations
+  - Diagrams
+  - Infographics (non-data-related)
+
+- **Guidelines**
+  - Ensure images are relevant and add value to your presentation
+  - Use high-quality visuals that are clear and professional
+  - Cite sources if using images that are not your own
+
+ 
+
+## Crafting Your Story
+
+- **Provide Background Information**
+  - Set the stage with necessary context and explanations
+  - Explain the significance and relevance of your topic
+
+- **Narrative Structure**
+  - **Introduction**: Present your main question or objective
+  - **Body**: Walk through your analysis step by step
+  - **Conclusion**: Summarize key findings and insights
+
+ 
+
+## Presentation Tips
+
+- **Clarity and Simplicity**
+  - Use straightforward language appropriate for your audience
+  - Avoid unnecessary jargon or technical terms without explanation
+  - Start with a background story if needed
+
+- **Engagement**
+  - Incorporate visual aids to make your story more engaging
+  - Highlight interesting or unexpected findings
+
+- **Practice**
+  - Rehearse to maintain flow and timing
+  - Anticipate potential questions and prepare responses
+
+ 
+## Let's Get Started!
+
+- **Be Creative**
+  - Think innovatively in your analysis and presentation methods
+
+- **Stay Curious**
+  - Let your questions and hypotheses drive your data exploration
+
+- **Have Fun**
+  - Enjoy the process of discovering insights and telling your data story
+
+ 

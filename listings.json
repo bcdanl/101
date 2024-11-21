@@ -44,6 +44,8 @@
   {
     "listing": "/listing-danl-101-rw.html",
     "items": [
+      "/danl-rw/danl-101-team-project-hockey.html",
+      "/danl-rw/danl-101-team-project-football.html",
       "/danl-rw/danl-101-team-project-basketball.html",
       "/danl-rw/danl-101-team-project-soccer.html",
       "/danl-rw/danl-101-team-project-baseball.html",
@@ -54,6 +56,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/danl-lec/danl-101-lec-22-2024-1121.html",
       "/danl-lec/danl-101-lec-21-2024-1112.html",
       "/danl-lec/danl-101-lec-20-2024-1107.html",
       "/danl-lec/danl-101-lec-19-2024-1105.html",

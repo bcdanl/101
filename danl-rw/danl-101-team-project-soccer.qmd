@@ -44,7 +44,7 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 
 The following lists data frames about English Premier League (EPL):
 
-- `epl_teams`: team statistics for the English Premier League the English Premier League 2017-18 through 2021-22
+- `epl_teams`: team statistics for the English Premier League 2017-18 through 2021-22
 - `epl_players_2022`: Individual player statistics for the English Premier League's 2021 - 2022 season
 - `epl_gks_2022`: Individual goalkeeper statistics for the English Premier League's 2021 - 2022 season
 

@@ -46,7 +46,8 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 
 The following lists data frames about National Football League (NFL) for the seasons from 2014-15 through 2023-2024:
 
-- `nfl_team_epa`: Team's mean EPA when the team was on offense and when the team was on defense
+- `nfl_team_epa`: Team's mean expected points added (EPA) when the team was on offense and when the team was on defense
+  - For the details about EPA, please refer to the Football Metrics section below in the webpage.
 - `nfl_field_goals`: Play-by-play statistics at situations when field goals were attempted during the game
 - `nfl_passers`: weakly mean expected points added (EPA) and completion percentage over expected (COPE) among players who passed more than 44 times within a week
 - `nfl_player_stat`: Player statistics

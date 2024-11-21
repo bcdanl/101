@@ -5149,7 +5149,7 @@
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#data-visualization-1",
     "title": "Lecture 22",
     "section": "Data Visualization",
-    "text": "Data Visualization\nDelving Deeper\n\nDistribution by Categories\n\nCompare how distributions vary across different groups or categories\nEmploy faceted histograms or box plots for comparison\n\nRelationships by Categories\n\nExamine if relationships between variables differ among groups\nUse color-coded scatter plots or facets to highlight differences\n\nTime Trends by Categories\n\nAnalyze temporal trends within specific categories\nCreate multiple line charts or a facet for each category"
+    "text": "Data Visualization\nDelving Deeper\n\nDistribution by Categories\n\nCompare how distributions vary across different groups or categories\nEmploy faceted histograms or box plots for comparison\n\nRelationships by Categories\n\nExamine if relationships between variables differ among groups\nUse color-coded scatter plots or facets to highlight differences\n\nTime Trends by Categories\n\nAnalyze temporal trends within specific categories\nCreate multiple line charts or a faceted line chart"
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#getting-started",

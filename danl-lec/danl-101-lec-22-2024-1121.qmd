@@ -172,7 +172,7 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 
 - **Time Trends by Categories**
   - Analyze temporal trends within specific categories
-  - Create **multiple line charts** or a **facet** for each category
+  - Create **multiple line charts** or a **faceted line chart**
 
 
 <!-- - **Types of Data Visualizations** -->

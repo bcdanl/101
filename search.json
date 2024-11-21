@@ -5114,49 +5114,49 @@
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#craft-a-compelling-narrative-using-data",
     "title": "Lecture 22",
     "section": "Craft a Compelling Narrative Using Data",
-    "text": "Craft a Compelling Narrative Using Data\n\nTell a Story, Not Just Show Numbers:\n\nData storytelling goes beyond presenting facts.\nA narrative connects the data to real-world insights, engages the audience, and makes the findings memorable.\n\nIdentify a central theme or question your data addresses.\n\nFrame the story around a problem, trend, or decision-making process.\n\nUse storytelling elements like cause and effect, conflict, and resolution."
+    "text": "Craft a Compelling Narrative Using Data\n\nTell a Story, Not Just Show Numbers:\n\nData storytelling goes beyond presenting facts.\nA narrative connects the data to real-world insights, engages the audience, and makes the findings memorable.\n\nIdentify a central theme or question your data addresses.\n\nFrame the story around an issue, problem, trend, or decision-making process.\n\nUse storytelling elements like cause and effect, puzzling phenomena, conflict, and resolution."
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#craft-a-compelling-narrative-using-data-1",
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#craft-a-compelling-narrative-using-data-1",
     "title": "Lecture 22",
     "section": "Craft a Compelling Narrative Using Data",
-    "text": "Craft a Compelling Narrative Using Data\n\nExplain “Why It Matters”:\n\nHighlight the significance of the data.\n\nRelate findings to real-world scenarios or challenges.\n\nAddress questions like:\n\nWhat does this mean? How does it impact the audience or stakeholders?\n\n\nLeverage Background Knowledge\n\nUnderstand the Context of Your Data:\n\nResearch the topic or industry related to your data.\n\nKnow key concepts, definitions, and common trends.\n\nExample: If analyzing sales data, understand seasonal patterns, market dynamics, and customer behavior."
+    "text": "Craft a Compelling Narrative Using Data\n\nExplain “Why It Matters”:\n\nHighlight the significance of the data.\n\nRelate findings to real-world scenarios or challenges.\n\nAddress questions like:\n\nWhat does this mean? How does it impact the audience or stakeholders?\n\n\nLeverage Background Knowledge\n\nUnderstand the Context of Your Data:\n\nResearch the topic or industry related to your data.\n\nKnow key concepts, definitions, and common trends.\n\nExample: If analyzing sales data, understand seasonal/geographic patterns, market dynamics, and customer behavior."
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#craft-a-compelling-narrative-using-data-2",
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#craft-a-compelling-narrative-using-data-2",
     "title": "Lecture 22",
     "section": "Craft a Compelling Narrative Using Data",
-    "text": "Craft a Compelling Narrative Using Data\n\nAsk Meaningful Questions:\n\nBackground knowledge allows you to formulate insightful questions to guide your analysis, such as:\n\nWhy is this trend happening?\n\nWhat factors contribute to this outcome?\n\nWhat actionable insights can be derived?\n\n\nBridge Data and Audience Understanding:\n\nBackground knowledge helps translate complex data into insights that are accessible to your audience.\n\nIt allows you to anticipate questions and provide thoughtful answers."
+    "text": "Craft a Compelling Narrative Using Data\n\nAsk Meaningful Questions:\n\nBackground knowledge allows you to formulate insightful questions to guide your analysis, such as:\n\nWhy is this happening?\n\nWhat factors contribute to this outcome?\n\nWhat actionable insights can be derived?\n\n\nBridge Data and Audience Understanding:\n\nBackground knowledge helps translate complex data into insights that are accessible to your audience.\nIt allows you to anticipate questions and provide thoughtful answers."
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#data-transformation-techniques",
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#data-transformation-techniques",
     "title": "Lecture 22",
     "section": "Data Transformation Techniques",
-    "text": "Data Transformation Techniques\n\nMake Data Work for Your Story:\n\nUse filtering, sorting, counting, and selecting to refine raw data.\n\nFiltering: Narrow down data to specific conditions/categories\nSorting: Arrange data in a particular order\nCounting: Quantify occurrences or frequencies\nSelecting: Choose specific variables of interest\n\nFocus on data points that align with your narrative.\n\nFeel free to get data transformation support from Byeong-Hak"
+    "text": "Data Transformation Techniques\nMake Data Work for Your Story:\n\nUse filtering, sorting, counting, and selecting to refine raw data.\n\nFiltering: Narrow down data to specific conditions/categories\nSorting: Arrange data in a particular order\n\nHelps identifying key categories (e.g., top 5 players/teams/stocks/locations)\n\nSelecting: Choose specific variables of interest\n\nFocus on data points that align with your narrative.\nFeel free to get data transformation support from Byeong-Hak"
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#data-visualization",
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#data-visualization",
     "title": "Lecture 22",
     "section": "Data Visualization",
-    "text": "Data Visualization\n\nTypes of Data Visualizations\n\nBar Charts: Compare quantities across categories\nLine Graphs: Show trends over time\nScatter Plots: Display relationships between two numerical variables\nHistograms: Illustrate distributions of numerical data\nBox Plots: Summarize distributions and identify outliers\n\nFeel free to use any other types of data visualizations."
+    "text": "Data Visualization\n\nExamine Distributions\n\nAnalyze how data points are spread across different values\nIdentify any outliers or anomalies in the data\nUtilize histograms and box plots to visualize distributions\n\nExplore Relationships Between Variables\n\nInvestigate how variables interact with each other\nUse scatterplots and fitted lines\n\nAnalyze Time Trends\n\nObserve changes in variables over time\nImplement line charts and/or fitted lines to illustrate trends\n\nFeel free to use other geometric objects"
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#data-visualization-1",
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#data-visualization-1",
     "title": "Lecture 22",
     "section": "Data Visualization",
-    "text": "Data Visualization\n\nBest Practices\n\nEnsure visuals are clear, properly labeled, and easy to interpret\nUse appropriate chart types for the data being presented\nMaintain consistency in styling and formatting\nMake visualization colorblind-friendly"
+    "text": "Data Visualization\nDelving Deeper\n\nDistribution by Categories\n\nCompare how distributions vary across different groups or categories\nEmploy faceted histograms or box plots for comparison\n\nRelationships by Categories\n\nExamine if relationships between variables differ among groups\nUse color-coded scatter plots or facets to highlight differences\n\nTime Trends by Categories\n\nAnalyze temporal trends within specific categories\nCreate multiple line charts or a facet for each category"
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#getting-started",
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#getting-started",
     "title": "Lecture 22",
     "section": "Getting Started",
-    "text": "Getting Started\n\nIdentify Variables of Interest\n\nSelect variables that are relevant to your story\nUnderstand the context and meaning of each variable\n\nUse Descriptive Statistics\n\nSummarize data using measures like mean, median, and mode\nCalculate measures of variability such as range, variance, and standard deviation\nIdentify any outliers or anomalies in the data\nGain initial insights into central tendencies and dispersion"
+    "text": "Getting Started\n\nIdentify Variables of Interest\n\nSelect variables that are relevant to your story\nUnderstand the context and meaning of each variable\n\nIdentify Categories of Interest\n\nFilter categories that are relevant to your story\nUnderstand the context and meaning of each category\n\nUse Descriptive Statistics\n\nSummarize data using skimr::skim()\nCount the frequency of categories in a variable of interest\nRelate initial ideas with central tendencies and dispersion"
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#visualizing-data",
@@ -5177,7 +5177,7 @@
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#incorporating-visual-aids",
     "title": "Lecture 22",
     "section": "Incorporating Visual Aids",
-    "text": "Incorporating Visual Aids\n\nEnhancing Your Story with Images\n\nInsert pictures or graphics related to your narrative\nUse images to provide context or evoke emotions\n\nTypes of Visual Aids\n\nPhotographs\nIllustrations\nDiagrams\nInfographics (non-data-related)\n\nGuidelines\n\nEnsure images are relevant and add value to your presentation\nUse high-quality visuals that are clear and professional\nCite sources if using images that are not your own"
+    "text": "Incorporating Visual Aids\n\nEnhancing Your Story with Images\n\nInsert pictures or graphics related to your narrative\nUse images to provide context or evoke emotions\n\nTypes of Visual Aids\n\nPhotographs\nIllustrations\nDiagrams\nInfographics (non-data-related)\n\nGuidelines\n\nEnsure images are relevant and add value to your presentation\nUse high-quality visuals that are clear and professional"
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#crafting-your-story",
@@ -5191,7 +5191,7 @@
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#presentation-tips",
     "title": "Lecture 22",
     "section": "Presentation Tips",
-    "text": "Presentation Tips\n\nClarity and Simplicity\n\nUse straightforward language appropriate for your audience\nAvoid unnecessary jargon or technical terms without explanation\nStart with a background story if needed\n\nEngagement\n\nIncorporate visual aids to make your story more engaging\nHighlight interesting or unexpected findings\n\nPractice\n\nRehearse to maintain flow and timing\nAnticipate potential questions and prepare responses"
+    "text": "Presentation Tips\n\nClarity and Simplicity\n\nUse straightforward language appropriate for your audience\nAvoid unnecessary jargon or technical terms without explanation\nStart with a background story or necessary knowledges if needed\n\nEngagement\n\nIncorporate visual aids to make your story more engaging\nHighlight interesting or unexpected findings\n\nPractice\n\nRehearse to maintain flow and timing\nAnticipate potential questions and prepare responses"
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#lets-get-started",
@@ -5199,5 +5199,12 @@
     "title": "Lecture 22",
     "section": "Let’s Get Started!",
     "text": "Let’s Get Started!\n\nBe Creative\n\nThink innovatively in your analysis and presentation methods\n\nStay Curious\n\nLet your questions and hypotheses drive your data exploration\n\nHave Fun\n\nEnjoy the process of discovering insights and telling your data story"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#data-visualization-2",
+    "href": "danl-lec/danl-101-lec-22-2024-1121.html#data-visualization-2",
+    "title": "Lecture 22",
+    "section": "Data Visualization",
+    "text": "Data Visualization\n\nBest Practices\n\nEnsure visuals are clear, properly labeled, and easy to interpret\nUse appropriate chart types for the data being presented\nMaintain consistency in styling and formatting\nMake visualization colorblind-friendly"
   }
 ]

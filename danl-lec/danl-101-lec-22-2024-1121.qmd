@@ -83,8 +83,8 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
   - Data storytelling goes beyond presenting facts. 
   - A narrative connects the data to real-world insights, engages the audience, and makes the findings memorable.  
   - Identify a central theme or question your data addresses.  
-  - Frame the story around a problem, trend, or decision-making process.  
-  - Use storytelling elements like cause and effect, conflict, and resolution.  
+  - Frame the story around an issue, problem, trend, or decision-making process.  
+  - Use storytelling elements like cause and effect, puzzling phenomena, conflict, and resolution.  
 
 
 ## Craft a Compelling Narrative Using Data
@@ -98,46 +98,91 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
   - **Understand the Context of Your Data**:  
     - Research the topic or industry related to your data.  
     - Know key concepts, definitions, and common trends.  
-    - Example: If analyzing sales data, understand seasonal patterns, market dynamics, and customer behavior.  
+    - Example: If analyzing sales data, understand seasonal/geographic patterns, market dynamics, and customer behavior.
 
 
 
 ## Craft a Compelling Narrative Using Data
 - **Ask Meaningful Questions**:  
   - Background knowledge allows you to formulate insightful questions to guide your analysis, such as:  
-    - *Why is this trend happening?*  
+    - *Why is this happening?*  
     - *What factors contribute to this outcome?*  
     - *What actionable insights can be derived?*
 
 - **Bridge Data and Audience Understanding**:  
-  - Background knowledge helps translate complex data into insights that are accessible to your audience.  
+  - Background knowledge helps translate complex data into insights that are accessible to your audience.
   - It allows you to anticipate questions and provide thoughtful answers.
 
 
 
 ## Data Transformation Techniques
-
-- **Make Data Work for Your Story**:  
-  - Use filtering, sorting, counting, and selecting to refine raw data.  
-    - **Filtering**: Narrow down data to specific conditions/categories
-    - **Sorting**: Arrange data in a particular order
-    - **Counting**: Quantify occurrences or frequencies
-    - **Selecting**: Choose specific variables of interest
-  - Focus on data points that align with your narrative.
+### **Make Data Work for Your Story**:
+- Use filtering, sorting, counting, and selecting to refine raw data.  
+  - **Filtering**: Narrow down data to specific conditions/categories
+  - **Sorting**: Arrange data in a particular order
+    - Helps identifying key categories (e.g., top 5 players/teams/stocks/locations)
+  - **Selecting**: Choose specific variables of interest
+- Focus on data points that align with your narrative.
 
 - Feel free to get data transformation support from Byeong-Hak
 
 
+## Getting Started
+
+1. **Identify Variables of Interest**
+   - Select variables that are relevant to your story
+   - Understand the context and meaning of each variable
+
+2. **Identify Categories of Interest**
+   - Filter categories that are relevant to your story
+   - Understand the context and meaning of each category
+
+3. **Use Descriptive Statistics**
+   - Summarize data using `skimr::skim()`
+   - Count the frequency of categories in a variable of interest
+   - Relate initial ideas with central tendencies and dispersion
+
 ## Data Visualization
 
-- **Types of Data Visualizations**
-  - **Bar Charts**: Compare quantities across categories
-  - **Line Graphs**: Show trends over time
-  - **Scatter Plots**: Display relationships between two numerical variables
-  - **Histograms**: Illustrate distributions of numerical data
-  - **Box Plots**: Summarize distributions and identify outliers
+1. **Examine Distributions**
+   - Analyze how data points are spread across different values
+   - Identify any outliers or anomalies in the data
+   - Utilize **histograms** and **box plots** to visualize distributions
 
-- Feel free to use any other types of data visualizations.
+2. **Explore Relationships Between Variables**
+   - Investigate how variables interact with each other
+   - Use **scatterplots** and **fitted lines**
+
+3. **Analyze Time Trends**
+   - Observe changes in variables over time
+   - Implement **line charts** and/or **fitted lines** to illustrate trends
+
+4. Feel free to use other geometric objects
+
+## Data Visualization
+### Delving Deeper
+
+- **Distribution by Categories**
+  - Compare how distributions vary across different groups or categories
+  - Employ **faceted** histograms or box plots for comparison
+
+- **Relationships by Categories**
+  - Examine if relationships between variables differ among groups
+  - Use **color-coded** scatter plots or **facets** to highlight differences
+
+- **Time Trends by Categories**
+  - Analyze temporal trends within specific categories
+  - Create **multiple line charts** or a **facet** for each category
+
+
+<!-- - **Types of Data Visualizations** -->
+<!--   - **Bar Charts**: Compare quantities across categories -->
+<!--   - **Line Graphs**: Show trends over time -->
+<!--   - **Scatter Plots**: Display relationships between two numerical variables -->
+<!--   - **Histograms**: Illustrate distributions of numerical data -->
+<!--   - **Box Plots**: Summarize distributions and identify outliers -->
+
+<!-- - Feel free to use any other types of data visualizations. -->
 
 
 ## Data Visualization
@@ -148,51 +193,6 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
   - Maintain consistency in styling and formatting
   - Make visualization colorblind-friendly
 
-
-## Getting Started
-
-1. **Identify Variables of Interest**
-   - Select variables that are relevant to your story
-   - Understand the context and meaning of each variable
-
-2. **Use Descriptive Statistics**
-   - Summarize data using measures like mean, median, and mode
-   - Calculate measures of variability such as range, variance, and standard deviation
-   - Identify any outliers or anomalies in the data
-   - Gain initial insights into central tendencies and dispersion
-
-
-## Visualizing Data
-
-1. **Examine Distributions**
-   - Analyze how data points are spread across different values
-   - Utilize histograms and box plots to visualize distributions
-
-2. **Explore Relationships Between Variables**
-   - Investigate how variables interact with each other
-   - Use scatterplots and fitted lines
-
-3. **Analyze Time Trends**
-   - Observe changes in variables over time
-   - Implement line charts and/or fitted lines to illustrate trends
-
- 
-
-## Delving Deeper
-
-- **Distribution by Categories**
-  - Compare how distributions vary across different groups or categories
-  - Employ faceted histograms or box plots for comparison
-
-- **Relationships by Categories**
-  - Examine if relationships between variables differ among groups
-  - Use color-coded scatter plots or facets to highlight differences
-
-- **Time Trends by Categories**
-  - Analyze temporal trends within specific categories
-  - Create multiple line charts for each category
-
- 
 
 ## Incorporating Visual Aids
 
@@ -209,7 +209,6 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 - **Guidelines**
   - Ensure images are relevant and add value to your presentation
   - Use high-quality visuals that are clear and professional
-  - Cite sources if using images that are not your own
 
  
 
@@ -231,7 +230,7 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 - **Clarity and Simplicity**
   - Use straightforward language appropriate for your audience
   - Avoid unnecessary jargon or technical terms without explanation
-  - Start with a background story if needed
+  - Start with a background story or necessary knowledges if needed
 
 - **Engagement**
   - Incorporate visual aids to make your story more engaging

@@ -362,9 +362,9 @@ Byeong-Hak Choe
 </li>
 <li class="fragment">Identify a central theme or question your data addresses.<br>
 </li>
-<li class="fragment">Frame the story around a problem, trend, or decision-making process.<br>
+<li class="fragment">Frame the story around an issue, problem, trend, or decision-making process.<br>
 </li>
-<li class="fragment">Use storytelling elements like cause and effect, conflict, and resolution.</li>
+<li class="fragment">Use storytelling elements like cause and effect, puzzling phenomena, conflict, and resolution.</li>
 </ul></li>
 </ul>
 </section>
@@ -390,7 +390,7 @@ Byeong-Hak Choe
 </li>
 <li class="fragment">Know key concepts, definitions, and common trends.<br>
 </li>
-<li class="fragment">Example: If analyzing sales data, understand seasonal patterns, market dynamics, and customer behavior.</li>
+<li class="fragment">Example: If analyzing sales data, understand seasonal/geographic patterns, market dynamics, and customer behavior.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -402,7 +402,7 @@ Byeong-Hak Choe
 <ul>
 <li class="fragment">Background knowledge allows you to formulate insightful questions to guide your analysis, such as:
 <ul>
-<li class="fragment"><em>Why is this trend happening?</em><br>
+<li class="fragment"><em>Why is this happening?</em><br>
 </li>
 <li class="fragment"><em>What factors contribute to this outcome?</em><br>
 </li>
@@ -411,53 +411,26 @@ Byeong-Hak Choe
 </ul></li>
 <li class="fragment"><strong>Bridge Data and Audience Understanding</strong>:
 <ul>
-<li class="fragment">Background knowledge helps translate complex data into insights that are accessible to your audience.<br>
-</li>
+<li class="fragment">Background knowledge helps translate complex data into insights that are accessible to your audience.</li>
 <li class="fragment">It allows you to anticipate questions and provide thoughtful answers.</li>
 </ul></li>
 </ul>
 </section>
 <section id="data-transformation-techniques" class="slide level2">
 <h2>Data Transformation Techniques</h2>
+<h3 id="make-data-work-for-your-story"><strong>Make Data Work for Your Story</strong>:</h3>
 <ul>
-<li class="fragment"><strong>Make Data Work for Your Story</strong>:
-<ul>
-<li class="fragment">Use filtering, sorting, counting, and selecting to refine raw data.
+<li class="fragment"><p>Use filtering, sorting, counting, and selecting to refine raw data.</p>
 <ul>
 <li class="fragment"><strong>Filtering</strong>: Narrow down data to specific conditions/categories</li>
-<li class="fragment"><strong>Sorting</strong>: Arrange data in a particular order</li>
-<li class="fragment"><strong>Counting</strong>: Quantify occurrences or frequencies</li>
+<li class="fragment"><strong>Sorting</strong>: Arrange data in a particular order
+<ul>
+<li class="fragment">Helps identifying key categories (e.g., top 5 players/teams/stocks/locations)</li>
+</ul></li>
 <li class="fragment"><strong>Selecting</strong>: Choose specific variables of interest</li>
 </ul></li>
-<li class="fragment">Focus on data points that align with your narrative.</li>
-</ul></li>
-<li class="fragment">Feel free to get data transformation support from Byeong-Hak</li>
-</ul>
-</section>
-<section id="data-visualization" class="slide level2">
-<h2>Data Visualization</h2>
-<ul>
-<li class="fragment"><strong>Types of Data Visualizations</strong>
-<ul>
-<li class="fragment"><strong>Bar Charts</strong>: Compare quantities across categories</li>
-<li class="fragment"><strong>Line Graphs</strong>: Show trends over time</li>
-<li class="fragment"><strong>Scatter Plots</strong>: Display relationships between two numerical variables</li>
-<li class="fragment"><strong>Histograms</strong>: Illustrate distributions of numerical data</li>
-<li class="fragment"><strong>Box Plots</strong>: Summarize distributions and identify outliers</li>
-</ul></li>
-<li class="fragment">Feel free to use any other types of data visualizations.</li>
-</ul>
-</section>
-<section id="data-visualization-1" class="slide level2">
-<h2>Data Visualization</h2>
-<ul>
-<li class="fragment"><strong>Best Practices</strong>
-<ul>
-<li class="fragment">Ensure visuals are clear, properly labeled, and easy to interpret</li>
-<li class="fragment">Use appropriate chart types for the data being presented</li>
-<li class="fragment">Maintain consistency in styling and formatting</li>
-<li class="fragment">Make visualization colorblind-friendly</li>
-</ul></li>
+<li class="fragment"><p>Focus on data points that align with your narrative.</p></li>
+<li class="fragment"><p>Feel free to get data transformation support from Byeong-Hak</p></li>
 </ul>
 </section>
 <section id="getting-started" class="slide level2">
@@ -468,52 +441,78 @@ Byeong-Hak Choe
 <li class="fragment">Select variables that are relevant to your story</li>
 <li class="fragment">Understand the context and meaning of each variable</li>
 </ul></li>
+<li class="fragment"><strong>Identify Categories of Interest</strong>
+<ul>
+<li class="fragment">Filter categories that are relevant to your story</li>
+<li class="fragment">Understand the context and meaning of each category</li>
+</ul></li>
 <li class="fragment"><strong>Use Descriptive Statistics</strong>
 <ul>
-<li class="fragment">Summarize data using measures like mean, median, and mode</li>
-<li class="fragment">Calculate measures of variability such as range, variance, and standard deviation</li>
-<li class="fragment">Identify any outliers or anomalies in the data</li>
-<li class="fragment">Gain initial insights into central tendencies and dispersion</li>
+<li class="fragment">Summarize data using <code>skimr::skim()</code></li>
+<li class="fragment">Count the frequency of categories in a variable of interest</li>
+<li class="fragment">Relate initial ideas with central tendencies and dispersion</li>
 </ul></li>
 </ol>
 </section>
-<section id="visualizing-data" class="slide level2">
-<h2>Visualizing Data</h2>
+<section id="data-visualization" class="slide level2">
+<h2>Data Visualization</h2>
 <ol type="1">
 <li class="fragment"><strong>Examine Distributions</strong>
 <ul>
 <li class="fragment">Analyze how data points are spread across different values</li>
-<li class="fragment">Utilize histograms and box plots to visualize distributions</li>
+<li class="fragment">Identify any outliers or anomalies in the data</li>
+<li class="fragment">Utilize <strong>histograms</strong> and <strong>box plots</strong> to visualize distributions</li>
 </ul></li>
 <li class="fragment"><strong>Explore Relationships Between Variables</strong>
 <ul>
 <li class="fragment">Investigate how variables interact with each other</li>
-<li class="fragment">Use scatterplots and fitted lines</li>
+<li class="fragment">Use <strong>scatterplots</strong> and <strong>fitted lines</strong></li>
 </ul></li>
 <li class="fragment"><strong>Analyze Time Trends</strong>
 <ul>
 <li class="fragment">Observe changes in variables over time</li>
-<li class="fragment">Implement line charts and/or fitted lines to illustrate trends</li>
+<li class="fragment">Implement <strong>line charts</strong> and/or <strong>fitted lines</strong> to illustrate trends</li>
 </ul></li>
+<li class="fragment">Feel free to use other geometric objects</li>
 </ol>
 </section>
-<section id="delving-deeper" class="slide level2">
-<h2>Delving Deeper</h2>
+<section id="data-visualization-1" class="slide level2">
+<h2>Data Visualization</h2>
+<h3 id="delving-deeper">Delving Deeper</h3>
 <ul>
 <li class="fragment"><strong>Distribution by Categories</strong>
 <ul>
 <li class="fragment">Compare how distributions vary across different groups or categories</li>
-<li class="fragment">Employ faceted histograms or box plots for comparison</li>
+<li class="fragment">Employ <strong>faceted</strong> histograms or box plots for comparison</li>
 </ul></li>
 <li class="fragment"><strong>Relationships by Categories</strong>
 <ul>
 <li class="fragment">Examine if relationships between variables differ among groups</li>
-<li class="fragment">Use color-coded scatter plots or facets to highlight differences</li>
+<li class="fragment">Use <strong>color-coded</strong> scatter plots or <strong>facets</strong> to highlight differences</li>
 </ul></li>
 <li class="fragment"><strong>Time Trends by Categories</strong>
 <ul>
 <li class="fragment">Analyze temporal trends within specific categories</li>
-<li class="fragment">Create multiple line charts for each category</li>
+<li class="fragment">Create <strong>multiple line charts</strong> or a <strong>facet</strong> for each category</li>
+</ul></li>
+</ul>
+<!-- - **Types of Data Visualizations** -->
+<!--   - **Bar Charts**: Compare quantities across categories -->
+<!--   - **Line Graphs**: Show trends over time -->
+<!--   - **Scatter Plots**: Display relationships between two numerical variables -->
+<!--   - **Histograms**: Illustrate distributions of numerical data -->
+<!--   - **Box Plots**: Summarize distributions and identify outliers -->
+<!-- - Feel free to use any other types of data visualizations. -->
+</section>
+<section id="data-visualization-2" class="slide level2">
+<h2>Data Visualization</h2>
+<ul>
+<li class="fragment"><strong>Best Practices</strong>
+<ul>
+<li class="fragment">Ensure visuals are clear, properly labeled, and easy to interpret</li>
+<li class="fragment">Use appropriate chart types for the data being presented</li>
+<li class="fragment">Maintain consistency in styling and formatting</li>
+<li class="fragment">Make visualization colorblind-friendly</li>
 </ul></li>
 </ul>
 </section>
@@ -536,7 +535,6 @@ Byeong-Hak Choe
 <ul>
 <li class="fragment">Ensure images are relevant and add value to your presentation</li>
 <li class="fragment">Use high-quality visuals that are clear and professional</li>
-<li class="fragment">Cite sources if using images that are not your own</li>
 </ul></li>
 </ul>
 </section>
@@ -563,7 +561,7 @@ Byeong-Hak Choe
 <ul>
 <li class="fragment">Use straightforward language appropriate for your audience</li>
 <li class="fragment">Avoid unnecessary jargon or technical terms without explanation</li>
-<li class="fragment">Start with a background story if needed</li>
+<li class="fragment">Start with a background story or necessary knowledges if needed</li>
 </ul></li>
 <li class="fragment"><strong>Engagement</strong>
 <ul>

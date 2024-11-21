@@ -58,7 +58,7 @@ The following lists data frames about NHL for the 2022-23 season:
 
 ## NHL Players (`nhl_players`)
 
-- `nhl_players`: NHL Player data
+- `nhl_players`: NHL non-goalie player data
   - A data frame with 4620 observations and 158 variables:
 
 ```{r}
@@ -77,7 +77,7 @@ rmarkdown::paged_table(nhl_players)
 DT::datatable(read_csv(
   "http://bcdanl.github.io/data/nhl_var_desc.csv"),
   options = list(
-  pageLength = 152)
+  pageLength = 50)
 )
 ```
 

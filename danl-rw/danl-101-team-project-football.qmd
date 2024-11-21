@@ -49,7 +49,7 @@ The following lists data frames about National Football League (NFL) for the sea
 - `nfl_team_epa`: Team's mean expected points added (EPA) when the team was on offense and when the team was on defense
   - For the details about EPA, please refer to the Football Metrics section below in the webpage.
 - `nfl_field_goals`: Play-by-play statistics at situations when field goals were attempted during the game
-- `nfl_passers`: weakly mean expected points added (EPA) and completion percentage over expected (COPE) among players who passed more than 44 times within a week
+- `nfl_passers`: weakly EPA and completion percentage over expected (CPOE) among players who passed more than 44 times within a week
 - `nfl_player_stat`: Player statistics
 - `nfl_receivers`:  Total EPA of players whose positions are either "WR", "TE", or "RB", and top 10 players in terms of total EPA
 
@@ -65,8 +65,6 @@ The following lists data frames about National Football League (NFL) for the sea
 
 ## NFL Team EPA (`nfl_team_epa`)
 - `nfl_team_epa`: Team's mean EPA when the team was on offense and when the team was on defense
-  -	Offensive EPA: Evaluates how well a team’s offense increases scoring opportunities.
-  -	Defensive EPA: Measures how effectively a defense reduces the opposing team’s scoring potential.
 
 ```{r}
 nfl_team_epa <- read_csv("http://bcdanl.github.io/data/nfl_team_epa.csv")
@@ -121,7 +119,7 @@ DT::datatable(read_csv("https://bcdanl.github.io/data/nfl_field_goals_vars.csv")
 
 ##  NFL Passer's EPA and COPE (`nfl_passers`)
 
-- `nfl_passers`: weakly mean expected points added (EPA) and completion percentage over expected (COPE) among players who passed more than 44 times within a week
+- `nfl_passers`: weakly mean EPA and completion percentage over CPOE among players who passed more than 44 times within a week
   - A data frame with 1098 rows and 22 variables:
 
 ```{r}

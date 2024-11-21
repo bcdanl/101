@@ -5149,7 +5149,7 @@
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#data-visualization-1",
     "title": "Lecture 22",
     "section": "Data Visualization",
-    "text": "Data Visualization\nDelving Deeper\n\nDistribution by Categories\n\nCompare how distributions vary across different groups or categories\nEmploy faceted histograms or box plots for comparison\n\nRelationships by Categories\n\nExamine if relationships between variables differ among groups\nUse color-coded scatter plots or facets to highlight differences\n\nTime Trends by Categories\n\nAnalyze temporal trends within specific categories\nCreate multiple line charts or a faceted line chart"
+    "text": "Data Visualization\nDelving Deeper\n\nDistribution by Categories\n\nCompare how distributions vary across different groups or categories\nEmploy faceted histograms or box plots for comparison\n\nRelationships by Categories\n\nExamine if relationships between variables differ among groups\nUse color-coded scatter plots or facets to highlight differences\n\nTime Trends by Categories\n\nAnalyze temporal trends within specific categories\nCreate multiple line charts or a facet for each category"
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#getting-started",
@@ -5206,5 +5206,26 @@
     "title": "Lecture 22",
     "section": "Data Visualization",
     "text": "Data Visualization\n\nBest Practices\n\nEnsure visuals are clear, properly labeled, and easy to interpret\nUse appropriate chart types for the data being presented\nMaintain consistency in styling and formatting\nMake visualization colorblind-friendly"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#coding-tips-for-better-workflow",
+    "href": "danl-lec/danl-101-lec-22-2024-1121.html#coding-tips-for-better-workflow",
+    "title": "Lecture 22",
+    "section": "Coding Tips for Better Workflow",
+    "text": "Coding Tips for Better Workflow\n\nComment Your Code\n\nUse Command/Ctrl + Shift + C to add comments for clarity.\n\nLeverage generative AI to generate meaningful comments.\n\nExample: “Make an in-line comment on each line of this code: …”\n\n\nDebug Your Code\n\nUse generative AI for troubleshooting and solutions.\n\nExample: “The above code gives the following error: …”\n\n\nOrganize with Sections\n\nCreate sections in your script using Command/Ctrl + Shift + R for better structure.\n\nNavigate quickly by clicking “Outline” in the top-left of the script pane."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#save-your-code-and-visualization-images",
+    "href": "danl-lec/danl-101-lec-22-2024-1121.html#save-your-code-and-visualization-images",
+    "title": "Lecture 22",
+    "section": "Save Your Code and Visualization Images",
+    "text": "Save Your Code and Visualization Images\n\nDownload Your R Script from Posit Cloud\n\nIn the Files pane, select the checkbox next to the R script you want to download.\n\nClick the ⚙ (Gear Icon), then choose “Export” to save it to your local laptop.\n\nSave Your ggplot Output as an Image File\n\nIn the Plots pane, click “Export”, then select “Save as Image”.\n\nSpecify the file name, width (e.g., 600), and height (e.g., 400).\n\nClick “Save” to save the image in Posit Cloud.\n\nExport the image file to your local laptop."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#save-your-ggplot-output-using-the-zoom-feature",
+    "href": "danl-lec/danl-101-lec-22-2024-1121.html#save-your-ggplot-output-using-the-zoom-feature",
+    "title": "Lecture 22",
+    "section": "Save Your ggplot Output Using the Zoom Feature",
+    "text": "Save Your ggplot Output Using the Zoom Feature\n\nClick “Zoom” on your ggplot to enlarge the plot.\n\nAdjust the size of the zoomed ggplot window:\n\nMove your mouse cursor to any corner of the window.\n\nClick and drag to resize the window as needed.\n\n\nRight-click (or click the trackpad with two fingers) on the zoomed image.\n\nSelect “Save Image …” to save the plot locally to your computer."
   }
 ]

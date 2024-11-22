@@ -41,13 +41,12 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 ```
  
 # Data
-The following lists data frames about NHL for the 2022-23 season:
+The following lists data frames about NHL:
 
-- `nhl_players`: NHL Player Statistics
-  - 924 unique NHL Players
+- `nhl_players`: NHL Player Statistics for the 2014-2015 through 2023-2024 season.
+  - 2076 unique NHL Players
   - 328 NHL players' salary information are missing.
-- `nhl_games`: NHL Game Logs
-
+- `nhl_games`: NHL Game Logs for the 2022-23 season
 
 - Data Source: [MoneyPuck](https://moneypuck.com/data.htm)
   - There is a great website that makes a ton of hockey data available for download called MoneyPuck. 

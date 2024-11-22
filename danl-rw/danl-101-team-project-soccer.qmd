@@ -186,6 +186,13 @@ Player position
 `squad`
 Player team
 
+`salary_usd`
+Salary in USD ($)
+
+`salary_usd`
+Salary in pound (£)
+
+
 `age`
 Age of player
 

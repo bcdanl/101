@@ -116,6 +116,11 @@ DT::datatable(read_csv("https://bcdanl.github.io/data/nfl_field_goals_vars.csv")
 
 <br>
 
+- `fg_distance` accurately reflects the total distance of a field goal attempt:
+  - The total addition of 17 yards comes from 10 yards (end zone) + 7 yards (holder’s position).
+
+<br>
+
 
 ##  NFL Passer's EPA and COPE (`nfl_passers`)
 

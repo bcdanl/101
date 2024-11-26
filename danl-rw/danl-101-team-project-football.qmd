@@ -222,15 +222,15 @@ $$
 
 ### Why EPA Is Important
 
--Contextual: Accounts for situational factors, making it more informative than raw stats like yards gained.
--Play Evaluation: Helps determine the effectiveness of specific plays or players.
--Strategic Decisions: Assists coaches and analysts in evaluating decisions like when to go for it on 4th down.
+- Contextual: Accounts for situational factors, making it more informative than raw stats like yards gained.
+- Play Evaluation: Helps determine the effectiveness of specific plays or players.
+- Strategic Decisions: Assists coaches and analysts in evaluating decisions like when to go for it on 4th down.
 
 ### Applications
 
--Offensive EPA: Evaluates how well a team’s offense increases scoring opportunities.
--Defensive EPA: Measures how effectively a defense reduces the opposing team’s scoring potential.
--Player Performance: Used to assess quarterbacks, running backs, wide receivers, and defenders by their contribution to scoring or preventing points.
+- Offensive EPA: Evaluates how well a team’s offense increases scoring opportunities.
+- Defensive EPA: Measures how effectively a defense reduces the opposing team’s scoring potential.
+- Player Performance: Used to assess quarterbacks, running backs, wide receivers, and defenders by their contribution to scoring or preventing points.
 
 
 ## Completion Percentage Over Expected (CPOE)

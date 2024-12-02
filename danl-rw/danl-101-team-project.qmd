@@ -43,9 +43,9 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 
 
 # Presentation Schedule and Format
-- Each team will deliver a 10-minute presentation, including time for Q&A, during one of the following class sessions:
-  - **December 3, Tuesday**: Six teams
-  - **December 5, Thursday**: Four teams
+- Each team will deliver a 10-minute presentation, and a follow-up 1-2 minute for Q & A after the presentation, during one of the following class sessions:
+  - **December 3, Tuesday**: Five teams
+  - **December 5, Thursday**: Five teams
 - The order of team presentations will be determined by a random draw during class.
   -	If multiple teams choose the same topic, I will try to schedule these teams in different sessions to minimize repetition within a single class.
 -	To ensure fairness and equal participation, **each student must contribute evenly** to the presentation. 

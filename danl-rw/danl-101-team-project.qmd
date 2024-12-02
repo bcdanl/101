@@ -43,7 +43,7 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 
 
 # Presentation Schedule and Format
-- Each team will deliver a 10-minute presentation, and a follow-up 1-2 minute for Q & A after the presentation, during one of the following class sessions:
+Each team will deliver a 10-minute presentation, followed by a 1–2 minute Q&A session, during one of the following class sessions:
   - **December 3, Tuesday**: Five teams
   - **December 5, Thursday**: Five teams
 - The order of team presentations will be determined by a random draw during class.

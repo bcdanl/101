@@ -125,6 +125,7 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 
 
 ## Combining Generative AI with These Tools
+<div style="display:block; margin:-10px;"></div>
 
 - **Programming (R and Python)**
   - **AI-Assisted Coding**: Code generation using AI (e.g., [GitHub Copilot](https://github.com/features/copilot))
@@ -140,7 +141,7 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 
 
 
-### Conclusion
+## Conclusion
 
 - **Tool Selection**:
   - Choose **Programming (R and Python)** for advanced and customizable data analysis

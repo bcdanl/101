@@ -1,0 +1,157 @@
+---
+title: Lecture 23
+subtitle: Programming vs. Power BI vs. Excel for Data Analysis
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-12-03
+execute: 
+  eval: true
+  echo: false
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+library(gapminder)
+library(ggrepel)
+
+
+nwsl <- read_csv("https://bcdanl.github.io/data/nwsl_player_stats.csv")
+
+nwsl_num <- nwsl |> 
+  select(-(player:squad))
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+# scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_colour_discrete <- function(...) scale_color_colorblind(...)
+scale_fill_discrete <- function(...) scale_fill_colorblind(...)
+```
+
+
+
+# Programming vs. Power BI vs. Excel for Data Analysis {background-color="#1c4982"}
+
+## R/Python Programming for Data Analysis
+- **Usage**: Advanced data analysis and statistical computing
+- **Features**:
+  - Extensive libraries and packages (e.g., [`pandas`](https://pandas.pydata.org), [`polars`](https://pola.rs), [`NumPy`](https://numpy.org), [`seaborn`](https://seaborn.pydata.org), [`tidyverse`](https://www.tidyverse.org))
+  - High flexibility and customization
+  - Ideal for complex analyses and machine learning tasks
+  - **Machine Learning Libraries** in Python: [`scikit-learn`](https://scikit-learn.org/stable/), [`TensorFlow`](https://www.tensorflow.org/learn), [`PyTorch`](https://pytorch.org) )
+  - **Machine Learning Libraries** in R: [`keras`](https://tensorflow.rstudio.com), [`torch`](https://torch.mlverse.org) )
+
+
+
+## R/Python Programming for Data Analysis
+- **Data Analysis Capabilities**
+  - Efficient handling of large datasets and complex transformations
+  - Highly customizable and publication-quality graphics
+  - Advanced statistical analysis and modeling
+  - Machine learning and AI integration
+  - Reproducible work through scripting and version control via [Git](https://git-scm.com)
+    - **Reproducibility**: Scripts ensure that tasks are performed consistently every time, reducing errors.
+
+## [Power BI](https://www.microsoft.com/en-us/power-platform/products/power-bi) for Data Analysis
+- **Type**: Business Intelligence and data visualization tool
+- **Features**:
+  - User-friendly interface with drag-and-drop functionality
+  - Real-time data connectivity
+  - Interactive dashboards and reports
+
+- **Data Analysis Capabilities**
+  - Data modeling and transformation with [Power Query](https://learn.microsoft.com/en-us/power-query/power-query-what-is-power-query) and [DAX](https://learn.microsoft.com/en-us/dax/dax-overview)
+  - User-friendly drag-and-drop interface
+  - Real-time user-friendly data connectivity and interactive reports
+  - Limited advanced statistical functions compared to programming languages
+
+
+## Excel for Data Analysis
+- **Type**: Spreadsheet software
+- **Features**:
+  - Widely accessible and easy to use
+  - Supports formulas, pivot tables, and basic charts
+  - Suitable for basic data manipulation and small datasets
+    
+- **Data Analysis Capabilities**
+  - Basic statistical functions and data analysis tools
+  - [Pivot tables](https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576) for summarizing data
+  - Limited scalability: Not ideal for handling large datasets or complex analyses
+  - Limited interactivity: Lacking advanced capabilities for creating highly interactive data visualizations or dashboards
+
+
+
+## Combining Generative AI with These Tools
+
+- **Programming (R and Python)**
+  - **AI-Assisted Coding**: Code generation using AI (e.g., [GitHub Copilot](https://github.com/features/copilot))
+
+- **Power BI**
+  - **AI Visuals**: Built-in AI visuals like [Key Influencers](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-influencers?tabs=powerbi-desktop) and [Decomposition Tree](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-decomposition-tree)
+  <!-- - **Natural Language Queries**: Use [Q&A feature](https://learn.microsoft.com/en-us/power-bi/consumer/end-user-q-and-a) to ask questions in natural language -->
+  - **Integration with Azure AI**: Incorporate [Azure Cognitive Services](https://learn.microsoft.com/en-us/power-bi/connect-data/service-tutorial-use-cognitive-services) for advanced analytics
+
+- **Excel**
+  - **Ideas Feature**: AI-powered insights (e.g., [Microsoft 365 Copilot](https://www.microsoft.com/en-us/microsoft-365/copilot?ef_id=_k_Cj0KCQiAr7C6BhDRARIsAOUKifidjYAtT5WAHVZp4qCaglGwRAgDXwptQz5y9zQg5dnRmIWCV8VbEK0aAh38EALw_wcB_k_&OCID=AIDcmmr5fx1hcp_SEM__k_Cj0KCQiAr7C6BhDRARIsAOUKifidjYAtT5WAHVZp4qCaglGwRAgDXwptQz5y9zQg5dnRmIWCV8VbEK0aAh38EALw_wcB_k_&gad_source=1&gbraid=0AAAAADcJh_tpisi8oQUFQmh7j6g7jsbcn&gclid=Cj0KCQiAr7C6BhDRARIsAOUKifidjYAtT5WAHVZp4qCaglGwRAgDXwptQz5y9zQg5dnRmIWCV8VbEK0aAh38EALw_wcB), Customized ChatGPT) and data analysis suggestions
+  - **Add-ins and Extensions**: Utilize AI-powered add-ins for enhanced functionality
+
+
+
+### Conclusion
+
+- **Tool Selection**:
+  - Choose **Programming (R and Python)** for advanced and customizable data analysis
+  - Opt for **Power BI** for interactive visualizations and business intelligence reporting
+  - Use **Excel** for basic data analysis and small-scale data tasks
+
+- **Generative AI Integration**:
+  - Enhances productivity and capabilities across all tools
+  - Automates routine tasks and provides advanced analytical insights
+  - Bridges the gap between technical complexity and user accessibility
+  
+  
+  
+

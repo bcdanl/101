@@ -3784,7 +3784,7 @@
     "href": "index.html#bullet-homework",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 4\n\n\nNovember 18, 2024\n\n\n\n\nHomework Assignment 4 - Example Answers\n\n\nNovember 17, 2024\n\n\n\n\nHomework Assignment 3 - Example Answers\n\n\nNovember 12, 2024\n\n\n\n\nHomework Assignment 3\n\n\nNovember 6, 2024\n\n\n\n\nHomework Assignment 2 - Example Answers\n\n\nOctober 10, 2024\n\n\n\n\nHomework Assignment 1 - Example Answers\n\n\nOctober 3, 2024\n\n\n\n\nHomework Assignment 2\n\n\nSeptember 24, 2024\n\n\n\n\nHomework Assignment 1\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 5\n\n\nDecember 3, 2024\n\n\n\n\nHomework Assignment 4\n\n\nNovember 18, 2024\n\n\n\n\nHomework Assignment 4 - Example Answers\n\n\nNovember 17, 2024\n\n\n\n\nHomework Assignment 3 - Example Answers\n\n\nNovember 12, 2024\n\n\n\n\nHomework Assignment 3\n\n\nNovember 6, 2024\n\n\n\n\nHomework Assignment 2 - Example Answers\n\n\nOctober 10, 2024\n\n\n\n\nHomework Assignment 1 - Example Answers\n\n\nOctober 3, 2024\n\n\n\n\nHomework Assignment 2\n\n\nSeptember 24, 2024\n\n\n\n\nHomework Assignment 1\n\n\nSeptember 19, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-101-lec.html",
@@ -5269,5 +5269,54 @@
     "title": "Lecture 23",
     "section": "Conclusion",
     "text": "Conclusion\n\nTool Selection:\n\nChoose Programming (R and Python) for advanced and customizable data analysis\nOpt for Power BI for interactive visualizations and business intelligence reporting\nUse Excel for basic data analysis and small-scale data tasks\n\nGenerative AI Integration:\n\nEnhances productivity and capabilities across all tools\nAutomates routine tasks and provides advanced analytical insights\nBridges the gap between technical complexity and user accessibility"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-05.html",
+    "href": "danl-hw/danl-101-hw-05.html",
+    "title": "Homework Assignment 5",
+    "section": "",
+    "text": "Please answer all of the following questions thoroughly, ensuring that none are left unanswered.\nFor Homework Assignment 5, the use of any generative artificial intelligence (AI) tools is strictly required.\n\nPick one generative AI tool you prefer.\n\nCraft your answers in a Word document and submit your Word document to Brightspace\nYou may submit multiple times, but only your most recent submission will be evaluated.\nThe due is December 10, 11:59 P.M., 2024, Tuesday, Eastern Time."
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-05.html#question-1.",
+    "href": "danl-hw/danl-101-hw-05.html#question-1.",
+    "title": "Homework Assignment 5",
+    "section": "Question 1.",
+    "text": "Question 1.\nWhat generative AI tool have you used for this homework assignment?"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-05.html#question-2.",
+    "href": "danl-hw/danl-101-hw-05.html#question-2.",
+    "title": "Homework Assignment 5",
+    "section": "Question 2.",
+    "text": "Question 2.\n\nProvide your conversation with generative AI to do the following tasks:\n\nTranslate the following R ggplot code into Python seaborn code to generate a scatter plot showing the relationship between “sales” and “price” using the CSV file, http://bcdanl.github.io/data/dominick_oj_feat.csv.\nMake a step-by-step comparison between the Python code and the R code to understand how each part corresponds to the other.\n\n\n\nlibrary(tidyverse)\noj &lt;- read_csv(\"http://bcdanl.github.io/data/dominick_oj_feat.csv\")\nggplot(data = oj, \n       mapping = aes(x = price, y = sales,\n                     color = brand)) +\n  geom_point(alpha = .3) + \n  geom_smooth(method = \"lm\") +\n  labs(title = \"Scatter Plot of Sales vs. Price\",\n       x = \"Price\",\n       y = \"Sales\")"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-05.html#question-3.",
+    "href": "danl-hw/danl-101-hw-05.html#question-3.",
+    "title": "Homework Assignment 5",
+    "section": "Question 3.",
+    "text": "Question 3.\n\nProvide your conversation with generative AI to do the following task:\n\nMake an in-line comment on each line of the following R ggplot code.\n\n\n\nlibrary(tidyverse)\noj &lt;- read_csv(\"http://bcdanl.github.io/data/dominick_oj_feat.csv\")\nggplot(data = oj, \n       mapping = aes(x = price, y = sales,\n                     color = brand)) +\n  geom_point(alpha = .3) + \n  geom_smooth(method = \"lm\") +\n  labs(title = \"Scatter Plot of Sales vs. Price\",\n       x = \"Price\",\n       y = \"Sales\")"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-05.html#question-4",
+    "href": "danl-hw/danl-101-hw-05.html#question-4",
+    "title": "Homework Assignment 5",
+    "section": "Question 4",
+    "text": "Question 4\nInsert an image file of your scatterplot showing sales versus price, with data points color-coded by brand, generated using Power BI."
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-05.html#question-5.",
+    "href": "danl-hw/danl-101-hw-05.html#question-5.",
+    "title": "Homework Assignment 5",
+    "section": "Question 5.",
+    "text": "Question 5.\n\nProvide your conversation with generative AI to debug the following code:\n\n\noj |&gt; \n  counting(brand, ad_status)"
+  },
+  {
+    "objectID": "danl-hw/danl-101-hw-05.html#question-6.",
+    "href": "danl-hw/danl-101-hw-05.html#question-6.",
+    "title": "Homework Assignment 5",
+    "section": "Question 6.",
+    "text": "Question 6.\n\nProvide your conversation with generative AI for adding a new variable, revenue, to the oj data frame.\n\nThe revenue variable should be computed as the product of sales and price to provide information about the weekly revenue for each orange juice brand.\n\n\n\nlibrary(tidyverse)\noj &lt;- read_csv(\"http://bcdanl.github.io/data/dominick_oj_feat.csv\")"
   }
 ]

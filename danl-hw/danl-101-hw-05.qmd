@@ -46,10 +46,10 @@ scale_fill_discrete <- function(...) scale_fill_tableau(...)
 
 
 - Please answer all of the following questions thoroughly, ensuring that none are left unanswered.
+- **Craft your answers in a Word document and submit your Word document to Brightspace**
 - For Homework Assignment 5, the use of any generative artificial intelligence (AI) tools is strictly required.
   - Pick one generative AI tool you prefer.
-
-- **Craft your answers in a Word document and submit your Word document to Brightspace**
+  - Copy your conversation with generative AI and paste it to your Word document.
 - You may submit multiple times, but only your most recent submission will be evaluated.
 - The due is <u>December 10, 11:59 P.M., 2024, Tuesday, Eastern Time</u>.
 

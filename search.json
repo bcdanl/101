@@ -5310,7 +5310,7 @@
     "href": "danl-hw/danl-101-hw-05.html#question-5.",
     "title": "Homework Assignment 5",
     "section": "Question 5.",
-    "text": "Question 5.\n\nProvide your conversation with generative AI to debug the following code:\n\n\noj |&gt; \n  counting(brand, ad_status)"
+    "text": "Question 5.\n\nProvide your conversation with generative AI to debug the following code:\n\nExplain to the generative AI the error message you received when running the code below:\n\n\n\noj |&gt; \n  counting(brand, ad_status)"
   },
   {
     "objectID": "danl-hw/danl-101-hw-05.html#question-6.",

@@ -116,6 +116,7 @@ Insert an image file of your scatterplot showing `sales` versus `price`, with da
 
 ## Question 5.
 - Provide your conversation with generative AI to debug the following code:
+  - Explain to the generative AI the error message you received when running the code below:
 
 ```{r}
 #| eval: false

@@ -128,7 +128,7 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 <div style="display:block; margin:-10px;"></div>
 
 - **Programming (R and Python)**
-  - **AI-Assisted Coding**: Code generation using AI (e.g., [GitHub Copilot](https://github.com/features/copilot))
+  - **AI-Assisted Coding**: Code generation using AI (e.g., [GitHub Copilot](https://github.com/features/copilot)); Code Conversion using AI
 
 - **Power BI**
   - **AI Visuals**: Built-in AI visuals like [Key Influencers](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-influencers?tabs=powerbi-desktop) and [Decomposition Tree](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-decomposition-tree)
@@ -140,8 +140,8 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
   - **Add-ins and Extensions**: Utilize AI-powered add-ins for enhanced functionality
 
 
-
-## Conclusion
+## Programming vs. Power BI vs. Excel
+### Conclusion
 
 - **Tool Selection**:
   - Choose **Programming (R and Python)** for advanced and customizable data analysis
@@ -153,6 +153,39 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
   - Automates routine tasks and provides advanced analytical insights
   - Bridges the gap between technical complexity and user accessibility
   
-  
-  
 
+# Course Summary {background-color="#1c4982"}
+
+## Course Summary
+- Introduction to Data Analytics
+- Programming Basic for Data Analysis
+- Data Preparation and Management
+  - Technologies Used to Manage and Process Big Data
+- Data Preparation and Management with R
+- Career Session
+- Data Storytelling
+  - Data Visualization with R
+  - Data Storytelling Project
+- Programming vs. Power BI vs. Excel for Data Analysis
+  - The Use of Generative AI
+
+
+
+
+## Course Summary
+### Student Course Evaluation (SCE)
+
+:::{.nonincremental}
+- I have tried to improve your learning experience in this course.
+- I value your feedback immensely.
+- I request for your participation in the [**Student Course Evaluation (SCE)**](https://www.geneseo.edu/sce).
+
+:::
+
+<div style="display:block; margin:20px;"></div>
+
+- Take 10 minutes right now to complete the SCE.
+- On your laptop, access the SCE form for DANL 101 as follows:
+  1. Log in to [**Knightweb**](https://my.geneseo.edu/dashboard)
+  2. Click on the "Surveys" option
+  3. Choose DANL 101 (class for which you want to fill out the SCE) and then complete the SCE survey.

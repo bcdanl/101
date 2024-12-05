@@ -5261,7 +5261,7 @@
     "href": "danl-lec/danl-101-lec-23-2024-1203.html#combining-generative-ai-with-these-tools",
     "title": "Lecture 23",
     "section": "Combining Generative AI with These Tools",
-    "text": "Combining Generative AI with These Tools\n\n\n\n\nProgramming (R and Python)\n\nAI-Assisted Coding: Code generation using AI (e.g., GitHub Copilot)\n\nPower BI\n\nAI Visuals: Built-in AI visuals like Key Influencers and Decomposition Tree \nIntegration with Azure AI: Incorporate Azure Cognitive Services for advanced analytics\n\nExcel\n\nIdeas Feature: AI-powered insights (e.g., Microsoft 365 Copilot, Customized ChatGPT) and data analysis suggestions\nAdd-ins and Extensions: Utilize AI-powered add-ins for enhanced functionality"
+    "text": "Combining Generative AI with These Tools\n\n\n\n\nProgramming (R and Python)\n\nAI-Assisted Coding: Code generation using AI (e.g., GitHub Copilot); Code Conversion using AI\n\nPower BI\n\nAI Visuals: Built-in AI visuals like Key Influencers and Decomposition Tree \nIntegration with Azure AI: Incorporate Azure Cognitive Services for advanced analytics\n\nExcel\n\nIdeas Feature: AI-powered insights (e.g., Microsoft 365 Copilot, Customized ChatGPT) and data analysis suggestions\nAdd-ins and Extensions: Utilize AI-powered add-ins for enhanced functionality"
   },
   {
     "objectID": "danl-lec/danl-101-lec-23-2024-1203.html#conclusion",
@@ -5318,5 +5318,33 @@
     "title": "Homework Assignment 5",
     "section": "Question 6.",
     "text": "Question 6.\n\nProvide your conversation with generative AI for adding a new variable, revenue, to the oj data frame.\n\nThe revenue variable should be computed as the product of sales and price to provide information about the weekly revenue for each orange juice brand.\n\n\n\nlibrary(tidyverse)\noj &lt;- read_csv(\"http://bcdanl.github.io/data/dominick_oj_feat.csv\")"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-23-2024-1203.html#programming-vs.-power-bi-vs.-excel-for-data-analysis-1",
+    "href": "danl-lec/danl-101-lec-23-2024-1203.html#programming-vs.-power-bi-vs.-excel-for-data-analysis-1",
+    "title": "Lecture 23",
+    "section": "Programming vs. Power BI vs. Excel for Data Analysis",
+    "text": "Programming vs. Power BI vs. Excel for Data Analysis\nConclusion\n\nTool Selection:\n\nChoose Programming (R and Python) for advanced and customizable data analysis\nOpt for Power BI for interactive visualizations and business intelligence reporting\nUse Excel for basic data analysis and small-scale data tasks\n\nGenerative AI Integration:\n\nEnhances productivity and capabilities across all tools\nAutomates routine tasks and provides advanced analytical insights\nBridges the gap between technical complexity and user accessibility"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-23-2024-1203.html#course-summary-1",
+    "href": "danl-lec/danl-101-lec-23-2024-1203.html#course-summary-1",
+    "title": "Lecture 23",
+    "section": "Course Summary",
+    "text": "Course Summary\n\nIntroduction to Data Analytics\nProgramming Basic for Data Analysis\nData Preparation and Management\n\nTechnologies Used to Manage and Process Big Data\n\nData Preparation and Management with R\nCareer Session\nData Storytelling\n\nData Visualization with R\nData Storytelling Project\n\nProgramming vs. Power BI vs. Excel for Data Analysis\n\nThe Use of Generative AI"
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-23-2024-1203.html#course-summary-2",
+    "href": "danl-lec/danl-101-lec-23-2024-1203.html#course-summary-2",
+    "title": "Lecture 23",
+    "section": "Course Summary",
+    "text": "Course Summary\nStudent Course Evaluation (SCE)\n\n\nI have tried to improve your learning experience in this course.\nI value your feedback immensely.\nI request for your participation in the Student Course Evaluation (SCE).\n\n\n\n\n\n\nTake 10 minutes right now to complete the SCE.\nOn your laptop, access the SCE form for DANL 101 as follows:\n\nLog in to Knightweb\nClick on the “Surveys” option\nChoose DANL 101 (class for which you want to fill out the SCE) and then complete the SCE survey."
+  },
+  {
+    "objectID": "danl-lec/danl-101-lec-23-2024-1203.html#programming-vs.-power-bi-vs.-excel",
+    "href": "danl-lec/danl-101-lec-23-2024-1203.html#programming-vs.-power-bi-vs.-excel",
+    "title": "Lecture 23",
+    "section": "Programming vs. Power BI vs. Excel",
+    "text": "Programming vs. Power BI vs. Excel\nConclusion\n\nTool Selection:\n\nChoose Programming (R and Python) for advanced and customizable data analysis\nOpt for Power BI for interactive visualizations and business intelligence reporting\nUse Excel for basic data analysis and small-scale data tasks\n\nGenerative AI Integration:\n\nEnhances productivity and capabilities across all tools\nAutomates routine tasks and provides advanced analytical insights\nBridges the gap between technical complexity and user accessibility"
   }
 ]

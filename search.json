@@ -3777,7 +3777,7 @@
     "href": "index.html#bullet-classwork",
     "title": "DANL 101-04: Introduction to Data Analytics, Fall 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nDistribution Plots\n\n\nNovember 11, 2024\n\n\n\n\nTime Trend Plots\n\n\nNovember 6, 2024\n\n\n\n\nColor vs. Facet\n\n\nNovember 4, 2024\n\n\n\n\nRelationship Plots\n\n\nOctober 28, 2024\n\n\n\n\nMidterm Exam 1\n\n\nOctober 22, 2024\n\n\n\n\nQuiz 1 - Addendum\n\n\nOctober 21, 2024\n\n\n\n\nQuiz 1\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 1, 2024\n\n\n\n\nleft_join()\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\ntheme_set(theme_ipsum())\n\n\nundefined\n\n\n\n\nDistribution Plots\n\n\nNovember 11, 2024\n\n\n\n\nTime Trend Plots\n\n\nNovember 6, 2024\n\n\n\n\nColor vs. Facet\n\n\nNovember 4, 2024\n\n\n\n\nRelationship Plots\n\n\nOctober 28, 2024\n\n\n\n\nMidterm Exam 1\n\n\nOctober 22, 2024\n\n\n\n\nQuiz 1 - Addendum\n\n\nOctober 21, 2024\n\n\n\n\nQuiz 1\n\n\nOctober 3, 2024\n\n\n\n\nselect() and rename()\n\n\nOctober 3, 2024\n\n\n\n\nfilter(), arrange(), and distinct()\n\n\nOctober 1, 2024\n\n\n\n\nleft_join()\n\n\nOctober 1, 2024\n\n\n\n\nR Basics II\n\n\nSeptember 19, 2024\n\n\n\n\nR Basics I\n\n\nSeptember 17, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -5346,5 +5346,138 @@
     "title": "Lecture 23",
     "section": "Programming vs. Power BI vs. Excel",
     "text": "Programming vs. Power BI vs. Excel\nConclusion\n\nTool Selection:\n\nChoose Programming (R and Python) for advanced and customizable data analysis\nOpt for Power BI for interactive visualizations and business intelligence reporting\nUse Excel for basic data analysis and small-scale data tasks\n\nGenerative AI Integration:\n\nEnhances productivity and capabilities across all tools\nAutomates routine tasks and provides advanced analytical insights\nBridges the gap between technical complexity and user accessibility"
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html",
+    "href": "danl-cw/danl-101-cw-13.html",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "",
+    "text": "The following provides the descriptive statistics for each part of the Midterm Exam 2 questions:\n\n\n\n\n\n\n\n\nThe following describes the distribution of Midterm Exam 2 score:"
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-1",
+    "href": "danl-cw/danl-101-cw-13.html#question-1",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 1",
+    "text": "Question 1\nThe quote “I would have written a shorter letter, but I did not have the time” by Blaise Pascal emphasizes the challenge of being:\n\nDetailed\nAccurate\nConcise\nCreative\n\nAnswer:\n\nConcise\n\nExplanation:\nBlaise Pascal’s quote underscores the difficulty of expressing ideas succinctly. Being concise often requires more thought and effort to distill complex ideas into clear, brief statements."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-2",
+    "href": "danl-cw/danl-101-cw-13.html#question-2",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 2",
+    "text": "Question 2\nWhen the distribution of a variable has a single peak and is negatively skewed (i.e., having a long left tail), which of the following is correct?\n\nMedian &lt; Mode &lt; Mean\nMean &lt; Median &lt; Mode\nMode &lt; Mean &lt; Median\nMedian = Mean = Mode\n\nAnswer:\n\nMean &lt; Median &lt; Mode\n\nExplanation:\nIn a negatively skewed distribution, the long tail is on the left side. The mean is pulled in the direction of the skew (left), so the mean is less than the median, which is less than the mode."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-3",
+    "href": "danl-cw/danl-101-cw-13.html#question-3",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 3",
+    "text": "Question 3\nWhat is NOT an essential component in ggplot() data visualization?\n\nData frames\nGeometric objects\nFacets\nAesthetic attributes\n\nAnswer:\n\nFacets\n\nExplanation:\nWhile facets are useful for creating multiple plots based on a factor, they are not essential components of a ggplot(). The essential components are data frames, geometric objects, and aesthetic attributes."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-4",
+    "href": "danl-cw/danl-101-cw-13.html#question-4",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 4",
+    "text": "Question 4\n____(1)____ does not necessarily imply ____(2)____\n\n(1) Correlation; (2) causation\n(1) Causation; (2) correlation\n(1) Correlation; (2) correlation\n(1) Causation; (2) causation\n\nAnswer:\n\n(1) Correlation; (2) causation\n\nExplanation:\nThe phrase “correlation does not necessarily imply causation” means that just because two variables are correlated, it doesn’t mean one causes the other."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-5",
+    "href": "danl-cw/danl-101-cw-13.html#question-5",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 5",
+    "text": "Question 5\nIn the context of the lecture, which of the following correctly interprets a change in log-transformed GDP per capita and its meaning for GDP per capita?\n\nA one-unit increase in log(GDP per capita) means to a 1% increase in GDP per capita.\nA one-unit increase in log(GDP per capita) means to a 100% increase in GDP per capita.\nA one-unit increase in GDP per capita means an 8.4% increase in GDP per capita.\nA one-unit increase in GDP per capita means a 0.084% increase in GDP per capita.\n\nAnswer:\n\nA one-unit increase in log(GDP per capita) means a 100% increase in GDP per capita.\n\nExplanation:\nSince the logarithm (usually natural log) of GDP per capita is being used, an increase of 1 unit in the log scale corresponds to a 100% (or doubling) increase in the original GDP per capita scale."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#questions-6-12",
+    "href": "danl-cw/danl-101-cw-13.html#questions-6-12",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Questions 6-12",
+    "text": "Questions 6-12\nFor Questions 6-12, consider the following R packages and the data.frame, nwsl_player_stats, containing individual player statistics for the National Women’s Soccer League (NWSL) in the 2022 season:\n\nlibrary(tidyverse)\nlibrary(skimr)\nnwsl_player_stats &lt;- read_csv(\"https://bcdanl.github.io/data/nwsl_player_stats.csv\")\n\nThe first 5 observations in the nwsl_player_stats data frame are displayed below:\n\n\n\n\n  \n\n\n\n\nThe nwsl_player_stats data frame is with 314 observations and 13 variables.\n\n\nDescription of Variables in nwsl_player_stats:\n\nplayer: Player name\nnation: Player home country\npos: Player position (e.g., GK, FW, MF, etc.)\nsquad: Player team\nage: Age of player\nmp: Matches played\nstarts: Number of matches in which player started the game\nmin: Total minutes played in the season\nxGp90: Expected goals per ninety minutes\n\nxG is simply the probability of scoring a goal from a given spot on the field when a shot is taken.\n\nxAp90: Expected assists per ninety minutes\n\nxA is simply the probability of assisting a goal by delivering a pass that creates a scoring opportunity.\n\nxGxAp90: Expected goals plus assists per ninety minutes\nnpxGp90: Expected goals minus penalty goals per ninety minutes\nnpxGxAp90: Expected goals plus assists minus penalty goals per ninety minutes\n\nA player who is consistently achieving a high number of xG (or xA) will be one who is getting into a good position consistently on the field. Coaches and scouts can use this to evaluate whether a player is exceedingly (un)lucky over a given number of games, and this will help in evaluating that player’s offensive skills beyond simple counts.\n\nThe followings are the summary of the nwsl_player_stats data.frame, including descriptive statistics for each variable.\n\n\n\nData summary\n\n\nName\nnwsl_player_stats\n\n\nNumber of rows\n314\n\n\nNumber of columns\n13\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n4\n\n\nnumeric\n9\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\nskim_variable\nn_missing\nmin\nmax\nempty\nn_unique\n\n\n\n\nplayer\n0\n5\n26\n0\n303\n\n\nnation\n17\n6\n7\n0\n29\n\n\npos\n0\n2\n4\n0\n10\n\n\nsquad\n0\n4\n10\n0\n12\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nage\n15\n25.98\n3.96\n16\n23.00\n25.00\n28.00\n38.00\n\n\nmp\n0\n12.61\n6.95\n1\n6.00\n14.00\n19.00\n22.00\n\n\nstarts\n0\n9.25\n7.31\n0\n2.00\n9.00\n16.00\n22.00\n\n\nmin\n0\n831.81\n631.52\n1\n234.00\n743.50\n1398.00\n1980.00\n\n\nxGp90\n2\n0.13\n0.16\n0\n0.01\n0.06\n0.20\n0.77\n\n\nxAp90\n2\n0.10\n0.47\n0\n0.01\n0.05\n0.11\n8.26\n\n\nxGxAp90\n2\n0.23\n0.50\n0\n0.04\n0.13\n0.32\n8.26\n\n\nnpxGp90\n2\n0.12\n0.14\n0\n0.01\n0.06\n0.18\n0.77\n\n\nnpxGxAp90\n2\n0.22\n0.50\n0\n0.04\n0.13\n0.30\n8.26\n\n\n\n\n\n\n\nQuestion 6\nWrite a code to produce the above summary for the nwsl_player_stats data.frame, including descriptive statistics for each variable.\nAnswer: skim(nwsl_player_stats)\nExplanation:\nThe skim() function from the skimr package provides a comprehensive summary of a data frame, including descriptive statistics for each variable.\n\n\nQuestion 7\nWhat code would you use to count the number of players in each team?\n\nnwsl_player_stats |&gt; count(player)\nnwsl_player_stats |&gt; count(nation)\nnwsl_player_stats |&gt; count(pos)\nnwsl_player_stats |&gt; count(squad)\n\nAnswer:\n\nnwsl_player_stats |&gt; count(squad)\n\nExplanation:\nTo count the number of players in each team, you need to count the occurrences of each team in the squad variable.\n\n\nQuestion 8\nWhat is the median value of starts? Find this value from the summary of the nwsl_player_stats data frame.\nAnswer: 9.00\nExplanation:\nFrom the summary provided by skim(nwsl_player_stats), the median value for starts is 9.00. This means that half of the players started in 9 or fewer matches.\n\n\nQuestion 9\n\nWe are interested in players who score or assist on a goal.\nTo achieve this, we create a new data.frame, a new data.frame, nwsl_nonGK_stats, which includes only players who are NOT a goal keeper from the nwsl_player_stats data frame.\n\n\nnwsl_nonGK_stats &lt;- nwsl_player_stats |&gt; \n  filter(___BLANK___)\n\n\nThe pos value is “GK” for a goal keeper. Which condition correctly fills in the BLANK to complete the code above?\n\n\n!is.na(pos)\nis.na(pos)\npos != \"GK\"\npos == \"GK\"\nBoth a and c\nBoth b and d\n\nAnswer:\n\npos != \"GK\"\n\nExplanation:\nTo filter out goalkeepers, we select observations where the position (pos) is not equal to “GK”.\n\n\nQuestion 10\n\nAdditionally, we are interested in non-goalkeeper players who played matches consistently throughout the season.\nTo achieve this, we create a new data.frame, nwsl_nonGK_stats_filtered, which includes only non GK players who played in at least 10 matches (mp) and started in at least 7 matches (starts) .\n\n\nnwsl_nonGK_stats_filtered &lt;- nwsl_nonGK_stats |&gt; \n  filter(___BLANK___)\n\n\nWhich condition correctly fills in the BLANK to complete the code above?\n\n\nmp &gt; 10 | starts &gt; 7\nmp &gt;= 10 | starts &gt;= 7\nmp &gt; 10 & starts &gt; 7\nmp &gt;= 10 & starts &gt;= 7\n\nAnswer:\n\nmp &gt;= 10 & starts &gt;= 7\n\nExplanation:\nWe want players who meet both conditions: played in at least 10 matches (mp &gt;= 10) and started in at least 7 matches (starts &gt;= 7). The logical operator & ensures both conditions are met.\n\n\nQuestion 11\nHow would you describe the relationship between age and xGp90 (expected goals per ninety minutes) using the nwsl_nonGK_stats_filtered data.frame?\n\nTo identify outlier players, such as star players and young players, some player names are added to such points in the plot.\nNote that it is NOT required to provide the code for adding these texts to the plot.\n\nComplete the code by filling in the blanks (1)-(4).\n\nggplot(data = ___(1)___,\n       mapping = aes(x = ___(2)___, \n                     y = ___(3)___)) +\n  geom_point(alpha = 0.5) +\n  ___(4)___()\n\n\n\n\n\n\n\nBlank (1)\n\nnwsl_nonGK_stats_filtered\nnwsl_nonGK_stats\nnwsl_player_stats\n\nAnswer:\n\nnwsl_nonGK_stats_filtered\n\n\n\nBlank (2)\n\nage\nxGxAp90\nxGp90\nxAp90\n\nAnswer:\n\nage\n\n\n\nBlank (3)\n\nage\nxGxAp90\nxGp90\nxAp90\n\nAnswer:\n\nxGp90\n\n\n\nBlank (4)\n\ngeom_fit\ngeom_scatterplot\ngeom_smooth\ngeom_histogram\n\nAnswer:\n\ngeom_smooth\n\n\n\nYoung Players\nWho are the young players under the age of 20 in the given plot?\nAnswer: Olivia Moultrie and Trinity Rodman\n\n\nStar Players\nWho are the star players whose xGp90 is greater than 0.6 in the given plot?\nAnswer: Sophia Smith and Alex Morgan\n\n\nRelationship\nDescribe the overall relationship between age and xGp90 (expected goal per ninety minutes).\nAnswer: Overall, xGp90 decreases as age increases up to 24, after which it remains relatively constant.\n\n\n\nQuestion 12\nHow would you describe how the distribution of xAp90 (expected assist per ninety minutes) varies by teams (squad) using the nwsl_nonGK_stats_filtered data.frame?\n\nNote that the squad categories are sorted by the median of xAp90 in the plot.\n\nComplete the code by filling in the blanks.\n\nggplot(data = ___(1)___,\n       mapping = aes(___(2)___, \n                     y = ___(3)___)) +\n  ___(4)___() +\n  labs(y = \"NWSL Teams\")\n\n\n\n\n\n\n\nBlank (1)\n\nnwsl_nonGK_stats_filtered\nnwsl_nonGK_stats\nnwsl_player_stats\n\nAnswer:\n\nnwsl_nonGK_stats_filtered\n\n\n\nBlank (2)\n\nx = squad\ny = squad\nx = xGxAp90\ny = xGxAp90\nx = xGp90\ny = xGp90\nx = xAp90\ny = xAp90\n\nAnswer:\n\nx = xAp90\n\n\n\nBlank (3)\n\nfct_reorder(squad, xAp90)\nfct_reorder(xAp90, squad)\nfct_reorder(squad, xGp90)\nfct_reorder(xGp90, squad)\nfct_reorder(squad, xGxAp90)\nfct_reorder(xGxAp90, squad)\n\nAnswer:\n\nfct_reorder(squad, xAp90)\n\n\n\nBlank (4)\n\ngeom_bar\ngeom_box\ngeom_boxplot\ngeom_histogram\n\nAnswer:\n\ngeom_boxplot"
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-13",
+    "href": "danl-cw/danl-101-cw-13.html#question-13",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 13",
+    "text": "Question 13\n \nFor Question 13, you will use the following R packages and a data frame named chess_top4, which contains information about chess games played by four of the world’s top online chess players during a special event called “Titled Tuesday” on chess.com. These games were played in a format where each player has 3 minutes to make all their moves, with 1 second added to their clock after each move. The data includes games from October 2022 to October 2024 played only among the following four players:\n\nMagnus Carlsen\nHikaru Nakamura\nAlireza Firouzja\nDaniel Naroditsky\n\nNote: Titled Tuesday is a weekly event held every Tuesday on chess.com, where titled chess players (such as Grandmasters and International Masters) compete in online tournaments.\n\nlibrary(tidyverse)\nlibrary(skimr)\nchess_top4 &lt;- read_csv(\"https://bcdanl.github.io/data/chess_titled_tuesday.csv\")\n\nThe first 15 observations in the chess_top4 data frame are displayed below:\n\n\n\n\n\nDate\nWhite\nBlack\nResult\n\n\n\n\n2022-10-11\nHikaru Nakamura\nMagnus Carlsen\nWhite Wins\n\n\n2022-10-18\nHikaru Nakamura\nAlireza Firouzja\nDraw\n\n\n2022-10-25\nDaniel Naroditsky\nAlireza Firouzja\nDraw\n\n\n2022-11-08\nHikaru Nakamura\nAlireza Firouzja\nBlack Wins\n\n\n2022-12-13\nAlireza Firouzja\nHikaru Nakamura\nDraw\n\n\n2022-12-20\nHikaru Nakamura\nAlireza Firouzja\nWhite Wins\n\n\n2022-12-20\nMagnus Carlsen\nHikaru Nakamura\nDraw\n\n\n2023-01-03\nDaniel Naroditsky\nHikaru Nakamura\nBlack Wins\n\n\n2023-01-03\nHikaru Nakamura\nMagnus Carlsen\nWhite Wins\n\n\n2023-01-24\nHikaru Nakamura\nMagnus Carlsen\nWhite Wins\n\n\n2023-02-28\nAlireza Firouzja\nMagnus Carlsen\nDraw\n\n\n2023-02-28\nHikaru Nakamura\nAlireza Firouzja\nDraw\n\n\n2023-02-28\nHikaru Nakamura\nMagnus Carlsen\nDraw\n\n\n2023-02-28\nMagnus Carlsen\nHikaru Nakamura\nDraw\n\n\n2023-03-14\nHikaru Nakamura\nAlireza Firouzja\nWhite Wins\n\n\n\n\n\n\nThe chess_top4 data.frame contains 70 observations and 4 variables, representing 70 unique chess games.\n\n\nDescription of Variables in chess_top4:\n\nDate: The date when the game was played.\nWhite: The name of the player who played with the white pieces.\nBlack: The name of the player who played with the black pieces.\nResult: The outcome of the game, which can be one of the following:\n\n“White Wins” (the player with the white pieces won the game)\n“Black Wins” (the player with the black pieces won the game)\n“Draw” (the game ended in a tie)\n\n\nQuestion 13 is about a ggplot code to visualize how the distribution of Result varies among these top 4 chess players.\n\nPart 1\nComplete the code by filling in the blanks to replicate the given plot.\n\nThe White player is displayed on the vertical axis.\nThe Black player is labeled at the top of each panel.\n\n\nggplot(data = chess_top4,\n       mapping = aes(___(1)___,\n                     fill = ___(2)___)) +\n  geom_bar(___(3)___) +\n  facet_wrap(___(4)___, ncol = 1) +\n  labs(x = \"Proportion\")\n\n\n\n\n\n\n\nBlank (1)\n\nx = White\ny = White\nx = Black\ny = Black\nx = Proportion\ny = Proportion\n\nAnswer:\n\ny = White\n\n\n\nBlank (2)\n\nchess_top4\nWhite\nBlack\nResult\ncount\n\nAnswer:\n\nResult\n\n\n\nBlank (3)\n\nposition = \"stack\"\nposition = \"fill\"\nposition = \"dodge\"\nLeaving (3) empty\nBoth a and d\nBoth b and d\nBoth c and d\n\nAnswer:\n\nposition = \"fill\"\n\n\n\nBlank (4)\n\nWhite\n~White\nBlack\n~Black\nPlayer\n~Player\nboth a and b\nboth c and d\nboth e and f\nboth b and f\nboth d and f\n\nAnswer:\n\n~Black\n\n\n\n\nPart 2\nComplete the code by filling in the blanks to replicate the given plot.\n\nThe White player is displayed on the vertical axis.\nThe Black player is labeled at the top of each panel.\n\n\nggplot(data = chess_top4,\n       mapping = aes(___(1)___,\n                     fill = ___(2)___)) +\n  geom_bar(___(3)___) +\n  facet_wrap(___(4)___, ncol = 1)\n\n\n\n\n\n\n\nBlank (1)\n\nx = White\ny = White\nx = Black\ny = Black\nx = count\ny = count\n\nAnswer:\n\ny = White\n\n\n\nBlank (2)\n\nchess_top4\nWhite\nBlack\nResult\ncount\n\nAnswer:\n\nResult\n\n\n\nBlank (3)\n\nposition = \"stack\"\nposition = \"fill\"\nposition = \"dodge\"\nLeaving (3) empty\nBoth a and d\nBoth b and d\nBoth c and d\n\nAnswer:\n\nBoth a and d\n\nExplanation:\nSince position = \"stack\" is the default for geom_bar(), leaving it empty achieves the same effect. So both options are correct.\n\n\nBlank (4)\n\nWhite\n~White\nBlack\n~Black\nPlayer\n~Player\nboth a and b\nboth c and d\nboth e and f\nboth b and f\nboth d and f\n\nAnswer:\n\n~Black\n\n\n\n\nPart 3\nComplete the code by filling in the blanks to replicate the given plot.\n\nThe White player is displayed on the vertical axis.\nThe Black player is labeled at the top of each panel.\n\n\nggplot(data = chess_top4,\n       mapping = aes(___(1)___,\n                     fill = ___(2)___)) +\n  geom_bar(___(3)___) +\n  facet_wrap(___(4)___, ncol = 1)\n\n\n\n\n\n\n\nBlank (1)\n\nx = White\ny = White\nx = Black\ny = Black\nx = count\ny = count\n\nAnswer:\n\ny = White\n\n\n\nBlank (2)\n\nchess_top4\nWhite\nBlack\nResult\ncount\n\nAnswer:\n\nResult\n\n\n\nBlank (3)\n\nposition = \"stack\"\nposition = \"fill\"\nposition = \"dodge\"\nLeaving (3) empty\nBoth a and d\nBoth b and d\nBoth c and d\n\nAnswer:\n\nposition = \"dodge\"\n\nExplanation:\nTo create a clustered bar chart, we specify position = \"dodge\" in geom_bar().\n\n\nBlank (4)\n\nWhite\n~White\nBlack\n~Black\nPlayer\n~Player\nboth a and b\nboth c and d\nboth e and f\nboth b and f\nboth d and f\n\nAnswer:\n\n~Black\n\n\n\n\nPart 4 - Magnus Carlsen vs. Hikaru Nakamura in the Titled Tuesday\nWho had more wins in the games where Magnus Carlsen played with the white pieces and Hikaru Nakamura played with the black pieces in the Titled Tuesday?\nAnswer: Magnus Carlsen\nWho had more wins in the games where Hikaru Nakamura played with the white pieces and Magnus Carlsen played with the black pieces in the Titled Tuesday?\nAnswer: Hikaru Nakamura\nWho won more games in the encounters between Magnus Carlsen and Hikaru Nakamura in the Titled Tuesday?\nAnswer: They had an equal number of wins overall."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-14",
+    "href": "danl-cw/danl-101-cw-13.html#question-14",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 14",
+    "text": "Question 14\nWhen collecting data in real life, measured values often differ. In this context, we can observe variation easily; for example, if we measure any numeric variable (e.g., friends’ heights) twice, we are likely to get two different values."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-15",
+    "href": "danl-cw/danl-101-cw-13.html#question-15",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 15",
+    "text": "Question 15\nThe mode of a variable is the value that appears most frequently within the set of that variable’s values."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-16",
+    "href": "danl-cw/danl-101-cw-13.html#question-16",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 16",
+    "text": "Question 16\nThe gg in ggplot stands for Grammar of Graphics."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-17",
+    "href": "danl-cw/danl-101-cw-13.html#question-17",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 17",
+    "text": "Question 17\nUsing regression—a machine learning method—the geom_smooth() visualizes the predicted value of the y variable for a given value of the x variable. The grey ribbon around the curve illustrates the uncertainty surrounding the estimated curve."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-18",
+    "href": "danl-cw/danl-101-cw-13.html#question-18",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 18",
+    "text": "Question 18\nWhen making a scatterplot, it is a common practice to place the input variable along the x-axis and the output variable along the y-axis."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-19",
+    "href": "danl-cw/danl-101-cw-13.html#question-19",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 19",
+    "text": "Question 19\nIn ggplot, we can set alpha between 0 (full transparency) and 1 (no transparency) manually to adjust a geometric object’s transparency level."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-20",
+    "href": "danl-cw/danl-101-cw-13.html#question-20",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 20",
+    "text": "Question 20\nWhat are the advantage and disadvantage of using the scales option in ggplot2 when creating faceted plots?\nAnswer:\n\nAdvantages:\n\nCustomized Scales per Facet: Using scales = \"free\" (or \"free_x\", \"free_y\") allows each facet to have its own axis scales. This can make patterns within each facet more visible, especially when the data ranges vary significantly between facets.\n\nDisadvantages:\n\nDifficulty in Comparison: When scales are free, comparing values across facets becomes challenging because the axes are not standardized. Viewers might misinterpret the data, thinking that similar bar heights represent similar values, even if the scales differ."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-21",
+    "href": "danl-cw/danl-101-cw-13.html#question-21",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 21",
+    "text": "Question 21\nHow does data storytelling bridge the gap between data and insights?\nAnswer:\nData Storytelling: Bridge the gap between data and insights by incorporating descriptive statistics, visualization, and narration within the appropriate audience context to effectively present your findings and drive data-informed decisions."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-22",
+    "href": "danl-cw/danl-101-cw-13.html#question-22",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 22",
+    "text": "Question 22\nWhat two main factors should a storyteller consider about the context before creating a data visualization or communication?\nAnswer:\n\nAudience: Understanding who the audience is, their level of expertise, interests, and what they care about, to tailor the message accordingly.\nPurpose: Clarifying the goal of the communication—whether to inform, persuade, or explore—and what action or understanding is desired from the audience."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-23",
+    "href": "danl-cw/danl-101-cw-13.html#question-23",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 23",
+    "text": "Question 23\nProvide at least three techniques to make data visualization more colorblind-friendly.\nAnswer:\n\nUse Colorblind-Friendly Palettes: Utilize colorblind-safe palettes (e.g., scale_color_tableau(), scale_color_colorblind()), which are designed to be distinguishable by colorblind individuals.\nIncorporate Textures and Patterns: Use different shapes or line types in addition to colors to differentiate data points.\nHave Additional Visual Cue: Ensure that color is not the only means of conveying information; include labels, annotations, or legends that clarify the data."
+  },
+  {
+    "objectID": "danl-cw/danl-101-cw-13.html#question-24",
+    "href": "danl-cw/danl-101-cw-13.html#question-24",
+    "title": "Summary for Midterm Exam 2 Performance",
+    "section": "Question 24",
+    "text": "Question 24\nList at least three distinct pieces of advice shared by the invited guests for students seeking jobs in the data analytics industry.\nAnswer:\n\nLeverage Available Opportunities:\n\nBuild resumes through tutoring, research, and extracurricular activities while in college.\n\nGain Relevant Experience:\n\nSecure internships and engage in projects to stand out in a competitive job market.\n\nWork on Personal Projects:\n\nDevelop one or two significant projects to showcase during interviews.\n\nMaster Essential Tools:\n\nFocus on Python, R, and SQL for data-related roles.\n\nCombine Skills with Passion:\n\nAlign data analytics skills with industries of personal interest for a fulfilling career.\n\nUnderstand Business Fundamentals:\n\nLearn basic finance and accounting to connect analytics with business needs.\n\nDevelop Soft Skills:\n\nEnhance interpersonal and communication skills to collaborate with non-technical stakeholders effectively.\n\nStay Current and Adaptable:\n\nEmbrace learning new tools and technologies to remain relevant in the field.\n\nNetwork Strategically:\n\nBuild relationships with professionals to gain insights and collaboration opportunities.\n\nExplore Various Projects:\n\nExperiment with diverse projects to gain confidence and transition smoothly from academia to industry."
   }
 ]

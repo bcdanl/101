@@ -1,0 +1,1077 @@
+---
+title: "Midterm Exam II"
+subtitle: "Fall 2024, DANL 101-04"
+author: "Version A"
+date: 2024-11-19
+
+# format:
+#   pdf:
+#     toc: false
+#     number-sections: false
+#     colorlinks: false
+#     header-includes: 
+#       - \usepackage{graphicx}
+#       - \usepackage{fancyhdr}
+#       - \pagestyle{fancy}
+#       - \fancyhf{}  # Clears all headers and footers
+#       - \fancyhead[L]{Department of Data Analytics}  # Left header message
+#       - \fancyhead[C]{\includegraphics[width=4cm]{logo-blue.png}}  # Center logo
+#       - \fancyhead[R]{Fall 2024}  # Right header message
+#       - \fancyfoot[C]{\thepage}  # Centered page number in the footer
+
+
+
+format:
+  html
+toc: true
+toc-depth: 2
+toc-expand: true
+toc-title: Contents
+
+# header-includes:
+# - \usepackage{amsthm}
+
+fig-width: 9
+fig-align: center
+
+execute:
+  echo: true
+  eval: false
+  message: false
+  warning: false
+
+# include-after-body: insert-logo.html
+
+---
+```{r}
+#| include: false
+
+library(tidyverse)
+library(skimr)
+library(lubridate)
+library(stargazer)
+library(broom)
+library(hrbrthemes)
+library(ISAR)
+library(ggrepel)
+library(ggthemes)
+# theme_set(theme_ipsum())
+
+# knitr::opts_chunk$set(fig.width=6, fig.height=6)  
+
+theme_set(theme_minimal() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1), hjust = 1 ),
+                axis.title.y = element_text(size = rel(1), 
+                                            angle = 0,
+                                            margin = margin(0,10,0,0)))
+          )
+
+```
+
+
+# Summary for Midterm Exam 2 Performance
+
+The following provides the descriptive statistics for each part of the Midterm Exam 2 questions:
+
+```{r}
+#| echo: false
+#| eval: true
+df <- readr::read_csv("https://bcdanl.github.io/data/fall-2024-danl-101-04-midterm-2-stat.csv")
+colnames(df) <- str_c("q", colnames(df))
+sum <- skim(df) |> 
+  select(-skim_type,-n_missing,-complete_rate)
+colnames(sum) <- str_replace_all(colnames(sum), "numeric.", "")
+
+sum <- sum |> 
+  mutate(mean = round(mean, 2),
+         sd = round(sd, 2)) |> 
+  mutate(skim_variable = 
+           str_replace_all(skim_variable, "-\\(", "\\("),
+         skim_variable = 
+           str_replace_all(skim_variable, "_", "")
+         ) |> 
+  mutate(question = skim_variable, .after = skim_variable) |> 
+  separate(question, into = c("question", "part") ) |> 
+  select(-skim_variable) |> 
+  group_by(question) |> 
+  mutate(tmp = row_number(),
+         tmp2 = min(tmp),
+         question = ifelse(tmp2 != tmp, "", question)) |> 
+  select(-tmp,-tmp2) |> 
+  ungroup()
+  
+
+DT::datatable(sum, rownames = F,
+              options = list(pageLength = ncol(df)))
+```
+
+<br>
+
+The following describes the distribution of Midterm Exam 2 score:
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/dist-danl-101-04-fall-2024-midterm-2.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+<br>
+
+
+# Section 1. Multiple Choice, Short Answer, and Various Questions
+
+## Question 1
+The quote “I would have written a shorter letter, but I did not have the time” by Blaise Pascal emphasizes the challenge of being:
+
+a. Detailed
+b. Accurate
+c. Concise
+d. Creative
+
+**Answer:**
+
+c. Concise
+
+**Explanation:**
+
+Blaise Pascal’s quote underscores the difficulty of expressing ideas succinctly. Being concise often requires more thought and effort to distill complex ideas into clear, brief statements.
+
+
+## Question 2
+When the distribution of a variable has a single peak and is negatively skewed (i.e., having a long left tail), which of the following is correct?
+
+a. Median < Mode < Mean
+b. Mean < Median < Mode
+c. Mode < Mean < Median
+d. Median = Mean = Mode
+
+**Answer:**
+
+b. Mean < Median < Mode
+
+**Explanation:**
+
+In a negatively skewed distribution, the long tail is on the left side. The mean is pulled in the direction of the skew (left), so the mean is less than the median, which is less than the mode.
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/skewness.jpg" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+## Question 3
+What is NOT an essential component in `ggplot()` data visualization?
+
+a. Data frames
+b. Geometric objects
+c. Facets
+d. Aesthetic attributes
+
+**Answer:**
+
+c. Facets
+
+**Explanation:**
+
+While facets are useful for creating multiple plots based on a factor, they are not essential components of a `ggplot()`. The essential components are data frames, geometric objects, and aesthetic attributes.
+
+## Question 4
+____(1)____ does not necessarily imply ____(2)____
+
+a. `(1)` Correlation; `(2)` causation
+b. `(1)` Causation; `(2)` correlation
+c. `(1)` Correlation; `(2)` correlation
+d. `(1)` Causation; `(2)` causation
+
+**Answer:**
+
+a. `(1)` Correlation; `(2)` causation
+
+**Explanation:**
+
+The phrase “correlation does not necessarily imply causation” means that just because two variables are correlated, it doesn’t mean one causes the other.
+
+## Question 5
+In the context of the lecture, which of the following correctly interprets a change in log-transformed GDP per capita and its meaning for GDP per capita?
+
+a. A one-unit increase in log(GDP per capita) means to a 1% increase in GDP per capita.
+b. A one-unit increase in log(GDP per capita) means to a 100% increase in GDP per capita.
+c. A one-unit increase in GDP per capita means an 8.4% increase in GDP per capita.
+d. A one-unit increase in GDP per capita means a 0.084% increase in GDP per capita.
+
+**Answer:**
+
+b. A one-unit increase in log(GDP per capita) means a 100% increase in GDP per capita.
+
+**Explanation:**
+
+Since the logarithm (usually natural log) of GDP per capita is being used, an increase of 1 unit in the log scale corresponds to a 100% (or doubling) increase in the original GDP per capita scale.
+
+
+## Questions 6-12
+For **Questions 6-12**, consider the following R packages and the data.frame, `nwsl_player_stats`, containing individual player statistics for the National Women's Soccer League (NWSL) in the 2022 season:
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+library(skimr)
+nwsl_player_stats <- read_csv("https://bcdanl.github.io/data/nwsl_player_stats.csv")
+```
+
+The first 5 observations in the `nwsl_player_stats` data frame are displayed below:
+```{r}
+#| echo: false
+#| eval: true
+
+rmarkdown::paged_table(nwsl_player_stats)
+
+```
+
+- The `nwsl_player_stats` data frame is with 314 observations and 13 variables.
+
+
+
+### Description of Variables in `nwsl_player_stats`:
+  
+- `player`:
+Player name
+
+- `nation`:
+Player home country
+
+- `pos`:
+Player position (e.g., GK, FW, MF, etc.)
+
+- `squad`:
+Player team
+
+- `age`:
+Age of player
+
+- `mp`:
+Matches played
+
+- `starts`:
+Number of matches in which player started the game
+
+- `min`:
+Total minutes played in the season
+
+- `xGp90`: Expected goals per ninety minutes
+  - `xG` is simply the probability of scoring a goal from a given spot on the field when a shot is taken.
+
+- `xAp90`: Expected assists per ninety minutes
+  - `xA` is simply the probability of assisting a goal by delivering a pass that creates a scoring opportunity. 
+
+- `xGxAp90`: Expected goals plus assists per ninety minutes
+
+- `npxGp90`:
+Expected goals minus penalty goals per ninety minutes
+
+- `npxGxAp90`:
+Expected goals plus assists minus penalty goals per ninety minutes
+
+A player who is consistently achieving a high number of `xG` (or `xA`) will be one who is getting into a good position consistently on the field. Coaches and scouts can use this to evaluate whether a player is exceedingly (un)lucky over a given number of games, and this will help in evaluating that player’s offensive skills beyond simple counts.
+
+<br>
+
+The followings are the summary of the `nwsl_player_stats` data.frame, including **descriptive statistics** for each variable.
+```{r}
+#| echo: false
+skim(nwsl_player_stats) |> select(-numeric.hist,-character.whitespace, -complete_rate)
+```
+
+
+### Question 6
+
+Write a code to produce the above summary for the `nwsl_player_stats` data.frame, including descriptive statistics for each variable.
+
+**Answer:** `skim(nwsl_player_stats)`
+
+
+**Explanation:**
+
+The `skim()` function from the skimr package provides a comprehensive summary of a data frame, including descriptive statistics for each variable.
+
+
+### Question 7
+What code would you use to count the number of players in each team?
+
+a. `nwsl_player_stats |> count(player)`
+b. `nwsl_player_stats |> count(nation)`
+c. `nwsl_player_stats |> count(pos)`
+d. `nwsl_player_stats |> count(squad)`
+
+**Answer:**
+
+d. `nwsl_player_stats |> count(squad)`
+
+**Explanation:**
+
+To count the number of players in each team, you need to count the occurrences of each team in the `squad` variable.
+
+
+### Question 8
+What is the median value of `starts`? Find this value from the summary of the `nwsl_player_stats` data frame.
+
+**Answer:** 9.00
+
+**Explanation:**
+
+From the summary provided by `skim(nwsl_player_stats)`, the median value for `starts` is 9.00. This means that half of the players started in 9 or fewer matches.
+
+### Question 9
+- We are interested in players who score or assist on a goal. 
+- To achieve this, we create a new data.frame, a new data.frame, `nwsl_nonGK_stats`, which includes only players who are NOT a goal keeper from the `nwsl_player_stats` data frame. 
+
+```{r}
+#| eval: true
+#| echo: false
+nwsl_nonGK_stats <- nwsl_player_stats |> 
+  filter(pos != "GK")
+```
+
+
+```{r}
+#| eval: false
+nwsl_nonGK_stats <- nwsl_player_stats |> 
+  filter(___BLANK___)
+```
+
+
+- The `pos` value is **"GK"** for a goal keeper. Which condition correctly fills in the BLANK to complete the code above?
+
+a. `!is.na(pos)`
+b. `is.na(pos)`
+c. `pos != "GK"`
+d. `pos == "GK"`
+e. Both a and c
+f. Both b and d
+
+**Answer:**
+
+c. `pos != "GK"`
+
+**Explanation:**
+
+To filter out goalkeepers, we select observations where the position (`pos`) is not equal to **"GK"**.
+
+
+### Question 10
+- Additionally, we are interested in non-goalkeeper players who played matches consistently throughout the season.
+- To achieve this, we create a new data.frame, `nwsl_nonGK_stats_filtered`, which includes only non GK players who played in at least **10 matches** (`mp`) and started in at least **7** matches (`starts`) .
+
+
+```{r}
+#| eval: true
+#| echo: false
+nwsl_nonGK_stats_filtered <- nwsl_nonGK_stats |> 
+  filter(mp >= 10, starts >= 7)
+```
+
+
+```{r}
+#| eval: false
+nwsl_nonGK_stats_filtered <- nwsl_nonGK_stats |> 
+  filter(___BLANK___)
+```
+
+
+- Which condition correctly fills in the BLANK to complete the code above?
+
+a. `mp > 10 | starts > 7`
+b. `mp >= 10 | starts >= 7`
+c. `mp > 10 & starts > 7`
+d. `mp >= 10 & starts >= 7`
+
+
+**Answer:**
+
+d. `mp >= 10 & starts >= 7`
+
+**Explanation:**
+
+We want players who meet both conditions: played in at least 10 matches (`mp >= 10`) and started in at least 7 matches (`starts >= 7`). The logical operator & ensures both conditions are met.
+
+
+
+### Question 11
+How would you describe the relationship between `age` and `xGp90` (expected goals per ninety minutes) using the `nwsl_nonGK_stats_filtered` data.frame?
+
+- To identify **outlier players**, such as **star players** and **young players**, some player names are added to such points in the plot.
+- Note that it is NOT required to provide the code for adding these texts to the plot.
+
+Complete the code by filling in the blanks (1)-(4).
+
+```{r}
+#| eval: false
+ggplot(data = ___(1)___,
+       mapping = aes(x = ___(2)___, 
+                     y = ___(3)___)) +
+  geom_point(alpha = 0.5) +
+  ___(4)___()
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+
+p <- ggplot(data = nwsl_nonGK_stats_filtered |> 
+              mutate(new_player = ifelse((age < 20 & xGp90 > 0) | xGp90 > 0.6,
+                                         player, "")),
+            aes(x = age, y = xGp90, label = new_player))
+
+p + geom_point(alpha = .5) +
+  geom_smooth(data = nwsl_nonGK_stats_filtered |> 
+                mutate(new_player = ifelse((age < 20 & xGp90 > 0) | xGp90 > 0.6,
+                                           player, "")) |> 
+                filter(age >= 20)) +
+  geom_text_repel(box.padding = .75, hjust = .25) +
+  theme_bw()
+```
+
+#### Blank (1)
+a. `nwsl_nonGK_stats_filtered`
+b. `nwsl_nonGK_stats`
+c. `nwsl_player_stats`
+
+**Answer:**
+
+a. `nwsl_nonGK_stats_filtered`
+
+#### Blank (2)
+a. `age`
+b. `xGxAp90`
+c. `xGp90`
+d. `xAp90`
+
+**Answer:**
+
+a. `age`
+
+#### Blank (3)
+a. `age`
+b. `xGxAp90`
+c. `xGp90`
+d. `xAp90`
+
+**Answer:**
+
+c. `xGp90`
+
+#### Blank (4)
+a. `geom_fit`
+b. `geom_scatterplot`
+c. `geom_smooth`
+d. `geom_histogram`
+
+**Answer:**
+
+c. `geom_smooth`
+
+#### Young Players
+Who are the young players under the `age` of 20 in the given plot?
+
+**Answer:** Olivia Moultrie and Trinity Rodman
+
+
+#### Star Players
+Who are the star players whose `xGp90` is greater than 0.6 in the given plot?
+
+**Answer:** Sophia Smith and Alex Morgan
+
+
+#### Relationship
+Describe the *overall* relationship between `age` and `xGp90` (expected goal per ninety minutes).
+
+**Answer**: Overall, `xGp90` decreases as `age` increases up to 24, after which it remains relatively constant.
+
+
+
+### Question 12
+How would you describe how the distribution of `xAp90` (expected assist per ninety minutes) varies by teams (`squad`) using the `nwsl_nonGK_stats_filtered` data.frame?
+
+- Note that the `squad` categories are sorted by the median of `xAp90` in the plot.
+
+Complete the code by filling in the blanks.
+
+```{r}
+#| eval: false
+ggplot(data = ___(1)___,
+       mapping = aes(___(2)___, 
+                     y = ___(3)___)) +
+  ___(4)___() +
+  labs(y = "NWSL Teams")
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+
+ggplot(data = nwsl_nonGK_stats_filtered,
+       mapping = aes(x = xAp90, 
+                     y = fct_reorder(squad, xAp90))
+       ) +
+  geom_boxplot() +
+  labs(y = "NWSL Teams") +
+  theme_bw()
+```
+
+#### Blank (1)
+a. `nwsl_nonGK_stats_filtered`
+b. `nwsl_nonGK_stats`
+c. `nwsl_player_stats`
+
+**Answer:**
+
+a. `nwsl_nonGK_stats_filtered`
+
+#### Blank (2)
+a. `x = squad`
+b. `y = squad`
+c. `x = xGxAp90`
+d. `y = xGxAp90`
+e. `x = xGp90`
+f. `y = xGp90`
+g. `x = xAp90`
+h. `y = xAp90`
+
+**Answer:**
+
+g. `x = xAp90`
+
+
+#### Blank (3)
+a. `fct_reorder(squad, xAp90)`
+b. `fct_reorder(xAp90, squad)`
+c. `fct_reorder(squad, xGp90)`
+d. `fct_reorder(xGp90, squad)`
+e. `fct_reorder(squad, xGxAp90)`
+f. `fct_reorder(xGxAp90, squad)`
+
+**Answer:**
+
+a. `fct_reorder(squad, xAp90)`
+
+#### Blank (4)
+a. `geom_bar`
+b. `geom_box`
+c. `geom_boxplot`
+d. `geom_histogram`
+
+**Answer:**
+
+c. `geom_boxplot`
+
+## Question 13
+
+![](https://bcdanl.github.io/lec_figs/chess-standardboard.png){width=50%}
+![](https://bcdanl.github.io/lec_figs/chess-titled-tuesday.jpg){width=50%}
+```{r}
+#| echo: false
+#| eval: true
+
+# knitr::include_graphics("https://bcdanl.github.io/lec_figs/chess-standardboard.png")
+# knitr::include_graphics("https://bcdanl.github.io/lec_figs/chess-titled-tuesday.png")
+
+```
+
+
+For Question 13, you will use the following R packages and a data frame named `chess_top4`, which contains information about chess games played by four of the world’s top online chess players during a special event called “Titled Tuesday” on chess.com. These games were played in a format where each player has 3 minutes to make all their moves, with 1 second added to their clock after each move. The data includes games from October 2022 to October 2024 played only among the following four players:
+
+1. **Magnus Carlsen**
+2. **Hikaru Nakamura**
+3. **Alireza Firouzja**
+4. **Daniel Naroditsky**
+
+**Note:** Titled Tuesday is a weekly event held every Tuesday on chess.com, where titled chess players (such as Grandmasters and International Masters) compete in online tournaments.
+
+
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+library(skimr)
+chess_top4 <- read_csv("https://bcdanl.github.io/data/chess_titled_tuesday.csv")
+```
+
+
+
+The first 15 observations in the `chess_top4` data frame are displayed below:
+```{r}
+#| echo: false
+#| eval: true
+
+knitr::kable(chess_top4 |> slice(1:15) )
+
+```
+
+- The `chess_top4` data.frame contains 70 observations and 4 variables, representing 70 unique chess games.
+
+### Description of Variables in `chess_top4`:
+  
+- `Date`: The date when the game was played.
+
+- `White`: The name of the player who played with the white pieces.
+
+- `Black`: The name of the player who played with the black pieces.
+
+- `Result`: The outcome of the game, which can be one of the following:
+  - "White Wins" (the player with the white pieces won the game)
+  - "Black Wins" (the player with the black pieces won the game)
+  - "Draw" (the game ended in a tie)
+
+Question 13 is about a ggplot code to visualize how the distribution of `Result` varies among these top 4 chess players.
+
+
+
+#### Part 1
+Complete the code by filling in the blanks to replicate the given plot.
+
+- The White player is displayed on the vertical axis.
+- The Black player is labeled at the top of each panel.
+```{r}
+#| eval: false
+ggplot(data = chess_top4,
+       mapping = aes(___(1)___,
+                     fill = ___(2)___)) +
+  geom_bar(___(3)___) +
+  facet_wrap(___(4)___, ncol = 1) +
+  labs(x = "Proportion")
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8.5
+#| fig-width: 10
+
+ggplot(data = chess_top4,
+       aes(y = White,
+           fill = Result)) +
+  geom_bar(position = "fill") +
+  scale_fill_colorblind() +
+  facet_wrap(~Black,
+             ncol = 1) +
+  # scale_x_percent() +
+  labs(x = "Proportion") +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0,
+                                  face = "bold"),
+        legend.position = "right",
+        ) +
+  guides(fill = guide_legend(reverse = TRUE)) 
+```
+
+
+##### Blank (1)
+a. `x = White`
+b. `y = White`
+c. `x = Black`
+d. `y = Black`
+e. `x = Proportion`
+f. `y = Proportion`
+
+**Answer:**
+
+b. `y = White`
+
+##### Blank (2)
+a. `chess_top4`
+b. `White`
+c. `Black`
+d. `Result`
+e. `count`
+
+**Answer:**
+
+d. `Result`
+
+##### Blank (3)
+a. `position = "stack"`
+b. `position = "fill"`
+c. `position = "dodge"`
+d. Leaving (3) empty
+e. Both a and d
+f. Both b and d
+g. Both c and d
+
+**Answer:**
+
+b. `position = "fill"`
+
+##### Blank (4)
+a. `White`
+b. `~White`
+c. `Black`
+d. `~Black`
+e. `Player`
+f. `~Player`
+g. both a and b
+h. both c and d
+i. both e and f
+j. both b and f
+k. both d and f
+
+**Answer:**
+
+d. `~Black`
+
+
+#### Part 2
+Complete the code by filling in the blanks to replicate the given plot.
+
+- The White player is displayed on the vertical axis.
+- The Black player is labeled at the top of each panel.
+
+```{r}
+#| eval: false
+ggplot(data = chess_top4,
+       mapping = aes(___(1)___,
+                     fill = ___(2)___)) +
+  geom_bar(___(3)___) +
+  facet_wrap(___(4)___, ncol = 1)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8.5
+#| fig-width: 10
+
+ggplot(data = chess_top4,
+       aes(y = White,
+           fill = Result)) +
+  geom_bar(position = "stack") +
+  scale_fill_colorblind() +
+  facet_wrap(~Black,
+             ncol = 1) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0,
+                                  face = "bold"),
+        legend.position = "right",
+        ) +
+  guides(fill = guide_legend(reverse = TRUE)) 
+```
+
+
+##### Blank (1)
+a. `x = White`
+b. `y = White`
+c. `x = Black`
+d. `y = Black`
+e. `x = count`
+f. `y = count`
+
+**Answer:**
+
+b. `y = White`
+
+##### Blank (2)
+a. `chess_top4`
+b. `White`
+c. `Black`
+d. `Result`
+e. `count`
+
+**Answer:**
+
+d. `Result`
+
+##### Blank (3)
+a. `position = "stack"`
+b. `position = "fill"`
+c. `position = "dodge"`
+d. Leaving (3) empty
+e. Both a and d
+f. Both b and d
+g. Both c and d
+
+**Answer:**
+
+e. Both a and d
+
+**Explanation:**
+
+Since `position = "stack"` is the default for `geom_bar()`, leaving it empty achieves the same effect. So both options are correct.
+
+##### Blank (4)
+a. `White`
+b. `~White`
+c. `Black`
+d. `~Black`
+e. `Player`
+f. `~Player`
+g. both a and b
+h. both c and d
+i. both e and f
+j. both b and f
+k. both d and f
+
+**Answer:**
+
+d. `~Black`
+
+#### Part 3
+Complete the code by filling in the blanks to replicate the given plot.
+
+- The White player is displayed on the vertical axis.
+- The Black player is labeled at the top of each panel.
+
+```{r}
+#| eval: false
+ggplot(data = chess_top4,
+       mapping = aes(___(1)___,
+                     fill = ___(2)___)) +
+  geom_bar(___(3)___) +
+  facet_wrap(___(4)___, ncol = 1)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8.5
+#| fig-width: 10
+
+ggplot(data = chess_top4,
+       aes(y = White,
+           fill = Result)) +
+  geom_bar(position = position_dodge(preserve = "single")) +
+  scale_fill_colorblind() +
+  facet_wrap(~Black,
+             ncol = 1) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0,
+                                  face = "bold"),
+        legend.position = "right",
+        ) +
+  guides(fill = guide_legend(reverse = TRUE))
+```
+
+
+
+##### Blank (1)
+a. `x = White`
+b. `y = White`
+c. `x = Black`
+d. `y = Black`
+e. `x = count`
+f. `y = count`
+
+**Answer:**
+
+b. y = White
+
+##### Blank (2)
+a. `chess_top4`
+b. `White`
+c. `Black`
+d. `Result`
+e. `count`
+
+**Answer:**
+
+d. Result
+
+##### Blank (3)
+a. `position = "stack"`
+b. `position = "fill"`
+c. `position = "dodge"`
+d. Leaving (3) empty
+e. Both a and d
+f. Both b and d
+g. Both c and d
+
+**Answer:**
+
+c. `position = "dodge"`
+
+**Explanation:**
+
+To create a clustered bar chart, we specify `position = "dodge"` in `geom_bar()`.
+
+##### Blank (4)
+a. `White`
+b. `~White`
+c. `Black`
+d. `~Black`
+e. `Player`
+f. `~Player`
+g. both a and b
+h. both c and d
+i. both e and f
+j. both b and f
+k. both d and f
+
+**Answer:**
+
+d. `~Black`
+
+#### Part 4 - Magnus Carlsen vs. Hikaru Nakamura in the Titled Tuesday
+Who had more wins in the games where Magnus Carlsen played with the white pieces and Hikaru Nakamura played with the black pieces in the Titled Tuesday?
+
+**Answer:** Magnus Carlsen
+
+Who had more wins in the games where Hikaru Nakamura played with the white pieces and Magnus Carlsen played with the black pieces in the Titled Tuesday?
+
+**Answer:** Hikaru Nakamura
+
+
+Who won more games in the encounters between Magnus Carlsen and Hikaru Nakamura in the Titled Tuesday?
+
+**Answer:** They had an equal number of wins overall.
+
+
+
+
+# Section 2. Filling-in-the-Blanks
+
+
+## Question 14
+When collecting data in real life, measured values often differ. In this context, we can observe **variation** easily; for example, if we measure any numeric variable (e.g., friends’ heights) twice, we are likely to get two different values.
+
+
+## Question 15
+The **mode** of a variable is the value that appears most frequently within the set of that variable’s values.
+
+
+## Question 16
+The `gg` in `ggplot` stands for **Grammar of Graphics**.
+
+
+## Question 17
+Using **regression**---a machine learning method---the `geom_smooth()` visualizes the **predicted** value of the `y` variable for a given value of the `x` variable. The grey ribbon around the curve illustrates the **uncertainty** surrounding the estimated curve.
+
+
+## Question 18
+When making a scatterplot, it is a common practice to place the **input** variable along the x-axis and the **output** variable along the y-axis.
+
+
+
+## Question 19
+In ggplot, we can set `alpha` between **0** (full transparency) and **1** (no transparency) manually to adjust a geometric object's transparency level.
+
+
+
+
+# Section 3. Short Essay
+
+<!-- ## Question 20 -->
+<!-- How can data analytics courses be useful for career after graduation? -->
+
+<!-- **Answer**: -->
+<!--  -->
+
+
+## Question 20
+What are the advantage and disadvantage of using the `scales` option in **ggplot2** when creating faceted plots?
+
+**Answer**:
+
+- Advantages:
+  -	**Customized Scales per Facet**: Using `scales = "free"` (or `"free_x"`, `"free_y"`) allows each facet to have its own axis scales. This can make patterns within each facet more visible, especially when the data ranges vary significantly between facets.
+
+- Disadvantages:
+  -	**Difficulty in Comparison**: When scales are free, comparing values across facets becomes challenging because the axes are not standardized. Viewers might misinterpret the data, thinking that similar bar heights represent similar values, even if the scales differ.
+
+
+
+
+
+
+## Question 21
+How does data storytelling bridge the gap between data and insights? 
+
+**Answer**:
+
+**Data Storytelling**: Bridge the gap between **data** and **insights** by incorporating **descriptive statistics**, **visualization**, and **narration** within the appropriate **audience context** to effectively present your findings and drive data-informed decisions.
+
+
+
+## Question 22
+What two main factors should a storyteller consider about the context before creating a data visualization or communication?
+
+**Answer**:
+
+1.	**Audience**: Understanding who the audience is, their level of expertise, interests, and what they care about, to tailor the message accordingly.
+2.	**Purpose**: Clarifying the goal of the communication—whether to inform, persuade, or explore—and what action or understanding is desired from the audience.
+
+
+
+<!-- ## Question  -->
+<!-- Power BI and Tableau offer user-friendly drag-and-drop interfaces, making them accessible to users with little to no coding experience. Provide at least two distinct reasons why it is still valuable to practice creating data visualization using R's ggplot. -->
+
+<!-- **Answer**: -->
+<!--  -->
+
+
+
+
+
+<!-- ## Question 22 -->
+<!-- Provide two main reasons why the log transformation of a variable can be useful. -->
+
+<!-- **Answer**: -->
+<!--  -->
+
+
+
+
+
+## Question 23
+Provide at least three techniques to make data visualization more colorblind-friendly.
+
+**Answer**:
+
+1.	**Use Colorblind-Friendly Palettes**: Utilize colorblind-safe palettes (e.g., `scale_color_tableau()`, `scale_color_colorblind()`), which are designed to be distinguishable by colorblind individuals.
+2.	**Incorporate Textures and Patterns**: Use different shapes or line types in addition to colors to differentiate data points.
+3.	**Have Additional Visual Cue**: Ensure that color is not the only means of conveying information; include labels, annotations, or legends that clarify the data.
+
+
+
+
+
+
+
+## Question 24
+List at least three distinct pieces of advice shared by the invited guests for students seeking jobs in the data analytics industry.
+
+**Answer**:
+
+1.	Leverage Available Opportunities:
+	-	Build resumes through tutoring, research, and extracurricular activities while in college.
+2.	Gain Relevant Experience:
+	-	Secure internships and engage in projects to stand out in a competitive job market.
+3.	Work on Personal Projects:
+	-	Develop one or two significant projects to showcase during interviews.
+4.	Master Essential Tools:
+	-	Focus on Python, R, and SQL for data-related roles.
+5.	Combine Skills with Passion:
+	-	Align data analytics skills with industries of personal interest for a fulfilling career.
+6.	Understand Business Fundamentals:
+	-	Learn basic finance and accounting to connect analytics with business needs.
+7.	Develop Soft Skills:
+	-	Enhance interpersonal and communication skills to collaborate with non-technical stakeholders effectively.
+8.	Stay Current and Adaptable:
+	-	Embrace learning new tools and technologies to remain relevant in the field.
+9.	Network Strategically:
+	-	Build relationships with professionals to gain insights and collaboration opportunities.
+10.	Explore Various Projects:
+	-	Experiment with diverse projects to gain confidence and transition smoothly from academia to industry.
+

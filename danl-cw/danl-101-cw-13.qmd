@@ -876,7 +876,7 @@ f. `y = count`
 
 **Answer:**
 
-b. y = White
+b. `y = White`
 
 ##### Blank (2)
 a. `chess_top4`
@@ -887,7 +887,7 @@ e. `count`
 
 **Answer:**
 
-d. Result
+d. `Result`
 
 ##### Blank (3)
 a. `position = "stack"`
@@ -935,7 +935,7 @@ Who had more wins in the games where Hikaru Nakamura played with the white piece
 
 Who won more games in the encounters between Magnus Carlsen and Hikaru Nakamura in the Titled Tuesday?
 
-**Answer:** They had an equal number of wins overall.
+**Answer:** They had an equal number of wins.
 
 
 

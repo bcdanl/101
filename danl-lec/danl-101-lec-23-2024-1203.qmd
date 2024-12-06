@@ -128,7 +128,7 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 <div style="display:block; margin:-10px;"></div>
 
 - **Programming (R and Python)**
-  - **AI-Assisted Coding**: Code generation using AI (e.g., [GitHub Copilot](https://github.com/features/copilot), [ChatGPT](https://chatgpt.com)); Code Conversion using AI
+  - **AI-Assisted Coding**: Code generation using AI (e.g., [GitHub Copilot](https://github.com/features/copilot), [ChatGPT](https://chatgpt.com)); Code conversion using AI (e.g, R $\rightleftharpoons$ Python)
 
 - **Power BI**
   - **AI Visuals**: Built-in AI visuals like [Key Influencers](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-influencers?tabs=powerbi-desktop) and [Decomposition Tree](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-decomposition-tree)

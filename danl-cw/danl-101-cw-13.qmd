@@ -1,47 +1,12 @@
 ---
-title: "Midterm Exam II"
-subtitle: "Fall 2024, DANL 101-04"
-author: "Version A"
-date: 2024-11-19
+title: Midterm Exam 2
+subtitle: Classwork 13
+date: last-modified
+from: markdown+emoji
 
-# format:
-#   pdf:
-#     toc: false
-#     number-sections: false
-#     colorlinks: false
-#     header-includes: 
-#       - \usepackage{graphicx}
-#       - \usepackage{fancyhdr}
-#       - \pagestyle{fancy}
-#       - \fancyhf{}  # Clears all headers and footers
-#       - \fancyhead[L]{Department of Data Analytics}  # Left header message
-#       - \fancyhead[C]{\includegraphics[width=4cm]{logo-blue.png}}  # Center logo
-#       - \fancyhead[R]{Fall 2024}  # Right header message
-#       - \fancyfoot[C]{\thepage}  # Centered page number in the footer
-
-
-
-format:
-  html
-toc: true
-toc-depth: 2
-toc-expand: true
-toc-title: Contents
-
-# header-includes:
-# - \usepackage{amsthm}
-
-fig-width: 9
-fig-align: center
-
-execute:
+execute: 
+  eval: true
   echo: true
-  eval: false
-  message: false
-  warning: false
-
-# include-after-body: insert-logo.html
-
 ---
 ```{r}
 #| include: false

@@ -1719,7 +1719,7 @@
     "href": "danl-lec/danl-101-lec-11-2024-1001.html#data-transformation",
     "title": "Lecture 11",
     "section": "Data Transformation",
-    "text": "Data Transformation\n\n\nDATA.FRAME |&gt; filter(LOGICAL_CONDITIONS)\nDATA.FRAME |&gt; arrange(VARIABLES)\nDATA.FRAME |&gt; distinct(VARIABLES)\nDATA.FRAME |&gt; select(VARIABLES)\nDATA.FRAME |&gt; rename(NEW_VARIABLE = EXISTING_VARIABLE)\nDATA.FRAME |&gt; mutate(NEW_VARIABLE = ... )\nThe subsequent arguments describe what to do with the data.frame, mostly using the variable names.\nThe result is a data.frame."
+    "text": "Data Transformation\n\n\nDATA.FRAME |&gt; filter(LOGICAL_CONDITIONS)\nDATA.FRAME |&gt; arrange(VARIABLES)\nDATA.FRAME |&gt; distinct(VARIABLES)\nDATA.FRAME |&gt; select(VARIABLES)\nDATA.FRAME |&gt; rename(NEW_VARIABLE = EXISTING_VARIABLE)\nThe subsequent arguments describe what to do with the data.frame, mostly using the variable names.\nThe result is a data.frame."
   },
   {
     "objectID": "danl-lec/danl-101-lec-11-2024-1001.html#filter-observations-with-filter-1",
@@ -5142,7 +5142,7 @@
     "href": "danl-lec/danl-101-lec-22-2024-1121.html#data-visualization",
     "title": "Lecture 22",
     "section": "Data Visualization",
-    "text": "Data Visualization\n\nExamine Distributions\n\nAnalyze how data points are spread across different values\nIdentify any outliers or anomalies in the data\nUtilize histograms and box plots to visualize distributions\n\nExplore Relationships Between Variables\n\nInvestigate how variables interact with each other\nUse scatterplots and fitted lines\n\nAnalyze Time Trends\n\nObserve changes in variables over time\nImplement line charts and/or fitted lines to illustrate trends\n\nFeel free to use other geometric objects"
+    "text": "Data Visualization\n\nExamine Distributions\n\nAnalyze how data points are spread across different values\nIdentify any outliers or anomalies in the data\nUtilize histograms, box plots, and bar charts to visualize distributions\n\nExplore Relationships Between Variables\n\nInvestigate how variables interact with each other\nUse scatterplots and fitted lines\n\nAnalyze Time Trends\n\nObserve changes in variables over time\nImplement line charts and/or fitted lines to illustrate trends\n\nFeel free to use other geometric objects"
   },
   {
     "objectID": "danl-lec/danl-101-lec-22-2024-1121.html#data-visualization-1",

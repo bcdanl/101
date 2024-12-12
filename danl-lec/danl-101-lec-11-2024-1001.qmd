@@ -149,7 +149,6 @@ x |>
 - `DATA.FRAME |> distinct(VARIABLES)`
 - `DATA.FRAME |> select(VARIABLES)`
 - `DATA.FRAME |> rename(NEW_VARIABLE = EXISTING_VARIABLE)`
-- `DATA.FRAME |> mutate(NEW_VARIABLE = ... )`
 
 - The subsequent arguments describe what to do with the data.frame, mostly using the variable names.
 - The result is a **data.frame**.

@@ -147,7 +147,7 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 1. **Examine Distributions**
    - Analyze how data points are spread across different values
    - Identify any outliers or anomalies in the data
-   - Utilize **histograms** and **box plots** to visualize distributions
+   - Utilize **histograms**, **box plots**, and **bar charts** to visualize distributions
 
 2. **Explore Relationships Between Variables**
    - Investigate how variables interact with each other

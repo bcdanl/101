@@ -1,0 +1,49 @@
+---
+title: Week 5
+subtitle: R Basics
+date: 2025-09-21
+from: markdown+emoji
+---
+
+In Week 5, we will focus on the basics of R programming for data analysis. In addition, please take a look at the essay on Rule 4 in [Classwork 3 - Co-Intelligence Rule Practice](../danl-cw/danl-101-cw-03.html){target="_blank"}, and check out OpenAI's [*100 Chats for College Students*](https://chatgpt.com/use-cases/students#) as an extra resource.
+
+
+## 🏫 Lecture Slides  
+- **Lecture 5 — R Basics**  
+  [View Slides](../danl-lec/danl-101-lec-05-2025-0917.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+
+## ✍️ Classwork
+
+- **Classwork 4 - R Basics I**  
+  [View Classwork](../danl-cw/danl-101-cw-04.html){target="_blank"} 
+
+- **Classwork 5 - R Basics II**  
+  [View Classwork](../danl-cw/danl-101-cw-05.html){target="_blank"} 
+
+
+## 📚 Recommended Reading
+
+- OpenAI - [*100 Chats for College Students*](https://chatgpt.com/use-cases/students#)
+
+### Reference
+- Ismay C. and Kim A.Y., [*Chapter 1. Getting Started with Data in R*](https://moderndive.com/1-getting-started.html) in **Statistical Inference via Data Science: A ModernDive into R and the Tidyverse**
+  
+  
+<!-- - [Zuckerberg, M. - Personal Superintelligence](https://www.meta.com/superintelligence/?srsltid=AfmBOoqXowSyYgpZL76IGwUcyaYFJDIDBZZKhjA2Q71MUXr5PbKdlwRV) -->
+
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 5 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 5.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 5 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

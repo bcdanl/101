@@ -1,0 +1,61 @@
+---
+title: Student Course Experience (SCE)
+subtitle: "DANL 101: Introduction to Data Analytics, Fall 2025"
+author: "Byeong-Hak Choe"
+number-sections: false
+toc: true
+toc-depth: 4
+toc-expand: 2
+toc-title: "
+<div style='white-space:nowrap;'>
+  <img src='/img/logo-geneseo.jpg'
+       style='height:48px; display:inline-block; vertical-align:middle; margin-right:0px;'>
+  <span style='display:inline-block; vertical-align:middle; font-family:Arial; font-weight:bold; line-height:1.05;'>
+    Data<br>Analytics
+  </span>
+</div>
+<br>On this page"
+css: [weeks/styles-wk.css]
+---
+
+
+# **Course Summary** {background-color="#1c4982"}
+
+## What We Learned This Semester
+
+- **Tools & Environments**
+  - Used **Quarto**/**Jupyter Notebooks** to communicate data analysis through your **personal website** managed with **git** and **GitHub**
+
+- **Data Manipulation & Cleaning**
+  - Transformed, reshaped, merged, summarized datasets
+  - Applied `pandas` for efficient and scalable **data wrangling**
+
+- **Data Collection**
+  - Collected data through **web scraping** with `selenium`
+  - Retrieved structured data from **APIs** using `requests`
+
+- **Stock and ESG Data Project**
+  - <u>Collect, clean, visualize, and analyze</u> stock and ESG data
+  - <u>Present your analysis</u> through a fully published **project webpage**
+
+
+
+
+## Student Course Evaluation (SCE)
+
+:::{.nonincremental}
+- I have tried to improve your learning experience in this course.
+- I value your feedback immensely.
+- I request for your participation in the [**Student Course Evaluation (SCE)**](https://www.geneseo.edu/sce).
+
+:::
+
+<!-- <div style="display:block; margin:20px;"></div> -->
+
+- Take 10 minutes right now to complete the SCE.
+- On your laptop, access the SCE form for **DANL 101** as follows:
+  1. Log in to [**SCE survey**](https://go.geneseo.edu/scesurveys)
+  2. Click on the "**Surveys**" option
+  3. Choose **DANL 101** and then complete the SCE survey.
+  
+  

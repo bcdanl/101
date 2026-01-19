@@ -1,0 +1,2609 @@
+---
+title: Lecture 10
+subtitle: Data Visualization with `ggplot`
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-11-05
+execute: 
+  eval: true
+  echo: false
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+```{r setup}
+#| include: false
+
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+library(gapminder)
+library(ggrepel)
+
+
+titanic <- read_csv("https://bcdanl.github.io/data/titanic_cleaned.csv")
+oj <- read_csv("https://bcdanl.github.io/data/dominick_oj_feat.csv")
+nvda <- read_csv("https://bcdanl.github.io/data/nvda_2015_2025.csv")
+nbc <- read_csv("https://bcdanl.github.io/data/nbc_show.csv")
+weather_indep <- read_csv("https://bcdanl.github.io/data/Completely_Independent_Variables__Rainfall_and_Temperature.csv")
+tech_october <- read_csv(
+  "https://bcdanl.github.io/data/tech_stocks_2025_10.csv"
+)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_fill_discrete <- function(...) scale_fill_viridis_d(...)
+```
+
+
+
+# 🚀 **Data Visualization with `ggplot` - First Steps** {background-color="#1c4982"}
+
+
+## Grammar of Graphics
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/grammar-of-graphics.png" style="width: 75%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+- A **grammar of graphics** is a tool that enables us to concisely describe the components of a graphic.
+  
+## Data Visualization - First Steps
+
+```{.r}
+library(tidyverse)
+mpg
+?mpg
+```
+
+- The `mpg` data frame, provided by `ggplot2`, contains observations collected by the US Environmental Protection Agency on 38 models of car.
+
+- Q. **Do cars with big engines use more fuel than cars with small engines?**
+  - `displ`: a car's engine size, in liters.
+  - `hwy`: a car's fuel efficiency on the highway, in miles per gallon (mpg). 
+
+
+-  What does **the relationship between engine size and fuel efficiency** look like?
+
+
+## Creating a Scatterplot with `ggplot`
+
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point()
+```
+
+
+- To plot `mpg`, run the above code to put `displ` on the `x`-axis and `hwy` on the `y`-axis.
+
+
+## Components in the Grammar of Graphics
+
+
+```{.r}
+ggplot( data = DATA.FRAME,
+        mapping = 
+          aes( MAPPINGS ) ) + 
+  GEOM_FUNCTION()
+```
+
+
+<!-- - To make a ggplot plot, replace the capitalized components in the code above with a `data.frame`, a `geom` function, or a collection of mappings such as `x = variable_1` and `y = variable_2`. -->
+
+- A `ggplot` graphic is a `mapping` of variables in `data` to `aes`thetic attributes of `geom`etric objects.
+
+
+- **Three Essential Components in `ggplot()` Graphics**:
+  1. `data`: **data.frame** containing the variables of interest.
+  2. `geom_*()`:  **geometric object** in the plot (e.g., point, line, bar, histogram, boxplot).
+  3. `aes()`: **aesthetic attributes** of the geometric object (e.g., `x`-axis, `y`-axis, `color`, `shape`, `size`, `fill`) mapped to variables in the data.frame.
+
+
+
+## Creating a Scatterplot with `ggplot`
+
+```{r}
+#| echo: true
+#| eval: false
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point()
+```
+
+- **Three Essential Components in This Particular `ggplot()`**:
+  1. `data = mpg`
+  2. `geom_point()`
+  3. `aes(x = displ, y = hwy)`
+
+
+# **Relationship `ggplot()`** {background-color="#1c4982"}
+
+
+## Scatterplot with `geom_point()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point()
+```
+
+
+
+## Fitted Curve with `geom_smooth()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_smooth()
+```
+
+
+
+
+## `geom_point()` with `geom_smooth()`
+
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+
+# To add a layer of 
+# a `ggplot()` component, 
+# we can simply add it to 
+# the `ggplot()` with `+`.
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point() + 
+  geom_smooth()
+```
+
+- The geometric object `geom_smooth()` draws a smooth curve fitted to the data.
+
+
+
+## `ggplot()` workflow
+### Common problems in `ggplot()`
+
+```{.r}
+ggplot(data = mpg,
+       mapping = 
+          aes(x = displ, 
+              y = hwy) ) +
+ geom_point()
+ + geom_smooth()
+```
+
+- One common problem when creating `ggplot2` graphics is to put the `+` in the wrong place.
+  - **Correct Approach**: Always place the `+` at the end of the previous line, NOT at the beginning of the next line.
+
+
+
+## About `geom_smooth()`
+
+
+- Using **regression**---one of the **machine learning** methods---the `geom_smooth()` visualizes the **predicted** value of the `y` variable for a given value of the `x` variable.
+
+- **What Does the Grey Ribbon Represent?**
+  - The grey ribbon illustrates the **uncertainty** around the estimated prediction curve.
+  - We are **95% confident** that the actual relationship between `x` and `y` variables falls within the grey ribbon.
+
+
+
+## `geom_point()` with `geom_smooth(method = lm)`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+
+```
+
+- `method = "lm"` specifies that a linear model (`lm`), called a **linear regression** model.
+
+
+
+## Relationship `ggplot()`
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-align: center
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point()
+```
+
+- How many points are in this plot?
+- How many observations are in the `mpg` data.frame?
+
+
+
+## Overplotting problem
+
+- Many points overlap each other. 
+  - This problem is known as **overplotting**. 
+
+- When points overlap, it's hard to know how many data points are at a particular location. 
+
+- Overplotting can obscure patterns and outliers, leading to potentially misleading conclusions. 
+
+
+
+## Overplotting and Transparency with `alpha`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+
+# alpha = 0.33 should be located
+# within the geom function,
+# NOT within the aesthetic function
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point( alpha = 0.33 ) 
+```
+
+- We can set a transparency level (`alpha`) between **0** (full transparency) and **1** (no transparency) manually.
+
+
+
+## Overplotting and Transparency with `alpha`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ, 
+              y = hwy) ) + 
+  geom_point( alpha = .33 )
+```
+
+- We can set an aesthetic property manually, as seen above, not within the `aes()` function but within the `geom_*()` function.
+
+
+
+# 🎨✨  **Aesthetic Mappings** {background-color="#1c4982"}
+
+## Aesthetic Mappings
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/r4s_330_1.png" width="600px">
+</p>
+
+
+
+- In the plot above, one group of points (highlighted in red) seems to fall outside of the linear trend. 
+
+  - How can you explain these cars? Are those hybrids?
+
+
+
+## Aesthetic Mappings
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/r4s_330_2.png" width="600px">
+</p>
+
+- An aesthetic is a visual property (e.g., `size`, `shape`, `color`) of the objects (e.g., `class`) in your plot.
+
+- You can display a point in different ways by changing the values of its aesthetic properties. 
+
+
+## Adding a `color` to the Plot
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              color = class) ) + 
+  geom_point()
+```
+
+
+## Adding a `shape` to the Plot
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              shape = class) ) + 
+  geom_point()
+```
+
+
+
+
+## Adding a `size` to the Plot
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot( data = mpg,
+        mapping =
+          aes(x = displ,
+              y = hwy,
+              size = class) ) +
+  geom_point()
+```
+
+
+
+
+## Specifying a `color` to the Plot, Manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_point(color = "blue")
+```
+
+
+
+## Specifying a `color` to the Plot, Manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_smooth(color = "darkorange") 
+```
+
+
+
+## Specifying a `fill` to the Plot, Manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_smooth(color = "darkorange",
+              fill = "darkorange") 
+```
+
+- In general, each `geom_*()` has a different set of aesthetic parameters.
+  - E.g., `fill` is available for `geom_smooth()`, not `geom_point()`.
+
+
+
+
+## Specifying a `size` to the Plot, Manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping =
+         aes(x = displ,
+             y = hwy) ) +
+  geom_point(size = 3)  # in *mm*
+```
+
+
+
+## Specifying an `alpha` to the Plot, Manually
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+ggplot(data = mpg,
+       mapping = 
+         aes(x = displ, 
+             y = hwy) ) + 
+  geom_point(alpha = .3) 
+```
+
+- We've done this to address the issue of **overplotting** in the scatterplot.
+
+
+
+
+
+## Mapping Aesthetics vs. Setting Them Manually
+
+:::: {.columns}
+
+::: {.column width="50%"}
+#### **Aesthetic Mapping**
+  - Links data variables to visible properties on the graph
+  - Different categories → different colors or shapes
+
+:::
+
+::: {.column width="50%"}
+
+#### **Setting Aesthetics Manually**
+  - Customize visual properties directly in `geom_*()` outside of `aes()`
+  - Useful for setting fixed colors, sizes, or transparency unrelated to data variables
+
+:::
+::::
+
+
+
+# 🧹 **Clutter is Your Enemy!** {background-color="#1c4982"}
+
+
+## Cognitive Load
+
+- Every element on a slide or screen adds to the viewer’s **cognitive load** —  
+  the mental effort required to process information.  
+- The more elements you include, the more brainpower your audience must spend deciphering the message.  
+- **Example:** Complex graphs, dense text, or excessive decoration can easily overwhelm viewers.  
+- When cognitive load is too high, people **lose focus** or **misinterpret** the main idea.  
+- 🎯 **Goal:** Communicate as much insight as possible with the **least mental effort** required from the audience.
+
+
+
+
+
+
+## Why Reduce Clutter?
+
+- **Clutter**: Any visual element that takes up space without improving understanding.  
+- Clutter distracts, slows comprehension, and obscures your main point.  
+- **Strive for clarity:** Clean, purposeful visuals promote focus and engagement.  
+  - Less clutter → clearer message → more attention to what matters.  
+
+- ✨ **Practical Tips**
+  - Keep data visually balanced — avoid crowding one side of the graph.  
+  - Limit overlapping or superimposed elements (e.g., no more than **3–4 lines** per plot).  
+  - Use whitespace strategically to let key information breathe.  
+  - Eliminate anything that doesn’t support your story.
+
+
+
+## Clutter is Your Enemy!
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = gdpPercap,
+             y = lifeExp)) +
+  geom_point(size = 2,
+             alpha = .3) +
+  labs(x = "GDP per capita",
+       y = "Life Expectancy") +
+  labs(x = "GDP per capita",
+       y = "Life Expectancy") 
+  # guides(color = guide_legend(reverse = F,
+  #                           title.position = "top",
+  #                           title.hjust = .5,
+  #                           label.position = "bottom",
+  #                           keywidth = 3,
+  #                           nrow = 1)) +
+  # theme(legend.position = "top")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = log10(gdpPercap),
+             y =lifeExp)) +
+  geom_point(size = 2,
+             alpha = .3) +
+  labs(x = "GDP per capita (in base-10 logarithm)",
+       y = "Life Expectancy") 
+  # guides(color = guide_legend(reverse = F,
+  #                           title.position = "top",
+  #                           title.hjust = .5,
+  #                           label.position = "bottom",
+  #                           keywidth = 3,
+  #                           nrow = 1)) +
+  # theme(legend.position = "top")
+
+```
+:::
+::::
+
+- Which one do you prefer?
+
+
+## Log Transformation: Reducing Clutter
+
+- **Problem:** When data points are **densely packed**, patterns become hard to see.  
+  - This often happens with **extreme values** or **skewed distributions**.  
+  - Dense clusters create **visual clutter**, hiding meaningful relationships.
+
+- **Solution:** Apply a **log transformation**!  
+  - 📏 **Spreads out data** — makes points more evenly distributed across the plot.  
+  - 🔍 **Reduces outlier impact**, revealing clearer patterns and trends.  
+  - 🧠 **Improves interpretability** — helps audiences grasp relationships faster.  
+  - 🎯 Promotes **focused, informative visualization** without unnecessary complexity.
+
+
+## A Little Bit of Math for Logarithm
+
+:::{.nonincremental}
+- The logarithm function, $y = \log_{b}\,(\,x\,)$, looks like ....
+
+:::
+
+<!-- <div style="text-align: center; width: 100%; margin: auto;"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/logarithm_plots.png" style="width: 50%; margin-bottom: -20px;"> -->
+<!--   <p style="font-weight: bold;"></p> -->
+<!-- </div> -->
+
+```{r}
+# Data
+x_vals <- seq(0.01, 15, length.out = 2000)
+df <- data.frame(
+  x = rep(x_vals, 2),
+  y = c(log(x_vals), log10(x_vals)),
+  base = factor(rep(c("loge(x)", "log10(x)"), each = length(x_vals)),
+                levels = c("loge(x)", "log10(x)"))
+)
+
+# Reference constant
+e_val <- exp(1)
+
+# Plot
+p <- ggplot(df, aes(x, y, color = base)) +
+  geom_hline(yintercept = 0, linewidth = 0.4) +
+  geom_vline(xintercept = 1, linewidth = 0.4) +
+  geom_line(linewidth = 1) +
+  geom_hline(yintercept = 1, linetype = "dotted", linewidth = 0.4, color = "grey40") +
+  geom_vline(xintercept = 10, linetype = "dotted", linewidth = 0.4, color = "grey40") +
+  scale_x_continuous(
+    limits = c(0, 15),
+    breaks = c(1, 2, e_val, 3, 10),
+    labels = c("1", "2", "e", "3", "10"),
+    expand = expansion(mult = c(0.02, 0.02))
+  ) +
+  scale_y_continuous(limits = c(-4, 4), breaks = -4:4) +
+  ggthemes::scale_color_tableau(name = NULL) +
+  annotate("text", x = 14.5, y = log(15),   label = "log[e](x)",  color = "#1F77B4", parse = TRUE, hjust = 1, vjust = -.25, size = rel(6)) +
+  annotate("text", x = 14.5, y = log10(15), label = "log[10](x)", color = "#FF7F0E", parse = TRUE, hjust = 1, vjust = -.25, size = rel(6)) +
+  labs(x = "x", y = "y") +
+  # coord_cartesian(ylim = c(-4, 4)) +
+  theme_ipsum(base_size = 13) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+    axis.title.y = element_text(size = rel(2),
+                                angle = 0),
+    axis.title.x = element_text(size = rel(2)),
+    legend.position = "none"
+  )
+
+p
+```
+
+
+## 🧮 A Little Bit of Math for Logarithms
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### **Common Logarithm**
+
+<div class="fragment" style="font-size:1.75rem; text-align:center; margin-top:1.5rem;">
+
+### 💻 In R
+
+```r
+log10(x)  # Common log (base 10)
+```
+
+</div>
+
+<div style="display:block; margin:10px;"></div>
+
+- $\color{blue}{\log_{10}(x)}$
+  The base-$10$ logarithm is called the **common logarithm**.
+
+- $\log_{10}(100)$  
+  The base-10 logarithm of 100 is **2**, because  
+  $10^{2} = 100$.
+
+<div style="display:block; margin:227px;"></div>
+
+
+
+:::
+
+::: {.column width="50%"}
+### **Natural Logarithm**
+
+<div class="fragment" style="font-size:1.75rem; text-align:center; margin-top:1.5rem;">
+
+### 💻 In R
+
+```r
+log(x)    # Natural log (base e)
+```
+
+</div>
+
+<div style="display:block; margin:10px;"></div>
+
+- $\log_{e}(x)$  
+  The base-$e$ logarithm is called the **natural logarithm**,  
+  where $e = 2.718\ldots$ is the **Euler’s number**.
+
+- $\color{blue}{\log(x)}$ or $\ln(x)$  
+  Both denote the **natural log** of $x$.
+
+- $\log_{e}(7.389\ldots)$  
+  The **natural log** of 7.389⋯ is **2**, because  
+  $e^{2} = 7.389\ldots$.
+
+<div style="display:block; margin:-15px;"></div>
+
+
+
+:::
+::::
+
+
+
+
+<!-- ## A Little Bit of Math for Logarithm -->
+<!-- - $\log_{10}\,(\,100\,)$: the base $10$ logarithm of $100$ is $2$, because $10^{2} = 100$ -->
+
+<!-- - $\log_{e}\,(\,x\,)$: the base $e$ logarithm is called the natural log, where $e = 2.718\cdots$ is the mathematical constant,  the Euler's number. -->
+
+<!-- - $\log\,(\,x\,)$ or $\ln\,(\,x\,)$: the natural log of $x$ . -->
+
+<!-- - $\log_{e}\,(\,7.389\cdots\,)$: the natural log of $7.389\cdots$ is $2$, because $e^{2} = 7.389\cdots$. -->
+
+
+<!-- - In R, -->
+<!--   - `log(x)`: log of `x` with base e, called natural log. -->
+<!--   - `log10(x)`: log of `x` with base 10. -->
+
+
+## The Use of Logarithms: Handling Skewed Data
+:::{.nonincremental}
+1. Consider a **logarithmic scale** when a variable is **heavily skewed**.  
+   - It helps visualize both **small** and **large** values effectively.
+
+<div style="display:block; margin:30px;"></div>
+
+
+:::
+
+<div style="display:block; margin:-20px;"></div>
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### Without Log Transformation
+```{r}
+#| echo: false
+#| eval: true
+gapminder |>
+  ggplot(aes(x = gdpPercap)) +
+  geom_histogram(color = 'black',
+                fill = 'lightblue') +
+  labs(x = "GDP per capita")
+```
+:::
+
+::: {.column width="50%"}
+### With Log Transformation
+```{r}
+#| echo: false
+#| eval: true
+gapminder |>
+  ggplot(aes(x = log10(gdpPercap))) +
+  geom_histogram(color = 'black',
+                fill = 'lightblue') +
+  labs(x = "GDP per capita (in base-10 logarithm)")
+```
+:::
+
+::::
+
+
+<!-- :::: {.columns} -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- **Without Log Transformation**   -->
+<!-- *Histogram of GDP per capita shows extreme right skew.* -->
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- **With Log Transformation**   -->
+<!-- *Histogram of log₁₀(GDP per capita) displays a more balanced distribution.* -->
+<!-- ::: -->
+
+<!-- :::: -->
+
+
+<!-- ## 🔎 The Use of Logarithms: Handling Skewed Data -->
+<!-- :::{.nonincremental} -->
+<!-- 1. We should consider using a log scale when a variable is heavily skewed. -->
+<!--   - It can help visualize both small and large values effectively. -->
+
+<!-- ::: -->
+
+<!-- <div style="display:block; margin:-20px;"></div> -->
+
+<!-- :::: {.columns} -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| eval: true -->
+<!-- gapminder |>  -->
+<!--   ggplot(aes(x = gdpPercap)) + -->
+<!--   geom_histogram() + -->
+<!--   labs(x = "GDP per capita") -->
+<!-- ``` -->
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| eval: true -->
+<!-- gapminder |>  -->
+<!--   ggplot(aes(x = log10(gdpPercap))) + -->
+<!--   geom_histogram() + -->
+<!--   labs(x = "GDP per capita (in base-10 logarithm)") -->
+<!-- ``` -->
+<!-- ::: -->
+
+<!-- :::: -->
+
+
+## The Use of Logarithms: Focusing on Percentage Change
+:::{.nonincremental}
+2. Consider a **logarithmic scale** when **percentage changes** are more meaningful than **absolute changes**.
+:::
+
+<div style="display:block; margin:-15px;"></div>
+
+- Percentage changes are widely used to interpret **relative differences**:
+  - **Stock prices** — show proportional gains or losses relative to initial value.  
+  - **Housing prices** — highlight comparable market trends across regions.  
+  - **GDP growth** — expressed as a percentage to reflect economic performance.  
+  - **Income levels** — a \$1,000 increase matters more to lower-income individuals.
+
+
+
+<!-- ## 🧮 Logarithms and Percentage Change -->
+
+<!-- 2. Consider using a logarithmic scale when percentage changes are more meaningful than changes in absolute units. -->
+
+<!-- <div style="display:block; margin:-15px;"></div> -->
+
+<!-- -	Percentage changes are widely used in various fields to better interpret relative differences. Examples include: -->
+<!-- 	-	**Stock prices**: Percentage changes reflect the magnitude of gains or losses relative to the initial price. -->
+<!-- 	-	**Housing prices**: Percentage changes show market trends consistently across different neighborhoods or regions. -->
+<!-- 	-	**GDP growth**: Expressed as a percentage to indicate economic performance over time. -->
+<!-- 	-	**Income levels**: A $1,000 increase has a greater impact on a lower-income individual compared to someone with a significantly higher income. -->
+
+
+## 🧮 Logarithms and Percentage Change
+:::{.nonincremental}
+For a *small change* in a variable $x$ from $x_{0}$ to $x_{1}$:
+$$
+\Delta \log(x) = \log(x_{1}) - \log(x_{0})
+$$
+
+
+<div style="display:block; margin:-10px;"></div>
+::: {.fragment}
+$$
+\,\approx \frac{x_{1} - x_{0}}{x_{0}}
+$$
+:::
+
+<div style="display:block; margin:-10px;"></div>
+::: {.fragment}
+$$
+ = \frac{\Delta x}{x_{0}}\quad\;
+$$
+:::
+
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- \Delta \log(x) &= \log(x_{1}) - \log(x_{0})\\ -->
+<!-- &\approx \frac{x_{1} - x_{0}}{x_{0}}\\ -->
+<!-- &= \frac{\Delta x}{x_{0}} -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+:::
+
+- This shows that a **log transformation approximates** <u>**percentage change**</u> when the change is small.
+  - Logs emphasize **relative** rather than absolute differences.
+  - ✅ **Interpretation:** An increase in **log(x)** of **0.01** corresponds to approximately a **1% increase in x**.
+
+
+<!-- - This shows that a **log transformation effectively represents percentage change**! -->
+<!--   - **Log transformation** is useful for interpreting **relative** rather than **absolute** differences. -->
+
+<!-- - ✅ **Interpretation:** A **1-unit increase** in `log(x)` means a **171.8% increase** in `x`. -->
+
+<!-- ## The Use of Logarithm: Percentage Change -->
+
+<!-- :::{.nonincremental} -->
+
+<!-- -	For a small change in variable $x$ from $x_{0}$ to $x_{1}$, we have: -->
+
+<!-- $$ -->
+<!-- \Delta \log(x) = \log(x_{1}) - \log(x_{0}) -->
+<!-- \approx \frac{x_{1} - x_{0}}{x_{0}} -->
+<!-- = \frac{\Delta x}{x_{0}}. -->
+<!-- $$ -->
+
+<!-- ::: -->
+
+<!-- -	This shows that a log transformation effectively represents percentage change! -->
+
+
+
+## 🌍 Example: GDP per Capita vs. Life Expectancy
+<!-- :::: {.columns} -->
+
+<!-- ::: {.column width="50%"} -->
+
+
+<!-- - Relationship appears curved due to high GDP outliers. -->
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+
+<!-- - Log transformation linearizes the relationship.   -->
+<!-- - Slope = 8.40   -->
+<!-- - A 1-unit increase in log(GDP per capita) ≈ 100% increase in GDP per capita. -->
+<!-- ::: -->
+<!-- :::: -->
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### **Linear Scale**
+
+<div style="display:block; margin:-50px;"></div>
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = gdpPercap,
+             y = lifeExp)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = lm) +
+  scale_y_continuous(breaks = seq(30,140,10)) +
+  labs(x = "GDP per capita",
+       y = "Life Expectancy\n(in years)")
+```
+
+:::
+
+::: {.column width="50%"}
+
+### **Log Scale**
+
+<div style="display:block; margin:-50px;"></div>
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-asp: .85
+
+gapminder |> 
+  ggplot(aes(x = log(gdpPercap),
+             y = lifeExp)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = lm) +
+  geom_label(data = data.frame(x = 11, y = 30, label = "Slope = 8.40"),
+            mapping = aes(x = x, y = y, label = label), size = rel(8)
+            ) +
+  # geom_text(data = data.frame(x = 9.5, y = 26.75, label = "A 1-unit increase in log(gdpPercap) corresponds to\n a 100% increase in gdpPercap"),
+  #           mapping = aes(x = x, y = y, label = label), size = rel(7)
+  #           ) +
+  scale_x_continuous(breaks = 6:11) +
+  scale_y_continuous(breaks = seq(30,80,10)) +
+  labs(x = "GDP per capita (in natural logarithm)",
+       y = "Life Expectancy\n(in years)")
+
+```
+
+:::
+::::
+
+<div style="display:block; margin:-25px;"></div>
+
+- ✅ **Slope = 8.4** <span class="fragment">: $\;$ A **1-unit increase of log(GDP per capita)** is associated with an **increase in life expectancy of about 8.4 years**. </span>
+  - A **1% increase in GDP per capita** is associated with an increase in **life expectancy of about 0.084 years** (≈ 30.7 days).
+
+
+<!-- ## The Use of Logarithm: Percentage Change -->
+
+<!-- :::: {.columns} -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| eval: true -->
+<!-- #| fig-asp: .85 -->
+
+<!-- gapminder |>  -->
+<!--   ggplot(aes(x = gdpPercap, -->
+<!--              y = lifeExp)) + -->
+<!--   geom_point(alpha = .3) + -->
+<!--   geom_smooth(method = lm) + -->
+<!--   scale_y_continuous(breaks = seq(30,140,10)) + -->
+<!--   labs(x = "GDP per capita", -->
+<!--        y = "Life Expectancy") -->
+<!-- ``` -->
+
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| eval: true -->
+<!-- #| fig-asp: .85 -->
+
+<!-- gapminder |>  -->
+<!--   ggplot(aes(x = log(gdpPercap), -->
+<!--              y = lifeExp)) + -->
+<!--   geom_point(alpha = .3) + -->
+<!--   geom_smooth(method = lm) + -->
+<!--   geom_label(data = data.frame(x = 10, y = 35, label = "Slope = 8.40"), -->
+<!--             mapping = aes(x = x, y = y, label = label) -->
+<!--             ) + -->
+<!--   geom_text(data = data.frame(x = 10.25, y = 30, label = "A 1-unit increase in log(gdpPercap) corresponds to\n a 100% increase in gdpPercap"), -->
+<!--             mapping = aes(x = x, y = y, label = label) -->
+<!--             ) + -->
+<!--   scale_x_continuous(breaks = 6:11) + -->
+<!--   scale_y_continuous(breaks = seq(30,80,10)) + -->
+<!--   labs(x = "GDP per capita (in natural logarithm)", -->
+<!--        y = "Life Expectancy") -->
+
+<!-- ``` -->
+
+<!-- ::: -->
+<!-- :::: -->
+
+<!-- - One percent increase in GDP per capita is associated with an increase in life expectancy by 0.084 year (30.66 days)! -->
+
+
+
+
+
+
+**Try it out** → [*Classwork 11: Relationship Plots*](https://bcdanl.github.io/danl-cw/danl-101-cw-11.html).
+
+
+# 🖼️🖼️ **Facets** {background-color="#1c4982"}
+
+## Facets 
+:::{.nonincremental}
+- Adding too many aesthetics (e.g., `color`, `shape`, `size`) can sometimes make a plot **cluttered** and **hard to interpret**.  
+
+:::
+```{r}
+#| echo: false
+#| eval: true
+#| fig-align: center
+#| fig-width: 12
+
+gapminder |> 
+  ggplot(aes(x = log10(gdpPercap), 
+             y = lifeExp,
+             color = continent)) +
+  geom_point(size = 1.75) +
+  guides(color = guide_legend(nrow = 2))
+```
+
+
+- To incorporate an **additional variable**, especially a **categorical one**, we can use **facets** —  separate subplots that each show a **subset of the data**.  
+  - **Faceting** helps reveal **patterns within groups** while keeping each plot **clean and focused**.
+
+
+
+## `facet_wrap(~ VAR)`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent)
+```
+
+
+- To facet our plot by a *single variable*, we can use `facet_wrap()`.
+
+
+
+## `facet_wrap(~ VAR)` with `nrow`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent,
+              nrow = 1)
+```
+
+
+- `nrow` determines **the number of rows** to use when laying out the facets.
+
+
+## `facet_wrap(~ VAR)` with `ncol`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent,
+              ncol = 1)
+```
+
+
+- `ncol` determines **the number of columns** to use when laying out the facets.
+
+
+
+## `facet_wrap(~ VAR)` with `scales = "free_x"`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent,
+              scales = "free_x")
+```
+
+- `scales = "free_x"` allow for different scales of **x-axis**
+
+
+## `facet_wrap(~ VAR)` with `scales = "free_y"`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent,
+              scales = "free_y")
+```
+
+- `scales = "free_y"` allow for different scales of **y-axis**
+
+
+## `facet_wrap(~ VAR)` with `scales = "free"`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = gapminder,
+       mapping = 
+         aes(x = log10(gdpPercap), 
+             y =lifeExp)) + 
+  geom_point(alpha = .4) + 
+  facet_wrap( ~ continent,
+              scales = "free")
+```
+
+- `scales = "free"` allow for different scales of both **x-axis** and **y-axis**
+- **Try it out** → [*Classwork 12: Color vs. Facet*](https://bcdanl.github.io/danl-cw/danl-101-cw-12.html).
+
+
+
+
+# **Time Trend `ggplot()`** {background-color="#1c4982"}
+
+
+## NVDA Stock Price Data
+
+```{r}
+#| results: asis
+DT::datatable(nvda |> select(Date, Close), options = list(
+  pageLength = 4
+))
+```
+
+- The `nvda` data.frame includes NVIDIA's stock information from `2019-01-02` to `2025-10-30`.
+
+  
+## Scatterplot for Time Trend?
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+path <- 
+  "https://bcdanl.github.io/data/nvda_2015_2025.csv"
+nvda <- read_csv(path)
+
+ggplot( data = nvda,
+        mapping = aes(
+          x = Date, 
+          y = Close) ) + 
+  geom_point(size = .5)
+```
+
+
+## Line Chart with `geom_line()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+path <- 
+  "https://bcdanl.github.io/data/nvda_2015_2025.csv"
+nvda <- read_csv(path)
+
+ggplot( data = nvda,
+        mapping = aes(
+          x = Date, 
+          y = Close) ) + 
+  geom_point(size = .5) +
+  geom_line()
+```
+- `geom_line()` draws a line by connecting data points in order of the variable on the `x`-axis.
+
+
+
+## The Connection Principle
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/gestalt-principle-connection.png" style="width: 60%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+- We tend to think of objects that are physically connected as part of a group.
+- Look at this figure.
+  - Your eyes probably pair the shapes connected by lines rather than similar color, size, or shape!
+
+- We frequently leverage the **connection principle** is in line charts, to help our eyes see order in the data.
+
+
+## Line Chart with `geom_line()` and `geom_smooth()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+path <- 
+  "https://bcdanl.github.io/data/nvda_2015_2025.csv"
+nvda <- read_csv(path)
+
+ggplot( data = nvda,
+        mapping = aes(
+          x = Date, 
+          y = Close) ) + 
+  geom_point(size = .5) +
+  geom_line() +
+  geom_smooth()
+```
+
+- `geom_smooth()` helps reveal **underlying long-term trends** by smoothing out **variability** in the observations.
+
+
+## Tech Stocks' Prices in October
+
+```{r}
+#| results: asis
+DT::datatable(tech_october |> select(Ticker, Date, Close), options = list(
+  pageLength = 4
+))
+```
+
+- The `tech_october` data.frame includes stock information about AAPL, MSFT, META, and NVDA in October 2025.
+
+
+## Time Trend of Tech Stock Price
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+tech_october <- 
+  read_csv(
+    "https://bcdanl.github.io/data/tech_stocks_2025_10.csv"
+    )
+
+ggplot( data = tech_october,
+        mapping = aes(
+          x = Date, 
+          y = Close) ) + 
+  geom_line() 
+```
+
+- Something has gone wrong. What happened?
+
+
+
+
+## Time Trend of Tech Stock Price
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+
+# `ggplot` needs to be 
+# explicitly informed that 
+# daily observations are grouped 
+# by `Ticker`
+# for it to understand 
+# the grouping structure
+
+ggplot( data = tech_october,
+        mapping = aes(
+          x = Date, 
+          y = Close,
+          color = Ticker) ) + 
+  geom_line(size = 2) # thicker lines
+```
+
+- We can use the `group`, `color`, or `linetype` aesthetic to tell **ggplot** about the _firm-level_ grouping structure in the dataset.
+
+- **Try it out** → [*Classwork 13: Time Trend Plots*](https://bcdanl.github.io/danl-cw/danl-101-cw-13.html).
+
+
+
+# **Distribution `ggplot()` - Histograms** {background-color="#1c4982"}
+
+## Histograms
+
+:::{.nonincremental}
+
+- Histograms are used to visualize the **distribution** of a *numeric* variable.
+
+- Histograms divide data into *bins* and count the number of observations in each bin.
+
+:::
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-align: center
+ggplot(data = titanic,
+       mapping = 
+         aes(x = age )) + 
+  geom_histogram(,
+               color = 'black',
+               fill = 'lightblue'
+               ) +
+  labs(y = "Number of\n People",
+       x = "Age",
+       title = "How is the distribution of age in Titanic?")
+```
+
+
+## Titanic Data
+
+```{r}
+#| results: asis
+DT::datatable(titanic, options = list(
+  pageLength = 5
+))
+```
+
+
+## Histograms with `geom_histogram()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+titanic <- 
+  read_csv(
+    "https://bcdanl.github.io/data/titanic_cleaned.csv")
+
+ggplot(data = titanic,
+       mapping = 
+         aes(x = age)) + 
+  geom_histogram()
+```
+- `geom_histogram()` creates a histogram.
+  - We map the `x` aesthetic to a variable.
+
+
+
+## `geom_histogram()` with `bins`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = titanic,
+       mapping = 
+         aes(x = age)) + 
+  geom_histogram(bins = 5)
+```
+
+-	`bins`: Specifies the number of bins
+- **Be careful**: the number of bins can greatly influence the shape of a histogram.
+
+## `geom_histogram()` with `binwidth`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = titanic,
+       mapping = 
+         aes(x = age)) + 
+  geom_histogram(binwidth = 1)
+```
+
+-	`binwidth`: Specifies the width of each bin
+  - We choose either the `bins` option or the `binwidth` option.
+
+## Customizing the `color` and `fill` Aesthetics 
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = titanic,
+       mapping = 
+         aes(x = age)) + 
+  geom_histogram(
+    binwidth = 2,
+    fill = 'lightblue',
+    color = 'black')
+```
+
+-	`fill`: Fills the bars with a specific color.
+-	`color`: Adds an outline of a specific color to the bars.
+
+
+# 🎨 **Design with Colorblind in Mind** {background-color="#1c4982"}
+
+
+## Design with Colorblind in Mind
+
+:::: {.columns}
+::: {.column width="50%"}
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/types-of-color-blindness.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;">Types of Colorblindness</p>
+</div>
+:::
+
+::: {.column width="50%"}
+
+- About **8% of men** and **0.5% of women** experience some form of colorblindness.  
+- To make visualizations more accessible and colorblind-friendly, consider:
+  1. Using **colorblind-friendly palettes**
+  2. Adding **`shape`** to scatterplots or **`linetype`** to line charts
+  3. Including **additional visual cues** to highlight important information <span class="fragment">(e.g., annotations or labels)</span>
+
+
+<!-- - Roughly 8% of men and half a percent of women are colorblind.  -->
+
+<!-- - There are several techniques to make visualization more colorblind-friendly: -->
+<!--   1. Use color palettes that are colorblind-friendly -->
+<!--   2. Use `shape` for scatterplots and `linetype` for line charts -->
+<!--   3. Have some additional visual cue to set the important numbers apart -->
+
+:::
+::::
+
+
+## `ggthemes` package
+
+```{r}
+#| eval: false
+#| echo: true
+install.packages("ggthemes")
+library(ggthemes)
+```
+
+- The **ggthemes** package offers a variety of additional themes and color scales for enhancing **ggplot2** visualizations:
+  - **Accessible color palettes**, including options designed for colorblind-friendly viewing  
+    - For the **`color`** aesthetic mapping:  `scale_color_colorblind()` or `scale_color_tableau()`
+    - For the **`fill`** aesthetic mapping:  `scale_fill_colorblind()` or  
+    `scale_fill_tableau()`
+  - **Predefined thematic styles** inspired by well-known publications and design aesthetics (e.g., `theme_economist()`, `theme_wsj()`)
+
+
+## `ggthemes::scale_color_colorblind()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              color = class) ) + 
+  geom_point(size = 3) +
+  scale_color_colorblind()
+```
+
+- When mapping `color` in `aes()`, we can use `scale_color_*()`
+
+## `ggthemes::scale_color_tableau()` 
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              color = class) ) + 
+  geom_point(size = 3) +
+  scale_color_tableau()
+```
+
+- `scale_color_tableau()` provides color palettes used in Tableau.
+
+
+## 💡 Quick Detour
+### `ggthemes::theme_economist()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              color = class) ) + 
+  geom_point(size = 3) +
+  scale_color_colorblind() +
+  theme_economist()
+```
+
+- `theme_economist()` approximates the style of The Economist.
+
+## 💡 Quick Detour
+### `ggthemes::theme_wsj()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot( data = mpg,
+        mapping = 
+          aes(x = displ,
+              y = hwy, 
+              color = class) ) + 
+  geom_point(size = 3) +
+  scale_color_colorblind() +
+  theme_wsj()
+```
+
+- `theme_wsj()` approximates the style of The Wall Street Journal.
+
+
+
+
+
+# **Distribution `ggplot()` - Boxplots** {background-color="#1c4982"}
+
+## Boxplots
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::{.nonincremental}
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/boxplot-cat2.jpg" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+:::
+
+::: {.column width="50%"}
+
+- Boxplots visualize how the **distribution** of a numeric variable varies across levels of a categorical variable.  
+- They display the **median**, **quartiles**, and **potential outliers**, providing a compact summary of the data.
+
+:::
+::::
+
+## Boxplots with `geom_boxplot()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = mpg,
+       mapping = 
+         aes(x = class,
+             y = hwy)) + 
+  geom_boxplot() 
+```
+- `geom_boxplot()` creates a boxplot;
+  - **Mappings**: _one numeric variable_ and _one categorical variable_ to the `x` and `y` aesthetics
+
+
+## Horizontal Boxplots
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = mpg,
+       mapping = 
+         aes(x = hwy,
+             y = class)) + 
+  geom_boxplot() 
+```
+
+- Boxplots can be displayed **horizontally** or **vertically**.  
+  - A **horizontal boxplot** works well when category names are long.
+
+## Customizing the `fill` Aesthetic
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+# 1. `show.legend = FALSE` turns off 
+#     the legend information
+# 2. `scale_fill_colorblind()` or
+#    `scale_fill_tableau()`
+#     applies a color-blind friendly 
+#     palette to the `fill` aesthetic
+# install.packages("ggthemes")
+library(ggthemes) 
+ggplot(data = mpg,
+       mapping = 
+         aes(x = hwy,
+             y = class,
+             fill = class)) + 
+  geom_boxplot(
+    show.legend = FALSE) +
+  scale_fill_tableau() 
+```
+
+- `fill`: Maps a variable to the **fill colors** used in the boxplot.
+- `ggthemes::scale_fill_tableau()`: A **colorblind-friendly** Tableau-style palette for the `fill` aesthetic.
+
+## Sorted Boxplots with `fct_reorder(CATEGORICAL, NUMERICAL)`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+# labs() can label
+#   x-axis, y-axis, and more
+
+ggplot(data = mpg,
+       mapping = 
+        aes(x = hwy,
+            y = 
+             fct_reorder(class, hwy),
+            fill = class)) + 
+  geom_boxplot(
+    show.legend = FALSE) +
+  scale_fill_tableau() +
+  labs(x = "Highway MPG",
+       y = "Class") 
+```
+
+- `fct_reorder(CATEGORICAL, NUMERICAL)`: Reorders the categories of the CATEGORICAL by the median of the NUMERICAL.
+
+
+
+
+# **Distribution `ggplot()` - Bar Charts** {background-color="#1c4982"}
+
+## Bar Charts
+
+:::{.nonincremental}
+
+- Bar charts are used to visualize the **distribution** of a *categorical* variable.
+
+- Bar charts display the **count** (or **proportion**) of observations for each **category**.
+
+:::
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-align: center
+
+ggplot(data = diamonds,
+       mapping = aes(x = cut)) + 
+  geom_bar()
+```
+
+
+
+## Diamond Data
+
+```{r}
+#| results: asis
+DT::datatable(diamonds, options = list(
+  pageLength = 5
+))
+```
+
+- `ggplot2::diamonds` is a data.frame containing the prices and other attributes of almost 54,000 diamonds.
+
+
+## Bar Charts with `geom_bar()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = diamonds,
+       mapping = aes(x = cut)) + 
+  geom_bar()
+```
+- `geom_bar()` creates a bar chart.
+  - We map either the `x` or `y` aesthetic to the variable.
+
+
+## Horizontal Bar Charts
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column-fragment
+
+ggplot(data = diamonds,
+       mapping = aes(y = cut)) + 
+  geom_bar()
+```
+- Bar charts can be **horizontal** or **vertical**. 
+  - A horizontal bar chart is a good option for *long category names*.
+
+
+
+## Data Transformation - `count()`: Counting Occurrences of Each Category in a Categorical Variable
+:::{.nonincremental}
+
+- The figure below demonstrates how the counting process works with `geom_bar()`.
+
+:::
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/r4s_370_1.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+## Colorful Bar Charts with the `fill` Aesthetic
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = cut)) + 
+  geom_bar(
+    show.legend = FALSE
+    ) 
+```
+
+- We can color bar charts using the `fill` aesthetic.
+
+
+
+
+## Data Transformation - `count()`: Counting Occurrences Across Two Categorical Variables
+
+
+```{.r}
+DATA.FRAME |> count(CATEGORICAL_VARIABLE_1, CATEGORICAL_VARIABLE_2)
+```
+
+:::{.nonincremental}
+
+- The data transformation function `count()` calculates the frequency of each **unique combination of values across two categorical variables**.
+
+:::	
+
+
+```{.r}
+diamonds |> count(cut, clarity)
+```
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| results: asis
+
+DT::datatable(diamonds |> count(cut, clarity),
+              options = list(dom = 't'))
+```
+:::
+::: {.column width="50%"}
+
+- `diamonds |> count(cut, clarity)` returns the **data.frame** with the three variables, `cut`, `clarity`, and `n`:
+  - `n`: the number of occurrences of each unique combination of values in `cut` and `clarity`
+
+:::
+::::
+
+
+
+## Stacked Bar Charts with the `fill` Aesthetic
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+# Mapping the `fill` aesthetic 
+# to other CATEGORICAL variable
+# gives a stacked bar chart
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar()
+```
+
+- This describes how the distribution of `clarity` varies by `cut`, with total bar height for overall count and segments for each `clarity` level.
+
+## 100% Stacked Bar Charts with the `fill` Aesthetic & the `position="fill"`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "fill") +
+  labs(y = "Proportion")
+```
+
+- This describes how the distribution of `clarity` varies by `cut`, displaying the proportion of each `clarity` within each `cut`.
+
+<!-- - This makes it easier to compare proportions across groups. -->
+
+
+
+## Clustered Bar Charts with the `fill` Aesthetic & the `position="dodge"`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "dodge")
+```
+
+- This shows how the distribution of `clarity` varies by `cut`, with separate bars for each `clarity` level within each `cut` category.
+
+
+<!-- - This makes it easier to compare individual values. -->
+
+
+## Stacked Bar Charts using the `fill` Aesthetic and the `position = "stack"`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "stack")
+```
+- The default `position` option is `position = "stack"`
+
+
+
+## Proportion Bar Charts with `geom_bar()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             y = after_stat(prop),
+             group = 1)) + 
+  geom_bar()
+```
+
+- `after_stat(prop)`: Calculates the proportion of the total count.
+- `group = 1`: Ensures the proportions are calculated over the entire data.frame, not within each group of `cut`
+
+## Bar Charts with `geom_col()`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+df <- mpg |> 
+  count(class)
+
+ggplot(data = df,
+       mapping = 
+         aes(x = n, 
+             y = class)) + 
+  geom_col()
+```
+
+- `geom_col()` creates bar charts where the height of bars directly represents values in a `col`umn in a given data.frame.
+  - `geom_col()` requires both `x`- and `y`- aesthetics.
+
+
+## Sorted Bar Charts with `fct_reorder(CATEGORICAL, NUMERICAL)`
+
+```{r}
+#| echo: true
+#| fig-asp: .85
+#| output-location: column
+
+df <- mpg |> 
+  count(class)
+
+ggplot(data = df,
+       mapping = 
+         aes(x = n,
+             y = 
+               fct_reorder(class, n))
+       ) + 
+  geom_col() +
+  labs(y = "Class")
+```
+
+- `fct_reorder(CATEGORICAL, NUMERICAL)`: Reorders the categories of the CATEGORICAL by the median of the NUMERICAL.
+
+
+
+# 📊 **Effective Distribution Charts for Category Comparisons** {background-color="#1c4982"}
+
+
+## Choosing the Right Bar Charts for Comparing Components and Totals
+<div style="display:block; margin:-30px;"></div>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| eval: true
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar() +
+  labs(y = "Count",
+       title = "Stacked Bar Chart") +
+  theme(plot.title = element_text(size = rel(2), face = "bold"))
+```
+
+:::
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| eval: true
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "fill") +
+  labs(y = "Proportion",
+       title = "100% Stacked Bar Chart") +
+  theme(plot.title = element_text(size = rel(2), face = "bold"))
+```
+:::
+::::
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<div style="display:block; margin:-25px;"></div>
+
+```{r}
+#| echo: false
+#| eval: true
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "dodge2") +
+  labs(y = "Count",
+       title = "Clustered Bar Chart") +
+  theme(plot.title = element_text(size = rel(2), face = "bold"))
+```
+:::
+
+::: {.column width="50%"}
+
+
+- Which type of bar chart is most effective for your data?
+
+- Which type of bar chart best meets your visualization goals?
+
+:::
+
+
+::::
+
+
+## Stacked Bar Charts
+
+:::: {.columns}
+
+
+::: {.column width="50%"}
+
+<div style="display:block; margin:-30px;"></div>
+```{r}
+#| echo: false
+#| eval: true
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar() +
+  labs(y = "Count")
+```
+
+
+:::
+
+
+
+::: {.column width="50%"}
+
+
+- **<u>Purpose</u>:** Show the **composition** of each category while still conveying the **overall total**.  
+- **<u>When to use</u>:** Your primary focus is the **total bar height**, with a secondary interest in how **subcomponents contribute**.  
+- **<u>Be cautious</u>:** Precise comparisons **across subcomponents** are difficult because segments do not share a common baseline.  
+
+<!-- - Best for showing the breakdown of subcomponents within a category alongside the overall total. -->
+<!-- - Useful when your primary focus is on the total bar height while also showing subcomponent contributions. -->
+<!-- - **Tip**: Be cautious using stacked bars if the goal is to make precise comparisons between subcomponents across different bars, as they don’t all start from the same baseline. -->
+  
+:::
+
+::::
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<div style="display:block; margin:-197.5px;"></div>
+
+<!-- - If you need to emphasize **total values** along with component contributions, use a **Stacked Bar Chart** -->
+- **<u>Tip</u>:** If you need to emphasize **totals plus composition**, a **stacked bar chart** is a strong choice.
+
+:::
+
+::: {.column width="50%"}
+
+:::
+::::
+
+
+<!-- This is useful for showing the composition of a category across bars without focusing on overall size. -->
+
+
+## 100% Stacked Bar Charts
+
+:::: {.columns}
+::: {.column width="50%"}
+<div style="display:block; margin:-30px;"></div>
+
+```{r}
+#| echo: false
+#| eval: true
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "fill") +
+  labs(y = "Proportion")
+```
+
+:::
+
+::: {.column width="50%"}
+
+- **<u>Purpose</u>:** Display the **proportional composition** of each category by normalizing all bars to the same height.  
+- **<u>When to use</u>:** Your focus is on comparing **relative percentages** across categories rather than absolute totals.  
+- **<u>Be cautious</u>:** While proportions are clear, absolute sizes or totals are not visible.  
+
+
+<!-- - Shows the proportion of subcomponents within each category as a percentage of the total, normalizing all bars to the same height. -->
+<!-- - Allows for easier comparison between categories for subcomponent proportions, as each segment starts from a consistent baseline. -->
+<!-- - **Ideal Use**: When you want to compare relative percentages rather than absolute totals. -->
+  
+:::
+
+::::
+
+
+:::: {.columns}
+::: {.column width="50%"}
+<div style="display:block; margin:-197.5px;"></div>
+
+<!-- - For comparing **relative proportions** between categories, a **100% Stacked Bar Chart** is ideal. -->
+- **<u>Tip</u>:** Choose a 100% stacked bar chart when you want to emphasize **proportional differences** across categories.
+
+:::
+::: {.column width="50%"}
+
+:::
+::::
+
+
+
+## Clustered Bar Charts
+
+:::: {.columns}
+::: {.column width="50%"}
+<div style="display:block; margin:-30px;"></div>
+
+```{r}
+#| echo: false
+#| eval: true
+
+ggplot(data = diamonds,
+       mapping = 
+         aes(x = cut, 
+             fill = clarity)) + 
+  geom_bar(position = "dodge2") +
+  labs(y = "Count")
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+- **<u>Purpose</u>:** Plot each subcomponent as a separate bar within each category for **side-by-side comparison**.  
+- **<u>When to use</u>:** Your focus is on comparing **individual subcomponents** across categories.  
+- **<u>Be cautious</u>:** Can become crowded with many categories or subcomponents.  
+
+<!-- - Plots each subcomponent as a separate bar, grouped by category, allowing for precise comparisons of each component across categories. -->
+
+<!-- - **Ideal Use**: When your main goal is to compare individual subcomponents side by side rather than focusing on an overall total or relative percentage. -->
+  
+:::
+::::
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<div style="display:block; margin:-160px;"></div>
+
+- **<u>Tip</u>:** Choose a clustered bar chart when you want to emphasize **precise comparisons** between subcomponents—both **within each cluster** and **across clusters**.
+
+<!-- - When **directly comparing individual subcomponents** across categories, opt for a **Clustered Bar Chart**. -->
+
+:::
+
+::: {.column width="50%"}
+
+:::
+::::
+
+<!-- ### Summary -->
+<!-- - If you need to emphasize **total values** along with component contributions, use a **Stacked Bar Chart**. -->
+<!-- - For comparing **relative proportions** between categories, a **100% Stacked Bar Chart** is ideal. -->
+<!-- - When **directly comparing individual subcomponents** across categories, opt for a **Clustered Bar Chart**. -->
+
+
+
+## Pie Charts: Alternative to Bar Charts?
+
+<div style="display:block; margin:-20px;"></div>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<div style="display:block; margin:20px;"></div>
+
+```{r}
+#| echo: false
+#| eval: true
+
+diamonds |> 
+  count(cut) |> 
+  mutate(prop = n/sum(n)) |> 
+  ggplot(mapping = 
+           aes(x = cut, 
+               y = prop,
+               fill = cut)) + 
+  geom_col(show.legend = F) +
+  scale_y_percent() +
+  labs(y = "", fill = "")
+```
+
+:::
+::: {.column width="55%"}
+
+```{r}
+#| echo: false
+#| eval: true
+
+diamonds |>
+  count(cut) |>
+  arrange(desc(cut)) |>
+  mutate(prop = n / sum(n) * 100) |>
+  mutate(ypos = cumsum(prop) - 0.5 * prop) |>
+  ggplot(aes(x = "", y = prop, fill = cut)) +
+  geom_bar(stat = "identity", width = 1, color = "white", show.legend = FALSE) +
+  geom_text(aes(y = ypos, label = ifelse(cut %in% c("Good", "Fair"), "", 
+                                         paste0(cut, "\n (", round(prop, 1), "%)"))),
+            color = "black", size = 4) +
+  geom_text_repel(aes(y = ypos, label = ifelse(cut %in% c("Good", "Fair"), 
+                                                paste0(cut, "\n (", round(prop, 1), "%)"), "")),
+                   nudge_x = 0.75, color = "black", size = 4, box.padding = 0.5, 
+                   show.legend = FALSE) +
+  coord_polar("y", start = 0) +
+  theme_void() +
+  theme(strip.background = element_rect(fill = "lightgray"))
+```
+:::
+::::
+
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+```{r}
+#| echo: false
+#| eval: true
+diamonds |> 
+  mutate(cat = "") |> 
+  ggplot(mapping = 
+           aes(y = cat, 
+               fill = cut)) + 
+  geom_bar(position = "fill") +
+  labs(x = "", y = "", fill = "") +
+  guides(fill = guide_legend(reverse = TRUE)) +
+  scale_x_percent()
+```
+:::
+
+::: {.column width="55%"}
+
+:::{.nonincremental}
+
+<!-- - **Pie charts** show the proportions of a whole.  -->
+<!--   - Each slice represents a part of the total. -->
+<!--   - Is a pie chart a proper alternative to a bar chart? -->
+
+- **Pie charts** display the **proportions** of a whole.  
+  - Each slice represents a part of the total.  
+  - But is a pie chart an effective alternative to a bar chart?
+  
+:::  
+:::
+
+
+::::
+
+
+## Pie Charts: Alternative to Bar Charts?
+
+Humans are generally better at judging **lengths** than **angles**. 
+
+- Still, pie charts can be useful in certain cases.
+
+
+:::{.fragment}
+
+
+<div style="text-align: center; width: 50%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/pie-vs-bar-1.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+1. Pie charts work best when there are **very few categories**—ideally four or fewer.  
+2. Pie charts are effective when the goal is to highlight **simple, recognizable fractions** (e.g., 25%, 50%, 75%).
+
+
+
+<!-- Humans are better at judging lengths than angles. -->
+  <!-- - Occasionally, using a pie chart can be a good idea. -->
+
+<!-- 1. Pie charts work well only if you only have a few categories---four max. -->
+
+<!-- 2. Pie charts work well if the goal is to emphasize simple fractions (e.g., 25%, 50%, or 75%).  -->
+
+:::
+
+## Pie Charts: Alternative to Bar Charts?
+::::{.nonincremental}
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::{.fragment}
+
+3. Pie charts are **not ideal** when the audience needs to compare the **size of individual shares** across categories.
+
+<!-- 3. Pie charts are not the best choice if you want audiences to compare the size of shares. -->
+
+<div style="display:block; margin:40px;"></div>
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/pie-vs-bar-2.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+:::
+:::
+
+::: {.column width="50%"}
+:::{.fragment}
+
+4. Pie charts are **not ideal** when the goal is to compare the **overall distribution** of categories.
+
+<!-- 4. Pie charts are not the best choice if you want audiences to compare the distribution across categories. -->
+
+<div style="display:block; margin:82px;"></div>
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/pie-vs-bar-3.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+:::
+:::
+
+::::
+
+::::
+
+
+# 🔢 **Understanding and Visualizing Integer Data** {background-color="#1c4982"}
+
+
+## Numeric or Categorical?
+
+<div style="display:block; margin:-10px;"></div>
+
+:::: {.columns}
+
+::: {.column}
+### Treat as Numeric (Continuous)
+
+- When the integer reflects a **magnitude**, **intensity**, or a **meaningful ordered scale**.
+- Examples:
+  - Age (18, 19, 20, 21, …)
+  - MPG values (27, 28, 29, 30, …)
+  - Temperature readings (whole-number data)
+:::
+
+::: {.column}
+### Treat as Categorical (Discrete)
+
+- When the integer is simply a **label** for a category, and the numeric order does not represent **meaningful numeric differences**.
+
+- Examples:
+  - Month (1–12)
+  - Day of week (1–7)
+  - ZIP codes
+  - Student ID numbers
+:::
+
+:::: 
+
+
+
+## Historams or Bar Charts?
+
+:::: {.columns}
+::: {.column width="50%"}
+
+### Histograms for the `Age` variable
+<div style="display:block; margin:-20px;"></div>
+```{r}
+#| echo: false
+#| eval: true
+
+df <- read_csv("https://bcdanl.github.io/data/integer_age.csv")
+
+df |> 
+  ggplot(aes(x = Age)) +
+  geom_histogram(fill = "steelblue",
+                 color = "black") +
+  scale_x_continuous(breaks = seq(0,100,10)) +
+  labs(title = "Python Histogram") +
+  theme(plot.title = element_text(size = rel(2), face = "bold"))
+```
+:::
+
+
+::: {.column width="50%"}
+### Bar Charts for the `Age` variable
+<div style="display:block; margin:-20px;"></div>
+```{r}
+#| echo: false
+#| eval: true
+
+df <- read_csv("https://bcdanl.github.io/data/integer_age.csv")
+
+df |> 
+  mutate(Age = as.character(Age)) |> 
+  ggplot(aes(x = Age)) +
+  geom_bar(fill = "steelblue",
+           color = "black") +
+  labs(title = "Python Bar Chart") +
+  theme(plot.title = element_text(size = rel(2), face = "bold"))
+```
+
+:::
+
+::::
+
+- In **ggplot**, the distribution of an integer variable can look quite similar whether using `geom_histogram()` or `geom_bar()`.  
+
+- As shown above, in **Python** and other tools, these visualizations can behave differently, leading to noticeably different outputs.
+
+
+
+
+
+# ✅ **Course Summary** {background-color="#1c4982"}
+
+
+
+## 📘 What We Learned This Semester
+- **Introduction to Data Analytics and Its Tools**
+
+- **Sports Analytics**
+
+- **Business Intelligence**
+
+- **Introduction to Generative AI**
+
+- **R Basics and Descriptive Statistics**
+
+- **Data Transformation with R**
+
+- **Big Data and the Modern Data Infrastructure**
+
+- **Career Pathways in Data Analytics and Beyond**
+
+- **Data Visualization with R**
+
+- **Data Storytelling Project**
+
+- **Generative AI for Data Analysis**
+
+
+
+
+
+  
+## 📝 Student Course Evaluation (SCE)
+<div style="display:block; margin:-10px;"></div>
+
+:::{.nonincremental}
+I have made every effort to enhance your learning experience in this course.  
+
+<div style="display:block; margin:-10px;"></div>
+
+Your feedback is extremely valuable and helps improve future classes.  
+
+<div style="display:block; margin:-10px;"></div>
+
+I sincerely encourage your participation in the **Student Course Evaluation (SCE)**.
+:::
+
+<div style="display:block; margin:40px;"></div>
+
+
+::: fragment
+### ✅ Please Take 10 Minutes Now to Complete the SCE
+
+<div style="display:block; margin:-10px;"></div>
+
+On your laptop, follow these steps to access the SCE for **DANL 101**:
+
+1. Log in to the [**SCE Survey Portal**](https://go.geneseo.edu/scesurveys)
+2. Click on **“Surveys”**
+3. Select **DANL 101** and complete the evaluation
+
+<div style="display:block; margin:-30px;"></div>
+<span class="fragment">Thank you for your time and thoughtful feedback.</span>
+
+:::

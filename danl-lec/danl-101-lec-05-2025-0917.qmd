@@ -1,0 +1,1130 @@
+---
+title: Lecture 5
+subtitle: R Basics and Descriptive Statistics
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-09-17
+execute: 
+  eval: true
+  echo: false
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+```{r setup}
+#| include: false
+
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+library(gapminder)
+library(ggrepel)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+# Set global options for color-blind-friendly scales
+# scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_colour_discrete <- function(...) scale_color_colorblind(...)
+scale_fill_discrete <- function(...) scale_fill_colorblind(...)
+```
+
+
+
+# Posit Cloud & R Packages {background-color="#1c4982"}
+
+
+## Posit Cloud
+
+- [Posit Cloud](https://posit.cloud) (formerly RStudio Cloud) is a web service that delivers a browser-based experience similar to RStudio, the standard IDE for the R language.
+
+- For our course, we use [Posit Cloud](https://posit.cloud) for the R programming component.
+  - If you want to install R and RStudio on your laptop, you use my office hours.
+
+## 🚀 Getting Started with Posit Cloud
+
+1. Click **Log In** at the top-right corner.  
+2. Choose the **Sign Up** tab from the menu bar.  
+3. Create your account using one of the following:  
+   - **Google account**, or  
+   - Your **geneseo.edu** or personal email  
+4. After logging in, go to **New Project** → **New RStudio Project**.  
+5. Create a new **R script**:  
+   - Click the **+** icon (top-left), or  
+   - Click to **File** → **New File** → **R script** from the menu bar, or 
+   - Use the shortcut:  
+     - **Command + Shift + N** (Mac)  
+     - **Ctrl + Shift + N** (Windows)  
+
+
+## Posit Cloud Environment
+
+:::: {.columns}
+::: {.column width="50%"}
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/rstudio_env.png">
+</p>
+
+
+:::
+
+::: {.column width="50%"}
+
+- <span style="color:red">**Script Pane**</span> is where you write and save R commands in a script file.  
+  - An R script is simply a plain text file containing R code.  
+  - Posit Cloud (RStudio Cloud) automatically color-codes your code to make it easier to read.  
+
+
+:::
+::::
+
+
+- Try typing `a <- 1` in the <span style="color:red">**Script Pane**</span>.  
+  - With the _cursor_ ( ┃ ) on the same line, run the code using:  
+    - **Ctrl + Enter** (Windows)  
+    - **Command + Enter** (Mac)  
+    
+## Posit Cloud Environment
+
+:::: {.columns}
+::: {.column width="50%"}
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/rstudio_env.png">
+</p>
+
+:::
+
+::: {.column width="50%"}
+
+- <span style="color:blue">**Console Pane**</span> allows you to interact directly with the R interpreter and type commands where R will immediately execute them.
+
+:::
+::::
+
+## Posit Cloud Environment
+
+:::: {.columns}
+::: {.column width="50%"}
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/rstudio_env.png">
+</p>
+:::
+
+::: {.column width="50%"}
+
+- <span style="color:green">**Environment Pane**</span> shows everything you have created in R so far.  
+  - For example, if you make a _variable_ or a _data frame_, it will appear here.  
+  - Think of it like a **workspace** where R keeps track of all the things you’re working on.  
+
+:::
+::::
+
+## Posit Cloud Environment
+:::: {.columns}
+::: {.column width="50%"}
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/rstudio_env.png">
+</p>
+
+:::
+
+::: {.column width="50%"}
+- <span style="color:orange">**Plots Pane**</span> contains any graphics that you generate from your R code.
+
+:::
+::::
+
+
+## 📦 R Packages
+
+- **R packages** are collections of ready-made tools for R.  
+  - A package usually includes **functions** (pre-written commands), **data sets**, and sometimes extra code to make your work easier.  
+
+- Many packages are already built into R, and thousands more can be installed from the internet (like downloading apps on your phone).  
+
+- **Why use packages?**  
+  - They save time—you don’t need to write everything from scratch.  
+  - They give you access to powerful tools for data analysis, visualization, and more.  
+
+- **Examples**:  
+  - **readr** → for reading data files quickly  
+  - **dplyr** → for cleaning and transforming data  
+  - **ggplot2** → for making beautiful graphs and charts  
+
+<!-- - To use a package in your R session:   -->
+<!--   1. **Install** it once (e.g., `install.packages("ggplot2")`)   -->
+<!--   2. **Load** it every time you start R (e.g., `library(ggplot2)`)   -->
+
+
+## 🌐 `tidyverse`
+
+:::: {.columns}
+::: {.column width="50%"}
+
+- The **`tidyverse`** is a collection of R packages built for data analytics.  
+  - They share a common design philosophy, grammar, and data structures.  
+
+- Popular packages in the `tidyverse` include:  
+  - **readr** → data reading 
+  - **dplyr** → data transformation  
+  - **ggplot2** → data visualization 
+
+<!-- - These packages are designed to **work together seamlessly**, making it easier to import, clean, explore, and visualize data.   -->
+
+:::
+
+::: {.column width="50%"}
+
+![](https://bcdanl.github.io/lec_figs/ggplot2-part-of-tidyverse.png){width="80%"}
+
+:::
+::::  
+
+## 📦 Installing R Packages with `install.packages("packageName")`
+
+```{.r}
+install.packages("tidyverse")
+```
+
+-	Use the base R function `install.packages("packageName")` to install new packages.
+-	**Example**: to install the `tidyverse`, type and run the command above in the R Console.
+-	While installing, you may see a pop-up question (e.g., about creating a personal library).
+	-	It’s usually safe to answer “No” if you’re unsure.
+
+
+- While running the above codes, you may encounter the pop-up question, and you can answer "No"
+
+
+
+
+## 📂 Loading R Packages with `library(packageName)`
+
+```{.r}
+library(tidyverse)
+mpg
+```
+-	After installation, use `library(packageName)` to load a package into your R session.
+-	**Example**: running `library(tidyverse)` loads all the R packages in the **tidyverse**, including `readr`, `dplyr`, and `ggplot2`.
+-	Once loaded, you can use their functions and datasets.
+-	For instance, `mpg` is a built-in dataset from `ggplot2`, which is part of the tidyverse.
+
+## Workflow for R packages: Install → Load → Use
+
+:::{.nonincremental}
+
+1. **Install** (once)  
+```{.r}
+install.packages("tidyverse")
+```
+
+2. **Load** (At the top of every new R script, load the package:)
+```{.r}
+library(tidyverse)
+```
+
+3. **Use** (functions & datasets)
+
+```{.r}
+df <- read_csv("https://bcdanl.github.io/data/spotify_all.csv")
+```
+
+- `read_csv()` function comes from the `readr` package, which is part of the **tidyverse**.
+
+:::
+
+:::callout-note
+- 🔑 **Tip:** In **Posit Cloud**, you need to install a package **once per project**.  
+- After that, just load it whenever you start a new R script.  
+
+:::
+
+
+## Workflow: Naming and File Management
+
+- Always **save your R script** for each class session.  
+  - Go to **File → Save** (or **Save As...**), or  
+  - Click the 💾 save icon.  
+
+- ✅ Recommended file naming style (no spaces):  
+  - Example: `danl-101-2024-0917.R`  
+
+- Tips for naming files:  
+  - ❌ Avoid spaces in file names.  
+  - ✅ Use lowercase letters and hyphens (`-`) / underscores (`_`)  
+
+
+## Workflow: Code and comment style
+- The two main principles for coding and managing data are:
+  - Make things easier for your future self.
+  - Don't trust your future self.
+
+
+- The <span style="color:green">**#**</span> mark is R's comment character.
+  - In R scripts (`*.R` files), <span style="color:green">**#**</span> indicates that the rest of the line is to be ignored.
+  - Write comments before the line that you want the comment to apply to.
+
+
+
+## Workflow: Shortcuts in Posit Cloud
+
+:::: {.nonincremental}
+:::: {.columns}
+::: {.column width="50%"}
+- **Windows**
+  - **Alt + -** adds an assignment operator (`<-`)
+  - **Ctrl + Enter** runs a current line of code
+  - **Ctrl + Shift + C** makes a comment (- <span style="color:green">**#**</span>)
+  - **Ctrl + Shift + R** makes a section  (- <span style="color:green">**# Section - - - -**</span>)
+  
+::: 
+
+::: {.column width="50%"}
+- **Mac**
+  - **option + -** adds an assignment operator (`<-`)
+  - **command + return** runs a current line of code
+  - **command + shift + C** makes a comment (- <span style="color:green">**#**</span>)
+  - **command + shift + R** makes a section (- <span style="color:green">**# Section - - - -**</span>)
+
+::: 
+::::
+::::
+
+
+## Workflow: Shortcuts in Posit Cloud
+
+- **Ctrl** (**command** for Mac Users) **+ Z** undoes the previous action.
+- **Ctrl** (**command** for Mac Users) **+ Shift + Z** redoes when undo is executed.
+
+
+## Workflow: Shortcuts in Posit Cloud
+
+- **Ctrl** (**command** for Mac Users) **+ F** is useful when finding a phrase (and replace the phrase) in the RScript.
+
+
+
+
+## Workflow: Auto-completion
+:::: {.columns}
+::: {.column width="50%"}
+```{.r}
+libr
+```
+:::
+
+::: {.column width="50%"}
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/auto-completionRStudio.png">
+</p>
+
+:::
+
+::::
+
+
+- Auto-completion of command is useful.
+  - Type `libr` in the RScript in RStudio and wait for a second.
+
+
+
+## Workflow: STOP icon
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/console-running.png">
+</p>
+
+
+- When the code is running, RStudio shows the STOP icon ( 🛑 ) at the top right corner in the Console Pane.
+  - Do not click it unless if you want to stop running the code.
+  
+## Posit Cloud Options Setting
+
+:::: {.columns}
+::: {.column width="50%"}
+![](https://bcdanl.github.io/lec_figs/RStudio_options.png)
+:::
+
+::: {.column width="50%"}
+- This option menu is found by menus as follows:
+  - **Tools** $>$ **Global Options**
+
+- Check the boxes as in the left.
+- Choose the option __*Never*__ for <u> Save workspace to .RData on exit: </u>
+:::
+
+::::
+
+
+
+    
+
+# R Programming Basics  {background-color="#1c4982"}
+
+    
+## Values, Variables, and Data Types
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/py-basic-box.png">
+</p>
+
+- A **value** is datum (literal) such as a number or text. 
+
+- There are different types of values: 
+  - 352.3 is known as a float or double;
+  - 22 is an integer;
+  - "Hello World!" is a string.
+
+
+## Values, Variables, and Data Types
+
+```{.r}
+a <- 10    # The most popular assignment operator in R is `<-`.
+a
+```
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/int-py-fig2-3.png" width="400">
+</p>
+
+:::
+
+::: {.column width="50%"}
+
+
+- A **variable** is a name that refers to a value.
+  - We can think of a **variable** as a box that has a value, or multiple values, packed inside it.
+  
+- A **variable** is just a name!
+
+- Sometimes you will hear variables referred to as **objects**.
+m
+- Everything that is not a *literal value*, such as `10`, is an **object**.
+
+:::
+
+::::
+
+
+
+
+
+## Assignment
+
+```{.r}
+x <- 2
+x < - 3
+```
+
+- What is going on here?
+
+- The shortcut for the assignment `<-` is:
+  - Windows: **Alt + -** 
+  - Mac: **option + -** 
+    
+
+## Assignment
+
+```{.r}
+x <- 2
+y <- x + 12
+```
+
+- In programming code, everything on the right side needs to have a value.
+  - The right side can be a literal value, or a variable that has already been assigned a value, or a combination.
+  
+- When R reads `y <- x + 12`, it does the following:
+  1. Sees the `<-` in the middle.
+  2. Knows that this is an assignment.
+  3. Calculates the right side (gets the value of the object referred to by `x` and adds it to `12`).
+  4. Assigns the result to the left-side variable, `y`.
+
+
+
+
+## Data Types
+
+:::: {.columns}
+::: {.column width="50%"}
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/r_variable_types.png">
+</p>
+
+:::
+
+::: {.column width="50%"}
+- **Logical**: `TRUE` or `FALSE`.
+- **Numeric**: Numbers with decimals
+- **Integer**: Integers
+- **Character**: Text strings
+- **Factor**: Categorical values. 
+  - Each possible value of a factor is known as a *level*.
+
+:::
+::::
+
+
+## Data Containers
+
+<div style="display:block; margin:-10px;"></div>
+
+:::: {.columns}
+::: {.column width="50%"}
+
+<div style="text-align: center; width: 80%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/r-data-containers.jpg" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+
+::: {.column width="50%"}
+- **vector** → a single column of values, all of the *same type*  
+  - Example: 
+    - `c(1, 2, 3)`
+    - `c("red", "blue", "green")`  
+
+- **data.frame** → a table with rows and columns, where each column can be a *different type*  
+  - _Example_: one column with `names`, another with `ages`  
+  - A **data.frame** is basically several vectors put together side by side.  
+
+:::
+
+::::
+
+
+
+
+
+## Data Types
+
+:::: {.columns}
+::: {.column width="55%"}
+```{.r}
+orig_number <- 4.39898498
+class(orig_number)
+
+mod_number <- as.integer(orig_number)
+class(mod_number)
+```
+:::
+
+::: {.column width="45%"}
+
+```{.r}
+# Logical values (TRUE/FALSE) 
+  # can convert to numbers:
+  # TRUE converts to 1; 
+  # FALSE does to 0.
+as.numeric(TRUE)
+as.numeric(FALSE)
+```
+:::
+::::
+
+
+- Values have different **data types** (e.g., numeric, integer, character, factor, logical).  
+- Sometimes we need to **convert (cast)** a value from one type to another.  
+- Use built-in functions like:  
+  - `as.character()` → convert to character 
+  - `as.integer()` → convert to whole numbers  
+  - `as.numeric()` → convert to numbers with decimals  
+  - `as.factor()` → convert to categorical (factor)  
+
+
+
+## Data Types - Character
+
+```{.r}
+myname <- "my_name"
+class(myname) # returns the data **type** of an object.
+```
+
+
+- Strings (text) are stored as the data type **character**.  
+- Wrap text in either **double quotes** (`" "`) or **single quotes** (`' '`).  
+- *Example*: `"hello"` or `'hello'`  
+- Most IDEs, including Posit Cloud  (RStudio), will **auto-complete the closing quote** when you type the first one.  
+
+
+
+## Data Types - Numbers
+
+```{.r}
+favorite.integer <- as.integer(2)
+class(favorite.integer)
+
+favorite.numeric <- as.numeric(8.8)
+class(favorite.numeric)
+```
+
+- Numbers can belong to different **classes**.  
+- The two most common are:  
+  - **integer** → whole numbers (e.g., 2, -5, 100)  
+  - **numeric** → numbers with decimals (e.g., 8.8, -3.14, 0.5)  
+
+## Data Types - Logical (`TRUE`/`FALSE`)
+
+```{.r}
+class(TRUE)
+class(FALSE)
+
+favorite.numeric == 8.8
+favorite.numeric == 9.9
+class(favorite.numeric == 8.8)
+```
+
+- **Logical values** represent `TRUE` or `FALSE`.  
+- The operator **`==`** is used to test for **equality**.  
+- *Example*:
+  - `favorite.numeric == 8.8` returns `TRUE`  
+  - `favorite.numeric == 9.9` returns `FALSE`  
+
+
+
+## Data Types - Vectors
+
+
+```{.r}
+a <- 1:10   # create a sequence using the colon operator
+b <- c("3", 4, 5)   # mixing numbers and text
+beers <- c("BUD LIGHT", "BUSCH LIGHT", "COORS LIGHT", 
+           "MILLER LITE", "NATURAL LIGHT")
+length(beers)
+class(a)
+class(b)
+class(beers)
+```
+
+- A **vector** is a one-dimensional data structure in R.  
+- All elements in a vector must be of the **same type** (numeric, character, or logical).  
+- If types are mixed, R will **coerce** them to a common type (e.g., numbers become text in `b`).  
+- The function **`c(...)`** (combine or concatenate) creates a vector by putting values together in order.  
+- The function **`length()`** returns the number of elements in an object.  
+
+
+## Data Types - Factors
+
+```{.r}
+beers <- as.factor(beers)
+class(beers)
+
+levels(beers)
+nlevels(beers)
+```
+
+- **Factors** are used to store **categorical data** (data that falls into groups or categories).  
+- Internally, R stores factors as **integers** with a text **label** for each unique value (for speed and efficiency).  
+- *Example*: if you have a factor of `"Freshman"`, `"Sophomore"`, `"Junior"`, and `"Senior"` student classifications, R stores them as numbers (e.g., 1, 2, 3, 4) but displays the labels.  
+- *Functions*:  
+  - `levels()` → shows the categories (unique labels)  
+  - `nlevels()` → shows how many categories there are  
+
+## Workflow: Quotation marks, parentheses, and `+`
+
+```{.r}
+x <- "hello
+```
+
+
+- **Quotation marks** and **parentheses** must always come in pairs.  
+- If one is missing, the R Console will show a continuation prompt: **`+`**  
+  - This means R is still waiting for more input and doesn’t think your command is finished.  
+
+
+
+## ⚙️ Functions
+
+- A **function** is a reusable piece of code: it takes input (*parameters*) and produces output (*results*).  
+- R comes with many **built-in functions** (e.g., `sum()`, `mean()`).  
+- You can also **write your own functions** in R.  
+  - In our course, we will use only built-in functions.  m
+
+
+
+## Functions, Arguments, and Parameters
+
+```{.r}
+library(tidyverse)
+
+# The function `str_c()`, provided by `tidyverse`, concatenates characters.
+str_c("Data", "Analytics")
+str_c("Data", "Analytics", sep = "!")
+```
+
+
+- A **function** is used by writing its name followed by parentheses `()`.  
+- A function can take inputs, called **arguments**, much like a recipe takes ingredients.  
+- Arguments are placed inside the parentheses, separated by commas.  
+- A **parameter** is the name that represents an expected *argument* in the function definition.  
+- A **default argument** is a value that R automatically uses for a parameter if no value is provided when calling the function.  
+
+
+## Workflow: Accessing Package Objects/Functions
+
+```{.r}
+# Access an object directly from a package
+ggplot2::mpg   # PACKAGE_NAME::DATA_FRAME_NAME
+
+# Call a function directly from a package
+ggplot2::ggplot()   # PACKAGE_NAME::FUNCTION_NAME
+```
+
+- Use the **double colon** `::` operator when you want to access:  
+  - A data frame from a specific package (e.g., `ggplot2::mpg`)  
+  - A function without loading the entire package (e.g., `ggplot2::ggplot()`)  
+
+- ✅ This can be useful because:  
+  - It avoids **name conflicts** if two packages have functions with the same name.  
+  - It saves time and memory by letting you call just one function or dataset without loading the entire package.  
+
+
+
+
+## Math Algebra
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.r}
+5 + 3
+5 - 3
+5 * 3
+5 / 3
+5^3
+```
+:::
+
+::: {.column width="50%"}
+```{.r}
+( 3 + 4 )^2
+3 + 4^2
+3 + 2 * 4^2
+3 + 2 * 4 + 2
+(3 + 2) * (4 + 2)
+```
+:::
+
+::::
+
+- All of the basic operators with parentheses we see in mathematics are available to use.  
+- R follows the standard **order of operations (PEMDAS)**: Parentheses → Exponents → Multiplication/Division → Addition/Subtraction.  
+- This allows R to be used for a wide range of mathematical calculations.  
+
+## Math functions
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r}
+5 * abs(-3)
+sqrt(17) / 2
+exp(3)
+log(3)
+log(exp(3))
+exp(log(3))
+```
+
+- R has many built-in mathematical functions that facilitate calculations and data analysis.
+
+:::
+
+
+::: {.column width="50%"}
+- `abs(x)`: the absolute value $|x|$ 
+- `sqrt(x)`: the square root $\sqrt{x}$
+- `exp(x)`: the exponential value $e^x$, where $e = 2.718...$
+- `log(x)`: the natural logarithm $\log_{e}(x)$, or simply $\log(x)$
+
+:::
+
+::::
+
+
+
+
+## Vectorized Operations
+
+```{.r}
+a <- c(1, 2, 3, 4, 5)
+b <- c(5, 4, 3, 2, 1)
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r}
+a + 5
+a - 5
+a * 5
+a / 5
+```
+:::
+
+::: {.column width="50%"}
+```{.r}
+a + b
+a - b
+a * b
+a / b
+```
+:::
+::::
+
+
+```{.r}
+sqrt(a)
+```
+
+- **Vectorized operations** apply a function to every element of a vector automatically, without the need to write a loop.  
+  - Most functions in R are vectorized, meaning they operate element-wise on entire vectors.  
+  - This makes R code more efficient, concise, and well-suited for data analysis and manipulation.  
+
+
+
+
+## Classwork: R Basics
+
+**Try it out** → [Classwork 4: R Basics I](https://bcdanl.github.io/danl-cw/danl-101-cw-04.html)  
+
+
+
+# Descriptive Statistics  {background-color="#1c4982"}
+
+## Descriptive Statistics
+
+<div style="text-align: center; width: 57.5%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/descriptive-stat-ex.jpg" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+**What can descriptive statistics tell us about this dataset?**
+
+- They condense data into clear, manageable summaries, making it easier to understand the key characteristics of a dataset.  
+- They reveal important **patterns, trends, and relationships** that may not be immediately obvious from raw numbers.  
+
+
+## Descriptive Statistics in Practice
+
+- **Checking data quality**  
+  - Helps spot numbers that don’t seem to fit with the rest of the data.  
+  - *Example: If most grocery bills are between $50–$150 but one record shows $10,000, it may be a mistake in recording.*  
+
+- **Laying the foundation for analysis**  
+  - Gives simple summaries that can be used for deeper study later.  
+  - *Example: Knowing both the average and the range of grocery bills helps us understand typical spending patterns.*  
+
+- **Supporting data visualization**  
+  - Provides clear numbers that make charts and graphs easier to understand.  
+  - *Example: Showing the average and range of grocery bills is much simpler than listing every single receipt.*  
+
+## Measures of Central Tendency
+
+- Measures of **centrality** are used to describe the central or typical value in a given vector.
+  - They represent the "center" or most representative value of a data set.
+
+- To describe this centrality, several statistical measures are commonly used:
+  - **Mean**: The arithmetic average of all values in the data set.
+  - **Median**: The middle value when the data set is ordered from least to greatest.
+  - **Mode**: The most frequently occurring value in the data set.
+
+
+## Measures of Central Tendency - Mean
+
+$$
+\overline{x} = \frac{x_{1} + x_{2} + \cdots + x_{N}}{N}
+$$
+
+
+```{.r}
+x <- c(60, 70, 80, 90, 100)
+sum(x)
+mean(x)
+```
+
+- The **arithmetic mean** (or simply *mean* or *average*) is the sum of all the values divided by the number of observations in the data set.
+  - `mean()` calculates the mean of the values in a vector.
+  - For a given vector $x$, if we happen to have $N$ observations $(x_{1}, x_{2}, \cdots , x_{N})$, we can write the arithmetic mean of the data sample as above.
+  
+## Measures of Central Tendency - Weighted Mean
+
+$$
+\begin{align}
+\overline{x}_{w} &= \frac{w_{1}x_{1} + w_{2}x_{2} + \cdots + w_{N}x_{N}}{w_{1} + w_{2} + \cdots + w_{N}}
+\end{align}
+$$
+
+
+- The **weighted mean** assigns different levels of importance (weights) to each value.  
+  - Each value $x_{i}$ is multiplied by its weight $w_{i}$, and then divided by the sum of the weights.  
+- This is useful when some values contribute more than others (e.g., test scores with different weightings).  
+
+
+## Measures of Central Tendency - Median
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/median-formula.jpg" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+
+::: {.column width="50%"}
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/median_eg.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+:::
+::::
+
+```{.r}
+x <- c(60, 70, 80, 90, 100)
+median(x)
+```
+
+
+- The **median** is the middle value in a vector—half the numbers are smaller and half are larger.
+  - `median()` calculates the **median** of the values in a vector.
+
+- The median is **less sensitive to extreme values** than the mean.
+
+## Measures of Central Tendency - Mode
+
+- The **mode** is the value(s) that occurs most frequently in a given vector.
+
+- Mode can be useful, although it is often not a very good representation of centrality.
+
+- The R package, `modeest`, provides the `mfw(x)` function that calculate the mode of values in vector `x`.
+
+
+## Measures of Dispersion
+
+- Measures of **dispersion** are used to describe the degree of variation in a given vector.
+  - They are a representation of the numerical spread of a given data set. 
+
+- To describe this dispersion, a number of statistical measures are developed
+  - Range
+  - Variance
+  - Standard deviation
+  - Quartile
+
+
+
+## Measures of Dispersion - Range
+
+$$
+(\text{range of x}) \,=\, (\text{maximum value in x}) \,-\, (\text{minimum value in x})
+$$
+
+```{.r}
+x <- c(60, 70, 80, 90, 100)
+max(x)
+min(x)
+range <- max(x) - min(x)
+```
+- The **range** is the difference between the largest and the smallest values in a given vector.
+  - `max(x)` returns the maximum value of the values in a given vector $x$.
+  - `min(x)` returns the minimum value of the values in a given vector $x$.
+
+
+
+## Measures of Dispersion - Variance
+$$
+\overline{s}^{2} = \frac{(x_{1}-\overline{x})^{2} + (x_{2}-\overline{x})^{2} + \cdots + (x_{N}-\overline{x})^{2}}{N-1}\;\, 
+$$
+
+```{.r}
+x <- c(60, 70, 80, 90, 100)  
+var(x)
+```
+- The **variance** measures how far each data point deviates from the **mean**, on average (in squared units).  
+  - The larger the variance, the more spread out the data are from the mean.  
+  - Variance squares deviations so that negative and positive differences do not cancel out.  
+- `var(x)` calculates the variance of the values in a vector `x`.  
+
+
+## Measures of Dispersion - Standard Deviation
+$$
+\overline{s} = \sqrt{ \left( \frac{(x_{1}-\overline{x})^{2} + (x_{2}-\overline{x})^{2} + \cdots + (x_{N}-\overline{x})^{2}}{N-1}\;\, \right) }
+$$
+
+```{.r}
+x <- c(60, 70, 80, 90, 100)
+sd(x)
+```
+- The **standard deviation (SD)** is the square root of the variance, expressed in the same unit as the data.  
+  - A **low SD** suggests values are tightly clustered around the mean, while a **high SD** suggests greater variability.  
+  - SD is often more useful than variance because it is easier to interpret and directly comparable to the mean.  
+- `sd(x)` calculates the standard deviation of the values in a vector `x`.  
+  
+  
+
+## Measures of Dispersion - Quartiles
+
+```{.r}
+quantile(x, 0)    # the minimum
+quantile(x, 0.25) # the 1st quartile (Q1)
+quantile(x, 0.5)  # the 2nd quartile (Q2, median)
+quantile(x, 0.75) # the 3rd quartile (Q3)
+quantile(x, 1)    # the maximum
+```
+
+- A **quartile** is a quarter of the number of data points ($N$) in a given vector.
+-	To compute quartiles:  
+  1. **Sort** the data in ascending order.
+  2. **Split** into four groups with equal number of data points (or as close as possible if dividing $N$ by 4 leaves a remainder).
+
+
+## Measures of Dispersion – Interquartile Range
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/boxplot-outlier.jpg" style="width: 100%; margin-bottom: -40px;">
+  <p style="font-weight: bold;">Boxplot</p>
+</div>
+:::
+
+::: {.column width="55%"}
+- The **interquartile range (IQR)** is $IQR = Q3 - Q1$.  
+  - It measures the spread of the **middle 50%** of the data.  
+  - A popular way to visualize quartiles and the IQR is a **boxplot**.
+  
+- **Why quartiles are useful**  
+  - Quartiles show whether the data are more spread out in the **lower half** or the **upper half** of the dataset.  
+  - Quartiles are **less sensitive to extreme values (outliers)** than the mean. 
+  
+:::
+
+::::
+
+
+# Accessing a Subset of a `vector`  {background-color="#1c4982"}
+
+## Accessing a Subset of a `vector`
+
+:::{.nonincremental}
+- A key part of working with a `vector` is knowing how to **index** them.  
+  - Indexing allows you to *filter* and extract subsets of data for further analysis.
+
+- For vectors, there are three common ways to index:  
+
+1. **Single index**  
+```{.r}
+vec[n]   # element at position n
+```
+
+2. **Multiple indices**
+```{.r}
+vec[c(i, j, k)]   # elements at positions i, j, and k
+```
+	
+3. **Logical indexing**
+```{.r}
+vec[condition]   # elements where condition is TRUE
+```
+
+:::
+	
+## Positional Indexing
+
+:::{.nonincremental}
+- An index is a **positional** reference (e.g., 1, 2, 3) used to access individual elements within data structures like a vector.
+
+:::
+
+```{.r}
+my_vector <- c(10, 20, 30, 40, 50, 60)
+
+my_vector[2]
+my_vector[4]
+my_vector[6]
+```
+
+- In R, the index is positive integer, starting at 1.
+  
+
+
+## A Vector of Indices
+:::{.nonincremental}
+- **Selecting multiple elements** by providing a vector of indices
+
+:::
+
+```{.r}
+my_vector <- c(10, 20, 30, 40, 50, 60)
+
+my_vector[ c(3,4,5) ]
+my_vector[ 3:5 ]
+```
+
+
+
+## Logical Indexing
+:::{.nonincremental}
+- **Using a logical condition** to filter elements of a vector.
+
+:::
+
+```{.r}
+my_vector <- c(10, 20, 30, 40, 50, 60)
+
+# Filter elements greater than 10
+is_greater_than_10 <- my_vector > 10  # Creates logical vector
+my_vector[ is_greater_than_10 ] 
+```
+
+
+
+## Classwork: R Basics
+
+**Try it out** → [Classwork 5: R Basics II](https://bcdanl.github.io/danl-cw/danl-101-cw-05.html)  
+

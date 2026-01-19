@@ -1,0 +1,98 @@
+---
+title: Classwork 5
+subtitle: R Basics II
+date: 2025-09-26
+# code-fold: true
+execute: 
+  echo: true
+  warning: false
+  message: false
+---
+```{r}
+#| include: false
+
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5)),
+                axis.title.y = element_text(size = rel(1.5)),
+                legend.title = element_text(size=rel(1.25))
+                ))
+```
+
+
+
+## Question 1.
+- Write an R code to calculate the standard deviation (SD) of the integer vector `x` below manually. That is to calculate the SD without using the `sd()` or the `var()` functions.
+
+```{r}
+x <- 1:25
+```
+
+- Also, write an R code to test whether the standard deviation you calculate manually above is equal to `sd(x)`.
+
+
+**Answer**:
+```{r}
+```
+
+
+<br><br>
+
+
+
+## Question 2.
+- Write an R code to calculate the range (difference between the maximum and minimum values) of the vector `temp <- c(22, 28, 31, 25, 29)`.
+
+```{r}
+temp <- c(22, 28, 31, 25, 29)
+```
+
+**Answer**:
+```{r}
+```
+
+<br><br>
+
+
+## Question 3.
+- Consider the vectors:
+
+```{r}
+my_vec <- c(-10, -20, 30, 10, 50, 40, -100)
+beers <- c("BUD LIGHT", "BUSCH LIGHT", "COORS LIGHT", 
+           "GENESEE LIGHT", "MILLER LITE", "NATURAL LIGHT")
+```
+
+
+- Write an R code to filter only the positive values in `my_vec`.
+- Write an R code to access the beers that are in positions 2, 4, and 6 using indexing.
+
+**Answer**:
+```{r}
+
+```
+
+
+<br><br>
+
+
+## Question 4.
+- Create a logical vector `logical_vec` that checks whether the elements of the vector `ages <- c(15, 22, 18, 24, 30)` are greater than or equal to 20.
+
+```{r}
+ages <- c(15, 22, 18, 24, 30)
+```
+
+**Answer**:
+```{r}
+```
+
+
+<br><br>

@@ -1,0 +1,124 @@
+---
+title: Classwork 4
+subtitle: R Basics I
+date: 2025-09-22
+# code-fold: true
+execute: 
+  echo: true
+  warning: false
+  message: false
+from: markdown+emoji
+---
+```{r}
+#| include: false
+
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5)),
+                axis.title.y = element_text(size = rel(1.5)),
+                legend.title = element_text(size=rel(1.25))
+                ))
+```
+
+
+
+## Question 1.
+- In R, the object `state.name` is available without loading any additional packages.  
+- Write R code to assign `state.name` to a new variable called `US_states`.  
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/r-statename.png" style="width: 100%; margin-bottom: 0px;">
+  <p style="font-weight: bold;">Example: calling `state.name` in R</p>
+</div>
+
+
+
+**Answer**:
+```{r}
+
+```
+
+<br><br>
+
+## Question 2.
+Write an R code to create a numeric vector named `numbers` containing the integers from 10 to 50.
+
+**Answer**:
+```{r}
+```
+
+<br><br>
+
+
+
+
+## Question 3.
+The `temp_F` vector contains the average high temperatures in January for the following cities: Seoul, Lagos, Paris, Rio de Janeiro, San Juan, and Rochester.
+
+```{r}
+temp_F <- c(35, 88, 42, 84, 81, 30)
+```
+
+Create a new vector named `temp_C` that stores the converted Celsius temperatures. Below is the conversion formula:
+
+$$
+C = \frac{5}{9}\times(F - 32)
+$$
+
+**Answer**:
+```{r}
+```
+
+<br><br>
+
+
+
+## Question 4.
+Write an R code to assign the string "Hello, World!" to a variable named `greeting` and display its value on the Console.
+
+**Answer**:
+```{r}
+```
+
+<br><br>
+
+
+
+## Question 5.
+Write an R code to convert the character vector `char_vec <- c("1", "2", "3", "4")` into a numeric vector named `num_vec`.
+
+```{r}
+char_vec <- c("1", "2", "3", "4")
+```
+
+**Answer**:
+```{r}
+```
+
+
+<br><br>
+
+## Question 6.
+- Write an R code to concatenate two character vectors, `first_names <- c("John", "Jane")` and `last_names <- c("Doe", "Smith")`, to create a vector `full_names` containing the full names (e.g., **"John Doe", "Jane Smith"**) using the `str_c()` function for vectorized character operations.
+  - Note that the `str_c()` function is provided by the `stringr` package, which is one of the packages in the `tidyverse`.
+
+```{r}
+first_names <- c("John", "Jane")
+last_names <- c("Doe", "Smith")
+```
+
+**Answer**:
+```{r}
+```
+
+
+<br><br>
+
+

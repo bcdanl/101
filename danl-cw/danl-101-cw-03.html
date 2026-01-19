@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Byeong-Hak Choe">
+<meta name="dcterms.date" content="2025-09-15">
+
+<title>Classwork 3 | Byeong-Hak Choe</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../assets/css/font.css">
+<meta property="og:title" content="Classwork 3 | Byeong-Hak Choe">
+<meta property="og:description" content="Co-Intelligence Rule Practice">
+<meta property="og:image" content="/assets/img/posts.png">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/geneseo-logo-squared.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/bcdanl/101-03-fall-2025" rel="" target="_blank"><i class="bi bi-r-circle-fill" role="img">
+</i> 
+ <span class="menu-text">MW</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/bcdanl/101-04-fall-2025" rel="" target="_blank"><i class="bi bi-r-circle-fill" role="img">
+</i> 
+ <span class="menu-text">MWF</span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text"> </span></li>
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Classwork 3</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🏠 Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📓 Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://brightspace.geneseo.edu/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
+ <span class="menu-text">🅱 Brightspace</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🚀 Lecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-cw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">⌨️ Classwork</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-hw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">💻 Homework</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-hw-q.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📤 HW Submission</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-ex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📝 Exams</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">🗣️️ Project</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📄 Guideline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">🏅 Sports</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-baseball.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">⚾ Baseball</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-basketball.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🏀 Basketball</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-football.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🏈 Football</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-golf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">⛳ Golf</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-hockey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🏒 Hockey</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-soccer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">⚽ Soccer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">🗓️ Weeks</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 05</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 06</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 07</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 08</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 09</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 13</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 14</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Weeks 15-16</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title"><img src="../img/logo-geneseo.jpg" style="height:48px; display:inline-block; vertical-align:middle; margin-right:0px;"> <span style="display:inline-block; vertical-align:middle; font-family:Arial; font-weight:bold; line-height:1.05;"> Data<br>Analytics </span><br>
+<br>On this page</h2>
+   
+  <ul>
+  <li><a href="#rule-1-always-invite-ai-to-the-table" id="toc-rule-1-always-invite-ai-to-the-table" class="nav-link active" data-scroll-target="#rule-1-always-invite-ai-to-the-table">Rule 1: Always Invite AI to the Table</a></li>
+  <li><a href="#rule-2-be-the-human-in-the-loop-hitl" id="toc-rule-2-be-the-human-in-the-loop-hitl" class="nav-link" data-scroll-target="#rule-2-be-the-human-in-the-loop-hitl">Rule 2: Be the Human in the Loop (HITL)</a></li>
+  <li><a href="#rule-3-treat-ai-like-a-person-but-remember-it-isnt" id="toc-rule-3-treat-ai-like-a-person-but-remember-it-isnt" class="nav-link" data-scroll-target="#rule-3-treat-ai-like-a-person-but-remember-it-isnt">Rule 3: Treat AI Like a Person (but Remember It Isn’t)</a>
+  <ul>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also">See also</a></li>
+  </ul></li>
+  <li><a href="#rule-4-assume-this-is-the-worst-ai-youll-ever-use" id="toc-rule-4-assume-this-is-the-worst-ai-youll-ever-use" class="nav-link" data-scroll-target="#rule-4-assume-this-is-the-worst-ai-youll-ever-use">Rule 4: Assume This Is the Worst AI You’ll Ever Use</a></li>
+  <li><a href="#sample-essay" id="toc-sample-essay" class="nav-link" data-scroll-target="#sample-essay">Sample Essay</a>
+  <ul>
+  <li><a href="#framing-when-and-how-to-pair-humans-with-genai" id="toc-framing-when-and-how-to-pair-humans-with-genai" class="nav-link" data-scroll-target="#framing-when-and-how-to-pair-humans-with-genai">Framing: When and how to pair humans with GenAI</a></li>
+  <li><a href="#which-human-skills-are-hardest-for-ai-to-replace" id="toc-which-human-skills-are-hardest-for-ai-to-replace" class="nav-link" data-scroll-target="#which-human-skills-are-hardest-for-ai-to-replace">1) Which human skills are hardest for AI to replace?</a></li>
+  <li><a href="#what-the-evidence-says-about-capability-expansion" id="toc-what-the-evidence-says-about-capability-expansion" class="nav-link" data-scroll-target="#what-the-evidence-says-about-capability-expansion">2) What the evidence says about capability expansion</a></li>
+  <li><a href="#how-to-prepare-for-a-world-where-ai-does-many-technical-tasks-better-than-people" id="toc-how-to-prepare-for-a-world-where-ai-does-many-technical-tasks-better-than-people" class="nav-link" data-scroll-target="#how-to-prepare-for-a-world-where-ai-does-many-technical-tasks-better-than-people">3) How to prepare for a world where AI does many technical tasks better than people</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Classwork 3</h1>
+<p class="subtitle lead">Co-Intelligence Rule Practice</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Byeong-Hak Choe </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 15, 2025</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">September 23, 2025</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="rule-1-always-invite-ai-to-the-table" class="level1">
+<h1>Rule 1: Always Invite AI to the Table</h1>
+<p>Ask an AI tool to generate <em>three possible titles</em> for a student newsletter about <strong>“AI and College Life”</strong> (covering study tips, career opportunities, and ethical concerns).</p>
+<p>As a group, compare the three titles and choose the best.</p>
+<p><strong>Discussion Questions:</strong><br>
+1. Which title is the most engaging and memorable?<br>
+2. Which one best captures the range of topics?<br>
+3. How would you combine or tweak the titles to make an even better one?</p>
+<!-- **Sample Answers:**   -->
+<!-- - *Title A: “AI on Campus: Friend or Foe?” — catchy but too narrow (sounds only about risks).*   -->
+<!-- - *Title B: “Smarter with AI: Study, Career, and Beyond” — covers more ground, clear benefit.*   -->
+<!-- - *Title C: “The Future Starts Here: AI in College Life” — broad and inspirational, but vague.*   -->
+<!-- - *We chose Title B because it balances clarity and appeal.*   -->
+<!-- - *Improvement: Keep Title B’s clarity but add some of Title C’s excitement.*   -->
+<p><br><br></p>
+</section>
+<section id="rule-2-be-the-human-in-the-loop-hitl" class="level1">
+<h1>Rule 2: Be the Human in the Loop (HITL)</h1>
+<p>Consider this fabricated AI claim:</p>
+<blockquote class="blockquote">
+<p><em>“AI-generated code is always more efficient and less buggy than code written by humans.”</em></p>
+</blockquote>
+<p><strong>Task:</strong> Work in pairs or groups to identify what’s misleading or incorrect about this claim.</p>
+<p><strong>Discussion Questions:</strong><br>
+1. What makes this statement inaccurate or overstated?<br>
+2. How could relying on AI code without oversight create real risks?<br>
+3. What steps (fact-checking, testing, cross-checking) should you take before trusting AI outputs?</p>
+<!-- **Goal:** Highlight that polished AI outputs can *look* correct but still contain hidden flaws — and that HITL practices are essential for catching them.   -->
+<!-- **Sample Answers:**   -->
+<!-- - *Error: ChatGPT is not AGI; it is a narrow LLM specialized in language tasks.*   -->
+<!-- - *HITL matters because AI can sound convincing even when wrong.*   -->
+<!-- - *We should always fact-check, demand sources, run multiple prompts, and use external tools for math/code.*   -->
+<p><br><br></p>
+</section>
+<section id="rule-3-treat-ai-like-a-person-but-remember-it-isnt" class="level1">
+<h1>Rule 3: Treat AI Like a Person (but Remember It Isn’t)</h1>
+<p>Use the persona-prompt template below:</p>
+<pre><code>You are a [role] helping [audience].
+Constraints: [tone, length, format].
+Task: [deliverable].
+Criteria: [rubric].</code></pre>
+<p>Rewrite this prompt to make it more specific and effective for a sample task (e.g., <em>“Describe climate change”</em>).</p>
+<ol type="1">
+<li>Define the <strong>role</strong> (e.g., teacher, journalist, scientist).<br>
+</li>
+<li>Clarify the <strong>audience</strong> (e.g., middle school students, undergraduate students, policymakers).<br>
+</li>
+<li>Add useful <strong>constraints</strong> (tone, word limit, style).<br>
+</li>
+<li>Refine the <strong>task</strong> and <strong>criteria</strong> so the output is clear and useful.</li>
+</ol>
+<!-- **Goal:** Show how small changes in a prompt can dramatically improve the AI’s response.   -->
+<!-- --- -->
+<!-- ## Model Example -->
+<!-- **Original task:** *“Describe climate change.”*   -->
+<!-- **Rewritten Prompt:**   -->
+<!-- **Sample Answers:**   -->
+<!-- - *Improved prompt: “You are a teaching assistant helping intro microeconomics students. Use a friendly tone, ≤200 words, in a prose paragraph with one example. Define utility maximization, link it to choice under constraints, and give a simple apples vs. bananas example.”*   -->
+<!-- - *The rubric ensured accuracy and audience fit.*   -->
+<!-- - *Risks: forgetting AI doesn’t “understand,” treating it like authority, or ignoring hidden biases.*   -->
+<section id="see-also" class="level2">
+<h2 class="anchored" data-anchor-id="see-also">See also</h2>
+<p>Check out OpenAI’s “<a href="https://chatgpt.com/use-cases/students#" target="_blank">100 Chats for College Students</a>” — a student-made guide to learning strategies, study habits, career exploration, wellness, and day-to-day problem-solving.</p>
+<p><br><br></p>
+</section>
+</section>
+<section id="rule-4-assume-this-is-the-worst-ai-youll-ever-use" class="level1">
+<h1>Rule 4: Assume This Is the Worst AI You’ll Ever Use</h1>
+<p>AI tools are improving at a rapid pace. Imagine that today’s systems are the <em>least powerful</em> you’ll ever work with.</p>
+<p>👉 If that’s true, what skills should you focus on developing now so you can stay valuable and adaptable as AI keeps getting better?</p>
+<p><strong>Discussion Questions:</strong><br>
+1. Which skills do humans bring that AI can’t easily replace?<br>
+2. How can you prepare for a world where AI does many technical tasks better than people?<br>
+3. In what ways can you treat today’s AI as a “prototype” to practice for tomorrow’s tools?</p>
+</section>
+<section id="sample-essay" class="level1">
+<h1>Sample Essay</h1>
+<p>AI tools are improving fast. If today’s systems are the <em>least powerful</em> you’ll ever use, your goal in college isn’t just to <em>use</em> AI—it’s to <em>grow with</em> it. Three ideas to guide you:</p>
+<ol type="1">
+<li>Generative AI is a predicting-and-remixing machine (it guesses likely words, code, or steps from patterns).<br>
+</li>
+<li>Because AI is confident but not always correct, <strong>your</strong> understanding and verification matter more, not less.<br>
+</li>
+<li>Your edge is human: <strong>domain knowledge</strong>, <strong>creativity</strong>, and <strong>judgment</strong> (context, ethics, teamwork).</li>
+</ol>
+<p>Two perspectives shape this essay:</p>
+<ul>
+<li><strong>BCG Henderson Institute (<a href="https://www.bcg.com/publications/2024/gen-ai-increases-productivity-and-expands-capabilities"><em>“GenAI Doesn’t Just Increase Productivity. It Expands Capabilities.”</em></a>)</strong> finds that GenAI can immediately expand what non-experts can <em>do</em>, yet it doesn’t automatically help them <em>learn</em> the underlying skills. The gap between “doing with AI” and “knowing how to do it yourself” is where your long-term value is built.<br>
+</li>
+<li><strong>Simo (<a href="https://openai.com/index/expanding-economic-opportunity-with-ai/"><em>“Expanding economic opportunity with AI.”</em></a>)</strong> argues that AI can unlock opportunity at scale (new roles, better matches between workers and employers), but only if people become <strong>AI-fluent</strong> and organizations build clear pathways (jobs platforms, practical certifications, and training aligned to real employer needs).</li>
+</ul>
+<section id="framing-when-and-how-to-pair-humans-with-genai" class="level2">
+<h2 class="anchored" data-anchor-id="framing-when-and-how-to-pair-humans-with-genai">Framing: When and how to pair humans with GenAI</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://bcdanl.github.io/lec_figs/bcg-genai-ex1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Exhibit 1 – When and How to Pair Humans and GenAI</figcaption>
+</figure>
+</div>
+<p>Up/down = how strong the human is on a task. Left/right = how strong the AI is on that task.</p>
+<p><strong>What it means for you.</strong></p>
+<ul>
+<li><strong>Top-right (use AI confidently):</strong> You + AI are strong → you go faster and keep quality high (great for drafting, refactoring, and summarizing work you already understand).</li>
+<li><strong>Top-left (don’t over-rely):</strong> You’re strong, AI is weak → trust your own method; use AI for small ideas, not final answers.</li>
+<li><strong>Bottom-right (supervise + learn):</strong> AI is strong, you’re new → AI can expand your capabilities <em>today</em>, but you must check its work and learn the basics.</li>
+<li><strong>Bottom-left (learn first):</strong> Neither is strong → start with a mini-lesson, example, or office hours before delegating to AI.</li>
+</ul>
+<!-- As access widens (free tools, on-ramps, employer partnerships), more students will land in the **bottom-right** quadrant: AI helps you *perform* earlier. Your responsibility is to climb *up* the human-skill axis through real learning. -->
+<p>As access to AI tools grows—through free versions, student-friendly platforms, and training programs offered by schools or employers—more students will find themselves in the <strong>bottom-right</strong> quadrant of the human–AI map. In this position, the AI is strong at a task, while the human is still developing skills. This means AI can help you <strong>perform at a higher level earlier than you could on your own</strong>, letting you complete assignments, projects, or coding tasks that might otherwise feel out of reach. But this shortcut also comes with a trap: you might lean too heavily on AI without actually understanding what’s happening.</p>
+<p>Your responsibility is to move <strong>up the human-skill axis</strong>, which means turning AI-assisted performance into genuine knowledge and ability. That requires doing the hard work of learning—checking outputs manually, practicing problem-solving without AI, and reflecting on why a solution works. In other words, use AI as a springboard to support your growth, while also making sure you understand the underlying concepts yourself. The real value comes from combining AI-assisted performance with your own learning. As you continue to practice and reflect, you’ll gradually build the kind of durable expertise that helps on exams, in internships, and later in your career.</p>
+</section>
+<section id="which-human-skills-are-hardest-for-ai-to-replace" class="level2">
+<h2 class="anchored" data-anchor-id="which-human-skills-are-hardest-for-ai-to-replace">1) Which human skills are hardest for AI to replace?</h2>
+<p>AI can sound right while being wrong. That is why your role is not to accept outputs at face value but to notice missing assumptions, wrong units, shaky causal stories, and conclusions that don’t fit the real-world context. The best way to build this filter is to deepen yourself in at least one domain this semester—data analytics, economics, finance, marketing, accounting, or another field you care about. As your domain knowledge grows, your prompts get sharper, your checks get stronger, and your conversations with AI become more productive.</p>
+<p>Humans also excel at problem-finding and framing. AI follows instructions; it rarely chooses the <em>right</em> question. Practice translating vague goals like “make a dashboard” into precise, checkable tasks such as “track weekly active users and cohort retention, then write a three-line narrative with drivers and caveats.” That skill of turning fog into a plan is a durable career advantage.</p>
+<p>Creativity is another human edge. AI is excellent at variations and remixing patterns, but original direction—choosing the audience, message, and the unexpected connection across fields—still comes from people. Use AI to explore possibilities, then you decide what actually matters and why.</p>
+<p>Finally, context, teamwork, judgment, and ethics remain stubbornly human. Reading the room, negotiating with classmates, persuading a client, balancing fairness and privacy, and taking responsibility for outcomes are hard to mechanize. AI can optimize, but humans choose values. You are accountable for the recommendation you make and the impact it has.</p>
+</section>
+<section id="what-the-evidence-says-about-capability-expansion" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-evidence-says-about-capability-expansion">2) What the evidence says about capability expansion</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://bcdanl.github.io/lec_figs/bcg-genai-ex2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Exhibit 2 – GenAI Significantly Improved Performance in Three Data-Science Tasks</figcaption>
+</figure>
+</div>
+<p>The figure compares people working <strong>without AI</strong> to those working <strong>with AI</strong> on tasks that were outside their comfort zones, with 100% set to the performance of professional data scientists. The headline result is that AI can immediately boost a beginner’s performance on structured tasks. In coding and data cleaning, for example, AI-augmented beginners reached roughly 86% of expert level, whereas those without AI hovered around the mid-30s. Translated into student life, this means you can merge messy datasets, fix obvious anomalies, and surface top customers or categories far faster—<em>if</em> you still sanity-check edge cases and data types.</p>
+<p>The gains are more modest on fuzzier tasks like predictive analytics, especially when students paste the entire assignment into a single prompt. The groups who did best decomposed the work into steps (train/test split, features, baseline, metric), asked the model for intermediate artifacts, and verified them. A similar pattern shows up in statistical interpretation: when students requested pieces like residual plots or confusion matrices and inspected them, their results moved closer to expert practice. The practical reading is simple: AI can help you perform like a stronger student today, but performance is not the same as learning. Real understanding still requires practice, reflection, and feedback.</p>
+<p>This matters for careers as well. If employers start recognizing <strong>AI fluency</strong>—through projects, portfolios, and practical certifications—you will need to show both that you can deliver results with AI and that you understand what the results mean. Being able to explain choices, defend assumptions, and spot failure modes will separate candidates who merely <em>use</em> AI from those who can be trusted with it.</p>
+</section>
+<section id="how-to-prepare-for-a-world-where-ai-does-many-technical-tasks-better-than-people" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-prepare-for-a-world-where-ai-does-many-technical-tasks-better-than-people">3) How to prepare for a world where AI does many technical tasks better than people</h2>
+<p>Begin shifting from <strong>doing</strong> to <strong>directing</strong>. Expect AI to draft code, summarize readings, and generate baseline analyses. Your value moves upstream: define the goal, clarify constraints, set acceptance tests, and make the final call. Before you prompt, write a short spec that states the objective, the audience and data limits, and the conditions under which you will accept the result. Treat the model as a fast assistant inside a process you control.</p>
+<p>Adopt the engineering mindset even if you never become a software engineer. Break big problems into small, testable steps; ask for intermediate artifacts you can check (schemas, sample rows, metrics); and only then assemble the final answer. Make verification routine rather than an afterthought: compare against a simple baseline, run a quick stress test or counterexample, ensure units and magnitudes make sense, and note sources and data lineage. Consistent, lightweight QA beats last-minute fixes.</p>
+<p>Protect your intuition with <strong>manual mode</strong>. For your courses, make it a habit to work manually on purpose: push through problem sets on your own, draft essays from scratch, and code starting with a blank file. These efforts build the mental models you’ll need for exams, interviews, and real-world projects. Many instructors grade the <em>reasoning process</em>, and some assignments are explicitly no-AI. Honor those rules and use them to get stronger.</p>
+<p>Finally, invest in learning agility and communication. Build a simple “learning stack” that might include one short tutorial, one article or paper, one conversation with a tutor or professor, and a one-page reflection. Track how quickly you can go from “don’t know” to “basic demo,” and aim to shorten that time over the semester. As AI multiplies outputs, synthesis and storytelling decide impact, so practice turning your work into a clear five-sentence brief: problem, method, result, limitation, and next step. This is the habit that will make you valuable in group projects now—and in internships soon.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Sack et al., <a href="https://www.bcg.com/publications/2024/gen-ai-increases-productivity-and-expands-capabilities"><em>“GenAI Doesn’t Just Increase Productivity. It Expands Capabilities.”</em></a> Boston Consulting Group, 2024.<br>
+</li>
+<li>Simo, F., <a href="https://openai.com/index/expanding-economic-opportunity-with-ai/"><em>“Expanding economic opportunity with AI.”</em></a> OpenAI, September 4, 2025.</li>
+</ul>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.querySelector('.quarto-btn-toggle');
+  if (!btn || !window.bootstrap) return;
+
+  btn.addEventListener('click', function (e) {
+    ['#quarto-sidebar', '#quarto-sidebar-glass'].forEach(sel => {
+      const el = document.querySelector(sel);
+      if (el) bootstrap.Collapse.getOrCreateInstance(el).toggle();
+    });
+  }, { capture: true });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="bcdanl/101-fall-2025-discussion" data-repo-id="R_kgDOPsGczQ" data-category="General" data-category-id="DIC_kwDOPsGczc4CvJKz" data-mapping="title" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">powered with github, quarto, and rstudio<br>byeong-hak choe, 2025</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<div id="scroll-padding"></div>
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/posts.js"></script>
+
+
+
+</body></html>

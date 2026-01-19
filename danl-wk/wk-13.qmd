@@ -1,0 +1,38 @@
+---
+title: Week 13
+subtitle: Data Visualization with `ggplot`
+date: 2025-11-17
+from: markdown+emoji
+---
+
+In **Week 13**, we'll continue to discuss various topics in **Data Visualization with `ggplot`**. We will then have the Midterm Exam II.
+
+
+## 🏫 Lecture Slides  
+- **Lecture 10 — Data Visualization with `ggplot`**  
+  [View Slides](../danl-lec/danl-101-lec-10-2025-1105.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+
+
+## ✍️ Classwork
+
+- **Classwork 14 - _Distribution Plots and Counting_**  
+  [View Classwork](../danl-cw/danl-101-cw-14.html){target="_blank"}
+
+<br>
+
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 13 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 13.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 13 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

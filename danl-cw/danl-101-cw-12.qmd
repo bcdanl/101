@@ -1,0 +1,312 @@
+---
+title: Classwork 12
+subtitle: Color vs. Facet
+date: 2025-11-10
+from: markdown+emoji
+
+fig-width: 10
+execute: 
+  eval: true
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(gapminder)
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_color_tableau(...)
+scale_fill_discrete <- function(...) scale_fill_tableau(...)
+
+```
+
+
+# R Packages
+
+For Classwork 12, please load the `tidyverse` package:
+```{r}
+library(tidyverse)
+```
+
+
+# Question 1. NBC Show Data
+
+The `nbc_show` dataset comes from **NBC’s TV pilots**, containing information about television shows, their **viewership metrics**, and **audience engagement**.
+
+```{r}
+nbc_show <- read_csv("https://bcdanl.github.io/data/nbc_show.csv")
+```
+
+- **Gross Ratings Points** (`GRP`):  
+  Measures the **estimated total viewership** of a show — an indicator of its **broadcast marketability**.  
+  - 📺 A higher `GRP` suggests **broader exposure** and a more **marketable** program.
+
+- **Projected Engagement** (`PE`):  
+  Captures how **attentive and engaged** viewers were after watching a show — a more suitable measure of **audience engagement**.  
+  - 🧠 After viewing, audiences take a short quiz testing **order and detail recall**.  
+  - This reflects their **level of attention and retention** (for both the show *and* its ads).  
+  - High `PE` values indicate **strong viewer engagement**.
+
+```{r}
+#| echo: false
+
+DT::datatable(nbc_show, options = list(
+  pageLength = 40
+))
+```
+
+
+
+## Tasks
+- 🤖 **Task 1:** Fill in the blanks in the provided `ggplot()` code chunk.  
+- 💬 **Task 2:** Add a brief comment describing **the relationship between gross ratings points (`GRP`) and projected engagement (`PE`) varies by genre (`Genre`)**.
+
+
+
+
+### (1) Color
+```{r}
+#| echo: false
+ggplot(data = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE,
+                     color = Genre)) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              se = FALSE)   # se = FALSE turns off the ribbon
+```
+
+```{r}
+#| eval: false
+ggplot(__BLANK_1__ = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE,
+                     __BLANK_2__ = Genre)) +
+  geom_point() +
+  geom_smooth(__BLANK_3__,
+              se = FALSE)   # se = FALSE turns off the ribbon
+```
+
+<br>
+
+### (2) Facet
+```{r}
+#| echo: false
+ggplot(data = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE)) +
+  geom_point() + 
+  geom_smooth(method = "lm",
+              se = FALSE) +  # se = FALSE turns off the ribbon
+  facet_wrap(~Genre)
+```
+
+```{r}
+#| eval: false
+ggplot(data = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE)) +
+  geom_point() +  
+  geom_smooth(method = __BLANK_1__,
+              se = FALSE) +  # se = FALSE turns off the ribbon
+  __BLANK_2___wrap(__BLANK_3__)
+```
+
+<br>
+
+### (3) Facet with Color
+```{r}
+#| echo: false
+ggplot(data = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE,
+                     color = Genre)) +
+  geom_point(show.legend = FALSE) + 
+  geom_smooth(method = "lm",
+              show.legend = FALSE, # show.legend = FALSE turns of legend
+              se = FALSE) +  # se = FALSE turns off the ribbon
+  facet_wrap(~Genre)
+```
+
+```{r}
+#| eval: false
+ggplot(data = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE,
+                     color = __BLANK_1__)) +
+  geom_point(show.legend = FALSE) +  # show.legend = FALSE turns of legend
+  geom_smooth(method = __BLANK_2__,
+              show.legend = FALSE,   # show.legend = FALSE turns of legend
+              se = FALSE) +  # se = FALSE turns off the ribbon
+  __BLANK_3___wrap(__BLANK_4__)
+```
+
+
+<br>
+
+# Question 2. GDP per capita and Life Expectancy 
+
+For **Question 2**, please **load the R package `gapminder`** before starting:
+```{r}
+#| eval: false
+
+# install.packages("gapminder")
+library(gapminder)
+??gapminder
+```
+
+The **`gapminder`** package provides a built-in dataset named **`gapminder`**, which contains country-level data on life expectancy, GDP per capita, and population across time.  
+
+Let's assign it to a new object called **`df_gapminder`**:
+
+```{r}
+df_gapminder <- gapminder::gapminder
+```
+
+
+```{r}
+#| echo: false
+
+DT::datatable(df_gapminder, options = list(
+  pageLength = 12
+))
+```
+
+
+## Tasks
+- 🤖 **Task 1:** Fill in the blanks in the provided `ggplot()` code chunk.  
+- 💬 **Task 2:** Add a brief comment describing **the relationship between GDP per capita (`gdpPercap`) and life expectancy (`lifeExp`) varies by continents (`continent`)**.
+
+
+
+### (1) Color: Only Scatterplot
+```{r}
+#| echo: false
+ggplot(data = df_gapminder,
+       mapping = aes(x = log(gdpPercap),
+                     y = lifeExp,
+                     color = continent)) +  # different colors are used to distinguish continents
+  geom_point(alpha = .5)  # Add 50% transparency to reduce overplotting
+```
+
+```{r}
+#| eval: false
+ggplot(__BLANK_1__ = df_gapminder,
+       mapping = aes(__BLANK_2__ = log(gdpPercap),
+                     __BLANK_3__ = lifeExp,
+                     __BLANK_4__ = continent)) +  # different colors are used to distinguish continents
+  geom_point(__BLANK_5__)  # Add 50% transparency to reduce overplotting
+```
+
+<!-- - While transparency (`alpha`) in the scatterplot partially reduces overplotting, it does not fully address the issue, especially in dense regions.  -->
+<!-- - This is because, in general, the mixing of overlapping transparent colors may be no longer represent the colors of the categories.  -->
+<!-- - Adding fitted lines clarifies the differences in relationships across continents. -->
+
+<br>
+
+### (2) Color: Scatterplot with Fitted Line
+```{r}
+#| echo: false
+ggplot(data = df_gapminder,
+       mapping = aes(x = log(gdpPercap),
+                     y = lifeExp,
+                     color = continent)) +  # different colors are used to distinguish continents
+  geom_point(alpha = .5) + # Add transparency to reduce overplotting
+  geom_smooth(method = "lm")
+```
+
+```{r}
+#| eval: false
+ggplot(__BLANK_1__ = df_gapminder,
+       mapping = aes(__BLANK_2__ = log(gdpPercap),
+                     __BLANK_3__ = lifeExp,
+                     __BLANK_4__ = continent)) +  # different colors are used to distinguish continents
+  geom_point(__BLANK_5__) +  # Add 50% transparency to reduce overplotting
+  geom___BLANK_6__(method = "lm")
+```
+
+<!-- - The different slopes of the fitted lines across continents imply that the relationship between GDP per capita and life expectancy differs by continent.  -->
+<!--   - Continents like the Americas and Oceania display steeper slopes, indicating a stronger positive association between GDP per capita and life expectancy.  -->
+<!--   - This suggests that for the same percentage increase in GDP per capita, the improvement in life expectancy is greater in these regions compared to others. -->
+
+<br>
+
+### (3) Facet: Scatterplot with Fitted Line
+```{r}
+#| echo: false
+ggplot(data = df_gapminder,
+       mapping = aes(x = log(gdpPercap),
+                     y = lifeExp,
+                     color = continent)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~continent)
+```
+
+```{r}
+#| eval: false
+ggplot(__BLANK_1__ = df_gapminder,
+       mapping = aes(__BLANK_2__ = log(gdpPercap),
+                     __BLANK_3__ = lifeExp,
+                     __BLANK_4__ = continent)) +
+  geom_point(__BLANK_5__ = 0.3) +  # Add 70% transparency to reduce overplotting
+  geom___BLANK_6__(method = "lm") +
+  facet___BLANK_7__(~continent)
+```
+
+<!-- - The faceted view significantly reduces overplotting and provides a more detailed look at regional differences. -->
+<!--   - However, using `color` only can make it easier to compare the slope of the fitted lines across continents. -->
+
+
+<br>
+
+
+# Question 3. Color vs. Facet
+- What are the **advantages** of using **faceting** instead of the `color` aesthetic?  
+- What are the **disadvantages**?  
+- How might this **trade-off** change if you were working with a **larger dataset**?
+
+
+
+<!-- - Advantages of Faceting -->
+<!-- 	1. Clarity for Multiple Categories: Faceting avoids the visual clutter of overlapping points and lines, especially when the number of categories (e.g., `Genre`) is large. -->
+<!-- 	2. Highlights Individual Patterns: By splitting the data into separate plots, it’s easier to observe specific trends or outliers within each genre. -->
+<!-- 	3. Improved Readability: Each genre gets its own visual space, avoiding the need to distinguish between multiple colors. -->
+
+<!-- - Disadvantages of Faceting -->
+<!-- 	- Difficult Cross-Category Comparison: Observations in separate facets cannot be directly compared. Audiences need to read through all facets. -->
+
+<!-- - Impact with Larger Dataset -->
+<!-- 	-	More Data Points: Overlapping increases, making faceting a more practical option to reduce clutter. Color aesthetics may struggle to show patterns with dense data points. -->
+<!-- 	-	More Categories: Differentiating between colors becomes harder as the number of categories increases. In such cases, faceting is clearer. -->
+<!-- 	-	Transparency Issues: Using transparency (`alpha`) with many overlapping points and colors can result in a loss of clear category identification. -->
+
+<br>

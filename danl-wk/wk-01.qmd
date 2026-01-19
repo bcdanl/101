@@ -1,0 +1,95 @@
+---
+title: Week 1
+subtitle: Introduction, Context & Key Concept
+date: 2025-08-25
+from: markdown+emoji
+---
+
+Welcome to DANL 101, the first step in your data analytics journey! 👋 
+
+In this first week, we will explore what you can expect to learn in this course and review the logistics, including the structure of lectures, classes, and assessments, as well as how we will interact throughout the semester. This week also sets the stage for what is ahead by introducing key tools and foundational concepts in data analytics.
+
+## 📓 Syllabus
+
+- Please read the [syllabus](../syllabus.html){target="_blank"}.
+
+
+## 🏫 Lecture Slides  
+
+- **Lecture 1 — Syllabus**  
+  [View Slides](../danl-lec/danl-101-lec-01-2025-0825.html){target="_blank"}  
+
+- **Lecture 2 — DANL Tools and Machine Learning**  
+  [View Slides](../danl-lec/danl-101-lec-02-2025-0827.html){target="_blank"}  
+
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+
+
+## 📚 Recommended Reading
+
+### Machine Learning
+
+#### What is Machine Learning?
+
+Machine learning is a type of artificial intelligence that performs data analysis tasks without explicit instructions. Machine learning technology can process large quantities of historical data, identify patterns, and predict new relationships between previously unknown data. You can perform classification and prediction tasks on documents, images, numbers, and other data types. 
+
+For example, a financial organization could train a machine learning system to classify fraudulent and genuine transactions. The system identifies patterns in known data to accurately guess or predict whether a new transaction is genuine.
+
+#### How does machine learning work?
+
+The central idea behind machine learning is an existing mathematical relationship between any input and output data combination. The machine learning model does not know this relationship in advance but can guess if sufficient examples of input-output data sets are given. This means every machine learning algorithm is built around a modifiable math function. The underlying principle can be understood like this:
+
+We ‘train’ the algorithm by giving it the following input/output (i,o) combinations – (2,10), (5,19), and (9,31)
+
+The algorithm computes the relationship between input and output to be: o=3*i+4
+
+We then give it input 7 and ask it to predict the output. It can automatically determine the output as 25.
+
+While this is a basic understanding, machine learning focuses on the principle that computer systems can mathematically link all complex data points as long as they have sufficient data and computing power to process. Therefore, the accuracy of the output is directly co-relational to the magnitude of the input given. Machine learning phases are given below.
+
+
+#### What are the benefits of machine learning?
+
+Data is the critical driving force behind business decision-making. Modern organizations generate data from thousands of sources, including smart sensors, customer portals, social media, and application logs. Machine learning automates and optimizes the process of data collection, classification, and analysis. Businesses can drive growth, unlock new revenue streams, and solve challenging problems faster.
+
+Benefits of machine learning include:
+
+- **Enhanced decision making**
+
+Machine learning systems can process and analyze massive data volumes quickly and accurately. They can identify unforeseen patterns in dynamic and complex data in real time. Organizations can make data-driven decisions at runtime and respond more effectively to changing conditions. They can optimize operations and mitigate risks with confidence.
+
+- **Automation of routine tasks**
+
+Machine learning algorithms can filter, sort, and classify data without human intervention. They can summarize reports, scan documents, transcribe audio, and tag content—tasks that are tedious and time-consuming for humans to perform. Automating routine and repetitive tasks leads to substantial productivity gains and cost reductions. You also get improved accuracy and efficiency.
+
+- **Improved customer experiences**
+
+Machine learning transforms customer experiences through personalization. For example, retailers recommend products to customers based on previous purchases, browsing history, and search patterns. Streaming services customize viewing recommendations in the entertainment industry. The personalized approach increases customer retention and brand loyalty.
+
+- **Proactive resource management**
+
+Organizations use machine learning to forecast trends and behaviors with high precision. For example, predictive analytics can anticipate inventory needs and optimize stock levels to reduce overhead costs. Predictive insights are crucial for planning and resource allocation, making organizations more proactive rather than reactive.
+
+- **Continuous improvement**
+
+A distinctive advantage of machine learning is its ability to improve as it processes more data. Machine learning systems adapt and learn from new data. They adjust and enhance their performance to remain practical and relevant over time.
+
+#### Reference
+- [AWS - What is Machine Learning?](https://aws.amazon.com/what-is/machine-learning/)
+
+⚠️ Note: These excerpts from the above article are shared under fair use for educational purposes to support your learning.
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 1 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 1.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 1 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

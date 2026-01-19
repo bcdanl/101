@@ -1,0 +1,425 @@
+---
+title: Classwork 14
+subtitle: "Distribution Plots and Counting"
+date: 2025-11-17
+from: markdown+emoji
+
+fig-width: 10
+execute: 
+  eval: true
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(gapminder)
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_fill_discrete <- function(...) scale_fill_viridis_d(...)
+
+```
+
+
+# R Packages
+
+For Classwork 14, please load the following R packages and create the data.frame `nycflights13::flights`:
+```{r}
+# install.packages("ggthemes")
+library(ggthemes)
+library(tidyverse)
+
+flights <- nycflights13::flights
+```
+
+
+# Question 1
+🤖 **Task:** Fill in the blanks in the provided `ggplot()` code chunk to visualize the distribution of `air_time` (minutes spent in the air).
+
+
+```{r}
+#| echo: false
+ggplot(data = flights,
+       mapping = aes(x = air_time)) +
+  geom_histogram(binwidth = 1)
+```
+
+```{r}
+#| eval: false
+
+ggplot(data = flights,
+       mapping = aes(__BLANK_1__)) +
+  geom___BLANK_2__(__BLANK_3__ = 1)
+```
+
+
+<br>
+
+
+# Question 2
+🤖 **Task:** Fill in the blanks in the provided `ggplot()` code chunk to visualize how the distribution of `air_time` (minutes spent in the air) varies by `origin`.
+
+## Part A. Histograms
+
+```{r}
+#| echo: false
+ggplot(data = flights,
+       mapping = aes(x = air_time)) +
+  geom_histogram(bins = 50,
+                 fill = "lightblue") +
+  facet_wrap(~origin)
+```
+
+```{r}
+#| eval: false
+ggplot(data = flights,
+       mapping = aes(__BLANK_1__)) +
+  geom___BLANK_2__(__BLANK_3__ = 50,
+                   __BLANK_4__ = "lightblue") +
+  facet_wrap(__BLANK_5__)
+```
+
+<br>
+
+## Part B. Boxplots
+
+```{r}
+#| echo: false
+ggplot(data = flights,
+       mapping = aes(x = air_time,
+                     y = origin,
+                     fill = origin)) +
+  geom_boxplot(show.legend = FALSE)
+```
+
+```{r}
+#| eval: false
+ggplot(data = flights,
+       mapping = aes(__BLANK_1__,
+                     y = __BLANK_2__,
+                     __BLANK_3__,
+                     )) +
+  geom___BLANK_4__(show.legend = FALSE)
+```
+
+
+<br>
+
+# Question 3
+
+🤖 **Task:** Create the data frame `top3_n`, containing **two variables** and **five observations**:
+
+- `carrier`: the **top 3 carriers** ranked by number of flights  
+- `n`: the **number of flights** operated by each of those carriers
+
+
+```{r}
+#| echo: false
+top3_n <- flights |> 
+  count(carrier) |> 
+  arrange(-n) |> 
+  head(3)
+
+rmarkdown::paged_table(top3_n)
+```
+
+```{r}
+#| eval: false
+__BLANK_1__ <- flights |> 
+  __BLANK_2__ |> 
+  __BLANK_3__( desc(n) ) |> 
+  head(3)  # returns the first 3 observations in the given data.frame
+```
+
+
+
+
+<br>
+
+
+# Question 4
+🤖 **Task:** Create the data.frame `top3_carriers`, containing **six variables** (`month`, `day`, `dep_time`, `carrier`, `origin`, and `dest`) and **all observations** for **flights** operated by **only the top 3 carriers** identified in *Question 3*.
+
+
+```{r}
+#| echo: false
+top3_carriers <- flights |> 
+  filter(carrier == "UA" |
+         carrier == "B6" |
+         carrier == "EV" ) |> 
+  select(month, day, dep_time, carrier, origin, dest)
+
+rmarkdown::paged_table(top3_carriers)
+```
+
+
+```{r}
+#| eval: false
+__BLANK_1__ <- flights |> 
+  filter(__BLANK_2__) |> 
+  __BLANK_3__(month, day, dep_time, carrier, origin, dest)
+```
+
+
+<br>
+
+
+# Question 5
+🤖 **Task:** Fill in the blanks in the provided `ggplot()` code chunks to visualize the distribution of `carrier` using the `top3_carriers` data.frame.
+
+
+## Part A. Bar Charts
+```{r}
+#| echo: false
+ggplot(data = top3_carriers,
+       mapping = aes(y = carrier,
+                     fill = carrier)) +
+  geom_bar(show.legend = FALSE)
+```
+
+
+```{r}
+#| eval: false
+ggplot(data = top3_carriers,
+       mapping = aes(__BLANK_1__,
+                     fill = __BLANK_2__)) +
+  geom___BLANK_3__(show.legend = FALSE)
+```
+
+
+
+## Part B. Proportion Bar Charts
+```{r}
+#| echo: false
+ggplot(data = top3_carriers,
+       mapping = aes(y = carrier,
+                     x = after_stat(prop),
+                     group = 1)) +
+  geom_bar(show.legend = FALSE)
+```
+
+
+```{r}
+#| eval: false
+ggplot(data = top3_carriers,
+       mapping = aes(__BLANK_1__,
+                     x = __BLANK_2__,
+                     __BLANK_3__ = 1)) +
+  geom___BLANK_4__(show.legend = FALSE)
+```
+
+
+
+<br>
+
+# Question 6
+🤖 **Task:** Fill in the blanks in the provided `ggplot()` code chunks to visualize how the distribution of `carrier` varies by `origin` using the `top3_carriers` data.frame.
+
+
+## Part A. Stacked Bar Charts
+
+```{r}
+#| echo: false
+ggplot(data = top3_carriers,
+       mapping = aes(y = origin,
+                     fill = carrier)) +
+  geom_bar()
+```
+
+
+```{r}
+#| eval: false
+ggplot(data = __BLANK_1__,
+       mapping = aes(y = __BLANK_2__,
+                     __BLANK_3__)) +
+  geom_bar()
+```
+
+<br>
+
+## Part B. 100% Stacked Bar Charts
+```{r}
+#| echo: false
+
+ggplot(data = top3_carriers,
+       mapping = aes(y = origin,
+                     fill = carrier)) +
+  geom_bar(position = "fill") +
+  labs(x = "Proportion") # label x-axis title
+```
+
+```{r}
+#| eval: false
+ggplot(data = __BLANK_1__,
+       mapping = aes(y = __BLANK_2__,
+                     __BLANK_3__)) +
+  geom_bar(position = __BLANK_4__) +
+  labs(x = "Proportion") # label x-axis title
+```
+
+
+<br>
+
+
+## Part C. Clustered Bar Charts
+```{r}
+#| echo: false
+ggplot(data = top3_carriers,
+       mapping = aes(y = origin,
+                     fill = carrier)) +
+  geom_bar(position = "dodge")
+```
+
+```{r}
+#| eval: false
+ggplot(data = __BLANK_1__,
+       mapping = aes(y = __BLANK_2__,
+                     __BLANK_3__)) +
+  geom_bar(position = __BLANK_4__)
+```
+
+
+## Part D. Facetted Bar Charts
+
+```{r}
+#| echo: false
+ggplot(data = top3_carriers,
+       mapping = aes(y = carrier,
+                     fill = carrier)) +
+  geom_bar(show.legend = F) +
+  facet_wrap(~origin) +
+  theme(
+    axis.text.x = element_text(angle = 45,
+                               margin = margin(20,0,0,0))
+    )
+  
+```
+
+```{r}
+#| eval: false
+ggplot(data = __BLANK_1__,
+       mapping = aes(y = __BLANK_2__,
+                     __BLANK_3__)) +
+  geom_bar(show.legend = FALSE) +
+  facet_wrap(__BLANK_4__)
+```
+
+
+<br>
+
+# Question 7
+🤖 **Task:** Fill in the blanks in the provided `ggplot()` code chunk to visualize the distribution of `carrier` using the `top3_n` data.frame.
+
+```{r}
+#| echo: false
+ggplot(data = top3_n,
+       mapping = aes(x = n,
+                     y = carrier,
+                     fill = carrier)) +
+  geom_col(show.legend = FALSE)
+```
+
+```{r}
+#| eval: false
+ggplot(data = top3_n,
+       mapping = aes(x = __BLANK_1__,
+                     y = __BLANK_2__,
+                     __BLANK_3__)) +
+  geom___BLANK_4__(show.legend = FALSE)
+```
+
+
+<br>
+
+
+# Question 8
+🤖 **Task:** Fill in the blanks in the provided `ggplot()` code chunk to visualize the **sorted** distribution of  `carrier`' using the `top3_n` data.frame.
+
+```{r}
+#| echo: false
+ggplot(data = top3_n,
+       mapping = aes(x = n,
+                     y = fct_reorder(carrier, n))) +
+  geom_col() +
+  labs(y = "Carrier")
+```
+
+
+```{r}
+#| eval: false
+ggplot(data = top3_n,
+       mapping = aes(x = __BLANK_1__,
+                     y = __BLANK_2__)) +
+  geom___BLANK_3__() +
+  labs(y = "Carrier")   # label y-axis title
+```
+
+
+
+<br>
+
+
+
+# Question 9
+
+🤖 **Task:** Create a data.frame named `carrier_per_origin` with the following variables:
+
+- `origin`: the origin airport  
+- `carrier`: the airline carrier  
+- `n`: the number of flights operated by each **carrier** from each **origin** airport  
+
+The `carrier_per_origin` data.frame should contain the **count of flights** for every carrier–origin combination.
+
+
+
+```{r}
+#| echo: false
+carrier_per_origin <- flights |> 
+  count(origin, carrier) |> 
+  arrange(origin, -n)
+
+rmarkdown::paged_table(carrier_per_origin, 
+                       options = list(rows.print = 35))
+```
+
+
+```{r}
+#| eval: false
+
+carrier_per_origin <- flights |> 
+  __BLANK__ |> 
+  arrange(origin, -n)
+```
+
+
+
+<br>
+

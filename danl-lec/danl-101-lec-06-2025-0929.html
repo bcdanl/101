@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
+
+  <meta name="author" content="Byeong-Hak Choe">
+  <meta name="dcterms.date" content="2025-09-29">
+  <title>Lecture 6</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  
+  <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+  <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+  <script src="../site_libs/datatables-binding-0.33/datatables.js"></script>
+  <script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+  <script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+  <link href="../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+  <script src="../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Lecture 6</h1>
+  <p class="subtitle">Data Transformation with R</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Byeong-Hak Choe 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:bchoe@geneseo.edu">bchoe@geneseo.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            SUNY Geneseo
+          </p>
+    </div>
+</div>
+
+  <p class="date">September 29, 2025</p>
+</section>
+<section>
+<section id="reading-a-data-table-as-a-data.frame" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Reading a Data Table as a <code>data.frame</code></h1>
+
+</section>
+<section id="csv-files" class="slide level2">
+<h2>CSV Files</h2>
+<ul>
+<li class="fragment">A <strong>CSV</strong> (comma-separated values) file is a plain text file where each value is separated by a comma.
+<ul>
+<li class="fragment">CSV files are widely used for storing data from spreadsheets and databases.</li>
+</ul></li>
+<li class="fragment"><strong>Example</strong>
+<ul>
+<li class="fragment"><a href="https://bcdanl.github.io/data/tvshows.csv"><code>https://bcdanl.github.io/data/tvshows.csv</code></a></li>
+</ul></li>
+</ul>
+</section>
+<section id="absolute-pathnames" class="slide level2">
+<h2>Absolute Pathnames</h2>
+<ul>
+<li class="fragment">An <strong>absolute pathname</strong> tells the computer the <em>exact location</em> of a file, starting from the very top folder of your computer.
+<ul>
+<li class="fragment">This location never changes, no matter where you are working in R.<br>
+</li>
+</ul></li>
+<li class="fragment">In R, you can see the <strong>working directory</strong> — the folder where R is currently “looking” for files — by running <code>getwd()</code> in the <strong>Console</strong>.
+<ul>
+<li class="fragment">In a <em>Posit Cloud</em>, the <em>working directory</em> is <code>/cloud/project/</code></li>
+</ul></li>
+<li class="fragment"><strong>Examples of an absolute pathname for <code>custdata_rev.csv</code>:</strong>
+<ul>
+<li class="fragment">On a Mac:<br>
+<code>/Users/user/documents/data/custdata_rev.csv</code><br>
+</li>
+<li class="fragment">On Windows:<br>
+<code>C:\\Users\\user\\Documents\\data\\custdata_rev.csv</code>
+<ul>
+<li class="fragment">Note: In Windows, we use <strong>double backslashes (<code>\\</code>)</strong> because a single backslash (<code>\</code>) is treated as a special character in R.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="relative-pathnames" class="slide level2">
+<h2>Relative Pathnames</h2>
+<ul>
+<li class="fragment">A <strong>relative pathname</strong> specifies the location of a file <em>relative to the working directory</em>.<br>
+</li>
+<li class="fragment"><strong>Examples of a relative pathname for <code>custdata_rev.csv</code>:</strong>
+<ul>
+<li class="fragment">Absolute pathname:<br>
+<code>/cloud/project/data/custdata_rev.csv</code><br>
+</li>
+<li class="fragment">Working directory:<br>
+<code>/cloud/project/</code><br>
+</li>
+<li class="fragment">Relative pathname:<br>
+<code>data/custdata_rev.csv</code><br>
+</li>
+</ul></li>
+<li class="fragment">In <em>Posit Cloud</em>, we typically use <em>relative pathnames</em> to access files inside the project folder.</li>
+</ul>
+</section>
+<section id="steps-for-reading-a-csv-file-as-a-data.frame" class="slide level2">
+<h2>Steps for Reading a CSV File as a <code>data.frame</code></h2>
+<!-- <div style="display:block; margin:-10px;"></div> -->
+<div>
+<!-- Use the `read_csv()` function (from the **tidyverse**) to load a CSV file into R as a `data.frame`.   -->
+<div style="display:block; margin:-10px;">
+
+</div>
+<ol type="1">
+<li>Download <code>custdata_rev.csv</code> from the <em>Class Files</em> module in <em>Brightspace</em>.
+<ul>
+<li>The file will usually be saved in your computer’s <strong>Downloads</strong> folder.</li>
+<li>Do <strong>not</strong> open this file in a spreadsheet app (e.g., <em>Excel</em> or <em>Numbers</em>).</li>
+</ul></li>
+<li>In <em>Posit Cloud</em>, create a subfolder named <strong>data</strong> (<em>Files Pane</em> → <em>+ Folder</em>).<br>
+</li>
+<li>Click the <strong>data</strong> folder, then upload the <code>custdata_rev.csv</code> file into it.
+<ul>
+<li>At the top of the <em>Files Pane</em>, click <strong>Upload</strong> to choose and add your file.</li>
+</ul></li>
+<li>Read the file using a <em>relative pathname</em>:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># Read the CSV file from the data subfolder</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>custdata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/custdata_rev.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">view</span>(custdata)  <span class="co"># Opens a `data.frame` in a spreadsheet-like viewer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li class="fragment"><code>view(DF)</code> (or <code>View(DF)</code>) opens a <code>DF</code> in a spreadsheet-like viewer.</li>
+</ul>
+</section>
+<section id="load-a-csv-file-directly-from-the-web-into-r" class="slide level2">
+<h2>Load a CSV File Directly from the Web into R</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Read the CSV file directly from the web (GitHub repo)</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>custdata_web <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb2-3"><a href="#cb2-3"></a>        <span class="st">'https://bcdanl.github.io/data/custdata_rev.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">We can load a CSV file directly from the web into R.</li>
+</ul>
+</section>
+<section id="getting-to-know-a-data.frame" class="slide level2">
+<h2>Getting to Know a <code>data.frame</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">class</span>(custdata)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>custdata<span class="sc">$</span>age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">dim</span>(custdata)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">nrow</span>(custdata)</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">ncol</span>(custdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">summary</span>(custdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Install once</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">install.packages</span>(<span class="st">"skimr"</span>)  </span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">skim</span>(custdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment">The <code>$</code> operator extracts a single column from a <code>data.frame</code> as a <code>vector</code>.<br>
+</li>
+<li class="fragment"><code>dim()</code> shows both the number of rows and columns.<br>
+</li>
+<li class="fragment"><code>nrow()</code> and <code>ncol()</code> give the row count and column count separately.<br>
+</li>
+<li class="fragment"><code>summary()</code> gives a quick overview, while <code>skimr::skim()</code> provides a more detailed, user-friendly summary of variables across all data types.</li>
+</ul>
+</section>
+<section id="observations-in-data.frame" class="slide level2">
+<h2>Observations in <code>data.frame</code></h2>
+<ul>
+<li class="fragment"><strong>Rows</strong> in a <code>data.frame</code> represent individual units or entities for which data is collected.<br>
+</li>
+<li class="fragment"><strong>Examples</strong>:
+<ul>
+<li class="fragment"><em>Student Information</em>: Each row = one student<br>
+</li>
+<li class="fragment"><em>Employee Information</em>: Each row = one employee<br>
+</li>
+<li class="fragment"><em>Daily S&amp;P 500 Index Data</em>: Each row = one trading day<br>
+</li>
+<li class="fragment"><em>Household Survey Data</em>: Each row = one household</li>
+</ul></li>
+</ul>
+</section>
+<section id="variables-in-data.frame" class="slide level2">
+<h2>Variables in <code>data.frame</code></h2>
+<ul>
+<li class="fragment"><strong>Columns</strong> in a <code>data.frame</code> represent attributes or characteristics measured across multiple <em>observations</em>.<br>
+</li>
+<li class="fragment"><strong>Examples</strong>:
+<ul>
+<li class="fragment"><em>Student Data</em>: <code>Name</code>, <code>Age</code>, <code>Grade</code>, <code>Major</code><br>
+</li>
+<li class="fragment"><em>Employee Data</em>: <code>EmployeeID</code>, <code>Name</code>, <code>Age</code>, <code>Department</code><br>
+</li>
+<li class="fragment"><em>Customer Data</em>: <code>CustomerID</code>, <code>Name</code>, <code>Age</code>, <code>Income</code>, <code>HousingType</code></li>
+</ul></li>
+</ul>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">In a <code>data.frame</code>, a <strong>variable</strong> is a <strong>column</strong> of data.<br>
+</li>
+<li class="fragment">In general programming, a <strong>variable</strong> is the <strong>name of an object</strong>.<br>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="tidy-data.frame" class="slide level2">
+<h2>Tidy <code>data.frame</code></h2>
+<h3 id="variables-observations-and-values">Variables, Observations, and Values</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>table1  <span class="co"># a sample data.frame from the tidyr package (part of the tidyverse)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="display:block; margin:-10px;">
+
+</div>
+<div style="text-align: center; width: 80%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/tidy-1.png" style="width: 100%; margin-bottom: -50px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+<ul>
+<li class="fragment"><p>A <code>data.frame</code> is <em>tidy</em> if it follows three rules:</p>
+<ol type="1">
+<li class="fragment">Each <strong>variable</strong> has its own <em>column</em>.<br>
+</li>
+<li class="fragment">Each <strong>observation</strong> has its own <em>row</em>.<br>
+</li>
+<li class="fragment">Each <strong>value</strong> has its own <em>cell</em>.</li>
+</ol></li>
+<li class="fragment"><p>A tidy <code>data.frame</code> keeps your data organized, making it easier to understand, analyze, and share in any data analysis.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="data-transformation-with-dplyr" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Data Transformation with <code>dplyr</code></h1>
+
+</section>
+<section id="data-transformation-with-dplyr-1" class="slide level2">
+<h2>Data Transformation with <code>dplyr</code></h2>
+<div class="columns">
+<div class="column" style="width:15%;">
+<div style="text-align: center; width: 100%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/dplyr-logo.png" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+</div><div class="column" style="width:85%;">
+<div style="display:block; margin:35px;">
+
+</div>
+<ul>
+<li class="fragment"><strong><code>dplyr</code></strong> is a core <strong>tidyverse</strong> package for <em>data manipulation</em> — tasks like filtering, sorting, selecting, and renaming.<br>
+</li>
+</ul>
+</div>
+</div>
+<ul>
+<li class="fragment">Common <code>dplyr</code> functions with <strong>data.frame</strong> <code>DF</code>:
+<ul>
+<li class="fragment"><code>filter(DF, LOGICAL_CONDITIONS)</code><br>
+</li>
+<li class="fragment"><code>arrange(DF, VARIABLES)</code><br>
+</li>
+<li class="fragment"><code>distinct(DF, VARIABLES)</code><br>
+</li>
+<li class="fragment"><code>select(DF, VARIABLES)</code><br>
+</li>
+<li class="fragment"><code>rename(DF, NEW_NAME = CURRENT_NAME)</code></li>
+</ul></li>
+<li class="fragment"><code>dplyr</code> functions take a <strong>data.frame</strong> as the first argument.
+<ul>
+<li class="fragment">They return a <strong>data.frame</strong> as output.</li>
+</ul></li>
+</ul>
+</section>
+<section id="making-dplyr-code-flow-with-the-pipe-operator" class="slide level2">
+<h2>Making <code>dplyr</code> Code Flow with the Pipe Operator</h2>
+<ul>
+<li class="fragment">The <strong>pipe</strong> operator (<code>|&gt;</code> or <code>%&gt;%</code>) makes code easier to read by connecting steps in order.<br>
+</li>
+<li class="fragment">How it works:
+<ul>
+<li class="fragment"><code>f(x, y)</code> is the same as <code>x |&gt; f(y)</code>.<br>
+</li>
+<li class="fragment">Example with a <strong>data frame</strong> <code>DF</code>:
+<ul>
+<li class="fragment"><code>filter(DF, logical_condition)</code><br>
+</li>
+<li class="fragment">is the same as<br>
+<code>DF |&gt; filter(logical_condition)</code></li>
+</ul></li>
+</ul></li>
+<li class="fragment">You can read the pipe as <strong>“then”</strong>:
+<ul>
+<li class="fragment">Example: <em>Take the data, <strong>then</strong> filter it</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="data-transformation-functions-with-the-pipe" class="slide level2">
+<h2>Data Transformation Functions with the Pipe</h2>
+<ul>
+<li class="fragment">Common <code>dplyr</code> functions with the pipe operator:
+<ul>
+<li class="fragment"><code>DF |&gt; filter(LOGICAL_CONDITIONS)</code><br>
+</li>
+<li class="fragment"><code>DF |&gt; arrange(VARIABLES)</code><br>
+</li>
+<li class="fragment"><code>DF |&gt; distinct(VARIABLES)</code><br>
+</li>
+<li class="fragment"><code>DF |&gt; select(VARIABLES)</code><br>
+</li>
+<li class="fragment"><code>DF |&gt; rename(NEW_NAME = CURRENT_NAME)</code></li>
+</ul></li>
+<li class="fragment">Why this works so well:
+<ul>
+<li class="fragment"><code>dplyr</code> functions usually take a <strong>data.frame</strong> as the first argument.<br>
+</li>
+<li class="fragment">They return a <strong>data.frame</strong> as output.</li>
+</ul></li>
+<li class="fragment">This allows you to chain together multiple steps naturally:
+<ul>
+<li class="fragment"><em>Example</em>: <em>Start with data, <strong>then</strong> filter, <strong>then</strong> arrange</em><br>
+<span class="math inline">\(\qquad\quad\;\;\)</span> <code>DF |&gt; filter(...) |&gt; arrange(...)</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="using-the-pipe-in-posit-cloud" class="slide level2">
+<h2>Using the Pipe in Posit Cloud</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="text-align: center; width: 90%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/rstudio-pipe.png" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment">To enable the <strong>native pipe operator</strong> (<code>|&gt;</code>) in RStudio:
+<ul>
+<li class="fragment">Go to <strong>Tools</strong> &gt; <strong>Global Options</strong> &gt; <strong>Code</strong> (side menu).<br>
+</li>
+<li class="fragment">Under <em>Pipe operator</em>, choose <strong>Use native pipe operator (<code>|&gt;</code>)</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<ul>
+<li class="fragment">Keyboard shortcut for inserting a <strong>pipe</strong>:
+<ul>
+<li class="fragment">Windows: <strong>Ctrl + Shift + M</strong><br>
+</li>
+<li class="fragment">Mac: <strong>Cmd + Shift + M</strong></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="filter-observations-with-filter" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Filter observations with <code>filter()</code></h1>
+
+</section>
+<section id="filter-observations-with-filter-1" class="slide level2">
+<h2>Filter Observations with <code>filter()</code></h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">install.packages</span>(<span class="st">"nycflights13"</span>)  <span class="co"># Install once</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(nycflights13)</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a>flights <span class="ot">&lt;-</span> nycflights13<span class="sc">::</span>flights</span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a>flights<span class="sc">$</span>month <span class="sc">==</span> <span class="dv">1</span>  <span class="co"># A logical test returns TRUE or FALSE</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="fu">class</span>(flights<span class="sc">$</span>month <span class="sc">==</span> <span class="dv">12</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Flights in January or December</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>jan <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb9-4"><a href="#cb9-4"></a></span>
+<span id="cb9-5"><a href="#cb9-5"></a>dec <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> </span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:55%;">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Flights on January 1st or December 25th</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>jan1 <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">1</span>, day <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a>dec25 <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> </span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">12</span>, day <span class="sc">==</span> <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment"><code>filter()</code> keeps only the observations that meet one or more <strong>logical conditions</strong>.
+<ul>
+<li class="fragment">A <strong>logical condition</strong> evaluates to <code>TRUE</code> (keep the observation) or <code>FALSE</code> (drop the observation).</li>
+</ul></li>
+</ul>
+</section>
+<section id="logical-conditions-with-equality-and-inequality" class="slide level2">
+<h2>Logical Conditions with Equality and Inequality</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-13e1a32988b201b0d681" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-13e1a32988b201b0d681">{"x":{"filter":"none","vertical":false,"data":[["V1 == V2","V1 != V2","V1 &gt; V2","V1 &gt;= V2","V1 &lt; V2","V1 &lt;= V2"],["Is V1 equal to V2?","Is V1 not equal to V2?","Is V1 greater than V2?","Is V1 greater than or equal to V2?","Is V1 less than V2?","Is V1 less than or equal to V2?"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Condition<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Condition","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+<div>
+<ul>
+<li>Here, both <code>V1</code> and <code>V2</code> are <strong>variables</strong>, and the comparisons are applied <em>element-wise</em> (vectorized).</li>
+</ul>
+</div>
+<div style="display:block; margin:-20px;">
+
+</div>
+<ul>
+<li class="fragment">For <strong>logical conditions</strong> using <em>inequalities</em>, we focus on cases where <code>V1</code> and <code>V2</code> are <code>integer</code> or <code>numeric</code>.</li>
+</ul>
+</section>
+<section id="logical-conditions---example-1" class="slide level2">
+<h2>Logical Conditions - Example 1</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="at">num =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>),</span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="at">chr =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-98de2de98055c1843a17" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-98de2de98055c1843a17">{"x":{"filter":"none","vertical":false,"data":[[8,9,10,11],["A","C","B","A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>num<\/th>\n      <th>chr<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"className":"dt-right","targets":0},{"name":"num","targets":0},{"name":"chr","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">filter</span>(num <span class="sc">&gt;</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-deb0ddd89db099f15c8d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-deb0ddd89db099f15c8d">{"x":{"filter":"none","vertical":false,"data":[[9,10,11],["C","B","A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>num<\/th>\n      <th>chr<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"className":"dt-right","targets":0},{"name":"num","targets":0},{"name":"chr","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+<div style="display:block; margin:20px;">
+
+</div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">filter</span>(chr <span class="sc">==</span> <span class="st">"A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-f662d7a86fbc2811398f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f662d7a86fbc2811398f">{"x":{"filter":"none","vertical":false,"data":[[8,11],["A","A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>num<\/th>\n      <th>chr<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"className":"dt-right","targets":0},{"name":"num","targets":0},{"name":"chr","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="logical-operators-and-or-not" class="slide level2">
+<h2>Logical Operators — AND, OR, NOT</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-b3699663a5f792c66087" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b3699663a5f792c66087">{"x":{"filter":"none","vertical":false,"data":[["&amp; (AND)","| (OR)","! (NOT)"],["x &amp; y","x | y","!x"],["Are x and y both TRUE?","Is at least one of x and y TRUE?","Is x FALSE?"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Example<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Example","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+<div>
+<ul>
+<li>Here, both <code>x</code> and <code>y</code> are <code>logical</code> conditions/variables.</li>
+</ul>
+</div>
+<div style="display:block; margin:-20px;">
+
+</div>
+<ul>
+<li class="fragment">What <strong>logical operations</strong> (<code>&amp;</code>, <code>|</code>, <code>!</code>) do is combining logical variables/conditions, which returns a <strong><code>logical</code> variable</strong> when executed.</li>
+</ul>
+</section>
+<section id="logical-operations" class="slide level2">
+<h2>Logical Operations</h2>
+<div>
+<ul>
+<li><code>x</code> and <code>y</code> are logical conditions.
+<ul>
+<li>If <code>x</code> is <code>TRUE</code>, it highlights the left circle.<br>
+</li>
+<li>If <code>y</code> is <code>TRUE</code>, it highlights the right circle.</li>
+</ul></li>
+</ul>
+</div>
+<div style="text-align: center; width: 100%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/boolean-operations-xy.jpeg" style="width: 53%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+<div>
+<ul>
+<li>The shaded regions show which parts each logical operator selects.</li>
+</ul>
+</div>
+</section>
+<section id="logical-conditions---example-2" class="slide level2">
+<h2>Logical Conditions - Example 2</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="at">num =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>),</span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="at">chr =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>)</span>
+<span id="cb14-4"><a href="#cb14-4"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-666c647218f27c8e822d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-666c647218f27c8e822d">{"x":{"filter":"none","vertical":false,"data":[[8,9,10,11],["A","C","B","A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>num<\/th>\n      <th>chr<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"className":"dt-right","targets":0},{"name":"num","targets":0},{"name":"chr","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">filter</span>(num <span class="sc">&gt;</span> <span class="dv">8</span> <span class="sc">&amp;</span> </span>
+<span id="cb15-3"><a href="#cb15-3"></a>         num <span class="sc">&lt;</span> <span class="dv">11</span>)</span>
+<span id="cb15-4"><a href="#cb15-4"></a>                </span>
+<span id="cb15-5"><a href="#cb15-5"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">filter</span>(num <span class="sc">&gt;</span> <span class="dv">8</span>,</span>
+<span id="cb15-7"><a href="#cb15-7"></a>         num <span class="sc">&lt;</span> <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-06853040c65b02050e5b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-06853040c65b02050e5b">{"x":{"filter":"none","vertical":false,"data":[[9,10],["C","B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>num<\/th>\n      <th>chr<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"className":"dt-right","targets":0},{"name":"num","targets":0},{"name":"chr","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">In <code>filter()</code>, separating conditions with a <strong>comma</strong> is equivalent to combining them with the <code>&amp;</code> operator.</li>
+</ul>
+</section>
+<section id="logical-conditions---example-3" class="slide level2">
+<h2>Logical Conditions - Example 3</h2>
+<!-- - The `==` is an operator that compares the objects on either side and returns `TRUE` if they have the same values. -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="at">num =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>),</span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="at">chr =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-0acf773cb25b9e460f89" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0acf773cb25b9e460f89">{"x":{"filter":"none","vertical":false,"data":[[8,9,10,11],["A","C","B","A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>num<\/th>\n      <th>chr<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"className":"dt-right","targets":0},{"name":"num","targets":0},{"name":"chr","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">filter</span>(num <span class="sc">&lt;</span> <span class="dv">10</span> <span class="sc">&amp;</span> </span>
+<span id="cb17-3"><a href="#cb17-3"></a>         chr <span class="sc">==</span> <span class="st">"A"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb17-6"><a href="#cb17-6"></a>  <span class="fu">filter</span>(num <span class="sc">&lt;</span> <span class="dv">10</span>, </span>
+<span id="cb17-7"><a href="#cb17-7"></a>         chr <span class="sc">==</span> <span class="st">"A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-d9633660066e666bccda" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d9633660066e666bccda">{"x":{"filter":"none","vertical":false,"data":[[8],["A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>num<\/th>\n      <th>chr<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"className":"dt-right","targets":0},{"name":"num","targets":0},{"name":"chr","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="logical-conditions---example-4" class="slide level2">
+<h2>Logical Conditions - Example 4</h2>
+<!-- - The `==` is an operator that compares the objects on either side and returns `TRUE` if they have the same values. -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="at">num =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>),</span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="at">chr =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-854bffee4d1fdc8dc426" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-854bffee4d1fdc8dc426">{"x":{"filter":"none","vertical":false,"data":[[8,9,10,11],["A","C","B","A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>num<\/th>\n      <th>chr<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"className":"dt-right","targets":0},{"name":"num","targets":0},{"name":"chr","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">filter</span>(num <span class="sc">&lt;</span> <span class="dv">10</span> <span class="sc">|</span> </span>
+<span id="cb19-3"><a href="#cb19-3"></a>         chr <span class="sc">==</span> <span class="st">"A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-bfa68d55ec494c03341b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bfa68d55ec494c03341b">{"x":{"filter":"none","vertical":false,"data":[[8,9,11],["A","C","A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>num<\/th>\n      <th>chr<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"className":"dt-right","targets":0},{"name":"num","targets":0},{"name":"chr","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="missing-values-na" class="slide level2">
+<h2>Missing Values (<code>NA</code>)</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="cn">NA</span> <span class="sc">&gt;</span> <span class="dv">5</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="dv">10</span> <span class="sc">==</span> <span class="cn">NA</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="cn">NA</span> <span class="sc">+</span> <span class="dv">10</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="cn">NA</span> <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>(<span class="dv">1</span> <span class="sc">+</span> <span class="cn">NA</span> <span class="sc">+</span> <span class="dv">3</span>) <span class="sc">/</span> <span class="dv">3</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="fu">mean</span>( <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">3</span>) )</span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="fu">sd</span>( <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">3</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
+<ul>
+<li><code>NA</code> (not available) represents a <strong>missing or unknown value</strong> in R.</li>
+</ul>
+</div>
+<div style="display:block; margin:-20px;">
+
+</div>
+<ul>
+<li class="fragment">In most calculations, if one value is unknown, the result will also be unknown (<code>NA</code>).</li>
+</ul>
+</section>
+<section id="comparing-missing-values" class="slide level2">
+<h2>Comparing Missing Values</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>v1 <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>v2 <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>v1 <span class="sc">==</span> v2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
+<ul>
+<li>Suppose <code>v1</code> is Mary’s age (unknown) and <code>v2</code> is John’s age (unknown).</li>
+<li>Can we say they are the same age?</li>
+</ul>
+</div>
+<div style="display:block; margin:-20px;">
+
+</div>
+<ul>
+<li class="fragment">Since both values are missing, R cannot know — so the result is also <code>NA</code>.</li>
+</ul>
+</section>
+<section id="checking-for-missing-values-with-is.na" class="slide level2">
+<h2>Checking for Missing Values with <code>is.na()</code></h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>num_missing <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="fu">is.na</span>(num_missing)  <span class="co"># is num_missing NA?</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a></span>
+<span id="cb22-4"><a href="#cb22-4"></a>text_missing <span class="ot">&lt;-</span> <span class="st">"missing"</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="fu">is.na</span>(text_missing) <span class="co"># is text_missing NA?</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a></span>
+<span id="cb22-7"><a href="#cb22-7"></a>V1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">3</span>)</span>
+<span id="cb22-8"><a href="#cb22-8"></a><span class="fu">is.na</span>(V1)  <span class="co"># is V1 NA?</span></span>
+<span id="cb22-9"><a href="#cb22-9"></a><span class="sc">!</span><span class="fu">is.na</span>(V1)  <span class="co"># is V1 not NA?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:45%;">
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="at">v1 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">3</span>),</span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="at">v2 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb23-4"><a href="#cb23-4"></a>  )</span>
+<span id="cb23-5"><a href="#cb23-5"></a></span>
+<span id="cb23-6"><a href="#cb23-6"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb23-7"><a href="#cb23-7"></a>  <span class="fu">filter</span>( <span class="fu">is.na</span>(v1) )</span>
+<span id="cb23-8"><a href="#cb23-8"></a></span>
+<span id="cb23-9"><a href="#cb23-9"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb23-10"><a href="#cb23-10"></a>  <span class="fu">filter</span>( <span class="sc">!</span><span class="fu">is.na</span>(v1) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div>
+<ul>
+<li>Use <code>is.na()</code> to test whether a value is missing (<code>NA</code>).</li>
+</ul>
+</div>
+<div style="display:block; margin:-20px;">
+
+</div>
+<ul>
+<li class="fragment">In <code>filter()</code>, you can:
+<ul>
+<li class="fragment">Use <code>is.na()</code> to <strong>keep</strong> observations with missing values.</li>
+<li class="fragment">Use <code>!is.na()</code> to <strong>remove</strong> observations with missing values.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="arrange-observations-with-arrange" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Arrange Observations with <code>arrange()</code></h1>
+
+</section>
+<section id="arrange-observations-with-arrange-1" class="slide level2">
+<h2>Arrange Observations with <code>arrange()</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Sort observations </span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="co"># by dep_delay (ascending)</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">arrange</span>(dep_delay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Sort by dep_delay, </span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="co"># then by sched_dep_time</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">arrange</span>(dep_delay, sched_dep_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment"><code>arrange()</code> sorts out observations.</li>
+<li class="fragment">When you provide multiple variables, <code>arrange()</code> sorts by the first variable, and then uses the next variable(s) to break ties.</li>
+</ul>
+</section>
+<section id="descending-order-with-desc" class="slide level2">
+<h2>Descending Order with <code>desc()</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Sort by departure delay </span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>  <span class="co"># in descending order</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(dep_delay))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Equivalent shortcut </span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="co"># for numeric variables</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb27-4"><a href="#cb27-4"></a>  <span class="fu">arrange</span>(<span class="sc">-</span>dep_delay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment">Use <code>desc(VARIABLE)</code> to sort in descending order.
+<ul>
+<li class="fragment">For <strong>numeric variables</strong>, you can also use a leading minus sign.</li>
+</ul></li>
+</ul>
+</section>
+<section id="arrange-observations-with-arrange---example" class="slide level2">
+<h2>Arrange Observations with <code>arrange()</code> - Example</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb28-2"><a href="#cb28-2"></a>  <span class="at">year =</span> <span class="fu">c</span>(<span class="dv">2024</span>, <span class="dv">2021</span>, <span class="dv">2024</span>, <span class="dv">2024</span>),</span>
+<span id="cb28-3"><a href="#cb28-3"></a>  <span class="at">month =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">7</span>, <span class="dv">4</span>),</span>
+<span id="cb28-4"><a href="#cb28-4"></a>  <span class="at">day =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">19</span>, <span class="dv">15</span>, <span class="dv">9</span>)</span>
+<span id="cb28-5"><a href="#cb28-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-b3f64b329032884c3466" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b3f64b329032884c3466">{"x":{"filter":"none","vertical":false,"data":[[2024,2021,2024,2024],[7,10,7,4],[20,19,15,9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>year<\/th>\n      <th>month<\/th>\n      <th>day<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"className":"dt-right","targets":[0,1,2]},{"name":"year","targets":0},{"name":"month","targets":1},{"name":"day","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">arrange</span>(year, month, day)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-fe8470b2212b302e7649" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fe8470b2212b302e7649">{"x":{"filter":"none","vertical":false,"data":[[2021,2024,2024,2024],[10,4,7,7],[19,9,15,20]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>year<\/th>\n      <th>month<\/th>\n      <th>day<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"className":"dt-right","targets":[0,1,2]},{"name":"year","targets":0},{"name":"month","targets":1},{"name":"day","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">If we provide more than one variable name, each additional variable will be used to break ties in the values of preceding variables.</li>
+</ul>
+</section></section>
+<section>
+<section id="find-all-unique-observations-with-distinct" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Find All Unique Observations with <code>distinct()</code></h1>
+
+</section>
+<section id="find-all-unique-observations-with-distinct-1" class="slide level2">
+<h2>Find All Unique Observations with <code>distinct()</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="at">country =</span> <span class="fu">c</span>(<span class="st">"USA"</span>, <span class="st">"Korea"</span>, <span class="st">"USA"</span>),</span>
+<span id="cb30-3"><a href="#cb30-3"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"D.C."</span>, <span class="st">"Seoul"</span>, <span class="st">"D.C."</span>),</span>
+<span id="cb30-4"><a href="#cb30-4"></a>  <span class="at">subregion =</span> <span class="fu">c</span>(<span class="st">"Georgetown"</span>, </span>
+<span id="cb30-5"><a href="#cb30-5"></a>                <span class="st">"Gangnam"</span>, </span>
+<span id="cb30-6"><a href="#cb30-6"></a>                <span class="st">"Georgetown"</span>) </span>
+<span id="cb30-7"><a href="#cb30-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-58fc4a9046a279e4edcd" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-58fc4a9046a279e4edcd">{"x":{"filter":"none","vertical":false,"data":[["USA","Korea","USA"],["D.C.","Seoul","D.C."],["Georgetown","Gangnam","Georgetown"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>country<\/th>\n      <th>city<\/th>\n      <th>subregion<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"country","targets":0},{"name":"city","targets":1},{"name":"subregion","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Remove duplicate observations</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-1eb7b43695dc1fd1fc55" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1eb7b43695dc1fd1fc55">{"x":{"filter":"none","vertical":false,"data":[["USA","Korea"],["D.C.","Seoul"],["Georgetown","Gangnam"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>country<\/th>\n      <th>city<\/th>\n      <th>subregion<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"country","targets":0},{"name":"city","targets":1},{"name":"subregion","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment"><code>distinct()</code> removes duplicate observations.
+<ul>
+<li class="fragment">By default, it checks all variables to find unique observations.</li>
+</ul></li>
+</ul>
+</section>
+<section id="find-all-unique-combinations-of-selected-variables" class="slide level2">
+<h2>Find All Unique Combinations of Selected Variables</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Remove duplicate observations </span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="co"># from the flights data.frame</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb32-4"><a href="#cb32-4"></a>  <span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Find all unique </span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="co">#  origin-destination pairs</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">distinct</span>(origin, dest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment">You can pass one or more variables to <code>distinct()</code>.
+<ul>
+<li class="fragment">This returns unique combinations of just those variables (while ignoring the rest).</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="select-variables-with-select" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Select Variables with <code>select()</code></h1>
+
+</section>
+<section id="select-variables-with-select-1" class="slide level2">
+<h2>Select Variables with <code>select()</code></h2>
+<div>
+<ul>
+<li><p>It’s not uncommon to get datasets with hundreds or thousands of variables.</p></li>
+<li><p><code>select()</code> allows us to narrow in on the variables we’re actually interested in.</p></li>
+<li><p>We can select variables by their names.</p></li>
+</ul>
+</div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">select</span>(year, month, day)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="remove-variables-with-select" class="slide level2">
+<h2>Remove Variables with <code>select()</code></h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">select</span>(<span class="sc">-</span>year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
+<ul>
+<li>With <code>select(-VARIABLES)</code>, we can remove variables.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="rename-variables-with-rename" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Rename Variables with <code>rename()</code></h1>
+
+</section>
+<section id="rename-variables-with-rename-1" class="slide level2">
+<h2>Rename Variables with <code>rename()</code></h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">rename</span>( <span class="at">tail_num =</span> tailnum )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
+<ul>
+<li><p><code>rename()</code> can be used to rename variables:</p>
+<ul>
+<li><code>DF |&gt; rename(NEW_NAME = CURRENT_NAME)</code></li>
+</ul></li>
+</ul>
+</div>
+
+<div class="footer footer-default">
+
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+    document.addEventListener('wheel', function(event) {
+        if (event.deltaY > 0) {
+            Reveal.next(); // Scroll down to go to the next slide
+        } else {
+            Reveal.prev(); // Scroll up to go to the previous slide
+        }
+    }, false);
+
+    window.onload = function() {
+        document.querySelectorAll('a').forEach(function(link) {
+            link.setAttribute('target', '_blank');
+        });
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Query all anchor tags within code blocks (adjust the selector as needed)
+      document.querySelectorAll('pre code a').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent the default anchor action
+          e.stopPropagation(); // Stop the event from bubbling up
+        });
+      });
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Target all span elements within code blocks that have IDs starting with 'cb'
+        document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
+            element.addEventListener('mouseenter', function() {
+                // Apply yellow background color to the hovered span element
+                this.style.backgroundColor = '#FFFF99';
+            });
+            element.addEventListener('mouseleave', function() {
+                // Revert the background color when the mouse leaves the span element
+                this.style.backgroundColor = '';
+            });
+        });
+    });
+
+
+
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+          let selectedAnnoteEl;
+          const selectorForAnnotation = ( cell, annotation) => {
+            let cellAttr = 'data-code-cell="' + cell + '"';
+            let lineAttr = 'data-code-annotation="' +  annotation + '"';
+            const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+            return selector;
+          }
+          const selectCodeLines = (annoteEl) => {
+            const doc = window.document;
+            const targetCell = annoteEl.getAttribute("data-target-cell");
+            const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+            const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+            const lineIds = lines.map((line) => {
+              return targetCell + "-" + line;
+            })
+            let top = null;
+            let height = null;
+            let parent = null;
+            if (lineIds.length > 0) {
+                //compute the position of the single el (top and bottom and make a div)
+                const el = window.document.getElementById(lineIds[0]);
+                top = el.offsetTop;
+                height = el.offsetHeight;
+                parent = el.parentElement.parentElement;
+              if (lineIds.length > 1) {
+                const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+                const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+                height = bottom - top;
+              }
+              if (top !== null && height !== null && parent !== null) {
+                // cook up a div (if necessary) and position it 
+                let div = window.document.getElementById("code-annotation-line-highlight");
+                if (div === null) {
+                  div = window.document.createElement("div");
+                  div.setAttribute("id", "code-annotation-line-highlight");
+                  div.style.position = 'absolute';
+                  parent.appendChild(div);
+                }
+                div.style.top = top - 2 + "px";
+                div.style.height = height + 4 + "px";
+                let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+                if (gutterDiv === null) {
+                  gutterDiv = window.document.createElement("div");
+                  gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                  gutterDiv.style.position = 'absolute';
+                  const codeCell = window.document.getElementById(targetCell);
+                  const gutter = codeCell.querySelector('.code-annotation-gutter');
+                  gutter.appendChild(gutterDiv);
+                }
+                gutterDiv.style.top = top - 2 + "px";
+                gutterDiv.style.height = height + 4 + "px";
+              }
+              selectedAnnoteEl = annoteEl;
+            }
+          };
+          const unselectCodeLines = () => {
+            const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+            elementsIds.forEach((elId) => {
+              const div = window.document.getElementById(elId);
+              if (div) {
+                div.remove();
+              }
+            });
+            selectedAnnoteEl = undefined;
+          };
+          // Handle positioning of the toggle
+          window.addEventListener(
+          "resize",
+          throttle(() => {
+            elRect = undefined;
+            if (selectedAnnoteEl) {
+              selectCodeLines(selectedAnnoteEl);
+            }
+          }, 10)
+          );
+          function throttle(fn, ms) {
+          let throttle = false;
+          let timer;
+            return (...args) => {
+              if(!throttle) { // first call gets through
+                  fn.apply(this, args);
+                  throttle = true;
+              } else { // all the others get throttled
+                  if(timer) clearTimeout(timer); // cancel #2
+                  timer = setTimeout(() => {
+                    fn.apply(this, args);
+                    timer = throttle = false;
+                  }, ms);
+              }
+            };
+          }
+          const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+          for (let i=0; i<annoteTargets.length; i++) {
+            const annoteTarget = annoteTargets[i];
+            const targetCell = annoteTarget.getAttribute("data-target-cell");
+            const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+            const contentFn = () => {
+              const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+              if (content) {
+                const tipContent = content.cloneNode(true);
+                tipContent.classList.add("code-annotation-tip-content");
+                return tipContent.outerHTML;
+              }
+            }
+            const config = {
+              allowHTML: true,
+              content: contentFn,
+              onShow: (instance) => {
+                selectCodeLines(instance.reference);
+                instance.reference.classList.add('code-annotation-active');
+                window.tippy.hideAll();
+              },
+              onHide: (instance) => {
+                unselectCodeLines();
+                instance.reference.classList.remove('code-annotation-active');
+              },
+              maxWidth: 300,
+              delay: [50, 0],
+              duration: [200, 0],
+              offset: [5, 10],
+              arrow: true,
+              appendTo: function(el) {
+                return el.parentElement.parentElement.parentElement;
+              },
+              interactive: true,
+              interactiveBorder: 10,
+              theme: 'light-border',
+              placement: 'right',
+              popperOptions: {
+                modifiers: [
+                {
+                  name: 'flip',
+                  options: {
+                    flipVariations: false, // true by default
+                    allowedAutoPlacements: ['right'],
+                    fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+                  },
+                },
+                {
+                  name: 'preventOverflow',
+                  options: {
+                    mainAxis: false,
+                    altAxis: false
+                  }
+                }
+                ]        
+              }      
+            };
+            window.tippy(annoteTarget, config); 
+          }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

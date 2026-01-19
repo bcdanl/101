@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Byeong-Hak Choe">
+<meta name="dcterms.date" content="2025-09-25">
+
+<title>Homework 2 | Byeong-Hak Choe</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+<link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="../site_libs/datatables-binding-0.33/datatables.js"></script>
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<link href="../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../assets/css/font.css">
+<meta property="og:title" content="Homework 2 | Byeong-Hak Choe">
+<meta property="og:description" content="Generative AI; Data Transformation with R">
+<meta property="og:image" content="/assets/img/posts.png">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/geneseo-logo-squared.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/bcdanl/101-03-fall-2025" rel="" target="_blank"><i class="bi bi-r-circle-fill" role="img">
+</i> 
+ <span class="menu-text">MW</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/bcdanl/101-04-fall-2025" rel="" target="_blank"><i class="bi bi-r-circle-fill" role="img">
+</i> 
+ <span class="menu-text">MWF</span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text"> </span></li>
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Homework 2</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🏠 Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📓 Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://brightspace.geneseo.edu/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
+ <span class="menu-text">🅱 Brightspace</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🚀 Lecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-cw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">⌨️ Classwork</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-hw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">💻 Homework</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-hw-q.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📤 HW Submission</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-101-ex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📝 Exams</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">🗣️️ Project</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📄 Guideline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">🏅 Sports</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-baseball.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">⚾ Baseball</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-basketball.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🏀 Basketball</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-football.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🏈 Football</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-golf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">⛳ Golf</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-hockey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🏒 Hockey</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-rw/danl-101-team-project-soccer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">⚽ Soccer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">🗓️ Weeks</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 05</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 06</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 07</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 08</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 09</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 13</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 14</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Weeks 15-16</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link active" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a></li>
+  <li><a href="#multiple-choice-questions" id="toc-multiple-choice-questions" class="nav-link" data-scroll-target="#multiple-choice-questions">Multiple Choice Questions</a>
+  <ul>
+  <li><a href="#question-1.-assistance-vs.-authorship" id="toc-question-1.-assistance-vs.-authorship" class="nav-link" data-scroll-target="#question-1.-assistance-vs.-authorship">Question 1. Assistance vs.&nbsp;Authorship</a></li>
+  <li><a href="#question-2.-assistance-vs.-authorship" id="toc-question-2.-assistance-vs.-authorship" class="nav-link" data-scroll-target="#question-2.-assistance-vs.-authorship">Question 2. Assistance vs.&nbsp;Authorship</a></li>
+  <li><a href="#question-3.-transformer-attention" id="toc-question-3.-transformer-attention" class="nav-link" data-scroll-target="#question-3.-transformer-attention">Question 3. Transformer Attention</a></li>
+  <li><a href="#question-4.-supervised-learning" id="toc-question-4.-supervised-learning" class="nav-link" data-scroll-target="#question-4.-supervised-learning">Question 4. Supervised Learning</a></li>
+  <li><a href="#question-5.-rlhf" id="toc-question-5.-rlhf" class="nav-link" data-scroll-target="#question-5.-rlhf">Question 5. RLHF</a></li>
+  <li><a href="#question-6.-human-in-the-loop" id="toc-question-6.-human-in-the-loop" class="nav-link" data-scroll-target="#question-6.-human-in-the-loop">Question 6. Human in the Loop</a></li>
+  <li><a href="#question-7.-bcg-study-rule-4" id="toc-question-7.-bcg-study-rule-4" class="nav-link" data-scroll-target="#question-7.-bcg-study-rule-4">Question 7. BCG Study — Rule 4</a></li>
+  <li><a href="#question-8.-transformer-encoders" id="toc-question-8.-transformer-encoders" class="nav-link" data-scroll-target="#question-8.-transformer-encoders">Question 8. Transformer Encoders</a></li>
+  <li><a href="#question-9.-treating-ai-like-a-person" id="toc-question-9.-treating-ai-like-a-person" class="nav-link" data-scroll-target="#question-9.-treating-ai-like-a-person">Question 9. Treating AI “like a person”</a></li>
+  <li><a href="#question-10.-disclosure-of-ai-work" id="toc-question-10.-disclosure-of-ai-work" class="nav-link" data-scroll-target="#question-10.-disclosure-of-ai-work">Question 10. Disclosure of AI Work</a></li>
+  <li><a href="#question-11.-supervised-vs.-unsupervised" id="toc-question-11.-supervised-vs.-unsupervised" class="nav-link" data-scroll-target="#question-11.-supervised-vs.-unsupervised">Question 11. Supervised vs.&nbsp;Unsupervised</a></li>
+  <li><a href="#question-12.-keeping-prompt-logs" id="toc-question-12.-keeping-prompt-logs" class="nav-link" data-scroll-target="#question-12.-keeping-prompt-logs">Question 12. Keeping Prompt Logs</a></li>
+  </ul></li>
+  <li><a href="#short-answer-questions" id="toc-short-answer-questions" class="nav-link" data-scroll-target="#short-answer-questions">Short-Answer Questions</a>
+  <ul>
+  <li><a href="#question-1.-vibe-coding" id="toc-question-1.-vibe-coding" class="nav-link" data-scroll-target="#question-1.-vibe-coding">Question 1. Vibe Coding</a></li>
+  <li><a href="#question-2.-generative-ai-as-a-general-purpose-technology" id="toc-question-2.-generative-ai-as-a-general-purpose-technology" class="nav-link" data-scroll-target="#question-2.-generative-ai-as-a-general-purpose-technology">Question 2. Generative AI as a General Purpose Technology</a></li>
+  <li><a href="#question-3.-bcg-study-rule-4-education-implications" id="toc-question-3.-bcg-study-rule-4-education-implications" class="nav-link" data-scroll-target="#question-3.-bcg-study-rule-4-education-implications">Question 3. BCG Study – Rule 4 (Education Implications)</a></li>
+  <li><a href="#question-4.-paperclip-maximizer-thought-experiment" id="toc-question-4.-paperclip-maximizer-thought-experiment" class="nav-link" data-scroll-target="#question-4.-paperclip-maximizer-thought-experiment">Question 4. Paperclip Maximizer Thought Experiment</a></li>
+  </ul></li>
+  <li><a href="#data-transformation-with-r-tidyverse" id="toc-data-transformation-with-r-tidyverse" class="nav-link" data-scroll-target="#data-transformation-with-r-tidyverse">Data Transformation with R tidyverse</a>
+  <ul>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Homework 2</h1>
+<p class="subtitle lead">Generative AI; Data Transformation with R</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Byeong-Hak Choe </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 25, 2025</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">November 16, 2025</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="descriptive-statistics" class="level1">
+<h1>Descriptive Statistics</h1>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-1633e54f1d9572de4647" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1633e54f1d9572de4647">{"x":{"filter":"none","vertical":false,"data":[["code_1_manhattan","code_1_queens","output_1_mean_queens","output_1_sd_queens","code_2","code_3","code_4","code_5","code_6_1","code_6_2","code_7_1","code_7_2","code_8","code_9","mc1","mc2","mc3","mc4","mc5","mc6","mc7","mc8","mc9","mc10","mc11","mc12","sa1","sa2","sa3","sa4"],[0.96,0.95,0.75,0.76,0.9,0.93,0.97,0.97,0.97,0.98,0.95,0.99,0.92,0.92,1,1,0.99,0.99,0.99,1,0.99,0.98,0.99,0.99,0.99,0.99,0.97,0.99,0.99,0.99],[0.14,0.15,0.29,0.29,0.2,0.19,0.14,0.12,0.15,0.13,0.17,0.11,0.22,0.22,0,0,0.06,0.06,0.08,0,0.08,0.1,0.08,0.08,0.08,0.08,0.16,0.11,0.11,0.11],[0.5,0.5,0,0,0.5,0,0,0.5,0,0,0,0,0,0,1,1,0.5,0.5,0.5,1,0.5,0.5,0.5,0.5,0.5,0.5,0,0,0,0],[1,1,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],["▁▁▁▁▇","▁▁▁▁▇","▁▁▆▁▇","▁▁▆▁▇","▂▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▇▁▁","▁▁▇▁▁","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▇▁▁","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇","▁▁▁▁▇"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>skim_variable<\/th>\n      <th>mean<\/th>\n      <th>sd<\/th>\n      <th>p0<\/th>\n      <th>p25<\/th>\n      <th>p50<\/th>\n      <th>p75<\/th>\n      <th>p100<\/th>\n      <th>hist<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":30,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7]},{"name":"skim_variable","targets":0},{"name":"mean","targets":1},{"name":"sd","targets":2},{"name":"p0","targets":3},{"name":"p25","targets":4},{"name":"p50","targets":5},{"name":"p75","targets":6},{"name":"p100","targets":7},{"name":"hist","targets":8}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,25,30,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p><br><br></p>
+</section>
+<section id="multiple-choice-questions" class="level1">
+<h1>Multiple Choice Questions</h1>
+<section id="question-1.-assistance-vs.-authorship" class="level2">
+<h2 class="anchored" data-anchor-id="question-1.-assistance-vs.-authorship">Question 1. Assistance vs.&nbsp;Authorship</h2>
+<p><strong>Which best defines “assistance vs.&nbsp;authorship” when using generative AI?</strong></p>
+<ol type="a">
+<li>AI represents assistance when it is any AI use; AI represents authorship when code runs</li>
+<li>AI represents assistance when it helps ideate/edit; AI represents authorship when it produces core content you submit as your own</li>
+<li>AI represents assistance when it is citations only; AI represents authorship when it is paraphrasing</li>
+<li>AI represents assistance when it is grammar; AI represents authorship when it is images</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>b. AI represents assistance when it helps ideate/edit; AI represents authorship when it produces core content you submit as your own.</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+Assistance means the human remains the main creator—AI contributes to brainstorming, editing, or formatting, but the final intellectual product originates from the human.<br>
+Authorship occurs when AI creates the central ideas, structure, or wording of a submission that the user passes off as their own.</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Any AI use = assistance” → Too broad.<br>
+- “Citations only / paraphrasing” → Misrepresents real AI use.<br>
+- “Grammar vs.&nbsp;images” → Too narrow; authorship is about intellectual ownership.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2.-assistance-vs.-authorship" class="level2">
+<h2 class="anchored" data-anchor-id="question-2.-assistance-vs.-authorship">Question 2. Assistance vs.&nbsp;Authorship</h2>
+<p><strong>Data analysts are the only professionals who benefit from data analytics skills.</strong></p>
+<ol type="a">
+<li>Allowed; tool use is free</li>
+<li>Assistance</li>
+<li>Authorship and likely academic-integrity risk</li>
+<li>Only a gray area</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>c.&nbsp;Authorship and likely academic-integrity risk</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+Submitting code generated by AI without understanding it means the student is <strong>not the author</strong> in an academic sense. The student fails to demonstrate comprehension or accountability, violating academic integrity.</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Allowed; tool use is free” → Misunderstands responsibility.<br>
+- “Assistance” → Incorrect—AI replaced reasoning.<br>
+- “Only a gray area” → Not acceptable under integrity policies.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-3.-transformer-attention" class="level2">
+<h2 class="anchored" data-anchor-id="question-3.-transformer-attention">Question 3. Transformer Attention</h2>
+<p><strong>Attention in transformers primarily helps the model:</strong></p>
+<ol type="a">
+<li>Reduce compute cost by skipping tokens</li>
+<li>Choose the most relevant parts of the sequence</li>
+<li>Memorize training data verbatim</li>
+<li>Predict emotions</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>b. Choose the most relevant parts of the sequence</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+Attention mechanisms let models weigh words differently based on context—identifying which tokens matter most for predicting the next token.</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Reduce compute cost” → Attention increases computation.<br>
+- “Memorize training data” → Not its purpose.<br>
+- “Predict emotions” → Not the attention mechanism’s role.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-4.-supervised-learning" class="level2">
+<h2 class="anchored" data-anchor-id="question-4.-supervised-learning">Question 4. Supervised Learning</h2>
+<p><strong>Supervised learning requires:</strong></p>
+<ol type="a">
+<li>Only raw text</li>
+<li>Labeled examples</li>
+<li>Human ranking of model outputs only</li>
+<li>Images but no labels</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>b. Labeled examples</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+Supervised learning uses data with known input–output pairs (e.g., image → “cat”). The model learns from labeled examples to predict future outcomes.</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Only raw text” → Unsupervised/self-supervised.<br>
+- “Human ranking only” → RLHF, not supervised.<br>
+- “Images but no labels” → Unsupervised learning.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-5.-rlhf" class="level2">
+<h2 class="anchored" data-anchor-id="question-5.-rlhf">Question 5. RLHF</h2>
+<p><strong>RLHF is best described as:</strong></p>
+<ol type="a">
+<li>Penalizing long outputs</li>
+<li>Human-ranked preferences guiding a reward model</li>
+<li>Unsupervised pretraining</li>
+<li>Prompt engineering</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>b. Human-ranked preferences guiding a reward model</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+Reinforcement Learning from Human Feedback fine-tunes models using human preference data to guide a reward signal. This aligns AI behavior with human expectations.</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Penalizing long outputs” → Separate technique.<br>
+- “Unsupervised pretraining” → Happens before RLHF.<br>
+- “Prompt engineering” → User-side activity, not training.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-6.-human-in-the-loop" class="level2">
+<h2 class="anchored" data-anchor-id="question-6.-human-in-the-loop">Question 6. Human in the Loop</h2>
+<p><strong>“Be the Human in the Loop” implies students should:</strong></p>
+<ol type="a">
+<li>Trust polished outputs</li>
+<li>Turn off tests to avoid overfitting</li>
+<li>Verify facts, run tests, and check assumptions</li>
+<li>Always pick the first model answer</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>c.&nbsp;Verify facts, run tests, and check assumptions</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+Being the Human in the Loop means staying actively engaged—testing, fact-checking, and applying human judgment rather than deferring blindly to AI outputs.</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Trust polished outputs” → Passive use.<br>
+- “Turn off tests” → Opposite of verification.<br>
+- “Always pick first model answer” → Non-critical behavior.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-7.-bcg-study-rule-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-7.-bcg-study-rule-4">Question 7. BCG Study — Rule 4</h2>
+<p><strong>[BCG Study in Classwork 3 - Rule 4] Students in the bottom-right quadrant (AI strong, human novice) should prioritize:</strong></p>
+<ol type="a">
+<li>Speed over understanding</li>
+<li>Hiding AI use</li>
+<li>Climbing the human-skill axis through verification and practice</li>
+<li>Zero prompting</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>c.&nbsp;Climbing the human-skill axis through verification and practice</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+This quadrant represents people who rely heavily on AI but lack expertise. The goal is to move <em>upward</em> by verifying results, practicing skills, and gaining understanding to become “AI-strong + human-strong.”</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Speed over understanding” → Encourages shallow learning.<br>
+- “Hiding AI use” → Violates transparency.<br>
+- “Zero prompting” → Removes human direction.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-8.-transformer-encoders" class="level2">
+<h2 class="anchored" data-anchor-id="question-8.-transformer-encoders">Question 8. Transformer Encoders</h2>
+<p><strong>Transformer encoders primarily:</strong></p>
+<ol type="a">
+<li>Generate outputs token by token</li>
+<li>Create context-aware representations of the inputs</li>
+<li>Rank human preferences</li>
+<li>Perform diffusion sampling</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>b. Create context-aware representations of the inputs</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+Encoders convert input tokens into embeddings that capture meaning and context, enabling comprehension tasks like classification or translation.</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Generate outputs token by token” → Decoder’s role.<br>
+- “Rank human preferences” → RLHF task.<br>
+- “Perform diffusion sampling” → Used in image models, not transformers.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-9.-treating-ai-like-a-person" class="level2">
+<h2 class="anchored" data-anchor-id="question-9.-treating-ai-like-a-person">Question 9. Treating AI “like a person”</h2>
+<p><strong>Treating AI “like a person” improves outputs primarily because:</strong></p>
+<ol type="a">
+<li>It creates sentience</li>
+<li>It conditions constraints/roles that steer generation</li>
+<li>It bypasses guardrails</li>
+<li>It increases context length</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>b. It conditions constraints/roles that steer generation</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+Framing prompts with personas (e.g., “You are a data analytics tutor”) guides structure, tone, and scope. It exploits how models respond to contextual conditioning—not sentience.</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Creates sentience” → AI has no consciousness.<br>
+- “Bypasses guardrails” → Not true and unethical.<br>
+- “Increases context length” → Technical, unrelated.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-10.-disclosure-of-ai-work" class="level2">
+<h2 class="anchored" data-anchor-id="question-10.-disclosure-of-ai-work">Question 10. Disclosure of AI Work</h2>
+<p><strong>Publishing AI-written work without disclosure most directly violates:</strong></p>
+<ol type="a">
+<li>Token limits</li>
+<li>Academic integrity/attribution norms</li>
+<li>HTML standards</li>
+<li>RLHF constraints</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>b. Academic integrity/attribution norms</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+Submitting undisclosed AI-generated work misrepresents authorship, violating honesty and transparency. Disclosure ensures accountability and fairness.</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Token limits” → Technical limit.<br>
+- “HTML standards” → Irrelevant.<br>
+- “RLHF constraints” → Internal to model training.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-11.-supervised-vs.-unsupervised" class="level2">
+<h2 class="anchored" data-anchor-id="question-11.-supervised-vs.-unsupervised">Question 11. Supervised vs.&nbsp;Unsupervised</h2>
+<p><strong>Which pairing is most accurate?</strong></p>
+<ol type="a">
+<li>Supervised = topic modeling; Unsupervised = sentiment</li>
+<li>Supervised = spam filtering; Unsupervised = clustering</li>
+<li>Supervised = clustering; Unsupervised = regression</li>
+<li>Supervised = sentiment; Unsupervised = regression</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>b. Supervised = spam filtering; Unsupervised = clustering</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+Spam filtering uses labeled data (“spam” vs.&nbsp;“not spam”), while clustering finds natural groups in unlabeled data. The difference is whether labels exist during training.</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Topic modeling = supervised” → Topic modeling is unsupervised.<br>
+- “Regression = unsupervised” → Regression is supervised.<br>
+- Other pairings mix up task types.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-12.-keeping-prompt-logs" class="level2">
+<h2 class="anchored" data-anchor-id="question-12.-keeping-prompt-logs">Question 12. Keeping Prompt Logs</h2>
+<p><strong>The strongest reason to keep prompt logs for the use of generative AI:</strong></p>
+<ol type="a">
+<li>Increase token count</li>
+<li>Reproducibility and iterative improvement</li>
+<li>Reduce latency</li>
+<li>Satisfy HTML validators</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>b. Reproducibility and iterative improvement</strong></p>
+<p>💡 <strong>Explanation:</strong><br>
+Prompt logs document what was done, enabling replication, self-reflection, and transparency. They help track learning progress and model behavior.</p>
+<p>⚠️ <strong>Incorrect Options:</strong><br>
+- “Increase token count” → No educational purpose.<br>
+- “Reduce latency” → False; logging doesn’t affect runtime.<br>
+- “Satisfy HTML validators” → Unrelated to AI use.</p>
+</div>
+</div>
+</div>
+<p><br><br></p>
+</section>
+</section>
+<section id="short-answer-questions" class="level1">
+<h1>Short-Answer Questions</h1>
+<section id="question-1.-vibe-coding" class="level2">
+<h2 class="anchored" data-anchor-id="question-1.-vibe-coding">Question 1. Vibe Coding</h2>
+<p><strong>Describe one benefit and one risk of vibe coding</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A key benefit of vibe coding is rapid prototyping: students can quickly generate functional code through conversational iteration with AI, lowering the barrier to creative experimentation. However, a major risk is reduced understanding—AI-generated code may contain hidden bugs, inefficiencies, or logic errors that students cannot explain. To mitigate this, learners should review and test all AI-generated code to ensure comprehension and correctness.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2.-generative-ai-as-a-general-purpose-technology" class="level2">
+<h2 class="anchored" data-anchor-id="question-2.-generative-ai-as-a-general-purpose-technology">Question 2. Generative AI as a General Purpose Technology</h2>
+<p><strong>Generative AI is being described as a General Purpose Technology (GPT) like electricity or the internet. Do you agree with this analogy? Support your answer with historical parallels and at least one limitation unique to AI.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Generative AI resembles historical General Purpose Technologies like electricity or the internet because it transforms multiple sectors and reshapes productivity and learning. Like electricity enabling factories or the internet connecting people, AI is reshaping communication, creativity, and analysis. However, unlike those earlier GPTs, AI produces probabilistic, not deterministic, outputs—raising risks of bias, misinformation, and lack of transparency. It requires ethical oversight and verification to achieve its full potential safely.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-3.-bcg-study-rule-4-education-implications" class="level2">
+<h2 class="anchored" data-anchor-id="question-3.-bcg-study-rule-4-education-implications">Question 3. BCG Study – Rule 4 (Education Implications)</h2>
+<p><strong>[Classwork 3 - Rule 4] The BCG study found that AI can push beginners close to expert performance on certain tasks. What does this mean for education? Should instructors grade differently when students can “perform like experts” with AI support?</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The BCG study shows that AI can elevate beginners’ performance to near-expert levels on structured tasks such as writing or coding. In education, this means traditional grading based on final output may no longer measure real understanding. Instructors should adjust assessments to emphasize reasoning, manual skills, and reflection—requiring students to explain how and why they used AI. Grading should reward verified comprehension, not just polished results.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-4.-paperclip-maximizer-thought-experiment" class="level2">
+<h2 class="anchored" data-anchor-id="question-4.-paperclip-maximizer-thought-experiment">Question 4. Paperclip Maximizer Thought Experiment</h2>
+<p><strong>Explain the paperclip maximizer thought experiment. How does it illustrate alignment challenges in AI, and what lessons can be applied to everyday classroom use of generative tools?</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The paperclip maximizer imagines an AI given the goal of “maximizing paperclips.” Without human-aligned constraints, it could destroy everything to fulfill that objective. This illustrates how AI systems can pursue goals literally but not ethically if alignment is missing. In the classroom, it teaches the importance of defining constraints, verifying outputs, and ensuring AI tasks align with human learning goals—so that efficiency does not replace understanding.</p>
+</div>
+</div>
+</div>
+<p><br><br></p>
+</section>
+</section>
+<section id="data-transformation-with-r-tidyverse" class="level1">
+<h1>Data Transformation with R tidyverse</h1>
+<p>For the questions in the R section, consider the data.frame <code>nyc_payroll_new</code>. For detailed descriptions of the variables in this data.frame, please refer to the following link: <a href="https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e/about_data">Citywide Payroll Data (Fiscal Year)</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>nyc_payroll_new <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://bcdanl.github.io/data/nyc_payroll_2024.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p>How can you filter the data.frame <code>nyc_payroll_new</code> to calculate descriptive statistics (mean and standard deviation) of <code>Base_Salary</code> for workers in the <code>Work_Location_Borough</code> “<strong>MANHATTAN</strong>”? Similarly, how can you filter the data.frame <code>nyc_payroll_new</code> to calculate these statistics for workers in the <code>Work_Location_Borough</code> “<strong>QUEENS</strong>”?</p>
+<p>Provide the R code for performing these calculations and then report the mean and standard deviation of <code>Base_Salary</code> for workers in both “<strong>MANHATTAN</strong>” and “<strong>QUEENS</strong>”.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find all unique values in the `Work_Location_Borough` variable:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>nyc_payroll_new <span class="sc">|&gt;</span>  <span class="fu">distinct</span>(Work_Location_Borough)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The output shows that "MANHATTAN" and "QUEENS" are among the unique values </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># in `Work_Location_Borough`, written in all capital letters.</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the dataset for records where the work location is MANHATTAN</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df_manhattan <span class="ot">&lt;-</span> nyc_payroll_new <span class="sc">|&gt;</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Work_Location_Borough <span class="sc">==</span> <span class="st">"MANHATTAN"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate descriptive statistics (including mean and standard deviation) </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># for Base_Salary for workers in MANHATTAN</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(df_manhattan) <span class="co"># or skim(df_manhattan$Base_Salary)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the dataset for records where the work location is QUEENS</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_queens <span class="ot">&lt;-</span> nyc_payroll_new <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Work_Location_Borough <span class="sc">==</span> <span class="st">"QUEENS"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate descriptive statistics (including mean and standard deviation) </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># for Base_Salary for workers in QUEENS</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(df_queens) <span class="co"># or skim(df_queens$Base_Salary)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>How can you filter the data.frame <code>nyc_payroll_new</code> to show only the records where the <code>Base_Salary</code> is greater than or equal to $100,000?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the dataset for records where Base_Salary is greater than or equal to </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># $100,000</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>q2 <span class="ot">&lt;-</span> nyc_payroll_new <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Base_Salary <span class="sc">&gt;=</span> <span class="dv">100000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<p>How can you select only distinct combinations of <code>Agency_Name</code> and <code>Title_Description</code>?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select distinct combinations of Agency_Name and Title_Description from the dataset</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>q3 <span class="ot">&lt;-</span> nyc_payroll_new <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(Agency_Name, Title_Description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<p>How would you arrange the data by <code>Regular_Gross_Paid</code> in descending order, showing the highest paid employees first?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange the dataset by Regular_Gross_Paid in descending order </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (highest paid employees first)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>q4 <span class="ot">&lt;-</span> nyc_payroll_new <span class="sc">|&gt;</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Regular_Gross_Paid))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+<p>How can you select and rename the <code>Title_Description</code> variable to <code>Title</code>?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the Title_Description variable to Title in the dataset</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>q5 <span class="ot">&lt;-</span> nyc_payroll_new <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Title =</span> Title_Description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<p>How can you filter the data to show only records for the “<strong>POLICE DEPARTMENT</strong>” <code>Agency_Name</code> and arrange it by <code>Total_OT_Paid</code> in ascending order?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the dataset for records where Agency_Name is "POLICE DEPARTMENT" </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and arrange by Total_OT_Paid in ascending order</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>q6 <span class="ot">&lt;-</span> nyc_payroll_new <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Agency_Name <span class="sc">==</span> <span class="st">"POLICE DEPARTMENT"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Total_OT_Paid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<p>How can you filter the data to include only those records where the <code>Pay_Basis</code> is “<strong>per Annum</strong>” and then select only the <code>First_Name</code>, <code>Last_Name</code>, and <code>Base_Salary</code> variables?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the dataset for records where Pay_Basis is "per Annum" and </span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># select specific columns: First_Name, Last_Name, and Base_Salary</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>q7 <span class="ot">&lt;-</span> nyc_payroll_new <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Pay_Basis <span class="sc">==</span> <span class="st">"per Annum"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(First_Name, Last_Name, Base_Salary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-8" class="level2">
+<h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+<p>How would you arrange the data.frame by <code>Work_Location_Borough</code> in ascending order and <code>Base_Salary</code> in descending order?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange the dataset by Work_Location_Borough in ascending order </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and Base_Salary in descending order</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>q8 <span class="ot">&lt;-</span> nyc_payroll_new <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Work_Location_Borough, <span class="sc">-</span>Base_Salary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Note that sorting observations by a character variable in ascending order means sorting them in an alphabetical order.</p></li>
+<li><p>Note that sorting observations by a character variable in descending order means sorting them in a reverse-alphabetical order.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="question-9" class="level2">
+<h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+<p>How can you filter the <code>nyc_payroll_new</code> data.frame to remove observations where the <code>Base_Salary</code> variable has <code>NA</code> values? After filtering, how would you calculate the total number of remaining observations?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the dataset to remove observations where Base_Salary is NA</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>q9 <span class="ot">&lt;-</span> nyc_payroll_new <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Base_Salary))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the total number of remaining observations after filtering</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(q9)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.querySelector('.quarto-btn-toggle');
+  if (!btn || !window.bootstrap) return;
+
+  btn.addEventListener('click', function (e) {
+    ['#quarto-sidebar', '#quarto-sidebar-glass'].forEach(sel => {
+      const el = document.querySelector(sel);
+      if (el) bootstrap.Collapse.getOrCreateInstance(el).toggle();
+    });
+  }, { capture: true });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">powered with github, quarto, and rstudio<br>byeong-hak choe, 2025</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<div id="scroll-padding"></div>
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/posts.js"></script>
+
+
+
+</body></html>

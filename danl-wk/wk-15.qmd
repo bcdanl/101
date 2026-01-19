@@ -1,0 +1,38 @@
+---
+title: Weeks 15-16
+subtitle: Data Storytelling Project
+date: 2025-12-01
+from: markdown+emoji
+---
+
+In **Weeks 15-16**, we'll have the data storytelling team presentations.
+
+On Monday, December 8, 2025, we'll finish up the Sections of:   
+- Effective Distribution Charts for Category Comparisons
+- Understanding and Visualizing Integer Data
+
+in Lecture 10.
+
+
+## 🏫 Lecture Slides  
+- **Lecture 10 — Data Visualization with `ggplot`**  
+  [View Slides](../danl-lec/danl-101-lec-10-2025-1105.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+
+<br>
+
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Weeks 15-16 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Weeks 15-16.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Weeks 15-16 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

@@ -1,0 +1,58 @@
+---
+title: Homework 3
+subtitle: Data Transformation & Visualization in R — Part I
+date: 2025-11-04
+from: markdown+emoji
+comments: false
+code-fold: false
+
+execute: 
+  warning: false
+  message: false
+  fig-width: 9
+  fig-height: 7
+  fig-align: center
+  eval: false
+  
+toc: false
+---
+```{r}
+#| include: false
+
+library(tidyverse)
+library(skimr)
+library(DT)
+library(hrbrthemes)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5)),
+                axis.title.y = element_text(size = rel(1.5)),
+                legend.title = element_text(size=rel(1.25))
+                ))
+```
+
+## Homework Instructions
+
+- **Answer every question** thoroughly; do not leave any items blank.
+- **No Generative AI**: For Homework Assignment 3, you do **not** use generative AI tools on the **Multiple Choice** and **Short-Answer** sections.  
+- **Generative AI Allowed with Conditions**: You may use generative AI tools for the **Data Transformation and Visualization with R** section, **but you are responsible for fully understanding the answers**. Be prepared to explain the reasoning, logic, and steps behind any code you submit.  
+- **Workflow recommendations**
+  - **Short-Answer**: Draft your responses in Word or Google Docs first before pasting your answers.
+  - **Data Transformation and Visualization with R**: Write and test your code in an R script before pasting your answers.
+- **When you’re ready to submit**
+  1. Click **“Print to PDF (answers included)”** to generate a clean copy of your responses.
+  2. Click the **“Submit”** button at the bottom of this page.
+  3. Wait for the confirmation message: **“Data submitted successfully!”**
+  4. A **confirmation email (including your answers)** will be sent to the email address you provide on this page (either your **@geneseo.edu** account or your personal email).
+- **Resubmissions**: You may submit multiple times; **only your most recent submission** will be evaluated.
+- **Deadline**: **Wednesday, November 12, 2025 at 11:59 P.M. Eastern Time**.
+
+<br>
+
+```{=html}
+<iframe id="contentFrame" width="100%" height="12500px" frameborder="no" 
+  src="danl-101-hw-03-google-sheet.html" style="overflow: hidden;">
+</iframe>
+```
+

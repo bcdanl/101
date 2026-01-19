@@ -1,0 +1,76 @@
+---
+title: Week 14
+subtitle: Data Storytelling Project
+date: 2025-11-24
+from: markdown+emoji
+---
+
+In **Week 14**, we'll discuss the data storytelling project.
+
+
+## 🏫 Lecture Slides  
+- **Lecture 10 — Data Visualization with `ggplot`**  
+  [View Slides](../danl-lec/danl-101-lec-10-2025-1105.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+## 📊💡 Data Storytelling Project
+
+Your team does **not** need to analyze every variable provided in the suggested data frames. Instead, carefully **select the variables that best support your story, argument, and analysis**.
+
+To find an interesting story, you should:
+
+- Explore your data using **descriptive statistics** (e.g., `skimr::skim()`)
+- Apply **data transformations** such as filtering and counting
+- Use **data visualizations** to uncover patterns, trends, and anomalies
+-	Draw on your **background knowledge** of the topic
+- Treat the process as **iterative** — your understanding will evolve as you explore, refine, and visualize your data along with your story.
+
+A strong data story emerges when your **analytical choices** (what you compute, transform, or visualize) clearly support your **narrative** and your **main insights**.
+
+
+
+<br>
+
+## 📚 Recommended Reading
+
+- [What is Data Storytelling? (from Week 11)](https://bcdanl.github.io/danl-wk/wk-11.html#data-storytelling){target="_blank"}
+
+- [Rubric for Data Storytelling Project (from the Guideline)](https://bcdanl.github.io/danl-rw/danl-101-team-project.html#rubric-for-the-data-storytelling-project){target="_blank"}
+
+
+| **Attribute**                                   | **Very Deficient (1)**                                             | **Somewhat Deficient (2)**                                             | **Acceptable (3)**                                                      | **Very Good (4)**                                                       | **Outstanding (5)**                                                    |
+|-------------------------------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| **1. Quality of Data Transformation and Descriptive Statistics** | - No transformation or cleaning applied<br>- Very poor data transformation<br>- Contains significant errors | - Minimal transformation or cleaning<br>- Basic data transformation with errors<br>- Contains several errors | - Basic transformation applied<br>- Adequate data transformation<br>- Contains minor errors | - Effective transformation<br>- Thorough data transformation<br>- Data is accurate | - Advanced transformation<br>- Exceptional data transformation<br>- Data is impeccable |
+| **2. Quality of Data Visualization**       | - Visualizations are missing or unclear<br>- Misrepresents data | - Visualizations are basic and lack clarity<br>- Some misrepresentation | - Visualizations are clear and accurate<br>- Data is appropriately represented | - Visualizations are insightful and enhance understanding<br>- Data is accurately represented | - Visualizations are highly creative and compelling<br>- Data representation is impeccable |
+| **3. Effectiveness of Data Storytelling**       | - No narrative or storyline<br>- Insights are absent or irrelevant<br>- Fails to engage the audience | - Weak narrative structure<br>- Insights are superficial<br>- Minimal audience engagement | - Clear narrative present<br>- Insights are relevant<br>- Audience is adequately engaged | - Compelling narrative<br>- Insights are significant<br>- Engages audience effectively | - Exceptional and captivating narrative<br>- Insights are profound and impactful<br>- Audience is highly engaged |
+| **4. Quality of Slides and Visual Materials**   | - Very poorly organized<br>- Difficult to read and understand<br>- Numerous errors present | - Somewhat disorganized<br>- Some slides are unclear<br>- Several errors present | - Well organized<br>- Mostly clear and understandable<br>- Few errors present | - Very well organized<br>- Clear and visually appealing<br>- Very few errors | - Exceptionally well organized<br>- Highly clear and visually compelling<br>- No errors |
+| **5. Quality of Team Presentation**             | - Presentation is disjointed<br>- Poor team coordination<br>- Unable to address questions | - Lacks flow<br>- Some coordination issues<br>- Difficulty with several questions | - Cohesive presentation<br>- Team works well together<br>- Addresses most questions adequately | - Engaging presentation<br>- Team is well-coordinated<br>- Addresses almost all questions professionally | - Highly engaging and polished presentation<br>- Excellent team coordination<br>- Addresses all questions expertly |
+| **6. Quality of Code (Descriptive Statistics, Transformation, Visualization)** | - Code is missing or non-functional<br>- No documentation<br>- Disorganized code | - Code has major errors<br>- Minimal documentation<br>- Code is somewhat disorganized | - Code is functional<br>- Basic documentation provided<br>- Code is organized | - Code is efficient and well-structured<br>- Good documentation<br>- Code is well-organized | - Code is highly efficient and elegant<br>- Excellent documentation<br>- Code is exceptionally well-organized |
+
+
+
+- [R Script for Data Storytelling Project (from the Guideline)](https://bcdanl.github.io/danl-rw/danl-101-team-project.html#submission){target="_blank"}
+  - **Organization**: Use section headers (created with `Ctrl/Cmd + Shift + R`) and comments (`#`) to clearly label which parts of your code correspond to specific visualizations, transformations, and descriptive statistics. This will make your script easy to follow.
+  - **Explanation**: Include comments to explain any parts of your code that use techniques not covered in the course. This should provide enough detail for others to understand the purpose and functionality of your code.
+  - **Reproducibility**: Ensure your R script is complete and reproducible, meaning anyone who runs it should be able to replicate your results without needing additional information.
+  - **Clarity**: Write clear and concise comments throughout your code to enhance readability and comprehension. Avoid overly complex or redundant code.
+  - **Error Handling**: Make sure your code runs smoothly without errors.
+  
+
+
+<br>
+
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 14 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 14.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 14 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

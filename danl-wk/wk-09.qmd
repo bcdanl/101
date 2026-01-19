@@ -1,0 +1,44 @@
+---
+title: Week 9
+subtitle: Career Session; Big Data and the Modern Data Infrastructure
+date: 2025-10-20
+from: markdown+emoji
+---
+
+In **Week 9**, we will cover the taxonomy of structured data, databases, and big data. We will also have an **Alumni Career Session**. You are encouraged to ask about getting started in data roles, workplace experiences, and any valuable advice from professionals who were once in your position.
+
+
+## 🏫 Lecture Slides  
+- **Lecture 7 — Big Data and the Modern Data Infrastructure**  
+  [View Slides](../danl-lec/danl-101-lec-07-2025-1015.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+
+
+## ✍️ Classwork
+
+- **Classwork 7 - _Taxonomy of Data_**  
+  [View Classwork](../danl-cw/danl-101-cw-07.html){target="_blank"} 
+
+- **Classwork 8 - _Databases - Social Media Analytics_**  
+  [View Classwork](../danl-cw/danl-101-cw-08.html){target="_blank"} 
+
+- **Classwork 9 - _Joining Two Related Tables in R_**  
+  [View Classwork](../danl-cw/danl-101-cw-09.html){target="_blank"} 
+
+
+
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 9 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 9.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 9 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

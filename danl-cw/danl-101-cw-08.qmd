@@ -1,0 +1,170 @@
+---
+title: Classwork 8
+subtitle: Databases - Social Media Analytics
+date: 2025-10-20
+execute: 
+  echo: false
+  eval: true
+  warning: false
+  message: false
+---
+```{r}
+#| include: false
+
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(DT)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5)),
+                axis.title.y = element_text(size = rel(1.5)),
+                legend.title = element_text(size=rel(1.25))
+                ))
+```
+
+<br>
+
+# Social Media Survey
+
+## 🎯 Purpose of this Activity
+
+### Extract data from you (students)
+
+By submitting the survey, you generate **raw rows in a database table** — just like how platforms quietly log every interaction you make.
+
+- Behind the scenes, **each of your clicks becomes a database entry** — a row born from your activity.
+- The survey is **anonymous** — we analyze patterns, not individuals.
+
+```{=html}
+<iframe id="contentFrame" width="100%" height="1500px" frameborder="no" 
+  src="danl-101-cw-08-survey.html" style="overflow: hidden;">
+</iframe>
+```
+
+
+## Social Media Analytics
+
+### ETL Workflow
+
+- **Your role:** You submit the survey — that generates **raw data rows**, just like a platform logging user behavior.
+- **My role:** I act as the **data system**. As we walk through the results, I’ll point out where I use  
+  `filter()`, `select()`, and `left_join()` to **Transform** your responses and **Load** a clean analysis table we can analyze.
+
+- **Big idea:** Your responses become a **relational dataset**, and then we **join in algorithm rules** — the same way TikTok, Instagram, or Reddit enrich user logs before ranking your feed.
+
+
+
+### Feed Algorithm
+
+> “Do you think your feed reflects **your choices** — or **the platform’s choices about you?**”
+
+- We’ll look at **platform behavior patterns** using your data:  
+  **minutes**, **posting activity**, **device type**, and **interaction style.**
+- Then we’ll run an **algorithm simulation** using a **random card draw system** to show how **the same minutes can be valued very differently depending on the platform’s ranking logic**.
+
+
+### 🧠 Feed Algorithm Interpretation Using Card Mechanics
+
+To illustrate how platforms differ in *engagement efficiency*, we treat each minute of screen time like **drawing a card**:
+
+- **Rank (2–10, J, Q, K, A)** → how strong your engagement signal was  
+- **Suit (platform personality)** → how that platform *interprets and amplifies* that engagement
+
+You’ll see that **not all platforms reward the same behavior equally** — some love viral spikes, some love steady engagement.
+
+  
+
+#### 🎭 Platform Algorithm Personalities — Rank Bias Model
+
+Each platform doesn't just apply a fixed multiplier — it **biases specific rank categories** (Face, Ace, Mid, etc.).  
+This models how **TikTok boosts viral spikes**, **Reddit rewards slower thread engagement**, and **YouTube locks users into deep watch sessions**.
+
+| Platform | Algorithm Personality | Rank Preference Pattern |
+|:--|:--|:--|
+| **TikTok** | ♠ Strategic viral retention — aggressively hunts viral spikes | **Face → Ace → 10** (very spike-oriented, punishes low/no engagement) |
+| **Instagram / Threads** | ♦ Aesthetic/status curation — polished trend amplification | **10 → Face → Mid** (reward polished content, suppress low-value scroll) |
+| **YouTube** | ♠ Strategic deep retention — optimizes long session depth | **Ace → 10 → Mid** (not chaotic, but strong on intentional consumption) |
+| **Reddit / Discord** | ♣ Community depth — favors threads, steady engagement over spikes | **Mid → Ace → 10**, downweights Face spikes (less about virality) |
+| **Snapchat** | ♥ Emotional burst algorithm — high volatility, short attention loops | **Face spikes allowed, but low ranks common** (chaotic scroll-emotion mix) |
+| **X/Twitter** | ♣ Fast discourse loop — rewards mid-level interaction & repost energy | **Mid + Face modest bias**, suppresses dead scrolling |
+| **Facebook** | ♦ Legacy ranking — mild engagement shaping, mostly neutral | **Slight mid bias**, nearly flat weighting otherwise |
+| **None** | Neutral baseline — no algorithm shaping | All **rank_adj = 1.00** (control group) |
+
+
+#### 🎮 Rank Interpretation (Base Weights Before Platform Influence)
+
+| Rank Category | Base Weight | Meaning in Attention Model |
+|------------------------|:------------------------:|----------------------------|
+| **Joker (0)** | **1.00** | Passive drift — counted time, no engagement signal |
+| **2–4 (Low ranks)** | **1.00** | Glance-scroll, content seen without response |
+| **5–9 (Mid ranks)** | **1.05** | Light scrolling or minor interaction — retention signal |
+| **10** | **1.10** | High interest moment — actively watching or reading |
+| **Ace (A)** | **1.25** | Intentional engagement — searching, saving, deep dwell |
+| **Face Cards (J/Q/K)** | **1.50** | Emotional/viral spike — strong reaction triggers |
+
+
+> 🚩 **Raw minutes = counting cards without considering rank or suit.**  
+> 🎯 **Algorithm-adjusted attention = calculating your *true score* based on both rank (quality of engagement) and suit (type of platform algorithm).**
+
+In other words:
+
+- A 20-minute session on **Instagram Reels (♦ Ace)** scores **high adjusted attention**.
+- A 40-minute **YouTube autoplay binge (♠ Joker)** has **high raw minutes but almost no algorithm-weighted value**.
+
+- Two users can spend the **same time**, but **their card draws (attention efficiency) differ by platform**.
+  - **TikTok may reward spike engagement**, while **Reddit rewards steady browsing**.
+  - **YouTube may ignore your first 10 minutes**, but heavily weight the moment you **intentionally engage**.
+
+### ✅ Key Takeaway
+
+> **Algorithms don’t just count your time — they interpret and score it.**  
+> Some platforms are **time sinks**, while others are **attention amplifiers** — even if the minutes look the same.
+
+
+### Questions
+1.	If platforms score and rank your behavior in secret, should users be allowed to know their score — or is it okay for the system to stay hidden?
+
+2.	If a platform is designed to keep you scrolling even when the content is low-value, is it ethical to design for addiction instead of meaningful use?
+
+<br><br>
+
+# Discussion 
+
+<font size = "5">Welcome to our Classwork 8 Discussion Board! 👋 </font>
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 8.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Classwork 8 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!
+
+
+
+
+<!-- #### 🎭 Platform Algorithm Styles -->
+
+<!-- | Card Suit | Suit Description | Interpretation — Algorithm Personality | -->
+<!-- |:--:|---------------------------|----------------------------------------| -->
+<!-- | **♥** | **Emotional / Viral Hook** | Short, high-stimulation content that triggers emotional reactions and rapid scrolling (e.g., TikTok trends, IG Reels). | -->
+<!-- | **♦** | **Status / Aesthetic / Trend-Oriented** | Curated, polished content designed around aesthetics, branding, and influencer culture (e.g., Instagram Explore, lifestyle feeds). | -->
+<!-- | **♣** | **Community / Discussion / Depth** | Threaded conversations and participatory culture that encourage longer dwell time and comment engagement (e.g., Reddit threads, Discord channels). | -->
+<!-- | **♠** | **Strategic Algorithm / Targeted Retention** | Feeds that quickly learn user intent and optimize recommendations to keep attention efficiently (e.g., TikTok “For You,” YouTube recommendation engine). | -->
+<!-- | **Joker** | **Chaotic Feed / Passive Drift** | Algorithmic noise or autoplay sequences where engagement signals are weak — content is consumed passively without strong cognitive hooks. | -->
+
+<!-- #### 🎮 Rank Interpretation and Engagement Weighting -->
+
+<!-- | Rank Type | Rank Weight | Interpretation — Engagement Intensity Per Minute | -->
+<!-- |------------------------|:------------:|--------------------------------------------------| -->
+<!-- | **Joker (0)** | **1.00** | Represents **zero-value passive time** — autoplay, background scrolling, no meaningful engagement signal. | -->
+<!-- | **2–4 (Low ranks)** | **1.00** | **Minimal engagement** — user is present but not reacting or interacting (glance-scroll behavior). | -->
+<!-- | **5–9 (Mid ranks)** → *Gets boost* | **1.05** | **Sustained scrolling or light interaction**, moderate algorithm feedback — platform is keeping the user but not deeply engaging yet. | -->
+<!-- | **10** | **1.10** | **High interest moment**, user is clearly locked in (watching fully, seeking content, maybe saving or following). | -->
+<!-- | **Ace (A = 1)** → special | **1.25** | **Focused, intentional engagement** — deliberate content consumption, search-based behavior, comment reading or saving meaningful content. | -->
+<!-- | **Face Cards (J, Q, K = 0 value but marked as is_face)** | **1.50** | **Peak algorithmic pull — viral hook moment**, emotional or trend spike that triggers rapid engagement reactions (like/share/replay). | -->

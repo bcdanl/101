@@ -1,0 +1,616 @@
+---
+title: Homework 1
+subtitle: "Introduction to Data Analytics; Generative AI; R Basics"
+date: 2025-09-13
+from: markdown+emoji
+comments: false
+code-fold: false
+
+execute: 
+  warning: false
+  message: false
+  fig-width: 9
+  fig-height: 7
+  fig-align: center
+  eval: false
+---
+```{r}
+#| include: false
+
+library(tidyverse)
+library(skimr)
+library(DT)
+library(hrbrthemes)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5)),
+                axis.title.y = element_text(size = rel(1.5)),
+                legend.title = element_text(size=rel(1.25))
+                ))
+
+x <- c(5, 7, 6, 9, 100, 8, 5, 7, 6)
+q1 <- quantile(x, 0.25)
+q3 <- quantile(x, 0.75)
+iqr_value <- q3 - q1
+```
+
+# Descriptive Statistics
+
+The following provides the descriptive statistics for each part of the homework, as well as the final score of HW1:
+
+```{r}
+#| echo: false
+#| eval: true
+
+sum <- readr::read_csv("https://bcdanl.github.io/data/danl-101-hw1-dist-fall-2025.csv")
+DT::datatable(
+  sum,
+  options = list(pageLength = nrow(sum)),
+  rownames = FALSE
+)
+```
+
+
+
+<br><br>
+
+
+
+# Multiple Choice Questions
+
+## Question 1. 
+**Data analytics aims to replace traditional business and economics courses.**
+
+- True
+- False
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**False**
+
+-	Data analytics is seen as a complement to traditional business and economics courses, enhancing decision-making with data-driven insights rather than replacing foundational business knowledge.
+
+:::
+
+## Question 2. 
+**Data analysts are the only professionals who benefit from data analytics skills.**
+
+- True
+- False
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**False**
+
+-	Many professionals, including marketers, financial analysts, healthcare professionals, and even educators, benefit from data analytics skills as they apply to various fields.
+
+:::
+
+## Question 3.	
+**Python and R are the only programming languages used in data science.**
+
+- True
+- False
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**False**
+
+-	While Python and R are popular in data science, other languages like SQL, MATLAB, and even JavaScript are also used depending on the application.
+
+:::
+	
+## Question 4.
+**The use of generative AI requires a deep understanding of the subject matter to apply it effectively.**
+
+- True
+- False
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**True**
+
+-	To use generative AI effectively, it is essential to have a solid understanding of the subject area to interpret and apply the results accurately.
+
+:::
+
+## Question 5.
+
+**Machine learning algorithms need to be explicitly programmed for each task they perform.**
+
+- True
+- False
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**False**
+
+-	Machine learning algorithms learn patterns from data, meaning they don’t need explicit programming for each task. Instead, they adapt and improve their performance based on the data provided.
+	
+:::
+
+
+## Question 6.
+
+**Which of the following skills is NOT typically covered in traditional business or economics classes?**
+
+a. Finding and cleaning datasets
+b. Economic modeling
+c. Market analysis
+d. Investment portfolio management
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+-	**a. Finding and cleaning datasets**
+  -	**Why?**: Data cleaning and preparation are often covered in data analytics but not typically in traditional business or economics courses.
+	  
+:::
+	
+## Question 7.	
+**Which of the following is a key reason why R is widely used in data analysis?**
+
+a. It is a paid software
+b. It is closed source
+c. It is specifically designed for statistical computing
+d. It is mostly used for web development
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+-	**It is specifically designed for statistical computing**
+	-	**Why?**: R was created for statistical analysis and is widely used because of its extensive libraries for data analysis and statistical modeling.
+
+:::
+
+
+## Question 8.	
+
+**Which question would you ask to analyze season ticket renewals in sports analytics?**
+
+a. How many players are on the team?
+b. What factors drive last-minute individual seat ticket purchases?
+c. What are the financial benefits of dynamic pricing?
+d. Which type of fan engages most with team merchandise?
+ 
+::: {.callout-tip collapse="true"}
+### Show answer
+
+-	**Which type of fan engages most with team merchandise?**
+	-	**Why?**: This question helps to understand fan loyalty and engagement, which are important factors in predicting season ticket renewals.
+
+- While the above might be the most appropriate answer to this question, I also give full credit to the following responses:
+  -	What factors drive last-minute individual seat ticket purchases?
+	-	What are the financial benefits of dynamic pricing?
+	
+:::
+
+## Question 9.	
+**Which of the following is a benefit of using Git in software development?**
+
+a. It helps analyze financial data
+b. It tracks changes and helps manage multiple versions of a project
+c. It predicts future trends using machine learning
+d. It assists in generating reports and dashboards
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+-	**It tracks changes and helps manage multiple versions of a project**
+	-	**Why?**: Git is a version control system that tracks changes and allows developers to manage multiple versions of a project, making collaboration more efficient.
+	
+:::
+
+## Question 10.
+
+**Which of the following is a key application of data analytics in the retail sector?**
+
+a. Enhancing physical store layouts based on customer behavior
+b. Developing machine learning algorithms
+c. Analyzing sports team tactics
+d. Predicting election results
+ 
+::: {.callout-tip collapse="true"}
+### Show answer
+
+-	**Enhancing physical store layouts based on customer behavior**
+  -	**Why?**: Data analytics helps retailers optimize store layouts by analyzing customer movement patterns, ultimately improving the customer experience and sales.
+	  
+:::
+
+
+## Question 11.
+
+**Which statement best distinguishes artificial intelligence (AI), machine learning (ML), and deep learning (DL)?**
+
+a. AI ⊂ ML ⊂ DL
+b. ML ⊂ DL ⊂ AI
+c. DL ⊂ ML ⊂ AI
+d. AI = ML = DL
+ 
+::: {.callout-tip collapse="true"}
+### Show answer
+
+-	**DL ⊂ ML ⊂ AI**
+	-	**Why**: Artificial Intelligence (AI) is the broadest field, encompassing any technique that makes machines mimic human intelligence. Machine Learning (ML) is a subset of AI that learns patterns from data. Deep Learning (DL) is a subset of ML that uses multi-layered neural networks. Thus, the correct hierarchy is Deep Learning inside Machine Learning inside Artificial Intelligence.
+	  
+:::
+
+
+## Question 12. 
+**In supervised learning, the “answer key” refers to:**
+
+a. Unlabeled data
+b. Model weights
+c. Labeled outputs paired with inputs
+d. Parameters
+ 
+::: {.callout-tip collapse="true"}
+### Show answer
+
+- **Labeled outputs paired with inputs**
+	-	**Why**: Supervised learning requires training data that comes with correct answers. For each input (X), there is a corresponding labeled output (Y). The model uses these pairs to learn a mapping function. Unlabeled data (choice A) is used in unsupervised learning, model weights (choice B) are learned parameters, and parameters (choice D) refer to model settings, not the “answer key.”
+
+
+:::
+
+
+
+## Question 13. 
+**In a neural network, a weight primarily:**
+
+a. Measures dataset size
+b. Encodes the strength of a connection’s influence on outputs
+c. Controls the learning rate
+d. Is the same as a token
+ 
+::: {.callout-tip collapse="true"}
+### Show answer
+
+- **Encodes the strength of a connection’s influence on outputs**
+  -	**Why**: Weights represent how much influence one neuron’s signal has on another. During training, weights are adjusted to reduce errors. Dataset size (choice A) is unrelated, learning rate (choice C) controls how fast weights are updated, and tokens (choice D) are units of text in language models, not weights.
+
+:::
+
+## Question 14. 
+**Which data concern is correctly stated?**
+ 
+a. Pretraining sources are always licensed
+b. Pretraining corpora can encode biases and unclear copyright status
+c. Pretraining avoids web text entirely
+d. RLHF eliminates all bias fully
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+- **Pretraining corpora can encode biases and unclear copyright status**
+	-	**Why**: Large language models are trained on vast web data that may contain biases, stereotypes, misinformation, or copyrighted content. This raises ethical and legal challenges. Pretraining sources are not always licensed (so choice A is wrong), web text is heavily used (so choice C is wrong), and RLHF reduces but does not eliminate bias (so choice D is wrong).
+
+:::
+
+<br><br>
+
+# Short-Answer Questions
+
+## Question 1. 
+
+**Why are R and Python considered important tools for data analytics?**
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+-	R and Python are popular because they have a wide range of libraries and packages for data manipulation, visualization, and machine learning. They also support a large user community and are open-source, making them accessible and adaptable.
+	
+:::
+	
+## Question 2.	
+
+**Explain why understanding the output of Generative AI tools like ChatGPT is important for data analysts or data scientists.**
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+-	Data analysts need to interpret the output of generative AI tools to ensure that the generated information is relevant, accurate, and aligned with the specific context of their analysis. This understanding helps prevent misinterpretation and misuse of AI-generated insights.
+	
+:::
+	
+## Question 3.	
+
+**How does dynamic ticket pricing work in sports analytics?**
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+-	Dynamic ticket pricing adjusts the price of tickets in real-time based on demand, opponent strength, weather conditions, and other factors. This approach maximizes revenue by charging more when demand is high and less when demand is low.
+
+:::
+
+## Question 4.
+
+**How do business intelligence (BI) tools assist in decision-making for businesses?**
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+-	BI tools help businesses collect, process, and visualize data to support informed decision-making. They provide insights into trends, performance metrics, and areas of improvement, enabling businesses to make data-driven decisions.
+	
+
+:::
+
+## Question 5. 
+
+**Define hallucination in LLMs and name two practical steps a student can take to reduce its impact in coursework.**
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+A hallucination in large language models (LLMs) occurs when the model produces information that is **confidently stated but factually incorrect or fabricated**.  
+
+- Two steps to reduce its impact:  
+  1. **Verify outputs with reliable sources** (textbook, lecture notes, academic references, or official datasets).  
+  2. **Use structured prompting** (e.g., “provide sources,” “show assumptions,” or “step-by-step”) to encourage transparency and make errors easier to detect.  
+
+
+:::
+
+
+## Question 6. 
+Describe a realistic business task well-suited to unsupervised learning and explain why labels aren’t necessary.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+A realistic business task is **customer segmentation** in marketing. Companies can use purchasing behavior, browsing patterns, and demographic information to group customers into clusters.  
+
+- Labels aren’t necessary because the company does not need predefined categories (like “high spender” vs. “low spender”). Instead, the algorithm **finds natural groupings in the data** (clusters) on its own, revealing hidden structure that can guide targeted promotions or personalized recommendations.  
+
+:::
+
+
+<br><br>
+
+# R Basics
+
+## Question 1
+Compute the weighted mean of the vector `scores <- c(85, 90, 88, 92, 87)` with corresponding weights `weights <- c(1, 2, 1, 1, 3)`.
+
+```{.r}
+scores <- c(85, 90, 88, 92, 87)
+weights <- c(1, 2, 1, 1, 3)
+weighted_mean <- [?]
+```
+
+::: {.callout-tip collapse="true"}
+### Show answer
+```{r}
+# Define the scores vector
+scores <- c(85, 90, 88, 92, 87)
+
+# Define the corresponding weights vector
+weights <- c(1, 2, 1, 1, 3)
+
+# Compute the weighted mean by summing the products of scores and weights and dividing by the sum of weights
+weighted_mean <- sum(scores * weights) / sum(weights)
+```
+
+Therefore the weighted mean is **88.25**.
+
+
+- To clarify the difference between the arithmetic mean and the weighted mean:
+  - **Arithmetic mean**: This is the simple average where all values are treated equally. You sum all the values and divide by the number of values. 
+  - **Weighted mean**: This takes into account the weights assigned to each value. Each value is multiplied by its corresponding weight, and then the sum of these products is divided by the total sum of the weights.
+
+- Example:
+  - Let's say you have a vector of values: `x <- c(2, 4, 6)`. And corresponding weights: `w <- c(1, 2, 3)`.
+  - For the arithmetic mean, you would ignore the weights and simply find the average of the values:  
+    - `(Arithmetic mean) = (2 + 4 + 6) / 3 = 4`
+  - For the weighted mean, you would multiply each value by its corresponding weight and then divide by the sum of the weights: 
+    - `(Weighted mean) = ( (1 * 2) + (2 * 4) + (3 * 6) ) / ( 1 + 2 + 3 ) = 4.67`
+
+
+:::
+
+
+
+## Question 2
+Compute the interquartile range (IQR) of the following vector `x <- c(5, 7, 6, 9, 100, 8, 5, 7, 6)` manually, without using the `IQR()` function.
+
+```{.r}
+x <- c(5, 7, 6, 9, 100, 8, 5, 7, 6)
+q1 <- [Blank 1](x, 0.25)
+q3 <- [Blank 2](x, [Blank 3])
+iqr_value <- q3 - q1
+```
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+```{r}
+# Define the data vector
+x <- c(5, 7, 6, 9, 100, 8, 5, 7, 6)
+
+# Compute the first quartile (Q1)
+q1 <- quantile(x, 0.25)
+
+# Compute the third quartile (Q3)
+q3 <- quantile(x, 0.75)
+
+# Calculate the interquartile range (IQR)
+iqr_value <- q3 - q1
+```
+
+Therefore the IQR is **2**.
+
+
+:::
+
+## Question 3
+Detect the outliers in the vector `x <- c(5, 7, 6, 9, 100, 8, 5, 7, 6)` using the 1.5*IQR rule.
+
+```{.r}
+lower_bound <- q1 - 1.5 * iqr_value
+upper_bound <- q3 + 1.5 * iqr_value
+outliers_lower <- [Blank 1]
+outliers_upper <- [Blank 2]
+```
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+```{r}
+# Calculate the lower bound for outliers using Q1 and the IQR
+lower_bound <- q1 - 1.5 * iqr_value
+
+# Calculate the upper bound for outliers using Q3 and the IQR
+upper_bound <- q3 + 1.5 * iqr_value
+
+# Find any values in the data vector that are below the lower bound (lower outliers)
+outliers_lower <- x[ x < lower_bound ]
+
+# Find any values in the data vector that are above the upper bound (upper outliers)
+outliers_upper <- x[ x > upper_bound ]
+```
+
+There is one single value, **100**, that belongs to `outliers_upper`. There is no lower outlier.
+
+- This rule is described in [this lecture slide](https://bcdanl.github.io/danl-lec/danl-101-lec-05-2025-0917.html#/measures-of-dispersion-interquartile-range).
+
+- Although we primarily use `filter()` with data.frame, understanding vector indexing is a fundamental skill in data analysis.
+  - [Lecture 5. R Basics](https://bcdanl.github.io/danl-lec/danl-101-lec-05-2025-0917.html#/accessing-a-subset-of-a-vector-1) covers vector indexing.
+
+
+:::
+
+## Question 4
+Calculate the skewness of the vector `x <- c(3, 5, 8, 12, 14, 15, 18, 20)` without using any external R package. Skewness is defined as:
+$$
+\text{Skewness} \,=\, \frac{N}{(N-1)(N-2)}\sum_{i=1}^{N}\left(\frac{x_{i}-\bar{x}}{s}\right)^{3}
+$$
+where $s$ is the standard deviation of the vector `x`.
+
+
+
+```{.r}
+x <- c(3, 5, 8, 12, 14, 15, 18, 20)
+N <- length(x)
+mean_x <- mean(x)
+sd_x <- sd(x)
+skewness <- [?]
+```
+
+::: {.callout-tip collapse="true"}
+### Show answer
+```{r}
+# Define the data vector
+x <- c(3, 5, 8, 12, 14, 15, 18, 20)
+
+# Calculate the number of elements (n) in the vector
+N <- length(x)
+
+# Compute the mean of the vector
+mean_x <- mean(x)
+
+# Compute the standard deviation of the vector
+sd_x <- sd(x)
+
+# Calculate skewness using the formula provided
+skewness <- ( N / ( (N-1) * (N-2) ) ) * sum( ( (x - mean_x)/sd_x )^3 )
+```
+
+Therefore `skewness` is approximately `-0.2337`.
+
+-	You do not need to memorize the formula for skewness in our course.
+  -	The question is about translating a complex formula into R code.
+
+::: callout-note
+
+The **skewness** formula, written out without using summation notation, is:
+
+$$
+\text{Skewness} \;=\; \frac{N}{(N-1)(N-2)} \Bigg[
+\left(\frac{x_{1}-\bar{x}}{s}\right)^{3} +
+\left(\frac{x_{2}-\bar{x}}{s}\right)^{3} +
+\cdots +
+\left(\frac{x_{N}-\bar{x}}{s}\right)^{3}
+\Bigg]
+$$
+For simplicity, we will not use the summation notation in this course.
+
+:::
+
+:::
+
+## Question 5
+Calculate `mode_v`, the mode of a numeric vector `v <- c(2, 3, 5, 5, 6, 7, 3)` using the `mfv()` function provided by the R package `modeest`.
+
+
+```{.r}
+v <- c(2, 3, 5, 5, 6, 7, 3, 5)
+mode_v <- [Blank 1]::[Blank 2](v)
+```
+
+::: {.callout-tip collapse="true"}
+### Show answer
+```{r}
+# Define the vector of data
+v <- c(2, 3, 5, 5, 6, 7, 3, 5)
+
+# Use the modeest package's mfv() function to calculate the mode
+mode_v <- modeest::mfv(v)
+```
+
+To use `modeest::mfv()`, we first install the `modeest` package:
+
+```{r}
+#| eval: false
+
+# Install the modeest package
+install.packages("modeest")
+```
+
+
+The notation `modeest::mfv()` indicates that we are using the `mfv()` function from the `modeest` package. The `::` operator specifies which package the function or the object is coming from.
+
+:::
+
+## Question 6
+Calculate, `z`, the vector for the standardized values in the vector `x <- c(10, 20, 30, 40, 50)`. The standardized value of the individual value, $z_{i}$, is defined as:
+
+$$
+z_{i} \,=\, \frac{x_{i} - \bar{x}}{s},
+$$
+where\
+$\quad$ - $x_{i}$: $i^{th}$ value in the vector $x$\
+$\quad$ - $\bar{x}$: the mean of values in $x$\
+$\quad$ - $s$: the standard deviation of values in $x$\
+$\quad$ - $z_{i}$: $i^{th}$ value in the vector $z$, the vector of the standardized values in $x$.
+
+
+```{.r}
+x <- c(10, 20, 30, 40, 50)
+z <- [?]
+```
+
+::: {.callout-tip collapse="true"}
+### Show answer
+```{r}
+# Define the data vector
+x <- c(10, 20, 30, 40, 50)
+
+# Calculate the standardized values (z-scores) for each element in x
+z <- (x - mean(x)) / sd(x)
+```
+
+-	Please note that the R objects `mean_x` and `sd_x` defined in Question 4 are not used in this question.
+
+
+:::

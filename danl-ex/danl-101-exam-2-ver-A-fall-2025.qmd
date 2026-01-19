@@ -1,0 +1,1282 @@
+---
+title: Midterm Exam II
+subtitle: Version A
+date: 2025-11-19
+from: markdown+emoji
+toc: true
+toc-depth: 8
+execute: 
+  eval: true
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(ggrepel)
+library(ggthemes)
+```
+
+
+
+# Section 1. Multiple Choice
+
+## Question 1
+During the ETL process, the "Transform" stage in a DANL 101 context using R is best represented by which set of functions? 
+
+a. `read_csv()`
+b. `nrow()` and `head()` 
+c. `filter()`, `select()`, and `left_join()` 
+d. `mean()` and `sd()`
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** c  
+
+These are typical data-wrangling verbs used to *transform* data.
+
+
+:::
+
+<br>
+
+
+## Question 2
+When the distribution of a variable has a single peak and is negatively skewed (i.e., having a long left tail), which of the following is correct?
+
+a. Median < Mode < Mean
+b. Mean < Median < Mode
+c. Mode < Mean < Median
+d. Median = Mean = Mode
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** b  
+
+With a long *left* tail, the **mean** is pulled left the most, then the **median**, then the **mode** stays at the peak:  
+Mean < Median < Mode.
+
+
+:::
+
+<br>
+
+
+
+## Question 3
+What is NOT an essential component in `ggplot()` data visualization?
+
+a. Data frames
+b. Geometric objects
+c. Facets
+d. Aesthetic attributes
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** c  
+
+Facets are useful but optional. You can build a valid `ggplot` without them.
+
+
+:::
+
+<br>
+
+
+
+## Question 4
+____(1)____ does not necessarily imply ____(2)____
+
+a. (1) Correlation; (2) causation
+b. (1) Causation; (2) correlation
+c. (1) Correlation; (2) correlation
+d. (1) Causation; (2) causation
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** a  
+
+The classic warning: **correlation does not imply causation**.
+
+
+:::
+
+<br>
+
+
+## Question 5
+In the context of the lecture, which of the following correctly interprets a change in log-transformed GDP per capita and its meaning for GDP per capita?
+
+a. A one-unit increase in log(GDP per capita) means to a 1% increase in GDP per capita.
+b. A one-unit increase in log(GDP per capita) means to a 100% increase in GDP per capita.
+c. A one-unit increase in GDP per capita means an 8.4% increase in GDP per capita.
+d. A one-unit increase in GDP per capita means a 0.084% increase in GDP per capita.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** b  
+
+A **1-unit** increase in log(GDP per capita) corresponds to GDP per capita multiplying by about *e* (roughly a 100%+ increase), not just 1%.
+
+
+:::
+
+<br>
+
+
+## Question 6
+
+In a relational database, a key is best described as:
+
+a. A column that stores numeric values only
+b. Any column used in a chart or visualization
+c. A special column that can never have missing values
+d. A column that uniquely identifies each row in a table
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** d  
+
+A **key** is a column (or combination of columns) whose value is unique for each row.
+
+
+:::
+
+<br><br>
+
+
+
+# Section 2. Filling-in-the-Blanks
+
+
+## Question 7
+When collecting data in real life, measured values often differ. In this context, we can observe ____________________ easily; for example, if we measure any numeric variable (e.g., friends’ heights) twice, we are likely to get two different values.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** variability
+
+
+:::
+
+<br>
+
+
+## Question 8
+The ____________________ of a variable is the value that appears most frequently within the set of that variable’s values.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** mode
+
+
+:::
+
+<br>
+
+
+
+## Question 9
+The `gg` in `ggplot` stands for ____________________.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** Grammar of Graphics
+
+
+:::
+
+<br>
+
+
+
+## Question 10
+Using ____________________---a machine learning method---the `geom_smooth()` visualizes the ____________________ value of the `y` variable for a given value of the `x` variable. The grey ribbon around the curve illustrates the ____________________ surrounding the estimated curve.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+Using **regression** — a machine learning method — the `geom_smooth()` visualizes the **predicted** value of the `y` variable for a given value of the `x` variable. The grey ribbon around the curve illustrates the **uncertainty** surrounding the estimated curve.
+
+
+:::
+
+<br>
+
+
+
+## Question 11
+When making a scatterplot, it is a common practice to place the ____________________ variable along the x-axis and the ____________________ variable along the y-axis.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+x-axis: **input** variable  
+y-axis: **outcome** variable
+
+:::
+
+<br>
+
+
+
+
+## Question 12
+In ggplot, we can set `alpha` between ____________________ (full transparency) and ____________________ (no transparency) manually to adjust a geometric object's transparency level.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** 0 (full transparency) and 1 (no transparency)
+
+
+:::
+
+<br>
+
+
+
+
+
+
+# Section 3. Data Transformation and Visualization with R
+
+## Questions 13-19
+For **Questions 13-19**, consider the following R packages and the data.frame, `esg_info`, containing individual company statistics for the Environmental, Social, and Governance (ESG) risk score in 2024.
+
+```{r}
+#| message: false
+#| warning: false
+
+
+library(tidyverse)
+library(skimr)
+esg_info <- read_csv("https://bcdanl.github.io/data/stock_esg_simple.csv")
+```
+
+- The `esg_info` data.frame is with 631 observations and 7 variables.
+- The first 5 observations in the `esg_info` data.frame are displayed below:
+
+```{r}
+#| echo: false
+
+
+knitr::kable(esg_info |> select(Ticker:sector, total_esg) |> slice(1:5))
+
+knitr::kable(esg_info |> select(Ticker:sector, environmental:governance) |> slice(1:5))
+
+```
+
+
+### Description of Variables in `esg_info`:
+  
+- `Ticker`: The stock symbol used to uniquely identify a publicly traded company on financial markets.
+- `Company_Name`: The full name of the company corresponding to the ticker symbol.
+- `sector`: The broader industry category to which the company belongs, such as Technology, Healthcare, or Financials.
+- `total_esg`: The company’s overall Environmental, Social, and Governance (ESG) score. It reflects how well the company is performing in terms of sustainability and ethical impact.
+-	`environmental`: The company’s score related to environmental practices, such as energy efficiency, waste management, and carbon footprint.
+-	`social`: The company’s score related to social practices, including employee relations, diversity, community impact, and human rights.
+-	`governance`: The company’s score related to governance practices, like board structure, executive pay, and shareholder rights.
+
+
+### Interpreting ESG Data
+
+The **ESG data** helps investors evaluate a company’s sustainability profile and exposure to long-term environmental, social, and governance risks. Here's how to interpret each metric:
+
+
+#### **Total ESG Risk Score**
+- **What it means**: A composite score reflecting the company’s overall **exposure to ESG-related risks**.
+- **How to interpret**:  
+  - **Higher score = higher risk** → More vulnerable to ESG-related issues.  
+  - *Example*: A company with **total_ESG = 15** is considered to have **lower ESG risk** than one with **total_ESG = 30**.
+
+
+#### **Environmental Risk Score**
+- **What it measures**: Exposure to **environmental risks** such as:
+  - Carbon emissions, waste management, climate change strategy  
+  - Higher score → more environmental liabilities or poor sustainability measures.
+
+
+#### **Social Risk Score**
+- **What it measures**: Exposure to **social risks**, including:
+  - Labor practices, human rights, inclusive culture and representation, customer and community relations  
+  - Higher score = more risk from labor issues, public relation (PR) problems, etc.
+
+
+#### **Governance Risk Score**
+- **What it measures**: Exposure to **governance-related risks**, such as:
+  - Board structure and independence, executive compensation, shareholder rights, transparency and ethics  
+  - Higher score suggests poor governance structures.
+
+
+  
+
+
+<br>
+
+The followings are the summary of the `esg_info` data.frame, including **descriptive statistics** for each variable.
+```{r}
+#| echo: false
+esg_info |> 
+  skim() |> 
+  select(-numeric.hist,-character.whitespace, -complete_rate)
+```
+
+
+### Question 13
+
+Write a code to produce the above summary for the `esg_info` data.frame, including descriptive statistics for each variable.
+
+**Answer:** ______________________________________________
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+`skim(esg_info)`
+
+:::
+
+<br>
+
+
+
+### Question 14
+What code would you use to count the number of companies in each sector?
+
+a. `esg_info |> count(Sector)`
+b. `esg_info |> count(Company_Name)`
+c. `esg_info |> count(Company_Name, Sector)`
+d. `esg_info |> count(Sector, Company_Name)`
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**Answer:** a
+
+:::
+
+<br>
+
+
+
+### Question 15
+What is the median value of `total_esg`? Find this value from the summary of the `esg_info` data.frame.
+
+**Answer:** ______________________________________________
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**Answer:** 21.2
+
+:::
+
+<br>
+
+
+
+
+### Question 16
+- We are interested in companies whose overall ESG performance is relatively weak.
+- To achieve this, we create a new data.frame, a new data.frame, `bottom25_esg`, which includes only companies whose `total_esg` value is greater than or equal to the **third quartile** of `total_esg` variable.
+
+```{r}
+#| echo: false
+bottom25_esg <- esg_info |> 
+  filter(total_esg >= 26.1)
+```
+
+
+```{r}
+#| eval: false
+bottom25_esg <- esg_info |> 
+  filter(total_esg >= ___BLANK___)
+```
+
+
+- Using the summary of the `esg_info` data.frame, find condition correctly fills in the BLANK to complete the code above:
+
+a. 6.4
+b. 7.08
+c. 16.3
+d. 21.2
+e. 21.6
+f. 26.1
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**Answer:** f
+
+:::
+
+<br>
+
+
+### Question 17
+- Additionally, we are interested in companies with excellent environmental or governance performance, despite having weak overall ESG scores.
+- To achieve this, we create a new data.frame, `bottom25_esg_filtered`, which includes only companies whose `environmental` risk score is at most **3.95** or whose `governance` risk score is at most **5.2**.
+
+```{r}
+#| echo: false
+bottom25_esg_filtered <- bottom25_esg |> 
+  filter(environmental <= 3.95 | governance <= 5.2)
+```
+
+
+```{r}
+#| eval: false
+bottom25_esg_filtered <- esg_info |> 
+  filter(___BLANK___)
+```
+
+
+- Which condition correctly fills in the BLANK to complete the code above?
+
+a. `environmental <= 3.95 | governance <= 5.2`
+b. `environmental <= 3.95 , governance <= 5.2`
+c. `environmental <= 3.95 & governance <= 5.2`
+d. `environmental <= 3.95 ! governance <= 5.2`
+e. Both (b) and (c)
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**Answer:** a
+
+:::
+
+<br>
+
+
+
+### Question 18
+How would you describe the relationship between `environmental` and `governance` using the `bottom25_esg_filtered` data.frame?
+
+- To identify **leader companies**, such as **environmental leaders** and  **governance leaders**, some company names are added to such points in the plot.
+- Note that it is NOT required to provide the code for adding these texts to the plot.
+
+Complete the code by filling in the blanks (1)-(4).
+
+```{r}
+#| eval: false
+ggplot(data = ___(1)___,
+       mapping = aes(x = ___(2)___, 
+                     y = ___(3)___)) +
+  geom_point(alpha = 0.5) +
+  ___(4)___()
+```
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 6
+
+df <- bottom25_esg_filtered |> 
+  mutate(
+    Company_Name = ifelse(str_detect(Company_Name, "Bank of America"), "Bank of America", Company_Name),
+    Company_Name = ifelse(str_detect(Company_Name, "JPMorgan Chase"), "JPMorgan Chase", Company_Name),
+    Company_Name = str_replace_all(Company_Name, ", Inc.", ""),
+    Company_Name = str_replace_all(Company_Name, " Inc.", ""),
+    Company_Name = str_replace_all(Company_Name, " Group", ""),
+    Company_Name = str_replace_all(Company_Name, " Platforms", ""),
+    Company_Name = str_replace_all(Company_Name, " Services", ""),
+    Company_Name = str_replace_all(Company_Name, "The ", "")
+  ) |> 
+  mutate(new_player = 
+           ifelse((environmental < 5 & governance < 7.5) | 
+                    (environmental < 2.5 & governance < 10) | 
+                    (environmental < 2.5 & governance < 12.5) | 
+                    (environmental < 3 & governance < 11) | 
+                    (environmental > 15 & governance < 3),
+                  Company_Name, ""))
+
+df_pnc <- df |> 
+  filter(Company_Name == "PNC Financial")
+
+p <- ggplot(data = df,
+            aes(x = environmental, 
+                y = governance, 
+                label = new_player))
+
+p + 
+  geom_point(data = df_pnc,
+             size = 3,
+             shape = 1) +
+  geom_point(alpha = .5) +
+  geom_smooth(data = df) +
+  geom_text_repel(box.padding = .85, 
+                  hjust = -.5,
+                  vjust = .5) +
+  theme_bw()
+```
+
+#### Blank (1)
+a. `bottom25_esg_filtered`
+b. `bottom25_esg`
+c. `esg_info`
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+**Answer:** a
+
+:::
+
+<br>
+
+
+
+#### Blank (2)
+a. `environmental`
+b. `social`
+c. `governance`
+d. `total_esg`
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+**Answer:** a
+
+:::
+
+<br>
+
+
+
+#### Blank (3)
+a. `environmental`
+b. `social`
+c. `governance`
+d. `total_esg`
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+**Answer:** c
+
+:::
+
+<br>
+
+
+#### Blank (4)
+a. `geom_fit`
+b. `geom_scatterplot`
+c. `geom_smooth`
+d. `geom_histogram`
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+**Answer:** c
+
+:::
+
+<br>
+
+
+
+#### Environmental Leaders
+Which companies qualify as **environmental leaders** — that is, companies with an `environmental` risk score **below 2.5** whose plotted points lie **below the gray ribbon** in the figure?
+
+**Answer:** ______________________________________________
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+JPMorgan Chase, PNC Financial, Bank of America, AbbVie, and Ionis Pharmaceuticals
+
+:::
+
+<br>
+
+
+
+#### Governance Leaders
+Which companies qualify as **governance leaders** — that is, companies with an `governance` risk score **below 10** whose plotted points lie **below the gray ribbon** in the figure?
+
+**Answer:** ______________________________________________
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+Ionis Pharmaceuticals, HCA Healthcare, IAC, and Stericycle
+
+:::
+
+<br>
+
+
+#### Relationship
+Describe the *overall* relationship between `environmental` and `governance`, in the given plot.
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+<!-- Overall, `governance` decreases as `environmental` increases up to 10, after which it remains relatively constant. -->
+
+Overall, the `governance` risk score decreases as the `environmental` risk score increases up to about 10, after which it **levels off and remains relatively constant**. 
+
+This pattern suggests that among companies with **weaker overall ESG performance**, **deterioration in environmental risk** is associated with **stronger governance up to a threshold**, beyond which further changes in environmental risk have **little additional correlation** with governance risk.
+
+:::
+
+<br>
+
+
+
+
+
+
+### Question 19
+How would you describe how the distribution of `total_esg` varies by sector (`sector`) using the `bottom25_esg_filtered` data.frame?
+
+- Note that the `sector` categories are sorted by the median of `total_esg` in the plot.
+
+Complete the code by filling in the blanks.
+
+```{r}
+#| eval: false
+ggplot(data = ___(1)___,
+       mapping = aes(___(2)___, 
+                     y = ___(3)___)) +
+  ___(4)___() +
+  labs(y = "Sector")
+```
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 2.45
+
+ggplot(data = bottom25_esg_filtered,
+       mapping = aes(x = total_esg, 
+                     y = fct_reorder(sector, total_esg))
+       ) +
+  geom_boxplot() +
+  theme_bw() +
+  labs(y = "Sector")
+```
+
+#### Blank (1)
+a. `bottom25_esg_filtered`
+b. `bottom25_esg`
+c. `esg_info`
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+:::
+
+<br>
+
+
+#### Blank (2)
+a. `x = total_esg`
+b. `y = total_esg`
+c. `x = environmental`
+d. `y = environmental`
+e. `x = social`
+f. `y = social`
+g. `x = governance`
+h. `y = governance`
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+:::
+
+<br>
+
+
+
+#### Blank (3)
+a. `fct_reorder(total_esg, sector)`
+b. `fct_reorder(environmental, total_esg)`
+c. `fct_reorder(total_esg, social)`
+d. `fct_reorder(governance, total_esg)`
+e. `fct_reorder(total_esg, controversy)`
+f. `fct_reorder(sector, total_esg)`
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+f
+
+:::
+
+<br>
+
+
+
+#### Blank (4)
+a. `geom_bar`
+b. `geom_box`
+c. `geom_boxplot`
+d. `geom_histogram`
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+c
+
+:::
+
+<br>
+
+
+
+## Question 20
+
+![](https://bcdanl.github.io/lec_figs/chess-standardboard.png){width=50%}
+![](https://bcdanl.github.io/lec_figs/chess-titled-tuesday.jpg){width=50%}
+```{r}
+#| echo: false
+
+
+# knitr::include_graphics("https://bcdanl.github.io/lec_figs/chess-standardboard.png")
+# knitr::include_graphics("https://bcdanl.github.io/lec_figs/chess-titled-tuesday.png")
+
+```
+
+
+For Question 20, you will use the following R packages and a data.frame named `chess_top4`, which contains information about chess games played by four of the world’s top online chess players during a special event called “Titled Tuesday” on chess.com. These games were played in a format where each player has 3 minutes to make all their moves, with 1 second added to their clock after each move. The data includes games from October 2022 to October 2024 played only among the following four players:
+
+1. **Magnus Carlsen**
+2. **Hikaru Nakamura**
+3. **Alireza Firouzja**
+4. **Daniel Naroditsky**
+
+**Note:** Titled Tuesday is a weekly event held every Tuesday on chess.com, where titled chess players (such as Grandmasters and International Masters) compete in online tournaments.
+
+
+```{r}
+#| message: false
+#| warning: false
+
+
+library(tidyverse)
+chess_top4 <- read_csv("https://bcdanl.github.io/data/chess_titled_tuesday.csv")
+```
+
+
+
+The first 15 observations in the `chess_top4` data.frame are displayed below:
+```{r}
+#| echo: false
+
+
+knitr::kable(chess_top4 |> slice(1:15) )
+
+```
+
+- The `chess_top4` data.frame contains 70 observations and 4 variables, representing 70 unique chess games.
+
+### Description of Variables in `chess_top4`:
+  
+- `Date`: The date when the game was played.
+
+- `White`: The name of the player who played with the white pieces.
+
+- `Black`: The name of the player who played with the black pieces.
+
+- `Result`: The outcome of the game, which can be one of the following:
+  - "White Wins" (the player with the white pieces won the game)
+  - "Black Wins" (the player with the black pieces won the game)
+  - "Draw" (the game ended in a tie)
+
+Question 20 is about a **ggplot** code to visualize how the distribution of `Result` varies among these top 4 chess players.
+
+
+#### Part 1
+Complete the code by filling in the blanks to replicate the given plot.
+
+- The White player is displayed on the vertical axis.
+- The Black player is labeled at the top of each panel.
+```{r}
+#| eval: false
+ggplot(data = chess_top4,
+       mapping = aes(___(1)___,
+                     fill = ___(2)___)) +
+  geom_bar(___(3)___) +
+  facet_wrap(___(4)___, ncol = 1) +
+  labs(x = "Proportion")
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8.5
+#| fig-width: 10
+
+ggplot(data = chess_top4,
+       aes(y = White,
+           fill = Result)) +
+  geom_bar(position = "fill") +
+  scale_fill_colorblind() +
+  facet_wrap(~Black,
+             ncol = 1) +
+  # scale_x_percent() +
+  labs(x = "Proportion") +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0,
+                                  face = "bold"),
+        legend.position = "right",
+        ) +
+  guides(fill = guide_legend(reverse = TRUE)) 
+```
+
+
+##### Blank (1)
+a. `x = White`
+b. `y = White`
+c. `x = Black`
+d. `y = Black`
+e. `x = Proportion`
+f. `y = Proportion`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+b
+
+:::
+
+<br>
+
+##### Blank (2)
+a. `chess_top4`
+b. `White`
+c. `Black`
+d. `Result`
+e. `count`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+##### Blank (3)
+a. `position = "stack"`
+b. `position = "fill"`
+c. `position = "dodge"`
+d. Leaving (3) empty
+e. Both a and d
+f. Both b and d
+g. Both c and d
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+b
+
+:::
+
+<br>
+
+
+
+
+##### Blank (4)
+a. `White`
+b. `~White`
+c. `Black`
+d. `~Black`
+e. `Player`
+f. `~Player`
+g. both a and b
+h. both c and d
+i. both e and f
+j. both b and f
+k. both d and f
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+
+#### Part 2
+Complete the code by filling in the blanks to replicate the given plot.
+
+- The White player is displayed on the vertical axis.
+- The Black player is labeled at the top of each panel.
+
+```{r}
+#| eval: false
+ggplot(data = chess_top4,
+       mapping = aes(___(1)___,
+                     fill = ___(2)___)) +
+  geom_bar(___(3)___) +
+  facet_wrap(___(4)___, ncol = 1)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8.5
+#| fig-width: 10
+
+ggplot(data = chess_top4,
+       aes(y = White,
+           fill = Result)) +
+  geom_bar(position = "stack") +
+  scale_fill_colorblind() +
+  facet_wrap(~Black,
+             ncol = 1) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0,
+                                  face = "bold"),
+        legend.position = "right",
+        ) +
+  guides(fill = guide_legend(reverse = TRUE)) 
+```
+
+
+##### Blank (1)
+a. `x = White`
+b. `y = White`
+c. `x = Black`
+d. `y = Black`
+e. `x = count`
+f. `y = count`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+b
+
+:::
+
+<br>
+
+
+
+##### Blank (2)
+a. `chess_top4`
+b. `White`
+c. `Black`
+d. `Result`
+e. `count`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+##### Blank (3)
+a. `position = "stack"`
+b. `position = "fill"`
+c. `position = "dodge"`
+d. Leaving (3) empty
+e. Both a and d
+f. Both b and d
+g. Both c and d
+
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+e
+
+:::
+
+<br>
+
+
+
+##### Blank (4)
+a. `White`
+b. `~White`
+c. `Black`
+d. `~Black`
+e. `Player`
+f. `~Player`
+g. both a and b
+h. both c and d
+i. both e and f
+j. both b and f
+k. both d and f
+
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+
+#### Part 3
+Complete the code by filling in the blanks to replicate the given plot.
+
+- The White player is displayed on the vertical axis.
+- The Black player is labeled at the top of each panel.
+
+```{r}
+#| eval: false
+ggplot(data = chess_top4,
+       mapping = aes(___(1)___,
+                     fill = ___(2)___)) +
+  geom_bar(___(3)___) +
+  facet_wrap(___(4)___, ncol = 1)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8.5
+#| fig-width: 10
+
+ggplot(data = chess_top4,
+       aes(y = White,
+           fill = Result)) +
+  geom_bar(position = position_dodge(preserve = "single")) +
+  scale_fill_colorblind() +
+  facet_wrap(~Black,
+             ncol = 1) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0,
+                                  face = "bold"),
+        legend.position = "right",
+        ) +
+  guides(fill = guide_legend(reverse = TRUE))
+```
+
+
+
+##### Blank (1)
+a. `x = White`
+b. `y = White`
+c. `x = Black`
+d. `y = Black`
+e. `x = count`
+f. `y = count`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+b
+
+:::
+
+<br>
+
+
+
+##### Blank (2)
+a. `chess_top4`
+b. `White`
+c. `Black`
+d. `Result`
+e. `count`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+##### Blank (3)
+a. `position = "stack"`
+b. `position = "fill"`
+c. `position = "dodge"`
+d. Leaving (3) empty
+e. Both a and d
+f. Both b and d
+g. Both c and d
+
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+c
+
+:::
+
+<br>
+
+
+
+##### Blank (4)
+a. `White`
+b. `~White`
+c. `Black`
+d. `~Black`
+e. `Player`
+f. `~Player`
+g. both a and b
+h. both c and d
+i. both e and f
+j. both b and f
+k. both d and f
+
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+
+#### Part 4 - Magnus Carlsen vs. Hikaru Nakamura in the Titled Tuesday
+Who had more wins in the games where Magnus Carlsen played with the white pieces and Hikaru Nakamura played with the black pieces in the Titled Tuesday?
+
+**Answer:** ______________________________________________
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+Magnus Carlsen
+
+:::
+
+<br>
+
+
+Who had more wins in the games where Hikaru Nakamura played with the white pieces and Magnus Carlsen played with the black pieces in the Titled Tuesday?
+
+**Answer:** ______________________________________________
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+Hikaru Nakamura
+
+:::
+
+<br>
+
+
+
+Who won more games in the encounters between Magnus Carlsen and Hikaru Nakamura in the Titled Tuesday?
+
+**Answer:** ______________________________________________
+
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+They had an equal number of wins.
+
+:::
+
+<br>
+
+
+
+
+
+# Section 3. Short Essay
+
+
+## Question 21
+Explain the "Connection Principle" in the context of line charts and why it is useful for visualizing time-series data.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+The **Connection Principle** states that points in a line chart should be visually connected when the data represent a meaningful sequence, such as time. This connection helps viewers naturally perceive trends, patterns, growth, and cycles across periods. It is especially useful in time-series data because it reinforces the idea of continuity and change over time rather than treating each observation as isolated.
+
+
+:::
+
+<br>
+
+
+
+
+
+## Question 22
+How does data storytelling bridge the gap between data and insights? 
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**Data Storytelling** bridges the gap between **data** and **insight** by integrating **descriptive statistics**, **data transformation**, **visualization**, and **narration** within the appropriate **audience context** to communicate findings effectively and support **data-informed decision-making**.
+
+
+:::
+
+<br>
+
+
+## Question 23
+Provide two main reasons why the log transformation of a variable can be useful.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+Two main reasons for using a log transformation are:
+
+1. It helps **reduce skewness** in highly right-skewed data, making the distribution more symmetric and the variation easier to see.  
+2. It allows us to **interpret changes in percentage terms**, which is especially useful for growth rates and economic variables such as income, GDP, stock price, or housing price.
+
+
+:::
+
+<br>
+
+
+
+
+## Question 24
+Provide at least three techniques to make data visualization more colorblind-friendly.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+To make visualizations more accessible and colorblind-friendly, consider:
+
+1. Using **colorblind-friendly color palettes**
+2. Adding **non-color cues** like **`shape`** to scatterplots or **`linetype`** to line charts
+3. Including **additional visual cues** to highlight important information (e.g., annotations or labels)
+4. Ensuring **strong contrast** between colors and between the foreground and background so that elements remain distinguishable.
+
+
+:::
+
+<br>
+
+
+
+
+
+## Question 25
+For each of the workplaces represented by our three alumni guest speakers, explain how generative AI is used in their day-to-day work.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+Across the three alumni workplaces, generative AI is integrated into daily workflows in different but complementary ways.
+
+At the **analytics and engineering–focused workplace**, many employees (roughly 60–80%) use AI assistants such as Copilot or Claude to support coding, debugging, and data processing. AI significantly speeds up routine analytical tasks, but all outputs still require **human review**, meaning AI **augments rather than replaces analysts**.
+
+For a **traditional data analyst role**, generative AI is commonly used to assist with **SQL coding, data summarization, and report drafting**. Analysts rely on AI to improve efficiency, but **data sensitivity and responsible AI use** are essential, so such tools are typically deployed only within **secure internal environments**.
+
+At the **policy and government-related workplace (e.g., the Federal Reserve)**, the use of **public AI tools like ChatGPT is prohibited** due to strict data confidentiality rules. Instead, analysts rely on approved internal systems and traditional analytical tools to protect sensitive economic and financial information.
+
+Together, these examples show how generative AI is widely used to increase productivity, while **security, privacy, and human oversight remain central** across all workplaces.
+
+
+:::
+
+<br>
+
+

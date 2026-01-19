@@ -1,0 +1,348 @@
+---
+title: Classwork 13
+subtitle: Time Trend Plots
+date: 2025-11-12
+from: markdown+emoji
+
+fig-width: 10
+execute: 
+  eval: true
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(gapminder)
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_fill_discrete <- function(...) scale_fill_viridis_d(...)
+
+```
+
+
+# R Packages
+
+For Classwork 13, please load the `tidyverse` package:
+```{r}
+library(tidyverse)
+```
+
+
+# Question 1. Trend in GDP per capita
+
+For **Question 1**, please **load the R package `gapminder`** before starting:
+```{r}
+#| eval: false
+
+# install.packages("gapminder")
+library(gapminder)
+??gapminder
+```
+
+The **`gapminder`** package provides a built-in dataset named **`gapminder`**, which contains country-level data on life expectancy, GDP per capita, and population across time.  
+
+Let's assign it to a new object called **`df_gapminder`**:
+
+```{r}
+df_gapminder <- gapminder::gapminder
+```
+
+
+```{r}
+#| echo: false
+
+DT::datatable(df_gapminder, options = list(
+  pageLength = 12
+))
+```
+
+<br>
+
+## Part A
+
+- 🤖 **Task 1:** Fill in the blanks in the provided `ggplot()` code chunks.  
+
+
+### Visualization 1
+  - Something has gone wrong in this given plot. What happened? 
+
+```{r}
+#| echo: false
+#| eval: true
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = gdpPercap)) +
+  geom_point(size = .5) +
+  geom_line()
+```
+
+
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = df_gapminder,
+       mapping = aes(__BLANK_1__,
+                     y = __BLANK_2__)) +
+  geom_point(size = .5) +
+  geom___BLANK_3__()
+```
+
+
+<!-- -While ggplot will make a pretty good guess as to the structure of the data, it does not know that the yearly observations in the data are grouped by country.  -->
+<!--   - It starts with an observation for 1952 in the first row of the data. It doesn’t know this belongs to Afghanistan. Instead of going to Afghanistan 1953, it finds there are a series of 1952 observations, so it joins all of those up first, alphabetically by country, all the way down to the 1952 observation that belongs to Zimbabwe. Then it moves to the first observation in the next year, 1957. -->
+
+<br>
+
+
+
+### Visualization 2
+
+<!-- - 🤖 **Task 2:** Fill in the blanks in the provided `ggplot()` code chunks, which take into account country-level data structure. -->
+
+<!-- - In this case, we can use the `group` or `color` aesthetic to tell ggplot explicitly about this country-level structure. -->
+
+```{r}
+#| echo: false
+#| eval: true
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = gdpPercap,
+                     group = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom_line()
+```
+
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = df_gapminder,
+       mapping = aes(__BLANK_1__,
+                     y = __BLANK_2__,
+                     __BLANK_3__ = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom___BLANK_4__()
+```
+
+<br>
+
+### Visualization 3
+
+```{r}
+#| echo: false
+#| eval: true
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = gdpPercap,
+                     color = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom_line(show.legend = FALSE)
+```
+
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = df_gapminder,
+       mapping = aes(__BLANK_1__,
+                     y = __BLANK_2__,
+                     __BLANK_3__ = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom___BLANK_4__(show.legend = FALSE)
+```
+
+<!-- - The plot here is still fairly rough, but it is showing the data properly, with each line representing the trajectory of a country over time. -->
+  <!-- - The gigantic outlier is Kuwait, in case you are interested. -->
+
+
+
+<br><br>
+
+
+
+## Part B
+
+
+- 🤖 **Task 1:** Fill in the blanks in the provided `ggplot()` code chunk.  
+- 💬 **Task 2:** Add a brief comment describing **how the *overall* time trend of GDP per capita (`gdpPercap`) varies by continent (`continent`)**.
+
+
+<!-- - We can use `facet_wrap()` to split our plot by `continent` -->
+
+
+### Visualization 1
+```{r}
+#| echo: false
+#| eval: true
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = gdpPercap,
+                     group = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom_line(show.legend = FALSE) +
+  facet_wrap(~continent) +
+  theme(axis.text.x = element_text(angle = 45,
+                                   margin = margin(15,0,0,0)))
+```
+
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = df_gapminder,
+       mapping = aes(__BLANK_1__,
+                     y = __BLANK_2__,
+                     __BLANK_3__ = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom___BLANK_4__(show.legend = FALSE) +
+  facet___BLANK_5__( ~ __BLANK_6__)
+```
+
+
+<br>
+
+### Visualization 2
+- Because we have only five continents it might be worth seeing if we can fit them on a single row (which means we’ll have five columns). 
+
+```{r}
+#| echo: false
+#| eval: true
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = gdpPercap,
+                     group = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom_line(show.legend = FALSE) +
+  facet_wrap(~continent, 
+             nrow = 1) +
+  theme(axis.text.x = element_text(angle = 45,
+                                   margin = margin(15,0,0,0)))
+``` 
+
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = df_gapminder,
+       mapping = aes(__BLANK_1__,
+                     y = __BLANK_2__,
+                     __BLANK_3__ = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom___BLANK_4__(show.legend = FALSE) +
+  facet___BLANK_5__( ~ __BLANK_6__, 
+             __BLANK_7__ = 1)
+```
+
+<br>
+
+
+### Visualization 3
+- Since GDP per capita is highly skewed, let's take a log transformation on it:
+
+```{r}
+#| echo: false
+#| eval: true
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = log(gdpPercap),
+                     group = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom_line(show.legend = FALSE) +
+  facet_wrap(~continent, 
+             nrow = 1) +
+  theme(axis.text.x = element_text(angle = 45,
+                                   margin = margin(15,0,0,0)))
+```
+
+
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = df_gapminder,
+       mapping = aes(__BLANK_1__,
+                     y = __BLANK_2__,
+                     __BLANK_3__ = country)) +
+  geom_point(size = .5,
+             color = "black") +
+  geom___BLANK_4__(show.legend = FALSE) +
+  facet___BLANK_5__( ~ __BLANK_6__, 
+             __BLANK_7__ = 1)
+```
+
+<br>
+
+
+### Visualization 4
+<!-- - In addition, we can add a smooth curve to each continent, and a few cosmetic enhancements that make the graph a little more effective.  -->
+<!--   - In particular we will make the country trends a light gray color.  -->
+<!--   - This make audience clearly see the **overall time trend** of GDP per capital across continents. -->
+
+```{r}
+#| echo: false
+#| eval: true
+
+ggplot(data = df_gapminder,
+       mapping = aes(x = year,
+                     y = log(gdpPercap))) +
+  geom_line(show.legend = FALSE,
+            color = 'grey',
+            mapping = aes(group = country)) + # Advanced ggplot: we can add a specific aes() to a specific geom.
+  geom_smooth() +
+  facet_wrap(~continent, 
+             nrow = 1) +
+  theme(axis.text.x = element_text(angle = 45,
+                                   margin = margin(15,0,0,0)))
+```
+
+```{r}
+#| echo: true
+#| eval: false
+
+ggplot(data = df_gapminder,
+       mapping = aes(__BLANK_1__,
+                     y = __BLANK_2__)) +
+  geom___BLANK_3__(show.legend = FALSE,
+                  color = 'grey',
+                  mapping = aes(group = country)) + # Advanced ggplot: we can add a specific aes() to a specific geom.
+  geom___BLANK_4__() +
+  facet_wrap(~ __BLANK_5__, 
+             __BLANK_6__ = 1)
+```
+
+<br>
+
+

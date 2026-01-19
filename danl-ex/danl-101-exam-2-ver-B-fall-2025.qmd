@@ -1,0 +1,1263 @@
+---
+title: Midterm Exam II
+subtitle: Version B
+date: 2025-11-19
+from: markdown+emoji
+toc: true
+toc-depth: 8
+execute: 
+  eval: true
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(ggrepel)
+library(ggthemes)
+```
+
+
+
+# Section 1. Multiple Choice
+
+## Question 1
+Which of the following is NOT listed as a key characteristic of a Data Warehouse? 
+
+a. It integrates data from multiple sources (internal and external). 
+b. It is designed primarily for real-time transaction processing. 
+c. It is schema-based, requiring data to fit a predefined structure. 
+d. It often includes 5+ years of historical, archived data.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** b  
+
+A data warehouse is designed mainly for **analytics and historical querying**, not for real-time transaction processing.
+
+
+
+:::
+<br>
+
+## Question 2
+When the distribution of a variable has a single peak and is positively skewed (i.e., having a long right tail), which of the following is correct?
+
+a. Median = Mean = Mode
+b. Median < Mode < Mean
+c. Mean < Median < Mode
+d. Mode < Median < Mean
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** d  
+
+For a **positively skewed** distribution (long right tail), the order is:  
+Mode (at the peak) < Median < Mean (pulled right by large values).
+
+
+
+:::
+
+<br>
+
+
+
+## Question 3
+What is NOT an essential component in `ggplot()` data visualization?
+
+a. Data frames
+b. Geometric objects
+c. Facets
+d. Aesthetic attributes
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** c  
+
+Facets are useful but optional. You can build a valid `ggplot` without them.
+
+
+:::
+
+<br>
+
+
+
+## Question 4
+____(1)____ does not necessarily imply ____(2)____
+
+a. (1) Correlation; (2) causation
+b. (1) Causation; (2) correlation
+c. (1) Correlation; (2) correlation
+d. (1) Causation; (2) causation
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** a  
+
+The classic warning: **correlation does not imply causation**.
+
+
+:::
+
+<br>
+
+
+## Question 5
+In the context of the lecture, which of the following correctly interprets a change in log-transformed GDP per capita and its meaning for GDP per capita?
+
+a. A 0.01 increase in log(GDP per capita) corresponds to a 1% increase in GDP per capita.
+b. A 1-unit increase in log(GDP per capita) corresponds to a 1% increase in GDP per capita.
+c. A one-unit increase in GDP per capita means an 8.4% increase in GDP per capita.
+d. Both (a) and (c) are correct.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** a  
+
+For small changes, a change of **0.01 in log(GDP per capita)** is approximately a **1% change** in GDP per capita.
+
+
+:::
+
+<br>
+
+
+## Question 6
+Which “V” of Big Data is most directly about whether the data is accurate and trustworthy?
+
+a. Value
+b. Velocity
+c. Variety
+d. Veracity
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**Answer:** d  
+
+**Veracity** is about **data quality, accuracy, and trustworthiness**.
+
+
+:::
+
+<br><br>
+
+
+
+# Section 2. Filling-in-the-Blanks
+
+
+## Question 7
+____________________ describes how the values of a variable are spread or grouped within a dataset, while ____________________ is the tendency of a variable's values to differ from one measurement to another.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+First blank: **distribution**  
+Second blank: **variability**
+
+:::
+
+<br>
+
+
+
+## Question 8
+In the context of time trend analysis, a fitted curve is often added to a line chart to help smooth out ____________________ to reveal the overall pattern.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+short-term fluctuations
+
+:::
+
+<br>
+
+
+## Question 9
+The `gg` in `ggplot` stands for ____________________.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+Grammar of Graphics
+
+
+
+:::
+
+<br>
+
+
+
+## Question 10
+Using ____________________---a machine learning method---the `geom_smooth()` visualizes the ____________________ value of the `y` variable for a given value of the `x` variable. The grey ribbon around the curve illustrates the ____________________ surrounding the estimated curve.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+Using **regression** — a machine learning method — the `geom_smooth()` visualizes the **predicted** value of the `y` variable for a given value of the `x` variable. The grey ribbon around the curve illustrates the **uncertainty** surrounding the estimated curve.
+
+
+
+:::
+
+<br>
+
+
+
+## Question 11
+When observing a histogram, if the distribution has two distinct peaks, it is described as ____________________; whereas a distribution where values are relatively equal across the range is described as ____________________.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+First blank: **bimodal**  
+Second blank: **uniform**
+
+
+:::
+
+<br>
+
+
+## Question 12
+When visualizing the distribution of a single numerical variable using `geom_histogram()`, you must choose between specifying the number of ____________________ or the ____________________ of the intervals. You cannot specify both simultaneously.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+First blank: **bins**  
+Second blank: **width**
+
+:::
+
+<br><br>
+
+
+
+# Section 3. Data Transformation and Visualization with R
+
+## Questions 13-19
+For **Questions 13-19**, consider the following R packages and the data.frame, `nwsl_player_stats`, containing individual player statistics for the National Women's Soccer League (NWSL) in the 2022 season:
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+library(skimr)
+nwsl_player_stats <- read_csv("https://bcdanl.github.io/data/nwsl_player_stats.csv")
+```
+
+- The `nwsl_player_stats` data.frame is with 314 observations and 13 variables.
+
+\pagebreak
+
+- The first 5 observations in the `nwsl_player_stats` data.frame are displayed below:
+```{r}
+#| echo: false
+#| eval: true
+
+knitr::kable(nwsl_player_stats |> select(player:squad, age:min) |> slice(1:5))
+
+knitr::kable(nwsl_player_stats |> select(player:squad, xGp90:xGxAp90) |> slice(1:5))
+
+knitr::kable(nwsl_player_stats |> select(player:squad, npxGp90:npxGxAp90) |> slice(1:5))
+
+```
+
+
+### Description of Variables in `nwsl_player_stats`:
+  
+- `player`:
+Player name
+
+- `nation`:
+Player home country
+
+- `pos`:
+Player position (e.g., GK, FW, MF, etc.)
+
+- `squad`:
+Player team
+
+- `age`:
+Age of player
+
+- `mp`:
+Matches played
+
+- `starts`:
+Number of matches in which player started the game
+
+- `min`:
+Total minutes played in the season
+
+- `xGp90`: Expected goals per ninety minutes
+  - `xG` is simply the probability of scoring a goal from a given spot on the field when a shot is taken.
+
+- `xAp90`: Expected assists per ninety minutes
+  - `xA` is simply the probability of assisting a goal by delivering a pass that creates a scoring opportunity. 
+
+- `xGxAp90`: Expected goals plus assists per ninety minutes
+
+- `npxGp90`:
+Expected goals minus penalty goals per ninety minutes
+
+- `npxGxAp90`:
+Expected goals plus assists minus penalty goals per ninety minutes
+
+A player who is consistently achieving a high number of `xG` (or `xA`) will be one who is getting into a good position consistently on the field. Coaches and scouts can use this to evaluate whether a player is exceedingly (un)lucky over a given number of games, and this will help in evaluating that player’s offensive skills beyond simple counts.
+
+<br>
+
+The followings are the summary of the `nwsl_player_stats` data.frame, including **descriptive statistics** for each variable.
+```{r}
+#| echo: false
+skim(nwsl_player_stats) |> select(-numeric.hist,-character.whitespace, -complete_rate)
+```
+
+
+### Question 13
+
+Write a code to produce the above summary for the `nwsl_player_stats` data.frame, including descriptive statistics for each variable.
+
+**Answer:** ______________________________________________
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+`skim(nwsl_player_stats)`
+
+:::
+
+<br>
+
+### Question 14
+What code would you use to count the number of players in each team?
+
+a. `nwsl_player_stats |> count(player)`
+b. `nwsl_player_stats |> count(nation)`
+c. `nwsl_player_stats |> count(pos)`
+d. `nwsl_player_stats |> count(squad)`
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+d
+
+:::
+
+<br>
+
+
+
+### Question 15
+What is the median value of `starts`? Find this value from the summary of the `nwsl_player_stats` data.frame.
+
+**Answer:** ______________________________________________
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+9
+
+:::
+
+<br>
+
+
+
+### Question 16
+- We are interested in players who score or assist on a goal. 
+- To achieve this, we create a new data.frame, a new data.frame, `nwsl_nonGK_stats`, which includes only players who are NOT a goal keeper from the `nwsl_player_stats` data.frame. 
+
+```{r}
+#| eval: true
+#| echo: false
+nwsl_nonGK_stats <- nwsl_player_stats |> 
+  filter(pos != "GK")
+```
+
+
+```{r}
+#| eval: false
+nwsl_nonGK_stats <- nwsl_player_stats |> 
+  filter(___BLANK___)
+```
+
+
+- The `pos` value is **"GK"** for a goal keeper. Which condition correctly fills in the BLANK to complete the code above?
+
+a. `!is.na(pos)`
+b. `is.na(pos)`
+c. `pos != "GK"`
+d. `pos == "GK"`
+e. Both a and c
+f. Both b and d
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+c
+
+:::
+
+<br>
+
+
+### Question 17
+- Additionally, we are interested in non-goalkeeper players who played matches consistently throughout the season.
+- To achieve this, we create a new data.frame, `nwsl_nonGK_stats_filtered`, which includes only non GK players who played in at least **10 matches** (`mp`) and started in at least **7** matches (`starts`) .
+
+
+```{r}
+#| eval: true
+#| echo: false
+nwsl_nonGK_stats_filtered <- nwsl_nonGK_stats |> 
+  filter(mp >= 10, starts >= 7)
+```
+
+
+```{r}
+#| eval: false
+nwsl_nonGK_stats_filtered <- nwsl_nonGK_stats |> 
+  filter(___BLANK___)
+```
+
+
+- Which condition correctly fills in the BLANK to complete the code above?
+
+a. `mp > 10 | starts > 7`
+b. `mp >= 10 | starts >= 7`
+c. `mp > 10 & starts > 7`
+d. `mp >= 10 & starts >= 7`
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+d
+
+We want players who meet both conditions: played in at least 10 matches (`mp >= 10`) and started in at least 7 matches (`starts >= 7`). The logical operator `&` ensures both conditions are met.
+
+
+:::
+
+<br>
+
+
+### Question 18
+How would you describe the relationship between `age` and `xGp90` (expected goals per ninety minutes) using the `nwsl_nonGK_stats_filtered` data.frame?
+
+- To identify **outlier players**, such as **star players** and **young players**, some player names are added to such points in the plot.
+- Note that it is NOT required to provide the code for adding these texts to the plot.
+
+Complete the code by filling in the blanks (1)-(4).
+
+```{r}
+#| eval: false
+ggplot(data = ___(1)___,
+       mapping = aes(x = ___(2)___, 
+                     y = ___(3)___)) +
+  geom_point(alpha = 0.5) +
+  ___(4)___()
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 6
+
+p <- ggplot(data = nwsl_nonGK_stats_filtered |> 
+              mutate(new_player = ifelse((age < 20 & xGp90 > 0) | xGp90 > 0.6,
+                                         player, "")),
+            aes(x = age, y = xGp90, label = new_player))
+
+p + geom_point(alpha = .5) +
+  geom_smooth(data = nwsl_nonGK_stats_filtered |> 
+                mutate(new_player = ifelse((age < 20 & xGp90 > 0) | xGp90 > 0.6,
+                                           player, "")) |> 
+                filter(age >= 20)) +
+  geom_text_repel(box.padding = .75, hjust = .25) +
+  theme_bw()
+```
+
+#### Blank (1)
+a. `nwsl_nonGK_stats_filtered`
+b. `nwsl_nonGK_stats`
+c. `nwsl_player_stats`
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+:::
+
+<br>
+
+
+#### Blank (2)
+a. `age`
+b. `xGxAp90`
+c. `xGp90`
+d. `xAp90`
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+:::
+
+<br>
+
+
+#### Blank (3)
+a. `age`
+b. `xGxAp90`
+c. `xGp90`
+d. `xAp90`
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+c
+
+:::
+
+<br>
+
+
+#### Blank (4)
+a. `geom_fit`
+b. `geom_scatterplot`
+c. `geom_smooth`
+d. `geom_histogram`
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+c
+
+:::
+
+<br>
+
+
+
+#### Young Players
+Who are the young players under the `age` of 20 in the given plot?
+
+**Answer:** ______________________________________________
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+Olivia Moultrie and Trinity Rodman
+
+:::
+
+<br>
+
+
+
+#### Star Players
+Who are the star players whose `xGp90` is greater than 0.6 in the given plot?
+
+**Answer:** ______________________________________________
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+Sophia Smith and Alex Morgan
+
+:::
+
+<br>
+
+
+#### Relationship
+Describe the *overall* relationship between `age` and `xGp90` (expected goal per ninety minutes).
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+Overall, `xGp90` **decreases as `age` increases up to about 24**, after which it **levels off and remains relatively constant**. 
+
+This suggests that younger players tend to experience a steeper decline in `xGp90` with age early on, while changes become much smaller after the mid-20s.
+
+:::
+
+<br>
+
+
+
+
+
+### Question 19
+How would you describe how the distribution of `xAp90` (expected assist per ninety minutes) varies by teams (`squad`) using the `nwsl_nonGK_stats_filtered` data.frame?
+
+- Note that the `squad` categories are sorted by the median of `xAp90` in the plot.
+
+Complete the code by filling in the blanks.
+
+```{r}
+#| eval: false
+ggplot(data = ___(1)___,
+       mapping = aes(___(2)___, 
+                     y = ___(3)___)) +
+  ___(4)___() +
+  labs(y = "NWSL Teams")
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+
+ggplot(data = nwsl_nonGK_stats_filtered,
+       mapping = aes(x = xAp90, 
+                     y = fct_reorder(squad, xAp90))
+       ) +
+  geom_boxplot() +
+  labs(y = "NWSL Teams") +
+  theme_bw()
+```
+
+#### Blank (1)
+a. `nwsl_nonGK_stats_filtered`
+b. `nwsl_nonGK_stats`
+c. `nwsl_player_stats`
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+:::
+
+<br>
+
+
+#### Blank (2)
+a. `x = squad`
+b. `y = squad`
+c. `x = xGxAp90`
+d. `y = xGxAp90`
+e. `x = xGp90`
+f. `y = xGp90`
+g. `x = xAp90`
+h. `y = xAp90`
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+g
+
+:::
+
+<br>
+
+
+
+#### Blank (3)
+a. `fct_reorder(squad, xAp90)`
+b. `fct_reorder(xAp90, squad)`
+c. `fct_reorder(squad, xGp90)`
+d. `fct_reorder(xGp90, squad)`
+e. `fct_reorder(squad, xGxAp90)`
+f. `fct_reorder(xGxAp90, squad)`
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+:::
+
+<br>
+
+
+
+#### Blank (4)
+a. `geom_bar`
+b. `geom_box`
+c. `geom_boxplot`
+d. `geom_histogram`
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+c
+
+:::
+
+<br><br>
+
+
+
+## Question 20
+
+![](https://bcdanl.github.io/lec_figs/chess-standardboard.png){width=50%}
+![](https://bcdanl.github.io/lec_figs/chess-titled-tuesday.jpg){width=50%}
+```{r}
+#| echo: false
+
+
+# knitr::include_graphics("https://bcdanl.github.io/lec_figs/chess-standardboard.png")
+# knitr::include_graphics("https://bcdanl.github.io/lec_figs/chess-titled-tuesday.png")
+
+```
+
+
+For Question 20, you will use the following R packages and a data.frame named `chess_top4`, which contains information about chess games played by four of the world’s top online chess players during a special event called “Titled Tuesday” on chess.com. These games were played in a format where each player has 3 minutes to make all their moves, with 1 second added to their clock after each move. The data includes games from October 2022 to October 2024 played only among the following four players:
+
+1. **Magnus Carlsen**
+2. **Hikaru Nakamura**
+3. **Alireza Firouzja**
+4. **Daniel Naroditsky**
+
+**Note:** Titled Tuesday is a weekly event held every Tuesday on chess.com, where titled chess players (such as Grandmasters and International Masters) compete in online tournaments.
+
+
+```{r}
+#| message: false
+#| warning: false
+
+
+library(tidyverse)
+chess_top4 <- read_csv("https://bcdanl.github.io/data/chess_titled_tuesday.csv")
+```
+
+
+
+The first 15 observations in the `chess_top4` data.frame are displayed below:
+```{r}
+#| echo: false
+
+
+knitr::kable(chess_top4 |> slice(1:15) )
+
+```
+
+- The `chess_top4` data.frame contains 70 observations and 4 variables, representing 70 unique chess games.
+
+### Description of Variables in `chess_top4`:
+  
+- `Date`: The date when the game was played.
+
+- `White`: The name of the player who played with the white pieces.
+
+- `Black`: The name of the player who played with the black pieces.
+
+- `Result`: The outcome of the game, which can be one of the following:
+  - "White Wins" (the player with the white pieces won the game)
+  - "Black Wins" (the player with the black pieces won the game)
+  - "Draw" (the game ended in a tie)
+
+Question 20 is about a **ggplot** code to visualize how the distribution of `Result` varies among these top 4 chess players.
+
+
+#### Part 1
+Complete the code by filling in the blanks to replicate the given plot.
+
+- The White player is displayed on the vertical axis.
+- The Black player is labeled at the top of each panel.
+```{r}
+#| eval: false
+ggplot(data = chess_top4,
+       mapping = aes(___(1)___,
+                     fill = ___(2)___)) +
+  geom_bar(___(3)___) +
+  facet_wrap(___(4)___, ncol = 1) +
+  labs(x = "Proportion")
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8.5
+#| fig-width: 10
+
+ggplot(data = chess_top4,
+       aes(y = White,
+           fill = Result)) +
+  geom_bar(position = "fill") +
+  scale_fill_colorblind() +
+  facet_wrap(~Black,
+             ncol = 1) +
+  # scale_x_percent() +
+  labs(x = "Proportion") +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0,
+                                  face = "bold"),
+        legend.position = "right",
+        ) +
+  guides(fill = guide_legend(reverse = TRUE)) 
+```
+
+
+##### Blank (1)
+a. `x = White`
+b. `y = White`
+c. `x = Black`
+d. `y = Black`
+e. `x = Proportion`
+f. `y = Proportion`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+b
+
+:::
+
+<br>
+
+##### Blank (2)
+a. `chess_top4`
+b. `White`
+c. `Black`
+d. `Result`
+e. `count`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+##### Blank (3)
+a. `position = "stack"`
+b. `position = "fill"`
+c. `position = "dodge"`
+d. Leaving (3) empty
+e. Both a and d
+f. Both b and d
+g. Both c and d
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+b
+
+:::
+
+<br>
+
+
+
+
+##### Blank (4)
+a. `White`
+b. `~White`
+c. `Black`
+d. `~Black`
+e. `Player`
+f. `~Player`
+g. both a and b
+h. both c and d
+i. both e and f
+j. both b and f
+k. both d and f
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+
+#### Part 2
+Complete the code by filling in the blanks to replicate the given plot.
+
+- The White player is displayed on the vertical axis.
+- The Black player is labeled at the top of each panel.
+
+```{r}
+#| eval: false
+ggplot(data = chess_top4,
+       mapping = aes(___(1)___,
+                     fill = ___(2)___)) +
+  geom_bar(___(3)___) +
+  facet_wrap(___(4)___, ncol = 1)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8.5
+#| fig-width: 10
+
+ggplot(data = chess_top4,
+       aes(y = White,
+           fill = Result)) +
+  geom_bar(position = "stack") +
+  scale_fill_colorblind() +
+  facet_wrap(~Black,
+             ncol = 1) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0,
+                                  face = "bold"),
+        legend.position = "right",
+        ) +
+  guides(fill = guide_legend(reverse = TRUE)) 
+```
+
+
+##### Blank (1)
+a. `x = White`
+b. `y = White`
+c. `x = Black`
+d. `y = Black`
+e. `x = count`
+f. `y = count`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+b
+
+:::
+
+<br>
+
+
+
+##### Blank (2)
+a. `chess_top4`
+b. `White`
+c. `Black`
+d. `Result`
+e. `count`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+##### Blank (3)
+a. `position = "stack"`
+b. `position = "fill"`
+c. `position = "dodge"`
+d. Leaving (3) empty
+e. Both a and d
+f. Both b and d
+g. Both c and d
+
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+e
+
+:::
+
+<br>
+
+
+
+##### Blank (4)
+a. `White`
+b. `~White`
+c. `Black`
+d. `~Black`
+e. `Player`
+f. `~Player`
+g. both a and b
+h. both c and d
+i. both e and f
+j. both b and f
+k. both d and f
+
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+
+#### Part 3
+Complete the code by filling in the blanks to replicate the given plot.
+
+- The White player is displayed on the vertical axis.
+- The Black player is labeled at the top of each panel.
+
+```{r}
+#| eval: false
+ggplot(data = chess_top4,
+       mapping = aes(___(1)___,
+                     fill = ___(2)___)) +
+  geom_bar(___(3)___) +
+  facet_wrap(___(4)___, ncol = 1)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8.5
+#| fig-width: 10
+
+ggplot(data = chess_top4,
+       aes(y = White,
+           fill = Result)) +
+  geom_bar(position = position_dodge(preserve = "single")) +
+  scale_fill_colorblind() +
+  facet_wrap(~Black,
+             ncol = 1) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0,
+                                  face = "bold"),
+        legend.position = "right",
+        ) +
+  guides(fill = guide_legend(reverse = TRUE))
+```
+
+
+
+##### Blank (1)
+a. `x = White`
+b. `y = White`
+c. `x = Black`
+d. `y = Black`
+e. `x = count`
+f. `y = count`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+b
+
+:::
+
+<br>
+
+
+
+##### Blank (2)
+a. `chess_top4`
+b. `White`
+c. `Black`
+d. `Result`
+e. `count`
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+##### Blank (3)
+a. `position = "stack"`
+b. `position = "fill"`
+c. `position = "dodge"`
+d. Leaving (3) empty
+e. Both a and d
+f. Both b and d
+g. Both c and d
+
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+c
+
+:::
+
+<br>
+
+
+
+##### Blank (4)
+a. `White`
+b. `~White`
+c. `Black`
+d. `~Black`
+e. `Player`
+f. `~Player`
+g. both a and b
+h. both c and d
+i. both e and f
+j. both b and f
+k. both d and f
+
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+d
+
+:::
+
+<br>
+
+
+
+#### Part 4 - Magnus Carlsen vs. Hikaru Nakamura in the Titled Tuesday
+Who had more wins in the games where Magnus Carlsen played with the white pieces and Hikaru Nakamura played with the black pieces in the Titled Tuesday?
+
+**Answer:** ______________________________________________
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+Magnus Carlsen
+
+:::
+
+<br>
+
+
+Who had more wins in the games where Hikaru Nakamura played with the white pieces and Magnus Carlsen played with the black pieces in the Titled Tuesday?
+
+**Answer:** ______________________________________________
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+Hikaru Nakamura
+
+:::
+
+<br>
+
+
+
+Who won more games in the encounters between Magnus Carlsen and Hikaru Nakamura in the Titled Tuesday?
+
+**Answer:** ______________________________________________
+
+
+::: {.callout-tip collapse="true"}
+###### Show answer
+They had an equal number of wins.
+
+:::
+
+<br>
+
+
+
+
+
+# Section 3. Short Essay
+
+
+## Question 21
+What are the advantage and disadvantage of using the `scales` option in **ggplot2** when creating faceted plots?
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+- Advantages:
+  -	**Customized Scales per Facet**: Using `scales = "free"` (or `"free_x"`, `"free_y"`) allows each facet to have its own axis scales. This can make patterns within each facet more visible, especially when the data ranges vary significantly between facets.
+
+- Disadvantages:
+  -	**Difficulty in Comparison**: When scales are free, comparing values across facets becomes challenging because the axes are not standardized. Viewers might misinterpret the data, thinking that similar bar heights represent similar values, even if the scales differ.
+
+
+:::
+
+<br>
+
+
+
+
+
+## Question 22
+How does data storytelling bridge the gap between data and insights? 
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**Data Storytelling** bridges the gap between **data** and **insight** by integrating **descriptive statistics**, **data transformation**, **visualization**, and **narration** within the appropriate **audience context** to communicate findings effectively and support **data-informed decision-making**.
+
+
+:::
+
+<br>
+
+
+## Question 23
+Provide two main reasons why the log transformation of a variable can be useful.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+Two main reasons for using a log transformation are:
+
+1. It helps **reduce skewness** in highly right-skewed data, making the distribution more symmetric and the variation easier to see.  
+2. It allows us to **interpret changes in percentage terms**, which is especially useful for growth rates and economic variables such as income, GDP, stock price, or housing price.
+
+
+:::
+
+<br>
+
+
+
+
+## Question 24
+Provide at least three techniques to make data visualization more colorblind-friendly.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+To make visualizations more accessible and colorblind-friendly, consider:
+
+1. Using **colorblind-friendly color palettes**
+2. Adding **non-color cues** like **`shape`** to scatterplots or **`linetype`** to line charts
+3. Including **additional visual cues** to highlight important information (e.g., annotations or labels)
+4. Ensuring **strong contrast** between colors and between the foreground and background so that elements remain distinguishable.
+
+
+:::
+
+<br>
+
+
+
+
+
+## Question 25
+For each of the workplaces represented by our three alumni guest speakers, explain how generative AI is used in their day-to-day work.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+Across the three alumni workplaces, generative AI is integrated into daily workflows in different but complementary ways.
+
+At the **analytics and engineering–focused workplace**, many employees (roughly 60–80%) use AI assistants such as Copilot or Claude to support coding, debugging, and data processing. AI significantly speeds up routine analytical tasks, but all outputs still require **human review**, meaning AI **augments rather than replaces analysts**.
+
+For a **traditional data analyst role**, generative AI is commonly used to assist with **SQL coding, data summarization, and report drafting**. Analysts rely on AI to improve efficiency, but **data sensitivity and responsible AI use** are essential, so such tools are typically deployed only within **secure internal environments**.
+
+At the **policy and government-related workplace (e.g., the Federal Reserve)**, the use of **public AI tools like ChatGPT is prohibited** due to strict data confidentiality rules. Instead, analysts rely on approved internal systems and traditional analytical tools to protect sensitive economic and financial information.
+
+Together, these examples show how generative AI is widely used to increase productivity, while **security, privacy, and human oversight remain central** across all workplaces.
+
+
+:::
+
+<br>
+
+

@@ -3,9 +3,9 @@ project:
   output-dir: "."
   
 website:
-  title: Home
+  title: ""
   # favicon: img/favicon.ico
-  description: 'A collection of data analytics and danlomics by Byeong-Hak Choe'
+  description: 'A collection of data analytics by Byeong-Hak Choe'
   reader-mode: false
   back-to-top-navigation: true
 
@@ -14,56 +14,113 @@ website:
     logo: img/geneseo-logo-squared.png
     pinned: true
     right:
-      # - text: Causal ML
-      #   href: danlml.qmd
-      - text: Research
-        href: index-home.qmd
-      - text: Blog
-        href: blog-listing.qmd
-      # - text: "Teaching {{< fa external-link >}}"
-      #   href: https://bcdanl.github.io
-      #   target: _blank
-      - icon: github
-        href: https://github.com/bcdanl/101-04-R
+      - icon: r-circle-fill
+        text: MW
+        href: https://github.com/bcdanl/101-03-fall-2025
+        target: _blank
+      - icon: r-circle-fill
+        text: MWF
+        href: https://github.com/bcdanl/101-04-fall-2025
         target: _blank
       - text: " "
+      # - text: 🚀 Lecture
+      #   href: listing-danl-101-lec.qmd
+      # - text: ' '
+      # - text: ⌨️ Classwork
+      #   href: listing-danl-101-cw.qmd
+      # - text: ' '
+      # - text: 💻 Homework
+      #   href: listing-danl-101-hw.qmd
+      # - text: ' '
+      # - icon: github
+      #   href: https://github.com/bcdanl/101-R
+      #   target: _blank
+      # - text: " "
     
   sidebar:
-    title: "Welcome!"
-    logo: img/geneseo-logo-squared.png
     style: docked
     search: false
-    # collapse-level: 0
-    # pinned: true
-    # border: true
-    # type: light
+    collapse-level: 0
     contents:
-      - text: <a href="./index.html"><font size ="6" ><b>Welcome! </b></font><font size ="5" color="#194493"> <i class="fa fa-sun" aria-hidden="true"></i></font></a>
-      - text: &nbsp;
-      - text: <font size ="5" ><b>- Lecture </b></font><font size ="5" color="#194493">{{< fa solid laptop >}}</font>
+      - text: 🏠 Home
+        href: index.qmd
+      - text: 📓 Syllabus
+        href: syllabus.qmd
+      - text: 🅱 Brightspace
+        href: http://brightspace.geneseo.edu/
+        target: _blank
+      
+      - text: 🚀 Lecture
         href: listing-danl-101-lec.qmd
-      - text: &nbsp;
-      # - text: <font size ="5" ><b>- Q & A </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
-      #   href: listing-danl-101-qa.qmd
-      # - text: &nbsp;
-      - text: <font size ="5" ><b>- Classwork </b></font><font size ="5" color="#194493">{{< fa solid keyboard >}}</font>
+      - text: ⌨️ Classwork
         href: listing-danl-101-cw.qmd
-      - text: &nbsp;
-      - text: <font size ="5" ><b>- Homework </b></font><font size ="5" color="#194493">{{< fa solid level-up >}}</font>
+      - text: 💻 Homework
         href: listing-danl-101-hw.qmd
-      - text: &nbsp;
-      - text: <font size ="5" ><b>- Q & A </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
-        href: listing-danl-101-qa.qmd
-      - text: &nbsp;
-      - text: <font size ="5" ><b>- Team Project </b></font><font size ="5" color="#194493">{{< fa solid brain >}}</font>
-        href: listing-danl-101-rw.qmd
-      # - text: &nbsp;
-      # - text: <font size ="5" ><b>- Class Notes </b></font><font size ="5" color="#194493">{{< fa solid pencil >}}</font>
-      #   href: listing-danl-101-class.qmd
+      - text: 📤 HW Submission
+        href: listing-danl-101-hw-q.qmd
+      - text: 📝 Exams
+        href: listing-danl-101-ex.qmd
+        
+      - section: 🗣️️ Project
+        contents:
+          # - text: 👥️ Team Formation
+          #   href: danl-rw/danl-101-proj-team.qmd
+          # - text: 🗂️ Topic Choice
+          #   href: danl-rw/danl-101-proj-topic-choice.qmd
+          - text: 📄 Guideline
+            href: danl-rw/danl-101-team-project.qmd
+          - section: 🏅 Sports
+            contents:
+              - text: ⚾ Baseball
+                href: danl-rw/danl-101-team-project-baseball.qmd
+              - text: 🏀 Basketball
+                href: danl-rw/danl-101-team-project-basketball.qmd
+              - text: 🏈 Football
+                href: danl-rw/danl-101-team-project-football.qmd
+              - text: ⛳ Golf
+                href: danl-rw/danl-101-team-project-golf.qmd
+              - text: 🏒 Hockey
+                href: danl-rw/danl-101-team-project-hockey.qmd
+              - text: ⚽ Soccer
+                href: danl-rw/danl-101-team-project-soccer.qmd
+                
+      - section: 🗓️ Weeks
+        contents:
+          - text: Week 01
+            href: danl-wk/wk-01.qmd
+          - text: Week 02
+            href: danl-wk/wk-02.qmd
+          - text: Week 03
+            href: danl-wk/wk-03.qmd
+          - text: Week 04
+            href: danl-wk/wk-04.qmd
+          - text: Week 05
+            href: danl-wk/wk-05.qmd
+          - text: Week 06
+            href: danl-wk/wk-06.qmd
+          - text: Week 07
+            href: danl-wk/wk-07.qmd
+          - text: Week 08
+            href: danl-wk/wk-08.qmd
+          - text: Week 09
+            href: danl-wk/wk-09.qmd
+          - text: Week 10
+            href: danl-wk/wk-10.qmd
+          - text: Week 11
+            href: danl-wk/wk-11.qmd
+          - text: Week 12
+            href: danl-wk/wk-12.qmd
+          - text: Week 13
+            href: danl-wk/wk-13.qmd
+          - text: Week 14
+            href: danl-wk/wk-14.qmd
+          - text: Weeks 15-16
+            href: danl-wk/wk-15.qmd
+      
         
   page-footer: 
     border: false
-    center: "powered with github, quarto, and rstudio<br>byeong-hak choe, 2024"
+    center: "powered with github, quarto, and rstudio<br>byeong-hak choe, 2025"
     # foreground: dark
     # background: '#9b4e55' 
 
@@ -78,13 +135,15 @@ format:
   html: 
     grid:
       margin-width: 400px
-      sidebar-width: 275px
+      sidebar-width: 200px
     link-external-newwindow: true
     theme:
       light: [flatly]  # flatly litera sandstone 'assets/scss/light.scss'
       dark: [darkly, theme-dark.scss] # darkly cyborg slate solra superhero
+    include-in-header: 
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css"/>
     css: [styles.css, assets/css/font.css] # , font.css
     highlight-style: atom-one # espresso   tango
     mainfont:  sans-serif; serif; ui-sans-serif  # Gill Sans, sans-serif;
-    # include-after-body: [target-blank.html]
-
+    include-after-body: [sidebar-button-mobile.html]

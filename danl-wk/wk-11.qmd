@@ -1,0 +1,201 @@
+---
+title: Week 11
+subtitle: Data Storytelling and Visualization
+date: 2025-11-03
+from: markdown+emoji
+---
+
+In **Week 11**, we'll finish the topics in **Big Data and the Modern Data Infrastructure**. We'll then move onto the new topics, **Data Storytelling and Visualization**.
+
+
+## 🏫 Lecture Slides  
+- **Lecture 9 — Data Visualization**  
+  [View Slides](../danl-lec/danl-101-lec-09-2025-1103.html){target="_blank"}  
+- **Lecture 10 — Data Visualization with `ggplot`**  
+  [View Slides](../danl-lec/danl-101-lec-10-2025-1105.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+
+
+<!-- ## ✍️ Classwork -->
+
+<!-- - **Classwork 9 - _Joining Two Related Tables in R_**   -->
+<!--   [View Classwork](../danl-cw/danl-101-cw-09.html){target="_blank"}  -->
+
+<!-- - **Classwork 10 - _Career Sessions_**   -->
+<!--   [View Classwork](../danl-cw/danl-101-cw-10.html){target="_blank"}  -->
+
+
+## ️📊💡 Data Storytelling
+
+> *"The <u>narrative</u> is the key vehicle to convey insights, and the <u>visualizations</u> are important proof points to back up the narrative."* Ryan Fuller, Corporate Vice President, M365 Data Strategy at Microsoft
+
+- **Data visualizations** are useful for showing "what" is happening in the data.
+  - However, they often fall short in explaining the "why" and the "how" or providing the necessary context to uncover underlying reasons.
+
+<!-- - **Data storytelling** links the **visualization** with a **narrative** to answer the "why" and the "how" question, and conveys **insights** to the audience to make data-driven decision. -->
+
+<!-- -	**Data Storytelling**: Bridge the gap between **data** and **insights** by incorporating **descriptive statistics**, **data transformation**, **visualization**, and **narration** within the appropriate **audience context** to effectively present your findings and drive data-informed decisions. -->
+
+- **Data Storytelling**: Bridge the gap between **data** and **insight** by integrating **descriptive statistics**, **data transformation**, **visualization**, and **narration** within the appropriate **audience context** to communicate findings effectively and support **data-informed decision-making**.
+
+<!-- - 	•	Data Storytelling: Bridge the gap between data and insights by incorporating descriptive statistics, visualizations, and narration within the appropriate context—by aligning who your audience is, what you want them to understand or act upon, and how you present your findings—to drive data-informed decisions. -->
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/data-storytelling.png" style="width: 60%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+<br>
+
+### Data Storytelling - Context
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/data-storytelling-context.png" style="width: 60%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+### Context - Who, What, and How
+
+- Before creating a data visualization or communication, it’s essential to spend time understanding the **context** behind your message.
+
+1. **Who** is your audience?
+2. **What** do you want your audience to understand or act upon?
+3. **How** will you present the data to effectively support your point?
+
+
+### Context - Who
+
+1. To **whom** are you communicating?
+  -	Gain a clear understanding of whom you’re communicating with and how they perceive you.
+	-	The more precisely you define your audience, the better you can tailor your message for successful communication.
+
+
+
+
+### Context - What 
+
+2. **What** do you need your audience to know or do?
+	-	Make your communication relevant by aligning it with your audience’s interests and needs.
+	-	Clearly articulate why they should care about your message.
+	-	Adopt a confident stance; as the analyst, you are the subject matter expert.
+
+
+
+
+### Context - How
+
+3. **How** would you present your data to help make your point?	
+	-	Use data as compelling evidence to build and tell your story.
+  -	Choose data transformations and visualizations that effectively convey your message.
+
+
+
+
+<br>
+
+
+### Data Storytelling - Data
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/data-storytelling-data.png" style="width: 60%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+
+### Understanding Your Data
+
+- Prior to doing any storytelling or analysis, it is critical to understand your data and its limitations
+  - How was the information collected?
+  - What is the source of the data?
+  - What is missing *variable* from the data?
+  - What is missing *observation* from the data?
+  - What is missing *value* (`NA`) from the data?
+
+
+<!-- ### Data Storytelling. -->
+
+<!-- Data is the **what**. Stories are the **why** and **how**. -->
+
+
+<br>
+
+### Data Storytelling - Narrative
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/data-storytelling-narrative.png" style="width: 60%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+### The Foundations of a Narrative
+#### The 3-Minute Story & Big Idea
+
+> "I would have written a shorter letter, but I did not have the time." - Blaise Pascal
+
+- <u>Purpose</u>: Boil the "so-what" down to a **concise** statement
+- <u>Challenges</u>: Being **concise** is often more difficult than being verbose
+
+
+### 3-Minute Story
+
+- If you had only 3 minutes, what would you say?
+- **Goal**: Be clear and articulate the key message
+- Useful in:
+  - Quick updates (e.g., elevator pitches)
+  - Shortened time slots (e.g., 5-minute briefings)
+- Know exactly what to communicate and adjust to the time
+
+
+
+### Big Idea
+
+- Must meet three criteria:
+  1. Articulate your unique point of view
+  2. Convey what’s at stake
+  3. Be a complete sentence
+
+
+
+### The Foundations of a Narrative - Example
+
+- **3-Minute Story**
+  - <u>Science department initiative</u>: Resolve issues with incoming 4th-graders’ negative attitudes toward science
+  - Piloted a summer learning program with 2nd and 3rd-graders
+  - <u>Survey results</u>: Significant improvement in positive perceptions toward science
+
+- **Big Idea**
+  - "The pilot summer learning program was successful at improving students’ perceptions of science, and we recommend continuing and expanding it."
+
+
+
+
+
+
+
+<!-- ## 📚  Recommended Reading -->
+
+
+
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 11 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 11.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 11 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

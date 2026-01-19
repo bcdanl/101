@@ -1,0 +1,40 @@
+---
+title: Week 6
+subtitle: Data Transformation with R
+date: 2025-09-28
+from: markdown+emoji
+---
+
+In Week 6, we'll practice working with data frames and transforming data using R’s **tidyverse** tools.
+
+
+## 🏫 Lecture Slides  
+- **Lecture 6 — Data Transformation with R**  
+  [View Slides](../danl-lec/danl-101-lec-06-2025-0917.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+
+## ✍️ Classwork
+
+- **Classwork 6 - Data Transformation with R**  
+  [View Classwork](../danl-cw/danl-101-cw-06.html){target="_blank"} 
+
+
+## 📚 Reference
+
+- Wickham et. al., [*Chapter 3. Data transformation*](https://r4ds.hadley.nz/data-transform.html) in **R for Data Science (2e)**
+
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 6 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 6.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 6 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

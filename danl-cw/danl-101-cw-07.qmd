@@ -1,0 +1,165 @@
+---
+title: Classwork 7
+subtitle: Taxonomy of Data
+date: 2025-10-17
+execute: 
+  echo: false
+  eval: true
+  warning: false
+  message: false
+---
+```{r}
+#| include: false
+
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(DT)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5)),
+                axis.title.y = element_text(size = rel(1.5)),
+                legend.title = element_text(size=rel(1.25))
+                ))
+```
+
+<br>
+
+Consider the following data.frame, `netflix_data`, displayed below:
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+
+netflix_data <- data.frame(
+  UserID = 1:10,
+  Age = c(25, 34, 28, 45, 23, 37, 31, 29, 41, 26),                   # Ratio
+  Gender = c("Female", "Male", "Female", "Male", "Female", "Male", "Female", "Male", "Male", "Female"),  # Nominal
+  SubscriptionPlan = factor(c("Basic", "Premium", "Standard", "Premium", "Basic", "Standard", "Premium", "Basic", "Standard", "Premium"),
+                            levels = c("Basic", "Standard", "Premium"), ordered = TRUE),                 # Ordinal
+  FavoriteGenre = c("Drama", "Comedy", "Action", "Horror", "Sci-Fi", "Romance", "Documentary", "Thriller", "Animation", "Fantasy"),  # Nominal
+  HoursWatched = c(15.5, 20.3, 12.0, 25.7, 8.2, 18.9, 22.5, 16.8, 19.4, 14.1),                   # Ratio
+  LastLoginTime = c(23.5, 8.2, 15.3, 21.0, 2.5, 13.7, 9.8, 18.4, 7.1, 12.6),                            # Interval (hours since midnight)
+  AccountMonths = c(12, 24, 6, 36, 4, 18, 30, 9, 15, 21),                                            # Ratio
+  Satisfaction = factor(c(5, 4, 3, 5, 2, 4, 5, 3, 4, 5), ordered = TRUE),                         # Ordinal
+  nDevices = c(2, 3, 1, 4, 1, 2, 3, 1, 2, 3),                                                    # Ratio
+  LastMovieRating = c(7.8, 6.5, 8.2, 5.9, 9.0, 7.1, 8.5, 6.8, 7.6, 8.0),                     # Interval
+  nProfiles = c(1, 2, 1, 3, 1, 2, 2, 1, 2, 3),                                                   # Ratio
+  Language = c("English", "Spanish", "English", "French", "English", "German", "English", "Spanish", "English", "French")
+)
+
+# DT::datatable(netflix_data)
+
+rmarkdown::paged_table(netflix_data)
+
+
+# knitr::kable(netflix_data |> select(AccountMonths:Language))
+
+```
+
+### Description of Variables in `netflix_data`:
+
+1. `UserID`: Identifier for each user
+2. `Age`: Age of the user in years
+3. `Gender`: Gender of the user
+4. `SubscriptionPlan`: Type of Netflix subscription
+5. `FavoriteGenre`: User’s favorite genre
+6. `HoursWatched`: Average hours watched per week
+7. `LastLoginTime`: Time of last login in hours since midnight
+8. `AccountMonths`: Age of the account in months
+9. `Satisfaction`: User satisfaction rating (1 to 5 stars)
+10.	`nDevices`: Number of devices connected
+11.	`LastMovieRating`: Rating of the last watched movie (1.0 to 10.0)
+12.	`nProfiles`: Number of profiles on the account
+13.	`Language`: User’s preferred language
+
+
+### Question 1
+What type of variable is `FavoriteGenre` in the dataset?
+
+a. Nominal
+b. Ordinal
+c. Interval
+d. Ratio
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+✅ **Answer: a. Nominal** — `FavoriteGenre` represents non-ordered categories.
+
+:::
+
+
+
+### Question 2
+What type of variable is `SubscriptionPlan` in the dataset?
+
+a. Nominal
+b. Ordinal
+c. Interval
+d. Ratio
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+✅ **Answer: b. Ordinal** — Subscription plans follow a natural order: Basic < Standard < Premium.
+
+:::
+
+
+
+### Question 3
+What type of variable is `LastLoginTime` in the dataset?
+
+a. Nominal
+b. Ordinal
+c. Interval
+d. Ratio
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+✅ **Answer: c. Interval** — Time since midnight has meaningful differences but no absolute zero.
+
+
+:::
+
+
+
+### Question 4
+What type of variable is `Satisfaction` in the dataset?
+
+a. Nominal
+b. Ordinal
+c. Interval
+d. Ratio
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+✅ **Answer: b. Ordinal** — Satisfaction rating is ranked, but the distance between levels is not precise.
+
+:::
+
+
+<br><br>
+
+# Discussion 
+
+<font size = "5">Welcome to our Classwork 7 Discussion Board! 👋 </font>
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 7.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Classwork 7 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

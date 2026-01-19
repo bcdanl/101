@@ -1,0 +1,476 @@
+---
+title: Lecture 8
+subtitle: Career Pathways in Data Analytics and Beyond
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-10-24
+execute: 
+  eval: true
+  echo: false
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+```{r setup}
+#| include: false
+
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+library(gapminder)
+library(ggrepel)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+# Set global options for color-blind-friendly scales
+# scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_colour_discrete <- function(...) scale_color_colorblind(...)
+scale_fill_discrete <- function(...) scale_fill_colorblind(...)
+```
+
+
+# **Career in Data Analytics**  {background-color="#1c4982"}
+
+## Geneseo Alumni Career Talk
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+<div style="text-align: center; width: 90%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/danl-career-session-danl-101-03-fall-2025-poster.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"> </p>
+</div>
+
+:::
+::: {.column width="50%"}
+
+<div style="text-align: center; width: 90%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/danl-career-session-danl-101-04-fall-2025-poster.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"> </p>
+</div>
+
+:::
+::::
+
+
+## Geneseo Alumni Career Talk
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+- **Jaehyung Lee**
+  - Class of 2022
+  - Major in Mathematics
+  - Concentration in Data Analytics  
+  - [View Introduction Video 1](https://drive.google.com/file/d/1oKN8bbEYf5oRByGRv-nWx3sZBySwP1-2/view?usp=share_link)  
+  - [View Introduction Video 2](https://drive.google.com/file/d/1d09xGOp7usGINGAffZnZqARnYFt9O7Ni/view?usp=share_link)
+- **Jason Rappazzo**  
+  - Class of 2023
+  - Major in Economics
+  - Minor in Data Analytics  
+  - [View Introduction Video](https://drive.google.com/file/d/18XOtKAdwwp5E1MJxx57lMFb-6IEMgr9i/view?usp=share_link)  
+
+
+:::
+::: {.column width="50%"}
+
+- **Oliver Stordahl**
+  - Class of 2022
+  - Major in Economics
+  - Minor in Mathematics
+  - Minor in Data Analytics
+  - [Listen to Introduction Audio](https://drive.google.com/file/d/1JM8YwRvZVpEmYP_EDrHvvF1N_-umPbUF/view?usp=share_link)  
+
+:::
+::::
+
+## Q & A from Jaehyung and Jason
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+1. **How do your teams work with big-tech partners to provide AI models? How have generative AI tools changed your workflow?**
+  - [View Video 1](https://drive.google.com/file/d/13dr64PUGp0L0z_ESWyNLSuiIekdenXUd/view?usp=share_link)
+  - [View Video 2](https://drive.google.com/file/d/1wK8N4j_x6Uavbk72waQFT4Yc36iDmU9i/view?usp=share_link)
+  - [View Video 3](https://drive.google.com/file/d/1rmxYBde8V-s5fntU_0Zo9tJc8saoH735/view?usp=share_link)
+
+2. **For someone who wants to start a business, which AI capabilities would you prioritize learning or adopting first?**
+  - [View Video](https://drive.google.com/file/d/18dl1-awouz7E6Qna98URTlw7IVpdFc8N/view?usp=share_link)
+
+:::
+
+::: {.column width="50%"}
+3. **What led you to pursue a career in data analytics—was it a long-term plan or something you discovered along the way?**
+  - [View Video 1](https://drive.google.com/file/d/1V62mMUfbbeacRDUGP1Em2R4fj7P8mPCQ/view?usp=share_link)
+  - [View Video 2](https://drive.google.com/file/d/1-FQ_6RlqnSVzWvqfOTR3jcfSWoDX5fa6/view?usp=share_link)      
+
+4. **After graduation, which career decision helped you the most?**
+  - [View Video 1](https://drive.google.com/file/d/1l1vMiD4J1Mi8ajqO40a94lfB4g5FXgrr/view?usp=share_link)
+  - [View Video 2](https://drive.google.com/file/d/1ae2jEVIRz8QYtOS2YhXzdGzJhi_uGD7b/view?usp=share_link)
+
+:::
+::::
+
+
+
+## Q & A from Jaehyung and Jason
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+5. **When should students begin exploring and applying for internships? What timeline do you recommend?**
+  - [View Video](https://drive.google.com/file/d/1ztB-IbjFlBGoQT_QFAI_zNGcPsJXrJRN/view?usp=share_link)
+  - >  _"The more internship, the better. The earlier, the better as well."_ **Jaehyung Andy Lee**  
+  
+
+:::
+::: {.column width="50%"}
+
+
+6. **Which tools—and which AI tools—do you use most in your current role?**
+  - [View Video](https://drive.google.com/file/d/18gAQvR6rCRiT7ald7iw_GcESvP1uq1rS/view?usp=share_link)
+  
+7. **What challenges have you faced at work, and how did you overcome them?**
+  - [View Video 1](https://drive.google.com/file/d/1kMDJAcPrte8eudKLDn4LWinJSERy6TQy/view?usp=share_link)
+  - [View Video 2](https://drive.google.com/file/d/1JIIXUb8MBLpe7nABwY65qdhZOtI_aCYS/view?usp=share_link)
+
+:::
+::::
+
+
+## Q & A from Oliver
+
+
+1. How have **generative AI tools** changed your workflow at the Federal Reserve? What is your opinion on their impact — both on **your own work** and on the **data analytics industry** more broadly?
+  - [Listen to Audio](https://drive.google.com/file/d/1s8NmuarNiIZ6cFxNokiP2VXtYomZ3pcr/view?usp=share_link)
+
+2. What made you choose **Economics** as your major, and why did you decide to add **Mathematics** and **Data Analytics** as minors?
+  - [Listen to Audio](https://drive.google.com/file/d/1Pd68Kw7XpXcV9241sMrFRg3OntKZE42F/view?usp=share_link)
+
+
+3. You participated in **Fed Challenge** and **FDIC Challenge** during college. How did those experiences influence your learning, professional development, and career preparation?
+  - [Listen to Audio](https://drive.google.com/file/d/1He-drAzkgb7ygpgavC5fzIfqVZGpV05C/view?usp=share_link)
+
+
+## Q & A from Oliver
+
+
+4. What kinds of backgrounds do your **colleagues** have at the Federal Reserve? Do they share similar academic paths to yours, or do they come from different disciplines?
+  - [Listen to Audio](https://drive.google.com/file/d/1t414pk64DvaD6IXEh_frgijxsxFra9Am/view?usp=share_link)
+
+5. When you were **job searching and interviewing**, what qualities or skills did employers seem to value the most? Beyond technical ability, what stood out as important during your conversations with them?
+  - [Listen to Audio](https://drive.google.com/file/d/1hT6mNWvhjN75aObHztQtwyrxZxTUDkvE/view?usp=share_link)
+
+
+
+6. How was the **transition between different coding languages and tools** (e.g., R, Python, Alteryx, SQL) in your work?
+  - [Listen to Audio](https://drive.google.com/file/d/14lCi66qVGk1zBHmA7M5o9RbXxHGvvZFA/view?usp=share_link)
+
+
+## Q & A from Oliver
+
+7. Looking back, how difficult was it to **learn coding** during college, and what strategies helped you gain confidence in programming?
+  - [Listen to Audio](https://drive.google.com/file/d/1MKjC4SXp_cBokO-iIoule5nU9MmR7pAV/view?usp=share_link)
+
+
+8. What aspects of your current role do you find the **most rewarding** or meaningful — personally or professionally?
+  - [Listen to Audio](https://drive.google.com/file/d/1PKPUsNpuOytD30IuDn8YyEQA6R-ccJxV/view?usp=share_link)
+
+9.  How did you adjust from being a **college student** to working full time? What changes in lifestyle or mindset did you experience during that transition?
+  - [Listen to Audio](https://drive.google.com/file/d/1jx7NdCYlX1hSPPrUk5VA0AgvRoKTxFsw/view?usp=share_link)
+
+## Q & A from Oliver
+
+10. What were some of the **biggest challenges** you faced early in your job, and how did you manage to overcome them?
+  - [Listen to Audio](https://drive.google.com/file/d/1FTn11JNtYyUV7d20BTj-UsDmYNmwYtdk/view?usp=share_link)
+
+
+11. When you encountered unfamiliar tasks or uncertainty at work, what kinds of **support systems or resources** helped you succeed?
+  - [Listen to Audio](https://drive.google.com/file/d/1Mi8GkYNexSIpt1Av8FC4tQWP29jKEfr0/view?usp=share_link)
+
+
+12. During college, what helped you develop your **programming and analytical skills** most effectively — coursework, practice, projects, or office hours?
+  - [Listen to Audio](https://drive.google.com/file/d/18bmcYabCre6jlPEDKwd1P_5-JoVvpPRn/view?usp=share_link)
+
+
+
+# **Summary for Jaehyung and Jason's Session**  {background-color="#1c4982"}
+
+## 🧩 Roles & Workflows
+- **Jaehyung (AI Enablement / Analytics at Invisible Technologies)**
+  - Works with AI model companies like **OpenAI, Cohere, Google DeepMind**
+  - Manages **data pipelines, automation, and analytics** with 20,000+ distributed agents
+  - Emphasized **Streamlit apps, personal data projects**, and **building tools beyond class assignments**
+
+## 🧩 Roles & Workflows
+- **Jason (Data Engineer at Momentive)**
+  - Works in IT **data engineering**, integrating **ERP, Workday, travel, HR data into Snowflake**
+  - Builds **Tableau dashboards and automated data pipelines** for business decision-making
+  - Transitioned from **internship → full-time** by demonstrating value through small data tools
+
+
+
+## 💡 Lessons on Career Preparation
+- **Personal Projects > Just Coursework**
+  - Build one **deep project** you can talk about—more powerful than many shallow demos
+- **Internships**: Ideally **by junior year**, but **personal projects + outreach** can substitute
+- **Networking**: Reaching out to alumni on **LinkedIn works—alumni want to help**
+- **Data Career Reality**: **Messy data, stakeholder communication, iteration, and revisions** matter more than “perfect code”
+
+
+
+## 🤖 AI & Modern Workflow Changes
+- **60–80% of analytics/engineering code** now written with **AI assistants (Claude, Copilot)**
+- **“Vibe coding”** → prompting AI to generate logic flows instead of hand-coding everything
+- Still requires **human review** → AI **amplifies analysts**, not replaces them
+- **Data sensitivity & responsible AI use** are now core skills (Copilot within secure environment)
+
+
+
+## 🧭 Mindset & Professional Growth
+- **Don’t just execute requests — ask “why”** and **co-design solutions** with stakeholders
+- **Avoid taking feedback personally** — debugging business logic is normal
+- **Stay adaptable** — small teams + AI enable **startup-style speed**, even inside large companies
+
+
+
+
+## ✅ Skills & Tools to Prioritize
+- **Coding Fundamentals Matter** — Python, SQL, R (to understand and **correct AI-generated code**)
+- **Streamlit / App Building** — both alumni mentioned it as a **direct advantage**
+- **Data Pipeline Understanding** — Snowflake, ETL logic, API data ingestion
+  - 💡 **API (Application Programming Interface):**  A structured way for one software or system to **communicate with another** — allowing programs to **request data or trigger actions** automatically, without using a manual interface (e.g., a browser).  
+  - Example: The **Google Maps API** lets applications access location, routing, and distance data programmatically.
+  
+- **Dashboarding / Visualization** — Tableau or Shiny (used in **internship-to-job pipeline**)
+
+
+
+## 🧠 Real Data Work = Beyond Clean CSVs
+- **Messy, inconsistent corporate data is normal**
+- Analysts must **reshape, clean, validate, and question data**
+- **UAT (User Acceptance Testing)** → users will question your output; **don’t take it personally**
+- Communication = Core skill  
+
+
+
+## 💬 Communication & Stakeholder Logic
+- **Don’t just deliver what’s asked** — ask “What decision will this data support?”
+- Stakeholders often **don’t know what they need**
+- **You become the data advisor**, not just the “SQL person”
+- **Work smart, not just hard** — clarify goals before coding dashboards
+
+
+
+## 🧪 Personal Projects = Career Currency
+- **Quality > Quantity** — one deep project beats five generic Kaggle plots
+  - **Kaggle** — a platform for **data science competitions**, **datasets**, and **collaborative notebooks**.
+- Jaehyung used a **self-tracked life project** to stand out in interviews
+- **Use class projects as foundation**, then **extend them your own way**
+
+
+
+## 🎓 Internships & Entry Points
+- Common internship timing: **Summer before senior year**
+- **No internship?** → personal projects + **LinkedIn outreach** still work, but having internship experience would be more beneficial
+- Alumni emphasized: **“If a Geneseo student messages me, I feel responsible to reply.”**
+
+
+
+## 🤖 How AI Actually Fits Into Data Jobs
+- **80% of daily code** now AI-assisted
+- “**Vibe coding**” = prompting AI to write working SQL/Python snippets
+- **Human oversight remains essential**
+- **Company policies differ** — many only allow **Copilot** or internal AI
+
+
+
+## 🛡 Data Ethics & Security Awareness
+- **Never paste confidential data** into public AI tools
+- **Use secure AI (e.g., Microsoft Copilot)** within company systems
+- **Understanding governance & privacy** = part of professional data practice
+
+
+
+## 🧭 Career Mindset Recalibration
+- **Big Tech ≠ only path** — small, AI-enabled startups thrive
+- **Solo founders** can build functional apps with AI + data pipelines
+- **“Best time in history to build something—don’t just consume.”**
+
+
+
+# **Summary for Oliver's Session**  {background-color="#1c4982"}
+
+## 💼 Oliver’s Career Path
+
+- Joined the **Statistics Department** at the Federal Reserve Bank of New York  
+- Department Role:
+  - Collects and processes **regulatory data** from banks  
+  - Ensures **data accuracy** and detects anomalies  
+  - Communicates with reporting institutions to verify discrepancies  
+- Uses **Python**, **SQL**, and **Excel** daily  
+  - Transitioning from **Alteryx** to **Python** workflows  
+
+- 💡 **Note:** *Alteryx* is a **visual data analytics platform** that allows users to prepare, clean, and analyze data through a **drag-and-drop interface** — often used in industry for building workflows without extensive coding.
+
+
+
+## 🧠 Daily Responsibilities
+
+- Maintain and analyze regulatory datasets (hundreds of banks, monthly reports)  
+- Perform **data transformation**, **cleaning**, and **aggregation**  
+- Identify **anomalies** and follow up with banks for clarification  
+- Develop efficient **data pipelines** and quality assurance checks  
+
+
+
+## 🤖 Generative AI in the Workplace
+
+- The **Fed prohibits public AI tools** (e.g., ChatGPT) due to data sensitivity  
+- Uses a **secure in-house generative AI** system  
+- Oliver’s perspective:
+  - AI is excellent for **routine transformations** and **debugging**
+  - Analysts still need **domain understanding** and **context awareness**
+  - “You need to know what you’re asking it to do—and what the right answer looks like.”  
+
+
+
+## 🧮 Choosing Majors and Minors
+
+- Initially unsure of major; inspired by a **pop economics book** (e.g., *Freakonomics*)  
+- Chose **Economics** for its analytical and real-world reasoning value  
+- Added **Mathematics** and **Data Analytics**:
+  - Enjoyed **quantitative reasoning** and **problem-solving**
+  - The **Data Analytics minor** was newly introduced (2022)
+  - Saw its strong **career relevance**
+
+
+
+## 🏆 Experiential Learning: Competitions
+
+- Participated in:
+  - **Fed Challenge**
+  - **FDIC (Federal Deposit Insurance Corporation) Challenge**
+- Benefits:
+  - Provided **real-world data experience**
+  - Developed strong **communication and teamwork skills**
+  - Created **interview stories** to discuss challenges and teamwork
+  - Improved **Excel visualization** and **data storytelling** skills  
+- “These challenges give you something *distinctive* to talk about in interviews.”
+
+
+
+## 👥 Workplace Environment
+
+- Team composed of diverse professionals:
+  - Former accountants, consultants, and government analysts  
+  - Includes another Geneseo alum (Maddie Maline Katz, Class of 2019)
+- Emphasis on **collaboration** and **mentorship**
+- Strong internal support for learning new tools and methods  
+
+
+
+## 🗣️ Q & A -  **1. Interview Preparation**
+- Expect **standard behavioral questions**
+- “You should walk into an interview *knowing* your answers to:
+  - ‘Why this job?’
+  - ‘Tell me about a time you faced a challenge.’”
+- Employers value preparation and clarity more than extensive experience.
+
+
+
+## 🗣️ Q & A -   **2. Transition to Work Life**
+- “College gives you more free time than you’ll ever have again.”
+- Full-time work (40+ hours + commute) requires **time management**  
+- Importance of being **intentional** about personal growth and hobbies  
+
+
+
+## 🗣️ Q & A -   **3. Learning to Code**
+- Transitioning between tools (R, Python, Alteryx):
+  - “Once you know what you want to do with the data, syntax differences don’t matter.”
+- Key takeaway:
+  - Conceptual understanding of **data transformation** > memorizing syntax  
+  - Consistent **practice** and **projects** build fluency
+
+
+
+## 🗣️ Q & A -   **4. Most Rewarding Aspects**
+- Solving data problems and **building solutions** quickly
+- Satisfaction from **turning requests into usable visualizations**
+- Feels fulfillment as a **public servant** contributing to national financial oversight  
+
+
+
+## 🗣️ Q & A -   **5. Challenges and Growth**
+- Learning **report-specific finance and accounting concepts**
+- Interpreting large financial datasets (e.g., repurchase agreements)
+- Overcame initial struggles via:
+  - **Mentorship from senior staff**
+  - **Report specialists** for regulatory interpretation
+  - A collaborative, knowledge-sharing workplace  
+
+
+
+## 🗣️ Q & A -   **6. Developing Programming Skills**
+- “There’s no shortcut — do your assignments.”  
+- Skills built through:
+  - Homework and repetition  
+  - Applying code in competitions (Fed Challenge)  
+  - Office hours and project feedback (notably DANL 300-level project)  
+- Emphasized **hands-on learning** and **visual thinking** when coding  
+
+
+
+## 🗣️ Q & A -  🧭 Key Takeaway
+
+- 🔹 **Start exploring early** — even without clear goals, exposure builds direction  
+- 🔹 **Participate in challenges** — showcase applied skills  
+- 🔹 **Prepare well for interviews** — know your behavioral answers  
+- 🔹 **Practice coding** — consistent repetition is the best teacher  
+- 🔹 **Use your free time wisely** — college is your training ground  
+- 🔹 **Public sector roles** offer purpose, but problem-solving passion is universal  
+
+
+
+

@@ -1,0 +1,498 @@
+---
+title: Data Storytelling Team Project - Golf
+author: Byeong-Hak Choe
+institute: SUNY Geneseo
+date: 2025-11-15
+# toc: true
+# toc-depth: 2
+# toc-expand: true
+# toc-title: Contents
+# number-sections: false
+# number-depth: 3
+
+code-fold: false
+
+execute:
+  echo: true
+  eval: true
+  message: false
+  warning: false
+  fig-width: 9
+  fig-height: 6
+---
+```{r}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(broom)
+library(hrbrthemes)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5) ),
+                axis.title.y = element_text(size = rel(1.5) ))
+          )
+
+# Set global options for color-blind-friendly scales
+# scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_colour_discrete <- function(...) scale_color_colorblind(...)
+scale_fill_discrete <- function(...) scale_fill_colorblind(...)
+```
+
+# Data
+
+The following lists data frames about golf:
+
+- `pga_tournaments`: PGA Tournament Data from 2022 season  
+- `ow_golf_rankings`: Official World Golf Rankings in June 2022  
+- `pga_tournaments_avg`: Average player performance statistics with driving distance and putting by tournament.
+
+
+## Average PGA Performance Data from 2022 season (`pga_tournaments_avg`)
+
+A data frame with 1,387 rows and 12 **variables**:
+
+  - Cases include all golfers who made the cut in each of 19 PGA tournaments in 2022.
+  
+```{r}
+pga_tournaments_avg <- read_csv(
+  "http://bcdanl.github.io/data/pga_tournaments_avg.csv")
+```
+
+```{r}
+#| echo: false
+rmarkdown::paged_table(pga_tournaments_avg)
+```
+
+<br>
+
+`playerName`  
+Player’s full name.
+
+`country`  
+Player’s country of origin or representation.
+
+`avgDriveDist`  
+Average driving distance off the tee (typically measured in yards).
+
+
+`drivePct`  
+Driving accuracy percentage (for example, the percentage of drives/fairways hit from the tee).
+
+`avgPuttsPerRound`  
+Average number of putts per 18-hole round.
+
+`onePuttPct`  
+Percentage of holes where the player needed only one putt on the green.
+
+`driveSG`  
+Strokes gained from driving (off-the-tee performance relative to the field).
+
+`puttsSG`  
+Strokes gained from putting (putting performance relative to the field).
+
+`avgScore`  
+Average 18-hole score (strokes per round). Scoring average to measure success.
+
+`Money`  
+Total prize money earned over the period or tournament (typically in U.S. dollars).
+
+`Points`  
+Tour points associated with the performance in the Fedex Cup.
+
+`tournament`  
+Tournament name or identifier associated with the statistics in the row.
+
+
+<br>
+
+
+## PGA Tournament Data from 2022 season (`pga_tournaments`)
+A data frame with 3,676 rows and 34 **Variables**:
+
+```{r}
+pga_tournaments <- read_csv("http://bcdanl.github.io/data/pga_tournaments.csv")
+```
+
+```{r}
+#| echo: false
+rmarkdown::paged_table(pga_tournaments)
+```
+
+<br>
+
+`Player_initial_last`
+initial of first name and complete last name of player
+
+`tournament.id`
+tournament ID
+
+`player.id`
+plyaer ID
+
+`hole_par`
+par across all holes played by the player
+
+`strokes`
+strokes taken on all holes played by the player
+
+`score_relative_to_par` 
+Score relative to par (`strokes` - `hole_par`)
+
+`hole_DKP`
+Draftkings points on holes
+
+`hole_FDP`
+Fanduel points on the holes
+
+`hole_SDP`
+Showdown points on the holes
+
+`streak_DKP`
+Draftkings points on streaks
+
+`streak_FDP`
+Fanduel points on streaks
+
+`streak_SDP`
+Showdown points on streaks
+
+`n_rounds`
+number of rounds played
+
+`made_cut`
+player made the cut or not
+
+`pos`
+finishing position of player
+
+`finish_DKP`
+Draftkings points on the finishing position
+
+`finish_FDP`
+Fanduel points on the finishing position
+
+`finish_SDP`
+Showdown points on the finishing position
+
+`total_DKP`
+total Draftkings points for the tournament
+
+`total_FDP`
+total Fanduel points for the tournament
+
+`total_SDP`
+total Showdown points for the tournament
+
+`player`
+player full name
+
+`tournament.name`
+tournament full name
+
+`course`
+course name
+
+`date`
+data of tournament
+
+`purse`
+total prize money (in millions)
+
+`season`
+year of season
+
+`no_cut`
+Not sure
+
+`Finish`
+finishing position
+
+`sg_putt`
+strokes gained from putting
+
+`sg_arg`
+strokes gained around the green
+
+`sg_app`
+strokes gained on approach shots
+
+`sg_ott`
+strokes gained off the tee
+
+`sg_t2g`
+strokes gained tee to green
+
+`sg_total`
+total strokes gained
+
+
+Source: [https://datagolf.com](https://datagolf.com)
+
+
+
+
+## Official World Golf Rankings in June 2022  (`ow_golf_rankings`)
+- A data frame with 300 rows and 2 **Variables**:
+
+```{r}
+ow_golf_rankings <- read_csv("http://bcdanl.github.io/data/ow_golf_rankings.csv")
+```
+
+```{r}
+#| echo: false
+rmarkdown::paged_table(ow_golf_rankings)
+```
+
+<br>
+
+`WGR_June_2022`
+official golf world ranking
+
+`Player_initial_last`
+initial of first name and complete last name of player
+
+
+Source: [https://www.owgr.com/](https://www.owgr.com/)
+
+
+# Explaining Key Golf Variables 
+
+This section explains the meaning of important variables found in `pga_tournaments` and provides context for people who do **not** know golf.  
+
+
+---
+
+## 🏌️ Basic Golf Concepts
+
+Before interpreting the variables, here are two essential ideas:
+
+### 1. A “stroke” is one hit of the ball.
+Fewer strokes = better scoring.
+
+### 2. Every hole has a “par.”
+Par is the expected number of strokes a skilled player should take:  
+- 3 strokes → par  
+  - **Par**: target number of strokes for a hole (usually 3, 4, or 5).  
+
+
+- `strokes == hole_par` → “made par”  
+- `strokes = par – 1` → birdie (good)  
+- `strokes = par + 1` → bogey (bad)
+
+
+**Idea:** strokes gained numbers tell us whether the player is **better or worse than the PGA Tour average** for that type of shot.  
+
+- Positive value → better than average  
+- Negative value → worse than average
+
+### 3. Tournaments have multiple rounds.
+Most events have 4 rounds (Thu–Sun), each of 18 holes.
+
+### 4. There is a “cut” after round 2.
+Only the best players continue to round 3–4. Others “miss the cut.”
+
+- **Tournament**: usually 4 rounds (4 × 18 holes).  
+- **Cut**: after 2 rounds, only players with the best scores continue to rounds 3–4.
+
+
+
+
+---
+
+# 🟢 Variable Explanations + What We Can Analyze
+
+## 1. `strokes`
+**Meaning**:
+Number of strokes the player took on a single hole.
+
+**Golf context**:
+This is the fundamental scoring unit in golf.
+
+**Analysis examples**:
+
+- Average strokes per round  
+- Birdie/bogey rates  
+- Score relative to par (`strokes - hole_par`)  
+- Compare performance on par-3 vs par-4 vs par-5 holes  
+
+---
+
+## 2. `hole_par`
+**Meaning**:
+Par value of the hole
+
+**Golf context**:
+Indicates the expected difficulty of the hole.
+
+**Analysis examples**:
+
+- Compute score relative to par  
+- Identify which par type a player scores best on  
+- Hole difficulty analysis across tournaments  
+
+---
+
+## 3. `made_cut`
+**Meaning**:
+Indicator of whether the player advanced past the cut after 2 rounds.
+
+**Golf context**:
+If you make the cut, you continue playing the weekend.
+
+**Analysis examples**:
+
+- Probability of making the cut  
+- Skill differences between cut-makers and non-cut-makers  
+- Effect of cuts on fantasy scoring or prize money  
+
+---
+
+## 4. `n_rounds`
+**Meaning**:
+Number of rounds a player completed.
+
+**Golf context**:
+Usually 2 if cut, 4 if not cut (unless it’s a no-cut event).
+
+**Analysis examples**:
+
+- Relation between number of rounds and finishing position  
+- Identify consistent 4-round players  
+- Evaluate endurance or weekend performance  
+
+---
+
+## 5. Strokes Gained Metrics
+**Variables**:  
+`sg_putt`, `sg_arg`, `sg_app`, `sg_ott`, `sg_t2g`, `sg_total`
+
+**Meaning**:
+These measure how many strokes a player gained or lost compared to the PGA Tour average on specific types of shots.
+
+**Categories**:
+
+- **SG:OTT** — Off the tee (drives)  
+- **SG:APP** — Approach shots to the green  
+- **SG:ARG** — Around the green (chipping)  
+- **SG:PUTT** — Putting  
+- **SG:T2G** — All shots except putting  
+- **SG:TOTAL** — Overall performance
+
+**Analysis examples**:
+
+- Identify player strengths and weaknesses  
+- Radar charts to compare skills  
+- Compare top-50 players vs outside top-50  
+- Which skill areas drive finishing position?  
+
+---
+
+## 6. `pos` / `Finish`
+**Meaning**:
+Player’s final ranking in the tournament (1 = winner).
+
+**Analysis examples**:
+
+- Trends in finishing positions over time  
+- Correlation with strokes gained  
+- Compare finishing position across different courses  
+
+---
+
+## 7. Tournament Metadata
+**Variables**:  
+`tournament.id`, `tournament.name`, `course`, `date`, `season`
+
+**Meaning**:
+Information describing the tournament.
+
+**Analysis examples**:
+
+- Course difficulty comparisons  
+- Seasonal patterns in scoring  
+- Performance on specific courses (e.g., Augusta vs Torrey Pines)  
+
+---
+
+## 8. Fantasy Scoring Variables
+`hole_DKP`, `hole_FDP`, `hole_SDP`  
+`streak_DKP`, `streak_FDP`, `streak_SDP`  
+`finish_DKP`, `finish_FDP`, `finish_SDP`  
+`total_DKP`, `total_FDP`, `total_SDP`
+
+**Meaning**:
+Fantasy golf points for DraftKings (DKP), FanDuel (FDP), and SuperDraft (SDP).
+
+**Golf context**:
+Fantasy scoring rewards:
+- Birdies  
+- Eagles  
+- Streaks  
+- Finishing position  
+- Penalties for bogeys
+
+**Analysis examples**:
+
+- Compare fantasy scoring to traditional golf scoring  
+- Identify players who benefit from fantasy-scoring rules  
+- Optimize fantasy lineup selection  
+
+---
+
+## 9. `purse`
+**Meaning**:
+Total prize money available in the tournament.
+
+**Analysis examples**:
+
+- Relationship between purse size and player performance  
+- Higher-purse events vs field strength  
+- Earnings distribution across seasons  
+
+---
+
+## 10. `no_cut`
+**Meaning**:
+Indicator whether the tournament has no cut.
+
+**Golf context**:
+Some events allow all players to play all rounds.
+
+**Analysis examples**:
+
+- Compare scoring in cut vs no-cut events  
+- Effect on strokes gained and finishing positions  
+- Fantasy scoring differences  
+
+---
+
+# Summary Table
+
+| Variable | Plain-English Explanation | Possible Analyses |
+|---------|---------------------------|-------------------|
+| `strokes` | Shots taken on a hole | Scoring average, consistency, birdies/bogeys |
+| `hole_par` | Difficulty benchmark | Score relative to par, hole difficulty |
+| `made_cut` | Player advanced to weekend? | Cut probability, skill gap, fantasy impact |
+| `n_rounds` | Number of rounds played | Consistency, performance over rounds |
+| Strokes gained metrics | Skill measurement vs PGA average | Player skill profiles, radar charts |
+| `pos` / `Finish` | Final tournament rank | Trend analysis, correlation with skills |
+| Tournament metadata | Info on course & event | Course difficulty, seasonal trends |
+| Fantasy scoring | DK/FanDuel/SuperDraft points | Lineup optimization, scoring comparisons |
+| `purse` | Total prize money | Incentives, field strength |
+| `no_cut` | Cut or no-cut event | Scoring pattern differences |
+
+---
+
+# Conclusion
+
+Even without deep golf knowledge, these variables allow meaningful analysis of:
+
+- Player performance  
+- Tournament structure  
+- Scoring behavior  
+- Skill strengths and weaknesses  
+- Course difficulty  
+- Fantasy scoring strategies  
+
+This dataset supports a full range of **descriptive**, **comparative**, and **strategic** analytics.

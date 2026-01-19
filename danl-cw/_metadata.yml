@@ -15,7 +15,7 @@ include-after-body:
     <script src='/assets/js/posts.js'></script>
 comments:
   giscus:
-    repo: bcdanl/101
+    repo: bcdanl/101-fall-2025-discussion
     # mapping: title
     reactions-enabled: false
     # loading: lazy
@@ -25,6 +25,16 @@ comments:
 toc: true
 toc-depth: 6
 toc-expand: 3
+toc-title: "
+<div style='white-space:nowrap;'>
+  <img src='../img/logo-geneseo.jpg'
+       style='height:48px; display:inline-block; vertical-align:middle; margin-right:0px;'>
+  <span style='display:inline-block; vertical-align:middle; font-family:Arial; font-weight:bold; line-height:1.05;'>
+    Data<br>Analytics
+  </span>
+</div>
+<br>On this page"
+
 # citation: true
 # appendix-cite-as: display
 # license:

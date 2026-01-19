@@ -1,0 +1,1161 @@
+---
+title: Lecture 4
+subtitle: Generative AI
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-09-05
+execute: 
+  eval: true
+  echo: false
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+```{r setup}
+#| include: false
+
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+library(gapminder)
+library(ggrepel)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+# Set global options for color-blind-friendly scales
+# scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_colour_discrete <- function(...) scale_color_colorblind(...)
+scale_fill_discrete <- function(...) scale_fill_colorblind(...)
+```
+
+
+
+# **The Concepts of AI** {background-color="#1c4982"}
+
+
+## What is **AI**?
+
+
+::::{.columns}
+::: {.column width="40%"}
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/ai-ml-dl-difference.jpeg" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+
+::: {.column width="60%"}
+- **Artificial Intelligence (AI):** Techniques that enable machines to perform tasks associated with human intelligence (perception, reasoning, learning, generation, action).
+
+:::
+::::
+
+
+- In practice today: **machine learning** algorithms trained on data to make predictions or generate outputs.
+- Sub‑areas: machine learning; deep learning; **generative** models.
+
+
+<!-- ## What is an **Deep Learning** and **Neural Network**? -->
+
+
+<!-- ::::{.columns} -->
+<!-- ::: {.column width="37.5%"} -->
+
+<!-- <div style="text-align: center; width: 75%; margin: auto;"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/nobel-2024-physics.jpeg" style="width: 100%; margin-bottom: -20px;"> -->
+<!--   <p style="font-weight: bold;"></p> -->
+<!-- </div> -->
+
+<!-- ::: -->
+
+<!-- ::: {.column width="62.5%"} -->
+<!-- - **Deep learning** is an advanced ML methodology. All deep learning is ML. -->
+<!--   - It combines statistics and mathematics with **neural network** architecture. -->
+
+<!-- ::: -->
+<!-- :::: -->
+
+
+<!-- - A **neural network** is a method in AI that teaches computers to process data in a way that is inspired by the human brain.  -->
+<!--   - It uses interconnected nodes or neurons in a layered structure that resembles the human brain. -->
+<!--   - Each connection between neurons has an associated **weight**, which determines the strength and importance of the input in influencing the output. Through training, these weights are adjusted to improve accuracy.   -->
+
+<!-- - **Deep learning** is best for complex tasks that make sense of unstructured data, such as images, texts, and sounds. -->
+<!--   - e.g., Image recognition -->
+
+## What is **Deep Learning**?
+
+::::{.columns}
+::: {.column width="37.5%"}
+
+<div style="text-align: center; width: 75%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/nobel-2024-physics.jpeg" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+
+::: {.column width="62.5%"}
+- **Deep learning** is an advanced machine learning methodology.  
+  - All deep learning is machine learning, but not all ML is deep learning.  
+  - It combines **statistics**, **mathematics**, and **neural network** architecture.  
+  
+:::
+::::
+
+
+- **Deep learning** is particularly suited for **complex tasks** that involve unstructured data, such as:  
+  - Images 🖼️  
+  - Texts 📝  
+  - Sounds 🎵  
+  - e.g., **Image recognition**  
+
+## What is a **Neural Network**?
+
+<div style="text-align: center; width: 50%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/neural-network-cat.jpg" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+- A **neural network** is a method in AI inspired by the way the human brain processes information.  
+
+
+- It uses **interconnected nodes (neurons)** arranged in layers:
+  - **Input layer** → receives data  
+  - **Hidden layers** → transform data through computations  
+  - **Output layer** → produces the result  
+  
+## What is a **Weight** in a **Neural Network**?
+
+
+- Each connection between neurons carries a **weight**:  
+  - Determines the strength and importance of the input.  
+  - During **training**, these weights are adjusted to improve predictions. 
+	-	With multiple layers, networks capture **intricate connections** and represent **complex patterns** in data.
+
+
+## What is a Token?
+
+- A **token** is the smallest unit of text an LLM processes.  
+  - **Input & Output** are measured in tokens, not words.
+- It can be:
+  - A **single character** (`a`, `!`)  
+  - A **whole word** (`dog`, `house`)  
+  - A **part of a word** (`play` + `ing`)  
+- Examples of Tokenization
+  - `"cat"` → **1 token**  
+  - `"playing"` → **2 tokens** (`play`, `ing`)  
+  - `"extraordinary"` → **2 tokens** (`extra`, `ordinary`)  
+
+
+## What is an **LLM**?
+
+- **Large Language Model (LLM):** A **neural network** trained on vast text (and often code) to model the **probability of the next token**.
+
+- **Capabilities emerge**: dialogue, summarization, code generation, reasoning heuristics, tool use (e.g., ChatGPT, Claude, Gemini, Copilot, Grok).
+
+- Limitations: **hallucinations** (confidently wrong), **training bias**, **context limits** (a fixed number of tokens), **lack of grounding**.
+
+
+
+<!-- ##  What is **AGI**? -->
+
+<!-- - **Artificial General Intelligence (AGI):** A hypothetical system that can **perform at or above human level across most cognitive tasks**. -->
+<!-- - Not a settled definition; **timelines and feasibility are debated**. -->
+<!-- - For our course: focus on **practical augmentation** now; track, but do not depend on, AGI speculation. -->
+
+
+
+<!-- ## Why Tokens Matter? -->
+
+<!-- - **Input & Output** are measured in tokens, not words.   -->
+<!-- - **Costs & Limits**: LLMs have token limits (e.g., 8k, 32k, 128k).   -->
+<!--   - Both **your prompt** and **the model’s reply** count.   -->
+<!-- - **Training**: LLMs learn relationships between tokens, not whole words.  -->
+
+
+# **Introduction: Living and Working with AI** {background-color="#1c4982"}
+
+
+##  The "Three Sleepless Nights"
+
+
+::::{.columns}
+::: {.column width="50%"}
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/ethan-mollick-book.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+
+::: {.column width="50%"}
+- After hands‑on use, many realize **LLMs don’t behave like normal software**; they feel conversational, improvisational, even *social*.
+- This triggers excitement and anxiety: *What will my job be like?* *What careers remain?* *Is the model “thinking”?*
+
+:::
+::::
+
+
+- The author describes staying up late **trying “impossible” prompts**—and seeing plausible solutions.
+- Key takeaway: **Perceived capability jump** → a sense that **the world has changed**.
+
+##  A Classroom Turning Point
+
+
+- In late 2022, a demo for undergrads showed AI as **cofounder**: brainstorming ideas, drafting business plans, even playful transforms (e.g., poetry).
+- Students rapidly **built working demos** using unfamiliar libraries—with AI guidance—**faster** than before.
+- Immediate classroom effects:
+  - Fewer raised hands (ask AI later); **polished grammar** but **iffy citations**.
+  - Early ChatGPT “tells”: formulaic conclusions (e.g., *“In conclusion,”* now improved).
+- Atmosphere: **Excitement + nerves** about career paths, speed of change, and where it stops.
+
+
+ 
+
+
+
+<!-- ##  A Prompt that Changed the Game -->
+
+<!-- **Idea:** Turn a static teaching simulation into an *adaptive* conversation. -->
+
+<!-- > “You will be my negotiation teacher… simulate a scenario… play the other party… wait for my reply… grade me… make it harder if I do well.” -->
+
+
+<!-- - Result: In minutes, a working **interactive tutor** approximating much of a bespoke simulation. -->
+<!-- - Insight: **General‑purpose conversational scaffolding** can replace months of task‑specific code for many learning workflows. -->
+<!-- - Limits remain (fidelity, grounding, evaluation), but **time‑to‑prototype collapses**. -->
+
+
+ 
+
+##  Why This Feels Like a Breakthrough
+
+
+- **Generative AI** (esp. LLMs) behaves like a **co‑intelligence**: it helps us *think, write, plan, and code*.
+- The shift is not just speed; it’s **new forms of interaction** (dialogue, iteration, critique).
+- For many tasks, **the bottleneck moves from doing → directing** (prompting, reviewing, verifying).
+- Raises **new literacy** needs: prompt craft/engineering, critical reading of outputs, traceability, and evaluation.
+
+
+## Prompt Engineering
+
+The practice of designing clear, structured inputs to guide generative AI systems toward producing accurate, useful, and context-appropriate outputs.  
+
+:::: {.columns}
+::: {.column width="50%"}
+#### **Basic prompt**  
+
+*"Explain climate change."*  
+:::
+
+
+::: {.column width="50%"}
+#### **Engineered prompt**  
+
+*"Explain climate change in simple terms for a 10-year-old using a short analogy and two examples."*  
+:::
+::::
+##  General Purpose Technology (GPT — the economic term)
+
+
+- A **General Purpose Technology** = a pervasive technology that transforms many sectors (steam power, electricity, internet).
+- Reading’s claim: **Generative AI may rival or exceed** prior GPTs in breadth and speed of impact.
+- Adoption dynamics:
+  - Internet took decades (ARPAnet → web → mobile).
+  - **LLMs spread to mass use in months** (e.g., ChatGPT hitting 100M users rapidly).
+- Implication: **Organizations and individuals must learn in real time**—no long runway.
+
+
+ 
+
+##  Capability Scaling & the Pace of Change
+
+
+- Model **scale** (data, parameters, compute) has correlated with **capability jumps** across domains.
+- Progress may slow, but **even “frozen‑in‑time” AI is already transformative** for many workflows.
+- **Takeaway**: Plan for **non‑linear improvements** and frequent tool refresh.
+
+
+ 
+
+##  Early Productivity Effects
+
+
+- Studies summarized in the reading describe **20–80% productivity gains** across tasks (coding, marketing, support), **with caveats**.
+- Contrast noted with historical technologies (e.g., steam’s ~18–22% factory gains; mixed labor productivity evidence for PCs/Internet).
+- Caution: results **vary by task, data privacy, oversight, and evaluation rigor**.
+
+
+ 
+
+##  Beyond Work: Education, Media, Society
+
+
+- **Education:** AI tutors, personalized feedback, changes to writing/assessment.
+- **Media & entertainment:** personalized content; industry disruption.
+- **Information quality:** **misinformation scale** and detection challenges.
+- **Identity & creativity:** collaboration with “alien” co‑intelligence; authorship questions.
+
+ 
+
+<!-- ##  The “Alien in the Room” -->
+
+
+<!-- - LLMs often **pass exams** and appear creative; they can feel **intelligent** even if they are not sentient. -->
+<!-- - The reading notes **ambiguity**: strong performance without full mechanistic understanding. -->
+<!-- - Open question for us: **How should we interpret competence without consciousness?** --> 
+
+
+ 
+ 
+
+<!-- ##  Classic Benchmarks: **Turing Test** & **Lovelace Test** -->
+
+
+<!-- - **Turing Test:** If a machine’s conversation is **indistinguishable from a human’s**, it “passes.” -->
+<!--   - Modern systems can appear to pass in some settings; test has known limitations. -->
+<!-- - **Lovelace Test (variants):** Can a machine **create novel, surprising outputs** that its creators **cannot fully explain**? -->
+<!--   - Generative systems produce **novel combinations**; debate remains about creativity criteria. -->
+
+
+ 
+
+##  LLM's Common Pitfalls & How to Avoid Them
+
+
+- **Hallucinations:** Ask for sources; cross‑check; use retrieval tools where allowed.
+- **Shallow prompts:** Specify role, audience, tone, constraints, and evaluation criteria.
+- **Over‑automation:** Keep humans in the loop for judgment calls and ethics.
+- **Privacy/IP:** Avoid pasting sensitive data; follow policy and license terms.
+
+
+
+##  How We’ll Use AI in DANL 101
+
+- In our DANL 101, the use of generative AI will be allowed for coding and a project.
+  - Note that exams are paper-based.
+  
+- Treat AI as a **co‑pilot** for: clarifying concepts, brainstorming, code debugging, style/grammar critique.
+- **Your responsibilities:**
+  - **Verify** facts, reasoning, math, and code; **cite** substantive AI assistance when allowed.
+  - Avoid **hallucination traps**.
+  - Respect **academic integrity** and any assignment‑specific AI rules.
+- Build habits: **prompt → check → revise → document**.
+
+- **Q**: Where do you draw the line between **assistance** and **authorship**? Please work on [Classwork 1](https://bcdanl.github.io/danl-cw/danl-101-cw-01.html).
+
+ 
+
+<!-- ##  A Simple Workflow You Can Practice -->
+
+
+<!-- 1. **Decompose** the task (what outcome? constraints? rubric?). -->
+<!-- 2. **Prompt** clearly (role, goal, constraints, format, examples). -->
+<!-- 3. **Probe** the output (ask for justifications; request alternatives). -->
+<!-- 4. **Verify** (calculations, citations, code execution, plausibility checks). -->
+<!-- 5. **Iterate** (refine prompts, edit, add data). -->
+<!-- 6. **Document** what you used AI for (transparency). -->
+
+
+ 
+
+<!-- ##  Quick Activity (5–7 min) -->
+
+
+<!-- - In pairs: List **three tasks** in your intended field that AI can **augment**, and **one** that remains **human‑critical**. -->
+<!-- - Pick **one** task. Draft a **one‑paragraph prompt** to accomplish it. -->
+<!-- - Swap prompts with another pair. Use an AI system to test and **critique**. -->
+
+
+ 
+
+<!-- ##  Discussion Prompts -->
+
+
+<!-- - What changed for you after your first “sleepless night” with AI? -->
+<!-- - Where do you draw the line between **assistance** and **authorship**? -->
+<!-- - How should we teach **verification** as a core data/AI skill? -->
+<!-- - If productivity rises, **how do roles and assessments change**? -->
+
+
+ 
+
+# **The Concepts of AI (continued)** {background-color="#1c4982"}
+
+## What is Labeled Data?
+
+::::{.columns}
+::: {.column width=“40%”}
+
+<div style="text-align:center; width:100%; margin:auto;">
+  <img src="https://bcdanl.github.io/lec_figs/labeled-data.png" style="width:100%; margin-bottom:-20px;">
+  <p style="font-weight:bold;"></p>
+</div>
+:::
+
+
+::: {.column width=“60%”}
+-	**Definition**: Data that comes with the correct answer attached.
+-	Good labels = better learning.
+-	**Sources of labels**: human annotators, experts, user clicks/ratings, existing records.
+
+:::
+::::
+
+:::{.incremental}
+-	**Challenge**: Creating labeled data can be expensive and sometimes subjective.
+-	**Example**: Companies like **Scale AI** use ML to make the labeling process faster and more consistent.
+:::
+
+
+<div style="display:block; margin:-20px;"></div>
+
+::: callout-note
+- **Takeaway**: Labeled data is the “answer key” that makes supervised learning possible.
+:::
+
+
+## What is Supervised Learning?
+
+::::{.columns}
+::: {.column width=“30%”}
+
+<div style="text-align:center; width:100%; margin:auto;">
+  <img src="https://bcdanl.github.io/lec_figs/supervised-learning.png" style="width:100%; margin-bottom:-20px;">
+  <p style="font-weight:bold;"></p>
+</div>
+:::
+
+
+::: {.column width=“70%”}
+-	**Idea**: Learn from examples with answers.
+-	Like studying with flashcards: front = input, back = correct answer.
+-	The computer sees many input–answer pairs and learns to predict the answer for new inputs.
+:::
+::::
+
+
+::::{.columns}
+::: {.column width=“50%”}
+<div style="display:block; margin:-100px;"></div>
+
+**Examples**:
+
+- **Classification**	
+  - Email → Spam / Not Spam
+  -	Photo → Cat / Dog
+- **Regression**
+  -	House features → 🏠 Price($)
+
+:::
+
+::: {.column width=“50%”}
+
+::: callout-note
+-	Most practical AI in business uses this approach.
+- **Takeaway**: Supervised learning = “learn by example + answer key.”
+:::
+
+:::
+::::
+
+
+## What is Unsupervised Learning?
+
+::::{.columns}
+::: {.column width="40%"}
+<div style="text-align:center; width:100%; margin:auto;">
+  <img src="https://bcdanl.github.io/lec_figs/unsupervised-learning.png" style="width:100%; margin-bottom:-20px;">
+  <p style="font-weight:bold;"></p>
+</div>
+:::
+
+::: {.column width="60%"}
+- **Idea**: Learn patterns from data **without answers**.  
+- Like sorting a box of photos with **no labels**: the computer groups them by *similarities*.  
+- The model discovers **hidden structure** in the data on its own.  
+:::
+::::
+
+
+::::{.columns}
+::: {.column width="50%"}
+<div style="display:block; margin:-100px;"></div>
+
+**Examples**:
+
+- **Clustering**: Customers → Shopping clusters (Segmentation)  
+- **Association Rules**: Movies → Similar genres (Recommendation)
+- **Topic Modeling**: Text Documents → Topic groups  
+
+:::
+
+::: {.column width="50%"}
+
+::: callout-note
+- Useful for **exploration and discovery** when labels aren’t available.  
+- **Takeaway**: Unsupervised learning = “find patterns without an answer key.”  
+:::
+
+:::
+::::
+
+
+## What is Attention Mechanism?
+
+::::{.columns}
+::: {.column width=“30%”}
+
+<div style="text-align:center; width:85%; margin:auto;">
+  <img src="https://bcdanl.github.io/lec_figs/attention-is-all-you-need.jpg" style="width:100%; margin-bottom:-20px;">
+  <p style="font-weight:bold;"></p>
+</div>
+
+:::
+
+
+::: {.column width=“70%”}
+-	**Analogy**: A spotlight that highlights the most relevant words when making a prediction.
+-	In the sentence _“The bank by the river flooded,”_ attention helps link _bank_ ↔ _river_.
+-	Lets the model focus on what matters now and ignore the rest.
+<!-- -	Works at many layers; multiple “heads” can focus on different relationships. -->
+-	**Result**: better understanding of meaning & context.
+
+::: callout-note
+- **Takeaway**: Attention = smart focus that makes transformers powerful.
+:::
+
+:::
+::::
+
+
+
+## What is a Transformer in AI?
+
+::::{.columns}
+::: {.column width=“30%”}
+
+<div style="text-align:center; width:85%; margin:auto;">
+  <img src="https://bcdanl.github.io/lec_figs/attention-is-all-you-need.jpg" style="width:100%; margin-bottom:-20px;">
+  <p style="font-weight:bold;"></p>
+</div>
+:::
+
+
+::: {.column width=“70%”}
+<div style="display:block; margin:-10px;"></div>
+
+- A neural network design that underlies modern **large language models (LLMs).**  
+- Processes all words in a sequence **at the same time** (not one by one).  
+- Uses **attention** to learn how words relate to each other.  
+- **Encoder–decoder architecture** handles **long sequences** of input/output more efficiently:  
+  - **Encoder:** Reads and represents the input.  
+  - **Decoder:** Generate the output one token at a time.  
+  
+:::
+::::
+
+<!-- - Example: -->
+<!--   - Input: *“What is the color of the sky?”* -->
+<!--   - Transformer learns that *color*, *sky*, and *blue* are connected. -->
+<!--   - Output: *“The sky is blue.”* -->
+
+
+
+## Transformers - Encoder
+
+
+::::{.columns}
+::: {.column width=“50%”}
+<div style="text-align:center; width:100%; margin:auto;">
+  <img src="https://bcdanl.github.io/lec_figs/transformer-concept.png" style="width:100%; margin-bottom:-20px;">
+  <p style="font-weight:bold;"></p>
+</div>
+<div style="display:block; margin:-20px;"></div>
+
+:::
+::: {.column width=“50%”}
+- The **encoder** reads the whole input question:  
+  *“What is the color of the sea?”*  
+
+:::
+::::
+
+<!-- - Each word is turned into **embeddings** (words used in similar ways get similar numbers).   -->
+  <!-- - **Position information** is then added so order matters.   -->
+
+<div style="display:block; margin:-30px;"></div>
+
+
+1. Each word is turned into a list of numbers (an **embedding**) that captures its **meaning**. $\;\Rightarrow\;$ Words used in similar contexts (*sea*, *ocean*) end up with similar embeddings.  
+2. **Positional encoding** adds an “**order** tag” to each word’s embedding, so the model can tell the difference between:  
+    - e.g., *“The dog chased the cat.”*  vs. *“The cat chased the dog.”*  
+
+<div style="display:block; margin:-20px;"></div>
+
+- With both, the **attention** can find relationships: *color* ↔ *sea*
+  
+- Output: **context-aware representations** of the sentence that the **decoder** can use to generate an answer.
+
+
+## Transformers - Decoder
+
+::::{.columns}
+::: {.column width=“50%”}
+<div style="text-align:center; width:100%; margin:auto;">
+  <img src="https://bcdanl.github.io/lec_figs/transformer-concept.png" style="width:100%; margin-bottom:-20px;">
+  <p style="font-weight:bold;"></p>
+</div>
+<div style="display:block; margin:-30px;"></div>
+
+:::
+::: {.column width=“50%”}
+- The **decoder** generates the answer step by step:  
+  *“The sea is blue.”* 
+
+:::
+::::
+
+ 
+- Starts with the first token (*“The”*).  
+- At each step of generating tokens in the sentence, it:  
+  - Looks at **encoder**’s understanding of the input sentence
+  - Applies **attention** to focus on the most relevant words.
+  - Computes probabilities over many possible next tokens and **chooses the most likely** (e.g., picks *“sea”* instead of *“cat”*).
+- **Then it repeats** for the next token (*“is”* → *“blue”* → *“.”*) until it generates an **end-of-sequence** token.
+
+
+## What is Pre-training in LLM?
+
+- **Phase 1**: The model reads a huge amount of text to learn general language patterns.  
+  - **Objective**: predict the next token (piece of text).  
+  - No task-specific labels required—just lots of text.  
+  - **Outcome**: a foundation model with broad knowledge of words, facts, and patterns.  
+
+::: callout-note
+
+- **Takeaway:** Think of it as **“learning the language of everything.”**
+
+:::
+
+
+
+## What is Fine-Tuning in LLM?
+
+
+- **Phase 2:** Further improve the pretrained model.  
+  - Often brings **humans into the loop** to rank or guide outputs—something earlier training didn’t use.  
+  - Can be done with **smaller, targeted datasets** (e.g., medical notes, legal Q&A).
+  - **Result:** the model becomes more helpful, accurate, and better aligned with specific needs (e.g., medical notes, legal Q&A).
+
+::: callout-note
+- **Takeaway:** Fine-tuning not only specializes a model for certain tasks, but also makes the model safer and more reliable.
+
+:::
+
+
+
+## What is an RLHF (Reinforcement Learning from Human Feedback)?
+
+
+::::{.columns}
+::: {.column width=“40%”}
+
+<div style="text-align:center; width:75%; margin:auto;">
+  <img src="https://bcdanl.github.io/lec_figs/rlhf-concept.png" style="width:100%; margin-bottom:-20px;">
+  <p style="font-weight:bold;"></p>
+</div>
+:::
+
+
+::: {.column width=“60%”}
+- A form of fine-tuning.
+-	Humans rank or score model answers (better vs. worse).
+-	The model then learns to prefer answers humans like.
+-	**Goal**: make outputs more helpful, safe, and aligned with expectations.
+
+:::
+::::
+
+
+<div style="display:block; margin:-15px;"></div>
+
+::: callout-note
+- **Reinforcement learning** = “learning by trial and error, guided by feedback, and improving through rewards.”
+- **Takeaway**: RLHF = “learn from people’s preferences” to shape model behavior.
+:::
+
+
+
+# **Creating Alien Minds** {background-color="#1c4982"}
+
+## A Very Compressed History
+
+- 1770–1838: **Mechanical Turk** (illusion of machine intelligence)
+- 1950: **Shannon’s Theseus** (maze-learning) & **Turing’s Imitation Game**
+- 1956 → onward: “AI” coined; **boom–bust cycles / AI winters**
+- 2010s: **Supervised ML** at scale (forecasting, logistics, recommendation)
+- **2017**: “**Attention Is All You Need**” → the **Transformer** architecture
+
+
+## What Predictive AI Did Well (2010s)
+
+- **Forecasting and optimization** across industries  
+  - **Retail**: predicting demand, managing warehouses, and streamlining logistics
+  - **Finance**: credit scoring, fraud detection, algorithmic trading  
+  - **Healthcare**: medical image analysis, diagnostics, hospital resource planning  
+- **Automation at scale**  
+  - From warehouse robots (Amazon’s Kiva) to recommendation systems (Netflix, Spotify, YouTube)
+- **Task-specific excellence**  
+  - Trained on labeled data to solve clearly defined problems with high accuracy  
+- **Limitation**: It was still narrow, excelling only at specialized tasks.
+
+
+<!-- ## Enter the Transformer (2017) -->
+
+<!-- - Key idea: **attention** → weigh which words/tokens matter most in context -->
+<!-- - Replaced brittle n-gram/Markov style text with **context-aware** generation -->
+<!-- - Result: more coherent, adaptable language understanding/generation -->
+
+
+
+<!-- ## What an LLM actually does -->
+
+<!-- - **Next-token prediction**: elaborate autocomplete based on huge corpora -->
+<!-- - Deterministic for obvious continuations; varied for open-ended prompts -->
+<!-- - Trained via **unsupervised pretraining** on massive text → billions of **weights** -->
+<!-- - Training is **expensive** (computing, energy) and **data-hungry** -->
+
+
+
+## About the Data (and Its Issues)
+
+- Massive pretraining corpora: public sources + scraped web; permission often unclear
+  - Mix of web text, public-domain books, articles, odd corpora (e.g., **Enron emails**)
+
+- Legal & ethical gray areas for **copyrighted** material
+  - e.g., Anthropic (Claude AI) vs. Book authors
+- Data can encode **biases, errors, and harms** → models mirror them.
+
+- Biases:
+  - Skewed datasets → **stereotypes and under-representation**
+  - Image models have amplified **race/gender** stereotypes
+  - LLMs, even after tuning, can still show **subtle, systematic biases**
+  - Implication: an output can **seem impartial** while carrying social bias.
+
+
+
+<!-- ## Making models safer & more useful -->
+
+<!-- - **Fine-tuning** after pretraining (task- or domain-specific) -->
+<!-- - **RLHF**: humans rate outputs; systems learn to prefer helpful/safer responses -->
+<!-- - Continuous tweaks from user feedback (thumbs-up/down) and policy tuning -->
+
+
+
+## Beyond Text
+
+- **Diffusion models** generate images from text (noise → image over steps)
+- **Multimodal LLMs**: “see” images, describe, and generate visuals; link text+vision
+  - e.g., Google's Gemini 2.5 Flash Image model (a.k.a **Nano Banana**), OpenAI's Dall·E
+
+
+## Capability Jumps & the Dialogue Shift
+
+- **GPT-3 (2021):** often clumsy and inconsistent (e.g., weak limericks).
+- **ChatGPT / GPT-3.5 (late 2022):** dialogue loop → **feedback → correction → improved outputs**; persona/tone shifts with prompt framing.
+- **GPT-4 (2023):** near-human scores on many tests — but **scores may reflect training exposure** and **do not imply understanding**.
+- **GPT-4o (2024):** multimodal, low latency; stronger speech/vision turn-taking and “show-and-tell” tasks.
+- **GPT-5 (2025):** marketed for better **planning, tool-use, longer context**; still subject to **hallucinations**, **prompt sensitivity**, and **benchmark overfitting**.
+  - High benchmark scores ≠ understanding. Prompts can heavily shape persona and tone.
+
+
+  
+<!-- ::: notes -->
+<!-- Stress: high scores are not proof of understanding; prompts shape persona and tone. -->
+<!-- ::: -->
+
+
+
+
+## Emergence & Opacity — Why Surprises Happen
+
+- **Scale → emergent behaviors (unexpected abilities):** 
+  - Coding tricks, creative recombinations, “empathy-like” responses not explicitly programmed.
+- **Opacity:** 
+  - Hundreds of billions of interacting weights → difficult to explain specific outputs.
+- **Guardrails:**
+  - RLHF reduces harms, but still can't eliminate bias & risk.
+
+<!-- - **Takeaway:** impressive capabilities and puzzling failures **coexist**; expect variation across prompts and runs. -->
+
+
+## Weird Strengths, Weird Weaknesses
+
+- **Example:**
+  - Writes a working **tic-tac-toe web app** (hard for many humans)
+  - Fails to pick the **obvious best next move** in a simple board state
+
+- **Other quirks:**
+  - Fluent prose ↔ shaky **arithmetic math** without tools.
+  - Great summaries ↔ misses important **caveats**.
+  - Long-context ingestion ↔ **selective recall/anchoring**.
+  
+- **Lesson:** 
+  - AI’s reliability depends on the **task**. 
+  - Try it, check it, and don’t trust one cool demo to prove it can do everything.
+
+- **Try it**: Build your own tic-tac-toe web app → [Classwork 2](https://bcdanl.github.io/danl-cw/danl-101-cw-02.html).
+
+
+
+
+# **Aligning the Alien** {background-color="#1c4982"}
+
+
+## What is Artificial General Intelligence (AGI)?
+
+- **AGI** = a hypothetical AI that can perform **any intellectual task** a human can.  
+- Unlike today’s AI (narrow/specialized), AGI would be:  
+  - Flexible across many domains  
+  - Able to learn new skills on its own  
+  - Capable of reasoning, planning, and adapting like humans  
+
+::: callout-note
+- **Takeaway:** AGI would be a **“human-level” intelligence**—not limited to one task like translation or playing chess.
+:::
+
+
+
+## What is Artificial Super Intelligence (ASI)?
+
+- **ASI** = a potential future AI that goes **beyond human intelligence**.  
+- Would surpass humans in:  
+  - Creativity  
+  - Problem-solving  
+  - Scientific discovery  
+  - Social and emotional intelligence  
+- Often discussed in terms of **existential risks** and ethics.  
+
+::: callout-note
+- **Takeaway:** ASI would be **“beyond human-level” intelligence**, raising big questions about control, safety, and society.
+:::
+
+## What “alignment” means
+
+- Designing AI so its **goals, methods, and constraints** reliably advance **human values and interests**.
+- **Why it’s hard:** there’s no built-in reason an AI will share **human ethics or morality**.
+- **Failure mode:** a single-objective optimizer pursues its goal **relentlessly**, ignoring everything else.
+  - **Paperclip maximizer (Clippy):** a factory AI told to “make more paper clips” becomes **AGI → ASI**, self-improves, avoids shutdown, and could even **strip-mine Earth / harm humans** if they interfere—because only paper clips matter.
+- **Why it matters:** Design from the worst case backward—**bound objectives**, require **human oversight**, build in **safe human override** (the ability to update goals or shut down safely), and optimize for **human well-being**, not a single narrow target.
+
+
+
+<!-- ## From AGI worries to near-term stakes -->
+
+<!-- - Hypothetical leaps to **AGI → ASI** raise existential scenarios -->
+<!-- - Expert forecasts vary; risks are non-zero yet uncertain -->
+<!-- - Book’s stance: focus on **immediate decisions** we control—education, work, civic use—rather than waiting for perfect clarity -->
+
+
+
+## Pause or Press On?
+> "I am extremely optimistic that superintelligence will help humanity accelerate our pace of progress."
+  - Mark Zuckerberg [Personal Superintelligence](https://www.meta.com/superintelligence/?srsltid=AfmBOop_S1adKIrzhCWv9j0OMl13uYJ4WhDFwVUHyeaTCqWv_3ACRrXZ), July 30, 2025.
+
+- Hypothetical leaps to **AGI → ASI** raise existential scenarios.
+  - Expert forecasts vary; risks are non-zero yet uncertain.
+- Public calls to **slow or halt** development vs. continued rapid progress
+- **Mixed motives**: profit, optimism about “**boundless upside**,” and belief in net benefits
+  
+- Regardless, **society is already in the AI age** → we must set norms now
+
+
+
+<!-- ## Prompt injection & jailbreaks -->
+
+<!-- - **Prompt injection:** hidden instructions in content the model reads -->
+<!-- - **Jailbreaks:** framing/role-play to skirt guardrails -->
+<!-- - Consequences: -->
+<!--   - Easier **phishing, deepfakes, voice clones** -->
+<!--   - Targeted deception at **scale** with low cost and high realism -->
+
+
+
+<!-- ## From bits to atoms: autonomy risks -->
+
+<!-- - Tool-using AIs + lab/robot interfaces can plan and execute **experiments** -->
+<!-- - Double-edged: accelerates discovery **and** lowers barriers to misuse -->
+<!-- - Governance must anticipate **capability externalities** (not just text outputs) -->
+
+
+<!-- ## Alignment: a whole-of-society project -->
+
+<!-- - Not just “stopping an alien god” — alignment must reflect **human values** and real-world impacts. -->
+<!-- - **No single actor can solve it:** -->
+<!--   - **Companies:** strong incentives to ship; fewer to ensure **safety, bias control, and controllability**. Open-source means development happens **outside big labs**, too. -->
+<!--   - **Governments:** regulation is needed but often **lags** capability growth and can **stifle good** while missing bad; national competition limits slowing down. -->
+
+## Alignment: a whole-of-society project
+
+- **Why companies alone can’t do it:** 
+  - Strong incentives to continue AI development 
+  - Far fewer incentives to make sure those AIs are well aligned, unbiased, and controllable.
+  - Open-source pushes AI development outside of large organizations.
+
+- **Why government alone can’t do it:** 
+  - Lagging the actual development of AI capabilities
+  - Stifling positive innovation
+  - International competition on AI development
+
+## Alignment: a whole-of-society project
+- Alignment must reflect **human values** and broader real-world impacts.
+
+- **What’s needed:** coordinated **norms & standards** shaped by **diverse voices** across society.
+  - **Companies:** build in **transparency, accountability, human oversight**.
+  - **Researchers:** prioritize **beneficial applications** alongside capability gains.
+  - **Governments:** enact **sensible rules** that serve the **public interest**.
+  - **Public & civil society:** raise **AI literacy** and apply pressure for alignment.
+
+
+<!-- ::: notes -->
+<!-- Key message: Alignment isn’t a lab problem; it’s a societal one requiring coordination across companies, governments, researchers, and the public—especially as open-source spreads capability beyond “frontier” models. Regulation helps but won’t be enough or fast enough on its own. -->
+<!-- ::: -->
+
+
+<!-- ## Alignment is a team sport -->
+
+<!-- - **Companies:** ship safety by design — publish **model cards**, run **red-teaming**, add **human-in-the-loop** checkpoints & **kill-switches**, respect privacy/provenance. -->
+<!-- - **Researchers:** prioritize **alignment/robustness/interpretability**; do **dual-use review**; share **safety evals** and reproducible (but responsible) artifacts. -->
+<!-- - **Governments:** use **risk-tiered rules**; require **audits & incident disclosure**; fund **AI literacy & safety research**; coordinate against fraud/bio/cyber misuse. -->
+<!-- - **Civil society & public:** build **AI literacy & norms** (disclose AI use); enable **reporting channels**; independently **test/verify claims**; push for **equitable access**. -->
+
+
+
+
+<!-- ## Alignment is a team sport -->
+
+<!-- - **Companies:** transparency, accountability, human oversight by design -->
+<!-- - **Researchers:** prioritize beneficial applications, not only capability races -->
+<!-- - **Governments:** sensible regulation; coordination without stifling good uses -->
+<!-- - **Civil society & the public:** AI literacy, **norms**, and pressure for alignment -->
+
+
+
+<!-- ## Practical guardrails (class & work) -->
+
+<!-- - Keep **human-in-the-loop**; verify facts & sources -->
+<!-- - Use **role, constraints, rubric, self-check** prompting -->
+<!-- - Avoid pasting sensitive data; assume prompts may be **logged/learned from** -->
+<!-- - Red-team your own prompts for **injection/jailbreak** risks -->
+
+
+
+<!-- ## Mini-activity (8–12 min) -->
+
+<!-- **A. Spot the injection**   -->
+<!-- - Give students a short web page with a hidden directive.   -->
+<!-- - Ask: “What could an LLM reading this page be tricked into doing?” -->
+
+<!-- **B. Harden the prompt**   -->
+<!-- - Start with a naive agent prompt; teams add defenses (ignore external instructions; cite sources; refuse unsafe tasks; require user confirmations). -->
+
+<!-- Debrief: What worked? What failed? -->
+
+
+
+<!-- ## Discussion prompts -->
+
+<!-- - Where do you see the highest **misuse risk** in your field? -->
+<!-- - What **minimum guardrails** should your course or workplace adopt? -->
+<!-- - How can we measure if a workflow is **aligned** with human values? -->
+
+
+
+<!-- ## Key takeaways -->
+
+<!-- - Alignment is not abstract: it shapes **everyday** AI uses now -->
+<!-- - **Data choices + RLHF** tame but don’t eliminate bias & risk -->
+<!-- - Expect **bypass attempts**; design for resilience -->
+<!-- - Building aligned AI requires **shared responsibility** -->
+
+
+# **Four Rules for Co-Intelligence: How to actually work with AI** {background-color="#1c4982"}
+
+## How People Use ChatGPT (Chatterji et. al., 2025)
+
+- **Adoption & Growth**  
+  - Launched in **Nov 2022**, adopted by ~**10% of the world’s adults** by **July 2025**.  
+  - Early adopters were mostly **male**, but the **gender gap has narrowed**.  
+  - Strong growth in **lower-income countries**.  
+
+- **Work vs. Non-work**  
+  - **Non-work use** grew from **53% → 70%+** of all conversations.  
+  - **Work-related use** more common among **educated, high-paying professions**.  
+
+## How People Use ChatGPT (Chatterji et. al., 2025)
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/chatgpt-use-trend-all.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+## How People Use ChatGPT (Chatterji et. al., 2025)
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/chatgpt-use-trend.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+## How People Use ChatGPT (Chatterji et. al., 2025)
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/chatgpt-use-trend-prop.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+## How People Use ChatGPT (Chatterji et. al., 2025)
+
+- **Message Topics**  
+  - Top 3: **Practical Guidance**, **Seeking Information**, **Writing** → ~**80%** of usage.  
+  - **Writing** dominates work tasks → shows ChatGPT’s unique edge over search engines.  
+  - **Programming** and **self-expression** remain small shares.  
+    - **Self-expression** = Greetings and Chitchat; Relationships and Personal Reflection; Games and Role Play
+
+
+:::callout-note
+- ChatGPT creates **economic value through decision support**.  
+- Especially valuable for **knowledge-intensive jobs**.  
+- Trend: more **personal and creative use** alongside work-related applications.  
+:::
+
+
+## Four Rules for Co-Intelligence: How to actually work with AI
+
+1. Always invite AI to the table
+2. Be the human in the loop (HITL)
+3. Treat AI like a person (but remember it isn’t)
+4. Assume this is the worst AI you’ll ever use
+
+
+## Principle #1 — Always invite AI to the table
+
+- Use AI for **everything legal & ethical** to discover unexpected wins
+- **Try**: critique an idea, draft memos, meeting notes, summaries, brainstorming
+- Build a habit: keep a **prompt log** (what worked, what didn’t) and share with team
+
+<!-- **Quick activity** -->
+<!-- Pick a task this week. Ask AI for 3 alternatives + a 2-line rationale for each. Keep the best. -->
+
+
+
+## Principle #2 — Be the human in the loop (HITL)
+
+::::{.columns}
+::: {.column width="40%"}
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/fall-asleep-at-the-wheel.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+
+::: {.column width="60%"}
+- Models can sound confident yet be **wrong** (hallucinations; math slips)
+- People tend to **“fall asleep at the wheel”** when outputs look polished
+
+
+:::
+::::
+
+- **HITL checklist**  
+  - Require sources/quotes for factual claims  
+  - Run a **second pass** (reword prompt or use a second model)  
+  - For math/code, use other tools (calculator or IDE) and run **tests**  
+  - Ask: “What assumptions did you make? What could be wrong?”
+  
+  
+## Principle #3 — Treat AI like a person (but remember it isn’t)
+
+- **Useful design hack:** give a **role/persona + audience + constraints**  
+- Example: 
+  - You are a TA helping intro microeconomics students.
+  - Constraints: concise and friendly tone, ≤200 words, prose paragraph with 1 example.
+  - Task: Explain utility maximization.
+  - Criteria: Must define the concept, connect to choice under constraints, and illustrate with a clear example.
+
+- **Caution:** it’s not sentient; it optimizes for **plausibility**, not truth
+
+<!-- **Prompt pattern (copy/paste):**   -->
+
+<!-- > You are a [role] helping [audience]. Constraints: [tone, length, format]. Task: [deliverable]. Criteria: [rubric]. First list assumptions; then produce the draft; end with 3 self-checks. -->
+
+
+
+## Principle #4 — Assume this is the worst AI you’ll ever use
+
+
+- AI progress is **rapid**; today’s systems will likely be **surpassed** soon.
+- **Agent AI:** LLMs that **plan → act → learn** with various external tools and memory, turning prompts into **multi-step workflows**
+  - e.g., A **sales-order agent** can validate orders, check inventory, generate invoices/shipping labels, and update ERP/CRM. 
+  
+- Treat the current moment as **mid-journey**, not the destination.  
+- **Mindset shift**: use today’s tools to **learn**, **prototype**, and **prepare** for better ones tomorrow.
+- Those who **keep up** will adapt and **thrive** as capabilities improve.  
+- Focus on what you **can control**: *how* you use AI and *where* you apply it.
+- **Try it**: Practice Co-Intelligence Rules → [Classwork 3](https://bcdanl.github.io/danl-cw/danl-101-cw-03.html).
+
+
+
+<!-- ## Why this mindset matters (for leaders) -->
+
+
+
+<!-- ::: callout-quote -->
+<!-- “We don’t know how far it’s going to go… We are in control of how we decide to use them and apply them.” -->
+<!-- — **Ethan Mollick** -->
+<!-- ::: -->

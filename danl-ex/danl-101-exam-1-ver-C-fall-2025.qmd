@@ -1,0 +1,965 @@
+---
+title: Midterm Exam I
+subtitle: Version C
+date: 2025-10-30
+from: markdown+emoji
+toc: true
+toc-depth: 6
+execute: 
+  eval: false
+  echo: true
+---
+
+```{r}
+#| include: false
+#| eval: true
+
+library(tidyverse)
+```
+
+
+# Section 1. Multiple Choice
+
+## Question 1
+Which platform provides a cloud-based environment for writing and executing Python notebooks without local installation?
+
+a. RStudio  
+b. Jupyter Notebook  
+c. Google Colab  
+d. Cursor  
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**c**
+
+**Explanation**:  
+Google Colab is a cloud-based platform that allows users to run Python notebooks without local installation.
+:::
+
+<br>
+
+## Question 2
+Which of the following best defines a **dashboard** in data analytics?
+
+a. A statistical model used to predict future business performance  
+b. A database that stores large volumes of raw transactional data  
+c. A programming language used for building web-based data systems  
+d. A visual interface that displays key data, metrics, and trends for quick interpretation and decision-making  
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**d**
+
+**Explanation**:  
+A dashboard is a visual interface showing key metrics and trends for decision-making.
+:::
+
+
+<br>
+
+## Question 3
+Which of the following best describes the goal of **unsupervised learning** in machine learning?
+
+a. To train a model using labeled input–output pairs to predict future outcomes  
+b. To uncover hidden patterns or groupings in data without using predefined labels  
+c. To optimize an agent’s actions through rewards and penalties over time  
+d. To evaluate the accuracy of supervised models using cross-validation  
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**b**
+
+**Explanation**:  
+Unsupervised learning uncovers hidden patterns in unlabeled data.
+:::
+
+
+
+<br>
+
+## Question 4
+In sports analytics, a **decision tree** model is trained to predict whether a football team will **run** or **pass** in the next play based on variables like `Off_Pers`, `n_th_Down`, and `distance_to_next_down`.  
+
+  - `Off_Pers`: Offensive Personnel (e.g., Value “11” meaning 1 running back, 1 tight end, and 3 wide receivers)
+
+Which statement best describes how this model makes its predictions?
+
+a. It averages all input variables to estimate the probability of a run play.  
+b. It groups plays into clusters of similar offensive formations without using the run/pass label.  
+d. It calculates overall win probabilities using a single regression equation combining all predictors linearly.
+d. It divides the dataset into branches using threshold-based rules (e.g., “if `distance_to_next_down` < 5 yards”) to classify outcomes step by step.  
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**d**
+
+**Explanation**:  
+A decision tree makes predictions by splitting data into branches using rule-based thresholds.
+:::
+
+<br>
+
+
+## Question 5
+Which of the following statements **best reflects the “Co-Intelligence” principles for effective AI use** discussed in class?
+
+a. Always let AI handle routine decisions independently to save time and reduce human error.  
+b. Treat AI like a sentient collaborator that can verify facts and reason about truth on its own.  
+c. Avoid using AI until the technology matures further, since today’s systems are unreliable and likely to be replaced soon.  
+d. Use AI broadly for idea generation and analysis, but always review outputs critically, add human judgment, and document what works.  
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**d**
+
+**Explanation**:  
+Co-Intelligence emphasizes using AI with human oversight, judgment, and reflection.
+:::
+
+
+
+
+<br>
+
+## Question 6
+Why are **descriptive statistics** important in data analytics?
+
+a. They make raw data more interpretable by summarizing key characteristics such as central tendency and variability.  
+b. They automatically identify causal relationships between independent and dependent variables.  
+c. They are mainly used for visualizing data, not for numerical summaries.  
+d. They replace the need for further inferential or predictive analysis.  
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**a**
+
+**Explanation**:  
+Descriptive statistics summarize key features of a dataset, making it easier to interpret.
+:::
+
+
+<br>
+
+## Question 7
+Which of the following best defines **supervised learning**?
+
+a. Algorithms that discover hidden patterns in unlabeled data  
+b. Algorithms that optimize decisions by trial and error with rewards  
+c. Algorithms trained using labeled input–output pairs  
+d. Algorithms that cluster observations based on distance metrics  
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**c**
+
+**Explanation**:  
+Supervised learning uses labeled input–output pairs for training predictive models.
+:::
+
+
+
+<br>
+
+## Question 8
+Which statement most accurately captures **why the Transformer architecture revolutionized natural language processing**?
+
+a. It eliminated the need for large datasets by using manually defined linguistic rules.  
+b. It processes inputs strictly in order, ensuring each token depends on the one immediately before it.  
+c. It encodes position information by sorting words alphabetically before training.  
+d. It replaced sequential token processing with an attention mechanism that models relationships between all words in a sequence in parallel.  
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**d**
+
+**Explanation**:  
+Transformers use attention to model relationships between all words in parallel.
+:::
+
+<br><br>
+
+# Section 2. Filling-in-the-Blanks
+
+## Question 9
+The class of models that generate **images from text prompts** by gradually transforming random noise into visual outputs are called ________________________________.  
+The newer family of models that can interpret and generate across **text and vision** (e.g., describing or creating images) are known as ________________________________ models.  
+
+  
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**Diffusion models; Multimodal models**
+
+**Explanation**:  
+Diffusion models generate images by denoising random noise; multimodal models work across text, images, and other modalities.
+:::
+
+
+
+
+<br>
+
+## Question 10
+An ________________________________ is an AI system that can **plan, act, and learn** autonomously using external tools and memory, turning a single prompt into a multi-step workflow.  
+
+  
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**AI agent**
+
+**Explanation**:  
+AI agents execute multi-step tasks autonomously using planning, tools, and memory.
+:::
+
+
+
+
+<br>
+
+## Question 11
+At large scales, LLMs can display unexpected skills—such as writing code or expressing creativity—that were never directly programmed.  
+These are known as ________________________________.  
+
+  
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**Emergent abilities**
+
+**Explanation**:  
+Emergent abilities arise when model scale enables capabilities not explicitly engineered.
+:::
+
+
+
+
+<br>
+
+## Question 12
+What does the acronym **GPT** stand for?  
+Provide both meanings covered in lecture:  
+1. ________________________________  
+2. ________________________________  
+
+  
+::: {.callout-tip collapse="true"}
+### Show answer
+
+1. **Generative Pre-trained Transformer**  
+2. **General Purpose Technology**
+
+**Explanation**:  
+
+- **Generative Pre-trained Transformer** describes the model architecture and training method: it generates outputs, is pre-trained on large corpora, and uses the transformer architecture.  
+- **General Purpose Technology** refers to innovations with wide-reaching economic and technological influence, capable of transforming many sectors over time, similar to electricity or the internet.
+
+:::
+
+
+
+
+<br>
+
+## Question 13
+A neural network consists of interconnected nodes organized into layers.  
+The ________________________________ layer serves as the entry point for data,  
+the ________________________________ layers transform and learn internal representations,  
+and the ________________________________ layer produces the final prediction or result.  
+
+  
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**Input layer; hidden layers; output layer**
+
+**Explanation**:  
+Input → hidden → output is the standard neural network architecture.
+:::
+
+
+
+<br><br>
+
+
+# Section 3. Data Analysis with R
+
+## Question 14
+During an R session, a student loads both the **`dplyr`** and **`MASS`** packages.  
+Both contain a function named `select()`.  
+After loading both, the student runs `select(df, name, score)` and gets an unexpected error.  
+Which explanation best describes what likely happened?
+
+a. The `MASS` package disables `dplyr` automatically when both are loaded.  
+b. R randomly chooses between the two functions based on which package was installed most recently.  
+c. The `select()` function can only be used after attaching the `tidyverse` metapackage.  
+d. The `dplyr` version of `select()` was masked by the `MASS` version, so R is using the wrong function for data-frame column selection.  
+
+  
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**d**
+
+**Explanation**:  
+When both packages are loaded, the later-loaded `select()` masks the other, so R may be using the wrong version.
+:::
+
+
+
+
+<br>
+
+## Question 15
+In R, what is the difference between a **parameter** and an **argument** in a function?
+
+a. A parameter is the actual input value passed into a function, while an argument is the variable name used inside the function.  
+b. A parameter is defined in the function’s declaration, while an argument is the actual value supplied when the function is called.  
+c. Both terms mean the same thing and can be used interchangeably in R.  
+d. A parameter refers only to numeric inputs, while arguments refer to text inputs.  
+
+
+  
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**b**
+
+**Explanation**:  
+Parameters are defined in the function body; arguments are the values provided when calling the function.
+:::
+
+
+
+
+<br>
+
+## Question 16
+Using the **native pipe** in R (R ≥ 4.1), write two equivalent one-liners that return all **unique values** of a variable named `var` from a data frame called `df`.
+
+**Answer 1**: ______________________________________________  
+**Answer 2**: ______________________________________________
+
+  
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**Answer 1:** `df |> select(var) |> distinct()`  
+**Answer 2:** `df |> distinct(var)`
+
+**Explanation**:  
+Both return the unique values of a variable; one uses `select()` and `distinct()`, the other uses only `distinct()`, which is more efficient.
+:::
+
+
+
+
+
+<br>
+
+## Questions 17-18
+
+Consider the following two vectors, `x` and `y`:
+
+```{r}
+#| echo: true
+#| eval: false
+x <- c(10, 20, 30, 40, 50)
+y <- c(1, 2, 3, 4, 5)
+
+```
+
+### Question 17
+
+What does `x[ y > 3 ]` return?
+
+a. `c(3, 4, 5)`
+b. `c(TRUE, TRUE, TRUE, FALSE, FALSE)`
+c. `c(10, 20, 30)`
+d. `c(40, 50)`
+e. `c(30, 40, 50)`
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**d**
+
+**Explanation**:  
+`x[y > 3]` returns `c(40, 50)`.
+:::
+
+
+<br>
+
+### Question 18
+
+What does `sum( (x * y)[y < 3] )` return?
+
+
+**Answer**: ______________________________________________
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**50**
+
+**Explanation**:  
+(x*y) = 10,40,90,160,250 and y<3 selects first two → 10 + 40 = 50.
+:::
+
+
+<br>
+
+## Question 19
+
+The working directory for your Posit Cloud project is:
+
+`/cloud/project`
+
+Suppose the relative pathname for the CSV file `custdata.csv` uploaded to your Posit Cloud project is:
+
+`/mydata/custdata.csv`
+
+Using the file’s **absolute pathname**, write R code to read the CSV file as a data.frame with the **`readr`** package and assign it to an object named `df_customers`.
+
+
+
+**Answer**: ______________________________________________
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+`df_customers <- readr::read_csv("/cloud/project/mydata/custdata.csv")`
+
+**Explanation**:  
+Uses absolute path for Posit Cloud.
+:::
+
+
+
+<br>
+
+## Questions 20–21
+
+Consider the following two vectors, `submitted_1` and `submitted_2`:
+
+```{r}
+#| echo: true
+#| eval: false
+submitted_1 <- c(TRUE, FALSE, NA, TRUE, NA, FALSE, TRUE)
+submitted_2 <- c(TRUE, FALSE, TRUE, FALSE, TRUE)
+```
+
+
+
+### Question 20
+
+What does `sum(!is.na(submitted_1))` return?
+
+
+**Answer**: ______________________________________________
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**5**
+
+**Explanation**:  
+There are five non-NA values.
+:::
+
+
+<br>
+
+### Question 21
+
+What does `sum(as.numeric(submitted_2))` return?
+
+
+**Answer**: ______________________________________________
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**3**
+
+**Explanation**:  
+TRUE=1, FALSE=0 → sum=3.
+:::
+
+
+
+
+
+
+
+
+<br>
+
+## Questions 22–24
+
+Consider the following data.frame `students` for **Questions 22–24**:
+
+```{r}
+#| echo: false
+#| eval: true
+students <- data.frame(
+  sid    = 101:105,
+  name   = c("Ava", "Blake", "Ava", "Diego", "Eli"),
+  credits= c(12, 15, NA, 18, 9),
+  gpa    = c(3.2, 2.9, 3.8, NA, 3.5)
+)
+
+knitr::kable(students)
+```
+
+
+### Question 22
+
+Which code filters observations where `gpa` is strictly between 3.0 and 3.7 (including 3.0 and 3.7)?
+
+a. `students |> filter(gpa >= 3.0 | gpa <= 3.7)`
+b. `students |> filter(gpa > 3.0 & gpa < 3.7)`
+c. `students |> filter(gpa > 3.0 | gpa < 3.7)`
+d. `students |> filter(gpa >= 3.0 & gpa <= 3.7)`
+e. `students |> filter(gpa => 3.0 & gpa =< 3.7)`
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**d**
+
+**Explanation**:  
+The correct range-inclusive filter is gpa >= 3.0 & gpa <= 3.7.
+:::
+
+
+<br>
+
+### Question 23
+
+Which expression keeps only observations where `credits` is not missing or `name` is **"Ava"**?
+
+a. `students |> filter(credits == NA & name == "Ava")`
+b. `students |> filter(credits == NA | name == "Ava")`
+c. `students |> filter(credits != NA & name == "Ava")`
+d. `students |> filter(credits != NA | name == "Ava")`
+e. `students |> filter(is.na(credits) & name == "Ava")`
+f. `students |> filter(is.na(credits) | name == "Ava")`
+g. `students |> filter(!is.na(credits) & name == "Ava")`
+h. `students |> filter(!is.na(credits) | name == "Ava")`
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**h**
+
+**Explanation**:  
+Keep rows where credits is NOT NA **or** name == "Ava".
+:::
+
+
+
+<br>
+
+### Question 24
+
+Which code keeps only the `name` and `gpa` variables?
+
+a. `students |> select(name, gpa)`
+b. `students |> select(-sid, -credits)`
+c. `students |> select("name", -"credits")`
+d. `students |> select(students, name, gpa)`
+e. Both a and b
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**e**
+
+**Explanation**:  
+
+- Option **a** selects `name` and `gpa` directly.  
+- Option **b** removes `sid` and `credits`, leaving only `name` and `gpa`.  
+Thus, both are correct.
+:::
+
+
+
+<br>
+
+## Questions 25–26
+
+Consider the following data.frame `sales_df` for **Questions 25–26**:
+
+```{r}
+#| echo: false
+#| eval: true
+sales_df <- data.frame(
+  Region = c("East", "West", "East", "South", "West", "South"),
+  Product = c("A100", "B200", "A100", "C300", "A100", "B200"),
+  Revenue = c(250, 400, 250, 300, 200, 300)
+)
+
+knitr::kable(sales_df)
+```
+
+Below provides data type of each variable:
+
+-	`Region`: character
+-	`Product`: character
+-	`Revenue`: numeric
+
+
+
+### Question 25
+
+Which of the following code snippets arranges the observations first by Region alphabetically, then by Revenue in descending order?
+
+a. `sales_df |> arrange(Region, Revenue)`
+b. `sales_df |> arrange(Region, -Revenue)`
+c. `sales_df |> arrange(Region, desc(Revenue))`
+d. `sales_df |> arrange(desc(Region), desc(Revenue))`
+e. Both b and c
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**e**
+
+**Explanation**:  
+
+- Option **b** uses `-Revenue`, which sorts Revenue in descending order.  
+- Option **c** uses `desc(Revenue)`, which also sorts Revenue in descending order.  
+Since both arrange alphabetically by Region first and then sort Revenue from highest to lowest, both are correct.
+:::
+
+
+
+<br>
+
+### Question 26
+
+Which code correctly returns all unique `Region`–`Product`–`Revenue` combinations?
+
+a. `sales_df |> distinct(Region, Product)`
+b. `sales_df |> select(-Product, -Region)`
+c. `sales_df |> distinct()`
+d. `sales_df |> select(-Product, -Region) |> distinct()`
+e. Both a and c
+f. Both a and d
+g. Both c and d
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**c**
+
+**Explanation**:  
+`distinct()` alone returns all unique combinations of all columns.
+:::
+
+
+<br>
+
+## Question 27
+
+Consider the following data.frame `orders`:
+
+```{r}
+#| echo: false
+#| eval: true
+orders <- data.frame(
+  id    = 1:6,
+  cust  = c("A","B","A","C","B","A"),
+  total = c(120, NA, 50, 200, 120, NA)
+)
+
+knitr::kable(orders)
+```
+
+Below provides data type of each variable:  
+
+- `id`: *numeric*
+- `cust`: *character*
+- `total`: *numeric*
+
+
+Which code snippet correctly replicates the subset of orders as shown below:
+
+```{r}
+#| echo: false
+#| eval: true
+
+df_orders <- orders |> 
+  filter(!is.na(total) & total >= 120 ) |> 
+  arrange(-total, desc(cust))
+
+knitr::kable(df_orders)
+```
+
+**a**.
+```{.r}
+orders |> 
+  filter(total >= 120 | is.na(total)) |> 
+  arrange(total, cust)
+```
+
+
+**b**.
+```{.r}
+orders |> 
+  filter(!is.na(total) & total >= 120 ) |> 
+  arrange(-total, desc(cust))
+```
+
+
+**c**.
+```{.r}
+orders |> 
+  filter(total >= 120 & is.na(total)) |> 
+  arrange(total, desc(cust))
+```
+
+
+**d**.
+```{.r}
+orders |> 
+  filter(!is.na(total) & total > 120 ) |> 
+  arrange(desc(total), cust)
+```
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**b**
+
+**Explanation**:  
+The correct subset uses `!is.na(total)` and `total >= 120`, then arranges by `-total` and `desc(cust)`. Option **b** matches exactly.
+:::
+
+
+<br>
+
+## Question 28
+
+Using the `nycflights13::flights` data.frame, which of the following code snippets correctly counts how many distinct airlines (`carrier`) operate from each `origin` airport? *Select all that apply.*
+
+Below provides values in the `carrier` variable:
+
+```{r}
+#| echo: false
+#| eval: true
+
+knitr::kable(nycflights13::flights |> 
+  distinct(carrier))
+```
+
+
+**a.**
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  filter(origin == "EWR" & origin == "JFK" & origin == "LGA") |> 
+  distinct(carrier)
+
+nrow(df)
+```
+
+**b.**
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  filter(origin == "EWR" | origin == "JFK" | origin == "LGA") |> 
+  distinct(carrier)
+
+nrow(df)
+```
+
+
+**c.**
+```{r}
+#| echo: true
+#| eval: false
+
+
+df <- nycflights13::flights
+
+df_EWR <- df |> filter(origin == "EWR")
+df_JFK <- df |> filter(origin == "JFK")
+df_LGA <- df |> filter(origin == "LGA")
+
+nrow(df_EWR)
+nrow(df_JFK)
+nrow(df_LGA)
+```
+
+
+**d.**
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  distinct(origin, carrier)
+
+df_EWR <- df |> filter(origin == "EWR")
+df_JFK <- df |> filter(origin == "JFK")
+df_LGA <- df |> filter(origin == "LGA")
+
+nrow(df_EWR)
+nrow(df_JFK)
+nrow(df_LGA)
+```
+
+**e.**
+```{r}
+#| echo: true
+#| eval: false
+
+
+df <- nycflights13::flights |> 
+  filter(origin == "EWR" | origin == "JFK" | origin == "LGA") |> 
+  distinct(carrier)
+
+nrow(df)
+```
+
+
+**f.** 
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  filter(origin == "EWR" | origin == "JFK" | origin == "LGA") |> 
+  distinct(origin, carrier)
+
+nrow(df)
+```
+
+
+
+
+**g.** 
+```{r}
+#| echo: true
+#| eval: false
+
+
+df <- nycflights13::flights |> 
+  filter(origin == "EWR" & origin == "JFK" & origin == "LGA") |> 
+  distinct(origin, carrier)
+
+nrow(df)
+```
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**d**, **f**
+
+**Explanation**:  
+To count distinct carriers per origin, you need distinct `(origin, carrier)` pairs.  
+
+- Option **d** does this correctly by first generating distinct pairs, then filtering per origin.  
+- Option **f** also works because it filters origins first, then keeps distinct `(origin, carrier)` combinations.  
+
+The others are incorrect due to incorrect logic (AND instead of OR) or counting carriers pooled together across origins rather than separately.
+:::
+
+<br><br>
+
+# Section 4. Short Answer
+
+## Question 29
+What is the **interquartile range (IQR)**? What is the **standard deviation (SD)**? Explain why the **IQR** is often preferred over the **SD** when summarizing the dispersion of a dataset that contains outliers.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**IQR vs SD**
+
+**Interquartile Range (IQR):**  
+The IQR is the range between the 25th percentile (Q1) and the 75th percentile (Q3). It measures the spread of the *middle 50%* of the data.
+
+**Standard Deviation (SD):**  
+The SD measures the average distance of each data point from the mean. It reflects **overall variability**, including extreme values.
+
+**Why IQR is preferred with outliers:**  
+
+- SD is sensitive to outliers because squaring deviations magnifies extreme values.  
+- IQR is robust—it ignores the lowest 25% and highest 25% of data, making it less influenced by extreme or skewed values.  
+- For skewed distributions or datasets with outliers, IQR provides a more stable summary of spread.
+
+:::
+
+
+
+<br>
+
+## Question 30
+Explain the following concepts in the context of Large Language Models (LLMs):
+
+- What is **pre-training** and what is its main purpose?  
+- What is **fine-tuning** and how does it differ from pre-training?  
+- How can **bias** arise in an LLM’s output, and what methods can be used to reduce it?  
+- What are some **ethical or legal concerns** associated with the pre-training and fine-tuning processes?
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**Pre-training:** 
+
+- The model is trained on very large datasets (such as text from websites, books, and code repositories).  
+- **Purpose:** to learn general patterns of language, including structure, grammar, and relationships between words and concepts.  
+  - The goal is to build a broad foundation of capabilities.
+
+
+**Fine-tuning:**  
+
+- The model is further trained using a smaller, focused dataset designed for a specific domain or task.  
+- **Purpose:** refine the model’s behavior for targeted applications (e.g., summarization, safety alignment, medical or legal tasks) and address issues such as bias, harmful outputs, or inappropriate responses from pre-training.  
+- **Difference from pre-training:** pre-training is broad, while fine-tuning is narrower and guided, allowing the model to better align with desired performance, norms, or safety standards.
+
+**How bias arises:**  
+
+- Training data may reflect cultural, demographic, or ideological imbalances.  
+- LLMs can learn stereotypes, misinformation, or harmful associations.  
+- User prompts may trigger biased patterns learned from data.
+
+**Methods to reduce bias**
+
+- **Data filtering and dataset curation:** This involves carefully selecting, cleaning, and filtering training data to remove harmful, misleading, or unbalanced patterns before they influence the model.  
+- **Reinforcement Learning from Human Feedback (RLHF):** Human evaluators guide model behavior by rating outputs, helping the system learn responses that are safer, more helpful, and less biased.  
+- **Safety alignment training:** Additional training phases are used to refine the model toward safer and more responsible behavior, reducing harmful or biased outputs.  
+- **Bias audits, evaluations, and dataset diversification:** Regular assessments help identify problematic behaviors, while diversifying input data reduces overrepresentation or underrepresentation of groups.  
+- **Constitutional or rule-based fine-tuning:** Models are optimized using predefined rules or principles that promote fairness, safety, and neutrality, helping reduce harmful or biased tendencies.
+
+
+**Ethical and legal concerns**
+
+- **Copyright and data ownership issues:** Large datasets may include copyrighted material, raising questions about legal rights and appropriate usage.  
+- **Exposure to toxic or harmful content:** Pre-training may include offensive or harmful data, which can influence model outputs if not mitigated.  
+- **Privacy risks from scraped data:** Training data may inadvertently contain personal or sensitive information, creating potential privacy and confidentiality concerns.  
+- **Propagation of biases and unequal representation:** Models can reinforce biases present in the data, leading to unfair or distorted outputs that disadvantage certain groups.  
+- **Potential misuse of generated content:** Generative systems can enable creation of misleading or harmful content such as deepfakes or misinformation, leading to ethical risks and societal harm.
+
+:::

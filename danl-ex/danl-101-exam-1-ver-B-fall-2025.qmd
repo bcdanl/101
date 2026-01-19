@@ -1,0 +1,799 @@
+---
+title: Midterm Exam I
+subtitle: Version B
+date: 2025-10-08
+from: markdown+emoji
+toc: true
+toc-depth: 6
+execute: 
+  eval: false
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+```
+
+
+# Section 1. Multiple Choice
+
+## Question 1
+Which tool is an Integrated Development Environment (IDE) that you can install on your computer to develop programs primarily using the Python programming language?
+
+a. Posit Cloud
+b. Google Colab
+c. Jupyter Notebook
+d. MATLAB
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**c**
+
+**Explanation**: Jupyter Notebook is a locally installable environment that allows users to write, execute, and manage Python code interactively using code cells. While it can also be run in the browser, it is installed as a Python-based IDE on a local machine. Posit Cloud and Google Colab are cloud-based environments that do not require installation, and MATLAB is a standalone IDE but is not primarily designed for Python development.
+
+
+:::
+
+
+
+
+## Question 2
+Which combination correctly matches the tool with its role?
+
+|     | Tool    | Primary Role             |
+|-----|---------|--------------------------|
+| I   | GitHub  | Code sharing             |
+| II  | RStudio | IDE for R                |
+| III | Python  | General-purpose language |
+
+a. Only I and II
+b. Only II and III
+c. I, II, and III
+d. Only I and III
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**c**
+
+**Explanation**: GitHub is a platform for sharing and collaborating on code, RStudio is an IDE for R programming, and Python is a general-purpose programming language widely used for analytics, automation, AI, and more. Since all three pairings are correct, the correct answer is that I, II, and III are all correctly matched.
+
+:::
+
+
+
+
+
+## Question 3
+Which of the following best describes the core mechanism by which a machine learning model predicts a new output, as described in the text?
+
+a. It receives explicit, pre-written instructions for every possible data combination.
+b. It identifies patterns by processing a large quantity of historical input/output data sets.
+c. It relies on human intervention to classify new data points in real time.
+d. It performs data filtering and sorting tasks without needing a modifiable math function.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**b**
+
+**Explanation**: Machine learning models work by detecting statistical patterns in large amounts of historical input-output data. Through training, the model adjusts its internal mathematical parameters so that its output better matches expected results. Unlike traditional programming, the model does not require explicit rules for every case and does not depend on human supervision at inference time.
+
+
+:::
+
+
+## Question 4
+Which of the following best describes the primary objective of sports analytics in modern organizations?
+
+a. Automating coaching and managerial decisions through advanced machine learning algorithms
+b. Collecting and analyzing data to generate actionable insights for both athletic performance and organizational strategy
+c. Using data exclusively to evaluate athlete recruitment and compensation decisions
+d. Measuring fan sentiment and satisfaction through periodic surveys and social-media monitoring
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**b**
+
+**Explanation**: Modern sports analytics goes beyond recruitment and includes performance tracking, injury prevention, game strategy, financial planning, and fan engagement—all informed by data analysis. The goal is not to automate decisions entirely but to provide coaches and managers with data-driven insights that support high-level strategy across both performance and business operations.
+
+:::
+
+
+
+
+
+
+## Question 5
+Which of the following activities falls outside the primary scope of Business Intelligence (BI) as traditionally defined?
+
+a. Summarizing and reporting historical business performance through dashboards and KPIs
+b. Identifying data patterns and market trends that inform managerial decisions
+c. Providing automated prescriptive recommendations and executing future actions without human input
+d. Supporting strategic planning by visualizing performance metrics and uncovering inefficiencies
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**c**
+
+**Explanation**: Traditional BI focuses mainly on descriptive and diagnostic analytics—summarizing past performance, generating dashboards, and helping stakeholders interpret why certain outcomes occurred. Fully automated prescriptive systems that execute future actions without human involvement fall more under advanced analytics and AI/ML-driven decision automation, not classic BI.
+
+:::
+
+
+
+
+
+## Question 6
+Which of the following best defines deep learning?
+
+a. Any algorithm that predicts future events using labeled data
+b. A rule-based expert system using human-written logic
+c. A subset of machine learning that uses multi-layered neural networks to model complex, unstructured data
+d. A database search algorithm optimized for large text corpora
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**c**
+
+**Explanation**: Deep learning refers to neural network architectures with multiple hidden layers designed to handle complex data such as images, audio, and natural language. It is a specialized branch of machine learning—not a rule-based system or a simple database method—and its strength comes from learning rich patterns directly from data.
+
+:::
+
+
+
+
+
+
+## Question 7
+In the context of a Large Language Model (LLM), what is the function of Pre-training? 
+
+a. The model is trained for specific tasks before deployment
+b. The model learns from large amounts of general text data before fine-tuning
+c. The model learns only through reinforcement learning with human feedback
+d. The model is trained only on labeled datasets
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**b**
+
+**Explanation**: Pre-training exposes the model to massive amounts of text so it can learn grammar, semantics, factual knowledge, and generalized language structure. Only after pre-training can the model be fine-tuned or aligned with human preferences. It does not only rely on labeled datasets or RLHF during this stage.
+
+
+:::
+
+
+
+## Question 8
+What is the primary function of the positional encoding component in the GPT's transformer architecture?
+
+a. To capture the meaning of words by turning them into numbers.
+b. To decide which words matter most to each other in context.
+c. To preserve the order of words in a sentence, as the transformer processes them in parallel.
+d. To produce the output text one token at a time.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**c**
+
+**Explanation**: Transformers do not process words sequentially; they handle all tokens at once. Without positional encoding, the model would have no inherent sense of order. Positional encoding adds information about token position into the embeddings so that relationships like “first”, “next”, and “last” are preserved during computation.
+
+:::
+
+
+
+
+
+
+
+# Section 2. Filling-in-the-Blanks
+
+## Question 9
+The research paper “Attention Is All You Need” (2017) introduced the _____________________ architecture that powers modern large language models.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**transformer**
+
+**Explanation**: The paper *“Attention Is All You Need”* introduced the transformer architecture, which relies entirely on self-attention mechanisms rather than older sequence-processing approaches. This design allowed for much more efficient training and laid the groundwork for modern large language models such as GPT and others.
+
+:::
+
+
+
+
+ 
+## Question 10
+A ________________________________ is a numerical parameter in a neural network that determines the strength of a connection between neurons and is updated during training to improve the model’s accuracy.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**weight**
+
+**Explanation**: Weights are adjustable parameters within a neural network. During training, the model updates these weights to reduce error and improve how closely its predictions match the expected outputs. Weights determine how strongly one neuron influences another.
+
+:::
+
+
+
+
+## Question 11
+In LLM, ________________________________ is the process of further improving a pretrained model using smaller, targeted datasets and human input to guide outputs, making the model more helpful, accurate, and better aligned with specific needs.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**fine-tuning**
+
+**Explanation**: Fine-tuning adapts a pretrained foundation model by training it further on domain-specific data or using techniques such as human feedback ranking. This allows the model to specialize in tasks like legal summarization, customer service chat, or medical Q&A, while also improving alignment with human expectations.
+
+:::
+
+
+
+## Question 12
+In GPT, the numerical representation that captures the meaning and relationships among words is called an ________________________________.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**embedding**
+
+**Explanation**: An embedding is a vector representation that encodes semantic meaning and relationships between words or tokens. Words with similar meanings tend to have similar embeddings, enabling the model to generalize linguistic relationships in high-dimensional space.
+
+:::
+
+
+
+
+
+## Question 13
+
+The philosophical concept of an AI becoming as smart, capable, and flexible as a human is called a(n)   ________________________________. The moment a(n) ________________________________ surpasses human intelligence to become smarter, it is referred to as a(n) ________________________________.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**Artificial General Intelligence (AGI); AGI; Artificial Super Intelligence (ASI) (technological singularity)**
+
+**Explanation**: Artificial General Intelligence refers to a system with human-level cognitive flexibility across tasks. If such an AGI grows beyond human intelligence and continues to improve itself at an accelerating rate, it transitions into Artificial Super Intelligence (ASI). The moment this rapid escalation surpasses human control or understanding is referred to as the technological singularity.
+
+:::
+
+
+
+
+
+# Section 4. Data Analysis with R
+
+## Question 14
+
+Consider two packages, `pkgA` and `pkgB`, both of which contain a function named `summarize()`. You have not run `library(pkgA)` or `library(pkgB)`. Which syntax is the recommended way to call the `summarize()` function specifically from `pkgB`?
+
+a. `library(pkgB::summarize)`
+b. `pkgB$summarize()`
+c. `pkgB::summarize()` 
+d. `summarize(pkgB)`
+e. `library("pkgB::summarize()")`
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**c**
+
+**Explanation**: The namespace operator `pkgB::summarize()` calls the exported function from `pkgB` without attaching the whole package. Using `library(pkgB::summarize)` or `library("pkgB::summarize()")` is invalid; `library()` loads packages, not individual functions. The `$` operator is for a vector, not exported package functions.
+
+
+:::
+
+
+## Question 15
+
+The most popular assignment operator in R is  ________________________, and the shortcut to type it in Posit Cloud on a Windows or Mac machine is  ________________________.
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**`<-`; Windows: Alt + -  |  Mac: Option + -**
+
+**Explanation**: Although `=` also assigns, idiomatic R code uses the left arrow `<-`. In RStudio/Posit Cloud, the editor inserts `<-` with Alt+- (Windows) or Option+- (Mac), improving speed and consistency.
+
+
+:::
+
+
+
+
+
+
+## Questions 16-17
+
+Consider the following two vectors, `a` and `b`:
+
+```{r}
+#| echo: true
+#| eval: false
+
+a <- c(2, 4, 6, 8)
+b <- c(1, 2, 2, 2)
+```
+
+### Question 16
+What does `a * b` return?
+
+a. `c(3, 6, 9, 12)`
+b. `c(2, 4, 6, 8, 1, 2, 2, 2)`
+c. `c(1, 2, 4, 6)`
+d. `c(2, 2, 3, 4)`
+e. `c(2, 8, 12, 16)`
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**e**
+
+**Explanation**: `a * b = c(2*1, 4*2, 6*2, 8*2) = c(2, 8, 12, 16)`. R multiplies vectors element-wise when they are the same length. Each position in a is multiplied by the corresponding position in b.
+
+:::
+
+
+
+
+### Question 17
+What does `sum(a / b)` return?
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**11**
+
+**Explanation**: `sum(c(2/1, 4/2, 6/2, 8/2)) = sum(c(2, 2, 3, 4)) = 11`. Division is also element-wise: `a/b = (2, 2, 3, 4)`. Summing these values yields 11.
+
+:::
+
+
+
+
+## Questions 18-19
+
+Suppose you create a factor variable, `major`:
+
+```{r}
+#| echo: true
+#| eval: false
+
+year_level <- c("Freshman", "Sophomore", "Junior", "Senior", 
+                "Junior", "Senior", "Freshman")
+year_level_fct <- as.factor(year_level)
+```
+
+### Question 18
+What does `levels(year_level_fct)` return?
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**`c("Freshman", "Junior", "Senior", "Sophomore")`**
+
+**Explanation**: By default, factor levels are the unique values sorted alphabetically. The unique class names are sorted to "Freshman", "Junior", "Senior", "Sophomore".
+
+:::
+
+
+
+
+### Question 19
+What does `nlevels(year_level_fct)` return?
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**4**
+
+**Explanation**: There are four distinct class years. `nlevels()` counts unique factor levels, not the number of values.
+
+:::
+
+
+
+
+## Question 20
+
+The working directory for your Posit Cloud project is:
+
+`/cloud/project`
+
+Suppose the relative pathname for the CSV file `custdata.csv` uploaded to your Posit Cloud project is:  
+
+`/mydata/custdata.csv`  
+
+Using the file's **absolute pathname**, write R code to read the CSV file as a data.frame and assign it to an object named `df`.
+
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+```{r}
+#| echo: true
+#| eval: false
+
+df <- read_csv("/cloud/project/mydata/custdata.csv")
+```
+
+**Explanation**: Since the working directory is `/cloud/project`, the absolute pathname includes the full path to the file.
+
+:::
+
+
+
+
+
+
+## Question 21
+
+Consider the following data.frame `df0`:
+
+```{r}
+#| echo: false
+#| eval: true
+
+df0 <- data.frame(
+  x = c(NA, 2, 3),
+  y = c(7, NA, 9)
+)
+
+knitr::kable(df0)
+
+```
+
+
+
+What does `is.na(df0$x * df0$y)` return?
+
+a. `c(TRUE, TRUE, TRUE)`
+b. `c(TRUE, TRUE, FALSE)`
+c. `c(TRUE, FALSE, TRUE)`
+d. `c(TRUE, FALSE, FALSE)`
+e. `Error`
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**b**
+
+**Explanation**:  
+
+-	Row 1: `NA * 7 = NA` → `TRUE`
+-	Row 2: `2 * NA = NA` → `TRUE`
+-	Row 3: `3 * 9 = 27` → not `NA` → `FALSE`
+
+So, the result is `c(TRUE, TRUE, FALSE)`.
+
+**Explanation**: Any arithmetic with `NA` returns `NA`. `is.na()` checks for `NA` values element-wise.
+
+
+:::
+
+
+
+## Questions 22-24
+
+Consider the following data.frame `df` for **Questions 22-24**:
+
+```{r}
+#| echo: false
+#| eval: true
+df <- data.frame(
+  id = 1:5,
+  name = c("Anna", "Ben", "Carl", "Dana", "Ella"),
+  age = c(22, 28, NA, 35, 40),
+  score = c(90, 85, 95, NA, 80)
+)
+
+knitr::kable(df)
+```
+
+
+### Question 22
+
+Which of the following code snippets filters observations where `score` is strictly between 85 and 95 (i.e., excluding 85 and 95)?
+
+a. `df |> filter(score >= 85 | score <= 95)`
+b. `df |> filter(score => 85 | score =< 95)`
+c. `df |> filter(score > 85 | score < 95)`
+d. `df |> filter(score > 85 & score < 95)`
+e. `df |> filter(score >= 85 & score <= 95)`
+f. `df |> filter(score => 85 & score =< 95)`
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**d**
+
+**Explanation**: The condition “strictly between” means greater than 85 and less than 95. Use `&` to enforce both conditions simultaneously. Option c uses `|`, which is incorrect logic.
+
+
+:::
+
+
+### Question 23
+
+Which of the following expressions correctly keeps observations from `df` where the `age` variable does not have any missing values?
+
+a. `df |> filter(is.na(age))`
+b. `df |> filter(!is.na(age))`
+c. `df |> filter(age == NA)`
+d. `df |> filter(age != NA)`
+e. Both a and c
+f. Both b and d
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**b**
+
+**Explanation**: The expression `!is.na(age)` returns only observations with valid numeric values. Comparisons like `age == NA` fail because `NA` cannot be compared using equality operators in R.
+
+
+:::
+
+
+
+
+### Question 24
+
+Which of the following code snippets correctly keeps only the `name` and `score` variables from `df`?
+
+a. `df |> select(name, score)`  
+b. `df |> select(-id, -age)`  
+c. `df |> select("name", "score")`  
+d. `df |> select(df, name, score)`  
+e. Both a and c  
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**e (a, b, or c deserves the full credit)**
+**Explanation**: Both `select(name, score)` and `select("name", "score")` return only those two variables. Option b removes `id` and `age`, but only works because there are exactly four variables. Option d is invalid syntax.
+
+
+:::
+
+
+
+
+
+## Questions 25-26
+
+Consider the following data.frame `df3` for **Questions 25-26**:
+
+```{r}
+#| echo: false
+#| eval: true
+
+inventory_df <- data.frame(
+  Location = c("Warehouse A", "Store B", "Warehouse A", "Store C", "Store B"),
+  Item_SKU = c("X100", "Y200", "X100", "Z300", "X100"),
+  Stock = c(500, 10, 500, 75, 50)
+)
+
+knitr::kable(inventory_df)
+```
+
+Below provides data type of each variable:  
+
+- `Location`: *character*
+- `Item_SKU`: *character*
+- `Stock`: *numeric*
+
+### Question 25
+Which of the following code snippets arranges the observations first by `Location` in ascending (alphabetical) order, and then by `Stock` in descending order to prioritize locations with the most stock?
+
+a. `inventory_df |> arrange(Location, Stock)`
+b. `inventory_df |> arrange(Location, -Stock)`
+c. `inventory_df |> arrange(Location, desc(Stock))`
+d. `inventory_df |> arrange(desc(Location), desc(Stock))`
+e. Both b and c
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**e**
+
+**Explanation**: `desc(Stock)` and `-Stock` both sort `Stock` in descending order. Combined with default ascending sort of Location, both (b) and (c) produce the desired result.
+
+:::
+
+
+### Question 26
+
+Which of the following expressions correctly removes the duplicate entry for the full observation (`Warehouse A`, `X100`, `500`) to return all unique observations in the `inventory_df`?
+
+a. `inventory_df |> distinct(Location, Item_SKU)`
+b. `inventory_df |> select(-Item_SKU, -Location)`
+c. `inventory_df |> distinct()`
+d. `inventory_df |> arrange(Stock)`
+e. Both a and c
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**c**
+
+**Explanation**: `distinct()` without specifying columns checks for duplicates across all variables. Option a would only check combinations of `Location` and `Item_SKU`, ignoring `Stock`. Option b drops variables, and (d) only reorders observations.
+
+:::
+
+
+
+
+
+## Question 27
+
+Which of the following code snippets returns a data.frame that keeps only **unique combinations** of `name` and `score`, **renames** `score` to `final_score`, and **selects** only these two variables?
+
+a. `df |> distinct(name, score) |> rename(final_score = score)`  
+b. `df |> select(name, final_score) |> rename(final_score = score) |> distinct()`  
+c. `df |> rename(final_score = score) |> distinct(name, final_score)`  
+d. `df |> distinct(name, final_score) |> rename(score = final_score)`  
+e. Both a and c  
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**e**
+
+**Explanation**: Option (a) correctly extracts unique name–score pairs and then renames score to final_score. Option (c) renames first and then applies `distinct()`, and it keeps the renamed variable, not score, so it still works. Therefore both (a) and (c) are the most clearly correct answers based on the requirement.
+
+:::
+
+
+
+
+
+
+## Question 28
+
+Using the `nycflights13::flights` data.frame, which of the following code snippets correctly counts how many **unique destination airports** (`dest`) exist for each `origin` airport?
+
+**a.**
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  distinct(origin, dest)
+
+df_EWR <- df |> filter(origin == "EWR")
+df_JFK <- df |> filter(origin == "JFK")
+df_LGA <- df |> filter(origin == "LGA")
+
+nrow(df_EWR)
+nrow(df_JFK)
+nrow(df_LGA)
+```
+
+**b.**
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  filter(origin == "EWR" | origin == "JFK" | origin == "LGA") |> 
+  distinct(dest)
+
+nrow(df)
+```
+
+**c.**
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  filter(origin == "EWR" & origin == "JFK" & origin == "LGA") |> 
+  distinct(dest)
+
+nrow(df)
+```
+
+**d.**
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  distinct(dest)
+
+nrow(df)
+```
+
+
+**e.** Both a and b
+
+**f.** Both a and c
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**a**
+
+**Explanation**: Option (a) correctly first extracts unique (`origin`, `dest`) combinations and then counts how many unique `dest` per each `origin`. Option (b) mistakenly pools all three origins together before counting distinct destinations, losing the per-`origin` grouping. Option (c) filters using `&`, which can never be true for mutually exclusive origins. Option (d) ignores `origin` entirely.
+
+:::
+
+
+
+
+
+
+
+# Section 4. Short Essay
+
+## Question 29
+Why is the median often preferred over the mean as a measure of central tendency when a dataset contains outliers?
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+The median is less sensitive to extreme values because it depends only on the middle position in an ordered dataset, not on the magnitude of all values. Outliers can pull the mean sharply in one direction, distorting the central tendency and giving a misleading picture of the “typical” value. In skewed distributions or datasets with extreme highs/lows, the median provides a more robust and representative summary. For this reason, analysts often use the median for income, housing price, or other economic data known to contain large outliers.
+
+
+:::
+
+
+
+## Question 30
+- Define AI Alignment and explain why it is hard, referencing the failure mode of a "single-objective optimizer." 
+- Analyze why companies alone and governments alone cannot solve the alignment challenge, citing at least two reasons for each, and explain what is needed for an effective solution.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+AI Alignment refers to the challenge of ensuring that powerful AI systems reliably act according to human values, ethical norms, and societal goals. It is difficult because advanced AI systems can optimize objectives in ways that technically satisfy a metric but violate human intent—this is the “single-objective optimizer” failure mode. When a model pushes one goal to an extreme without broader context or value constraints, it can generate harmful or unintended outcomes even while maximizing its target metric.
+
+Why companies alone cannot solve it:  
+
+1.	Companies face pressure to deploy quickly for competitive advantage, which may lead to cutting corners on long-term safety and value alignment.
+2.	Corporate profit incentives do not necessarily align with broader public welfare and ethical standards, especially in global contexts beyond their direct accountability.
+
+Why governments alone cannot solve it:   
+
+1.	Governments often lack the technical expertise and agility to regulate fast-moving AI developments effectively.
+2.	Global AI deployment crosses jurisdictions, and national policies cannot fully enforce alignment across private-sector labs or international competitors without global coordination.
+
+What is needed:  
+
+An effective solution requires collaboration between researchers, companies, governments, and international institutions. This includes shared safety standards, transparent evaluation protocols, incentive structures that reward responsible development, and oversight mechanisms that span beyond national or corporate boundaries.
+
+
+:::
+
+
+

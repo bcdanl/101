@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
+
+  <meta name="author" content="Byeong-Hak Choe">
+  <meta name="dcterms.date" content="2025-10-15">
+  <title>Lecture 7</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Lecture 7</h1>
+  <p class="subtitle">Big Data and the Modern Data Infrastructure</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Byeong-Hak Choe 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:bchoe@geneseo.edu">bchoe@geneseo.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            SUNY Geneseo
+          </p>
+    </div>
+</div>
+
+  <p class="date">October 15, 2025</p>
+</section>
+<section>
+<section id="a-simple-taxonomy-of-data" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>A Simple Taxonomy of Data</strong></h1>
+
+</section>
+<section id="structured-data-vs.-unstructured-data" class="slide level2">
+<h2>Structured Data vs.&nbsp;Unstructured Data</h2>
+<div style="display:block; margin:-15px;">
+
+</div>
+<div style="text-align: center; width: 60%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/data-taxonomy.png" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+<ul>
+<li class="fragment">Data comes in various formats.
+<ul>
+<li class="fragment"><strong>Structured data</strong>: Has a predefined format, fits into traditional databases.</li>
+<li class="fragment"><strong>Unstructured data</strong>: Not organized in a predefined manner, comes from sources like documents, social media, emails, photos, videos, etc.</li>
+</ul></li>
+</ul>
+<div style="display:block; margin:-10px;">
+
+</div>
+</section>
+<section id="data-types-overview" class="slide level2">
+<h2>Data Types Overview</h2>
+<div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><strong>Categorical Data</strong>: Data that can be divided into distinct categories based on some qualitative attribute.
+<ul>
+<li><strong>Nominal Data</strong></li>
+<li><strong>Ordinal Data</strong></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><strong>Numeric Data</strong>: Data that represents measurable quantities and can be subjected to mathematical algebra.
+<ul>
+<li><strong>Interval Data</strong></li>
+<li><strong>Ratio Data</strong></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="categorical-data---nominal" class="slide level2">
+<h2>Categorical Data - Nominal</h2>
+<div>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Animal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Dog</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Cat</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Bird</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Nominal Data</strong>: Categorical data where the categories have no intrinsic order or ranking.</li>
+<li><strong>No Order</strong>: Categories are simply different; there is no logical sequence.</li>
+<li><strong>Examples</strong>:
+<ul>
+<li><strong>Colors</strong>: Red, Blue, Green</li>
+<li><strong>Types of Animals</strong>: Dog, Cat, Bird</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="categorical-data---ordinal" class="slide level2">
+<h2>Categorical Data - Ordinal</h2>
+<div>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Education Level</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Bachelor’s</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Master’s</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>PhD</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Ordinal Data</strong>: Categorical data where the categories have a meaningful order or ranking.</p></li>
+<li><p><strong>Order Matters</strong>: Categories can be ranked or ordered, but the differences between categories are not necessarily uniform.</p></li>
+<li><p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>Education Levels</strong>: High School, Bachelor’s, Master’s, PhD</li>
+<li><strong>Customer Satisfaction</strong>: Poor, Fair, Good, Excellent</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="numeric-data---interval" class="slide level2">
+<h2>Numeric Data - Interval</h2>
+<div>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Temperature (°F)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>70</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Interval Data</strong>: Numeric data where the differences between values are meaningful, but there is no true zero point.</p></li>
+<li><p><strong>Meaningful Intervals</strong>: The difference between values is consistent.</p></li>
+<li><p><strong>No True Zero</strong>: Zero does not indicate the absence of the quantity.</p></li>
+<li><p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>Temperature (°F)</strong>: Zero degrees does not mean no temperature.</li>
+<li><strong>Time of Day in a 12-Hour Clock</strong>: Differences are meaningful, but there is no absolute zero.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="numeric-data---ratio" class="slide level2">
+<h2>Numeric Data - Ratio</h2>
+<div>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Height (cm)</th>
+<th>Weight (kg)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>160</td>
+<td>55</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>175</td>
+<td>70</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>170</td>
+<td>65</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Ratio Data</strong>: Numeric data with a true zero point, allowing for a full range of mathematical operations.</p></li>
+<li><p><strong>Meaningful Ratios</strong>: Comparisons like twice as much or half as much are valid.</p></li>
+<li><p><strong>True Zero</strong>: Zero indicates the absence of the quantity.</p></li>
+<li><p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>Height in Centimeters</strong>: Zero means no height.</li>
+<li><strong>Weight in Kilograms</strong>: Zero means no weight.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="classwork-taxonomy-of-data" class="slide level2">
+<h2>Classwork: Taxonomy of Data</h2>
+<p><strong>Try it out</strong> → <a href="https://bcdanl.github.io/danl-cw/danl-101-cw-07.html">Classwork 7: Taxonomy of Data</a></p>
+</section></section>
+<section>
+<section id="databases" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Databases</strong></h1>
+
+</section>
+<section id="what-is-a-database" class="slide level2">
+<h2>What Is a Database?</h2>
+<ul>
+<li class="fragment">A <strong>database (DB)</strong> is a structured collection of data stored electronically.</li>
+<li class="fragment">A <strong>Database Management System (DBMS)</strong> is software that helps us:
+<ul>
+<li class="fragment"><strong>Store</strong> data (safely and efficiently)</li>
+<li class="fragment"><strong>Query</strong> data (like <code>filter()</code>, <code>select()</code>)</li>
+<li class="fragment"><strong>Update</strong> data while keeping everything consistent and valid</li>
+</ul></li>
+<li class="fragment"><strong>Examples of DBMS:</strong>
+<ul>
+<li class="fragment"><strong>PostgreSQL / MySQL</strong> (used by websites and companies)</li>
+<li class="fragment"><strong>Google BigQuery, Snowflake</strong> (large-scale analysis on cloud system)</li>
+<li class="fragment"><strong>Excel / Google Sheets</strong> → <em>basic storage only — not a full DBMS</em></li>
+</ul></li>
+</ul>
+<div style="display:block; margin:-20px;">
+
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">SQL stands for <strong>Structured Query Language</strong>, and a <strong>query</strong> simply means <em>asking the data for something</em> — such as filtering rows, selecting columns, or combining information.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="etl-extract-transform-load" class="slide level2">
+<h2>ETL: 📥 Extract ➜ 🔧 Transform ➜ 💾 Load</h2>
+<div>
+<ul>
+<li><strong>ETL</strong> is the <strong>data preparation workflow</strong> used in analytics.</li>
+</ul>
+</div>
+<div style="font-size: 1.5rem">
+<!-- Adjust size here (0.7–0.85 works well on slides) -->
+
+<table>
+<tbody><tr>
+<th>
+ETL Step
+</th>
+<th>
+Meaning in Data Workflow
+</th>
+<th>
+Example in a Database Context
+</th>
+</tr>
+<tr>
+<td>
+<strong>Extract</strong>
+</td>
+<td>
+<span class="fragment">Retrieve raw data from an external source</span>
+</td>
+<td>
+<span class="fragment">Importing a CSV, Google Sheet, app response, or web data into a temporary table</span>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Transform</strong>
+</td>
+<td>
+<span class="fragment">Clean, reshape, and structure the data</span>
+</td>
+<td>
+<span class="fragment">Filtering rows, selecting fields, and joining tables</span>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Load</strong>
+</td>
+<td>
+<span class="fragment">Store the cleaned data for analysis</span>
+</td>
+<td>
+<span class="fragment">Writing the final structured table into a database as the analysis-ready dataset</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+<ul>
+<li class="fragment">It makes raw data <strong>usable</strong> by making it <strong>clean, consistent, and connected</strong> before analysis begins.</li>
+</ul>
+</section>
+<section id="etl-extract-stage" class="slide level2">
+<h2>📥 ETL — Extract Stage</h2>
+<ul>
+<li class="fragment"><p><strong>Goal:</strong> Collect <strong>raw data</strong> from external sources<br>
+(Google Sheets, CSV/Excel files, survey tools, web exports, or app submissions).</p></li>
+<li class="fragment"><p><strong>Quick Validation Check:</strong></p>
+<ul>
+<li class="fragment">✅ Column names match expected schema<br>
+</li>
+<li class="fragment">✅ Numeric fields contain numbers only (no symbols/text)</li>
+</ul></li>
+<li class="fragment"><p><strong>Storage at this stage:</strong></p>
+<ul>
+<li class="fragment">Raw data is stored in a <strong>temporary DB area</strong> (like Google Sheets or CSV)<br>
+</li>
+<li class="fragment">⚠️ This is <strong>not yet the official DB</strong> — just a collection point</li>
+</ul></li>
+</ul>
+</section>
+<section id="etl-transform-stage" class="slide level2">
+<h2>🔧 ETL — Transform Stage</h2>
+<ul>
+<li class="fragment"><p><strong>Goal:</strong> Convert <strong>raw data</strong> into a <strong>clean, consistent, analysis-ready format</strong></p></li>
+<li class="fragment"><p><strong>In DANL 101 using R (<code>tidyverse</code>):</strong></p>
+<ul>
+<li class="fragment"><code>filter()</code> → keep valid <strong>observations</strong></li>
+<li class="fragment"><code>select()</code> → keep relevant <strong>variables</strong></li>
+<li class="fragment"><code>*_join()</code> → combine multiple <strong>tables/data.frames</strong></li>
+</ul></li>
+<li class="fragment"><p><strong>Storage at this stage:</strong></p>
+<ul>
+<li class="fragment">Cleaning happens <strong>in memory</strong>, not yet in the final database<br>
+</li>
+<li class="fragment">The <strong>Google Sheet + R</strong> behave like a <strong>database + DBMS system</strong>, with <strong><code>tidyverse</code> acting as the query engine</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="etl-load-stage" class="slide level2">
+<h2>💾 ETL — Load Stage</h2>
+<ul>
+<li class="fragment"><p><strong>Goal:</strong> Store the <strong>clean, final dataset</strong> as the official <strong>analysis table</strong></p></li>
+<li class="fragment"><p><strong>Storage at this stage:</strong></p>
+<ul>
+<li class="fragment">The cleaned data is written to a <strong>database area</strong> (this becomes the official dataset for analysis)</li>
+</ul></li>
+<li class="fragment"><p><strong>In DANL 101 using R (<code>tidyverse</code>):</strong></p>
+<ul>
+<li class="fragment">The final <code>data.frame</code> functions as our <strong>primary analysis dataset</strong>, used for:
+<ul>
+<li class="fragment">📊 <strong>Summaries</strong> — descriptive statistics and numeric insights<br>
+</li>
+<li class="fragment">📈 <strong>Visualizations</strong> — plots, charts, and dashboard elements<br>
+</li>
+<li class="fragment">🎯 <strong>Storytelling &amp; Analysis</strong> — interpreting and communicating insights</li>
+</ul></li>
+</ul></li>
+<li class="fragment"><p><strong>Try it out</strong> → <a href="https://bcdanl.github.io/danl-cw/danl-101-cw-08.html"><em>Classwork 8: Databases — Social Media Analytics</em></a>.</p></li>
+</ul>
+</section>
+<section id="relational-data-thinking" class="slide level2">
+<h2>Relational Data Thinking</h2>
+<ul>
+<li class="fragment">During the <strong>Transform</strong> step in ETL, our data becomes:
+<ul>
+<li class="fragment"><strong>Clean</strong>, <strong>structured in tables</strong>, and organized with a shared <strong>key</strong> column</li>
+</ul></li>
+<li class="fragment">At this point, we start thinking <strong>like database analysts</strong>:
+<ul>
+<li class="fragment">Each <strong>table holds one type of data</strong></li>
+<li class="fragment">A <strong>key column links tables together</strong></li>
+</ul></li>
+<li class="fragment">In real-world analytics, data rarely lives in a single big file.
+<ul>
+<li class="fragment"><strong>Example</strong>: one table stores <strong>student social media activity</strong>
+<ul>
+<li class="fragment">Another table stores <strong>platform reference information</strong></li>
+</ul></li>
+</ul></li>
+<li class="fragment">To analyze properly, we <strong>connect these tables using a key</strong>.
+<ul>
+<li class="fragment"><strong>In R tidyverse</strong>: <code>left_join()</code></li>
+<li class="fragment"><strong>In database language</strong>: a <strong>join</strong> operation</li>
+</ul></li>
+</ul>
+</section>
+<section id="relational-databases" class="slide level2">
+<h2>Relational Databases</h2>
+<div>
+<ul>
+<li>When multiple tables are linked by keys, this structure is called a <strong>relational database</strong></li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="display:block; margin:-60px;">
+
+</div>
+<div style="text-align: center; width: 80%; margin: auto;">
+<p><img src="https://bcdanl.github.io/lec_figs/relational-data.png" style="width: 100%; margin-bottom: -20px;"></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>tab_project <span class="ot">&lt;-</span> </span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">read_csv</span>(<span class="st">"https://bcdanl.github.io/data/rdb-project_table.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>tab_department <span class="ot">&lt;-</span> </span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">read_csv</span>(<span class="st">"https://bcdanl.github.io/data/rdb-department_table.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a>tab_manager <span class="ot">&lt;-</span> </span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">read_csv</span>(<span class="st">"https://bcdanl.github.io/data/rdb-manager_table.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">A <strong>relational database</strong> organizes data into multiple related tables, called <strong>relations</strong>.</li>
+<li class="fragment">Each table stores data about <strong>one type of entity</strong> (e.g., projects, departments, managers).</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="relational-database-characteristics" class="slide level2">
+<h2>Relational Database Characteristics</h2>
+<ol type="1">
+<li class="fragment">Data is stored in a <code>data.frame</code> (or <strong>table</strong>).</li>
+<li class="fragment">Each <strong>row</strong> = an <strong>observation</strong> (or <strong>record</strong>).</li>
+<li class="fragment">Each <strong>column</strong> = a <strong>variable</strong> (or <strong>attribute</strong> or <strong>field</strong>).</li>
+<li class="fragment">Each table has a <strong>key</strong> — a column that <em>uniquely</em> identifies each row.</li>
+<li class="fragment">Keys allow us to <strong>link tables together</strong>.</li>
+<li class="fragment">We use <strong>queries</strong> (like <code>filter()</code>, <code>select()</code>, <code>left_join()</code>) to retrieve and combine data.</li>
+</ol>
+</section>
+<section id="relational-tables-and-keys" class="slide level2">
+<h2>Relational Tables and Keys</h2>
+<div style="text-align: center; width: 100%; margin: auto;">
+<p><img src="https://bcdanl.github.io/lec_figs/join-setup.png" style="width: 27.5%;"></p>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="at">key =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="at">val_x =</span> <span class="fu">c</span>(<span class="st">'x1'</span>, <span class="st">'x2'</span>, <span class="st">'x3'</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>y <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="at">key =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>),</span>
+<span id="cb3-3"><a href="#cb3-3"></a>    <span class="at">val_y =</span> <span class="fu">c</span>(<span class="st">'y1'</span>, <span class="st">'y2'</span>, <span class="st">'y3'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment">The colored column represents the “<strong>key</strong>” variable (<code>key</code>).</li>
+<li class="fragment">The grey column represents the “value” variable (<code>val_x</code>, <code>val_y</code>).</li>
+</ul>
+</section>
+<section id="joining-tables-with-left_join" class="slide level2">
+<h2>Joining Tables with <code>left_join()</code></h2>
+<div style="text-align: center; width: 100%; margin: auto;">
+<p><img src="https://bcdanl.github.io/lec_figs/join-left.png" style="width: 50%;"></p>
+</div>
+<div style="display:block; margin:-20px;">
+
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>x <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">left_join</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">A <strong>left join</strong> keeps all rows from <code>x</code> and adds matching information from <code>y</code>.</li>
+<li class="fragment">Among the different join types, <code>left_join()</code> is the most commonly used join.
+<ul>
+<li class="fragment">It does not lose information from your <strong>main data.frame</strong> (<code>x</code>) and simply attaches extra information (<code>y</code>) when it exists.</li>
+</ul></li>
+<li class="fragment"><strong>Try it out</strong> → <a href="https://bcdanl.github.io/danl-cw/danl-101-cw-09.html"><em>Classwork 9: ETL Process in R</em></a>.</li>
+</ul>
+<!-- <div style="display:block; margin:-30px;"></div> -->
+<!-- ::: callout-tip -->
+<!-- - 💡 *Think of `x` as your main class roster and `y` as an extra sheet of information you attach to each student.* -->
+<!-- ::: -->
+</section></section>
+<section>
+<section id="big-data" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Big Data</strong></h1>
+<!-- ## Why Big Data Matters for Data Analytics -->
+<!-- - **Data is the new capital.** Organizations that collect and analyze data gain a strong **competitive advantage**. -->
+<!-- - Every digital interaction — clicks, sensors, transactions, GPS signals — generates data. -->
+<!-- - The **explosion of data** has transformed how decisions are made: -->
+<!--   - **Businesses**: demand forecasting, customer insights, fraud detection   -->
+<!--   - **Governments**: policy design, smart cities, public health monitoring   -->
+<!--   - **Individuals**: wearable tech, streaming platforms, social media trends -->
+<!-- - Data analytics turns **raw data into actionable insights** — the foundation of the modern economy. -->
+</section>
+<section id="what-is-big-data" class="slide level2">
+<h2>What Is Big Data?</h2>
+<ul>
+<li class="fragment"><p><strong>Big data and analytics</strong> are key components shaping the future across industries.</p></li>
+<li class="fragment"><p>Refers to <strong>enormous, complex datasets</strong> that traditional tools can’t efficiently manage.</p></li>
+<li class="fragment"><p>Characterized by the <strong>Five V’s</strong>:</p>
+<ol type="1">
+<li class="fragment"><strong>Volume</strong> — amount of data<br>
+</li>
+<li class="fragment"><strong>Velocity</strong> — speed of data generation<br>
+</li>
+<li class="fragment"><strong>Value</strong> — usefulness of data<br>
+</li>
+<li class="fragment"><strong>Veracity</strong> — trustworthiness of data<br>
+</li>
+<li class="fragment"><strong>Variety</strong> — diversity of data types</li>
+</ol></li>
+</ul>
+</section>
+<section id="volume" class="slide level2">
+<h2>1️⃣ Volume</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<table>
+<thead>
+<tr class="header">
+<th>Unit</th>
+<th>Symbol</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Kilobyte</td>
+<td>kB</td>
+<td>10³</td>
+</tr>
+<tr class="even">
+<td>Megabyte</td>
+<td>MB</td>
+<td>10⁶</td>
+</tr>
+<tr class="odd">
+<td>Gigabyte</td>
+<td>GB</td>
+<td>10⁹</td>
+</tr>
+<tr class="even">
+<td>Terabyte</td>
+<td>TB</td>
+<td>10¹²</td>
+</tr>
+<tr class="odd">
+<td>Petabyte</td>
+<td>PB</td>
+<td>10¹⁵</td>
+</tr>
+<tr class="even">
+<td>Exabyte</td>
+<td>EB</td>
+<td>10¹⁸</td>
+</tr>
+<tr class="odd">
+<td>Zettabyte</td>
+<td>ZB</td>
+<td>10²¹</td>
+</tr>
+<tr class="even">
+<td>Yottabyte</td>
+<td>YB</td>
+<td>10²⁴</td>
+</tr>
+<tr class="odd">
+<td>Brontobyte*</td>
+<td>BB</td>
+<td>10²⁷</td>
+</tr>
+<tr class="even">
+<td>Gegobyte*</td>
+<td>GeB</td>
+<td>10³⁰</td>
+</tr>
+</tbody>
+</table>
+<p><small>*Less commonly used or proposed extensions.</small></p>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:55%;">
+<div style="text-align: center;">
+<img src="https://bcdanl.github.io/lec_figs/big-data.png" style="width: 100%;">
+<p>
+<strong>Growth of the Global Datasphere</strong>
+</p>
+</div>
+<ul>
+<li class="fragment">In 2017, the digital universe contained <strong>16.1 zettabytes</strong> of data.<br>
+</li>
+<li class="fragment">Expected to grow to <strong>163 zettabytes by 2025</strong>.<br>
+<!-- - Much of this growth comes from **embedded systems in smart devices**. --></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="velocity" class="slide level2">
+<h2>2️⃣ Velocity</h2>
+<ul>
+<li class="fragment">Refers to the <strong>rate at which new data is created and processed</strong>.<br>
+</li>
+<li class="fragment">Estimated at <strong>402.74 million terabytes per day</strong> (≈181 zettabytes per year).<br>
+</li>
+<li class="fragment">Around <strong>90% of the world’s data</strong> has been generated in just the <strong>past two years</strong>.</li>
+</ul>
+</section>
+<section id="value" class="slide level2">
+<h2>3️⃣ Value</h2>
+<ul>
+<li class="fragment">Represents the <strong>worth of data</strong> in driving better decisions.<br>
+</li>
+<li class="fragment">Highlights the need to <strong>extract actionable insights</strong> quickly.<br>
+</li>
+<li class="fragment">Large datasets enable discovery of <strong>patterns and anomalies</strong> not visible in small samples.</li>
+</ul>
+</section>
+<section id="veracity" class="slide level2">
+<h2>4️⃣ Veracity</h2>
+<ul>
+<li class="fragment">Measures <strong>data quality and reliability</strong>.<br>
+</li>
+<li class="fragment">Involves <strong>accuracy, completeness, and timeliness</strong>.<br>
+</li>
+<li class="fragment">Determines whether data can be <strong>trusted for decision-making</strong>.</li>
+</ul>
+</section>
+<section id="variety" class="slide level2">
+<h2>5️⃣ Variety</h2>
+<div style="text-align: center; width: 85%; margin: auto;">
+<p><img src="https://bcdanl.github.io/lec_figs/data-source.png" style="width: 100%;"></p>
+</div>
+</section></section>
+<section>
+<section id="technologies-for-big-data-management" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Technologies for Big Data Management</strong></h1>
+
+</section>
+<section id="why-we-need-new-technologies" class="slide level2">
+<h2>Why We Need New Technologies</h2>
+<ul>
+<li class="fragment"><strong>Big data</strong> exceeds what traditional tools can store or analyze.</li>
+<li class="fragment"><strong>Limitations:</strong>
+<ul>
+<li class="fragment">Legacy databases struggle with volume and speed.</li>
+<li class="fragment">Hardware can’t scale efficiently.</li>
+</ul></li>
+<li class="fragment"><strong>Solutions:</strong>
+<ul>
+<li class="fragment">Modern frameworks and architectures like <strong>Data Warehouses</strong> enable:
+<ul>
+<li class="fragment">Massive storage<br>
+</li>
+<li class="fragment">Fast queries<br>
+</li>
+<li class="fragment">Integration across platforms</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="schema-in-big-data-management" class="slide level2">
+<h2>Schema in Big Data Management</h2>
+<ul>
+<li class="fragment">A <strong>schema</strong> is the <strong>blueprint or structure</strong> that defines how data is organized in a database.<br>
+</li>
+<li class="fragment">It specifies:
+<ul>
+<li class="fragment"><strong>What <em>fields</em> exist</strong> (e.g., <code>name</code>, <code>age</code>, <code>income</code>)</li>
+<li class="fragment"><strong>What <em>type</em> each field is</strong> (e.g., character, number, date)</li>
+<li class="fragment"><strong>How tables <em>relate</em></strong> to each other</li>
+</ul></li>
+<li class="fragment">In other words, a schema tells the system <strong>how to read and interpret data</strong> consistently.</li>
+</ul>
+</section>
+<section id="data-warehouses" class="slide level2">
+<h2>Data Warehouses</h2>
+<div style="text-align: center;">
+<p><img src="https://bcdanl.github.io/lec_figs/data-warehousing.png" style="width: 80%;"></p>
+</div>
+<ul>
+<li class="fragment"><strong>Definition:</strong> Central repository integrating data from multiple sources.</li>
+<li class="fragment"><strong>Purpose:</strong> Enables comprehensive <strong>analysis and decision-making</strong>.</li>
+</ul>
+</section>
+<section id="key-characteristics-of-data-warehouses" class="slide level2">
+<h2>Key Characteristics of Data Warehouses</h2>
+<div style="font-size:1.85rem; max-width:1000px; margin:0.5rem auto;">
+<table>
+<colgroup>
+<col style="width: 55%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Characteristic</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="fragment"><strong>Large</strong></span></td>
+<td><span class="fragment">Stores billions of records and petabytes of data</span></td>
+</tr>
+<tr class="even">
+<td><span class="fragment"><strong>Multiple Sources</strong></span></td>
+<td><span class="fragment">Integrates <em>internal</em> and <em>external</em> data via ETL</span></td>
+</tr>
+<tr class="odd">
+<td><span class="fragment"><strong>Historical</strong></span></td>
+<td><span class="fragment">Often includes 5+ years of archived data</span></td>
+</tr>
+<tr class="even">
+<td><span class="fragment"><strong>Cross-Organizational</strong></span></td>
+<td><span class="fragment">Accessible across departments for data-driven strategy</span></td>
+</tr>
+<tr class="odd">
+<td><span class="fragment"><strong>Supports Analysis &amp; Reporting</strong></span></td>
+<td><span class="fragment">Enables drill-downs and trend detection</span></td>
+</tr>
+<tr class="even">
+<td><span class="fragment"><strong>Schema-Based</strong></span></td>
+<td><span class="fragment">Data fits a <em>predefined structure</em> before being stored for efficient querying and analysis</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="understanding-schema" class="slide level2">
+<h2>Understanding Schema</h2>
+<ul>
+<li class="fragment"><strong>Definition:</strong> Data is <strong>structured and validated</strong> before it enters the system.
+<ul>
+<li class="fragment">The <strong>schema is predefined</strong>, specifying tables, fields, and data types.<br>
+</li>
+</ul></li>
+<li class="fragment"><strong>Advantages:</strong>
+<ul>
+<li class="fragment">Ensures <strong>data consistency, accuracy, and performance</strong><br>
+</li>
+<li class="fragment">Ideal for <strong>reporting</strong>, <strong>dashboards</strong>, and <strong>business intelligence</strong><br>
+</li>
+<li class="fragment">Simplifies regulatory compliance and governance<br>
+</li>
+</ul></li>
+<li class="fragment"><strong>Example:</strong>
+<ul>
+<li class="fragment">Before inserting sales data, ETL scripts ensure each record matches the schema — e.g.,
+<ul>
+<li class="fragment"><code>store_id</code> (integer), <code>sales</code> (numeric)<br>
+</li>
+</ul></li>
+<li class="fragment">Once loaded, users can query with confidence</li>
+</ul></li>
+</ul>
+<!-- :::callout-note -->
+<!-- - 💡 *Think of it as “organize first, then use.”* -->
+<!-- ::: -->
+</section>
+<section id="walmart-a-pioneer-in-data-warehousing" class="slide level2">
+<h2>Walmart: A Pioneer in Data Warehousing</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="text-align: center;">
+<p><img src="https://bcdanl.github.io/lec_figs/walmart-data-warehouse.png" style="width: 100%;"></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="display:block; margin:30px;">
+
+</div>
+<ul>
+<li class="fragment"><p>Early adopter of data-driven <strong>supply chain optimization</strong><br>
+</p></li>
+<li class="fragment"><p>Collects transaction data from <strong>11,000+ stores and 25,000 suppliers</strong><br>
+</p></li>
+<li class="fragment"><p>Uses <strong>real-time analytics</strong> to optimize pricing, inventory, and customer experience</p></li>
+<li class="fragment"><p>In 1992, launched the first commercial data warehouse to exceed <strong>1 TB</strong><br>
+</p></li>
+<li class="fragment"><p>In 2025, processes data at a rate of <strong>2.5 petabytes per hour</strong></p></li>
+</ul>
+</div>
+</div>
+<!-- ## Data Warehouse Example — WHOOP -->
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="50%"} -->
+<!-- <div style="text-align: center;"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/whoop.png" style="width: 100%;"> -->
+<!-- </div> -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- - Wearable fitness device collecting **biometric data** 100× per second   -->
+<!-- - Data warehouse stores sensor data for **performance analytics**   -->
+<!-- - Provides insights on **strain, recovery, and sleep**   -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- ## Data Warehouse Example — American Airlines -->
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="50%"} -->
+<!-- <div style="text-align: center;"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/aa.jpeg" style="width: 100%;"> -->
+<!-- </div> -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- - Flight attendants use data to **personalize service**   -->
+<!-- - Can offer compensation (miles/vouchers) based on **real-time customer history**   -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- ## Data Quality Challenges -->
+<!-- - **Inconsistencies:** Duplicate, missing, or misformatted data   -->
+<!-- - **Dirty Data:** Inaccurate, incomplete, or outdated records   -->
+<!-- - **Impact:** “Garbage in, garbage out” — poor data → misleading analysis   -->
+<!-- - **Solution:**   -->
+<!--   - Enforce **data governance**   -->
+<!--   - Use robust **ETL validation and cleaning pipelines** -->
+<!-- ## Data Lakes -->
+<!-- - **Definition:** Centralized storage for **all raw data** — structured, semi-structured, or unstructured.   -->
+<!-- - **Purpose:** Retains flexibility for future analytics.   -->
+<!-- - **Characteristics:** -->
+<!--   - **Schema-on-read:** Data formatted when accessed   -->
+<!--   - **Highly scalable:** Stores massive heterogeneous datasets   -->
+<!--   - **Supports advanced analytics:** Machine learning, IoT data, etc. -->
+<!-- :::callout-note -->
+<!-- - **Internet of Things (IoT)** refers to **physical devices** — such as smartwatches, vehicles, appliances, and industrial machines — that are **connected to the internet** and can **collect, send, and receive data**.  -->
+<!-- ::: -->
+<!-- ## Understanding Schema-on-Read -->
+<!-- - **Definition:** Data is stored in its **raw, native format**, without enforcing a fixed structure on entry.   -->
+<!--   - The **schema** is applied **only when the data is read or queried**.   -->
+<!-- - **Advantages:** -->
+<!--   - Flexible for exploratory analytics and unstructured data   -->
+<!--   - Supports **machine learning**, **text**, **video**, **IoT**, and **sensor streams**   -->
+<!--   - Enables faster data ingestion since no preprocessing is required   -->
+<!-- - **Example:**   -->
+<!--   - Store all customer interaction logs in one lake   -->
+<!--   - Analysts later extract fields like `user_id` or `timestamp` as needed   -->
+<!-- :::callout-note -->
+<!-- - 💡 *Think of it as “store first, organize later.”* -->
+<!-- ::: -->
+<!-- ## Data Lakes vs. Data Warehouses -->
+<!-- <div style="display:block; margin:50px;"></div> -->
+<!-- <div style="font-size:2rem; max-width:900px; margin:0.5rem auto;"> -->
+<!-- | **Feature** | **Data Lake** | **Data Warehouse** | -->
+<!-- |--------------|---------------|--------------------| -->
+<!-- | <span class="fragment">**Data Processing**</span> | <span class="fragment">Schema-on-read (process later)</span> | <span class="fragment">Schema-on-write (process first)</span> | -->
+<!-- | <span class="fragment">**Data State**</span> | <span class="fragment">Raw, unprocessed</span> | <span class="fragment">Cleaned, curated</span> | -->
+<!-- | <span class="fragment">**Data Types**</span> | <span class="fragment">All (structured + unstructured)</span> | <span class="fragment">Mostly structured</span> | -->
+<!-- | <span class="fragment">**Flexibility**</span> | <span class="fragment">High</span> | <span class="fragment">Moderate</span> | -->
+<!-- </div> -->
+<!-- ## Case Study — Bechtel Corporation -->
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="45%"} -->
+<!-- <div style="text-align: center;"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/bechtel.jpeg" style="width: 100%;"> -->
+<!-- </div> -->
+<!-- ::: -->
+<!-- ::: {.column width="55%"} -->
+<!-- - **Industry:** Global engineering & construction   -->
+<!-- - **Implementation:** 5-petabyte data lake consolidating decades of project data   -->
+<!-- - **Benefits:** -->
+<!--   - **Historical insight** across hundreds of projects   -->
+<!--   - **Improved forecasting** of project outcomes   -->
+<!--   - **Cost reduction** via inefficiency detection   -->
+<!--   - **Competitive advantage** in bidding and delivery   -->
+<!-- ::: -->
+<!-- :::: -->
+
+<div class="footer footer-default">
+
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+    document.addEventListener('wheel', function(event) {
+        if (event.deltaY > 0) {
+            Reveal.next(); // Scroll down to go to the next slide
+        } else {
+            Reveal.prev(); // Scroll up to go to the previous slide
+        }
+    }, false);
+
+    window.onload = function() {
+        document.querySelectorAll('a').forEach(function(link) {
+            link.setAttribute('target', '_blank');
+        });
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Query all anchor tags within code blocks (adjust the selector as needed)
+      document.querySelectorAll('pre code a').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent the default anchor action
+          e.stopPropagation(); // Stop the event from bubbling up
+        });
+      });
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Target all span elements within code blocks that have IDs starting with 'cb'
+        document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
+            element.addEventListener('mouseenter', function() {
+                // Apply yellow background color to the hovered span element
+                this.style.backgroundColor = '#FFFF99';
+            });
+            element.addEventListener('mouseleave', function() {
+                // Revert the background color when the mouse leaves the span element
+                this.style.backgroundColor = '';
+            });
+        });
+    });
+
+
+
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+          let selectedAnnoteEl;
+          const selectorForAnnotation = ( cell, annotation) => {
+            let cellAttr = 'data-code-cell="' + cell + '"';
+            let lineAttr = 'data-code-annotation="' +  annotation + '"';
+            const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+            return selector;
+          }
+          const selectCodeLines = (annoteEl) => {
+            const doc = window.document;
+            const targetCell = annoteEl.getAttribute("data-target-cell");
+            const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+            const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+            const lineIds = lines.map((line) => {
+              return targetCell + "-" + line;
+            })
+            let top = null;
+            let height = null;
+            let parent = null;
+            if (lineIds.length > 0) {
+                //compute the position of the single el (top and bottom and make a div)
+                const el = window.document.getElementById(lineIds[0]);
+                top = el.offsetTop;
+                height = el.offsetHeight;
+                parent = el.parentElement.parentElement;
+              if (lineIds.length > 1) {
+                const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+                const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+                height = bottom - top;
+              }
+              if (top !== null && height !== null && parent !== null) {
+                // cook up a div (if necessary) and position it 
+                let div = window.document.getElementById("code-annotation-line-highlight");
+                if (div === null) {
+                  div = window.document.createElement("div");
+                  div.setAttribute("id", "code-annotation-line-highlight");
+                  div.style.position = 'absolute';
+                  parent.appendChild(div);
+                }
+                div.style.top = top - 2 + "px";
+                div.style.height = height + 4 + "px";
+                let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+                if (gutterDiv === null) {
+                  gutterDiv = window.document.createElement("div");
+                  gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                  gutterDiv.style.position = 'absolute';
+                  const codeCell = window.document.getElementById(targetCell);
+                  const gutter = codeCell.querySelector('.code-annotation-gutter');
+                  gutter.appendChild(gutterDiv);
+                }
+                gutterDiv.style.top = top - 2 + "px";
+                gutterDiv.style.height = height + 4 + "px";
+              }
+              selectedAnnoteEl = annoteEl;
+            }
+          };
+          const unselectCodeLines = () => {
+            const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+            elementsIds.forEach((elId) => {
+              const div = window.document.getElementById(elId);
+              if (div) {
+                div.remove();
+              }
+            });
+            selectedAnnoteEl = undefined;
+          };
+          // Handle positioning of the toggle
+          window.addEventListener(
+          "resize",
+          throttle(() => {
+            elRect = undefined;
+            if (selectedAnnoteEl) {
+              selectCodeLines(selectedAnnoteEl);
+            }
+          }, 10)
+          );
+          function throttle(fn, ms) {
+          let throttle = false;
+          let timer;
+            return (...args) => {
+              if(!throttle) { // first call gets through
+                  fn.apply(this, args);
+                  throttle = true;
+              } else { // all the others get throttled
+                  if(timer) clearTimeout(timer); // cancel #2
+                  timer = setTimeout(() => {
+                    fn.apply(this, args);
+                    timer = throttle = false;
+                  }, ms);
+              }
+            };
+          }
+          const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+          for (let i=0; i<annoteTargets.length; i++) {
+            const annoteTarget = annoteTargets[i];
+            const targetCell = annoteTarget.getAttribute("data-target-cell");
+            const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+            const contentFn = () => {
+              const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+              if (content) {
+                const tipContent = content.cloneNode(true);
+                tipContent.classList.add("code-annotation-tip-content");
+                return tipContent.outerHTML;
+              }
+            }
+            const config = {
+              allowHTML: true,
+              content: contentFn,
+              onShow: (instance) => {
+                selectCodeLines(instance.reference);
+                instance.reference.classList.add('code-annotation-active');
+                window.tippy.hideAll();
+              },
+              onHide: (instance) => {
+                unselectCodeLines();
+                instance.reference.classList.remove('code-annotation-active');
+              },
+              maxWidth: 300,
+              delay: [50, 0],
+              duration: [200, 0],
+              offset: [5, 10],
+              arrow: true,
+              appendTo: function(el) {
+                return el.parentElement.parentElement.parentElement;
+              },
+              interactive: true,
+              interactiveBorder: 10,
+              theme: 'light-border',
+              placement: 'right',
+              popperOptions: {
+                modifiers: [
+                {
+                  name: 'flip',
+                  options: {
+                    flipVariations: false, // true by default
+                    allowedAutoPlacements: ['right'],
+                    fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+                  },
+                },
+                {
+                  name: 'preventOverflow',
+                  options: {
+                    mainAxis: false,
+                    altAxis: false
+                  }
+                }
+                ]        
+              }      
+            };
+            window.tippy(annoteTarget, config); 
+          }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

@@ -1,0 +1,60 @@
+---
+title: Week 7
+subtitle: Midterm Exam I
+date: 2025-10-06
+from: markdown+emoji
+---
+In **Week 7**, we’ll have **Midterm Exam I**.  
+
+## Midterm Exam I
+
+### Format
+
+- Closed-book, paper-based exam  
+- Please bring a pencil  
+
+
+### Reference Sheet Guidelines
+
+- You may bring **one handwritten reference sheet** (8.5 × 11 inches) on notebook or printer paper  
+- **Both sides** may be used (two pages total)  
+- Sheets must be **submitted along with your exam**  
+
+
+### Question Types
+
+The exam format will be similar to **Homework Assignments 1 and 2**:
+
+- True/False  
+- Multiple Choice  
+- Fill-in-the-Blanks  
+- Short Answer  
+- Short Essay  
+
+
+### Structure
+
+- Approximately **50% coding questions** (50 points)
+- Approximately **50% discussion-based (non-coding) questions** (50 points)
+
+
+### Midterm Exam I (Fall 2024)
+To get a sense of the exam style and format, you can review last year’s version below:
+
+- **Midterm Exam I (Fall 2024)**  
+  [View Exam](../danl-ex/danl-101-exam-1-fall-2024.html){target="_blank"}  
+
+
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 7 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 7.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 7 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

@@ -1,5 +1,6 @@
 ---
 title: '<font style="font-family:Optima"><b>DANL 101 - Lecture</b></font>'
+date: ""
 date-modified: ""
 listing:
   contents: "danl-lec/*.qmd"

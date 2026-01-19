@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="bulma.css"
+    />
+  </head>
+  
+  <form id="form" class="container m-2 pl-2" action="submit.php" method="POST">
+    <br>
+  <div style="display:block; margin:-50px;"></div>
+    <section>
+      <div>
+        <h1 style="color: #1c4982; font-size: 30px; font-style: bold">Name, Email, and Session</h1>
+      </div>
+    </section>
+    <div style="display:block; margin:-50px;"></div>
+    <br><br><div class="field">
+      <label class="label">What is your DANL 101 session schedule?</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="session" value="MWF 9:30am-10:20am" /> MWF 9:30am-10:20am
+        </label>
+        <label class="radio">
+          <input type="radio" name="session" value="MW 2:00pm-3:15pm" /> MW 2:00pm-3:15pm
+        </label>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="field">
+      <label class="label">What is your first name?</label>
+      <div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provide your answer here"
+          name="first-name"
+          rows="2"
+          required
+        ></textarea>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">What is your last name?</label>
+      <div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provide your answer here"
+          name="last-name"
+          rows="2"
+          required
+        ></textarea>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">Please enter your Geneseo email address without @geneseo.edu. For example, if your full Geneseo email address is abcd234@geneseo.edu, you should enter only abcd234. If you do not have a Geneseo email, please provide your full email address (e.g., abcd@gmail.com).</label>
+      <div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provide your answer here"
+          name="email"
+          rows="2"
+        ></textarea>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">Please enter your GitHub username if you have commented on any Classwork webpages.</label>
+      <div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provide your answer here"
+          name="github"
+          rows="2"
+        ></textarea>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">How many times have you submitted this assignment so far?</label>
+      <div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provide your answer here"
+          name="nth"
+          rows="2"
+        ></textarea>
+      </div>
+    </div>
+
+    <br><br>
+    
+    <section>
+      <div>
+        <h1 style="color: #1c4982; font-size: 30px; font-style: bold">Multiple Choice & Short-Answer Questions</h1>
+      </div>
+    </section>
+    
+    <div style="display:block; margin:-50px;"></div>
+    <!-- True/False Questions -->
+    <br><br><div class="field">
+      <label class="label">1. Data warehouses use a schema-based approach, meaning data is processed before storage. (True/False)</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="q1" value="True" required /> True
+        </label>
+        <label class="radio">
+          <input type="radio" name="q1" value="False" /> False
+        </label>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">2. The narrative in data storytelling bridges the gap between data and insights. (True/False)</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="q2" value="True" required /> True
+        </label>
+        <label class="radio">
+          <input type="radio" name="q2" value="False" /> False
+        </label>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">3. Clutter in data visualization refers to visual elements that occupy space but do not improve understanding. (True/False)</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="q3" value="True" required /> True
+        </label>
+        <label class="radio">
+          <input type="radio" name="q3" value="False" /> False
+        </label>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">4. Proficiency in one programming language can facilitate learning others. (True/False)</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="q4" value="True" required /> True
+        </label>
+        <label class="radio">
+          <input type="radio" name="q4" value="False" /> False
+        </label>
+      </div>
+    </div>
+
+    <!-- Multiple Choice Questions -->
+    <br><br><div class="field">
+      <label class="label">5. In Data Storytelling, the “Big Idea” must meet which of the following criteria? (Please refer to the <a href="https://bcdanl.github.io/danl-wk/wk-11.html#data-storytelling" target="_blank"> Data Storytelling section on the Week 11 page</a>.)</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="q5" value="a" required /> Articulate your unique point of view
+        </label>
+        <label class="radio">
+          <input type="radio" name="q5" value="b" /> Be a question
+        </label>
+        <label class="radio">
+          <input type="radio" name="q5" value="c" /> Be a complete sentence
+        </label>
+        <label class="radio">
+          <input type="radio" name="q5" value="d" /> Both a and c
+        </label>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">6. Which of the following graphs is most appropriate for visualizing the distribution of a numerical variable?
+</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="q6" value="a" required /> Bar Chart
+        </label>
+        <label class="radio">
+          <input type="radio" name="q6" value="b" /> Histogram
+        </label>
+        <label class="radio">
+          <input type="radio" name="q6" value="c" /> Pie Chart
+        </label>
+        <label class="radio">
+          <input type="radio" name="q6" value="d" /> Scatterplot
+        </label>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">7. Which of the following is a measure of the asymmetry of a distribution in a histogram?</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="q7" value="a" required /> Skewness
+        </label>
+        <label class="radio">
+          <input type="radio" name="q7" value="b" /> Average
+        </label>
+        <label class="radio">
+          <input type="radio" name="q7" value="c" /> Variance
+        </label>
+        <label class="radio">
+          <input type="radio" name="q7" value="d" /> Standard Deviation
+        </label>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">8. Which of the following is a reason to use a logarithmic scale when plotting data?</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="q8" value="a" required /> When data is symmetrically distributed in a bell-shaped pattern
+        </label>
+        <label class="radio">
+          <input type="radio" name="q8" value="b" /> When the variable is categorical
+        </label>
+        <label class="radio">
+          <input type="radio" name="q8" value="c" /> When the variable has a wide range of skewed data
+        </label>
+        <label class="radio">
+          <input type="radio" name="q8" value="d" /> To increase the size of small values
+        </label>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">9. Which of the following is important for data storytelling? (Please refer to the<a href="https://bcdanl.github.io/danl-wk/wk-11.html#data-storytelling" target="_blank"> Data Storytelling section on the Week 11 page</a>.)</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="q9" value="a" required /> Presenting the maximum amount of available data
+        </label>
+        <label class="radio">
+          <input type="radio" name="q9" value="b" /> Understanding your audience’s needs
+        </label>
+        <label class="radio">
+          <input type="radio" name="q9" value="c" /> Employing highly technical language throughout
+        </label>
+        <label class="radio">
+          <input type="radio" name="q9" value="d" /> Concentrating only on the visual appeal of data representations
+        </label>
+      </div>
+    </div>
+
+    <br><br><div class="field">
+      <label class="label">10. What is overplotting in the context of scatterplots?</label>
+      <div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provide your answer here"
+          name="q10"
+          rows="2"
+          required
+        ></textarea>
+      </div>
+    </div>
+
+
+<br><br>
+<section id="data-transformation-and-visualization-with-r-tidyverse" class="level1">
+<h1>Data Transformation and Visualization with R <code>tidyverse</code></h1>
+<p>The followings are the R packages for this homework assignment:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="questions-11-18" class="level2">
+<h2 class="anchored" data-anchor-id="questions-11-18">Questions 11-18</h2>
+<p>Consider the following <code>oj</code> data.frame for Questions 11-18:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>oj <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://bcdanl.github.io/data/dominick_oj_na.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="question-11" class="level3">
+<h3 class="anchored" data-anchor-id="question-11">Question 11</h3>
+<p>How can you filter the data.frame <code>oj</code> to calculate descriptive statistics (mean and standard deviation) of <code>sales</code> and <code>price</code> for <strong>tropicana</strong>, <strong>minute.maid</strong>, and <strong>dominicks</strong>, respectively?</p>
+<p>Complete the code by filling in the blanks.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>oj_tr <span class="ot">&lt;-</span> oj <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(__BLANK__ <span class="st">"tropicana"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>oj_mm <span class="ot">&lt;-</span> oj <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(__BLANK__ <span class="st">"minute.maid"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>oj_do <span class="ot">&lt;-</span> oj <span class="sc">|&gt;</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(__BLANK__ <span class="st">"dominicks"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>oj_tr_sum <span class="ot">&lt;-</span> <span class="fu">skim</span>(oj_tr)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>oj_mm_sum <span class="ot">&lt;-</span> <span class="fu">skim</span>(oj_mm)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>oj_do_sum <span class="ot">&lt;-</span> <span class="fu">skim</span>(oj_do)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+</section>
+<div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provide your answer here"
+          name="q11"
+          rows="2"
+          required
+        ></textarea>
+      </div>
+<br>
+<section id="question-12" class="level3">
+<h3 class="anchored" data-anchor-id="question-12">Question 12</h3>
+<p>Using the <code>oj</code> data.frame, how would you create a new data.frame, <code>oj_no_NA</code>, in which there is no missing value in <code>price</code> and <code>sales</code>?</p>
+<p>Complete the code by filling in the blanks.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>oj_no_NA <span class="ot">&lt;-</span> oj <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(__BLANK__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+</section>
+<div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provide your answer here"
+          name="q12"
+          rows="2"
+          required
+        ></textarea>
+      </div>
+<br>
+<section id="question-13" class="level3">
+<h3 class="anchored" data-anchor-id="question-13">Question 13</h3>
+<p>How would you describe how the distribution of <code>price</code> varies by <code>brand</code>?</p>
+<p>Complete the code by filling in the blanks.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> __BLANK 1__, </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> __BLANK 2__,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                     __BLANK 3__)) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  __BLANK 4<span class="fu">__</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>,  <span class="co"># `show.legend = FALSE` turns off legend</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>              __BLANK 5<span class="at">__ =</span> <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(__BLANK 6__, </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>             __BLANK 7<span class="at">__ =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="danl-101-hw-03_files/figure-html/q13-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+<p><br></p>
+</section>
+<div class="control" style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <div style="flex: 1; min-width: 200px;">
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 1"
+      name="q13-1"
+      rows="2"
+      style="width: 100%;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 2"
+      name="q13-2"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 3"
+      name="q13-3"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 4"
+      name="q13-4"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+  </div>
+
+  <div style="flex: 1; min-width: 200px;">
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 5"
+      name="q13-5"
+      rows="2"
+      style="width: 100%;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 6"
+      name="q13-6"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 7"
+      name="q13-7"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+  </div>
+</div>
+<br>
+<section id="question-14" class="level3">
+<h3 class="anchored" data-anchor-id="question-14">Question 14</h3>
+<p>Provide a comment to describe how the distribution of <code>price</code> varies by <code>brand</code>. (Please be specific.)</p>
+<p><br></p>
+</section>
+<div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provide your answer here"
+          name="q14"
+          required
+        ></textarea>
+      </div>
+<br>
+<section id="question-15" class="level3">
+<h3 class="anchored" data-anchor-id="question-15">Question 15</h3>
+<p>How would you describe how the relationship between (1) the base-10 log of <code>sales</code> and (2) the base-10 log of <code>price</code> varies by <code>brand</code>?</p>
+<p>Complete the code by filling in the blanks.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> __BLANK 1__, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> __BLANK 2__,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> __BLANK 3__,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                     __BLANK 4<span class="at">__ =</span> brand,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                     __BLANK 5<span class="at">__ =</span> brand)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(__BLANK 6<span class="at">__ =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(__BLANK 7__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="danl-101-hw-03_files/figure-html/q15-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+<p><br></p>
+</section>
+<div class="control" style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <div style="flex: 1; min-width: 200px;">
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 1"
+      name="q15-1"
+      rows="2"
+      style="width: 100%;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 2"
+      name="q15-2"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 3"
+      name="q15-3"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 4"
+      name="q15-4"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+  </div>
+
+  <div style="flex: 1; min-width: 200px;">
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 5"
+      name="q15-5"
+      rows="2"
+      style="width: 100%;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 6"
+      name="q15-6"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 7"
+      name="q15-7"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+  </div>
+</div>
+<br>
+<section id="question-16" class="level3">
+<h3 class="anchored" data-anchor-id="question-16">Question 16</h3>
+<ul>
+<p>Provide a comment to describe how the relationship between (1) the base-10 log of <code>sales</code> and (2) the base-10 log of <code>price</code> varies by <code>brand</code>? (Please be specific.)</p>
+</ul>
+<p><br></p>
+</section>
+<div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provideq your answer here"
+          name="q16"
+          required
+        ></textarea>
+      </div>
+<br>
+<section id="question-17" class="level3">
+<h3 class="anchored" data-anchor-id="question-17">Question 17</h3>
+<p>How would you visualize how the relationship between (1) the base-10 log of <code>sales</code> and (2) the base-10 log of <code>price</code> varies by <code>brand</code> and <code>ad_status</code>?</p>
+<p>Complete the code by filling in the blanks (BLANKS 1-7 are the same as the ones in <strong>Question 13</strong>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> __BLANK 1__, </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> __BLANK 2__,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> __BLANK 3__,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                     __BLANK 4<span class="at">__ =</span> brand,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                     __BLANK 5<span class="at">__ =</span> brand)) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(__BLANK 6<span class="at">__ =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(__BLANK 7__) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(__BLANK 8__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="danl-101-hw-03_files/figure-html/q14-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+<p><br></p>
+</section>
+<div class="control" style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <div style="flex: 1; min-width: 200px;">
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 1"
+      name="q17-1"
+      rows="2"
+      style="width: 100%;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 2"
+      name="q17-2"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 3"
+      name="q17-3"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 4"
+      name="q17-4"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+  </div>
+
+  <div style="flex: 1; min-width: 200px;">
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 5"
+      name="q17-5"
+      rows="2"
+      style="width: 100%;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 6"
+      name="q17-6"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 7"
+      name="q17-7"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 8"
+      name="q17-8"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+  </div>
+</div>
+<br>
+<section id="question-18" class="level3">
+<h3 class="anchored" data-anchor-id="question-18">Question 18</h3>
+<p>Provide a comment to describe how the relationship between (1) the base-10 log of <code>sales</code> and (2) the base-10 log of <code>price</code> varies by <code>brand</code> and <code>ad_status</code>.  (Please be specific.)</p>
+<p><br></p>
+</section>
+<div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provide your answer here"
+          name="q18"
+          required
+        ></textarea>
+      </div>
+</section>
+<br>
+<section id="questions-19-20" class="level2">
+<h2 class="anchored" data-anchor-id="questions-19-20">Questions 19-20</h2>
+<p>Consider the following <code>mlb_bat</code> data.frame for Questions 19-20:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mlb_bat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://bcdanl.github.io/data/MLB_batting.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="question-19" class="level3">
+<h3 class="anchored" data-anchor-id="question-19">Question 19</h3>
+<p>How would you describe the yearly trends in hit percentages for each <code>hit_type</code> (e.g., <strong>Single</strong>, <strong>Double</strong>, <strong>Triple</strong>, and <strong>HomeRun</strong>)?</p>
+<p>Complete the code by filling in the blanks.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> __BLANK 1__, </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> __BLANK 2__, </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> __BLANK 3__, </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> __BLANK 4__,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill =</span> __BLANK 5__)) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  __BLANK 6<span class="fu">__</span>() <span class="sc">+</span> </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  __BLANK 7<span class="fu">__</span>() <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  __BLANK 8<span class="fu">__</span>() <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Hits by Type in Major League Baseball"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Major League Baseball Season"</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percentage"</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Hit"</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Hit"</span>)  <span class="co"># labs() allows for </span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                       <span class="co"># labeling x, y, color, fill, title, etc.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="danl-101-hw-03_files/figure-html/q19-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+<p><br></p>
+</section>
+<div class="control" style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <div style="flex: 1; min-width: 200px;">
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 1"
+      name="q19-1"
+      rows="2"
+      style="width: 100%;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 2"
+      name="q19-2"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 3"
+      name="q19-3"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 4"
+      name="q19-4"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+  </div>
+
+  <div style="flex: 1; min-width: 200px;">
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 5"
+      name="q19-5"
+      rows="2"
+      style="width: 100%;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 6"
+      name="q19-6"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 7"
+      name="q19-7"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+    <textarea
+      class="textarea"
+      placeholder="Provide your answer for BLANK 8"
+      name="q19-8"
+      rows="2"
+      style="width: 100%; margin-top: 10px;"
+      required
+    ></textarea>
+  </div>
+</div>
+<br>
+<section id="question-20" class="level3">
+<h3 class="anchored" data-anchor-id="question-20">Question 20</h3>
+<p>Write a comment explaining how you would describe the yearly trends in hit percentages for each <code>hit_type</code> (e.g., <strong>Single</strong>, <strong>Double</strong>, <strong>Triple</strong>, and <strong>HomeRun</strong>).</p>
+</section>
+<div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Provide your answer here"
+          name="q20"
+          required
+        ></textarea>
+      </div>
+</section>
+</section>
+     <br><br>
+    
+      <div class="field">
+        <div class="control">
+          <button type="button" class="button is-link is-light" id="print-btn">
+            Print to PDF (answers included)
+          </button>
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary" type="submit" id="submit-button">
+            Submit
+          </button>
+        </div>
+        <div class="control">
+          <button class="button is-danger">Cancel</button>
+        </div>
+      </div>
+      
+    </form>
+    
+    <!-- Printable snapshot container (created if missing) -->
+    <div id="print-view" aria-hidden="true" style="display:none;"></div>
+
+    <div
+      id="message"
+      style="
+        display: none;
+        margin: 18px;
+        font-weight: bold;
+        color: green;
+        padding: 8px;
+        background-color: beige;
+        border-radius: 4px;
+        border-color: aquamarine;
+      "
+    ></div>
+    
+<script>
+(function () {
+  const esc = s => String(s ?? '')
+    .replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+  function ensurePrintView() {
+    let pv = document.getElementById('print-view');
+    if (!pv) {
+      pv = document.createElement('div');
+      pv.id = 'print-view';
+      pv.setAttribute('aria-hidden','true');
+      pv.style.display = 'none';
+      document.body.appendChild(pv);
+    }
+    return pv;
+  }
+
+  function firstInt(str){ const m=String(str||'').match(/(\d{1,3})/); return m?+m[1]:null; }
+
+  function getAnswerControls(root){
+    return root.querySelectorAll("textarea[name], input[name]");
+  }
+
+  function qnumFromAnswers(root){
+    const ctrls = getAnswerControls(root);
+    let best = null;
+    ctrls.forEach(el=>{
+      const nm = el.getAttribute('name')||'';
+      const m = nm.match(/(?:^|[^a-zA-Z])q(\d{1,3})(?:[\W_]|$)/i);
+      if(m){ const n=+m[1]; best = (best==null)?n:Math.max(best,n); }
+    });
+    return best;
+  }
+
+  function computeH3Number(h3){
+    // explicit "Question 17"
+    const t=(h3.innerText||'').trim();
+    let m=t.match(/\bQuestion\s+(\d{1,3})\b/i);
+    if(m) return +m[1];
+    // section number span
+    const span=h3.querySelector('.header-section-number,.quarto-section-number,.section-number');
+    if(span && /\d+/.test(span.textContent)){
+      const nums=span.textContent.match(/\d+/g); if(nums) return +nums[nums.length-1];
+    }
+    // id like question-17
+    const idLike=h3.id||h3.getAttribute('data-anchor-id')||'';
+    const idNum=firstInt(idLike); if(idNum!=null) return idNum;
+    return null;
+  }
+
+  function sectionRangeStart(h3){
+    let section=h3.closest('section');
+    let h2=section?.querySelector(':scope > h2') || section?.closest('section')?.querySelector(':scope > h2');
+    if(!h2){
+      let p=section?.previousElementSibling;
+      while(p){ if((p.tagName||'').toLowerCase()==='h2'){ h2=p; break; } p=p.previousElementSibling; }
+    }
+    if(!h2) return null;
+    return firstInt(h2.textContent||h2.innerText);
+  }
+
+  function isAnswerBlock(el){
+    if(!el || !el.classList) return false;
+    if(!(el.classList.contains('field') || el.classList.contains('control'))) return false;
+    return !!el.querySelector("textarea, input");
+  }
+
+  function renderChoicesList(container){
+    const radioLabels = container.querySelectorAll('label.radio');
+    if(!radioLabels.length) return '';
+    let html = '<ul class="choices" style="margin:.35rem 0 .5rem; padding-left:1.1rem">';
+    radioLabels.forEach(lbl=>{
+      const input=lbl.querySelector("input[type='radio']");
+      const option=(lbl.textContent||'').trim();
+      html += `<li style="margin:.15rem 0; list-style:disc;">${input&&input.checked?'<strong>✓ '+esc(option)+'</strong>':esc(option)}</li>`;
+    });
+    html+='</ul>';
+    return html;
+  }
+
+  function collectAnswers(container){
+    const answers=[];
+    const radios=container.querySelectorAll("input[type='radio']");
+    if(radios.length){
+      const groups={};
+      radios.forEach(r=>{(groups[r.name] ||= []).push(r);});
+      Object.keys(groups).forEach(name=>{
+        const chosen=groups[name].find(r=>r.checked);
+        if(chosen) answers.push({label:'Selected option', value: chosen.value});
+      });
+    }
+    const checks=container.querySelectorAll("input[type='checkbox']");
+    if(checks.length){
+      const picked=Array.from(checks).filter(c=>c.checked).map(c=>c.value);
+      if(picked.length) answers.push({label:'Checked', value:picked.join(', ')});
+    }
+    const textareas=container.querySelectorAll('textarea[name]');
+    textareas.forEach((ta,i)=>answers.push({label:textareas.length>1?`Answer ${i+1}`:'Answer', value:(ta.value||'').trim()}));
+    const inputs=container.querySelectorAll("input[type='text'][name],input[type='number'][name],input[type='email'][name],input[type='url'][name]");
+    inputs.forEach(inp=>answers.push({label:inp.name?`Answer (${inp.name})`:'Answer', value:(inp.value||'').trim()}));
+    return answers;
+  }
+
+  function collectCodeAndPlotHTML(container, seen){
+    const bits=[]; const add=node=>{ if(!node||seen.has(node)) return; seen.add(node); bits.push(node.outerHTML); };
+    add(container.querySelector('.sourceCode'));
+    add(container.querySelector('.cell-output-display'));
+    let p=container.previousElementSibling, hops=0;
+    while(p && hops<3){ add(p.querySelector&&p.querySelector('.sourceCode')); add(p.querySelector&&p.querySelector('.cell-output-display')); p=p.previousElementSibling; hops++; }
+    p=container.nextElementSibling; hops=0;
+    while(p && hops<2){ add(p.querySelector&&p.querySelector('.cell-output-display')); add(p.querySelector&&p.querySelector('.sourceCode')); p=p.nextElementSibling; hops++; }
+    return bits.map(h=>`<div style="margin:.5rem 0">${h}</div>`).join('');
+  }
+
+  function buildPrintHTML(){
+    const form=document.getElementById('form');
+    if(!form) return '<p>Form not found.</p>';
+
+    // 1) Build groups by walking the entire form tree
+    const tw=document.createTreeWalker(form, NodeFilter.SHOW_ELEMENT, null);
+    const groups=[];
+    let current=null;
+
+    function startGroup(h3){
+      if(current) groups.push(current);
+      current = { h3, blocks: [] };
+    }
+
+    while(tw.nextNode()){
+      const el=tw.currentNode;
+      const tag=(el.tagName||'').toLowerCase();
+
+      if(tag==='h3'){ startGroup(el); continue; }
+
+      if(isAnswerBlock(el)){
+        if(!current){
+          // pre-first h3: treat each as its own group
+          groups.push({ h3:null, blocks:[el] });
+        }else{
+          current.blocks.push(el);
+        }
+      }
+    }
+    if(current) groups.push(current);
+
+    // 2) Render groups with robust numbering
+    let rolling=null;
+    const when=new Date().toLocaleString();
+    let html = `
+      <section style="margin-bottom:1rem">
+        <h1 style="color:#1c4982; font-size:28px; margin:0 0 .25rem 0">DANL 101 – Submission Snapshot</h1>
+        <div style="font-size:14px"><strong>Generated:</strong> ${esc(when)}</div>
+      </section>
+    `;
+
+    const seenOutputs=new WeakSet();
+
+    function titleFor(g){
+      // Pre-h3 group
+      if(!g.h3){
+        const b=g.blocks[0];
+        const lbl=b.querySelector('label.label');
+        if(lbl && lbl.textContent.trim()) return lbl.textContent.trim();
+        const qn=qnumFromAnswers(b);
+        if(qn!=null) return `Question ${qn}`;
+        rolling=(rolling??0)+1; return `Question ${rolling}`;
+      }
+      // h3-led group
+      let qn=computeH3Number(g.h3);
+      if(qn==null){
+        let best=null;
+        g.blocks.forEach(b=>{ const n=qnumFromAnswers(b); if(n!=null) best=(best==null)?n:Math.max(best,n); });
+        if(best!=null) qn=best;
+      }
+      if(qn==null){
+        const start=sectionRangeStart(g.h3);
+        if(start!=null){
+          const sec=g.h3.closest('section');
+          const h3s=Array.from(sec.querySelectorAll(':scope > h3, :scope > h3.anchored'));
+          const idx=h3s.indexOf(g.h3);
+          if(idx>=0) qn=start+idx;
+        }
+      }
+      if(qn==null){ rolling=(rolling??0)+1; qn=rolling; }
+      return `Question ${qn}`;
+    }
+
+    groups.forEach(g=>{
+      const title=titleFor(g);
+      html += `
+        <div class="qa-group" style="margin:0 0 1.25rem; padding:1rem; border:1px solid #bbb; border-radius:10px">
+          <div class="q" style="font-weight:700; font-size:1.05rem; margin-bottom:.5rem">${esc(title)}</div>
+      `;
+      const blocks = g.blocks.length ? g.blocks : [];
+      blocks.forEach(block=>{
+        const answers=collectAnswers(block);
+        const choices=renderChoicesList(block);
+        const codePlot=collectCodeAndPlotHTML(block, seenOutputs);
+        const answersHTML = answers.length
+          ? '<div class="a" style="white-space:normal">'+
+            answers.map(a=>`<div><em>${esc(a.label)}:</em> ${a.value?esc(a.value).replace(/\n/g,'<br>'):'<em>— no answer —</em>'}</div>`).join('')+
+            '</div>'
+          : '<div class="a"><em>— no answer —</em></div>';
+        html += `
+          <div class="qa-item" style="margin:.75rem 0; padding:.5rem .5rem .75rem; border:1px dashed #ddd; border-radius:8px">
+            ${codePlot}
+            ${choices}
+            ${answersHTML}
+          </div>
+        `;
+      });
+      html += `</div>`;
+    });
+
+    return html;
+  }
+
+  function openPrintSnapshot(){
+    const pv=ensurePrintView();
+    pv.innerHTML = buildPrintHTML();
+    document.body.classList.add('printing');
+    window.print();
+    setTimeout(()=>document.body.classList.remove('printing'),0);
+  }
+
+  function bindPrint(){
+    const btn=document.getElementById('print-btn');
+    if(!btn) return;
+    btn.replaceWith(btn.cloneNode(true));
+    const fresh=document.getElementById('print-btn');
+    fresh.addEventListener('click', openPrintSnapshot, {capture:false});
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', bindPrint);
+  }else{
+    bindPrint();
+  }
+})();
+</script>
+
+<script>
+    const form = document.getElementById('form');
+    const messageElement = document.getElementById('message');
+    const submitButton = document.getElementById('submit-button');
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        messageElement.textContent = "Submitting..";
+        messageElement.style.display = "block";
+        submitButton.disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+            keyValuePairs.push(pair[0] + "=" + encodeURIComponent(pair[1]));
+        }
+
+        var formDataString = keyValuePairs.join("&");
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+            "https://script.google.com/macros/s/AKfycbz_ZCPCpvZY-0K-2ODPQ7p2XWvmN7pZ811SNW1FiCjWXf1GxVbqQQHFusc7iOuAUvQE/exec",
+            {
+                redirect: "follow",
+                method: "POST",
+                body: formDataString,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+                },
+            }
+        )
+        .then(function (response) {
+            // Check if the request was successful
+            if (response.ok) {
+                return response.json(); // Assuming your script returns JSON response
+            } else {
+                throw new Error("Failed to submit the form.");
+            }
+        })
+        .then(function (data) {
+            // Display a success message
+            messageElement.textContent = "Data submitted successfully!";
+            messageElement.style.display = "block";
+            messageElement.style.backgroundColor = "green";
+            messageElement.style.color = "beige";
+            submitButton.disabled = false;
+            form.reset();
+
+            setTimeout(function () {
+                messageElement.textContent = "";
+                messageElement.style.display = "none";
+            }, 2600);
+        })
+        .catch(function (error) {
+            // Handle errors, display an error message
+            console.error(error);
+            messageElement.textContent = "An error occurred while submitting the form.";
+            messageElement.style.display = "block";
+            messageElement.style.backgroundColor = "red";
+            messageElement.style.color = "white";
+            submitButton.disabled = false;
+        });
+    });
+</script>
+
+
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script>
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  document.getElementById("submit-button").disabled = true;
+  document.getElementById("status-message").style.display = "none";
+
+  var formData = new FormData(this);
+  var keyValuePairs = [];
+  for (var pair of formData.entries()) {
+    keyValuePairs.push(pair[0] + "=" + encodeURIComponent(pair[1]));
+  }
+  var formDataString = keyValuePairs.join("&");
+
+  fetch(this.action, {
+    redirect: "follow",
+    method: "POST",
+    body: formDataString,
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+  })
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("status-message").textContent = "Form submitted successfully. Check your email for confirmation.";
+    document.getElementById("status-message").style.display = "block";
+    document.getElementById("status-message").style.backgroundColor = "green";
+    document.getElementById("status-message").style.color = "white";
+    document.getElementById("submit-button").disabled = false;
+    document.getElementById("form").reset();
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    document.getElementById("status-message").textContent = "An error occurred. Please try again.";
+    document.getElementById("status-message").style.display = "block";
+    document.getElementById("status-message").style.backgroundColor = "red";
+    document.getElementById("status-message").style.color = "white";
+    document.getElementById("submit-button").disabled = false;
+  });
+});
+</script>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../assets/css/font.css">
+<style>
+  .textarea {
+    width: 300px;
+    height: 100px;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all div elements with data-pagedtable="false"
+    const containers = document.querySelectorAll('div[data-pagedtable="false"]');
+
+    containers.forEach(container => {
+      const script = container.querySelector('script[data-pagedtable-source]');
+      if (!script) return; // Skip if no script found
+      
+      // Parse JSON data
+      const tableData = JSON.parse(script.textContent);
+      const columns = tableData.columns;
+      const rows = tableData.data;
+      const rowsPerPage = 10;
+      let currentPage = 1;
+
+      // Create the table element
+      const table = document.createElement('table');
+      table.className = 'paged-table';
+
+      // Create the table header
+      const thead = document.createElement('thead');
+      const headerRow = document.createElement('tr');
+      columns.forEach(col => {
+        const th = document.createElement('th');
+        th.textContent = col.label[0];
+        th.style.textAlign = col.align[0];
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
+
+      // Create the table body
+      const tbody = document.createElement('tbody');
+      table.appendChild(tbody);
+      container.appendChild(table);
+
+      // Create pagination controls
+      const paginationControls = document.createElement('div');
+      paginationControls.className = 'pagination-controls';
+      container.appendChild(paginationControls);
+
+      // Function to render rows for the current page
+      function renderRows() {
+        tbody.innerHTML = ''; // Clear existing rows
+        const startIndex = (currentPage - 1) * rowsPerPage;
+        const endIndex = Math.min(startIndex + rowsPerPage, rows.length);
+
+        for (let i = startIndex; i < endIndex; i++) {
+          const tr = document.createElement('tr');
+          columns.forEach(col => {
+            const td = document.createElement('td');
+            const colName = col.name[0];
+            td.textContent = rows[i][colName];
+            td.style.textAlign = col.align[0];
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        }
+      }
+
+      // Function to create pagination buttons
+      function createPaginationButtons() {
+        paginationControls.innerHTML = ''; // Clear existing buttons
+        const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+        function createButton(page) {
+          const button = document.createElement('button');
+          button.textContent = page;
+          button.className = 'pagination-button';
+          if (page === currentPage) {
+            button.disabled = true;
+          }
+          button.addEventListener('click', () => {
+            currentPage = page;
+            renderRows();
+            createPaginationButtons();
+          });
+          paginationControls.appendChild(button);
+        }
+
+        // Show first 5 pages or all if total is less than 5
+        for (let i = 1; i <= Math.min(5, totalPages); i++) {
+          createButton(i);
+        }
+
+        // Add ellipsis if there are more than 6 pages
+        if (totalPages > 6 && currentPage <= totalPages - 5) {
+          const ellipsis = document.createElement('span');
+          ellipsis.textContent = '...';
+          ellipsis.className = 'pagination-ellipsis';
+          paginationControls.appendChild(ellipsis);
+        }
+
+        // Add last page button
+        if (totalPages > 5) {
+          createButton(totalPages);
+        }
+      }
+
+      // Initial render
+      renderRows();
+      createPaginationButtons();
+    });
+  });
+</script>
+
+<style>
+  /* Basic table styling */
+  .paged-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove double borders */
+    margin-top: 10px;
+  }
+
+  /* Add borders to cells */
+  .paged-table th,
+  .paged-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  /* Header styling */
+  .paged-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  /* Alternate row colors */
+  .paged-table tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light grey for odd rows */
+  }
+
+  .paged-table tr:nth-child(even) {
+    background-color: #ffffff; /* White for even rows */
+  }
+
+  /* Add space between columns */
+  .paged-table td,
+  .paged-table th {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Highlight row on hover */
+  .paged-table tr:hover {
+    background-color: #6fa8dc; /* Light blue */
+  }
+
+  /* Stack radio options vertically: one option per line */
+  .field .control label.radio {
+    display: block;          /* force each option to its own line */
+    margin: 0.25rem 0;       /* tidy spacing */
+    line-height: 1.4;
+    white-space: normal;     /* allow wrapping if text is long */
+  }
+  /* Remove Bulma's inline spacing between radios */
+  .field .control label.radio + label.radio {
+    margin-left: 0;
+  }
+  /* Optional: a little space between the dot and text */
+  .field .control label.radio input[type="radio"] {
+    margin-right: 0.5rem;
+    transform: translateY(1px);
+  }
+
+  /* If you truly want each option to NEVER wrap to a second line, use this class on the .control: */
+  .no-wrap-options label.radio { white-space: nowrap; }
+
+
+  @media print {
+    #form, #message,
+    #quarto-sidebar, #quarto-sidebar-glass,
+    nav, header, footer,
+    .button, .btn { display: none !important; }
+
+    #print-view { display: block !important; }
+
+    pre, code {
+      font-family: monospace;
+      font-size: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .code-block {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 6px;
+      margin-bottom: .5rem;
+      background: #f9f9f9;
+    }
+  }
+
+  /* During print prep on screen */
+  #print-view { display: none; }
+  body.printing #form { display: none !important; }
+  body.printing #print-view { display: block !important; }
+  
+</style>
+
+
+</html>

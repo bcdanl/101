@@ -1,0 +1,119 @@
+---
+title: Week 2
+subtitle: Sports Analytics; Business Intelligence; Artificial Intelligence
+date: 2025-09-02
+from: markdown+emoji
+---
+
+In Week 2, we will use sports analytics to introduce core data-analytics concepts, take a brief tour of business intelligence, and explore generative AI through Co-Intelligence (Introduction).
+
+
+## 🏫 Lecture Slides  
+
+- **Lecture 3 - Sports Analytics; Business Intelligence**  
+  [View Slides](../danl-lec/danl-101-lec-03-2025-0903.html){target="_blank"}  
+
+- **Lecture 4 — Generative Artificial Intelligence**  
+  [View Slides](../danl-lec/danl-101-lec-04-2025-0905.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+
+
+## 📚 Recommended Reading
+  
+### Sports Analytics
+The application of analytics to business problems is a key skill that is essential to learn. Many of these techniques are now being applied to improve decision making in all aspects of sports, a very hot area called sports analytics. Sports analytics is the art and science of gathering data about athletes and teams to create insights that improve sports decisions, such as deciding which players to recruit, how much to pay them, who to play, how to train them, how to keep them healthy, and when they should be traded or retired. For teams, it involves business decisions such as ticket pricing, as well as opposition research, analysis of each competitor's strengths and weaknesses, and many game-day decisions.
+
+The use of analytics for sports was popularized by the Moneyball book by Michael Lewis in 2003 and the movie starring Brad Pitt in 2011. It showcased Oakland A's general manager Billy Beane and his use of data and analytics to turn a losing team into a winner.
+
+In particular, he hired an analyst who used analytics to draft players able to get on base as opposed to players who excelled at traditional measures like runs batted in or stolen bases. These insights allowed them to draft prospects overlooked by other teams at reasonable starting salaries. It worked—they made it to the playoffs in 2002 and 2003. 
+
+As an Industry, sports worldwide is a multibillion-dollar industry. A report by Statista.com showed the size of the worldwide sports industry in 2018 itself to be almost \$471 billion. Estimates vary widely, but according to Rice University, a conservative estimate of this industry's current size is about \$500 billion. This estimate includes various professional athletic leagues as well as college sports. According to some reports, college sports in the United States represent an \$18 billion-dollar industry. Suffice it to say that sports is a major economic driver of activity in the United States and in many countries around the world.
+
+Sports analytics is becoming a specialty within analytics. It is an important area because sports is a big business. In 2014, \$125M was spent on analytics. A recent report produced by [Grand View Research](https://www.grandviewresearch.com/industry-analysis/sports-analytics-market) estimates that in 2020 the sports analytics industry had already grown to \$885M, and is expected to grow at a staggering growth rate of over 27% per year. Thus, sports analytics is not only a fun way to learn about analytics, but it is also a potential career option for many graduates of analytics programs.
+
+Analytics are being used in all parts of sports. The following framework presents a simple way to understand potential analytics applications in sports. The top layer points out the potential for the usual business office/administrative analytics like allocating budget dollars across multiple sports in colleges, or determining the mix of money spent on facilities vs. coaches and trainers vs. player salaries and benefits. The next two layers of analytics can be divided between the front office and back office (often called Business and Operations). Front-office business analytics include analyzing fan behavior ranging from predictive models for season ticket renewals and regular ticket sale pricing, to scoring tweets by fans regarding the team, athletes, coaches, and owners. This is very similar to traditional customer relationship management (CRM). For individual players, there is a focus on recruitment models and scouting analytics. Financial analysis is also a key area, where salary caps on rosters (for pros) or scholarship limits (colleges) are part of the equation.
+
+Back-office uses include analytics to improve a team's operation as well as for health and safety of the players. Team analytics include strategies and tactics, competitive assessments, and optimal lineup choices under various on-field or on-court situations. Health/safety analytics focus on medical, strength and fitness as well as development, and predictive models for avoiding overtraining and injuries. Concussion research is a hot field, for example.
+
+Finally, the bottom layer points out the potential for application of analytics at the league/conference level to optimize schedules and locations of games across a pool of teams, including tournament seeding.
+
+The following representative examples illustrate how various sports organizations use data and analytics to improve sports operations, in the same way analytics have improved traditional industry decision making. Almost all of these are based on actual projects conducted by students and researchers. In some cases, the names have been changed to protect identity of the stakeholders.
+
+**Example 1: The Business Office—Fan Analytics**
+
+Katie Ward works as a business analyst for a major pro baseball team, focusing on revenue. She analyzes ticket sales, both from season ticket holders as well as single-ticket buyers. Sample questions in her area of responsibility include why season ticket holders renew (or do not renew) their tickets, as well as what factors drive last-minute individual seat ticket purchases. Another question is how to price the tickets.
+
+Some of the analytical techniques Katie uses include simple statistics on fan behavior like overall attendance and answers to survey questions about likelihood to purchase again. However, what fans say versus what they do can be different. Katie runs a survey of fans by ticket seat location ("tier") and asks about their likelihood of renewing their season tickets. But when she compares what they say versus what they do, she discovers big differences. She found that 69% of fans in Tier 1 seats who said on the survey that they would "probably not" renew actually did. This is a useful insight that leads to action—customers who are most likely to renew tickets require fewer marketing touches and dollars to convert, for example, compared to customers who are "on the edge."
+
+However, many factors influence fan ticket purchase behavior, especially price, which drives more sophisticated statistics and data analysis. For both areas, but especially single-game tickets, Katie is driving the use of dynamic pricing—moving the business from simple static pricing by seat location tier to day-by-day up-and-down pricing of individual seats. This is a rich research area for many sports teams and has huge upside potential for revenue enhancement. For example, her pricing takes into account the team's record, who they are playing, game dates and times, which star athletes play for each team, each fan's history of renewing season tickets or buying single tickets, as well as factors like seat location, number of seats, and real-time information like traffic congestion historically at game time and even the weather.
+
+Which of these factors are important? How much? Given her extensive statistics background, Katie builds regression models to pick out key factors driving these historic behaviors and create predictive models to identify how to spend marketing resources to drive revenues. She builds churn models for season ticket holders to create segments of customers who will renew, won't renew, or are fence-sitters, which then drives more refined marketing campaigns.
+
+In addition, she does sentiment scoring on fan comments like tweets that help her segment fans into different loyalty segments. Other studies about single-game attendance drivers help the marketing department understand the impact of giveaways like bobble-heads or T-shirts, or suggestions on where to make spot TV ad buys.
+
+Beyond revenues, there are many other analytical areas that Katie's team works on, including merchandising, TV and radio broadcast revenues, inputs to the general manager on salary negotiations, draft analytics especially given salary caps, promotion effectiveness including advertising channels, and brand awareness, as well as partner analytics.
+
+**Example 2: The College Football Coach—Play Tactics**
+
+Bob Breedlove is the football coach for a major college team. For him, it's all about winning games. His areas of focus include recruiting the best high school players, developing them to fit his offense and defense systems, and getting maximum effort from them on game days. Sample questions in his area of responsibility include: Who do we recruit? What drills help develop their skills? How hard do I push our athletes? Where are opponents strong or weak, and how do we figure out their play tendencies?
+
+Fortunately, his team has hired a new team operation expert, Dar Beranek, who specializes in helping the coaches make tactical decisions. She is working with a team of student interns who are creating opponent analytics. They used the coach's annotated game film to build a cascaded decision tree model to predict whether the next play will be a running play or passing play. This shows some tendencies they might want to exploit. For example, when they see a personnel formation that looks like a pass, and it's third or fourth down with more than 5 yards to go, their opponent team passes 95.45% of the time—very predictable!
+
+#### Reference
+- [Sharda and Turban - Business Intelligence, Analytics, Data Science, and AI (5th Edition), Ch.1.](https://www.pearson.com/en-us/subject-catalog/p/business-intelligence-analytics-data-science-and-ai/P200000009781/9780138043308?srsltid=AfmBOopvVaP_JRwYOOqhtujeKuTEZR6_mZtehmQRLZbx1HFuZFv3G93y)
+
+⚠️ Note: These excerpts from the above article are shared under fair use for educational purposes to support your learning.
+
+
+### Business Intelligence
+
+Business intelligence (BI) is a set of technological processes for collecting, managing and analyzing organizational data to yield insights that inform business strategies and operations.
+
+Business intelligence analysts transform raw data into meaningful insights that drive strategic decision-making within an organization. BI tools enable business users to access different types of data, historical and current, third-party and in-house, as well as semistructured data and unstructured data such as social media. Users can analyze this information to gain insights into how the business is performing and what it should do next.
+
+According to CIO magazine: “Although business intelligence does not tell business users what to do or what will happen if they take a certain course, neither is BI only about generating reports. Rather, BI offers a way for people to examine data to understand trends and derive insights.”
+
+Organizations can use the insights gained from BI and data analysis to improve business decisions, identify problems or issues, spot market trends and find new revenue or business opportunities.
+
+
+
+#### How BI works
+
+The steps taken in BI usually flow in this order:
+
+- **Data sources**: Identify the data to be reviewed and analyzed, such as from a data warehouse or data lake, cloud, Hadoop, industry statistics, supply chain, CRM, inventory, pricing, sales, marketing or social media.
+
+- **Data collection**: Gather and clean data from various sources. This data preparation might be manually gathering information in a spreadsheet or an automatic extract, transform and load (ETL) program.
+
+- **Analysis**: Look for trends or unexpected results in the data. This might use data mining, data discovery or data modeling tools.
+
+- **Visualization**: Create data visualizations, graphs and dashboards that use business intelligence tools such as Tableau, Cognos Analytics, Microsoft Excel or SAP. Ideally this visualization includes drill-down, drill-through, drill-up features to enable users to investigate various data levels.
+
+- Action plan: Develop actionable insights based on analysis of historical data versus key performance indicators (KPIs). Actions might include more efficient processes, changes in marketing, fixing supply chain issues or adapting customer experience issues.
+
+Some newer BI products can extract and load raw data directly by using technology such as Hadoop, but data warehouses often remain the data source of choice.
+
+#### Reference
+- [IBM - What is business intelligence (BI)?](https://www.ibm.com/think/topics/business-intelligence)
+
+⚠️ Note: These excerpts from the above article are shared under fair use for educational purposes to support your learning.
+
+
+### *Co-Intelligence: Living and Working with AI*  
+- **Read:** Introduction and Chapter 1
+
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 2 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 2.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 2 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

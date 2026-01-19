@@ -1,0 +1,2022 @@
+---
+title: Final Exam
+subtitle: Version B
+date: 2025-12-12
+from: markdown+emoji
+toc: true
+toc-depth: 8
+execute: 
+  eval: true
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(ggrepel)
+library(ggthemes)
+```
+
+
+<br>
+<br>
+
+# Section 1. Multiple Choice
+
+## Question 1
+Categorical data distributions are commonly visualized using bar charts, while numerical data distributions are commonly shown with histograms.
+
+- True
+- False
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**True.**
+:::
+
+<br>
+
+
+## Question 2
+The popularization of sports analytics was significantly influenced by the “Moneyball” book published in 2003 and its subsequent movie adaptation.
+
+- True
+- False
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**True.**
+:::
+
+<br>
+
+
+## Question 3
+Which feature most clearly distinguishes a full Database Management System (DBMS) from basic data storage tools like Excel or Google Sheets?
+
+a. The ability to store data electronically in tables  
+b. The ability to perform queries that filter and select data  
+c. The ability to manage updates while enforcing consistency and data validity  
+d. The ability to display data in rows and columns  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**c.** The ability to manage updates while enforcing consistency and data validity
+:::
+
+<br>
+
+
+## Question 4
+Which of the following best describes the modern "vibe coding" workflow in data analytics? 
+
+a. Writing all SQL and Python code manually to ensure 100% accuracy without AI intervention.  
+b. Using drag-and-drop interfaces exclusively without any coding logic.  
+c. Outsourcing all coding tasks to third-party distributed agents.  
+d. Prompting AI assistants to generate logic flows and code snippets, then reviewing the output for accuracy.  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**d.** Prompting AI assistants to generate logic flows and code snippets, then reviewing the output for accuracy.
+:::
+
+<br>
+
+
+## Question 5
+Which of the following is **NOT** one of the “Four Rules for Co-Intelligence” for working with AI?
+
+a. Always invite AI to the table  
+b. Be the human in the loop (HITL)  
+c. Automate everything possible and remove human oversight  
+d. Treat AI like a person (but remember it isn’t)  
+e. Assume this is the worst AI you’ll ever use  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**c.** Automate everything possible and remove human oversight
+:::
+
+<br>
+
+
+## Question 6
+What is a "Schema" in the context of Big Data Management?
+
+a. The physical hardware used to store the data.  
+b. A blueprint that defines how data is organized, including fields and data types.  
+c. The process of deleting old data to make room for new data.  
+d. The software used to visualize data in charts.  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**b.** A blueprint that defines how data is organized, including fields and data types.
+:::
+
+<br>
+
+
+## Question 7
+Which of the following is a characteristic of "Reinforcement Learning from Human Feedback" (RLHF)? 
+
+a. It involves humans ranking or scoring model answers to align the model with human preferences for safety and helpfulness.  
+b. It allows the model to learn entirely on its own without any human intervention.  
+c. It is primarily used for generating images from text descriptions.  
+d. It is a pre-training phase where the model reads vast amounts of text.  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**a.** It involves humans ranking or scoring model answers to align the model with human preferences for safety and helpfulness.
+:::
+
+<br>
+
+
+## Question 8
+Which type of visualization is most suitable for showing the distribution of a single categorical variable?
+
+a. Bar Chart  
+b. Histogram  
+c. Scatterplot  
+d. Line Chart  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**a. Bar Chart**
+:::
+
+<br>
+
+
+## Question 9
+To compare how the distribution of a numerical variable differs across categories of another variable, which visualization is most appropriate?
+
+a. Bar Chart  
+b. Histogram  
+c. Scatterplot  
+d. Boxplot  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**d. Boxplot**
+:::
+
+<br>
+
+
+## Question 10
+In the ETL process, which of the following best describes the “Transform” stage’s primary purpose?
+
+a. Aggregating and filtering data from disparate sources before extraction.  
+b. Altering, cleaning, and integrating data to ensure consistency and usability.  
+c. Moving transformed data into staging environments for downstream operations.  
+d. Ensuring that outdated data is removed or archived for regulatory compliance.  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**b.** Altering, cleaning, and integrating data to ensure consistency and usability.
+:::
+
+<br>
+
+
+## Question 11
+What does the term "API" stand for, and what is its primary function as described in the lecture? 
+
+a. Automated Processing Interface; it cleans messy CSV files automatically.  
+b. Application Programming Interface; it allows software systems to communicate and request data programmatically.  
+c. Advanced Python Integration; it translates R code into Python.  
+d. Analytical Pipeline Interface; it is used exclusively for visualizing Tableau dashboards.  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**b.** Application Programming Interface; it allows software systems to communicate and request data programmatically.
+:::
+
+<br>
+
+
+## Question 12
+Which statement is most accurate about tokens in the context of large language models (LLMs)?
+
+a. A token is always exactly one English word  
+b. Tokens are always single characters  
+c. Tokens exist only at the output side, not at the input side  
+d. A token is a unit of text; it may be a character, a whole word, or part of a word  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**d.** A token is a unit of text; it may be a character, a whole word, or part of a word.
+:::
+
+<br>
+
+
+## Questions 13-16
+For **Questions 13-16**, consider the following data.frame, `twitter_x_data`, displayed below:
+```{r}
+#| echo: false
+#| eval: true
+
+# Create a data.frame with hypothetical social media data
+twitter_x_data <- data.frame(
+  UserID = 1:10,
+  Age = c(22, 27, 34, 19, 45, 31, 28, 23, 37, 29),  # Ratio
+  Gender = c("Female", "Male", "Female", "Male", "Female", "Male", "Female", "Male", "Male", "Female"),  # Nominal
+  SubscriptionTier = factor(c("Standard", "Premium", "Standard", "Premium", "Standard", "Standard", "Premium", "Standard", "Premium", "Premium"),
+                       levels = c("Standard", "Premium"), ordered = TRUE),  # Ordinal
+  Country = c("USA", "Canada", "USA", "UK", "Australia", "USA", "India", "Canada", "USA", "UK"),  # Nominal
+  FollowersCount = c(1500, 2300, 800, 5000, 300, 1200, 4500, 600, 3500, 900),  # Ratio
+  LastLoginHour = c(22.5, 14.2, 9.8, 18.3, 2.7, 12.1, 16.4, 20.0, 7.5, 23.0),  # Interval (hours since midnight)
+  AccountAgeDays = c(365, 730, 180, 1095, 60, 540, 850, 275, 400, 660),  # Ratio
+  SatisfactionLevel = factor(c("Very Satisfied", "Satisfied", "Neutral", "Very Satisfied", "Dissatisfied", "Satisfied", "Very Satisfied", "Neutral", "Satisfied", "Very Satisfied"),
+                             levels = c("Very Dissatisfied", "Dissatisfied", "Neutral", "Satisfied", "Very Satisfied"), ordered = TRUE),  # Ordinal
+  PostsPerWeek = c(5, 12, 3, 20, 1, 8, 15, 4, 18, 6),  # Ratio
+  GroupsJoined = c(10, 5, 12, 7, 3, 8, 15, 4, 9, 6),  # Ratio
+  IsVerified = c("Yes", "No", "No", "Yes", "No", "No", "Yes", "No", "Yes", "No")  # Nominal
+)
+
+
+knitr::kable(twitter_x_data |> select(UserID:LastLoginHour))
+
+knitr::kable(twitter_x_data |> select(AccountAgeDays:IsVerified) )
+
+```
+
+### Description of Variables in `twitter_x_data`:
+
+1.	`UserID`: Identifier for each user
+2.	`Age`: Age of the user in years
+3.	`Gender`: Gender of the user
+4.  `SubscriptionTier`: Level of Twitter (X) subscription (e.g., Standard → Premium)
+5.	`Country`: Country of residence
+6.	`FollowersCount`: Number of followers
+7.	`LastLoginHour`: Time of last login in hours since midnight
+8.	`AccountAgeDays`: Age of the account in days
+9.	`SatisfactionLevel`: User satisfaction level
+10.	`PostsPerWeek`: Number of posts per week
+11.	`GroupsJoined`: Number of groups joined
+12.	`IsVerified`: Whether the user account is verified
+
+
+### Question 13
+What type of variable is `SubscriptionTier` in the dataset?
+
+a. Nominal  
+b. Ordinal  
+c. Interval  
+d. Ratio  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**b. Ordinal**
+:::
+
+<br>
+
+
+### Question 14
+What type of variable is `Country` in the dataset?
+
+a. Nominal  
+b. Ordinal  
+c. Interval  
+d. Ratio  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**a. Nominal**
+:::
+
+<br>
+
+
+### Question 15
+What type of variable is `LastLoginHour` in the dataset?
+
+a. Nominal  
+b. Ordinal  
+c. Interval  
+d. Ratio  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**c. Interval**
+:::
+
+<br>
+
+
+### Question 16
+What type of variable is `SatisfactionLevel` in the dataset?
+
+a. Nominal  
+b. Ordinal  
+c. Interval  
+d. Ratio  
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**b. Ordinal**
+:::
+
+<br>
+
+
+# Section 2. Filling-in-the-Blanks
+
+## Question 17
+In analytics, identifying patterns such as **“Movie A → Movie B”**, where users who watch one movie are likely to watch another with a similar genre (as in recommendation systems), relies on  
+_______________________________ to discover conditional co-occurrence relationships.
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**association rule**
+:::
+
+<br>
+
+
+## Question 18
+A(n) ________________________________ is a visual display of key information, data, and metrics, often used in BI to provide insights at a glance.
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**dashboard**
+:::
+
+<br>
+
+
+## Question 19
+________________________________ is Python’s primary library for data manipulation and analysis, offering powerful tools for working with tabular data. You can think of it as the Python counterpart to R’s `dplyr` (**tidyverse**): it provides clear, expressive functions for filtering, transforming, summarizing, and reshaping data.
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**pandas**
+:::
+
+<br>
+
+
+## Question 20
+________________________________ is the tendency for values of two variables to vary together, and can be visualized using scatterplots.
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**correlation**
+:::
+
+<br>
+
+
+## Question 21
+________________________________ data refers to data that is organized in a predefined format—such as rows and columns with a fixed schema—and is commonly stored in spreadsheets or traditional databases.
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**structured**
+:::
+
+<br>
+
+
+## Question 22
+When designing visuals, the goal is to convey as much information as possible while minimizing _______________________________ for the audience.
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**cognitive load**
+:::
+
+<br>
+
+
+## Question 23
+One of our alumni guest’s companies uses Snowflake as their _______________________________, a centralized repository that stores and manages large volumes of data for analytics and reporting purposes.
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**data warehouse (database management system (DBMS))**
+:::
+
+<br>
+
+
+## Question 24
+Three most popular programming languages for data analysts are _______________________________, Python, and R.
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**SQL**
+:::
+
+<br>
+
+# Section 3. Data Analysis with R
+
+
+## Question 25
+
+Consider the following vector `x`:
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+
+x <- c(2, 4, 6, 8, 10)
+```
+
+Write the R code to create a new vector called `z`, where its $i$-th entry ($i = 1,2,3,4, \text{or } 5$) is the standardized value of $i$-th element of `x` vector.
+
+$$
+z_{i} = \frac{x_{i} - \bar{x}}{\sigma_{x}}
+$$
+
+- $\bar{x}$: the mean of values in `x`
+- $\sigma_{x}$: the standard deviation of values in `x`
+
+
+**Answer**: ______________________________________
+
+
+ 
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+```{r}
+#| eval: false
+z <- (x - mean(x)) / sd(x)
+```
+
+
+:::
+
+<br>
+
+## Question 26
+
+Given the data.frame `df` with variables `height` and `name`, which of the following expressions returns a vector containing the values in the `height` variable?
+
+a. `df:height`
+b. `df$height`
+c. `df::height`
+d. Both b and c
+
+
+ 
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**b.** `df$height`
+
+
+
+:::
+
+<br>
+
+## Question 27
+
+Consider the following data.frame, `students`:
+
+```{r}
+#| echo: false
+#| eval: true
+students <- data.frame(
+  Name = c("Alice", "Bob", "Charlie", "Diana"),
+  Age = c(22, 23, 21, 24),
+  Major = c("Business Administration", "Accounting", "Data Analytics", "Economics"),
+  GPA = c(3.8, 3.2, 3.9, 3.5)
+)
+
+knitr::kable(students)
+```
+
+Which of the following R codes will correctly create a new data.frame with only the `Name` and `GPA` variables?
+
+a. `students |> select(Name, GPA)`
+b. `students |> select(-Age, -Major)`
+c. Both a and b
+
+
+ 
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**c.** Both a and b
+
+
+
+:::
+
+<br>
+
+## Question 28
+
+Consider the following data.frame `df0`:
+
+```{r}
+#| echo: false
+#| eval: true
+
+df0 <- data.frame(
+  x = c("Na", 2, 3),
+  y = c(7, NA, 9)
+)
+
+knitr::kable(df0)
+```
+
+
+What is the result of `median(df0$y)`?
+
+a. `7`
+b. `NA`
+c. `8`
+d. `9`
+
+
+
+ 
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**b.** `NA`
+
+
+
+:::
+
+<br>
+
+## Question 29
+Consider the two related data.frames, `df_1` and `df_2`:
+
+- `df_1`
+```{r}
+#| echo: false
+#| eval: true
+df_1 <- data.frame(
+  id = c(1:2, 4),
+  name = c("Bob", "Julia", "Zachary"),
+  age = c(19, 21, 20)
+)
+
+knitr::kable( df_1)
+
+```
+
+- `df_2`
+```{r}
+#| echo: false
+#| eval: true
+
+df_2 <- data.frame(
+  id = 1:3,
+  major = c("Economics", "Business Administration", "Data Analytics")
+)
+
+knitr::kable( df_2)
+
+```
+
+
+Which of the following R code correctly join the two related data.frames, `df_1` and `df_2`, to produce the resulting data.frame shown below?
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+
+df_1 <- data.frame(
+  id = c(1:2, 4),
+  name = c("Bob", "Julia", "Zachary"),
+  age = c(19, 21, 20)
+)
+
+
+df_2 <- data.frame(
+  id = 1:3,
+  major = c("Economics", "Business Administration", "Data Analytics")
+)
+
+
+df_3 <- df_1 |> left_join(df_2)
+
+knitr::kable( df_3)
+
+```
+
+a. `df_1 |> left_join(df_2)`
+b. `df_2 |> left_join(df_1)`
+c. Both a and b
+d. None of the above
+
+
+
+ 
+
+::: {.callout-tip collapse="true"}
+### Show answer
+**a.** `df_1 |> left_join(df_2)`
+
+
+
+:::
+
+<br>
+
+## Questions 30-36
+For **Questions 30-36**, consider the following R packages and the data.frame, `nyc_dogs`, containing individual dog license data from New York City (NYC):
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+
+nyc_dogs <- read_csv("https://bcdanl.github.io/data/nyc_dogs_cleaned.csv")
+```
+
+The first 10 observations in the `nyc_dogs` data frame are displayed below:
+```{r}
+#| echo: false
+#| eval: true
+
+# Create a data.frame with hypothetical social media data
+
+knitr::kable(nyc_dogs |> slice(1:10))
+
+```
+
+- The `nyc_dogs` data frame is with 197473 observations and 5 variables.
+
+
+
+### Description of Variables in `nyc_dogs`:
+  
+- `name`:
+Dog name
+
+- `gender`:
+Dog gender (**F** for female; **M** for male; `NA` for missing value)
+
+- `birth_year`:
+Birth year (integer values)
+
+- `breed`:
+Dog breed
+
+- `borough`:
+Borough in NYC
+
+<br>
+
+
+
+The followings are the summary of the `nyc_dogs` data.frame, including **descriptive statistics** for each variable.
+```{r}
+#| echo: false
+skim(nyc_dogs) |> select(-numeric.hist,-character.whitespace, -complete_rate)
+```
+
+
+
+### Question 30
+What is the interquartile range of `birth_year`? Find this value by using the summary of the `nyc_dogs` data frame.
+
+______________________________________
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+
+IQR = 7 = 2017 - 2010
+
+:::
+
+<br>
+
+### Question 31
+What R code can we use to count the number of licensed dogs by `borough` within each `birth_year` in NYC?
+
+a. `nyc_dogs |> count(birth_year)`
+b. `nyc_dogs |> count(borough)`
+c. `nyc_dogs |> count(borough, birth_year)`
+d. `nyc_dogs |> count(birth_year, borough)`
+e. Both c and d
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+e
+
+
+
+:::
+
+<br>
+
+### Question 32
+- We are interested in finding the 7 most popular dog breeds in NYC.
+- To achieve this, we create a new data.frame, a new data.frame, `top7_breeds`, which includes only 7 most popular dog breeds, excluding any `NA` values.
+
+```{r}
+#| eval: true
+#| echo: false
+top7_breeds <- nyc_dogs |> 
+  filter(!is.na(breed)) |> 
+  count(breed) |> 
+  arrange(-n) |> 
+  head(7)  # returns the first 7 observations of the new data.frame
+```
+
+
+```{r}
+#| echo: false
+knitr::kable(top7_breeds)
+```
+
+- The `top7_breeds` data.frame is displayed above. 
+
+```{r}
+#| eval: false
+top7_breeds <- nyc_dogs |> 
+  filter(___(1)___) |> 
+  ___(2)___ |> 
+  ___(3)___(-n) |> 
+  head(7)  # returns the first 7 observations of the new data.frame
+```
+
+- Complete the code by filling in the blanks (1)-(3).
+
+a. (1) `is.na(breed)`; (2) `count(n)`; (3) `select`
+b. (1) `is.na(breed)`; (2) `count(n)`; (3) `arrange`
+c. (1) `is.na(breed)`; (2) `count(breed)`; (3) `select`
+d. (1) `is.na(breed)`; (2) `count(breed)`; (3) `arrange`
+e. (1) `!is.na(breed)`; (2) `count(n)`; (3) `select`
+f. (1) `!is.na(breed)`; (2) `count(n)`; (3) `arrange`
+g. (1) `!is.na(breed)`; (2) `count(breed)`; (3) `select`
+h. (1) `!is.na(breed)`; (2) `count(breed)`; (3) `arrange`
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+h
+
+
+
+:::
+
+<br>
+
+### Question 33
+How would you describe the distribution of `breed` using the `top7_breeds` data.frame?
+
+- Note that the `breed` categories are sorted by the `n` variable in the plot.
+
+Complete the code by filling in the blanks (1)-(3).
+
+```{r}
+#| eval: false
+ggplot(data = top7_breeds,
+       mapping = aes(___(1)___,
+                     ___(2)___ = n)) +
+  ___(3)___() +
+  labs(y = "Top 7 Dog Breeds")
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+
+ggplot(data = top7_breeds,
+       mapping = aes(y = fct_reorder(breed, n),
+                     x = n)) +
+  geom_col() +
+  labs(y = "Top 7 Dog Breeds")
+```
+
+#### Blank (1)
+a. `x = breed`
+b. `y = breed`
+c. `x = fct_reorder(n, breed)`
+d. `y = fct_reorder(n, breed)`
+e. `x = fct_reorder(breed, n)`
+f. `y = fct_reorder(breed, n)`
+g. Both c and d
+h. Both e and f
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+f
+
+
+
+:::
+
+<br>
+
+#### Blank (2)
+a. `x`
+b. `y`
+c. `fill`
+d. `color`
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+
+
+:::
+
+<br>
+
+#### Blank (3)
+a. `geom_bar`
+b. `geom_col`
+c. Both a and b
+
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+b
+
+
+
+:::
+
+<br>
+
+### Question 34
+-	We are also interested in identifying the top five most popular dog names for each gender.
+-	To do this, we first create a new data frame, `nyc_dogs_filtered`, which includes only the observations where (1) the value of `name` variable is not missing and (2) the value of `gender` variable is not missing.
+
+```{r}
+#| eval: true
+#| echo: false
+nyc_dogs_filtered <- nyc_dogs |> 
+  filter(!is.na(name) & !is.na(gender))
+```
+
+
+```{r}
+#| eval: false
+nyc_dogs_filtered <- nyc_dogs |> 
+  filter(___BLANK___)
+```
+
+- Which condition correctly fills in the BLANK to complete the code above?
+
+a. `is.na(name) , is.na(gender)`
+b. `is.na(name) & is.na(gender)`
+c. `is.na(name) | is.na(gender)`
+d. `!is.na(name) , !is.na(gender)`
+e. `!is.na(name) & !is.na(gender)`
+f. `!is.na(name) | !is.na(gender)`
+g. Both a and b
+h. Both a and c
+i. Both d and e
+j. Both d and f
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+i
+
+
+
+:::
+
+<br>
+
+### Question 35
+- Using `nyc_dogs_filtered` from Question 34, we are creating the `top5names_F` data.frame:
+
+```{r}
+#| eval: true
+#| echo: false
+top5names_F <- nyc_dogs_filtered |> 
+  filter(gender == "F") |> 
+  count(name) |> 
+  arrange(-n) |> 
+  head(5)
+```
+
+
+```{r}
+#| echo: false
+knitr::kable(top5names_F)
+```
+
+- The `top5names_F` data.frame provides the five most popular female dog names, displayed above. 
+
+Complete the code by filling in the blanks (1)-(2).
+
+```{r}
+#| eval: false
+top5names_F <- nyc_dogs_filtered |> 
+  filter(___(1)___) |> 
+  count(___(2)___) |> 
+  arrange(___(3)___) |> 
+  head(5) 
+```
+
+#### Blank (1)
+a. `gender == "F"`
+b. `gender != "F"`
+c. `gender == "M"`
+d. `gender != "M"`
+e. Both a and b
+f. Both a and c
+g. Both a and d
+h. Both b and c
+i. Both b and d
+j. Both c and d
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+g
+
+
+
+:::
+
+<br>
+
+
+#### Blank (2)
+a. `name`
+b. `gender`
+c. `n`
+d. `name`, `n`
+e. `gender`, `n`
+f. `name`, `gender`
+g. `gender`, `name`
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+c
+
+
+
+:::
+
+<br>
+
+#### Blank (3)
+a. `n`
+b. `-n`
+c. `desc(n)`
+d. Both b and c
+
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+d
+
+
+
+:::
+
+<br>
+
+### Question 36
+- Likewise, using `nyc_dogs_filtered` from Question 34, we are creating the `top5names_M` data.frame:
+
+```{r}
+#| eval: true
+#| echo: false
+top5names_M <- nyc_dogs_filtered |> 
+  filter(gender == "M") |> 
+  count(name) |> 
+  arrange(-n) |> 
+  head(5)
+```
+
+
+```{r}
+#| echo: false
+knitr::kable(top5names_M)
+```
+
+- The `top5names_M` data.frame provides the five most popular male dog names, displayed above. 
+
+Complete the code by filling in the blanks (1)-(2).
+
+```{r}
+#| eval: false
+top5names_M <- nyc_dogs_filtered |> 
+  filter(___(1)___) |> 
+  count(___(2)___) |> 
+  arrange(___(3)___) |> 
+  head(5) 
+```
+
+#### Blank (1)
+a. `gender == "F"`
+b. `gender != "F"`
+c. `gender == "M"`
+d. `gender != "M"`
+e. Both a and b
+f. Both a and c
+g. Both a and d
+h. Both b and c
+i. Both b and d
+j. Both c and d
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+h
+
+
+
+:::
+
+<br>
+
+#### Blank (2)
+a. `name`
+b. `gender`
+c. `n`
+d. `name`, `n`
+e. `gender`, `n`
+f. `name`, `gender`
+g. `gender`, `name`
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+c
+
+
+
+:::
+
+<br>
+
+#### Blank (3)
+a. `n`
+b. `-n`
+c. `desc(n)`
+d. Both b and c
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+d
+
+
+
+:::
+
+<br>
+
+## Questions 37-40
+The Nobel Prize in Economic Science in 2021 goes to David Card, Joshua Angrist and Guido Imbens, for their empirical contributions to labor economics, and  for their methodological contributions to the analysis of causal relationships.
+
+They have provided us with new insights about the labor market and shown what conclusions about cause and effect can be drawn from natural experiments. Their approach has spread to other fields and revolutionized empirical research.
+
+For **Questions 37-40**, consider the following R packages and the data.frame, `ak91_age`, which comes from the 1980 US Census and covers men born 1930–1939, which is used by Joshua Angrist and Alan Krueger's research article.
+
+<!-- The life-changing nature of school-starting age is an unintended consequence of American compulsory attendance laws. By the middle of the twentieth century, most states were allowing students to leave school (that is, to drop out of high school) only after they’d turned 16 (some states require attendance until 17 or 18). Most compulsory attendance laws allow you to quit school once you’ve reached the dropout age, without finishing the school year. Jae, having started school at the ripe old age of 5 years and 8 months, turned 16 in January ten years later, early in his tenth-grade year. Dante, having started school at the tender age of 4 years and 9 months, turned 16 in December eleven years later, after finishing tenth grade and starting eleventh. Both were itching to leave school as soon as they were allowed, and each dropped out immediately on turning 16. But Dante, having started school younger, was forced by accident of birth to complete one more grade than Jae. -->
+
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+
+ak91_age <- read_csv('https://bcdanl.github.io/data/ak91_ageW.csv')
+
+```
+
+The first 20 observations in the `ak91_age` data frame are displayed below:
+```{r}
+#| echo: false
+#| eval: true
+
+# Create a data.frame with hypothetical social media data
+
+knitr::kable(ak91_age |>  slice(1:20))
+
+```
+
+- The `ak91_age` data frame is with 40 observations and 6 variables.
+
+
+### Description of Variables in `ak91_age`:
+- `QoB`: Quarter of birth
+- `YoB`: Year of birth (1930, 1931, ..., 1939)
+- `YoBQ`: Year and quarter of birth (1930 Q1, 1930 Q2, ..., 1939 Q4)
+- `W`: Wage per week
+- `Educ`: Years of education
+- `Q4`: `TRUE` if quarter of birth is 4; `FALSE` otherwise.
+
+
+<br>
+
+
+
+The followings are the summary of the `ak91_age` data.frame, including **descriptive statistics** for each variable.
+```{r}
+#| echo: false
+df <- skim(ak91_age) |> select(-numeric.hist, -complete_rate) |> 
+  mutate(numeric.p0 = round(numeric.p0, 2),
+         numeric.p25 = round(numeric.p25, 2),
+         numeric.p50 = round(numeric.p50, 2),
+         numeric.p75 = round(numeric.p75, 2),
+         numeric.p100 = round(numeric.p100, 2),
+         )
+
+df
+```
+
+
+
+### Question 37
+Here we describe the quarterly trend of years of education. Complete the code by filling in the blanks (1)-(3).
+
+```{r}
+#| eval: false
+
+ggplot(data = ak91_age, 
+       mapping = aes(___(1)___,
+                     ___(2)___ = Q4)) +
+  ___(3)___ + 
+  geom_point(size = 2.5) +
+  scale_color_colorblind() +
+  labs(x = "Year and quarter of birth",
+       y = "Years of education")
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 9
+#| fig-height: 5
+
+ggplot(data = ak91_age, 
+       mapping = aes(x = YoBQ, 
+                     y = Educ,
+                     color = Q4)) +
+  geom_line(color = "black") + 
+  geom_point(size = 2.5) +
+  scale_color_colorblind() +
+  scale_x_continuous(breaks = seq(1930,1940, 2)) +
+  labs(x = "Year and quarter of birth",
+       y = "Years of education")
+```
+
+#### Blank (1)
+a. `x = YoBQ, y = Educ`
+b. `y = YoBQ, x = Educ`
+c. `x = YoB, y = Educ`
+d. `y = YoB, x = Educ`
+e. Both a and b
+f. Both c and d
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+
+
+:::
+
+<br>
+
+#### Blank (2)
+a. `fill`
+b. `color`
+c. Both a and b
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+b
+
+
+
+:::
+
+<br>
+
+#### Blank (3)
+a. `geom_scatterplot`
+b. `geom_point`
+c. `geom_line`
+d. `geom_smooth`
+e. `geom_histogram`
+f. `geom_boxplot`
+g. `geom_bar`
+h. `geom_col`
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+c
+
+
+
+:::
+
+<br>
+
+### Question 38
+Here we describe the quarterly trend of the base-10 log of wage per week. Complete the code by filling in the blanks (1)-(3).
+
+```{r}
+#| eval: false
+
+ggplot(data = ak91_age, 
+       mapping = aes(___(1)___,
+                     ___(2)___ = Q4)) +
+  ___(3)___ + 
+  geom_point(size = 2.5) +
+  scale_color_colorblind() +
+  labs(x = "Year and quarter of birth",
+       y = "Wage per week (in base-10 log)")
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 9
+#| fig-height: 5
+
+ggplot(data = ak91_age, 
+       mapping = aes(x = YoBQ, 
+                     y = log10(W),
+                     color = Q4)) +
+  geom_line(color = "black") + 
+  geom_point(size = 2.5) +
+  scale_color_colorblind() +
+  scale_x_continuous(breaks = seq(1930,1940, 2)) +
+  labs(x = "Year and quarter of birth",
+       y = "Wage per week\n(in base-10 log)")
+```
+
+#### Blank (1)
+a. `x = YoBQ, y = log(W)`
+b. `y = YoBQ, x = log(W)`
+c. `x = YoBQ, y = log10(W)`
+d. `y = YoBQ, x = log10(W)`
+e. Both a and c
+f. Both b and d
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+
+
+:::
+
+<br>
+
+#### Blank (2)
+a. `fill`
+b. `color`
+c. Both a and b
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+b
+
+
+
+:::
+
+<br>
+
+#### Blank (3)
+a. `geom_scatterplot`
+b. `geom_point`
+c. `geom_line`
+d. `geom_smooth`
+e. `geom_histogram`
+f. `geom_boxplot`
+g. `geom_bar`
+h. `geom_col`
+
+
+
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+c
+
+
+
+:::
+
+<br>
+
+### Question 39
+Here we describe how the distribution of the base-10 log of wage per week varies by `Q4`. Complete the code by filling in the blanks (1)-(3).
+
+```{r}
+#| eval: false
+
+ggplot(data = ak91_age, 
+       mapping = aes(___(1)___,
+                     ___(2)___ = Q4)) +
+  ___(3)___(show.legend = FALSE) +
+  scale_fill_tableau() +
+  labs(x = "Wage per week (in base-10 log)",
+       y = "Born in the Fourth Quarter?")
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 9
+#| fig-height: 5
+
+ggplot(data = ak91_age, 
+       mapping = aes(x = log10(W), 
+                     y = Q4,
+                     fill = Q4)) +
+  geom_boxplot(show.legend = FALSE) + 
+  scale_fill_tableau() +
+  labs(y = "Born in the Fourth Quarter?",
+       x = "Wage per week (in base-10 log)") +
+  theme(axis.title.y = element_text(angle = 90))
+```
+
+#### Blank (1)
+a. `x = YoBQ, y = log(W)`
+b. `y = YoBQ, x = log(W)`
+c. `x = YoBQ, y = log10(W)`
+d. `y = YoBQ, x = log10(W)`
+e. `x = Q4, y = log(W)`
+f. `y = Q4, x = log(W)`
+g. `x = Q4, y = log10(W)`
+h. `y = Q4, x = log10(W)`
+i. Both a and c
+j. Both b and d
+k. Both e and g
+l. Both f and h
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+d
+
+
+
+:::
+
+<br>
+
+#### Blank (2)
+a. `fill`
+b. `color`
+c. Both a and b
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+
+
+:::
+
+<br>
+
+#### Blank (3)
+a. `geom_scatterplot`
+b. `geom_point`
+c. `geom_line`
+d. `geom_smooth`
+e. `geom_histogram`
+f. `geom_boxplot`
+g. `geom_bar`
+h. `geom_col`
+
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+f
+
+
+
+:::
+
+<br>
+
+### Question 40
+Provide a data-driven narrative for the `ak91_age` data frame, incorporating insights from the visualizations created in Questions 37, 38, and 39.
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+
+
+
+:::
+
+<br>
+
+
+
+
+## Questions 41-44
+
+For **Questions 41-44**, consider the following R packages and the data.frame, `health_cust`, which contains demographic information about individuals with or without health insurance.
+
+```{r}
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+
+health_cust <- read_csv(
+  'https://bcdanl.github.io/data/custdata_rev.csv'
+)
+```
+
+
+The first 10 observations in the `health_cust` data frame are displayed below:
+```{r}
+#| echo: false
+#| eval: true
+
+# Create a data.frame with hypothetical social media data
+
+knitr::kable(health_cust |> select(custid:housing_type) |>  slice(1:10))
+knitr::kable(health_cust |> select(custid, recent_move:health_ins) |>  slice(1:10))
+
+```
+
+
+### Description of Variables in `health_cust`
+
+- `custid`: ID of customer
+- `sex`: Sex
+- `is_employed`: Employment status
+  - `NA`: Unknown or not applicable
+  - `TRUE`: Employed
+  - `FALSE`: Unemployed
+- `income`: Income (in $)
+- `marital_status`: Marital status
+- `housing_type`: Housing type
+- `recent_move`: 
+  - `TRUE`: Recently moved
+  - `FALSE`: Not recently moved
+- `age`: Age
+- `state_of_res`: State of residence (Alabama, Alaska, ..., New York, ..., Wyoming)
+- `gas_usage`: Gas usage
+  - `NA`: Unknown or not applicable
+  - `001`: Included in rent or condo fee
+  - `002`: Included in electricity payment
+  - `003`: No charge or gas not used
+  - `004`-`999`: $4 to $999 (rounded and top-coded)
+- `health_ins`: Health insuarance status
+  - `TRUE`: customer with health insuarance 
+  - `FALSE`: customer without health insuarance 
+
+
+
+The followings are the summary of the `health_cust` data.frame, including **descriptive statistics** for each variable.
+```{r}
+#| echo: false
+df <- skim(health_cust) |> select(-numeric.hist,-character.whitespace, -complete_rate) |> 
+  mutate(numeric.p0 = round(numeric.p0, 2),
+         numeric.p25 = round(numeric.p25, 2),
+         numeric.p50 = round(numeric.p50, 2),
+         numeric.p75 = round(numeric.p75, 2),
+         numeric.p100 = round(numeric.p100, 2),
+         ) 
+
+df
+```
+
+
+## Question 41
+Here we describe how the distribution of `health_ins` varies by state of residence and employment status using the `health_cust` data.frame. Complete the code by filling in the blanks (1)-(4).
+
+```{r}
+#| eval: false
+
+ggplot(data = health_cust |> filter(!is.na(is_employed)),
+       mapping = aes(___(1)___, 
+                     fill = ___(2)___)) +
+  ___(3)___ +
+  ___(4)___(~is_employed) +
+  labs(y = "", x= "Proportion") +
+  scale_fill_tableau()
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 7.75
+#| fig-width: 9
+
+ggplot(data = health_cust |> filter(!is.na(is_employed)),
+       mapping = aes(y = state_of_res, 
+                     fill = health_ins)) +
+  geom_bar(position = "fill") +
+  facet_wrap(~is_employed) +
+  labs(y = "", x= "Proportion") +
+  scale_fill_tableau()
+```
+
+#### Blank (1)
+a. `x = health_ins`
+b. `x = state_of_res`
+c. `x = Proportion`
+d. `y = health_ins`
+e. `y = state_of_res`
+f. `y = Proportion`
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+e
+
+
+
+:::
+
+<br>
+
+#### Blank (2)
+a. `health_ins`
+b. `state_of_res`
+c. `Proportion`
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+
+
+:::
+
+<br>
+
+#### Blank (3)
+a. `geom_bar(position = "stack")`
+b. `geom_col(position = "stack")`
+c. `geom_bar(position = "fill")`
+d. `geom_col(position = "fill")`
+e. `geom_bar(position = "dodge")`
+f. `geom_col(position = "dodge")`
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+c
+
+
+
+:::
+
+<br>
+
+#### Blank (4)
+
+**Answer**: ________________________________________
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+
+
+`facet_wrap`
+
+:::
+
+<br>
+
+## Question 42
+
+Here we describe how the distribution of `marital_status` varies by `housing_type` using the `health_cust` data.frame. Complete the code by filling in the blanks (1)-(4).
+
+```{r}
+#| eval: false
+
+ggplot(data = health_cust |> filter(!is.na(housing_type)),
+       mapping = aes(___(1)___, 
+                     ___(2)___)) +
+  ___(3)___(show.legend = FALSE) +
+  ___(4)___(~housing_type) +
+  labs(y = "")
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 9
+#| fig-height: 3
+
+ggplot(data = health_cust |> filter(!is.na(housing_type)),
+       mapping = aes(y = marital_status,
+                     x = after_stat(prop), group = 1)) +
+  geom_bar(show.legend = FALSE) +
+  facet_wrap(~housing_type) +
+  labs(y = "")
+```
+
+
+#### Blank (1)
+a. `x = marital_status`
+b. `y = marital_status`
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+b
+
+
+
+:::
+
+<br>
+
+#### Blank (2)
+a. `x = prop`
+b. `x = prop, group = 1`
+c. Both a and b
+d. `y = prop`
+e. `y = prop, group = 1`
+f. Both d and e
+g. `x = after_stat(prop)`
+h. `x = after_stat(prop), group = 1`
+i. Both g and h
+j. `y = after_stat(prop)`
+k. `y = after_stat(prop), group = 1`
+l. Both j and k
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+h
+
+
+
+:::
+
+<br>
+
+#### Blank (3)
+a. `geom_bar()`
+b. `geom_col()`
+c. Both a and b
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+
+
+:::
+
+<br>
+
+#### Blank (4)
+
+**Answer**: ________________________________________
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+
+
+`facet_wrap`
+
+:::
+
+<br>
+
+## Question 43
+
+Here we describe how the relationship between age and income varies by `health_ins` using the `health_cust` data.frame. Note that the new geometric object `geom_hex()` divides the plane into regular hexagons, counts the number of observations in each hexagon, and then maps the number of observations to the hexagon fill.
+
+Complete the code by filling in the blanks (1)-(4).
+
+```{r}
+#| eval: false
+#| 
+# Considering 
+  # income level between $0 and $250,000
+  # age between 20 and 70
+ggplot(data = health_cust |> filter(income >= 0 & income <= 2.5*10^5,
+                                    age >= 20 & age <= 70),
+       mapping = aes(___(1)___)) +
+  geom_hex() + # hexbin plot: dividing the plot area into hexagonal bins
+  ___(2)___ +
+  ___(3)___(~health_ins) +
+  scale_fill_viridis_c() # for hexbin color
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 9
+#| fig-height: 6
+
+ggplot(data = health_cust |> filter(income >= 0 & income <= 2.5*10^5,
+                                    age >= 20 & age <= 70),
+       mapping = aes(x = age,
+                     y = income)) +
+  geom_hex() +
+  geom_smooth(size = 1.25) +
+  facet_wrap(~health_ins) +
+  scale_fill_viridis_c()
+```
+
+
+#### Blank (1)
+a. `x = income, y = age`
+b. `x = age, y = income`
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+b
+
+
+
+:::
+
+<br>
+
+#### Blank (2)
+a. `geom_smooth()`
+b. `geom_smooth(method = "lm")`
+c. Both a and b
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+a
+
+
+
+:::
+
+<br>
+
+#### Blank (3)
+
+**Answer**: ________________________________________
+
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+
+
+`facet_wrap`
+
+:::
+
+<br>
+
+## Question 44
+Describe how the *overall* relationship between `age` and `income` varies by `health_ins`.
+
+
+
+::: {.callout-tip collapse="true"}
+##### Show answer
+
+
+
+
+:::
+
+<br>
+
+
+
+
+
+
+
+# Section 4. Short Answer
+
+## Question 45
+For each question in Homework 5, briefly describe the task you are required to complete.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+
+:::
+
+<br>
+
+
+
+
+
+## Question 46
+What is clutter in data visualization, and why is it important to reduce it? Provide at least two practical tips for minimizing clutter in visualizations.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+- Clutter: Visual elements that occupy space but do not improve understanding
+
+- Clutter makes information harder to process and can confuse the viewer
+  - Less clutter = clearer message, more focused audience
+
+- Tips
+  - Avoid having the data all skewed to one side or the other of your graph.
+  - Avoid too many superimposed elements, such as too many curves (>4) in the same graphing space.
+
+:::
+
+<br>
+
+
+
+
+
+## Question 47
+Describe the two phases of training a large language model (LLM): Pre-training and Fine-tuning. What is the primary objective of each phase?
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+
+
+:::
+
+<br>
+
+
+
+
+
+## Question 48
+Compare supervised learning and unsupervised learning. Give one example of a business application for each and explain why labeled data is central to one but not the other.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+
+
+:::
+
+<br>
+
+
+
+
+
+
+## Question 49
+When is it appropriate to treat integer-valued data as if it were continuous? Give one example of an integer variable for which this is reasonable.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+
+
+:::
+
+<br>
+
+
+
+
+
+## Question 50
+Identify two situations where pie charts are not a suitable alternative to bar charts.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+1. Pie charts work well only if you only have a few categories—four max.
+2. Pie charts work well if the goal is to emphasize simple fractions (e.g., 25%, 50%, or 75%).
+
+1. Pie charts are not the best choice if you want audiences to compare the size of shares.
+2. Pie charts are not the best choice if you want audiences to compare the distribution across categories.
+
+:::
+
+<br>
+
+
+

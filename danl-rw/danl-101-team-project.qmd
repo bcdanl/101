@@ -1,0 +1,402 @@
+---
+title: Data Storytelling Team Project - Guideline
+subtitle: What You Should Do for the Team Project
+author: Byeong-Hak Choe
+institute: SUNY Geneseo
+date: 2025-11-15
+
+# toc: true
+# toc-depth: 2
+# toc-expand: true
+# toc-title: Contents
+# number-sections: false
+# number-depth: 3
+
+code-fold: false
+
+execute:
+  echo: true
+  eval: true
+  message: false
+  warning: false
+  fig-width: 9
+  fig-height: 6
+---
+```{r}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(broom)
+library(hrbrthemes)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5) ),
+                axis.title.y = element_text(size = rel(1.5) ))
+          )
+
+# Set global options for color-blind-friendly scales
+# scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_colour_discrete <- function(...) scale_color_colorblind(...)
+scale_fill_discrete <- function(...) scale_fill_colorblind(...)
+```
+
+
+# Presentation Format
+- Each team will deliver a 10-minute presentation, followed by a 1–2 minute Q&A session.
+
+- The order of team presentations will be determined by a random draw.
+  -	If multiple teams choose the same topic, I will try to schedule these teams in different sessions to minimize repetition within a single class.
+  
+-	To ensure fairness and equal participation, **each student must contribute evenly** to the presentation. 
+
+
+<br><br>
+
+# Suggested Topics
+- You are welcome to use your own dataset for the project; however, here are some suggested topics with corresponding data for your convenience.
+  - **Dataset Approval**: If your team decides to use a dataset that is not suggested by Prof. Choe, you must obtain approval in advance.
+  - **Dataset Submission**: 
+    - Once your dataset is approved, make sure to send the dataset files to Prof. Choe.
+    - If your team adds any additional datasets to the suggested topic you have chosen, please also submit those additional dataset files to Prof. Choe.
+- The suggested data frames are quite large. 
+  - Feel free to transform the data as needed to focus on the story your team wants to tell.
+
+<br>
+
+## 🍺 1. Beer Market
+The `beer_markets` data frame contains detailed information about household beer purchases across different brands and markets in the United States. It includes purchase details, product attributes, promotional information, and demographic data of the households.
+
+```{r}
+beer_markets <- read_csv("https://bcdanl.github.io/data/beer_markets_all.csv")
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+rmarkdown::paged_table(beer_markets)
+```
+
+### Variable Description
+
+- `hh`: an identifier of the household;
+- `X_purchase_desc`: details on the purchased item;
+- `quantity`: the number of items purchased;
+- `brand`: Bud Light, Busch Light, Coors Light, Miller Lite, or Natural Light;
+- `dollar_spent`: total dollar value of purchase;
+- `beer_floz`: total volume of beer, in fluid ounces;
+- `price_floz`: price per fl.oz. (i.e., `dollar_spent`/`beer_floz`);
+- `container`: the type of container;
+- `promo`: Whether the item was promoted (coupon or otherwise);
+- `region`: US region
+- `state`: US state
+- `market`: Scan-track market (or state if rural);
+- demographic data, including gender, marital status, household income, class of work, race, education, age, the size of household, and whether or not the household has a microwave or a dishwasher.
+
+<br>
+
+## 🏙️ 2. NYC Housing Market
+The `nyc_housing_sales` data frame includes property sale transactions in New York City from January 2003 to October 2025. It provides detailed information about each sale, including property characteristics, sales prices, and building classifications.
+```{r}
+nyc_housing_sales <- read_csv("https://bcdanl.github.io/data/nyc_housing_sales_2003-2025_10.csv")
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+rmarkdown::paged_table(nyc_housing_sales)
+```
+
+
+### Description of Variables in the `nyc_housing_sales` data frame
+
+- For the description of variables in the `nyc_housing_sales` data.frame, please refer to the following webpage:
+  - [https://www.nyc.gov/site/finance/property/glossary-property-sales.page](https://www.nyc.gov/site/finance/property/glossary-property-sales.page)
+    - For the variables of building class code, please refer to the following webpage:
+      - [https://www.nyc.gov/assets/finance/jump/hlpbldgcode.html](https://www.nyc.gov/assets/finance/jump/hlpbldgcode.html)
+
+<br>
+
+
+
+## 🌱 3. Stock Market and ESG (Environmental, Social, and Governance)
+The `stock_markets` data frame contains daily trading data for publicly traded companies, including information about stock prices, trading volume, dividends, and stock splits, obtained from [Yahoo! Finance](https://finance.yahoo.com).
+
+```{r}
+stock_markets <- read_csv("https://bcdanl.github.io/data/stock_history_2024_10.csv")
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+rmarkdown::paged_table(stock_markets)
+```
+
+### Description of Variables in the `stock_markets` data frame
+1.	`Date`: The specific date for the recorded stock data. 
+2.	`Ticker`: The unique symbol assigned to a publicly traded company’s stock. It is used to identify the stock on financial markets (631 unique values).
+3.	`Close`: The stock’s price at the end of the trading day. It does not account for adjustments like dividends or splits.
+4.	`Dividends`: The cash dividend paid per share on the given date, if applicable. It represents the portion of a company’s earnings distributed to shareholders.
+5.	`High`: The highest price at which the stock traded during the trading day.
+6.	`Low`: The lowest price at which the stock traded during the trading day.
+7.	`Open`: The stock’s price at the beginning of the trading day.
+8.	`Stock_Splits`: The ratio of any stock split that occurred on the given date. A stock split increases the number of shares outstanding while reducing the price per share proportionally.
+9.  `Volume`: The total number of shares traded during the day. It reflects the activity level and liquidity of the stock.
+
+<br>
+
+The `esg_info` data frame provides ESG scores and company details, including sector, industry, and market capitalization, obtained from  [Yahoo! Finance](https://finance.yahoo.com).
+```{r}
+esg_info <- read_csv("https://bcdanl.github.io/data/stock_esg_list.csv")
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+rmarkdown::paged_table(esg_info)
+```
+
+### Description of Variables in the `esg_info` data frame
+1.	`Ticker`: The stock symbol used to uniquely identify a publicly traded company on financial markets.
+2.	`Company_Name`: The full name of the company corresponding to the ticker symbol.
+3.	`Sector`: The broader industry category to which the company belongs, such as Technology, Healthcare, or Financials.
+4.	`Industry`: A more specific category within the sector that describes the company’s line of business. For example, within the Technology sector, an industry could be Semiconductors or Software.
+5.	`Market_Cap`: The total market value of the company’s outstanding shares. It is calculated by multiplying the current stock price by the total number of outstanding shares and is used to classify companies as small-cap, mid-cap, or large-cap.
+6.	`Country`: The country where the company is headquartered. This variable helps identify the geographical location of the company’s operations.
+7.	`IPO_Year`: The year in which the company went public and its shares were first offered on a stock exchange.
+8.	`total_esg`: The company’s overall Environmental, Social, and Governance (ESG) score. It reflects how well the company is performing in terms of sustainability and ethical impact.
+9.	`environmental`: The company’s score related to environmental practices, such as energy efficiency, waste management, and carbon footprint.
+10.	`social`: The company’s score related to social practices, including employee relations, diversity, community impact, and human rights.
+11.	`governance`: The company’s score related to governance practices, like board structure, executive pay, and shareholder rights.
+12.	`controversy`: A score reflecting the level of public controversies associated with the company, which may impact its reputation. A higher score often indicates more significant controversies.
+
+<br>
+
+(Optional) The `income_stmts` data frame contains income statement details for each company, including revenue, expenses, and net income.
+
+```{r}
+income_stmts <- read_csv("https://bcdanl.github.io/data/stock_income_stmts_2024_10.csv")
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+rmarkdown::paged_table(income_stmts)
+```
+
+<br>
+
+(Optional) The `balance_sheets` data frame contains balance sheet details, including assets, liabilities, and shareholder equity.
+
+```{r}
+balance_sheets <- read_csv("https://bcdanl.github.io/data/stock_balance_sheets_2024_10.csv")
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+rmarkdown::paged_table(balance_sheets)
+```
+
+
+<br>
+ 
+## ♟️ 4. Chess
+
+The compressed `chesscom_3100.zip` file includes `chesscom_3100.csv`, containing records of high-level blitz or bullet games on [Chess.com](https://www.chess.com), played by 171 players with a peak rating of at least 3100.
+
+
+- Download [the compressed zip file](https://bcdanl.github.io/data/chesscom_3100.zip), extract it (this can be automatically extracted), and upload it to your team project in Posit Cloud.
+
+<br>
+
+### Description of Variables in the `chesscom_3100.csv` file
+
+1.	`Date`: The date on which the chess game was played, formatted as YYYY-MM-DD.
+2.	`Year`: The year of the game, extracted from the date (e.g., 2017).
+3.	`Month`: The month of the game, extracted from the date (e.g., 2 for February).
+4.	`Day`: The day of the month on which the game was played, extracted from the date (e.g., 13).
+5.	`White`: The username of the player who played with the white pieces.
+6.	`Black`: The username of the player who played with the black pieces.
+7.	`Result`: The outcome of the game from White’s perspective, with options like:
+	-	“1-0” indicating a win for White.
+	-	“0-1” indicating a win for Black.
+	-	“1/2-1/2” indicating a draw.
+8.	`WhiteElo`: The Elo rating of the player playing White at the time of the game.
+9.	`BlackElo`: The Elo rating of the player playing Black at the time of the game.
+10.	`ECO`: The ECO (Encyclopaedia of Chess Openings) code that classifies the opening used in the game, such as D02 or E36.
+11.	`ECO_name`: A description or detailed name of the chess opening corresponding to the ECO code, which may include the opening variation.
+12. `ECO_moves`: The sequence of the opening moves for the chess opening corresponding to the ECO code
+13.	`Termination`: The method by which the game ended, such as “won by resignation,” “drawn by insufficient material,” or “won on time.”
+13.	`TimeControl`: The total time control for the game in seconds (e.g., 180 indicates a three-minute game).
+
+<br>
+
+The `rating_3100_players` data frame provides 71 players' profiles, including rankings, ratings, titles, and follower counts on [Chess.com](https://www.chess.com).
+
+```{r}
+rating_3100_players <- read_csv("https://bcdanl.github.io/data/chesscom_GMs_profile.csv")
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+rmarkdown::paged_table(rating_3100_players)
+```
+
+
+### Variable Description in the `rating_3100_players` data frame
+1.	`username`: The unique username associated with the player on Chess.com.
+2.	`name`: The real name of the player, if available.
+3.	`username_raw`: The original or unformatted version of the player’s username.
+4.	`country`: The country where the player is located or registered.
+5.	`rank_classical`: The player’s ranking position in Classical chess format.
+6.	`rank_rapid`: The player’s ranking position in Rapid chess format.
+7.	`rank_blitz`: The player’s ranking position in Blitz chess format.
+8.	`rating_classical`: The player’s Elo rating in Classical chess format.
+9.	`rating_rapid`: The player’s Elo rating in Rapid chess format.
+10.	`rating_blitz`: The player’s Elo rating in Blitz chess format.
+11.	`title`: The official chess title held by the player, such as GM (Grandmaster), IM (International Master), etc.
+12.	`profile_name`: The full name displayed on the player’s profile page.
+13.	`profile_username`: The URL or link to the player’s profile on Chess.com.
+14.	`profile_image`: The URL to the player’s profile image.
+15.	`followers`: The number of followers the player has on Chess.com.
+16.	`is_streamer`: Indicates whether the player is a streamer (TRUE or FALSE).
+17.	`status`: The account status, such as “premium” or other types of account membership.
+18.	`date_joined`: The date when the player joined Chess.com, formatted as YYYY-MM-DD.
+
+<br>
+
+## 🏅 5. Sports 
+-	Sports datasets can be rich and multi-layered, offering exciting opportunities for analysis—especially for sports fans.
+
+- Prof. Choe can assist with data for:
+  - Major League Baseball (MLB)
+  - National Basketball Association (NBA)
+  - National Football League (NFL)
+  - National Hockey League (NHL)
+  - Soccer (EPL, La Liga, Serie A, Bundesliga, MLS)
+  - Golf
+
+<br><br>
+
+
+
+# Key Components in the Data Storytelling Project
+
+1. **Title:**
+   - Pick a title that’s clear, catchy, and gives a good sense of what your project is about.
+
+2. **Introduction:**
+   - **Background:** Give some context about your topic and why it matters. Think of this as setting the stage for your data story and explaining what motivated you to dig into this topic.
+   - **Statement of the Project Interest:** Spell out the problem or issue you’re tackling. This will help guide your data analysis and keep things focused.
+
+3. **Data Storytelling:**
+   - **Questions and Objectives:** List the questions you’re trying to answer. Use these to shape your story and show how your data insights relate to real-world problems.
+   - **Data Transformation and Descriptive Statistics:** Walk your audience through your findings, weaving together data transformations and stats to highlight the big takeaways. Explain how your data transformations bring out the important stuff.
+   - **Data Visualization:** Use clear, color-blind friendly visuals that fit right into your narrative. Each visual should pack a punch, highlighting key insights and moving your story forward. Make sure they’re easy to interpret and add value to your story.
+
+4. **Significance of the Project:**
+   - Talk about why your findings matter. How can they be used in the real world, influence business decisions, or inform public policy? Connect your data analysis to broader themes and show why it’s relevant.
+
+5. **Visual Materials and Slide Quality:**
+   - Keep your slides clean, visually appealing, and easy to follow. Good visuals and a smart layout will make your story more engaging.
+   - Your slides will be judged on how clear and effective they are, and how well they pull everything together.
+
+6. **Team Presentation:**
+   - Make sure your presentation is engaging and flows well. Everyone on the team should contribute, showing a solid grasp of the project while keeping the audience interested.
+   - We’ll be looking at how well you deliver, how organized your presentation is, and how clearly you explain your ideas.
+
+7. **Code Quality:**
+   - Write clean, efficient, and well-documented code for your data work. Keep it organized and readable, with helpful comments so it’s easy to follow.
+   - Your code should show best practices and clearly support your analysis.
+
+8. **References:**
+   - List all your sources properly and make sure your citations are consistent and complete. Give credit where it’s due!
+
+
+<br>
+
+## 📑 Rubric for the Data Storytelling Project
+
+
+| **Attribute**                                   | **Very Deficient (1)**                                             | **Somewhat Deficient (2)**                                             | **Acceptable (3)**                                                      | **Very Good (4)**                                                       | **Outstanding (5)**                                                    |
+|-------------------------------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| **1. Quality of Data Transformation and Descriptive Statistics** | - No transformation or cleaning applied<br>- Very poor data transformation<br>- Contains significant errors | - Minimal transformation or cleaning<br>- Basic data transformation with errors<br>- Contains several errors | - Basic transformation applied<br>- Adequate data transformation<br>- Contains minor errors | - Effective transformation<br>- Thorough data transformation<br>- Data is accurate | - Advanced transformation<br>- Exceptional data transformation<br>- Data is impeccable |
+| **2. Quality of Data Visualization**       | - Visualizations are missing or unclear<br>- Misrepresents data | - Visualizations are basic and lack clarity<br>- Some misrepresentation | - Visualizations are clear and accurate<br>- Data is appropriately represented | - Visualizations are insightful and enhance understanding<br>- Data is accurately represented | - Visualizations are highly creative and compelling<br>- Data representation is impeccable |
+| **3. Effectiveness of Data Storytelling**       | - No narrative or storyline<br>- Insights are absent or irrelevant<br>- Fails to engage the audience | - Weak narrative structure<br>- Insights are superficial<br>- Minimal audience engagement | - Clear narrative present<br>- Insights are relevant<br>- Audience is adequately engaged | - Compelling narrative<br>- Insights are significant<br>- Engages audience effectively | - Exceptional and captivating narrative<br>- Insights are profound and impactful<br>- Audience is highly engaged |
+| **4. Quality of Slides and Visual Materials**   | - Very poorly organized<br>- Difficult to read and understand<br>- Numerous errors present | - Somewhat disorganized<br>- Some slides are unclear<br>- Several errors present | - Well organized<br>- Mostly clear and understandable<br>- Few errors present | - Very well organized<br>- Clear and visually appealing<br>- Very few errors | - Exceptionally well organized<br>- Highly clear and visually compelling<br>- No errors |
+| **5. Quality of Team Presentation**             | - Presentation is disjointed<br>- Poor team coordination<br>- Unable to address questions | - Lacks flow<br>- Some coordination issues<br>- Difficulty with several questions | - Cohesive presentation<br>- Team works well together<br>- Addresses most questions adequately | - Engaging presentation<br>- Team is well-coordinated<br>- Addresses almost all questions professionally | - Highly engaging and polished presentation<br>- Excellent team coordination<br>- Addresses all questions expertly |
+| **6. Quality of Code (Descriptive Statistics, Transformation, Visualization)** | - Code is missing or non-functional<br>- No documentation<br>- Disorganized code | - Code has major errors<br>- Minimal documentation<br>- Code is somewhat disorganized | - Code is functional<br>- Basic documentation provided<br>- Code is organized | - Code is efficient and well-structured<br>- Good documentation<br>- Code is well-organized | - Code is highly efficient and elegant<br>- Excellent documentation<br>- Code is exceptionally well-organized |
+
+
+<br>
+
+
+## 💡 Tips on Data Storytelling Project
+
+Your team does **not** need to analyze every variable provided in the suggested data frames. Instead, carefully **select the variables that best support your story, argument, and analysis**.
+
+To find an interesting story, you should:
+
+- Explore your data using **descriptive statistics** (e.g., `skimr::skim()`)
+- Apply **data transformations** such as filtering and counting
+- Use **data visualizations** to uncover patterns, trends, and anomalies
+-	Draw on your **background knowledge** of the topic
+- Treat the process as **iterative** — your understanding will evolve as you explore, refine, and visualize your data along with your story.
+
+A strong data story emerges when your **analytical choices** (what you compute, transform, or visualize) clearly support your **narrative** and your **main insights**.
+
+<br>
+
+## 🔧 Data Transformation Support
+
+- We will cover key data-transformation functions in class to support your project, but feel free to reach out to **Prof. Choe** if your team needs additional guidance.
+- As you work, think carefully about what your **ideal data frame** should look like to enable effective visualization and storytelling.
+  
+
+<br><br>
+
+
+
+
+# Requirements
+
+
+- Each team must email (1) the **presentation slides** (in _Microsoft PowerPoint_ or _Google Slides_ format) and (2) the associated R script for the project at least 30 minutes before class time on the day of your presentation.
+
+- **New Techniques**: If your project uses data transformations or visualizations that we have not covered in class, your team must include a brief explanation of the relevant code during the presentation.
+
+## 🖥️ Presentation Slides
+
+-	In addition to your ggplot visualizations, you may include other **visual aids** in your presentation slides to enhance clarity and storytelling.
+
+<br>
+
+## 💻 R Script
+- **Organization**: Use section headers (created with `Ctrl/Cmd + Shift + R`) and comments (`#`) to clearly label which parts of your code correspond to specific visualizations, transformations, and descriptive statistics. This will make your script easy to follow.
+- **Explanation**: Include comments to explain any parts of your code that use techniques not covered in the course. This should provide enough detail for others to understand the purpose and functionality of your code.
+  - **Reproducibility**: Ensure your R script is complete and reproducible, meaning anyone who runs it should be able to replicate your results without needing additional information.
+  - **Clarity**: Write clear and concise comments throughout your code to enhance readability and comprehension. Avoid overly complex or redundant code.
+  - **Error Handling**: Make sure your code runs smoothly without errors.
+  
+  
+
+## 🤝 Peer Evaluation
+
+- If a team member fails to collaborate on the project by December 1, 2025, 4:00 P.M. (Eastern Time), please send an email to bchoe@geneseo.edu and cc the non-collaborating team member in the email.
+  - If the conflict is not resolved after the initial notification, the non-collaborating team member may receive a reduced or zero score for the project component, depending on the severity of their lack of participation. Prof. Choe will follow up with both parties to attempt to mediate and address the issue fairly.
+
+- Each student is required to evaluate the presentations of **other teams**. Peer evaluations will make up 5% of the total project score.
+  - An Excel spreadsheet for the peer evaluation will be provided. Make sure to save the spreadsheet and submit it to Brightspace.
+  - Failure to complete the peer evaluation will result in a reduction of your class participation score.
+  - **Score Calculation**: For each category of **Rubric 1-5**, the four highest and four lowest scores will be dropped to ensure fairness when calculating the peer evaluation score.
+
+

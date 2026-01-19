@@ -1,0 +1,736 @@
+---
+title: Lecture 7
+subtitle: Big Data and the Modern Data Infrastructure 
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-10-15
+execute: 
+  eval: true
+  echo: false
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+```{r setup}
+#| include: false
+
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+library(gapminder)
+library(ggrepel)
+library(nycflights13)
+
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+# Set global options for color-blind-friendly scales
+# scale_colour_discrete <- function(...) scale_colour_viridis_d(...)
+scale_colour_discrete <- function(...) scale_color_colorblind(...)
+scale_fill_discrete <- function(...) scale_fill_colorblind(...)
+```
+
+
+# **A Simple Taxonomy of Data**  {background-color="#1c4982"}
+
+## Structured Data vs. Unstructured Data
+
+<div style="display:block; margin:-15px;"></div>
+
+<div style="text-align: center; width: 60%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/data-taxonomy.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"> </p>
+</div>
+
+- Data comes in various formats.
+   - **Structured data**: Has a predefined format, fits into traditional databases.
+   - **Unstructured data**: Not organized in a predefined manner, comes from sources like documents, social media, emails, photos, videos, etc.
+
+<div style="display:block; margin:-10px;"></div>
+
+
+## Data Types Overview
+
+:::: {.nonincremental}
+:::: {.columns}
+::: {.column width="50%"}
+
+- **Categorical Data**: Data that can be divided into distinct categories based on some qualitative attribute.
+  - **Nominal Data**
+  - **Ordinal Data**
+
+:::
+
+::: {.column width="50%"}
+
+- **Numeric Data**: Data that represents measurable quantities and can be subjected to mathematical algebra.
+  - **Interval Data**
+  - **Ratio Data**
+
+:::
+::::
+::::
+
+## Categorical Data - Nominal
+
+:::: {.nonincremental}
+
+
+| ID | Animal |
+|----|--------|
+| 1  | Dog    |
+| 2  | Cat    |
+| 3  | Bird   |
+
+- **Nominal Data**: Categorical data where the categories have no intrinsic order or ranking.
+- **No Order**: Categories are simply different; there is no logical sequence.
+- **Examples**:
+  - **Colors**: Red, Blue, Green
+  - **Types of Animals**: Dog, Cat, Bird
+
+:::: 
+
+## Categorical Data - Ordinal
+
+:::: {.nonincremental}
+
+| ID | Education Level |
+|----|-----------------|
+| 1  | Bachelor’s      |
+| 2  | Master’s        |
+| 3  | PhD             |
+
+- **Ordinal Data**: Categorical data where the categories have a meaningful order or ranking.
+
+- **Order Matters**: Categories can be ranked or ordered, but the differences between categories are not necessarily uniform.
+- **Examples**:
+  - **Education Levels**: High School, Bachelor’s, Master’s, PhD
+  - **Customer Satisfaction**: Poor, Fair, Good, Excellent
+
+::::
+
+
+
+## Numeric Data - Interval
+
+:::: {.nonincremental}
+
+| ID | Temperature (°F) |
+|----|------------------|
+| 1  | 70               |
+| 2  | 80               |
+| 3  | 90               |
+
+- **Interval Data**: Numeric data where the differences between values are meaningful, but there is no true zero point.
+
+- **Meaningful Intervals**: The difference between values is consistent.
+- **No True Zero**: Zero does not indicate the absence of the quantity.
+- **Examples**:
+  - **Temperature (°F)**: Zero degrees does not mean no temperature.
+  - **Time of Day in a 12-Hour Clock**: Differences are meaningful, but there is no absolute zero.
+
+::::
+
+## Numeric Data - Ratio
+
+:::: {.nonincremental}
+
+| ID | Height (cm) | Weight (kg) |
+|----|-------------|-------------|
+| 1  | 160         | 55          |
+| 2  | 175         | 70          |
+| 3  | 170         | 65          |
+
+- **Ratio Data**: Numeric data with a true zero point, allowing for a full range of mathematical operations.
+
+- **Meaningful Ratios**: Comparisons like twice as much or half as much are valid.
+- **True Zero**: Zero indicates the absence of the quantity.
+- **Examples**:
+  - **Height in Centimeters**: Zero means no height.
+  - **Weight in Kilograms**: Zero means no weight.
+
+::::
+
+
+
+## Classwork: Taxonomy of Data
+
+**Try it out** → [Classwork 7: Taxonomy of Data](https://bcdanl.github.io/danl-cw/danl-101-cw-07.html)  
+
+
+
+# **Databases** {background-color="#1c4982"}
+
+## What Is a Database?
+
+- A **database (DB)** is a structured collection of data stored electronically.
+- A **Database Management System (DBMS)** is software that helps us:
+  - **Store** data (safely and efficiently)
+  - **Query** data (like `filter()`, `select()`)
+  - **Update** data while keeping everything consistent and valid
+- **Examples of DBMS:**
+  - **PostgreSQL / MySQL** (used by websites and companies)
+  - **Google BigQuery, Snowflake** (large-scale analysis on cloud system)
+  - **Excel / Google Sheets** → *basic storage only — not a full DBMS*
+
+<div style="display:block; margin:-20px;"></div>
+
+:::callout-note
+- SQL stands for **Structured Query Language**, and a **query** simply means *asking the data for something* — such as filtering rows, selecting columns, or combining information.
+:::
+
+
+
+
+## ETL: 📥 Extract ➜ 🔧 Transform ➜ 💾 Load
+
+:::{.nonincremental}
+- **ETL** is the **data preparation workflow** used in analytics.
+:::
+
+<div style="font-size: 1.5rem">  <!-- Adjust size here (0.7–0.85 works well on slides) -->
+<table>
+  <tr>
+    <th>ETL Step</th>
+    <th>Meaning in Data Workflow</th>
+    <th>Example in a Database Context</th>
+  </tr>
+  <tr>
+    <td><strong>Extract</strong></td>
+    <td><span class="fragment">Retrieve raw data from an external source</span></td>
+    <td><span class="fragment">Importing a CSV, Google Sheet, app response, or web data into a temporary table</span></td>
+  </tr>
+  <tr>
+    <td><strong>Transform</strong></td>
+    <td><span class="fragment">Clean, reshape, and structure the data</span></td>
+    <td><span class="fragment">Filtering rows, selecting fields, and joining tables</span></td>
+  </tr>
+  <tr>
+    <td><strong>Load</strong></td>
+    <td><span class="fragment">Store the cleaned data for analysis</span></td>
+    <td><span class="fragment">Writing the final structured table into a database as the analysis-ready dataset</span></td>
+  </tr>
+</table>
+</div>
+
+  - It makes raw data **usable** by making it **clean, consistent, and connected** before analysis begins.
+
+
+## 📥 ETL — Extract Stage
+
+- **Goal:** Collect **raw data** from external sources  
+  (Google Sheets, CSV/Excel files, survey tools, web exports, or app submissions).
+
+- **Quick Validation Check:**  
+  - ✅ Column names match expected schema  
+  - ✅ Numeric fields contain numbers only (no symbols/text)
+
+- **Storage at this stage:**  
+  - Raw data is stored in a **temporary DB area** (like Google Sheets or CSV)  
+  - ⚠️ This is **not yet the official DB** — just a collection point
+
+
+## 🔧 ETL — Transform Stage
+
+- **Goal:** Convert **raw data** into a **clean, consistent, analysis-ready format**
+
+- **In DANL 101 using R (`tidyverse`):**
+  - `filter()` → keep valid **observations**
+  - `select()` → keep relevant **variables**
+  - `*_join()` → combine multiple **tables/data.frames**
+
+- **Storage at this stage:**  
+  - Cleaning happens **in memory**, not yet in the final database  
+  - The **Google Sheet + R** behave like a **database + DBMS system**, with **`tidyverse` acting as the query engine**
+
+
+
+
+
+
+## 💾 ETL — Load Stage
+
+- **Goal:** Store the **clean, final dataset** as the official **analysis table**
+
+- **Storage at this stage:**  
+  - The cleaned data is written to a **database area** (this becomes the official dataset for analysis)
+
+- **In DANL 101 using R (`tidyverse`):**
+  - The final `data.frame` functions as our **primary analysis dataset**, used for:
+    - 📊 **Summaries** — descriptive statistics and numeric insights  
+    - 📈 **Visualizations** — plots, charts, and dashboard elements  
+    - 🎯 **Storytelling & Analysis** — interpreting and communicating insights
+    
+- **Try it out** → [*Classwork 8: Databases — Social Media Analytics*](https://bcdanl.github.io/danl-cw/danl-101-cw-08.html).
+
+
+## Relational Data Thinking
+
+- During the **Transform** step in ETL, our data becomes:
+  - **Clean**, **structured in tables**, and organized with a shared **key** column
+- At this point, we start thinking **like database analysts**:
+  - Each **table holds one type of data**
+  - A **key column links tables together**
+
+- In real-world analytics, data rarely lives in a single big file.
+  - **Example**: one table stores **student social media activity**
+    - Another table stores **platform reference information**
+- To analyze properly, we **connect these tables using a key**.
+  - **In R tidyverse**: `left_join()`
+  - **In database language**: a **join** operation
+
+
+
+## Relational Databases
+
+:::{.nonincremental}
+- When multiple tables are linked by keys, this structure is called a **relational database** 
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+<div style="display:block; margin:-60px;"></div>
+<div style="text-align: center; width: 80%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/relational-data.png" style="width: 100%; margin-bottom: -20px;">
+</div>
+:::
+::: {.column width="50%"}
+```{.r}
+tab_project <- 
+  read_csv("https://bcdanl.github.io/data/rdb-project_table.csv")
+tab_department <- 
+  read_csv("https://bcdanl.github.io/data/rdb-department_table.csv")
+tab_manager <- 
+  read_csv("https://bcdanl.github.io/data/rdb-manager_table.csv")
+```
+
+
+- A **relational database** organizes data into multiple related tables, called **relations**.
+- Each table stores data about **one type of entity** (e.g., projects, departments, managers).
+:::
+::::
+
+
+## Relational Database Characteristics
+
+1. Data is stored in a `data.frame` (or **table**).
+2. Each **row** = an **observation** (or **record**).
+3. Each **column** = a **variable** (or **attribute** or **field**).
+4. Each table has a **key** — a column that *uniquely* identifies each row.
+5. Keys allow us to **link tables together**.
+6. We use **queries** (like `filter()`, `select()`, `left_join()`) to retrieve and combine data.
+
+
+
+## Relational Tables and Keys
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/join-setup.png" style="width: 27.5%;">
+</div>
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r}
+x <- data.frame(
+    key = c(1, 2, 3),
+    val_x = c('x1', 'x2', 'x3')
+)
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{.r}
+y <- data.frame(
+    key = c(1, 2, 4),
+    val_y = c('y1', 'y2', 'y3')
+)
+```
+:::
+
+::::
+
+- The colored column represents the "**key**" variable (`key`).
+- The grey column represents the "value" variable (`val_x`, `val_y`).
+
+
+## Joining Tables with `left_join()`
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/join-left.png" style="width: 50%;">
+</div>
+
+<div style="display:block; margin:-20px;"></div>
+
+```{.r}
+x |>
+  left_join(y)
+```
+
+- A **left join** keeps all rows from `x` and adds matching information from `y`.
+- Among the different join types, `left_join()` is the most commonly used join.
+  -  It does not lose information from your **main data.frame** (`x`) and simply attaches extra information (`y`) when it exists.
+- **Try it out** → [*Classwork 9: ETL Process in R*](https://bcdanl.github.io/danl-cw/danl-101-cw-09.html).
+
+<!-- <div style="display:block; margin:-30px;"></div> -->
+<!-- ::: callout-tip -->
+<!-- - 💡 *Think of `x` as your main class roster and `y` as an extra sheet of information you attach to each student.* -->
+
+<!-- ::: -->
+
+
+
+
+# **Big Data**  {background-color="#1c4982"}
+
+
+<!-- ## Why Big Data Matters for Data Analytics -->
+
+<!-- - **Data is the new capital.** Organizations that collect and analyze data gain a strong **competitive advantage**. -->
+<!-- - Every digital interaction — clicks, sensors, transactions, GPS signals — generates data. -->
+<!-- - The **explosion of data** has transformed how decisions are made: -->
+<!--   - **Businesses**: demand forecasting, customer insights, fraud detection   -->
+<!--   - **Governments**: policy design, smart cities, public health monitoring   -->
+<!--   - **Individuals**: wearable tech, streaming platforms, social media trends -->
+<!-- - Data analytics turns **raw data into actionable insights** — the foundation of the modern economy. -->
+
+## What Is Big Data?
+
+- **Big data and analytics** are key components shaping the future across industries.
+- Refers to **enormous, complex datasets** that traditional tools can’t efficiently manage.
+- Characterized by the **Five V’s**:
+
+  1. **Volume** — amount of data  
+  2. **Velocity** — speed of data generation  
+  3. **Value** — usefulness of data  
+  4. **Veracity** — trustworthiness of data  
+  5. **Variety** — diversity of data types
+
+
+
+
+## 1️⃣ Volume
+
+
+:::: {.columns}
+::: {.column width="42%"}
+
+| Unit        | Symbol | Value   |
+|--------------|---------|---------|
+| Kilobyte     | kB      | 10³     |
+| Megabyte     | MB      | 10⁶     |
+| Gigabyte     | GB      | 10⁹     |
+| Terabyte     | TB      | 10¹²    |
+| Petabyte     | PB      | 10¹⁵    |
+| Exabyte      | EB      | 10¹⁸    |
+| Zettabyte    | ZB      | 10²¹    |
+| Yottabyte    | YB      | 10²⁴    |
+| Brontobyte*  | BB      | 10²⁷    |
+| Gegobyte*    | GeB     | 10³⁰    |
+
+<small>*Less commonly used or proposed extensions.</small>
+
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="55%"}
+<div style="text-align: center;">
+  <img src="https://bcdanl.github.io/lec_figs/big-data.png" style="width: 100%;">
+  <p><strong>Growth of the Global Datasphere</strong></p>
+</div>
+
+
+
+- In 2017, the digital universe contained **16.1 zettabytes** of data.  
+- Expected to grow to **163 zettabytes by 2025**.  
+<!-- - Much of this growth comes from **embedded systems in smart devices**. -->
+
+:::
+::::
+
+
+
+## 2️⃣ Velocity
+
+- Refers to the **rate at which new data is created and processed**.  
+- Estimated at **402.74 million terabytes per day** (≈181 zettabytes per year).  
+- Around **90% of the world’s data** has been generated in just the **past two years**.
+
+
+
+## 3️⃣ Value
+
+- Represents the **worth of data** in driving better decisions.  
+- Highlights the need to **extract actionable insights** quickly.  
+- Large datasets enable discovery of **patterns and anomalies** not visible in small samples.
+
+
+
+## 4️⃣ Veracity
+
+- Measures **data quality and reliability**.  
+- Involves **accuracy, completeness, and timeliness**.  
+- Determines whether data can be **trusted for decision-making**.
+
+
+
+## 5️⃣ Variety
+
+<div style="text-align: center; width: 85%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/data-source.png" style="width: 100%;">
+</div>
+
+
+
+# **Technologies for Big Data Management** {background-color="#1c4982"}
+
+## Why We Need New Technologies
+
+- **Big data** exceeds what traditional tools can store or analyze.
+- **Limitations:**
+  - Legacy databases struggle with volume and speed.
+  - Hardware can’t scale efficiently.
+- **Solutions:**
+  - Modern frameworks and architectures like **Data Warehouses** enable:
+    - Massive storage  
+    - Fast queries  
+    - Integration across platforms
+
+
+## Schema in Big Data Management
+
+- A **schema** is the **blueprint or structure** that defines how data is organized in a database.  
+- It specifies:
+  - **What _fields_ exist** (e.g., `name`, `age`, `income`)
+  - **What _type_ each field is** (e.g., character, number, date)
+  - **How tables _relate_** to each other
+- In other words, a schema tells the system **how to read and interpret data** consistently.
+
+
+## Data Warehouses
+
+<div style="text-align: center;">
+  <img src="https://bcdanl.github.io/lec_figs/data-warehousing.png" style="width: 80%;">
+</div>
+
+- **Definition:** Central repository integrating data from multiple sources.
+- **Purpose:** Enables comprehensive **analysis and decision-making**.
+
+
+
+## Key Characteristics of Data Warehouses
+<div style="font-size:1.85rem; max-width:1000px; margin:0.5rem auto;">
+
+| **Characteristic** | **Description** |
+|----------------|-------------|
+| <span class="fragment">**Large**</span> | <span class="fragment">Stores billions of records and petabytes of data</span> |
+| <span class="fragment">**Multiple Sources**</span> | <span class="fragment">Integrates *internal* and *external* data via ETL</span> |
+| <span class="fragment">**Historical**</span> | <span class="fragment">Often includes 5+ years of archived data</span> |
+| <span class="fragment">**Cross-Organizational**</span> | <span class="fragment">Accessible across departments for data-driven strategy</span> |
+| <span class="fragment">**Supports Analysis & Reporting**</span> | <span class="fragment">Enables drill-downs and trend detection</span> |
+| <span class="fragment">**Schema-Based**</span> | <span class="fragment">Data fits a *predefined structure* before being stored for efficient querying and analysis</span> |
+
+</div>
+
+## Understanding Schema
+
+- **Definition:** Data is **structured and validated** before it enters the system.  
+  - The **schema is predefined**, specifying tables, fields, and data types.  
+- **Advantages:**
+  - Ensures **data consistency, accuracy, and performance**  
+  - Ideal for **reporting**, **dashboards**, and **business intelligence**  
+  - Simplifies regulatory compliance and governance  
+- **Example:**  
+  - Before inserting sales data, ETL scripts ensure each record matches the schema — e.g.,  
+    - `store_id` (integer), `sales` (numeric)  
+  - Once loaded, users can query with confidence  
+
+<!-- :::callout-note -->
+<!-- - 💡 *Think of it as “organize first, then use.”* -->
+<!-- ::: -->
+
+
+
+## Walmart: A Pioneer in Data Warehousing
+
+:::: {.columns}
+::: {.column width="50%"}
+<div style="text-align: center;">
+  <img src="https://bcdanl.github.io/lec_figs/walmart-data-warehouse.png" style="width: 100%;">
+</div>
+:::
+::: {.column width="50%"}
+
+<div style="display:block; margin:30px;"></div>
+
+- Early adopter of data-driven **supply chain optimization**  
+- Collects transaction data from **11,000+ stores and 25,000 suppliers**  
+- Uses **real-time analytics** to optimize pricing, inventory, and customer experience
+
+- In 1992, launched the first commercial data warehouse to exceed **1 TB**  
+- In 2025, processes data at a rate of **2.5 petabytes per hour**
+
+:::
+::::
+
+
+
+<!-- ## Data Warehouse Example — WHOOP -->
+
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="50%"} -->
+<!-- <div style="text-align: center;"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/whoop.png" style="width: 100%;"> -->
+<!-- </div> -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+
+<!-- - Wearable fitness device collecting **biometric data** 100× per second   -->
+<!-- - Data warehouse stores sensor data for **performance analytics**   -->
+<!-- - Provides insights on **strain, recovery, and sleep**   -->
+
+<!-- ::: -->
+<!-- :::: -->
+
+
+
+<!-- ## Data Warehouse Example — American Airlines -->
+
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="50%"} -->
+<!-- <div style="text-align: center;"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/aa.jpeg" style="width: 100%;"> -->
+<!-- </div> -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+
+<!-- - Flight attendants use data to **personalize service**   -->
+<!-- - Can offer compensation (miles/vouchers) based on **real-time customer history**   -->
+
+<!-- ::: -->
+<!-- :::: -->
+
+
+
+<!-- ## Data Quality Challenges -->
+
+<!-- - **Inconsistencies:** Duplicate, missing, or misformatted data   -->
+<!-- - **Dirty Data:** Inaccurate, incomplete, or outdated records   -->
+<!-- - **Impact:** “Garbage in, garbage out” — poor data → misleading analysis   -->
+<!-- - **Solution:**   -->
+<!--   - Enforce **data governance**   -->
+<!--   - Use robust **ETL validation and cleaning pipelines** -->
+
+
+
+<!-- ## Data Lakes -->
+
+<!-- - **Definition:** Centralized storage for **all raw data** — structured, semi-structured, or unstructured.   -->
+<!-- - **Purpose:** Retains flexibility for future analytics.   -->
+<!-- - **Characteristics:** -->
+<!--   - **Schema-on-read:** Data formatted when accessed   -->
+<!--   - **Highly scalable:** Stores massive heterogeneous datasets   -->
+<!--   - **Supports advanced analytics:** Machine learning, IoT data, etc. -->
+
+<!-- :::callout-note -->
+<!-- - **Internet of Things (IoT)** refers to **physical devices** — such as smartwatches, vehicles, appliances, and industrial machines — that are **connected to the internet** and can **collect, send, and receive data**.  -->
+<!-- ::: -->
+
+
+<!-- ## Understanding Schema-on-Read -->
+
+<!-- - **Definition:** Data is stored in its **raw, native format**, without enforcing a fixed structure on entry.   -->
+<!--   - The **schema** is applied **only when the data is read or queried**.   -->
+<!-- - **Advantages:** -->
+<!--   - Flexible for exploratory analytics and unstructured data   -->
+<!--   - Supports **machine learning**, **text**, **video**, **IoT**, and **sensor streams**   -->
+<!--   - Enables faster data ingestion since no preprocessing is required   -->
+<!-- - **Example:**   -->
+<!--   - Store all customer interaction logs in one lake   -->
+<!--   - Analysts later extract fields like `user_id` or `timestamp` as needed   -->
+
+<!-- :::callout-note -->
+<!-- - 💡 *Think of it as “store first, organize later.”* -->
+<!-- ::: -->
+
+
+<!-- ## Data Lakes vs. Data Warehouses -->
+
+<!-- <div style="display:block; margin:50px;"></div> -->
+
+<!-- <div style="font-size:2rem; max-width:900px; margin:0.5rem auto;"> -->
+
+<!-- | **Feature** | **Data Lake** | **Data Warehouse** | -->
+<!-- |--------------|---------------|--------------------| -->
+<!-- | <span class="fragment">**Data Processing**</span> | <span class="fragment">Schema-on-read (process later)</span> | <span class="fragment">Schema-on-write (process first)</span> | -->
+<!-- | <span class="fragment">**Data State**</span> | <span class="fragment">Raw, unprocessed</span> | <span class="fragment">Cleaned, curated</span> | -->
+<!-- | <span class="fragment">**Data Types**</span> | <span class="fragment">All (structured + unstructured)</span> | <span class="fragment">Mostly structured</span> | -->
+<!-- | <span class="fragment">**Flexibility**</span> | <span class="fragment">High</span> | <span class="fragment">Moderate</span> | -->
+
+<!-- </div> -->
+
+<!-- ## Case Study — Bechtel Corporation -->
+
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="45%"} -->
+<!-- <div style="text-align: center;"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/bechtel.jpeg" style="width: 100%;"> -->
+<!-- </div> -->
+<!-- ::: -->
+<!-- ::: {.column width="55%"} -->
+
+<!-- - **Industry:** Global engineering & construction   -->
+<!-- - **Implementation:** 5-petabyte data lake consolidating decades of project data   -->
+<!-- - **Benefits:** -->
+<!--   - **Historical insight** across hundreds of projects   -->
+<!--   - **Improved forecasting** of project outcomes   -->
+<!--   - **Cost reduction** via inefficiency detection   -->
+<!--   - **Competitive advantage** in bidding and delivery   -->
+
+<!-- ::: -->
+<!-- :::: -->
+
+

@@ -1,0 +1,155 @@
+---
+title: Week 3
+subtitle: Artificial Intelligence
+date: 2025-09-08
+from: markdown+emoji
+---
+
+In Week 3, we will go over concepts related with generative AI and discuss the book Co-Intelligence (Introduction–Chapter 2).
+
+
+## 🏫 Lecture Slides  
+
+- **Lecture 4 — Generative Artificial Intelligence**  
+  [View Slides](../danl-lec/danl-101-lec-04-2025-0905.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+### Useful Keyboard Shortcuts for Lecture Slides
+- **CTRL + Shift + F**: Search
+- **M**: Toggle menu
+- **E**: PDF export/printing mode
+
+
+## ✍️ Classwork
+
+🚧 [Classwork 1](../danl-cw/danl-101-cw-01.html){target="_blank"} invites you to explore where we draw the line between assistance and authorship when using generative AI tools. 🚧
+
+
+## 📚 Recommended Reading
+  
+- Mollick, Ethan. *Co-Intelligence: Living and Working with AI*, Penguin Publishing Group, 2024.
+  - **Read:** Introduction, Chapter 1, and Chapter 2
+
+<!-- - [Zuckerberg, M. - Personal Superintelligence](https://www.meta.com/superintelligence/?srsltid=AfmBOoqXowSyYgpZL76IGwUcyaYFJDIDBZZKhjA2Q71MUXr5PbKdlwRV) -->
+
+### Transformers
+Transformers are a type of neural network architecture that transforms or changes an input sequence into an output sequence. They do this by learning context and tracking relationships between sequence components. For example, consider this input sequence: "What is the color of the sky?" The transformer model uses an internal mathematical representation that identifies the relevancy and relationship between the words color, sky, and blue. It uses that knowledge to generate the output: "The sky is blue." 
+
+
+#### How do transformers work?
+
+Neural networks have been the leading method in various AI tasks such as image recognition and natural language processing (NLP) since the early 2000s. They consist of layers of interconnected computing nodes, or neurons, that mimic the human brain and work together to solve complex problems.
+
+Traditional neural networks that deal with data sequences often use an encoder/decoder architecture pattern. The encoder reads and processes the entire input data sequence, such as an English sentence, and transforms it into a compact mathematical representation. This representation is a summary that captures the essence of the input. Then, the decoder takes this summary and, step by step, generates the output sequence, which could be the same sentence translated into French.
+
+This process happens sequentially, which means that it has to process each word or part of the data one after the other. The process is slow and can lose some finer details over long distances.
+
+#### Attention mechanism
+
+Transformer models modify this process by incorporating something called a attention mechanism. Instead of processing data in order, the mechanism enables the model to look at different parts of the sequence all at once and determine which parts are most important. 
+
+Imagine that you're in a busy room and trying to listen to someone talk. Your brain automatically focuses on their voice while tuning out less important noises. Attention enables the model do something similar: it pays more attention to the relevant bits of information and combines them to make better output predictions. This mechanism makes transformers more efficient, enabling them to be trained on larger datasets. It’s also more effective, especially when dealing with long pieces of text where context from far back might influence the meaning of what's coming next.
+
+
+
+#### Reference
+- [AWS - What are Transformers in Artificial Intelligence?](https://aws.amazon.com/what-is/transformers-in-artificial-intelligence/)
+<!-- - [AWS - What is LLM (Large Language Model)?](https://aws.amazon.com/what-is/large-language-model/) -->
+
+⚠️ Note: These excerpts from the above article are shared under fair use for educational purposes to support your learning.
+
+
+### GPT
+
+Generative Pre-trained Transformers, commonly known as GPT, are a family of neural network models that uses the transformer architecture and is a key advancement in artificial intelligence (AI) powering generative AI applications such as ChatGPT. GPT models give applications the ability to create human-like text and content (images, music, and more), and answer questions in a conversational manner. Organizations across industries are using GPT models and generative AI for Q&A bots, text summarization, content generation, and search.
+
+
+
+#### How does GPT work?
+
+The GPT models are transformer neural networks. The transformer neural network architecture uses attention mechanisms to focus on different parts of the input text during each processing step. A transformer model captures more context and improves performance on natural language processing (NLP) tasks. It has two main modules, which we explain next.
+
+##### Encoder
+
+<!-- The encoder reads the whole input at once. First, each word is turned into numbers called embeddings (words used in similar ways get similar numbers). The model also adds position information so it knows word order. Using attention, the encoder figures out which words matter to each other in context and builds a smarter, context-aware version of each word. That’s how it keeps “a dog chases a cat” different from “a cat chases a dog.” The encoder’s output is a set of context-rich vectors (one per token) that the decoder can use. -->
+
+
+Before a transformer can make sense of language, words must be turned into numbers. This is done with embeddings, which are long lists of numbers that capture meaning. Words with similar meanings, like *sea* and *ocean*, end up with embeddings that look alike, while very different words like *cat* are far apart. In real models, these vectors often have hundreds of numbers, not just a few. For example, if you only described a fruit with three traits such as color, size, and sweetness, you would get a rough idea. But if you described it with 300 traits such as texture, smell, taste, and shape, you would have a much richer description. That is why embeddings need so many numbers. But meaning alone is not enough. Transformers read all words in parallel, so they also need positional encoding to know order. Without it, the sentences *"The cat chased the dog"* and *"The dog chased the cat"* would look the same. Positional encoding is like giving each word a seat number in a row so the model knows where the word sits in the sentence.
+
+Once words have both meaning from embeddings and order from positional encoding, the attention mechanism can actually do its job: deciding which words matter most to each other in context. Without embeddings, the model would just see words as IDs with no sense of meaning. Without positional encoding, it would treat the words as if they were a bag of tokens, with no sense of order. Together, embeddings and positions give attention the raw material it needs to calculate relationships. For example, in the question *"What is the color of the sea?"*, the token *color* should pay strong attention to *sea*, not to *what*. This process creates context-aware representations, where every word is updated to reflect its role in the sentence. That is why the model can then generate the correct answer *"The sea is blue."* For example, think of listening to someone in a noisy room. Your ears (embeddings) tell you what the sounds mean, and your sense of direction (positional encoding) tells you where they are coming from. Only then can your focus (attention) tune in to the important voice and ignore the rest. In the same way, embeddings give meaning, positional encoding gives order, and attention ties them together so the transformer can make sense of language.
+
+##### Decoder
+
+The decoder produces the output one token at a time. With attention, it focuses on the most relevant parts of what it has already seen. At each step, it scores many possible next tokens and chooses the most likely one, repeating this process until the answer is complete.
+
+
+
+#### How was GPT-3 trained?
+
+In a published research paper, researchers described generative pretraining as the ability to train language models with unlabeled data and achieve accurate prediction. The first GPT model, GPT-1, was developed in 2018. GPT-4 was introduced in March 2023 as a successor to GPT-3.
+
+GPT-3 was trained with over 175 billion parameters or weights. Engineers trained it on over 45 terabytes of data from sources like web texts, Common Crawl, books, and Wikipedia. Prior to training, the average quality of the datasets was improved as the model matured from version 1 to version 3. 
+
+GPT-3 trained in a semi-supervised mode. First, machine learning engineers fed the deep learning model with the unlabeled training data. GPT-3 would understand the sentences, break them down, and reconstruct them into new sentences. In unsupervised training, GPT-3 attempted to produce accurate and realistic results by itself. Then, machine learning engineers would fine-tune the results in supervised training, a process known as reinforcement learning with human feedback (RLHF). 
+
+You can use the GPT models without any further training, or you can customize them with a few examples for a particular task.
+
+
+
+#### Reference
+- [AWS - What is GPT](https://aws.amazon.com/what-is/gpt/)
+
+⚠️ Note: These excerpts from the above article are shared under fair use for educational purposes to support your learning.
+
+
+### RLHF
+
+Reinforcement learning from human feedback (RLHF) is a machine learning (ML) technique that uses human feedback to optimize ML models to self-learn more efficiently. Reinforcement learning (RL) techniques train software to make decisions that maximize rewards, making their outcomes more accurate. RLHF incorporates human feedback in the rewards function, so the ML model can perform tasks more aligned with human goals, wants, and needs. RLHF is used throughout generative artificial intelligence (generative AI) applications, including in large language models (LLM).
+
+#### Why is RLHF important?
+
+The applications of artificial intelligence (AI) are broad-ranging, from self-driving cars to natural language processing (NLP), stock market predictors, and retail personalization services. No matter the given application, the goal of AI is ultimately to mimic human responses, behaviors, and decision-making. The ML model must encode human input as training data so that the AI mimics humans more closely when completing complex tasks.
+
+RLHF is a specific technique that is used in training AI systems to appear more human, alongside other techniques such as supervised and unsupervised learning. First, the model’s responses are compared to the responses of a human. Then a human assesses the quality of different responses from the machine, scoring which responses sound more human. The score can be based on innately human qualities, such as friendliness, the right degree of contextualization, and mood. 
+
+RLHF is prominent in natural language understanding, but it’s also used across other generative AI applications.
+
+##### Enhances AI performance
+
+RLHF makes the ML model more accurate. Models can be trained on pregenerated human data, but having additional human feedback loops significantly enhances model performance compared to its initial state.
+
+For example, when text is translated from one language to another, a model might produce text that’s technically correct but sounds unnatural to the reader. A professional translator can first perform the translation, with the machine-generated translation scored against it, and then a series of machine-generated translations can be scored for quality. The addition of further training to the model makes it better at producing natural-sounding translations.
+
+##### Introduces complex training parameters
+
+In some instances in generative AI, it can be difficult to accurately train the model for certain parameters. For example, how do you define the mood of a piece of music? There might be technical parameters such as key and tempo that indicate a certain mood, but a musical piece’s spirit is more subjective and less well defined than just a series of technicalities. Instead, you can provide human guidance where composers create moody pieces, and then you can label machine-generated pieces according to their level of moodiness. This enables a machine to learn these parameters much more quickly.
+
+##### Enhances user satisfaction
+
+Although an ML model can be accurate, it might not appear human. RL is needed to guide the model toward the best, most engaging response for human users.
+
+For example, if you asked a chatbot what the weather is like outside, it might respond, “It’s 30 degrees Celsius with clouds and high humidity,” or it might respond, “The temperature is around 30 degrees at the moment. It’s cloudy out and humid, so the air might seem thicker!” Although both responses say the same thing, the second response sounds more natural and provides more context. 
+
+As human users rate which model responses they prefer, you can use RLHF for collecting human feedback and improving your model to best serve real people.
+
+
+
+
+#### Reference
+- [AWS - What is RLHF?](https://aws.amazon.com/what-is/reinforcement-learning-from-human-feedback/)
+
+⚠️ Note: These excerpts from the above article are shared under fair use for educational purposes to support your learning.
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 3 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 3
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 3 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

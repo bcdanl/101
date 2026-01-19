@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Storytelling – Team Preference Survey</title>
+  <!-- Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+  <style>
+    :root{ --ink:#0b1220; }
+    body{background:linear-gradient(180deg,#f8fafc,#eef2ff 60%,#e2e8f0)}
+    .is-card{border-radius:14px; box-shadow:0 12px 28px rgba(10,10,10,.06)}
+    .is-muted{color:#6b7280}
+    .member-box{border:1px solid #e5e7eb; border-radius:12px; padding:1rem; background:#fff}
+    .help.is-note{font-size:.9rem}
+    /* Center grouped buttons and ensure message visibility */
+    .field.is-grouped{justify-content:center}
+    #submit-button{ text-align:center; }
+    #teamForm{ padding-bottom: 96px; }
+    /* Message directly under the buttons */
+    #message {
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 0;      /* removes white space below */
+    }
+    #message.is-success {
+      background: linear-gradient(135deg, #48c78e, #48c78e);
+      color: #fff;
+    }
+    #message.is-danger {
+      background: linear-gradient(135deg, #f14668, #f14668);
+      color: #fff;
+    }
+    #message.is-info {
+      background: linear-gradient(135deg, #3e8ed0, #3e8ed0);
+      color: #fff;
+    }
+    #message.is-warning {
+      background: linear-gradient(135deg, #ffe08a, #ffe08a);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+<section class="section pt-5 pb-4">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-10-desktop is-12-tablet">
+        <div class="has-text-centered mb-4">
+          <span class="tag is-info is-light is-medium">Representative Only • Preferences used for team formation</span>
+          <h1 class="title is-3 mt-3">Data Storytelling – Team Preference Survey</h1>
+          <p class="subtitle is-6 is-muted">Each team will consist of <strong>5 members</strong> (some may have <strong>4</strong>). If you don't submit a preference, you will be assigned to a team.</p>
+        </div>
+        
+        <!-- Set action to your desired endpoint (Apps Script here) -->
+        <form id="teamForm" class="box is-card"
+              action="https://script.google.com/macros/s/AKfycbylhsmegfjZCSmdGbdap4rrIUa4ngiVVNlFFtyqhx4PcxP3-wuH1-iDGvC9m-dRNhOe/exec"
+              method="POST" novalidate>
+        
+          <!-- Representative fields (Member 1 removed) -->
+          <h2 class="title is-5">Representative</h2>
+          <div class="columns is-multiline">
+            <div class="column is-6">
+              <div class="field">
+                <label class="label" for="repFirst">First Name</label>
+                <div class="control has-icons-left">
+                  <input class="input" id="repFirst" name="repFirst" type="text" required>
+                  <span class="icon is-small is-left"><i class="fa-solid fa-user"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="field">
+                <label class="label" for="repLast">Last Name</label>
+                <div class="control has-icons-left">
+                  <input class="input" id="repLast" name="repLast" type="text" required>
+                  <span class="icon is-small is-left"><i class="fa-solid fa-user"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="field">
+                <label class="label" for="repEmail">Email</label>
+                <div class="control has-icons-left">
+                  <input class="input" id="repEmail" name="repEmail" type="email" required>
+                  <span class="icon is-small is-left"><i class="fa-solid fa-envelope"></i></span>
+                </div>
+                <p class="help">Use your school email.</p>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="field">
+                <label class="label" for="section">Class Section <span class="tag is-danger is-light ml-2">required</span></label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="section" name="section" required>
+                      <option value="" disabled selected>Select your section</option>
+                      <option>DANL 101-03 (MW 2:00-3:15pm)</option>
+                      <option>DANL 101-04 (MWF 9:30-10:20pm)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <hr>
+        
+          <!-- Members now start at 2 (since rep is not Member 1) -->
+          <h2 class="title is-5 mb-2">Team Members (in class)</h2>
+          <p class="help is-note mb-3">
+            Include yourself as the representative above.
+            <strong>At least one additional member is required; up to five members per team are allowed.</strong>
+            The instructor may assign additional members if your group has fewer than five total.
+          </p>
+        
+          <!-- Member 2 (required) -->
+          <div class="member-box mb-4">
+            <p class="has-text-weight-semibold mb-2">Member 2 <span class="tag is-info is-light">required</span></p>
+            <div class="columns is-multiline">
+              <div class="column is-4">
+                <label class="label" for="m2First">First Name</label>
+                <input class="input" id="m2First" name="m2First" type="text" required>
+              </div>
+              <div class="column is-4">
+                <label class="label" for="m2Last">Last Name</label>
+                <input class="input" id="m2Last" name="m2Last" type="text" required>
+              </div>
+              <div class="column is-4">
+                <label class="label" for="m2Email">Email <span class="has-text-grey-light">(optional)</span></label>
+                <input class="input" id="m2Email" name="m2Email" type="email">
+              </div>
+            </div>
+          </div>
+        
+          <!-- Member 3 (optional) -->
+          <div class="member-box mb-4">
+            <p class="has-text-weight-semibold mb-2">Member 3 <span class="tag is-light">optional</span></p>
+            <div class="columns is-multiline">
+              <div class="column is-4">
+                <label class="label" for="m3First">First Name</label>
+                <input class="input" id="m3First" name="m3First" type="text">
+              </div>
+              <div class="column is-4">
+                <label class="label" for="m3Last">Last Name</label>
+                <input class="input" id="m3Last" name="m3Last" type="text">
+              </div>
+              <div class="column is-4">
+                <label class="label" for="m3Email">Email <span class="has-text-grey-light">(optional)</span></label>
+                <input class="input" id="m3Email" name="m3Email" type="email">
+              </div>
+            </div>
+          </div>
+        
+          <!-- Member 4 (optional) -->
+          <div class="member-box mb-4">
+            <p class="has-text-weight-semibold mb-2">Member 4 <span class="tag is-light">optional</span></p>
+            <div class="columns is-multiline">
+              <div class="column is-4">
+                <label class="label" for="m4First">First Name</label>
+                <input class="input" id="m4First" name="m4First" type="text">
+              </div>
+              <div class="column is-4">
+                <label class="label" for="m4Last">Last Name</label>
+                <input class="input" id="m4Last" name="m4Last" type="text">
+              </div>
+              <div class="column is-4">
+                <label class="label" for="m4Email">Email <span class="has-text-grey-light">(optional)</span></label>
+                <input class="input" id="m4Email" name="m4Email" type="email">
+              </div>
+            </div>
+          </div>
+        
+          <!-- Member 5 (optional) -->
+          <div class="member-box mb-2">
+            <p class="has-text-weight-semibold mb-2">Member 5 <span class="tag is-light">optional</span></p>
+            <div class="columns is-multiline">
+              <div class="column is-4">
+                <label class="label" for="m5First">First Name</label>
+                <input class="input" id="m5First" name="m5First" type="text">
+              </div>
+              <div class="column is-4">
+                <label class="label" for="m5Last">Last Name</label>
+                <input class="input" id="m5Last" name="m5Last" type="text">
+              </div>
+              <div class="column is-4">
+                <label class="label" for="m5Email">Email <span class="has-text-grey-light">(optional)</span></label>
+                <input class="input" id="m5Email" name="m5Email" type="email">
+              </div>
+            </div>
+            <p class="help">Leave blank if you only have two to four members.</p>
+          </div>
+        
+          <div class="field mt-4">
+            <label class="label" for="notes">Notes to Instructor <span class="has-text-grey-light">(optional)</span></label>
+            <div class="control">
+              <textarea class="textarea" id="notes" name="notes" rows="3" placeholder="Anything I should know (e.g., schedule constraints, preferred collaboration dynamics, etc.)"></textarea>
+            </div>
+          </div>
+        
+          <div class="field">
+            <div class="control">
+              <button type="button" class="button is-link is-light" id="print-btn">Print to PDF (responses included)</button>
+            </div>
+          </div>
+        
+          <div class="field is-grouped is-grouped-centered" style="margin-top:1rem;">
+            <div class="control">
+              <button class="button is-primary" type="submit" id="submit-button" style="text-align:center;">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-danger" type="button">Cancel</button>
+            </div>
+          </div>
+        
+          <!-- Message lives right under the buttons -->
+          <div id="message" class="notification has-text-centered" aria-live="polite" style="display:none; margin-top:16px;"></div>
+
+          <div id="message"
+               class="notification has-text-centered is-hidden"
+               aria-live="polite"
+               style="margin-top:1rem; margin-bottom:0; padding:0.75rem 1rem;
+                      border-radius:6px; font-weight:500;">
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Printable snapshot container (created if missing) -->
+<div id="print-view" aria-hidden="true" style="display:none;"></div>
+
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a2e0e9f6b1.js" crossorigin="anonymous"></script>
+
+<script>
+  const form = document.getElementById('teamForm');
+  const messageElement = document.getElementById('message');
+  const submitButton = document.getElementById('submit-button');
+
+  function showMsg(kind, text){
+    messageElement.className = 'notification has-text-centered is-' + kind;
+    messageElement.textContent = text;
+    messageElement.style.display = 'block';
+    messageElement.style.marginBottom = '0';
+    messageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function validateOptionalsInPairs(){
+    const pairs = [['m3First','m3Last'],['m4First','m4Last'],['m5First','m5Last']];
+    for (const [f,l] of pairs){
+      const fv = (document.getElementById(f)?.value || '').trim();
+      const lv = (document.getElementById(l)?.value || '').trim();
+      if ((fv && !lv) || (!fv && lv)) {
+        showMsg('warning','Please complete both first and last names for optional members, or leave both blank.');
+        return false;
+      }
+    }
+    // Required fields: rep + Member 2 names + section + repEmail
+    const requiredIds = ['repFirst','repLast','repEmail','section','m2First','m2Last'];
+    for (const id of requiredIds){
+      const el = document.getElementById(id);
+      if (!el || !el.value.trim()){
+        showMsg('danger','Please fill all required fields.');
+        return false;
+      }
+    }
+    return true;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validateOptionalsInPairs()) return;
+
+    showMsg('info', 'Submitting…');
+    submitButton.disabled = true;
+    submitButton.classList.add('is-loading');
+
+    const fd = new FormData(form);
+    const body = Array.from(fd.entries()).map(([k,v]) => k + '=' + encodeURIComponent(v)).join('&');
+
+    try {
+      // IMPORTANT: no-cors prevents CORS errors from throwing, while still delivering your data.
+      const res = await fetch(form.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        redirect: 'follow',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body
+      });
+
+      // With no-cors, response is opaque; treat as success if no exception was thrown.
+      showMsg('success', 'Thanks! Your team preferences were recorded.');
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      showMsg('danger', 'Network error. Please check your connection and try again.');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.classList.remove('is-loading');
+    }
+  });
+</script>
+
+<script>
+  // Print snapshot (leave as-is or expand as needed)
+  (function () {
+    const esc = s => String(s ?? '').replace(/[&<>\"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    function ensurePrintView() {
+      let pv = document.getElementById('print-view');
+      if (!pv) {
+        pv = document.createElement('div');
+        pv.id = 'print-view';
+        pv.setAttribute('aria-hidden','true');
+        pv.style.display = 'none';
+        document.body.appendChild(pv);
+      }
+      return pv;
+    }
+    function buildPrintHTML() {
+      const form = document.getElementById('teamForm');
+      if (!form) return '<p>Form not found.</p>';
+      const when = new Date().toLocaleString();
+      let html = `
+        <section style="margin-bottom:1rem">
+          <h1 style="color:#1c4982; font-size:28px; margin:0 0 .25rem 0">DANL 101 – Submission Snapshot</h1>
+          <div style="font-size:14px"><strong>Generated:</strong> ${esc(when)}</div>
+        </section>`;
+      return html;
+    }
+    function openPrintSnapshot() {
+      const pv = ensurePrintView();
+      pv.innerHTML = buildPrintHTML();
+      document.body.classList.add('printing');
+      window.print();
+      setTimeout(() => document.body.classList.remove('printing'), 0);
+    }
+    function bindPrint() {
+      const btn = document.getElementById('print-btn');
+      if (!btn) return;
+      btn.replaceWith(btn.cloneNode(true));
+      const fresh = document.getElementById('print-btn');
+      fresh.addEventListener('click', openPrintSnapshot);
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', bindPrint);
+    } else {
+      bindPrint();
+    }
+  })();
+</script>
+</body>
+</html>

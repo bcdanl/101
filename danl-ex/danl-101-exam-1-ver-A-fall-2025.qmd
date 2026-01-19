@@ -1,0 +1,799 @@
+---
+title: Midterm Exam I
+subtitle: Version A
+date: 2025-10-08
+from: markdown+emoji
+toc: true
+toc-depth: 6
+execute: 
+  eval: false
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+```
+
+
+
+# Section 1. Multiple Choice
+
+## Question 1
+Which tool is an Integrated Development Environment (IDE) that you can install on your computer to develop programs primarily using the R programming language?
+
+a. Posit Cloud
+b. Google Colab
+c. Jupyter Notebook
+d. RStudio
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**d**
+
+**Explanation**: RStudio (now under Posit) is a dedicated desktop IDE for R that provides a console, script editor, package management, plotting, and a full debugging workflow. Posit Cloud and Google Colab are browser-based environments (great for portability, but not desktop IDEs), and Jupyter Notebook is a notebook interface mainly used with Python (though R kernels exist, it is not the primary R IDE).
+:::
+
+
+## Question 2
+Which version-control tool allows users to track, compare, and merge code changes?
+
+a. GitHub
+b. Git
+c. R
+d. Stack Overflow
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**b**
+
+**Explanation**: Git is the version-control system that performs the actual tracking of changes, branching, merging, and diffing. GitHub is a hosting platform built around Git repositories (remote collaboration, pull requests, issues). R is a programming language, and Stack Overflow is a Q&A site.
+
+
+
+:::
+
+
+
+
+
+## Question 3
+A key distinction between Traditional Programming and Machine Learning (ML) in the context of image recognition (like for a cat) is that ML: 
+
+a. Requires programmers to explicitly define rules for "cat" features (pointy ears, whiskers).
+b. Is less effective at finding hidden patterns in pixels than traditional methods.
+c. Learns the patterns from thousands of labeled cat/not-cat pictures rather than relying on fixed, explicit rules.
+d. Can be used for image recognition and but not for classification tasks like spam detection.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**c**
+
+**Explanation**: In ML, models discover patterns from labeled data (e.g., many cat vs. not-cat images) rather than relying on hand-crafted rules. Traditional programming would require explicit feature rules (option a). ML often outperforms manual rules on high-dimensional pattern recognition (contradicting b) and is widely used for both image recognition and many other classification tasks such as spam detection (contradicting d).
+
+
+
+:::
+
+
+
+
+## Question 4
+What was the key contribution of Moneyball to sports analytics?
+
+a. It created new baseball rules for team selection.
+b. It replaced human coaches with AI models.
+c. It popularized data-driven decision-making in sports management.
+d. It eliminated the use of scouts.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**c**
+
+**Explanation**: Moneyball demonstrated that rigorous statistical analysis (e.g., on-base percentage) could uncover undervalued players and improve roster-building decisions. It did not change MLB rules, eliminate scouts, or replace coaches with AI; instead, it shifted culture toward evidence-based decision-making.
+
+
+
+:::
+
+
+
+## Question 5
+Which statement best captures the distinctive role of Business Intelligence (BI) compared to other data-driven systems?
+
+a. BI focuses on automating decisions through artificial intelligence and predictive modeling.
+b. BI emphasizes descriptive and diagnostic insights that help managers understand why outcomes occurred.
+c. BI replaces human judgment by forecasting business outcomes using statistical learning.
+d. BI primarily stores large volumes of unprocessed data for future retrieval.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**b**
+
+**Explanation**: BI primarily supports descriptive and diagnostic analytics (dashboards, reporting, drill-downs) to help stakeholders understand what happened and why. Predictive/automated decision-making is more aligned with data science and ML (contradicting a and c), and large-scale raw data storage is the role of data lakes/warehouses (contradicting d).
+
+
+
+:::
+
+
+
+
+
+## Question 6
+What distinguishes Deep Learning from general Machine Learning? 
+
+a. Deep learning is the overarching field of AI, while machine learning is just a sub-area. 
+b. Deep learning is an advanced machine learning methodology that is uniquely suited for complex tasks and primarily relies on artificial neural networks. 
+c. Deep learning models are capable of making predictions or generating outputs, while machine learning models are not. 
+d. Deep learning is the practice of designing structured inputs to guide generative AI systems. 
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**b**
+
+**Explanation**: Deep learning is a subfield of machine learning that uses multi-layer (deep) neural networks, often excelling on unstructured data (images, audio, text). ML as a whole includes many methods (decision trees, regression models). Options a and c invert relationships, and d describes prompt engineering, not deep learning.
+
+
+
+:::
+
+
+
+## Question 7
+In the context of a Large Language Model (LLM), what is the function of Pre-training? 
+
+a. To specialize the model for a specific task like medical Q&A or legal summarization. 
+b. To have humans rank or score model answers to align them with preferences. 
+c. To read a vast amount of text to learn general language patterns, resulting in a foundation model with broad knowledge. 
+d. To reduce model biases by explicitly removing skewed data from the training corpus.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**c**
+
+**Explanation**: Pre-training exposes the model to large corpora so it learns broad statistical patterns of language (syntax, semantics, world knowledge). Fine-tuning specializes models for specific tasks (a), RLHF uses human preference signals (b), and while data curation can address some biases (d), that is not the core function of pre-training.
+
+
+:::
+
+
+
+
+
+## Question 8
+Which of the following best describes an "embedding" in the context of GPT models?
+
+a. A single number representing a word's position in a sentence.
+b. A long list of numbers that captures a word's meaning and allows words with similar meanings to have similar numerical representations.
+c. The final text output generated by the decoder.
+d. A specific part of the training dataset used for fine-tuning.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+**b**
+
+**Explanation**: An embedding is a dense vector representation capturing semantic relationships among tokens; similar meanings tend to have nearby vectors. It is not a single scalar (a), not the model’s generated text (c), and not a dataset subset (d).
+
+
+:::
+
+
+
+
+# Section 2. Filling-in-the-Blanks
+
+## Question 9
+
+The practice of designing clear, structured inputs to guide generative AI systems toward accurate, useful, and context-appropriate outputs is known as _________________________. 
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**prompt engineering**
+
+**Explanation**: Prompt engineering focuses on crafting instructions, constraints, and context so generative models produce reliable, relevant outputs. It includes strategies like role prompting, exemplars, delimiters, and stepwise guidance.
+
+
+
+:::
+
+
+
+## Question 10
+A ________________________________ is the smallest unit of text a Large Language Model (LLM) processes, which can be a single character, a whole word, or a part of a word. 
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**token**
+
+**Explanation**: LLMs operate on tokens, which result from tokenization rules; in English they often correspond to subwords. Token granularity affects sequence length limits and cost/performance tradeoffs.
+
+
+
+:::
+
+
+
+## Question 11
+In RLHF, ________________________________ is used to incorporate human preferences and guide the model’s behavior.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**a reward**
+
+**Explanation**: RLHF first trains a reward model using human preference data, such as ranked outputs. The language model is then further adjusted to produce responses that score higher under this reward model, aligning its behavior with human judgments.
+
+
+:::
+
+
+
+## Question 12
+In GPT, ________________________________  encodes the order of words in a sentence.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**positional encoding**
+
+**Explanation**: Transformers do not naturally track the order of tokens, so positional encodings inject sequence-order information, allowing the model to distinguish where each token appears and attend to relative relationships properly.
+
+
+
+:::
+
+
+
+## Question 13
+Before the ________________________________, other language models struggled; the ________________________________ solved these issues by utilizing a(n) ________________________________, which allows the AI to concentrate on the most relevant parts of a text. 
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**transformer; transformer; attention mechanism**
+
+**Explanation**: The transformer architecture uses self-attention instead of step-by-step processing, allowing the model to directly compare all tokens in a sequence at once. By focusing computational weight on the most relevant tokens, it improves both performance and scalability.
+
+
+
+:::
+
+
+
+
+# Section 4. Data Analysis with R
+
+## Question 14
+
+You are working in R and want to use the `table1` dataset that is included in the `tidyr` package. You have not yet loaded `tidyr` with `library()`, but you previously loaded the `tidyverse` package earlier in your session. To ensure that you explicitly use the dataset from `tidyr`, which command is the most reliable way to access it?
+
+a. `table1`
+b. `tidyverse::table1`
+c. `tidyr$table1`
+d. `tidyr::table1`
+e. `library(tidyr::table1)`
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**d**
+
+**Explanation**: Using the namespace operator `tidyr::table1` accesses the object explicitly from the tidyr package without attaching it. `tidyverse::table1` is invalid because `tidyverse` is a meta-package and does not export `table1`. `tidyr$table1` is not how exported objects are accessed, and `library(tidyr::table1)` is invalid syntax.
+
+:::
+
+## Question 15
+
+The comment character in R is  _______________________________, and the keyboard shortcut to add or remove a comment in Posit Cloud on a Windows or Mac machine is  ______________________________________________.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**`#`; Windows: Ctrl+Shift+C, Mac: Cmd+Shift+C**
+
+**Explanation**: Lines beginning with # are treated as comments in R. In RStudio/Posit Cloud, the toggle-comment shortcut applies or removes # for the current line or selected block on both Windows (Ctrl+Shift+C) and macOS (Cmd+Shift+C).
+
+:::
+
+
+## Questions 16-17
+
+Consider the following two vectors, `a` and `b`:
+
+```{r}
+#| echo: true
+#| eval: false
+
+a <- c(5, 20)
+b <- c(20, 5)
+```
+
+### Question 16
+What does `a + b` return?
+
+a. `c(5, 20, 5)`
+b. `c(5, 20, 20, 5)`
+c. `c(25, 25, 25, 25)`
+d. `c(25, 25, 25)`
+e. `c(25, 25)`
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**e**
+
+**Explanation**: Vector addition in R operates element-wise. So the operation calculates `c(5+20, 20+5) = c(25, 25)`. The result has the same length as the input vectors, and each element is the sum of the corresponding elements from a and b.
+
+:::
+
+### Question 17
+What does `sqrt( a / b )` return?
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**`c(0.5, 2)`**
+
+**Explanation**: First, R performs element-wise division: `a / b`, which returns `c(5/20, 20/5)`, which is `c(1/4, 4)`. Then it applies the square root to each element, yielding `c(1/2, 2)`. This demonstrates vectorized operations in R.
+
+:::
+
+
+
+## Questions 18-19
+
+Suppose you create a factor variable, `major`:
+
+```{r}
+#| echo: true
+#| eval: false
+
+major <- as.factor(c("ECON", "DANL", "ECON", "MGMT", "DANL"))
+```
+
+### Question 18
+What does `levels(major)` return?
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**`c("DANL", "ECON", "MGMT")`**
+
+**Explanation**: When converting a character vector to a factor, R extracts unique values and sorts them alphabetically by default. Therefore, the levels are "DANL", "ECON", and "MGMT", regardless of the original order in the input.
+
+:::
+
+
+### Question 19
+What does `nlevels(major)` return?
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**3**
+
+**Explanation**: Since the factor has three unique categories (levels), R returns 3 when calling `nlevels()`. This function counts the number of unique factor levels, not the number of values.
+
+:::
+
+
+
+
+## Question 20
+Suppose the absolute pathname for the CSV file `custdata.csv` uploaded to your Posit Cloud project is:  
+
+`/cloud/project/mydata/custdata.csv`  
+
+The working directory for your Posit Cloud project is: 
+
+`/cloud/project`
+
+Using the file's **relative pathname**, write R code to read the CSV file as a data.frame and assign it to an object named `df`.
+
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+```{r}
+#| eval: false
+#| echo: true
+
+df <- read_csv("mydata/custdata.csv")
+```
+
+**Explanation**: Since the working directory is /cloud/project, the relative path to the CSV file omits /cloud/project and starts from the next folder level: "mydata/custdata.csv". R’s read.csv() reads the file and assigns it to the object df.
+
+
+:::
+
+
+
+
+## Question 21
+
+Consider the following data.frame `df0`:
+
+```{r}
+#| echo: false
+#| eval: true
+
+df0 <- data.frame(
+  x = c(1, NA, 3),
+  y = c(7, 2, NA)
+)
+
+knitr::kable(df0)
+```
+
+
+What does `is.na(df0$x * df0$y)` return?
+
+a. `c(FALSE, TRUE, FALSE)`
+b. `c(FALSE, FALSE, TRUE)`
+c. `c(FALSE, FALSE, FALSE)`
+d. `c(FALSE, TRUE, TRUE)`
+e. `Error`
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**d**
+
+**Explanation**: R multiplies element-wise:  
+
+-	Row 1: `1 * 7 = 7` → not `NA` → `FALSE`
+-	Row 2: `NA * 2 = NA` → `TRUE`
+-	Row 3: `3 * NA = NA` → `TRUE`
+
+Thus, `is.na()` returns `c(FALSE, TRUE, TRUE)`.
+
+
+:::
+
+## Questions 22-23
+
+Consider the following data.frame `df` for **Questions 22-23**:
+
+```{r}
+#| echo: false
+#| eval: true
+df <- data.frame(
+  id = 1:5,
+  name = c("Anna", "Ben", "Carl", "Dana", "Ella"),
+  age = c(22, 28, NA, 35, 40),
+  score = c(90, 85, 95, NA, 80)
+)
+
+knitr::kable(df)
+```
+
+
+### Question 22
+
+Which of the following code snippets filters observations where `score` is strictly between 85 and 95 (i.e., excluding 85 and 95)?
+
+a. `df |> filter(score >= 85 | score <= 95)`
+b. `df |> filter(score => 85 | score =< 95)`
+c. `df |> filter(score > 85 | score < 95)`
+d. `df |> filter(score > 85 & score < 95)`
+e. `df |> filter(score >= 85 & score <= 95)`
+f. `df |> filter(score => 85 & score =< 95)`
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+**d**
+
+**Explanation**: Strictly between 85 and 95 means `score > 85` and `score < 95`. The `&` operator enforces both conditions simultaneously. Option c uses | which would include values less than 85 or greater than 95, and other options misuse syntax or include boundary values.
+
+:::
+
+### Question 23
+
+Which of the following expressions correctly keeps observations from `df` where the `age` variable does not have any missing values?
+
+a. `df |> filter(is.na(age))`
+b. `df |> filter(!is.na(age))`
+c. `df |> filter(age == NA)`
+d. `df |> filter(age != NA)`
+e. Both a and c
+f. Both b and d
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**b**
+
+**Explanation**: To filter out missing values, use `!is.na(age)`. Using `== NA` or `!= NA` does not work for missing values in R because `NA` represents an unknown and cannot be compared directly.
+
+:::
+
+
+## Questions 24–25
+
+Consider the following data.frame `flights_df` for **Questions 24–25**:
+
+```{r}
+#| echo: false
+#| eval: true
+flights_df <- data.frame(
+  origin = c("JFK", "LGA", "JFK", "EWR", "LGA", "EWR"),
+  dest = c("LAX", "ORD", "LAX", "MIA", "ORD", "SEA"),
+  dep_delay = c(10, 45, 5, 60, 45, 20)
+)
+
+knitr::kable(flights_df)
+```
+
+
+Below provides data type of each variable:  
+
+- `origin`: *character*
+- `dest`: *character*
+- `dep_delay`: *numeric*
+
+
+### Question 24
+Which of the following code snippets arranges the observations first by `origin` in ascending order, and then by `dep_delay` in descending order?
+
+a. `flights_df |> arrange(origin, -dep_delay)`
+b. `flights_df |> arrange(origin, desc(dep_delay))`
+c. `flights_df |> arrange(desc(origin), dep_delay)`
+d. `flights_df |> arrange(desc(origin), desc(dep_delay))`
+e. Both a and b
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**e**
+
+**Explanation**: Both `-dep_delay` and `desc(dep_delay)` sort in descending order. When combined with origin in ascending order (default), both (a) and (b) produce the correct ordering. Options (c) and (d) incorrectly sort origin in descending order.
+
+:::
+
+
+## Question 25
+
+Which of the following expressions correctly returns all unique origin–destination combinations from `flights_df`?
+
+a. `flights_df |> distinct(origin, dest)`
+b. `flights_df |> select(origin, dest)`
+c. `flights_df |> filter(!is.na(origin), !is.na(dest))`
+d. `flights_df |> distinct()`
+e. Both a and d
+
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+**a**
+
+**Explanation**: `distinct(origin, dest)` returns unique combinations for those two columns explicitly. `distinct()` with no arguments returns unique observations across all variables, which also gives unique `origin`–`dest` pairs only because each observation is already defined by those two variables. `select()` only extracts variables and does not remove duplicates.
+
+:::
+
+
+
+
+## Question 26
+
+Which of the following code snippets correctly renames the variable `score` in `df` to `exam_score`?
+
+a. `df |> rename(score = exam_score)`  
+b. `df |> rename(exam_score = score)`  
+c. `df |> rename("exam_score" = "score")`  
+d. `df |> rename(df, exam_score = score)`  
+e. Both b and c  
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**e (b or c deserves the full credit)**
+
+**Explanation**: The correct syntax in `rename()` is `new_name = old_name`. Both (b) and (c) follow this correctly. Option (a) reverses the direction, and option (d) introduces unnecessary arguments and incorrect form.
+
+:::
+
+## Question 27
+
+Which of the following code snippets filters observations where `age` is **30 or older** **and** `score` is **below 90**?
+
+a. `df |> filter(age >= 30 | score < 90)`  
+b. `df |> filter(age >= 30 & score < 90)`  
+c. `df |> filter(age > 30 & score > 90)`  
+d. `df |> filter(age >= 30, score < 90)`  
+e. Both b and d  
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**e**
+
+**Explanation**: To enforce that both conditions must be satisfied simultaneously, use `&`. Option (a) uses `|`, which would allow observations where only one condition is met. Option (c) uses the wrong inequality for score. Option (d) is equivalent to option (b).
+
+:::
+
+
+## Question 28
+
+Using the `nycflights13::flights` data.frame, which of the following code snippets correctly counts how many **unique destination airports** (`dest`) exist for each `origin` airport?
+
+**a.**
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  distinct(origin, dest)
+
+df_EWR <- df |> filter(origin == "EWR")
+df_JFK <- df |> filter(origin == "JFK")
+df_LGA <- df |> filter(origin == "LGA")
+
+nrow(df_EWR)
+nrow(df_JFK)
+nrow(df_LGA)
+```
+
+**b.**
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  filter(origin == "EWR" | origin == "JFK" | origin == "LGA") |> 
+  distinct(dest)
+
+nrow(df)
+```
+
+**c.**
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  filter(origin == "EWR" & origin == "JFK" & origin == "LGA") |> 
+  distinct(dest)
+
+nrow(df)
+```
+
+**d.**
+```{r}
+#| echo: true
+#| eval: false
+
+df <- nycflights13::flights |> 
+  distinct(dest)
+
+nrow(df)
+```
+
+
+**e.** Both a and b
+
+**f.** Both a and c
+
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**a**
+
+**Explanation**: Option (a) correctly first extracts unique (`origin`, `dest`) combinations and then counts how many unique `dest` per each `origin`. Option (b) mistakenly pools all three origins together before counting distinct destinations, losing the per-`origin` grouping. Option (c) filters using `&`, which can never be true for mutually exclusive origins. Option (d) ignores `origin` entirely.
+
+:::
+
+
+
+
+
+# Section 4. Short Essay
+
+## Question 29
+Why is the median often preferred over the mean as a measure of central tendency when a dataset contains outliers?
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+The median is less sensitive to extreme values because it depends only on the middle position in an ordered dataset, not on the magnitude of all values. Outliers can pull the mean sharply in one direction, distorting the central tendency and giving a misleading picture of the “typical” value. In skewed distributions or datasets with extreme highs/lows, the median provides a more robust and representative summary. For this reason, analysts often use the median for income, housing price, or other economic data known to contain large outliers.
+
+
+:::
+
+
+
+## Question 30
+- Define AI Alignment and explain why it is hard, referencing the failure mode of a "single-objective optimizer." 
+- Analyze why companies alone and governments alone cannot solve the alignment challenge, citing at least two reasons for each, and explain what is needed for an effective solution.
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+AI Alignment refers to the challenge of ensuring that powerful AI systems reliably act according to human values, ethical norms, and societal goals. It is difficult because advanced AI systems can optimize objectives in ways that technically satisfy a metric but violate human intent—this is the “single-objective optimizer” failure mode. When a model pushes one goal to an extreme without broader context or value constraints, it can generate harmful or unintended outcomes even while maximizing its target metric.
+
+Why companies alone cannot solve it:  
+
+1.	Companies face pressure to deploy quickly for competitive advantage, which may lead to cutting corners on long-term safety and value alignment.
+2.	Corporate profit incentives do not necessarily align with broader public welfare and ethical standards, especially in global contexts beyond their direct accountability.
+
+Why governments alone cannot solve it:   
+
+1.	Governments often lack the technical expertise and agility to regulate fast-moving AI developments effectively.
+2.	Global AI deployment crosses jurisdictions, and national policies cannot fully enforce alignment across private-sector labs or international competitors without global coordination.
+
+What is needed:  
+
+An effective solution requires collaboration between researchers, companies, governments, and international institutions. This includes shared safety standards, transparent evaluation protocols, incentive structures that reward responsible development, and oversight mechanisms that span beyond national or corporate boundaries.
+
+
+:::
+
+
+

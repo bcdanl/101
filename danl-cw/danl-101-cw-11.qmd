@@ -1,0 +1,341 @@
+---
+title: Classwork 11
+subtitle: Relationship Plots
+date: 2025-11-07
+from: markdown+emoji
+
+fig-width: 10
+execute: 
+  eval: true
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(gapminder)
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(viridis)
+library(rmarkdown)
+
+theme_set(theme_fivethirtyeight() +
+            theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.75),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.75)),
+                axis.text.y = element_text(size = rel(1.75)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+
+
+# Set global options for color-blind-friendly scales
+scale_colour_discrete <- function(...) scale_colour_tableau(...)
+scale_fill_discrete <- function(...) scale_fill_tableau(...)
+
+```
+
+# R Packages
+
+For Classwork 11, please load the `tidyverse` package:
+```{r}
+library(tidyverse)
+```
+
+
+# Question 1. Ice Cream Sales and Shark Attacks
+
+Consider the data frame `df`, which records **monthly ice cream sales** and **shark attacks**.
+```{r}
+df <- read_csv("http://bcdanl.github.io/data/icecream-shark-df.csv")
+```
+
+
+```{r}
+#| echo: false
+
+DT::datatable(df, options = list(
+  pageLength = 12
+))
+```
+
+
+## Part A
+- 🤖 **Task 1:** Fill in the blanks in the provided `ggplot()` code chunk.  
+- 💬 **Task 2:** Add a brief comment describing **the relationship between ice cream sales (`IceCreamSales`) and shark attacks (`SharkAttacks`)**.
+
+
+```{r}
+#| echo: false
+ggplot(data = df,
+       mapping = aes(x = IceCreamSales,
+                     y = SharkAttacks)) +
+  geom_point() +
+  geom_smooth() +
+  scale_y_continuous(breaks = seq(2,12,2))
+```
+
+```{r}
+#| eval: false
+ggplot(data = __BLANK_1__,
+       mapping = aes(x = __BLANK_2__,
+                     y = __BLANK_3__)) +
+  geom___BLANK_4__() +
+  geom___BLANK_5__()
+```
+
+<!-- - The scatterplot along with the fitted line shows a positive linear relationship between ice cream sales and drowning incidents. This trend is highlighted by the fitted line in the plot.  -->
+
+<!-- - As ice cream sales increase, the number of drowning incidents also tends to increase.  -->
+
+<br>
+
+## Part B
+
+<div style="text-align: center; width: 80%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/icecream-shark.png" alt="Icecream and Shark" style="max-width: 1000px; width: 100%; border-radius: 10px; box-shadow: 0 0 12px rgba(0,0,0,.15);">
+</div>
+<div style="text-align: center; width: 80%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/icecream-shark-2.jpg" alt="Icecream and Shark" style="max-width: 1000px; width: 100%; border-radius: 10px; box-shadow: 0 0 12px rgba(0,0,0,.15);">
+</div>
+
+- ❓ Is the observed relationship one of **correlation** or **causation**? Explain your reasoning.  
+  - Consider the following monthly trends for **`IceCreamSales`** and **`SharkAttacks`**:
+  
+**Monthly Trend of `IceCreamSales`**
+```{r}
+#| echo: false
+ggplot(data = df,
+       mapping = aes(x = Month,
+                     y = IceCreamSales)) +
+  geom_point() +
+  geom_line() +   # a geometric object for a line chart
+  scale_x_continuous(breaks = seq(1,12,1)) +
+  scale_y_continuous(breaks = seq(2, 7, 1)*10^3) 
+```
+
+<br>
+
+**Monthly Trend of `SharkAttacks`**
+```{r}
+#| echo: false
+ggplot(data = df,
+       mapping = aes(x = Month,
+                     y = SharkAttacks)) +
+  geom_point() +
+  geom_line() +   # a geometric object for a line chart
+  scale_x_continuous(breaks = seq(1,12,1)) +
+  scale_y_continuous(breaks = seq(2,12,2))
+```
+
+
+<!-- - The observed relationship is correlation, not causation. While the data shows that higher ice cream sales are associated with more drowning incidents, this does not imply that buying more ice cream causes more drownings.  -->
+
+<!-- - This correlation could be due to a confounding factor, such as warmer weather, which increases both ice cream consumption and water-related activities, leading to more drowning incidents. -->
+
+<br><br>
+
+
+
+# Question 2. NBC Show Data
+
+The `nbc_show` dataset comes from **NBC’s TV pilots**, containing information about television shows, their **viewership metrics**, and **audience engagement**.
+
+```{r}
+nbc_show <- read_csv("https://bcdanl.github.io/data/nbc_show.csv")
+```
+
+- **Gross Ratings Points** (`GRP`):  
+  Measures the **total viewership** of a show — an indicator of its **broadcast marketability**.  
+  - 📺 A higher `GRP` suggests **broader exposure** and a more **marketable** program.
+
+- **Projected Engagement** (`PE`):  
+  Captures how **attentive and engaged** viewers were after watching a show — a more suitable measure of **audience engagement**.  
+  - 🧠 After viewing, audiences take a short quiz testing **order and detail recall**.  
+  - This reflects their **level of attention and retention** (for both the show *and* its ads).  
+  - High `PE` values indicate **strong viewer engagement**.
+
+```{r}
+#| echo: false
+
+DT::datatable(nbc_show, options = list(
+  pageLength = 40
+))
+```
+
+<br>
+
+## Tasks
+
+Since **GRP** reflects how many people watch a show and **PE** reflects how *engaged* or *attentive* those viewers are, it’s reasonable to expect some connection between the two — shows that reach more people may also have higher engagement, **although not always**.
+
+Our goal is to see whether **greater viewership** tends to coincide with **stronger engagement** (and how this varies by **genre** in Classwork 12).
+
+
+- 🤖 **Task 1:** Fill in the blanks in the provided `ggplot()` code chunks.  
+- 💬 **Task 2:** Add a brief comment describing **the relationship between `GRP` and `PE`**.
+
+
+
+### (1) Scatterplot with a Non-Linear Fitted Line
+```{r}
+#| echo: false
+ggplot(data = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE)) +
+  geom_point() +
+  geom_smooth()
+```
+
+```{r}
+#| eval: false
+ggplot(data = __BLANK_1__,
+       mapping = aes(x = __BLANK_2__,
+                     y = __BLANK_3__)) +
+  geom_point() +
+  geom___BLANK_4__()
+```
+
+<br>
+
+### (2) Scatterplot with a Linear Fitted Line
+
+```{r}
+#| echo: false
+ggplot(data = nbc_show,
+       mapping = aes(x = GRP,
+                     y = PE)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+```{r}
+#| eval: false
+ggplot(data = __BLANK_1__,
+       mapping = aes(x = __BLANK_2__,
+                     y = __BLANK_3__)) +
+  geom_point() +
+  geom___BLANK_4__(method = __BLANK_5__)
+```
+
+
+<br>
+
+
+
+# Question 3. GDP per capita vs. Life Expectancy 
+
+For **Question 3**, please **install the R package `gapminder`** before starting:
+```{r}
+#| eval: false
+
+install.packages("gapminder")
+library(gapminder)
+??gapminder
+```
+
+The **`gapminder`** package provides a built-in dataset named **`gapminder`**, which contains country-level data on life expectancy, GDP per capita, and population across time.  
+
+Let's assign it to a new object called **`df_gapminder`**:
+
+```{r}
+df_gapminder <- gapminder::gapminder
+```
+
+
+```{r}
+#| echo: false
+
+DT::datatable(df_gapminder, options = list(
+  pageLength = 12
+))
+```
+
+
+
+## Tasks
+- 🤖 **Task 1:** Fill in the blanks in the provided `ggplot()` code chunks.  
+- 💬 **Task 2:** Add a brief comment describing **the relationship between GDP per capita (`gdpPercap`) and life expectancy (`lifeExp`)**.
+
+
+### (1) `gdpPercap` vs. `lifeExp`
+```{r}
+#| echo: false
+ggplot(data = df_gapminder,
+       mapping = aes(x = gdpPercap,
+                     y = lifeExp)) +
+  geom_point(alpha = .1) + # Add transparency to reduce overplotting
+  geom_smooth(color = "darkorange") +
+  geom_smooth(method = "lm")
+```
+
+```{r}
+#| eval: false
+ggplot(data = __BLANK_1__,
+       mapping = aes(x = __BLANK_2__,
+                     y = __BLANK_3__)) +
+  geom_point(__BLANK_4__ = .1) + # Add transparency to reduce overplotting
+  geom_smooth(__BLANK_5__ = "darkorange") +
+  geom_smooth(__BLANK_6__)
+```
+
+<!-- - There is a positive association between GDP per capita and life expectancy,  -->
+<!--   - But the relationship may not be linear. Life expectancy increases with GDP per capita at a decreasing rate. -->
+<!--   - Additionally, developing countries appear to cluster near relatively lower life expectancy values. -->
+
+<br>
+
+### (2) `log(gdpPercap)` vs. `lifeExp`
+```{r}
+#| echo: false
+ggplot(data = df_gapminder,
+       mapping = aes(x = log(gdpPercap),
+                     y = lifeExp)) +
+  geom_point(alpha = .2) + # Add transparency to reduce overplotting
+  geom_smooth(color = "darkorange") +
+  geom_smooth(method = "lm")
+```
+
+```{r}
+#| eval: false
+ggplot(data = __BLANK_1__,
+       mapping = aes(x = __BLANK_2__,
+                     y = __BLANK_3__)) +
+  geom_point(__BLANK_4__ = .2) + # Add transparency to reduce overplotting
+  geom_smooth(__BLANK_5__ = "darkorange") +
+  geom_smooth(__BLANK_6__)
+```
+
+<!-- - Log transformation reduces visual clutter---a highly dense cluster of points has now disappeared.  -->
+<!--   - Additionally, the linear model now fits well into the data. -->
+
+
+<br>
+
+
+<!-- ## Part B -->
+<!-- ### 📊 Question: Interpreting the Slope in a Log-Linear Model -->
+
+<!-- A 1-unit increase in `log(gdpPercap)` corresponds to a **100% increase (doubling)** in `gdpPercap`.   -->
+<!-- If the estimated slope is **8.4**, what does this imply about the relationship between GDP per capita and life expectancy? -->
+
+<!-- **A.** A **1% increase in GDP per capita** is associated with an increase in **life expectancy of about 0.084 years** (≈ 30.7 days).   -->
+<!-- **B.** A **1% increase in GDP per capita** is associated with an increase in **life expectancy of about 8.4 years**.   -->
+<!-- **C.** A **doubling of GDP per capita** is associated with an increase in **life expectancy of about 0.084 years**.   -->
+<!-- **D.** GDP per capita and life expectancy have no meaningful relationship. -->
+
+<!-- ✅ **Correct Answer:**   -->
+<!-- **A.** A **1% increase in GDP per capita** is associated with an increase in **life expectancy of about 0.084 years** (≈ 30.7 days). -->

@@ -1,0 +1,59 @@
+---
+title: Classwork 10
+subtitle: Career Sessions
+date: 2025-10-31
+execute: 
+  echo: false
+  eval: true
+  warning: false
+  message: false
+---
+```{r}
+#| include: false
+
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(DT)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5)),
+                axis.title.y = element_text(size = rel(1.5)),
+                legend.title = element_text(size=rel(1.25))
+                ))
+```
+
+<br>
+
+## ✏️  Reflection — Career Session Debrief
+
+In the **Brightspace Discussion Module**, write down your response to the two prompts below.  
+(You **need to submit it by 11:59 PM Friday next week (October 31)**)
+
+1. **One responsibility or task they described that surprised you:**  
+
+> _“I didn’t realize someone in that role would have to…”_
+
+2. **One thing they said that feels different from how we’ve been talking about data in class:**
+
+> _“In class we talk about data as …, but they talked about it more like … .”_
+
+
+
+<br><br>
+
+# Discussion 
+
+<font size = "5">Welcome to our Classwork 10 Discussion Board! 👋 </font>
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 10.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Classwork 10 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

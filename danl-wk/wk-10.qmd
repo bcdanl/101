@@ -1,0 +1,111 @@
+---
+title: Week 10
+subtitle: Career Session; Big Data and the Modern Data Infrastructure
+date: 2025-10-27
+from: markdown+emoji
+---
+
+In **Week 10**, we'll wrap up the two **Alumni Career Sessions**. We'll then continue to explore new topics in big data and the modern data infrastructure.
+
+
+## 🏫 Lecture Slides  
+- **Lecture 7 — Big Data and the Modern Data Infrastructure**  
+  [View Slides](../danl-lec/danl-101-lec-07-2025-1015.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+
+
+## ✍️ Classwork
+
+- **Classwork 9 - _Joining Two Related Tables in R_**  
+  [View Classwork](../danl-cw/danl-101-cw-09.html){target="_blank"} 
+
+- **Classwork 10 - _Career Sessions_**  
+  [View Classwork](../danl-cw/danl-101-cw-10.html){target="_blank"} 
+
+
+## 📚  Reference
+
+
+### Free Sources of Useful (Big) Data
+#### Economics/Finance
+<div style="font-size: 18px;">
+
+
+| Data Source                        | Description                                                                                                                                  | URL                                                |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| Bureau of Labor Statistics (BLS)   | Provides access to data on inflation and prices, wages and benefits, employment, spending and time use, productivity, and workplace injuries | [BLS](https://www.bls.gov)                        |
+| FRED (Federal Reserve Economic Data)| Provides access to a vast collection of U.S. economic data, including interest rates, GDP, inflation, employment, and more                   | [FRED](https://fred.stlouisfed.org)                |
+| Yahoo Finance                      | Provides comprehensive financial news, data, and analysis, including stock quotes, market data, and financial reports                        | [Yahoo Finance](https://finance.yahoo.com)        |
+| IMF (International Monetary Fund)  | Provides access to a range of economic data and reports on countries’ economies                                                              | [IMF Data](https://www.imf.org/en/Data)            |
+| World Bank Open Data               | Free and open access to global development data, including world development indicators                                                      | [World Bank Open Data](https://data.worldbank.org) |
+| OECD Data                          | Provides access to economic, environmental, and social data and indicators from OECD member countries                                        | [OECD Data](https://data.oecd.org)                 |
+</div>
+
+
+#### Government/Public Data
+<div style="font-size: 18px;">
+
+| Data Source                        | Description                                                                                                                                  | URL                                                |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| Data.gov                           | Portal providing access to over 186,000 government data sets, related to topics such as agriculture, education, health, and public safety    | [Data.gov](http://data.gov)                       |
+| CIA World Factbook                 | Portal to information on the economy, government, history, infrastructure, military, and population of 267 countries                        | [CIA World Factbook](https://cia.gov/library/publications/the-world-factbook) |
+| U.S. Census Bureau                 | Portal to a huge variety of government statistics and data relating to the U.S. economy and its population                                   | [U.S. Census Bureau](https://www.census.gov/data.html) |
+| European Union Open Data Portal    | Provides access to public data from EU institutions                                                                                          | [EU Open Data Portal](https://data.europa.eu/euodp/en/data) |
+| New York City Open Data            | Provides access to datasets from New York City, covering a wide range of topics such as public safety, transportation, and health            | [NYC Open Data](https://opendata.cityofnewyork.us)|
+| Los Angeles Open Data              | Portal for accessing public data from the City of Los Angeles, including transportation, public safety, and city services                     | [LA Open Data](https://data.lacity.org)           |
+| Chicago Data Portal                | Offers access to datasets from the City of Chicago, including crime data, transportation, and health statistics                              | [Chicago Data Portal](https://data.cityofchicago.org) |
+</div>
+
+
+#### Health, Climate/Environment, and Social Data
+<div style="font-size: 18px;">
+
+| Data Source                        | Description                                                                                                                                  | URL                                                |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| Healthdata.gov                     | Portal to 125 years of U.S. health care data, including national health care expenditures, claim-level Medicare data, and other topics       | [Healthdata.gov](https://www.healthdata.gov)      |
+| World Health Organization (WHO)    | Portal to data and statistics on global health issues                                                                                        | [WHO Data](https://www.who.int/data)               |
+| National Centers for Environmental Information (NOAA) | Portal for accessing a variety of climate and weather data sets                                                                              | [NCEI](https://www.ncdc.noaa.gov/data-access/quick-links#loc-clim) |
+| NOAA National Weather Service      | Provides weather, water, and climate data, forecasts and warnings                                                                            | [NOAA NWS](https://www.weather.gov/data)           |
+| FAO (Food and Agriculture Organization) | Provides access to data on food and agriculture, including data on production, trade, food security, and sustainability                       | [FAOSTAT](http://www.fao.org/faostat/en/#data)    |
+| Pew Research Center Internet & Technology| Portal to research on U.S. politics, media and news, social trends, religion, Internet and technology, science, Hispanic, and global topics  | [Pew Research](https://www.pewresearch.org/internet/datasets/) |
+| Data for Good from Facebook        | Provides access to anonymized data from Facebook to help non-profits and research communities with insights on crises, health, and well-being | [Facebook Data for Good](https://dataforgood.fb.com) |
+| Data for Good from Canada          | Provides open access to datasets that address pressing social challenges across Canada                                                       | [Data for Good Canada](https://dataforgood.ca)     |
+
+</div>
+
+
+
+#### General Data Repositories
+
+<div style="font-size: 18px;">
+
+
+| Data Source                        | Description                                                                                                                                  | URL                                                |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| Amazon Web Services (AWS) public data sets | Portal to a huge repository of public data, including climate data, the million song dataset, and data from the 1000 Genomes project        | [AWS Datasets](http://aws.amazon.com/datasets)     |
+| Gapminder                          | Portal to data from the World Health Organization and World Bank on economic, medical, and social issues                                     | [Gapminder](https://www.gapminder.org/data)       |
+| Google Dataset Search              | Helps find datasets stored across the web                                                                                                    | [Google Dataset Search](https://datasetsearch.research.google.com) |
+| Kaggle Datasets                    | A community-driven platform with datasets from various fields, useful for machine learning and data science projects                         | [Kaggle Datasets](https://www.kaggle.com/datasets) |
+| UCI Machine Learning Repository    | A collection of databases, domain theories, and datasets used for machine learning research                                                  | [UCI ML Repository](https://archive.ics.uci.edu/ml/index.php) |
+| United Nations Data                | Provides access to global statistical data compiled by the United Nations                                                                    | [UN Data](http://data.un.org)                      |
+| Humanitarian Data Exchange (HDX)   | Provides humanitarian data from the United Nations, NGOs, and other organizations                                                            | [HDX](https://data.humdata.org)                    |
+| Democratizing Data from data.org   | A platform providing access to high-impact datasets, tools, and resources aimed at solving critical global challenges                        | [Democratizing Data](https://data.org/democratizing-data) |
+| Justia Federal District Court Opinions and Orders database | A free searchable database of full-text opinions and orders from civil cases heard in U.S. Federal District Courts                            | [Justia](http://law.justia.com/cases/federal/district-courts) |
+</div>
+
+
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 10 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 10.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 10 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

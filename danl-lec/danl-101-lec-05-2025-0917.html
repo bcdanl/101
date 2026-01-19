@@ -1,0 +1,2083 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
+
+  <meta name="author" content="Byeong-Hak Choe">
+  <meta name="dcterms.date" content="2025-09-17">
+  <title>Lecture 5</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Lecture 5</h1>
+  <p class="subtitle">R Basics and Descriptive Statistics</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Byeong-Hak Choe 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:bchoe@geneseo.edu">bchoe@geneseo.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            SUNY Geneseo
+          </p>
+    </div>
+</div>
+
+  <p class="date">September 17, 2025</p>
+</section>
+<section>
+<section id="posit-cloud-r-packages" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Posit Cloud &amp; R Packages</h1>
+
+</section>
+<section id="posit-cloud" class="slide level2">
+<h2>Posit Cloud</h2>
+<ul>
+<li class="fragment"><p><a href="https://posit.cloud">Posit Cloud</a> (formerly RStudio Cloud) is a web service that delivers a browser-based experience similar to RStudio, the standard IDE for the R language.</p></li>
+<li class="fragment"><p>For our course, we use <a href="https://posit.cloud">Posit Cloud</a> for the R programming component.</p>
+<ul>
+<li class="fragment">If you want to install R and RStudio on your laptop, you use my office hours.</li>
+</ul></li>
+</ul>
+</section>
+<section id="getting-started-with-posit-cloud" class="slide level2">
+<h2>🚀 Getting Started with Posit Cloud</h2>
+<ol type="1">
+<li class="fragment">Click <strong>Log In</strong> at the top-right corner.<br>
+</li>
+<li class="fragment">Choose the <strong>Sign Up</strong> tab from the menu bar.<br>
+</li>
+<li class="fragment">Create your account using one of the following:
+<ul>
+<li class="fragment"><strong>Google account</strong>, or<br>
+</li>
+<li class="fragment">Your <strong>geneseo.edu</strong> or personal email<br>
+</li>
+</ul></li>
+<li class="fragment">After logging in, go to <strong>New Project</strong> → <strong>New RStudio Project</strong>.<br>
+</li>
+<li class="fragment">Create a new <strong>R script</strong>:
+<ul>
+<li class="fragment">Click the <strong>+</strong> icon (top-left), or<br>
+</li>
+<li class="fragment">Click to <strong>File</strong> → <strong>New File</strong> → <strong>R script</strong> from the menu bar, or</li>
+<li class="fragment">Use the shortcut:
+<ul>
+<li class="fragment"><strong>Command + Shift + N</strong> (Mac)<br>
+</li>
+<li class="fragment"><strong>Ctrl + Shift + N</strong> (Windows)</li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="posit-cloud-environment" class="slide level2">
+<h2>Posit Cloud Environment</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/rstudio_env.png">
+</p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><span style="color:red"><strong>Script Pane</strong></span> is where you write and save R commands in a script file.
+<ul>
+<li class="fragment">An R script is simply a plain text file containing R code.<br>
+</li>
+<li class="fragment">Posit Cloud (RStudio Cloud) automatically color-codes your code to make it easier to read.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<ul>
+<li class="fragment">Try typing <code>a &lt;- 1</code> in the <span style="color:red"><strong>Script Pane</strong></span>.
+<ul>
+<li class="fragment">With the <em>cursor</em> ( ┃ ) on the same line, run the code using:
+<ul>
+<li class="fragment"><strong>Ctrl + Enter</strong> (Windows)<br>
+</li>
+<li class="fragment"><strong>Command + Enter</strong> (Mac)</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="posit-cloud-environment-1" class="slide level2">
+<h2>Posit Cloud Environment</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/rstudio_env.png">
+</p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><span style="color:blue"><strong>Console Pane</strong></span> allows you to interact directly with the R interpreter and type commands where R will immediately execute them.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="posit-cloud-environment-2" class="slide level2">
+<h2>Posit Cloud Environment</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/rstudio_env.png">
+</p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><span style="color:green"><strong>Environment Pane</strong></span> shows everything you have created in R so far.
+<ul>
+<li class="fragment">For example, if you make a <em>variable</em> or a <em>data frame</em>, it will appear here.<br>
+</li>
+<li class="fragment">Think of it like a <strong>workspace</strong> where R keeps track of all the things you’re working on.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="posit-cloud-environment-3" class="slide level2">
+<h2>Posit Cloud Environment</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/rstudio_env.png">
+</p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><span style="color:orange"><strong>Plots Pane</strong></span> contains any graphics that you generate from your R code.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="r-packages" class="slide level2">
+<h2>📦 R Packages</h2>
+<ul>
+<li class="fragment"><p><strong>R packages</strong> are collections of ready-made tools for R.</p>
+<ul>
+<li class="fragment">A package usually includes <strong>functions</strong> (pre-written commands), <strong>data sets</strong>, and sometimes extra code to make your work easier.</li>
+</ul></li>
+<li class="fragment"><p>Many packages are already built into R, and thousands more can be installed from the internet (like downloading apps on your phone).</p></li>
+<li class="fragment"><p><strong>Why use packages?</strong></p>
+<ul>
+<li class="fragment">They save time—you don’t need to write everything from scratch.<br>
+</li>
+<li class="fragment">They give you access to powerful tools for data analysis, visualization, and more.</li>
+</ul></li>
+<li class="fragment"><p><strong>Examples</strong>:</p>
+<ul>
+<li class="fragment"><strong>readr</strong> → for reading data files quickly<br>
+</li>
+<li class="fragment"><strong>dplyr</strong> → for cleaning and transforming data<br>
+</li>
+<li class="fragment"><strong>ggplot2</strong> → for making beautiful graphs and charts</li>
+</ul></li>
+</ul>
+<!-- - To use a package in your R session:   -->
+<!--   1. **Install** it once (e.g., `install.packages("ggplot2")`)   -->
+<!--   2. **Load** it every time you start R (e.g., `library(ggplot2)`)   -->
+</section>
+<section id="tidyverse" class="slide level2">
+<h2>🌐 <code>tidyverse</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment">The <strong><code>tidyverse</code></strong> is a collection of R packages built for data analytics.
+<ul>
+<li class="fragment">They share a common design philosophy, grammar, and data structures.</li>
+</ul></li>
+<li class="fragment">Popular packages in the <code>tidyverse</code> include:
+<ul>
+<li class="fragment"><strong>readr</strong> → data reading</li>
+<li class="fragment"><strong>dplyr</strong> → data transformation<br>
+</li>
+<li class="fragment"><strong>ggplot2</strong> → data visualization</li>
+</ul></li>
+</ul>
+<!-- - These packages are designed to **work together seamlessly**, making it easier to import, clean, explore, and visualize data.   -->
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://bcdanl.github.io/lec_figs/ggplot2-part-of-tidyverse.png" style="width:80.0%"></p>
+</div>
+</div>
+</section>
+<section id="installing-r-packages-with-install.packagespackagename" class="slide level2">
+<h2>📦 Installing R Packages with <code>install.packages("packageName")</code></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Use the base R function <code>install.packages("packageName")</code> to install new packages.</li>
+<li class="fragment"><strong>Example</strong>: to install the <code>tidyverse</code>, type and run the command above in the R Console.</li>
+<li class="fragment">While installing, you may see a pop-up question (e.g., about creating a personal library).
+<ul>
+<li class="fragment">It’s usually safe to answer “No” if you’re unsure.</li>
+</ul></li>
+<li class="fragment">While running the above codes, you may encounter the pop-up question, and you can answer “No”</li>
+</ul>
+</section>
+<section id="loading-r-packages-with-librarypackagename" class="slide level2">
+<h2>📂 Loading R Packages with <code>library(packageName)</code></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2"></a>mpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">After installation, use <code>library(packageName)</code> to load a package into your R session.</li>
+<li class="fragment"><strong>Example</strong>: running <code>library(tidyverse)</code> loads all the R packages in the <strong>tidyverse</strong>, including <code>readr</code>, <code>dplyr</code>, and <code>ggplot2</code>.</li>
+<li class="fragment">Once loaded, you can use their functions and datasets.</li>
+<li class="fragment">For instance, <code>mpg</code> is a built-in dataset from <code>ggplot2</code>, which is part of the tidyverse.</li>
+</ul>
+</section>
+<section id="workflow-for-r-packages-install-load-use" class="slide level2">
+<h2>Workflow for R packages: Install → Load → Use</h2>
+<div>
+<ol type="1">
+<li><strong>Install</strong> (once)<br>
+</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Load</strong> (At the top of every new R script, load the package:)</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Use</strong> (functions &amp; datasets)</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://bcdanl.github.io/data/spotify_all.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>read_csv()</code> function comes from the <code>readr</code> package, which is part of the <strong>tidyverse</strong>.</li>
+</ul>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">🔑 <strong>Tip:</strong> In <strong>Posit Cloud</strong>, you need to install a package <strong>once per project</strong>.<br>
+</li>
+<li class="fragment">After that, just load it whenever you start a new R script.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="workflow-naming-and-file-management" class="slide level2">
+<h2>Workflow: Naming and File Management</h2>
+<ul>
+<li class="fragment">Always <strong>save your R script</strong> for each class session.
+<ul>
+<li class="fragment">Go to <strong>File → Save</strong> (or <strong>Save As…</strong>), or<br>
+</li>
+<li class="fragment">Click the 💾 save icon.</li>
+</ul></li>
+<li class="fragment">✅ Recommended file naming style (no spaces):
+<ul>
+<li class="fragment">Example: <code>danl-101-2024-0917.R</code></li>
+</ul></li>
+<li class="fragment">Tips for naming files:
+<ul>
+<li class="fragment">❌ Avoid spaces in file names.<br>
+</li>
+<li class="fragment">✅ Use lowercase letters and hyphens (<code>-</code>) / underscores (<code>_</code>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="workflow-code-and-comment-style" class="slide level2">
+<h2>Workflow: Code and comment style</h2>
+<ul>
+<li class="fragment">The two main principles for coding and managing data are:
+<ul>
+<li class="fragment">Make things easier for your future self.</li>
+<li class="fragment">Don’t trust your future self.</li>
+</ul></li>
+<li class="fragment">The <span style="color:green"><strong>#</strong></span> mark is R’s comment character.
+<ul>
+<li class="fragment">In R scripts (<code>*.R</code> files), <span style="color:green"><strong>#</strong></span> indicates that the rest of the line is to be ignored.</li>
+<li class="fragment">Write comments before the line that you want the comment to apply to.</li>
+</ul></li>
+</ul>
+</section>
+<section id="workflow-shortcuts-in-posit-cloud" class="slide level2">
+<h2>Workflow: Shortcuts in Posit Cloud</h2>
+<div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><strong>Windows</strong>
+<ul>
+<li><strong>Alt + -</strong> adds an assignment operator (<code>&lt;-</code>)</li>
+<li><strong>Ctrl + Enter</strong> runs a current line of code</li>
+<li><strong>Ctrl + Shift + C</strong> makes a comment (- <span style="color:green"><strong>#</strong></span>)</li>
+<li><strong>Ctrl + Shift + R</strong> makes a section (- <span style="color:green"><strong># Section - - - -</strong></span>)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><strong>Mac</strong>
+<ul>
+<li><strong>option + -</strong> adds an assignment operator (<code>&lt;-</code>)</li>
+<li><strong>command + return</strong> runs a current line of code</li>
+<li><strong>command + shift + C</strong> makes a comment (- <span style="color:green"><strong>#</strong></span>)</li>
+<li><strong>command + shift + R</strong> makes a section (- <span style="color:green"><strong># Section - - - -</strong></span>)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="workflow-shortcuts-in-posit-cloud-1" class="slide level2">
+<h2>Workflow: Shortcuts in Posit Cloud</h2>
+<ul>
+<li class="fragment"><strong>Ctrl</strong> (<strong>command</strong> for Mac Users) <strong>+ Z</strong> undoes the previous action.</li>
+<li class="fragment"><strong>Ctrl</strong> (<strong>command</strong> for Mac Users) <strong>+ Shift + Z</strong> redoes when undo is executed.</li>
+</ul>
+</section>
+<section id="workflow-shortcuts-in-posit-cloud-2" class="slide level2">
+<h2>Workflow: Shortcuts in Posit Cloud</h2>
+<ul>
+<li class="fragment"><strong>Ctrl</strong> (<strong>command</strong> for Mac Users) <strong>+ F</strong> is useful when finding a phrase (and replace the phrase) in the RScript.</li>
+</ul>
+</section>
+<section id="workflow-auto-completion" class="slide level2">
+<h2>Workflow: Auto-completion</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>libr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/auto-completionRStudio.png">
+</p>
+</div>
+</div>
+<ul>
+<li class="fragment">Auto-completion of command is useful.
+<ul>
+<li class="fragment">Type <code>libr</code> in the RScript in RStudio and wait for a second.</li>
+</ul></li>
+</ul>
+</section>
+<section id="workflow-stop-icon" class="slide level2">
+<h2>Workflow: STOP icon</h2>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/console-running.png">
+</p>
+<ul>
+<li class="fragment">When the code is running, RStudio shows the STOP icon ( 🛑 ) at the top right corner in the Console Pane.
+<ul>
+<li class="fragment">Do not click it unless if you want to stop running the code.</li>
+</ul></li>
+</ul>
+</section>
+<section id="posit-cloud-options-setting" class="slide level2">
+<h2>Posit Cloud Options Setting</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="https://bcdanl.github.io/lec_figs/RStudio_options.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment">This option menu is found by menus as follows:
+<ul>
+<li class="fragment"><strong>Tools</strong> <span class="math inline">\(&gt;\)</span> <strong>Global Options</strong></li>
+</ul></li>
+<li class="fragment">Check the boxes as in the left.</li>
+<li class="fragment">Choose the option <strong><em>Never</em></strong> for <u> Save workspace to .RData on exit: </u></li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="r-programming-basics" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>R Programming Basics</h1>
+
+</section>
+<section id="values-variables-and-data-types" class="slide level2">
+<h2>Values, Variables, and Data Types</h2>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/py-basic-box.png">
+</p>
+<ul>
+<li class="fragment"><p>A <strong>value</strong> is datum (literal) such as a number or text.</p></li>
+<li class="fragment"><p>There are different types of values:</p>
+<ul>
+<li class="fragment">352.3 is known as a float or double;</li>
+<li class="fragment">22 is an integer;</li>
+<li class="fragment">“Hello World!” is a string.</li>
+</ul></li>
+</ul>
+</section>
+<section id="values-variables-and-data-types-1" class="slide level2">
+<h2>Values, Variables, and Data Types</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>a <span class="ot">&lt;-</span> <span class="dv">10</span>    <span class="co"># The most popular assignment operator in R is `&lt;-`.</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/int-py-fig2-3.png" width="400">
+</p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><p>A <strong>variable</strong> is a name that refers to a value.</p>
+<ul>
+<li class="fragment">We can think of a <strong>variable</strong> as a box that has a value, or multiple values, packed inside it.</li>
+</ul></li>
+<li class="fragment"><p>A <strong>variable</strong> is just a name!</p></li>
+<li class="fragment"><p>Sometimes you will hear variables referred to as <strong>objects</strong>. m</p></li>
+<li class="fragment"><p>Everything that is not a <em>literal value</em>, such as <code>10</code>, is an <strong>object</strong>.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="assignment" class="slide level2">
+<h2>Assignment</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>x <span class="sc">&lt;</span> <span class="sc">-</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>What is going on here?</p></li>
+<li class="fragment"><p>The shortcut for the assignment <code>&lt;-</code> is:</p>
+<ul>
+<li class="fragment">Windows: <strong>Alt + -</strong></li>
+<li class="fragment">Mac: <strong>option + -</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="assignment-1" class="slide level2">
+<h2>Assignment</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>y <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">In programming code, everything on the right side needs to have a value.
+<ul>
+<li class="fragment">The right side can be a literal value, or a variable that has already been assigned a value, or a combination.</li>
+</ul></li>
+<li class="fragment">When R reads <code>y &lt;- x + 12</code>, it does the following:
+<ol type="1">
+<li class="fragment">Sees the <code>&lt;-</code> in the middle.</li>
+<li class="fragment">Knows that this is an assignment.</li>
+<li class="fragment">Calculates the right side (gets the value of the object referred to by <code>x</code> and adds it to <code>12</code>).</li>
+<li class="fragment">Assigns the result to the left-side variable, <code>y</code>.</li>
+</ol></li>
+</ul>
+</section>
+<section id="data-types" class="slide level2">
+<h2>Data Types</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/r_variable_types.png">
+</p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><strong>Logical</strong>: <code>TRUE</code> or <code>FALSE</code>.</li>
+<li class="fragment"><strong>Numeric</strong>: Numbers with decimals</li>
+<li class="fragment"><strong>Integer</strong>: Integers</li>
+<li class="fragment"><strong>Character</strong>: Text strings</li>
+<li class="fragment"><strong>Factor</strong>: Categorical values.
+<ul>
+<li class="fragment">Each possible value of a factor is known as a <em>level</em>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="data-containers" class="slide level2">
+<h2>Data Containers</h2>
+<div style="display:block; margin:-10px;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="text-align: center; width: 80%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/r-data-containers.jpg" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><strong>vector</strong> → a single column of values, all of the <em>same type</em>
+<ul>
+<li class="fragment">Example:
+<ul>
+<li class="fragment"><code>c(1, 2, 3)</code></li>
+<li class="fragment"><code>c("red", "blue", "green")</code></li>
+</ul></li>
+</ul></li>
+<li class="fragment"><strong>data.frame</strong> → a table with rows and columns, where each column can be a <em>different type</em>
+<ul>
+<li class="fragment"><em>Example</em>: one column with <code>names</code>, another with <code>ages</code><br>
+</li>
+<li class="fragment">A <strong>data.frame</strong> is basically several vectors put together side by side.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="data-types-1" class="slide level2">
+<h2>Data Types</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>orig_number <span class="ot">&lt;-</span> <span class="fl">4.39898498</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">class</span>(orig_number)</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a>mod_number <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(orig_number)</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="fu">class</span>(mod_number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:45%;">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Logical values (TRUE/FALSE) </span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="co"># can convert to numbers:</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="co"># TRUE converts to 1; </span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="co"># FALSE does to 0.</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="fu">as.numeric</span>(<span class="cn">TRUE</span>)</span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="fu">as.numeric</span>(<span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment">Values have different <strong>data types</strong> (e.g., numeric, integer, character, factor, logical).<br>
+</li>
+<li class="fragment">Sometimes we need to <strong>convert (cast)</strong> a value from one type to another.<br>
+</li>
+<li class="fragment">Use built-in functions like:
+<ul>
+<li class="fragment"><code>as.character()</code> → convert to character</li>
+<li class="fragment"><code>as.integer()</code> → convert to whole numbers<br>
+</li>
+<li class="fragment"><code>as.numeric()</code> → convert to numbers with decimals<br>
+</li>
+<li class="fragment"><code>as.factor()</code> → convert to categorical (factor)</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-types---character" class="slide level2">
+<h2>Data Types - Character</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>myname <span class="ot">&lt;-</span> <span class="st">"my_name"</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">class</span>(myname) <span class="co"># returns the data **type** of an object.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Strings (text) are stored as the data type <strong>character</strong>.<br>
+</li>
+<li class="fragment">Wrap text in either <strong>double quotes</strong> (<code>" "</code>) or <strong>single quotes</strong> (<code>' '</code>).<br>
+</li>
+<li class="fragment"><em>Example</em>: <code>"hello"</code> or <code>'hello'</code><br>
+</li>
+<li class="fragment">Most IDEs, including Posit Cloud (RStudio), will <strong>auto-complete the closing quote</strong> when you type the first one.</li>
+</ul>
+</section>
+<section id="data-types---numbers" class="slide level2">
+<h2>Data Types - Numbers</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>favorite.integer <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="dv">2</span>)</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">class</span>(favorite.integer)</span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a>favorite.numeric <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fl">8.8</span>)</span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="fu">class</span>(favorite.numeric)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Numbers can belong to different <strong>classes</strong>.<br>
+</li>
+<li class="fragment">The two most common are:
+<ul>
+<li class="fragment"><strong>integer</strong> → whole numbers (e.g., 2, -5, 100)<br>
+</li>
+<li class="fragment"><strong>numeric</strong> → numbers with decimals (e.g., 8.8, -3.14, 0.5)</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-types---logical-truefalse" class="slide level2">
+<h2>Data Types - Logical (<code>TRUE</code>/<code>FALSE</code>)</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">class</span>(<span class="cn">TRUE</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="fu">class</span>(<span class="cn">FALSE</span>)</span>
+<span id="cb14-3"><a href="#cb14-3"></a></span>
+<span id="cb14-4"><a href="#cb14-4"></a>favorite.numeric <span class="sc">==</span> <span class="fl">8.8</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>favorite.numeric <span class="sc">==</span> <span class="fl">9.9</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="fu">class</span>(favorite.numeric <span class="sc">==</span> <span class="fl">8.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><strong>Logical values</strong> represent <code>TRUE</code> or <code>FALSE</code>.<br>
+</li>
+<li class="fragment">The operator <strong><code>==</code></strong> is used to test for <strong>equality</strong>.<br>
+</li>
+<li class="fragment"><em>Example</em>:
+<ul>
+<li class="fragment"><code>favorite.numeric == 8.8</code> returns <code>TRUE</code><br>
+</li>
+<li class="fragment"><code>favorite.numeric == 9.9</code> returns <code>FALSE</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="data-types---vectors" class="slide level2">
+<h2>Data Types - Vectors</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>   <span class="co"># create a sequence using the colon operator</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"3"</span>, <span class="dv">4</span>, <span class="dv">5</span>)   <span class="co"># mixing numbers and text</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>beers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"BUD LIGHT"</span>, <span class="st">"BUSCH LIGHT"</span>, <span class="st">"COORS LIGHT"</span>, </span>
+<span id="cb15-4"><a href="#cb15-4"></a>           <span class="st">"MILLER LITE"</span>, <span class="st">"NATURAL LIGHT"</span>)</span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="fu">length</span>(beers)</span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="fu">class</span>(a)</span>
+<span id="cb15-7"><a href="#cb15-7"></a><span class="fu">class</span>(b)</span>
+<span id="cb15-8"><a href="#cb15-8"></a><span class="fu">class</span>(beers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">A <strong>vector</strong> is a one-dimensional data structure in R.<br>
+</li>
+<li class="fragment">All elements in a vector must be of the <strong>same type</strong> (numeric, character, or logical).<br>
+</li>
+<li class="fragment">If types are mixed, R will <strong>coerce</strong> them to a common type (e.g., numbers become text in <code>b</code>).<br>
+</li>
+<li class="fragment">The function <strong><code>c(...)</code></strong> (combine or concatenate) creates a vector by putting values together in order.<br>
+</li>
+<li class="fragment">The function <strong><code>length()</code></strong> returns the number of elements in an object.</li>
+</ul>
+</section>
+<section id="data-types---factors" class="slide level2">
+<h2>Data Types - Factors</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>beers <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(beers)</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">class</span>(beers)</span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="fu">levels</span>(beers)</span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="fu">nlevels</span>(beers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><strong>Factors</strong> are used to store <strong>categorical data</strong> (data that falls into groups or categories).<br>
+</li>
+<li class="fragment">Internally, R stores factors as <strong>integers</strong> with a text <strong>label</strong> for each unique value (for speed and efficiency).<br>
+</li>
+<li class="fragment"><em>Example</em>: if you have a factor of <code>"Freshman"</code>, <code>"Sophomore"</code>, <code>"Junior"</code>, and <code>"Senior"</code> student classifications, R stores them as numbers (e.g., 1, 2, 3, 4) but displays the labels.<br>
+</li>
+<li class="fragment"><em>Functions</em>:
+<ul>
+<li class="fragment"><code>levels()</code> → shows the categories (unique labels)<br>
+</li>
+<li class="fragment"><code>nlevels()</code> → shows how many categories there are</li>
+</ul></li>
+</ul>
+</section>
+<section id="workflow-quotation-marks-parentheses-and" class="slide level2">
+<h2>Workflow: Quotation marks, parentheses, and <code>+</code></h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>x <span class="ot">&lt;-</span> <span class="st">"hello</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><strong>Quotation marks</strong> and <strong>parentheses</strong> must always come in pairs.<br>
+</li>
+<li class="fragment">If one is missing, the R Console will show a continuation prompt: <strong><code>+</code></strong>
+<ul>
+<li class="fragment">This means R is still waiting for more input and doesn’t think your command is finished.</li>
+</ul></li>
+</ul>
+</section>
+<section id="functions" class="slide level2">
+<h2>⚙️ Functions</h2>
+<ul>
+<li class="fragment">A <strong>function</strong> is a reusable piece of code: it takes input (<em>parameters</em>) and produces output (<em>results</em>).<br>
+</li>
+<li class="fragment">R comes with many <strong>built-in functions</strong> (e.g., <code>sum()</code>, <code>mean()</code>).<br>
+</li>
+<li class="fragment">You can also <strong>write your own functions</strong> in R.
+<ul>
+<li class="fragment">In our course, we will use only built-in functions. m</li>
+</ul></li>
+</ul>
+</section>
+<section id="functions-arguments-and-parameters" class="slide level2">
+<h2>Functions, Arguments, and Parameters</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="co"># The function `str_c()`, provided by `tidyverse`, concatenates characters.</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="fu">str_c</span>(<span class="st">"Data"</span>, <span class="st">"Analytics"</span>)</span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="fu">str_c</span>(<span class="st">"Data"</span>, <span class="st">"Analytics"</span>, <span class="at">sep =</span> <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">A <strong>function</strong> is used by writing its name followed by parentheses <code>()</code>.<br>
+</li>
+<li class="fragment">A function can take inputs, called <strong>arguments</strong>, much like a recipe takes ingredients.<br>
+</li>
+<li class="fragment">Arguments are placed inside the parentheses, separated by commas.<br>
+</li>
+<li class="fragment">A <strong>parameter</strong> is the name that represents an expected <em>argument</em> in the function definition.<br>
+</li>
+<li class="fragment">A <strong>default argument</strong> is a value that R automatically uses for a parameter if no value is provided when calling the function.</li>
+</ul>
+</section>
+<section id="workflow-accessing-package-objectsfunctions" class="slide level2">
+<h2>Workflow: Accessing Package Objects/Functions</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Access an object directly from a package</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>ggplot2<span class="sc">::</span>mpg   <span class="co"># PACKAGE_NAME::DATA_FRAME_NAME</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="co"># Call a function directly from a package</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>()   <span class="co"># PACKAGE_NAME::FUNCTION_NAME</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Use the <strong>double colon</strong> <code>::</code> operator when you want to access:
+<ul>
+<li class="fragment">A data frame from a specific package (e.g., <code>ggplot2::mpg</code>)<br>
+</li>
+<li class="fragment">A function without loading the entire package (e.g., <code>ggplot2::ggplot()</code>)</li>
+</ul></li>
+<li class="fragment">✅ This can be useful because:
+<ul>
+<li class="fragment">It avoids <strong>name conflicts</strong> if two packages have functions with the same name.<br>
+</li>
+<li class="fragment">It saves time and memory by letting you call just one function or dataset without loading the entire package.</li>
+</ul></li>
+</ul>
+</section>
+<section id="math-algebra" class="slide level2">
+<h2>Math Algebra</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="dv">5</span> <span class="sc">-</span> <span class="dv">3</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="dv">5</span> <span class="sc">*</span> <span class="dv">3</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="dv">5</span> <span class="sc">/</span> <span class="dv">3</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="dv">5</span><span class="sc">^</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>( <span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span> )<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span><span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span><span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>(<span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span>) <span class="sc">*</span> (<span class="dv">4</span> <span class="sc">+</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment">All of the basic operators with parentheses we see in mathematics are available to use.<br>
+</li>
+<li class="fragment">R follows the standard <strong>order of operations (PEMDAS)</strong>: Parentheses → Exponents → Multiplication/Division → Addition/Subtraction.<br>
+</li>
+<li class="fragment">This allows R to be used for a wide range of mathematical calculations.</li>
+</ul>
+</section>
+<section id="math-functions" class="slide level2">
+<h2>Math functions</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="dv">5</span> <span class="sc">*</span> <span class="fu">abs</span>(<span class="sc">-</span><span class="dv">3</span>)</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="fu">sqrt</span>(<span class="dv">17</span>) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">exp</span>(<span class="dv">3</span>)</span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="fu">log</span>(<span class="dv">3</span>)</span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="fu">log</span>(<span class="fu">exp</span>(<span class="dv">3</span>))</span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="fu">exp</span>(<span class="fu">log</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">R has many built-in mathematical functions that facilitate calculations and data analysis.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><code>abs(x)</code>: the absolute value <span class="math inline">\(|x|\)</span></li>
+<li class="fragment"><code>sqrt(x)</code>: the square root <span class="math inline">\(\sqrt{x}\)</span></li>
+<li class="fragment"><code>exp(x)</code>: the exponential value <span class="math inline">\(e^x\)</span>, where <span class="math inline">\(e = 2.718...\)</span></li>
+<li class="fragment"><code>log(x)</code>: the natural logarithm <span class="math inline">\(\log_{e}(x)\)</span>, or simply <span class="math inline">\(\log(x)\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="vectorized-operations" class="slide level2">
+<h2>Vectorized Operations</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>a <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>a <span class="sc">-</span> <span class="dv">5</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>a <span class="sc">*</span> <span class="dv">5</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>a <span class="sc">/</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>a <span class="sc">+</span> b</span>
+<span id="cb25-2"><a href="#cb25-2"></a>a <span class="sc">-</span> b</span>
+<span id="cb25-3"><a href="#cb25-3"></a>a <span class="sc">*</span> b</span>
+<span id="cb25-4"><a href="#cb25-4"></a>a <span class="sc">/</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">sqrt</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><strong>Vectorized operations</strong> apply a function to every element of a vector automatically, without the need to write a loop.
+<ul>
+<li class="fragment">Most functions in R are vectorized, meaning they operate element-wise on entire vectors.<br>
+</li>
+<li class="fragment">This makes R code more efficient, concise, and well-suited for data analysis and manipulation.</li>
+</ul></li>
+</ul>
+</section>
+<section id="classwork-r-basics" class="slide level2">
+<h2>Classwork: R Basics</h2>
+<p><strong>Try it out</strong> → <a href="https://bcdanl.github.io/danl-cw/danl-101-cw-04.html">Classwork 4: R Basics I</a></p>
+</section></section>
+<section>
+<section id="descriptive-statistics" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Descriptive Statistics</h1>
+
+</section>
+<section id="descriptive-statistics-1" class="slide level2">
+<h2>Descriptive Statistics</h2>
+<div style="text-align: center; width: 57.5%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/descriptive-stat-ex.jpg" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+<p><strong>What can descriptive statistics tell us about this dataset?</strong></p>
+<ul>
+<li class="fragment">They condense data into clear, manageable summaries, making it easier to understand the key characteristics of a dataset.<br>
+</li>
+<li class="fragment">They reveal important <strong>patterns, trends, and relationships</strong> that may not be immediately obvious from raw numbers.</li>
+</ul>
+</section>
+<section id="descriptive-statistics-in-practice" class="slide level2">
+<h2>Descriptive Statistics in Practice</h2>
+<ul>
+<li class="fragment"><strong>Checking data quality</strong>
+<ul>
+<li class="fragment">Helps spot numbers that don’t seem to fit with the rest of the data.<br>
+</li>
+<li class="fragment"><em>Example: If most grocery bills are between $50–$150 but one record shows $10,000, it may be a mistake in recording.</em></li>
+</ul></li>
+<li class="fragment"><strong>Laying the foundation for analysis</strong>
+<ul>
+<li class="fragment">Gives simple summaries that can be used for deeper study later.<br>
+</li>
+<li class="fragment"><em>Example: Knowing both the average and the range of grocery bills helps us understand typical spending patterns.</em></li>
+</ul></li>
+<li class="fragment"><strong>Supporting data visualization</strong>
+<ul>
+<li class="fragment">Provides clear numbers that make charts and graphs easier to understand.<br>
+</li>
+<li class="fragment"><em>Example: Showing the average and range of grocery bills is much simpler than listing every single receipt.</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="measures-of-central-tendency" class="slide level2">
+<h2>Measures of Central Tendency</h2>
+<ul>
+<li class="fragment">Measures of <strong>centrality</strong> are used to describe the central or typical value in a given vector.
+<ul>
+<li class="fragment">They represent the “center” or most representative value of a data set.</li>
+</ul></li>
+<li class="fragment">To describe this centrality, several statistical measures are commonly used:
+<ul>
+<li class="fragment"><strong>Mean</strong>: The arithmetic average of all values in the data set.</li>
+<li class="fragment"><strong>Median</strong>: The middle value when the data set is ordered from least to greatest.</li>
+<li class="fragment"><strong>Mode</strong>: The most frequently occurring value in the data set.</li>
+</ul></li>
+</ul>
+</section>
+<section id="measures-of-central-tendency---mean" class="slide level2">
+<h2>Measures of Central Tendency - Mean</h2>
+<p><span class="math display">\[
+\overline{x} = \frac{x_{1} + x_{2} + \cdots + x_{N}}{N}
+\]</span></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>)</span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">sum</span>(x)</span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <strong>arithmetic mean</strong> (or simply <em>mean</em> or <em>average</em>) is the sum of all the values divided by the number of observations in the data set.
+<ul>
+<li class="fragment"><code>mean()</code> calculates the mean of the values in a vector.</li>
+<li class="fragment">For a given vector <span class="math inline">\(x\)</span>, if we happen to have <span class="math inline">\(N\)</span> observations <span class="math inline">\((x_{1}, x_{2}, \cdots , x_{N})\)</span>, we can write the arithmetic mean of the data sample as above.</li>
+</ul></li>
+</ul>
+</section>
+<section id="measures-of-central-tendency---weighted-mean" class="slide level2">
+<h2>Measures of Central Tendency - Weighted Mean</h2>
+<p><span class="math display">\[
+\begin{align}
+\overline{x}_{w} &amp;= \frac{w_{1}x_{1} + w_{2}x_{2} + \cdots + w_{N}x_{N}}{w_{1} + w_{2} + \cdots + w_{N}}
+\end{align}
+\]</span></p>
+<ul>
+<li class="fragment">The <strong>weighted mean</strong> assigns different levels of importance (weights) to each value.
+<ul>
+<li class="fragment">Each value <span class="math inline">\(x_{i}\)</span> is multiplied by its weight <span class="math inline">\(w_{i}\)</span>, and then divided by the sum of the weights.<br>
+</li>
+</ul></li>
+<li class="fragment">This is useful when some values contribute more than others (e.g., test scores with different weightings).</li>
+</ul>
+</section>
+<section id="measures-of-central-tendency---median" class="slide level2">
+<h2>Measures of Central Tendency - Median</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="text-align: center; width: 100%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/median-formula.jpg" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="text-align: center; width: 100%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/median_eg.png" style="width: 100%; margin-bottom: -20px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>)</span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">median</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <strong>median</strong> is the middle value in a vector—half the numbers are smaller and half are larger.
+<ul>
+<li class="fragment"><code>median()</code> calculates the <strong>median</strong> of the values in a vector.</li>
+</ul></li>
+<li class="fragment">The median is <strong>less sensitive to extreme values</strong> than the mean.</li>
+</ul>
+</section>
+<section id="measures-of-central-tendency---mode" class="slide level2">
+<h2>Measures of Central Tendency - Mode</h2>
+<ul>
+<li class="fragment"><p>The <strong>mode</strong> is the value(s) that occurs most frequently in a given vector.</p></li>
+<li class="fragment"><p>Mode can be useful, although it is often not a very good representation of centrality.</p></li>
+<li class="fragment"><p>The R package, <code>modeest</code>, provides the <code>mfw(x)</code> function that calculate the mode of values in vector <code>x</code>.</p></li>
+</ul>
+</section>
+<section id="measures-of-dispersion" class="slide level2">
+<h2>Measures of Dispersion</h2>
+<ul>
+<li class="fragment">Measures of <strong>dispersion</strong> are used to describe the degree of variation in a given vector.
+<ul>
+<li class="fragment">They are a representation of the numerical spread of a given data set.</li>
+</ul></li>
+<li class="fragment">To describe this dispersion, a number of statistical measures are developed
+<ul>
+<li class="fragment">Range</li>
+<li class="fragment">Variance</li>
+<li class="fragment">Standard deviation</li>
+<li class="fragment">Quartile</li>
+</ul></li>
+</ul>
+</section>
+<section id="measures-of-dispersion---range" class="slide level2">
+<h2>Measures of Dispersion - Range</h2>
+<p><span class="math display">\[
+(\text{range of x}) \,=\, (\text{maximum value in x}) \,-\, (\text{minimum value in x})
+\]</span></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>)</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">max</span>(x)</span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="fu">min</span>(x)</span>
+<span id="cb29-4"><a href="#cb29-4"></a>range <span class="ot">&lt;-</span> <span class="fu">max</span>(x) <span class="sc">-</span> <span class="fu">min</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <strong>range</strong> is the difference between the largest and the smallest values in a given vector.
+<ul>
+<li class="fragment"><code>max(x)</code> returns the maximum value of the values in a given vector <span class="math inline">\(x\)</span>.</li>
+<li class="fragment"><code>min(x)</code> returns the minimum value of the values in a given vector <span class="math inline">\(x\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="measures-of-dispersion---variance" class="slide level2">
+<h2>Measures of Dispersion - Variance</h2>
+<p><span class="math display">\[
+\overline{s}^{2} = \frac{(x_{1}-\overline{x})^{2} + (x_{2}-\overline{x})^{2} + \cdots + (x_{N}-\overline{x})^{2}}{N-1}\;\,
+\]</span></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>)  </span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">var</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <strong>variance</strong> measures how far each data point deviates from the <strong>mean</strong>, on average (in squared units).
+<ul>
+<li class="fragment">The larger the variance, the more spread out the data are from the mean.<br>
+</li>
+<li class="fragment">Variance squares deviations so that negative and positive differences do not cancel out.<br>
+</li>
+</ul></li>
+<li class="fragment"><code>var(x)</code> calculates the variance of the values in a vector <code>x</code>.</li>
+</ul>
+</section>
+<section id="measures-of-dispersion---standard-deviation" class="slide level2">
+<h2>Measures of Dispersion - Standard Deviation</h2>
+<p><span class="math display">\[
+\overline{s} = \sqrt{ \left( \frac{(x_{1}-\overline{x})^{2} + (x_{2}-\overline{x})^{2} + \cdots + (x_{N}-\overline{x})^{2}}{N-1}\;\, \right) }
+\]</span></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>)</span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">sd</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <strong>standard deviation (SD)</strong> is the square root of the variance, expressed in the same unit as the data.
+<ul>
+<li class="fragment">A <strong>low SD</strong> suggests values are tightly clustered around the mean, while a <strong>high SD</strong> suggests greater variability.<br>
+</li>
+<li class="fragment">SD is often more useful than variance because it is easier to interpret and directly comparable to the mean.<br>
+</li>
+</ul></li>
+<li class="fragment"><code>sd(x)</code> calculates the standard deviation of the values in a vector <code>x</code>.</li>
+</ul>
+</section>
+<section id="measures-of-dispersion---quartiles" class="slide level2">
+<h2>Measures of Dispersion - Quartiles</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">quantile</span>(x, <span class="dv">0</span>)    <span class="co"># the minimum</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">quantile</span>(x, <span class="fl">0.25</span>) <span class="co"># the 1st quartile (Q1)</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="fu">quantile</span>(x, <span class="fl">0.5</span>)  <span class="co"># the 2nd quartile (Q2, median)</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="fu">quantile</span>(x, <span class="fl">0.75</span>) <span class="co"># the 3rd quartile (Q3)</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a><span class="fu">quantile</span>(x, <span class="dv">1</span>)    <span class="co"># the maximum</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">A <strong>quartile</strong> is a quarter of the number of data points (<span class="math inline">\(N\)</span>) in a given vector.</li>
+<li class="fragment">To compute quartiles:<br>
+</li>
+</ul>
+<ol type="1">
+<li class="fragment"><strong>Sort</strong> the data in ascending order.</li>
+<li class="fragment"><strong>Split</strong> into four groups with equal number of data points (or as close as possible if dividing <span class="math inline">\(N\)</span> by 4 leaves a remainder).</li>
+</ol>
+</section>
+<section id="measures-of-dispersion-interquartile-range" class="slide level2">
+<h2>Measures of Dispersion – Interquartile Range</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div style="text-align: center; width: 100%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/boxplot-outlier.jpg" style="width: 100%; margin-bottom: -40px;">
+<p style="font-weight: bold;">
+Boxplot
+</p>
+</div>
+</div><div class="column" style="width:55%;">
+<ul>
+<li class="fragment">The <strong>interquartile range (IQR)</strong> is <span class="math inline">\(IQR = Q3 - Q1\)</span>.
+<ul>
+<li class="fragment">It measures the spread of the <strong>middle 50%</strong> of the data.<br>
+</li>
+<li class="fragment">A popular way to visualize quartiles and the IQR is a <strong>boxplot</strong>.</li>
+</ul></li>
+<li class="fragment"><strong>Why quartiles are useful</strong>
+<ul>
+<li class="fragment">Quartiles show whether the data are more spread out in the <strong>lower half</strong> or the <strong>upper half</strong> of the dataset.<br>
+</li>
+<li class="fragment">Quartiles are <strong>less sensitive to extreme values (outliers)</strong> than the mean.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="accessing-a-subset-of-a-vector" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Accessing a Subset of a <code>vector</code></h1>
+
+</section>
+<section id="accessing-a-subset-of-a-vector-1" class="slide level2">
+<h2>Accessing a Subset of a <code>vector</code></h2>
+<div>
+<ul>
+<li>A key part of working with a <code>vector</code> is knowing how to <strong>index</strong> them.
+<ul>
+<li>Indexing allows you to <em>filter</em> and extract subsets of data for further analysis.</li>
+</ul></li>
+<li>For vectors, there are three common ways to index:</li>
+</ul>
+<ol type="1">
+<li><strong>Single index</strong><br>
+</li>
+</ol>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>vec[n]   <span class="co"># element at position n</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Multiple indices</strong></li>
+</ol>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>vec[<span class="fu">c</span>(i, j, k)]   <span class="co"># elements at positions i, j, and k</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Logical indexing</strong></li>
+</ol>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>vec[condition]   <span class="co"># elements where condition is TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="positional-indexing" class="slide level2">
+<h2>Positional Indexing</h2>
+<div>
+<ul>
+<li>An index is a <strong>positional</strong> reference (e.g., 1, 2, 3) used to access individual elements within data structures like a vector.</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>my_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>)</span>
+<span id="cb36-2"><a href="#cb36-2"></a></span>
+<span id="cb36-3"><a href="#cb36-3"></a>my_vector[<span class="dv">2</span>]</span>
+<span id="cb36-4"><a href="#cb36-4"></a>my_vector[<span class="dv">4</span>]</span>
+<span id="cb36-5"><a href="#cb36-5"></a>my_vector[<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">In R, the index is positive integer, starting at 1.</li>
+</ul>
+</section>
+<section id="a-vector-of-indices" class="slide level2">
+<h2>A Vector of Indices</h2>
+<div>
+<ul>
+<li><strong>Selecting multiple elements</strong> by providing a vector of indices</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>my_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>)</span>
+<span id="cb37-2"><a href="#cb37-2"></a></span>
+<span id="cb37-3"><a href="#cb37-3"></a>my_vector[ <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>) ]</span>
+<span id="cb37-4"><a href="#cb37-4"></a>my_vector[ <span class="dv">3</span><span class="sc">:</span><span class="dv">5</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="logical-indexing" class="slide level2">
+<h2>Logical Indexing</h2>
+<div>
+<ul>
+<li><strong>Using a logical condition</strong> to filter elements of a vector.</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>my_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>)</span>
+<span id="cb38-2"><a href="#cb38-2"></a></span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="co"># Filter elements greater than 10</span></span>
+<span id="cb38-4"><a href="#cb38-4"></a>is_greater_than_10 <span class="ot">&lt;-</span> my_vector <span class="sc">&gt;</span> <span class="dv">10</span>  <span class="co"># Creates logical vector</span></span>
+<span id="cb38-5"><a href="#cb38-5"></a>my_vector[ is_greater_than_10 ] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="classwork-r-basics-1" class="slide level2">
+<h2>Classwork: R Basics</h2>
+<p><strong>Try it out</strong> → <a href="https://bcdanl.github.io/danl-cw/danl-101-cw-05.html">Classwork 5: R Basics II</a></p>
+
+<div class="footer footer-default">
+
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+    document.addEventListener('wheel', function(event) {
+        if (event.deltaY > 0) {
+            Reveal.next(); // Scroll down to go to the next slide
+        } else {
+            Reveal.prev(); // Scroll up to go to the previous slide
+        }
+    }, false);
+
+    window.onload = function() {
+        document.querySelectorAll('a').forEach(function(link) {
+            link.setAttribute('target', '_blank');
+        });
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Query all anchor tags within code blocks (adjust the selector as needed)
+      document.querySelectorAll('pre code a').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent the default anchor action
+          e.stopPropagation(); // Stop the event from bubbling up
+        });
+      });
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Target all span elements within code blocks that have IDs starting with 'cb'
+        document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
+            element.addEventListener('mouseenter', function() {
+                // Apply yellow background color to the hovered span element
+                this.style.backgroundColor = '#FFFF99';
+            });
+            element.addEventListener('mouseleave', function() {
+                // Revert the background color when the mouse leaves the span element
+                this.style.backgroundColor = '';
+            });
+        });
+    });
+
+
+
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+          let selectedAnnoteEl;
+          const selectorForAnnotation = ( cell, annotation) => {
+            let cellAttr = 'data-code-cell="' + cell + '"';
+            let lineAttr = 'data-code-annotation="' +  annotation + '"';
+            const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+            return selector;
+          }
+          const selectCodeLines = (annoteEl) => {
+            const doc = window.document;
+            const targetCell = annoteEl.getAttribute("data-target-cell");
+            const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+            const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+            const lineIds = lines.map((line) => {
+              return targetCell + "-" + line;
+            })
+            let top = null;
+            let height = null;
+            let parent = null;
+            if (lineIds.length > 0) {
+                //compute the position of the single el (top and bottom and make a div)
+                const el = window.document.getElementById(lineIds[0]);
+                top = el.offsetTop;
+                height = el.offsetHeight;
+                parent = el.parentElement.parentElement;
+              if (lineIds.length > 1) {
+                const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+                const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+                height = bottom - top;
+              }
+              if (top !== null && height !== null && parent !== null) {
+                // cook up a div (if necessary) and position it 
+                let div = window.document.getElementById("code-annotation-line-highlight");
+                if (div === null) {
+                  div = window.document.createElement("div");
+                  div.setAttribute("id", "code-annotation-line-highlight");
+                  div.style.position = 'absolute';
+                  parent.appendChild(div);
+                }
+                div.style.top = top - 2 + "px";
+                div.style.height = height + 4 + "px";
+                let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+                if (gutterDiv === null) {
+                  gutterDiv = window.document.createElement("div");
+                  gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                  gutterDiv.style.position = 'absolute';
+                  const codeCell = window.document.getElementById(targetCell);
+                  const gutter = codeCell.querySelector('.code-annotation-gutter');
+                  gutter.appendChild(gutterDiv);
+                }
+                gutterDiv.style.top = top - 2 + "px";
+                gutterDiv.style.height = height + 4 + "px";
+              }
+              selectedAnnoteEl = annoteEl;
+            }
+          };
+          const unselectCodeLines = () => {
+            const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+            elementsIds.forEach((elId) => {
+              const div = window.document.getElementById(elId);
+              if (div) {
+                div.remove();
+              }
+            });
+            selectedAnnoteEl = undefined;
+          };
+          // Handle positioning of the toggle
+          window.addEventListener(
+          "resize",
+          throttle(() => {
+            elRect = undefined;
+            if (selectedAnnoteEl) {
+              selectCodeLines(selectedAnnoteEl);
+            }
+          }, 10)
+          );
+          function throttle(fn, ms) {
+          let throttle = false;
+          let timer;
+            return (...args) => {
+              if(!throttle) { // first call gets through
+                  fn.apply(this, args);
+                  throttle = true;
+              } else { // all the others get throttled
+                  if(timer) clearTimeout(timer); // cancel #2
+                  timer = setTimeout(() => {
+                    fn.apply(this, args);
+                    timer = throttle = false;
+                  }, ms);
+              }
+            };
+          }
+          const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+          for (let i=0; i<annoteTargets.length; i++) {
+            const annoteTarget = annoteTargets[i];
+            const targetCell = annoteTarget.getAttribute("data-target-cell");
+            const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+            const contentFn = () => {
+              const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+              if (content) {
+                const tipContent = content.cloneNode(true);
+                tipContent.classList.add("code-annotation-tip-content");
+                return tipContent.outerHTML;
+              }
+            }
+            const config = {
+              allowHTML: true,
+              content: contentFn,
+              onShow: (instance) => {
+                selectCodeLines(instance.reference);
+                instance.reference.classList.add('code-annotation-active');
+                window.tippy.hideAll();
+              },
+              onHide: (instance) => {
+                unselectCodeLines();
+                instance.reference.classList.remove('code-annotation-active');
+              },
+              maxWidth: 300,
+              delay: [50, 0],
+              duration: [200, 0],
+              offset: [5, 10],
+              arrow: true,
+              appendTo: function(el) {
+                return el.parentElement.parentElement.parentElement;
+              },
+              interactive: true,
+              interactiveBorder: 10,
+              theme: 'light-border',
+              placement: 'right',
+              popperOptions: {
+                modifiers: [
+                {
+                  name: 'flip',
+                  options: {
+                    flipVariations: false, // true by default
+                    allowedAutoPlacements: ['right'],
+                    fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+                  },
+                },
+                {
+                  name: 'preventOverflow',
+                  options: {
+                    mainAxis: false,
+                    altAxis: false
+                  }
+                }
+                ]        
+              }      
+            };
+            window.tippy(annoteTarget, config); 
+          }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

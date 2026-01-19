@@ -1,0 +1,460 @@
+---
+title: Midterm Exam 1
+subtitle: Fall 2024
+date: last-modified
+from: markdown+emoji
+toc: true
+toc-depth: 6
+execute: 
+  eval: false
+  echo: true
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+```
+
+
+
+# Section 2. Multiple Choice
+
+## Question 4
+Which of the following is NOT an example of a Business Intelligence (BI) tool mentioned in the lecture?
+
+a. Microsoft Power BI
+b. Tableau
+c. Looker
+d. Eclipse
+
+::: {.callout-tip collapse="true"}
+### Show answer
+d. **Eclipse**
+
+**Explanation**: Eclipse is an integrated development environment (IDE) used primarily for software development, not a Business Intelligence (BI) tool. We did not cover this.
+
+:::
+
+## Question 5
+Which of the following is NOT a measure of dispersion?
+
+a. Range
+b. Variance
+c. Median
+d. Standard Deviation
+
+::: {.callout-tip collapse="true"}
+### Show answer
+c. **Median**
+
+**Explanation**: Median is a measure of central tendency. Range, variance, and standard deviation are measures of dispersion in a data set.
+
+:::
+
+
+# Section 3. Filling-in-the-Blanks
+
+
+## Question 15:
+RStudio is an ________________________________________ (IDE) for R, providing a console, syntax-highlighting editor, and tools for plotting and debugging.
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+**“integrated development environment”**
+
+**Explanation**: RStudio is an IDE that offers an interface for writing and executing R code. It provides a user-friendly console, code editor with syntax highlighting, and tools for creating visualizations, debugging, and managing R projects efficiently.
+
+:::
+
+# Section 4. Data Analysis with R
+
+## Question 20
+Which of the following R code correctly assigns the `nycflights13::airlines`  data.frame to the variable `df_airlines`? (Note that `df_airlines` is simply the name of the R object and can be any valid name in R.)
+
+a. `nycflights13::airlines <- df_airlines`
+b. `df_airlines <- nycflights13::airlines`
+c. `nycflights13::airlines <= df_airlines`
+d. `df_airlines == nycflights13::airlines`
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+b. `df_airlines <- nycflights13::airlines`
+
+**Explanation**: The correct assignment operator in R is `<-`. The right-hand side data.frame (`nycflights13::airlines`) is assigned to the left-hand object name (`df_airlines`). The other choices are either incorrect operators or use an invalid assignment direction.
+
+:::
+
+## Question 21
+Which of the following R code correctly calculate the number of elements in a vector `x <- c(1,2,3,4,5)`?
+
+a. `nrow(x)`
+b. `sd(x)`
+c. `sum(x)`
+d. `length(x)`
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+d. `length(x)`
+
+**Explanation**: The `length()` function returns the number of elements in a vector. The other options either calculate the number of rows (for data.frame) or the sum or standard deviation of the vector elements.
+
+:::
+
+## Question 22
+
+Write the R code to create a new variable called `result` and assign to it the sum of 5 and 7 in R.
+
+<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+`result <- 5 + 7`
+
+**Explanation**: In R, you use the `<-` operator to assign values to variables. Here, the expression `5 + 7` calculates the sum, which is then assigned to the variable result.
+
+:::
+
+## Question 23
+
+Given the data.frame `df` with variables `age` and `name`, which of the following expressions returns a vector containing the values in the `age` variable?
+
+a. `df:age`
+b. `df::age`
+c. `df$age`
+d. Both b and c
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+c. `df$age`
+
+**Explanation**: In R, the `$` operator is used to access specific variables (columns) within a data frame. The `df$age` expression will return the `age` column from `df`. The other options use invalid syntax.
+
+:::
+
+## Question 24
+
+The expression `as.numeric("123")` will return the numeric value 123.
+
+a. True
+b. False
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+a. True
+
+**Explanation**: The `as.numeric()` function in R converts character data into numeric format, so "123" will correctly be converted to the numeric value 123.
+
+:::
+
+## Question 25
+
+What is the result of the expression `(4 + 3) ^ 2` in R?
+
+a. 3.5
+b. 9
+c. 14
+d. 49
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+d. 49
+
+**Explanation**: The expression `(4 + 3) ^ 2` first adds 4 and 3 to get 7, then raises 7 to the power of 2, which results in 49.
+
+:::
+
+## Question 26
+
+Given vectors `a <- c(1, 2, 3)` and `b <- c(4, 5, 6)`, what is the result of `a + b`?
+
+a. `c(5, 7, 9)`
+b. `c(4, 5, 6, 1, 2, 3)`
+c. `c(1, 2, 3, 4, 5, 6)`
+d. `Error`
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+a. `c(5, 7, 9)`
+
+**Explanation**: In R, adding two vectors element-wise results in a new vector where each element is the sum of corresponding elements. So, `a + b` results in `c(1 + 4, 2 + 5, 3 + 6)` or `c(5, 7, 9)`.
+
+:::
+
+## Question 27
+
+Which of the following functions is part of the tidyverse package and is used to read a CSV file into a data.frame?
+
+a. `read.csv()`
+b. `read_csv()`
+c. `read.table()`
+d. `load()`
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+b. `read_csv()`
+
+**Explanation**: `read_csv()` is a function from the readr package, which is part of the **tidyverse**. It is faster and more efficient than base R’s `read.csv()`. `read.csv()` is from base R, and `read.table()` is used to read data from a text file, while `load()` is used for loading R-specific binary files.
+
+:::
+
+## Question 28
+
+To use the function `skim()` from the `skimr` package, you first need to load the package using the R code ________.
+
+a. `library(skimr)`
+b. `load(skimr)`
+c. `skimr`
+c. `skimr::skim`
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+a. `library(skimr)`
+
+**Explanation**: The `library()` function is used to load R packages that are installed. To use the `skim()` function, you need to load the `skimr` package with `library(skimr)`.
+
+:::
+
+## Question 29
+
+The `filter()` function can use both logical operators like `&` and comparison operators like `>` within the same logical condition.
+
+a. True
+b. False
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+a. True
+
+**Explanation**: The `filter()` function from the dplyr package can combine multiple conditions using logical operators (`&`, `|`, etc.) and comparison operators (`>`, `<`, `==`) within the same logical statement.
+
+:::
+
+## Question 30
+Consider the following data.frame `df0`:
+```{r}
+#| echo: false
+#| eval: true
+
+df0 <- data.frame(
+  x = c(1, 2, "Na"),
+  y = c(4, NA, 6)
+)
+
+knitr::kable( df0  )
+```
+
+What is the result of `mean(df0$y)`?
+
+a. 4
+b. `NA`
+c. 5
+d. 6
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+b. `NA`
+
+**Explanation**: When calculating the mean of a vector that contains `NA` values, R will return `NA` by default. In this case, since `df0$y` contains an `NA`, the result is `NA`. We can use `skim()` to remove missing values before calculating the mean.
+
+:::
+
+## Questions 31-32
+Consider the following data.frame `df` for **Questions 31-32**:
+
+```{r}
+#| echo: false
+#| eval: true
+df <- data.frame(
+  id = 1:5,
+  name = c("Alice", "Bob", "Charlie", "David", "Eve"),
+  age = c(25, 30, 35, NA, 45),
+  score = c(85, 90, 75, 80, NA)
+)
+
+knitr::kable( df )
+
+```
+
+
+
+### Question 31
+
+Which of the following code snippets keeps observations where `score` is between 80 and 90 inclusive?
+
+a. `df |> filter(score > 80 & score < 90)`
+b. `df |> filter(score >= 80 & score <= 90)`
+c. `df |> filter(score >= 80 | score <= 90)`
+d. `df |> filter(score > 80 | score < 90)`
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+b. `df |> filter(score >= 80 & score <= 90)`
+
+**Explanation**: The `filter()` function in `tidyverse` allows for selecting rows that meet certain conditions. The correct condition for keeping scores between 80 and 90 inclusive requires using `>=` and `<=`. Option a is incorrect because it excludes 80 and 90, while options c and d use `|` (OR), which selects scores either greater than or equal to 80 or less than or equal to 90, which is not the intended condition.
+
+:::
+
+### Question 32
+
+Which of the following expressions correctly keeps observations from `df` where the `age` variable has missing values?
+
+a. `df |> filter(is.na(age))`
+b. `df |> filter(!is.na(age))`
+c. `df |> filter(age == NA)`
+d. `df |> filter(age != NA)`
+e. Both a and c
+f. Both b and d
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+a. `df |> filter(is.na(age))`
+
+**Explanation**: The function `is.na()` checks for missing values (`NA`). To filter observations with missing values in `age`, we use `filter(is.na(age))`. Option c is incorrect because `age == NA` does not work in R (use `is.na()` instead). Option b filters for non-missing values, which is not what the question asks.
+
+:::
+
+## Question 33
+
+The `arrange()` function can sort data based on multiple variables.
+
+a. True
+b. False
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+a. True
+
+**Explanation**: The `arrange()` function from dplyr can sort data based on one or more variables. If multiple variables are specified, the data is sorted by the first variable, and in the case of ties, by the second, and so on.
+
+:::
+
+## Question 34
+
+Consider the following data.frame `df3`:
+
+```{r}
+#| echo: false
+#| eval: true
+
+df3 <- data.frame(
+  id = c(1, 2, 2, 3, 4, 4, 5),
+  value = c(10, 20, 20, 30, 40, 40, 50)
+)
+knitr::kable(df3)
+```
+
+
+Which of the following code snippets returns a data.frame of unique `id` values from `df3`?
+
+a. `df3 |> select(id) |> distinct()`
+b. `df3 |> distinct(value)`
+c. `df3 |> distinct(id)`
+d. Both A and C
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+d. Both A and C
+
+**Explanation**: The `distinct()` function in `tidyverse` removes duplicate observations. Both `df3 |> select(id) |> distinct()` and `df3 |> distinct(id)` will return a data.frame with unique `id` values. Option b operates on the `value` variable, which is not relevant for this question.
+
+:::
+
+## Question 35
+
+Which of the following code snippets correctly renames the variable `age` to `years` in `df`?
+
+a. `df |> rename(years = age)`
+b. `df |> rename(age = years)`
+c. `df |> rename("age" = "years")`
+d. `df |> rename_variable(age = years)`
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+a. `df |> rename(years = age)`
+
+**Explanation**: In tidyvserse, the correct syntax for renaming a variable is `rename(new_name = old_name)`. Hence, to rename `age` to `years`, you need to use `rename(years = age)`.
+
+:::
+
+## Question 36
+
+Which of the following code snippets correctly removes the `age` variable from `df`?
+
+a. `df |> select(-age)`
+b. `df |> select(-"age")`
+c. `df |> select(!age)`
+d. `df |> select(, -age)`
+e. `df |> select(desc(age))`
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+a. `df |> select(-age)` and b. `df |> select(-"age")`  (a is preferred though)
+
+**Explanation**: To remove a variable in tidyverse, you can use `select()` with the minus sign `-` before the variable name. Option a correctly removes age. Option b works but has unfavorable syntax (-"age"), and the others use invalid approaches.
+
+:::
+
+## Question 37
+
+Which of the following code snippets filters observations where `age` is not `NA`, then arranges them in descending order of `age`, and then selects the `name` and `age` variables?
+
+a. `df |> filter(!is.na(age)) |> arrange(desc(age)) |> select(name, age)`
+b. `df |> select(name, age) |> arrange(desc(age)) |> filter(!is.na(age))`
+c. `df |> arrange(desc(age)) |> filter(!is.na(age)) |> select(name, age)`
+d. `df |> filter(is.na(age)) |> arrange(age) |> select(name, age)`
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+a. `df |> filter(!is.na(age)) |> arrange(desc(age)) |> select(name, age)`
+
+**Explanation**: This sequence of operations first filters observations where `age` is not missing (`!is.na(age)`), arranges them in descending order of `age`, and then selects the `name` and `age` variables. The other options either mix up the sequence or apply incorrect filtering.
+
+:::
+
+# Section 4. Short Essay
+
+
+## Question 39
+In R, what does the function `sd(x)` compute, and why can it be more useful than `var(x)`?
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+
+The function `sd(x)` computes the standard deviation of the values in `x`, which is a measure of how far each data point deviates from the **mean**, on average. It is often more useful than `var(x)` (which computes the variance) because standard deviation is in the **same unit** as the data, making it easier to interpret and compare across datasets.
+
+:::

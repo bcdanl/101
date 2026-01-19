@@ -1,0 +1,183 @@
+---
+title: Classwork 6
+subtitle: Data Transformation with R
+date: 2025-10-01
+execute: 
+  echo: false
+  eval: true
+  warning: false
+  message: false
+---
+```{r}
+#| include: false
+
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(DT)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5)),
+                axis.title.y = element_text(size = rel(1.5)),
+                legend.title = element_text(size=rel(1.25))
+                ))
+```
+
+
+# Part 1. `filter()`, `arrange()`, and `distinct()`
+For Part 1, consider the `nycflights13::flights` data.frame.
+
+```{r}
+#| echo: true
+
+library(tidyverse)
+library(nycflights13)
+flights <- flights
+```
+
+```{r}
+#| echo: false
+
+rmarkdown::paged_table(nycflights13::flights)
+
+```
+
+For detailed descriptions of the variables in this data frame, load its **help** documentation using the following command:
+
+```{r}
+#| echo: true
+
+# Documentation for the `flights` data.frame from the `nycflights13` package
+?flights   # displays the description of variables in the `flights` data.frame
+
+```
+
+
+## Question 1
+
+- Find all flights that had an arrival delay of two or more hours.
+- Find all flights that flew to Houston (**IAH** or **HOU**).
+- Find all flights that departed in summer (**July**, **August**, and **September**).
+- Find all flights that arrived more than two hours late, but did not leave late.
+
+**Answer**:
+```{r}
+
+```
+
+
+
+<br><br>
+
+## Question 2
+- How many flights have a missing `dep_time`?
+
+**Answer**:
+```{r}
+
+```
+
+
+<br><br>
+
+## Question 3
+- Sort flights to find the most delayed flights.
+
+**Answer**:
+```{r}
+
+```
+
+
+
+<br><br>
+
+## Question 4
+- Was there a flight on every day of 2013?
+
+**Answer**:
+```{r}
+
+```
+
+
+
+<br><br>
+
+
+
+# Part 2. `select()` and `rename()`
+
+Consider the following data.frame, `nyc_payroll_new`.
+
+```{r}
+#| echo: true
+
+library(tidyverse)
+nyc_payroll_new <- read_csv("https://bcdanl.github.io/data/nyc_payroll_2024.csv")
+```
+
+
+```{r}
+#| echo: false
+
+rmarkdown::paged_table(nyc_payroll_new)
+```
+
+<br>
+
+For detailed descriptions of the variables in this data.frame, please refer to the following link:  
+
+- [Citywide Payroll Data (Fiscal Year)](https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e/about_data)
+
+<br>
+
+
+## Question 1
+Create a new data.frame, `df` that keeps only the following five variables---`Fiscal_Year`, `Agency_Name`, `First_Name`, `Last_Name`, and `Base_Salary`---from the data.frame `nyc_payroll_new`.
+
+**Answer**:
+
+```{r}
+```
+
+
+<br><br>
+
+## Question 2
+Given the data.frame `df` with a variable named `Agency_Name`, how would you rename it to `Agency`?
+
+**Answer**:
+
+```{r}
+```
+
+
+<br><br>
+
+## Question 3
+How would you remove the `Fiscal_Year` variable using `select()`?
+
+**Answer**:
+
+```{r}
+
+```
+
+<br><br>
+
+# Discussion 
+
+<font size = "5">Welcome to our Classwork 6 Discussion Board! 👋 </font>
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 6.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Classwork 6 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

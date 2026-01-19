@@ -1,0 +1,52 @@
+---
+title: Week 4
+subtitle: Artificial Intelligence; R Basics
+date: 2025-09-15
+from: markdown+emoji
+---
+
+In Week 4, we will finish our discussion of generative AI and then begin exploring the basics of R programming.
+
+
+## 🏫 Lecture Slides  
+
+- **Lecture 4 — Generative Artificial Intelligence**  
+  [View Slides](../danl-lec/danl-101-lec-04-2025-0905.html){target="_blank"}  
+
+- **Lecture 5 — R Basics**  
+  [View Slides](../danl-lec/danl-101-lec-05-2025-0917.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+
+## ✍️ Classwork
+
+- **Classwork 2 - Vibe Coding**  
+  [View Classwork](../danl-cw/danl-101-cw-02.html){target="_blank"} 
+  
+- **Classwork 3 - Co-Intelligence Rules**  
+  [View Classwork](../danl-cw/danl-101-cw-03.html){target="_blank"} 
+
+
+## 📚 Recommended Reading
+  
+- Mollick, Ethan. *Co-Intelligence: Living and Working with AI*, Penguin Publishing Group, 2024.
+  - **Read:** Introduction, Chapter 1, and Chapter 2
+
+- Tynes, Natasha. [Ethan Mollick’s 4 Guiding Principles for Leading with AI](https://bigthink.com/business/principles-for-leading-with-ai/), Big Think, December 4, 2024.
+
+<!-- - [Zuckerberg, M. - Personal Superintelligence](https://www.meta.com/superintelligence/?srsltid=AfmBOoqXowSyYgpZL76IGwUcyaYFJDIDBZZKhjA2Q71MUXr5PbKdlwRV) -->
+
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 4 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 4.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 4 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

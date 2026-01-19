@@ -1,0 +1,57 @@
+---
+title: Week 12
+subtitle: Data Visualization with `ggplot`
+date: 2025-11-10
+from: markdown+emoji
+---
+
+In **Week 12**, we'll continue to discuss various topics in **Data Visualization with `ggplot`**.
+
+
+## 🏫 Lecture Slides  
+- **Lecture 10 — Data Visualization with `ggplot`**  
+  [View Slides](../danl-lec/danl-101-lec-10-2025-1105.html){target="_blank"}  
+
+🎥 Looking for lecture recordings? You can only find those on Brightspace.
+
+
+
+## ✍️ Classwork
+
+- **Classwork 11 - _Relationship Plots_**  
+  [View Classwork](../danl-cw/danl-101-cw-11.html){target="_blank"}
+
+- **Classwork 12 - _Color vs. Facet_**  
+  [View Classwork](../danl-cw/danl-101-cw-12.html){target="_blank"}
+
+- **Classwork 13 - _Time Trend Plots_**  
+  [View Classwork](../danl-cw/danl-101-cw-13.html){target="_blank"}
+
+<br>
+
+## ️📊💡 Data Storytelling Project
+
+-	I encourage you to work with your teammates to study data visualization and prepare for the data storytelling project during the remaining classes.
+
+- Due for the topic choice for the Data Storytelling Project is **Friday, November 14, 2025 at 11:59 PM (Eastern Time)**
+
+  🗂️ [View the Topic Choice Survey](https://bcdanl.github.io/danl-rw/danl-101-proj-topic-choice.html)    
+  📄 [View the Project Guideline with Topics](https://bcdanl.github.io/danl-rw/danl-101-team-project.html)    
+  ⚾ [View the Sports Topic - Baseball](https://bcdanl.github.io/danl-rw/danl-101-team-project-baseball.html)    
+  🏀 [View the Sports Topic - Basketball](https://bcdanl.github.io/danl-rw/danl-101-team-project-basketball.html)    
+  🏈 [View the Sports Topic - Football](https://bcdanl.github.io/danl-rw/danl-101-team-project-football.html)    
+  🏒 [View the Sports Topic - Hockey](https://bcdanl.github.io/danl-rw/danl-101-team-project-hockey.html)    
+  ⚽ [View the Sports Topic - Soccer](https://bcdanl.github.io/danl-rw/danl-101-team-project-soccer.html)    
+
+## 💬 Discussion
+
+<font size = "5">Welcome to our Week 12 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Week 12.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Week 12 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

@@ -1,166 +1,53 @@
 ---
-title: R Basics I
-subtitle: Classwork 1
-date: 2024-09-17
+title: Classwork 1
+subtitle: "Drawing the Line: AI Assistance vs. Authorship"
+date: 2025-09-08
+code-fold: true
+execute: 
+  echo: true
+  warning: false
+  message: false
 from: markdown+emoji
 ---
-
-
-## Question 1.
-base-R provides the R object `state.name`. Write an R code to assign `state.name` to a variable, `US_states`.
-
-**Answer**:
 ```{r}
-US_states <- state.name
-```
+#| include: false
 
-- `state.name` is a predefined R object that contains the names of all 50 U.S. states. The code assigns the contents of `state.name` to a new variable `US_states`, effectively storing the state names in this new variable.
-	-	In the general R environment, a variable is a **name** assigned to any object or data stored in memory, whether it’s a simple value, a vector, or a more complex structure like a data frame. For this reason, I often refer to a variable as "the name of this object" in the general R environment.
-	-	In a data.frame, a variable is a **column** that represents a particular attribute of the data.frame.
-
-
-<br><br>
-
-## Question 2.
-The `temp_F` vector contains the average high temperatures in January for the following cities: Seoul, Lagos, Paris, Rio de Janeiro, San Juan, and Rochester.
-
-```{r}
-temp_F <- c(35, 88, 42, 84, 81, 30)
-```
-
-Create a new vector named `temp_C` that stores the converted Celsius temperatures. Below is the conversion formula:
-
-$$
-C = \frac{5}{9}\times(F - 32)
-$$
-
-**Answer**:
-```{r}
-temp_F <- c(35, 88, 42, 84, 81, 30)
-temp_C <- (5/9) * (temp_F - 32)
-temp_C
-```
-The formula to convert Fahrenheit to Celsius is applied element-wise to the temp_F vector, which stores the temperatures in Fahrenheit. The code then assigns the converted Celsius temperatures to the temp_C vector.
-
-<br><br>
-
-
-## Question 3.
-- Write an R code to calculate the standard deviation (SD) of the integer vector `x` below manually. That is to calculate the SD without using the `sd()` or the `var()` functions.
-
-```{r}
-x <- 1:25
-```
-
-- Also, write an R code to test whether the standard deviation you calculate manually above is equal to `sd(x)`.
-
-
-**Answer**:
-```{r}
-# Manual calculation of standard deviation
-n <- length(x)
-mean_x <- sum(x) / n
-variance_manual <- sum((x - mean_x)^2) / (n - 1)
-sd_manual <- sqrt(variance_manual)
-
-# Test if it is equal to sd(x)
-sd_manual == sd(x)
-```
--	The formula for standard deviation is the square root of the variance. Variance is calculated as the sum of the squared differences from the mean, divided by the number of observations minus 1 (for a sample).
--	The `sd_manual` is then compared to the result of the built-in `sd()` function to ensure correctness.
-
-<br><br>
-
-
-
-## Question 4.
-- Consider the vectors:
-
-```{r}
-my_vec <- c(-10, -20, 30, 10, 50, 40, -100)
-beers <- c("BUD LIGHT", "BUSCH LIGHT", "COORS LIGHT", 
-           "GENESEE LIGHT", "MILLER LITE", "NATURAL LIGHT")
-```
-
-
-- Write an R code to filter only the positive values in `my_vec`.
-- Write an R code to access the beers that are in positions 2, 4, and 6 using indexing.
-
-**Answer**:
-```{r}
-# Filtering positive values
-positive_values <- my_vec[my_vec > 0]
-
-# Accessing beers in positions 2, 4, and 6
-beers <- c("BUD LIGHT", "BUSCH LIGHT", "COORS LIGHT", 
-           "GENESEE LIGHT", "MILLER LITE", "NATURAL LIGHT")
-selected_beers <- beers[c(2, 4, 6)]
-
-positive_values
-selected_beers
-```
-
-- The positive values from `my_vec` are filtered using logical indexing (`my_vec > 0`), and the selected beers are accessed using the positions 2, 4, and 6 through direct indexing (`beers[c(2, 4, 6)]`).
-
-<br><br>
-
-
-
-## Question 5.
-- Write an R code to read the CSV file, `https://bcdanl.github.io/data/mlb_teams.csv` using the `tidyverse`'s `read_csv()` function, and assign it to `MLB_teams`.
-
-**Answer**:
-```{r}
-library(tidyverse)  # to use the read_csv() function
-MLB_teams <- read_csv("https://bcdanl.github.io/data/mlb_teams.csv")
-```
-
-```{r}
-#| echo: false
-
-DT::datatable(MLB_teams)
-```
-
-<br>
-
-- The `read_csv()` function from the tidyverse package is used to read the CSV file from the given URL and assign it to the name, `MLB_teams`. This function automatically handles reading in the CSV file and properly parsing the data.
-
-
-<br><br>
-
-
-
-
-
-## Question 6.
-Write an R code to provide descriptive statistics---mean, standard deviation, minimum, first quartile, median, third quartile, and maximum---for variables in the `MLB_teams` data.frame.
-
-**Answer**:
-```{r}
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
 library(skimr)
-skim(MLB_teams)
+library(ggthemes)
+library(hrbrthemes)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5)),
+                axis.title.y = element_text(size = rel(1.5)),
+                legend.title = element_text(size=rel(1.25))
+                ))
 ```
 
-- `skimr::skim()` is a function from the `skimr` package in R, which provides an enhanced and comprehensive summary of data compared to the traditional `summary()` function. 
-  - It generates descriptive statistics for a vector or for each column (variable) in a data.frame, offering an easy-to-read output with more details than basic summaries.
+## Question  
+
+**Where do you draw the line between *assistance* and *authorship* when using generative AI?**  
+
+Read each scenario and decide whether it represents **Assistance**, **Authorship**, or falls somewhere in the **gray area**.  
+
+- Take 1 minute to think quietly.  
+- Discuss your ideas with a partner.  
+- Be prepared to explain your reasoning to the class.  
+
+### Scenarios  
+1. A student uses AI to check grammar and spelling in a term paper.  
+2. A researcher pastes an outline into AI, gets a draft literature review, and submits it without changes.  
+3. A journalist uses AI to summarize interview transcripts before writing their article.  
+4. A poet asks AI to generate several stanzas, then mixes lines with their own writing.  
+5. An engineer lets AI draft a technical report, then carefully fact-checks, edits, and rewrites half of it.  
+6. A business consultant uses AI to brainstorm presentation slide titles.  
+7. An author publishes a short story fully written by AI under their own name.
+8. A student asks AI to generate code for a homework assignment, then submits it without understanding how it works.
+9. A student writes most of programming code on their own, but when they encounter errors they can’t resolve, they use AI to suggest debugging steps and code optimizations. They review the AI’s suggestions, test them, and decide which changes to keep.
 
 
-<br><br>
-
-
-
-
-# Discussion 
-
-
-<font size = "5">Welcome to our Classwork 1 Discussion Board! 👋 </font>
-
-
-This space is designed for you to engage with your classmates about the material covered in Classwork 1.
-
-Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
-
-If you have any specific questions for Byeong-Hak (**@bcdanl**) or peer classmate (@GitHub-Username) regarding the Classwork 1 materials or need clarification on any points, don't hesitate to ask here. 
-
-Let's collaborate and learn from each other!
-
+👉 Place each scenario along the spectrum and explain your choice:  
+**Assistance ←—————→ Authorship**

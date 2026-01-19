@@ -1,0 +1,347 @@
+---
+title: Syllabus
+subtitle: "DANL 101: Introduction to Data Analytics, Fall 2025"
+author: "Byeong-Hak Choe"
+number-sections: false
+toc: true
+toc-depth: 4
+toc-expand: 2
+toc-title: "
+<div style='white-space:nowrap;'>
+  <img src='/img/logo-geneseo.jpg'
+       style='height:48px; display:inline-block; vertical-align:middle; margin-right:0px;'>
+  <span style='display:inline-block; vertical-align:middle; font-family:Arial; font-weight:bold; line-height:1.05;'>
+    Data<br>Analytics
+  </span>
+</div>
+<br>On this page"
+css: [weeks/styles-wk.css]
+---
+
+# Course Information
+
+- **Instructor**: Byeong-Hak Choe
+- **Email**: [bchoe@geneseo.edu](mailto:bchoe@geneseo.edu)
+- **Phone**: (585) 245-5425
+- **Class Websites**:
+  - [GitHub Course Website](https://bcdanl.github.io)
+  - [Brightspace Course Shell](http://brightspace.geneseo.edu)
+- **Office**: South Hall 227B
+- **Office Hours**:
+  - Mondays and Wednesdays 3:30 P.M. – 5:00 P.M.
+  - By appointment via email
+
+<!-- # Course Description -->
+<!-- This course provides an applied overview of the data analytic process and methods. The goal of this course is to help students unlock the potential of data analysis and improve the ability to transform data into a powerful tool in decision making. Students will develop foundational data analytics skills to prepare for a career or future learning that involves more advanced topics in data analytics. Topics covered include (1) introduction to Data Analytics thinking, (2) data generating process and exploratory data analysis, (3) linear regression and model selection (4) classification and clustering. During the course, students will work hands-on with the R programming language and its associated data analysis libraries. -->
+
+
+# Revised Course Description
+<!-- This course offers a practical introduction to the data analytics process and methods. The goal is to help you unlock the potential of data analysis and enhance your ability to transform data into a powerful decision-making tool. You will develop foundational data analytics skills that will prepare you for a career or further studies in more advanced data analytics topics. The course covers: (1) an introduction to data analytics thinking, (2) exploratory data analysis through data wrangling and visualization, and (3) an introduction to data science and artificial intelligence (AI). Throughout the course, you will gain hands-on experience with the R programming language, along with its associated data analysis libraries and AI tools. -->
+
+This course provides an applied overview of the data analytic process and methods. The goal of this course is to help students unlock the potential of data analysis and improve the ability to transform data into a powerful tool in decision making. Students will develop foundational data analytics skills to prepare for a career or future learning that involves more advanced topics in data analytics. Topics covered include (1) introduction to Data Analytics thinking, (2) data tools and skills, (3) data management and preparation techniques, (4) data storytelling for effective visualization and communication. During the course, students will work hands-on with the R and its associated data analysis packages.
+
+
+
+# School of Business Mission
+
+The School of Business at SUNY Geneseo is committed to exceptional business and economics education within the context of a strong liberal arts tradition. The School is distinguished by a uniquely accomplished and dedicated faculty, motivated and capable students, a robust professional development program, and the engaged support of alumni, employers, and business leaders. Students acquire strong quantitative, analytical, and communication skills while preparing for professional success as socially conscious contributors. We strive for teaching excellence, and we recognize that high-quality faculty scholarship and professional activities increase our impact on knowledge, practice, and pedagogy.
+
+# Bachelor of Arts in Data Analytics Program Competency Goals
+
+- **Competency Goal 1**: Our learners will have strong analytical skills.
+- **Competency Goal 2**: Our learners will have strong quantitative skills.
+- **Competency Goal 3**: Our learners will have effective communications skills.
+- **Competency Goal 4**: Our learners will have a thorough understanding of various functional areas of
+business.
+- **Competency Goal 5**: Our learners will have a multidimensional understanding of social responsibility.
+
+# Course Learning Outcomes
+
+- Grasp the basic principles of data analytics, including data types and data processing.
+- Gain introductory experience with programming languages commonly used in data analytics, such as R.
+- Develop the ability to create and interpret various types of data visualizations.
+- Enhance critical thinking skills by learning to ask relevant questions and draw insights from data.
+- Apply data analytics techniques to solve real-world problems in various domains.
+
+# Course Requirements
+
+- **Homework**: 5 assignments
+- **Quizzes**: 2 in-class quizzes
+- **Participation**: In-class and online participation
+- **Team Project**: Data storytelling project with team presentation
+- **Exams**: 2 midterms and 1 final
+- **Tools**:
+  - [Brightspace](http://brightspace.geneseo.edu/)
+    - [Privacy Policy](https://www.d2l.com/legal/privacy/)
+  - [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software)
+    - [Services Agreement](https://www.microsoft.com/en-us/servicesagreement#14e_Skype)
+  - [Posit Cloud](https://posit.cloud)
+    - [Terms of Use](https://posit.co/about/posit-service-terms-of-use/)
+  - [Google Colab](https://colab.research.google.com)
+    - [Terms of Service](https://colab.research.google.com/pro/terms/v1)
+  - [GitHub](https://github.com)
+    - [Site Policy](https://docs.github.com/en/site-policy/)
+
+# Data Storytelling Project
+
+Data storytelling with visualization is the art of communicating complex data insights in a clear, engaging, and impactful way by blending data analysis, visual design, and narrative techniques. It goes beyond simply showing charts and graphs; it involves crafting a compelling story that guides the audience through the data, highlights key findings, and effectively conveys the intended message.
+
+### Key aspects
+
+- **Clarity**: Visuals are easy to understand and focus on the most important information.  
+- **Structure**: Like a story—introduction, main points, conclusion.  
+- **Engagement**: Tailor to your audience so it is relevant and interesting to them.
+
+### Evaluation Criteria
+
+1. Data transformation & statistics
+2. Data visualization
+3. Storytelling effectiveness 
+4. Visual/presentation materials
+5. Team presentation quality
+6. Code quality
+
+
+
+# Recommended References
+
+We will be drawing material from a wide variety of sources for this course; as such, there is no single, required textbook per se.
+
+
+- [__*Cloud Computing Concepts Hub*__](https://aws.amazon.com/what-is/?faq-hub-cards.sort-by=item.additionalFields.sortDate&faq-hub-cards.sort-order=desc&awsf.tech-category=*all) — Amazon Web Services (AWS)
+- __*Co-Intelligence: Living and Working with AI*__ — Ethan Mollick. (ISBN-13: 978-0593716717; ISBN-10: 059371671X)
+- __*Storytelling with Data: A Data Visualization Guide for Business Professionals*__ — Cole Nussbaumer Knaflic. (ISBN-13: 978-1119002253; ISBN-10: 1119002257)
+- __*Storytelling with Data: Before and After - Practical Makeovers for Powerful Data Stories*__ — Cole Nussbaumer Knaflic, Mike Cisneros, and Alex Velez. (ISBN-13: 978-1394289615; ISBN-10: 1394289618)
+- __*Hands-On Programming with R*__ — Garrett Grolemund. (ISBN-13: 978-1449359010; ISBN-10: 1449359019)
+  - Free online version is available [here](https://rstudio-education.github.io/hopr/)
+- __*R for Data Science (2nd Edition)*__ — Hadley Wickham & Garrett Grolemund. (ISBN-13: 978-1492097402; ISBN-10: 1492097403)
+  - Free online version is available [here](https://r4ds.hadley.nz).
+- __*Statistical Inference via Data Science: A ModernDive into R and the Tidyverse*__ — Chester Ismay & Albert Y. Kim. (ISBN-13: 978-0367409821; ISBN-10: 0367409828)
+  - Free online version is available [here](https://r4ds.hadley.nz).
+
+
+
+# Course Schedule
+
+| Week | Dates       | Topic                                          | Notes |
+|:---:|:-------------:|:----------------------------------------------|:------|
+| 1   | Aug 25–29    | Introduction to Data Analytics (Part 1)             |       |
+| 2   | Sep 2–5      | Introduction to Data Analytics (Part 2); Generative AI (Part 1)             | Labor Day (Sep 1) |
+| 3   | Sep 8–12     | Generative AI (Part 2)  |       |
+| 4   | Sep 15–19    | R Basics for Data Analytics              |       |
+| 5   | Sep 22–26    | R Basics for Data Analytics              |       |
+| 6   | Sep 29–Oct 3 | Data Preparation and Management with R (Part 1)                    |       |
+| 7   | Oct 6–10     | Data Preparation and Management with R (Part 2)                    | Midterm Exam I |
+| 8   | Oct 15–17    | Career in Data Analytics                              | Fall Break (Oct 13–14) |
+| 9   | Oct 20–24    | Career in Data Analytics; Data Storytelling                                 |       |
+| 10  | Oct 27–31    | Data Visualization - Overview                                 |       |
+| 11  | Nov 3–7      | Data Visualization with R (Part 1)                                 |       |
+| 12  | Nov 10–14    | Data Visualization with R (Part 2)                                 |       |
+| 13  | Nov 17–21    | Data Visualization with R (Part 3)                                 | Midterm Exam II |
+| 14  | Nov 24–25    | Data Storytelling  - Summary  | Thanksgiving Break (Nov 26–28) |
+| 15  | Dec 1–5      | Data Storytelling Team Project Hands-on; Data Storytelling Team Presentations                                 |       |
+| 16  | Dec 8        | Data Storytelling Team Presentations                                 |       |
+
+### Exam Schedule
+- **Midterm Exam 1**: 50-minute exam during class time in the week 7 (Oct 6–10)
+- **Midterm Exam 2**: 50-minute exam during class time in the week 13 (Nov 17–21)
+- **Final Exam**: The School's schedule is available [here](https://www.geneseo.edu/sites/default/files/documents/2025.03.20%20202509%20Exam%20Schedule.pdf).
+  <!-- - **DANL 101-03 (MW 2:00pm-3:15pm)**: December 12, Friday, 3:30 P.M.-5:30 P.M. -->
+  <!-- - **DANL 101-04 (MWF 9:30am-10:20am)**: December 16, Tuesday, 8:30 A.M.-10:30 A.M. -->
+
+
+# Attendance
+
+Students are allowed up to **four absences** in MW course (DANL 101-03) and **six absences** in MWF course (DANL 101-04) without penalty. Additional absences may affect your grade unless they are formally excused. If you must miss class for a standard excused reason (e.g., illness, family emergency, transportation issues), please notify me at [bchoe@geneseo.edu](mailto:bchoe@geneseo.edu) so the absence can be recorded appropriately.
+
+Regular attendance is expected, as discussions, activities, and projects are central to your learning. If you anticipate challenges that may affect your attendance, please reach out—I am happy to work with you to help you stay on track.
+
+# Grading
+
+- **Total Percentage Grade**
+  - **Attendance**: 5%  
+  - **Quizzes & Participation**: 5%  
+  - **Homework**: 20% *(single lowest homework score dropped)*  
+  - **Team Project**: 20%  
+  - **Exams**: 50%
+$$
+\begin{align}
+\quad\\
+&\text{(Total Percentage Score)} \\
+= &\quad\; 0.05 \times \text{(Attendance)} \\
+&+ 0.05 \times \text{(Quiz \& Participation)}\\
+&+ 0.20 \times \text{(Homework)}\\
+&+ 0.20 \times \text{(Team Project)}\\
+&+ 0.50 \times \text{(Exams)}
+\end{align}
+$$
+
+- **Exam Score Calculations**
+
+$$
+\begin{align}
+&\quad(\text{Midterm Exam Score})\\
+&= \max\left\{0.50 \times \text{(Midterm 1 Score)} + 0.50 \times \text{(Midterm 2 Score)},\right.\\ 
+&\qquad\quad\;\;\,\left.0.33 \times \text{(Midterm 1 Score)} + 0.67 \times \text{(Midterm 2 Score)}\right\}.
+\end{align}
+$$
+
+- The Midterm Exam Score will be the **higher** of the following two calculations:  
+
+  1. The simple average of Midterm Exam 1 and Midterm Exam 2
+  2. The weighted average, with one-third weight on Midterm Exam 1 and two-thirds weight on Midterm Exam 2
+
+
+$$
+\begin{align}
+&\quad(\text{Total Exam Score})\\
+&= \max\left\{0.50 \times \text{(Midterm Exam Score)} + 0.50 \times \text{(Final Exam Score)},\right.\\ 
+&\qquad\quad\;\;\,\left.0.25 \times \text{(Midterm Exam Score)} + 0.75 \times \text{(Final Exam Score)}\right\}.
+\end{align}
+$$
+
+- The Total Exam Score will be the **higher** of the following two calculations:  
+
+  1. The simple average of Midterm Exam and Final Exam
+  2. The weighted average, with one-fourth weight on Midterm Exam and three-forth weight on Final Exam.
+
+
+- **Team Project Score**
+$$
+\begin{align}
+&\quad\text{(Team Project Score)}\\
+&= 0.05 \times \text{(Peer Evaluation)} + 0.95 \times \text{(Instructor Evaluation)}.
+\end{align}
+$$
+
+- **Letter Grade Scale**  
+Total percentage scores are converted to letter grades according to the following ranges:
+
+$$
+\begin{align}
+100 &≥ A ≥ 93 > A− ≥ 90\\
+90 &> B+ ≥ 87 > B ≥ 83 > B− ≥ 80\\
+80 &> C+ ≥ 77 > C ≥ 73 > C− ≥ 70\\
+70 &> D ≥ 60 > E
+\end{align}
+$$
+
+# Policies
+
+### Make-up Exams
+Make-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University. For religious obligations, notify the instructor by email at least two weeks in advance to set an alternative time. A missed exam without an excused absence earns a grade of zero.
+
+### Artificial Intelligence (AI)
+Unless AI tools are explicitly permitted for homework or in-class quizzes, you must complete your work independently. Using tools like ChatGPT for any aspect of coursework is a form of academic dishonesty and undermines the development of your own skills. If you have questions, please ask.
+
+<!-- #### Some AI Use Permitted, however use must be disclosed and additional documentation needs to be submitted -->
+
+<!-- ⚠️ You may use AI tools only for assignments where I have given you specific permission. -->
+
+<!-- ##### ✔️ Approved use cases for AI tools for this assignment: -->
+
+<!-- - 📊 Allowed to help analyze data and generate insights. -->
+
+<!-- 📢 You must acknowledge your use of AI tools in this course. -->
+
+##### 📝 If you use AI for a particular assignment and/or project, you must also:
+
+- 📝 You must document which AI platforms and tools you used.
+- 📤 You must include your prompts and AI outputs with your assignment submission.
+- 🧠 You must include a reflection on your AI usage and learning process.
+
+### Academic Integrity and Plagiarism
+All homework assignments and exams must be your original work. Academic dishonesty will not be tolerated. Examples include:
+
+- Representing the work, thoughts, or ideas of another person as your own  
+- Allowing others to represent your work, thoughts, or ideas as theirs  
+- Being complicit in academic dishonesty by suspecting or knowing of it and not taking action
+
+See: [Academic Dishonesty Policy and Procedures](https://www.geneseo.edu/handbook/academic-dishonesty-policy) and [Plagiarism Tutorial Brightspace Link](https://mylearning.suny.edu/d2l/le/discovery/view/course/2225415)
+
+
+<!-- ### Student Course Experience (SCE) Survey -->
+<!-- During the last two weeks of the semester, students are invited and encouraged to complete a four-item course experience survey through KnightWeb. Responses are completely anonymous at all times, and the results are only shared with instructors after final grades have been submitted. Instructors use the feedback to improve their courses in the future, and results from the SCE surveys are included in faculty portfolios used in renewal, tenure and promotion decisions. To participate: In a web browser, visit MyGeneseo. Select KnightWeb, Surveys, then SCE Surveys. -->
+
+
+### Accessibility
+SUNY Geneseo is dedicated to providing an equitable and inclusive educational experience for all students. The Office of Accessibility (OAS) will coordinate reasonable accommodations for persons with disabilities to ensure equal access to academic programs, activities, and services offered by SUNY Geneseo.
+
+Students with approved accommodations may submit a [semester request](https://www.geneseo.edu/accessibility-office/renew-academic-accommodations) to renew their academic accommodations. More information on the process for [requesting academic accommodations](https://www.geneseo.edu/accessibility-office/requesting-academic-accommodations) is on the OAS website.
+
+**Questions? Contact the OAS by email, phone, or in-person**:
+
+[Office of Accessibility Services](https://www.geneseo.edu/accessibility-office)  
+Erwin Hall 22  
+585-245-5112  
+[access@geneseo.edu](mailto:access@geneseo.edu)
+
+### Public Health and Class Attendance
+If you are experiencing symptoms associated with COVID on a day that class meets in-person, do not attend. Communicate proactively about absences and contact the Dean of Students if you expect to be out for an extended period.
+
+### Religious Observations and Class Attendance
+New York State Education Law 224-a stipulates that “any student in an institution of higher education who is unable, because of [their] religious beliefs, to attend classes on a particular day or days shall, because of such absence on the particular day or days, be excused from any examination or any study or work requirements” (see [General Classroom Policies for more information](https://www.geneseo.edu/apca/classroom-policies)). SUNY Geneseo has a commitment to inclusion and belonging, and I want to stress my respect for the diverse identities and faith traditions of students in my class. If you anticipate an absence due to religious observations, please contact me as soon as possible in advance to discuss your needs and arrange make up plans. The New York State Department of Civil Service maintains a [calendar of major religious observations](https://www.cs.ny.gov/attend_leave_manual/030Appendices/B-CalendarofLegalHolidays/AppendixB_CalendarTOC.htm).  
+
+
+### Military Obligations and Class Attendance
+Federal and New York State law requires institutions of higher education to provide an excused leave of absence from classes without penalty to students enrolled in the National Guard or armed forces reserves who are called to active duty. If you are called to active military duty and need to miss classes, please let me know and consult as soon as possible with the Dean of Students. 
+
+### Bias-Related Incidents
+
+> "We are here to listen, to learn, to teach, to debate, to change, to grow. We should all be safe to pursue these goals at SUNY Geneseo while being who we are. Together, we commit ourselves to pluralism, cultivating a community that respects difference and promotes a sense of inclusion and belonging."
+
+As this excerpt from our Community Commitment to Diversity, Equity, and Inclusion states, here at SUNY Geneseo, we want to provide a space where everyone feels welcome to learn and grow in their identities as well as in their role as students, faculty, and staff. If in the unfortunate instance you witness or experience an incident of bias, we encourage you to reach out to the [Chief Diversity Officer](mailto:rking@geneseo.edu), [Director of Multicultural Affairs](mailto:charcum@geneseo.edu), and/or our University Police Department. You may also choose to report it through the [bias-related incident reporting form](https://cm.maxient.com/reportingform.php?SUNYGeneseo&layout_id=5).  In trying to create an environment that facilitates growth through diverse thoughts and ideas, reporting incidents of bias - including threats, vandalism, and microaggressive behaviors - can help bring a better understanding of our campus climate as well as provide opportunities for learning and restoring harm.
+
+
+
+# Personal Health, Well-being, and Basic Needs
+
+### Well-Being 
+Prioritizing well-being can support the achievement of academic goals and alleviate stress. Eating nutritious foods, getting enough sleep, exercising, avoiding drugs and alcohol, maintaining healthy relationships, and building in time to relax all help promote a healthy lifestyle and general well-being. Your health and wellbeing are foundational to your ability to learn, and if you find that you are feeling unwell (physically or mentally) and it is impacting your ability to complete your coursework, please reach out. In a similar way, I will occasionally ask for some patience and flexibility on your part. 
+
+If I am slow responding to an email, if I take some time to grade an assignment, or if I am a bit late posting course materials, please be patient (and feel free to send me a ‘nudge’; I will not be offended). You will never suffer any disadvantage in the course because of delays on my part. Remember that we are all in this together.
+
+### Basic Needs Statement
+In order to foster a sense of belonging and connection, a state of financial, mental, emotional and physical stability must be achieved. If you are facing food insecurity, displacement, an emergency, crisis, or health-related or medical expense, you are not alone. Concerns about academic performance, health situations, family health and wellness (including the loss of a loved one), interpersonal relationships and commitments, and other factors can contribute to stress. Students are strongly encouraged to communicate their needs to faculty and staff and seek support if they are experiencing unmanageable stress or are having difficulties with daily functioning. The Dean of Students (585-245-5706) can assist and provide direction to [appropriate campus resources](https://www.geneseo.edu/student_life/resources-student-basic-needs). For more information, visit the [Dean of Students Office website](https://www.geneseo.edu/dean_students).
+
+### Mental Health
+As a student, you may experience a range of challenges that can impact your mental health and thus impact your learning; common examples include increased anxiety, shifts in mood, strained relationships, difficulties related to substance use, trouble concentrating, and lack of motivation, among many others. These experiences may reduce your ability to participate fully in daily activities and affect your academic performance.
+
+SUNY Geneseo offers free, confidential counseling for students through Student Health and Counseling, and seeking support for your mental health can be key to your success at college. You can learn more about the [various mental health services available on campus online](https://www.geneseo.edu/health/counseling). To request a counseling appointment, please [complete the online form](http://myhealth.geneseo.edu/).
+
+### Guidelines for Attendance and Public Health
+SUNY Geneseo is a residential liberal arts college where we all learn together in a shared space. This classroom community is vital for engaging in discussions, solving problems, and answering questions together. Learning is an active process, and it requires engagement - on my part and yours. I promise to create an interactive and collaborative classroom space, and in return I expect you to attend and engage in the activities. 
+
+It’s possible that some of you may get sick over the course of the semester. Because we want you to be successful and because we value your contribution to the course, we expect you to prioritize attendance. If you are not feeling well and your symptoms do not allow you to attend class, stay home (except to go to the health center), rest, and take care of yourself. You can find more [guidelines from the Center for Disease Control](https://www.cdc.gov/respiratory-viruses/prevention/precautions-when-sick.html) for precautions when sick which cover flu, COVID, and other illnesses.
+
+I expect you to communicate with me directly about your absences. I can support you to keep up with class if you are out for an illness, but I need you to take responsibility for being transparent and clear in letting me know when you are out and why. Although I can work with you on keeping up, you may miss some course content and extended absences may impact your ability to realize your full potential in this class. For extended absences (i.e., more than a couple of days of classes), you should contact the Dean of Students who can assist with reaching out to your faculty.
+
+### Food Security for SUNY Geneseo Students
+SUNY Geneseo is committed to supporting students who are experiencing food insecurity. If you're unfamiliar with the phrase "food insecurity," you can learn more at the following link on Feeding America’s website: [Understanding Food Insecurity](https://hungerandhealth.feedingamerica.org/understand-food-insecurity/). 
+
+[Knights’ Harvest Pantry](https://www.geneseo.edu/volunteer_center/knights-harvest-pantry), our on-campus food pantry, is a collaborative initiative supported by Campus Auxiliary Services (CAS) and facilitated by trained student volunteers. The program is advised by the Assistant Director of Student Volunteerism and Community Engagement in partnership with the Geneseo Opportunities for Leadership Development (GOLD) program. 
+
+Students who are in need can confidentially request a bag of food and basic hygiene supplies through our website. These bags typically include non-perishable items and, when available, fresh fruits, vegetables, meat, and dairy products. Pickups take place at the GOLD Leadership Center in MacVittie College Union, Room 114. 
+
+We are committed to protecting student privacy and promoting dignity, while also working to destigmatize food insecurity on our campus. If Knights’ Harvest Pantry does not fully meet your needs or if you'd prefer to discuss your situation privately, please reach out to Cheyenne DeMarco, Assistant Director of Student Volunteerism and Community Engagement, at cdemarco@geneseo.edu for a one-on-one consultation. 
+
+Please note that Knights’ Harvest Pantry is closed during official SUNY breaks, including Fall Break, Winter Intersession, Spring Break, and summer between semesters. During these times, students are encouraged to access the [Geneseo-Groveland Emergency Food Pantry](https://ggefoodpantry.org), located at 31 Center Street, Geneseo, NY 14454. For updates on pantry hours, events, and additional support opportunities, follow us on Instagram or Facebook: @knightsharvestgeneseo. For questions or support, contact Cheyenne DeMarco at cdemarco@geneseo.edu or (585) 245-5893.
+
+### Emergency Funding
+The college has three sources of emergency funding for students experiencing short-term financial crises. The [Camiolo Student Emergency Loan Fund (SELF)](https://www.geneseo.edu/support/self-student-emergency-loan-fund) provides short-term loans to students for situations both temporary and beyond their control. The SELF was established with the expectation that students who use the fund seek to “pay it forward” as soon as they are able by contributing to the fund so other students can be helped, too. While there is not a legal obligation, the donors hope that student loan recipients respect and honor the value of community and helping others in their time of crisis. The [One Knight Student Aid Emergency Fund](https://www.geneseo.edu/dean_students/one-knight-student-aid-emergency-fund) assists Geneseo students who are facing financial emergencies mainly related to the COVID-19 pandemic. The fund offers grants (one-time award) depending on a student's documented financial need. For those students expecting a refund from financial aid, a Temple Hill loan of up to $500 can be offered prior to the approved loan dispersal. If you are experiencing financial hardship, please contact the Dean of Students (585-245-5706), who can assist and provide direction to appropriate campus resources.
+
+
+
+# SUNY Geneseo’s Commitments, Mission and Values
+
+SUNY Geneseo has several core documents that articulate our shared commitments and learning objectives. These include:
+
+- [SUNY Geneseo Mission, Vision and Values](https://www.geneseo.edu/about/mission-vision-and-values)
+- [Community Commitment to Diversity, Equity, and Inclusion](https://www.geneseo.edu/diversity/commitment)
+- [Sustainability as a Core Value](https://www.geneseo.edu/sustainability/about-sustainability-geneseo)
+- [Geneseo Learning Outcomes for Baccalaureate Education](https://www.geneseo.edu/provost/globe-geneseo-learning-outcomes-baccalaureate-education)
+
+
+# Disclaimer
+
+The syllabus may be subject to change during the semester. If it is changed, you will be notified via email and Brightspace.

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="bulma.css" />
+  <style>
+    .container { max-width: 900px; }
+    .is-section-title { color:#1c4982; font-size:30px; font-weight:700; }
+    .field + .field { margin-top: 1rem; }
+    .help.is-muted { color:#7a7a7a; }
+
+    /* Playing card preview */
+    .cardbox { width:260px;height:360px;border-radius:12px;border:2px solid #ddd;background:#fff;
+      position:relative;box-shadow:0 4px 12px rgba(0,0,0,.08);}
+    .cardbox .inner {position:absolute;inset:12px;display:grid;place-items:center;}
+    .cardbox .corner {position:absolute;font-weight:700;}
+    .corner-top{top:6px;left:10px;text-align:left;}
+    .corner-bottom{bottom:6px;right:10px;text-align:right;transform:rotate(180deg);}
+    .rank{display:block;font-size:28px;}
+    .suit{display:block;font-size:24px;}
+    .center .label{font-size:22px;color:#999;}
+    .red{color:#c0392b;}
+    .black{color:#2c3e50;}
+
+    /* Radios stacked vertically */
+    .field .control label.radio{ display:block; margin:.25rem 0; line-height:1.4; white-space:normal; }
+    .field .control label.radio + label.radio{ margin-left:0; }
+    .field .control label.radio input[type="radio"]{ margin-right:.5rem; transform: translateY(1px); }
+
+    /* Print snapshot (not used here, but harmless) */
+    @media print{ #form, .button{ display:none!important;} #print-view{ display:block!important;} }
+  </style>
+</head>
+
+<body>
+  <main class="container m-4">
+    <form id="form" class="box" action="submit.php" method="POST" novalidate>
+
+      <!-- Session -->
+      <div class="field">
+        <label class="label">What is your DANL 101 session?</label>
+        <div class="control" role="radiogroup" aria-label="DANL 101 session">
+          <label class="radio"><input type="radio" name="session" value="MWF 9:30–10:20" required /> MWF 9:30–10:20</label>
+          <label class="radio"><input type="radio" name="session" value="MW 2:00–3:15" required /> MW 2:00–3:15</label>
+        </div>
+      </div>
+
+      <!-- === Playing Card Widget (harvest removed) === -->
+      <section id="card-widget" aria-labelledby="card-title" style="margin-top:1.25rem">
+        <h2 id="card-title" class="is-section-title" style="font-size:26px">Draw / Enter Your Card</h2>
+
+        <!-- Hidden fields to submit JUST card info -->
+        <input type="hidden" name="card" required />
+        <input type="hidden" name="card" />
+        <input type="hidden" name="card_rank" />
+        <input type="hidden" name="card_suit" />
+        <input type="hidden" name="card_value" />
+
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <div class="buttons">
+              <button type="button" class="button is-info" id="deal-card">Deal a Random Card</button>
+            </div>
+          </div>
+
+          <!-- Visual card preview -->
+          <div class="column is-12">
+            <div id="card-preview" class="cardbox" aria-live="polite" aria-atomic="true">
+              <div class="inner">
+                <div class="corner corner-top"><span class="rank">—</span><span class="suit"> </span></div>
+                <div class="center"><span class="label">No card selected</span></div>
+                <div class="corner corner-bottom"><span class="rank">—</span><span class="suit"> </span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Manual card entry -->
+          <div class="column is-12" id="manual-entry" style="display:none;">
+            <div class="field is-grouped is-align-items-center">
+              <div class="control">
+                <div class="select">
+                  <select id="rank-select">
+                    <option value="">Rank…</option>
+                    <option value="A">A</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="J">J</option>
+                    <option value="Q">Q</option>
+                    <option value="K">K</option>
+                    <option value="Joker">Joker</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control">
+                <div class="select">
+                  <select id="suit-select">
+                    <option value="">Suit…</option>
+                    <option value="♠">♠ Spades</option>
+                    <option value="♥">♥ Hearts</option>
+                    <option value="♦">♦ Diamonds</option>
+                    <option value="♣">♣ Clubs</option>
+                    <option value="(none)">Joker (no suit)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control">
+                <button type="button" class="button is-primary" id="apply-manual">Apply Card</button>
+              </div>
+            </div>
+            <p class="help">Faces and Jokers count as 0. <strong>Ace counts as 1</strong>.</p>
+          </div>
+
+          <!-- Readonly display -->
+          <div class="column is-12">
+            <div class="field">
+              <label class="label">Card (auto-filled)</label>
+              <div class="control">
+                <input class="input" id="card-display" type="text" readonly>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+      (function(){
+        const ACE_VALUE=1,INCLUDE_JOKERS=true;
+        const $=s=>document.querySelector(s);
+        const widget=$('#card-widget'),form=widget.closest('form');
+      
+        const dealBtn=$('#deal-card'),useBtn=$('#use-physical');
+        const manualBox=$('#manual-entry'),rankSel=$('#rank-select'),suitSel=$('#suit-select'),applyBtn=$('#apply-manual');
+      
+        const prev=$('#card-preview'),
+              rankT=prev.querySelector('.corner-top .rank'),
+              suitT=prev.querySelector('.corner-top .suit'),
+              labelC=prev.querySelector('.center .label'),
+              rankB=prev.querySelector('.corner-bottom .rank'),
+              suitB=prev.querySelector('.corner-bottom .suit');
+      
+        const dispCard=$('#card-display');
+        const hfCard=form.querySelector('input[name="card"]'),
+              hfRank=form.querySelector('input[name="card_rank"]'),
+              hfSuit=form.querySelector('input[name="card_suit"]'),
+              hfVal =form.querySelector('input[name="card_value"]');
+      
+        let cardLocked = false; // <-- hard lock
+      
+        function deck(){
+          const suits=['♠','♥','♦','♣'], ranks=['A','2','3','4','5','6','7','8','9','10','J','Q','K'], d=[];
+          for(const s of suits) for(const r of ranks) d.push({r,s});
+          if(INCLUDE_JOKERS) d.push({r:'Joker'},{r:'Joker'});
+          return d;
+        }
+        function pick(){ const d=deck(); return d[Math.floor(Math.random()*d.length)]; }
+        function numericVal(r){ if(r==='Joker'||['J','Q','K'].includes(r)) return 0; if(r==='A') return ACE_VALUE; return parseInt(r,10); }
+      
+        function setPreview(r,s){
+          const red=(s==='♥'||s==='♦'), cls=red?'red':'black';
+          [rankT,rankB,suitT,suitB].forEach(el=>{el.classList.remove('red','black'); if(r && r!=='Joker' && cls) el.classList.add(cls);});
+          rankT.textContent=r||'—'; rankB.textContent=r||'—'; suitT.textContent=s||' '; suitB.textContent=s||' ';
+          labelC.textContent=r ? (r==='Joker' ? 'Joker' : `${r}${s}`) : 'No card selected';
+          labelC.style.color = r ? '#1c4982' : '#999';
+        }
+      
+        function lockCardChoice(){
+          cardLocked = true;
+          dealBtn.disabled = true;
+          useBtn.disabled  = true;
+          applyBtn.disabled = true;
+          rankSel.disabled = true;
+          suitSel.disabled = true;
+          manualBox.style.display = 'none';
+          // Optional: show a tiny badge that it's locked
+          dispCard.classList.add('is-static');
+        }
+      
+        function applyCard(r, s){
+          const v = numericVal(r);
+        
+          // ✅ If Joker → force suit value to "Joker"
+          const suitValue = (r === "Joker") ? "Joker" : s;
+        
+          hfCard.value = (r === 'Joker') ? 'Joker' : `${r}${s}`;
+          hfRank.value = r;
+          hfSuit.value = suitValue;  // <-- ✅ Set suit to "Joker" instead of empty
+          hfVal.value  = v;
+        
+          dispCard.value = hfCard.value;
+          setPreview(r, suitValue);
+          lockCardChoice();
+        }
+      
+        dealBtn.addEventListener('click', () => {
+          if (cardLocked) return;              // guard
+          const c=pick();
+          applyCard(c.r, c.s||'');
+        });
+      
+        useBtn.addEventListener('click', () => {
+          if (cardLocked) return;              // guard
+          manualBox.style.display='block';
+        });
+      
+        applyBtn.addEventListener('click', () => {
+          if (cardLocked) return;              // guard
+          const r=rankSel.value, s=suitSel.value;
+          if(!r){ alert('Select a rank.'); return; }
+          if(r==='Joker') applyCard('Joker','');
+          else if(!s || s==='(none)'){ alert('Select a suit.'); return; }
+          else applyCard(r,s);
+        });
+      
+        // If the form is reset, allow a new draw (optional)
+        form.addEventListener('reset', () => {
+          setTimeout(() => {
+            cardLocked = false;
+            dealBtn.disabled = false;
+            useBtn.disabled  = false;
+            applyBtn.disabled = false;
+            rankSel.disabled = false;
+            suitSel.disabled = false;
+            manualBox.style.display='none';
+            hfCard.value = hfRank.value = hfSuit.value = hfVal.value = '';
+            dispCard.value = '';
+            setPreview('','');
+          }, 0);
+        });
+      
+        setPreview('','');
+      })();
+      </script>
+      <!-- === /Playing Card Widget === -->
+
+      <!-- Social Media Survey Section -->
+      <section style="margin-top:1.5rem">
+        <h2 class="is-section-title" style="font-size:26px">Social Media Use</h2>
+      </section>
+
+      <div class="field">
+        <label class="label" for="platform">Which platform do you use most?</label>
+        <div class="control">
+          <div class="select is-fullwidth">
+            <select id="platform" name="platform" required>
+              <option value="" disabled selected>Select platform…</option>
+              <option>TikTok</option>
+              <option>Instagram</option>
+              <option>YouTube</option>
+              <option>Reddit</option>
+              <option>Snapchat</option>
+              <option>Discord</option>
+              <option>X/Twitter</option>
+              <option>Threads</option>
+              <option>Facebook</option>
+              <option value="None">I don't actively use any platform</option>
+            </select>
+          </div>
+        </div>
+        <p class="help">Required.</p>
+      </div>
+
+      <div class="field">
+        <label class="label" for="daily_time_min">Daily usage (minutes)</label>
+        <div class="control">
+          <input class="input" id="daily_time_min" name="daily_time_min" type="number" inputmode="numeric" min="0" max="500" step="1" placeholder="e.g., 75" required />
+        </div>
+        <p class="help is-muted">Enter a whole number 0–500; 0 if you don’t actively use any platform.</p>
+      </div>
+
+      <div class="field">
+        <label class="label" for="posts_per_week">Posts/comments per week</label>
+        <div class="control">
+          <input class="input" id="posts_per_week" name="posts_per_week" type="number" inputmode="numeric" min="0" max="50" step="1" placeholder="e.g., 2" required />
+        </div>
+        <p class="help is-muted">Enter 0 if you only scroll or don’t actively use any platform.</p>
+      </div>
+
+      <div class="field">
+        <label class="label" for="device_main">Main device for this platform</label>
+        <div class="control">
+          <div class="select is-fullwidth">
+            <select id="device_main" name="device_main" required>
+              <option value="" disabled selected>Select device…</option>
+              <option>Phone</option>
+              <option>Laptop</option>
+              <option>Tablet</option>
+              <option>Other</option>
+              <option value="None">I don't actively use any platform</option>
+            </select>
+          </div>
+        </div>
+        <p class="help">Required.</p>
+      </div>
+
+      <div class="field">
+        <label class="label" for="vibe_mode">How do you usually interact?</label>
+        <div class="control">
+          <div class="select is-fullwidth">
+            <select id="vibe_mode" name="vibe_mode" required>
+              <option value="" disabled selected>Select option…</option>
+              <option>Scroll only</option>
+              <option>Like &amp; react</option>
+              <option>Create &amp; post</option>
+              <option value="None">I don't actively use any platform</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="field is-grouped">
+        <div class="control"><button class="button is-primary" type="submit" id="submit-button">Submit</button></div>
+        <div class="control"><button class="button is-danger" type="reset">Cancel</button></div>
+      </div>
+    </form>
+
+    <div id="print-view" aria-hidden="true" style="display:none;"></div>
+    <div id="message" style="display:none;margin:18px;font-weight:bold;color:green;padding:8px;background:beige;border-radius:4px;"></div>
+  </main>
+
+<script>
+(function () {
+  const form = document.getElementById('form');
+  const messageElement = document.getElementById('message');
+  const submitButton = document.getElementById('submit-button');
+
+  // Your Apps Script endpoint (or leave empty to use native submit.php)
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw-aT6SgV9lxO2dAYP-26M62ucam5RTUBQxFW9qzShH4vJWrM5wvIYXWUXbJVlr1Z3d/exec";
+
+  // Hidden field populated by the card widget
+  const hfCard = form.querySelector('input[name="card"]');
+
+  form.addEventListener("submit", async function (e) {
+    // 1) HARD STOP the default and any other listeners
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    // 2) Block if no card chosen
+    if (!hfCard || !hfCard.value) {
+      messageElement.textContent = "Please draw or enter a card before submitting.";
+      messageElement.style.display = "block";
+      messageElement.style.backgroundColor = "red";
+      messageElement.style.color = "white";
+      document.getElementById('card-widget')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return; // 🚫 do not proceed
+    }
+
+    // 3) Built-in HTML validation for the rest
+    if (!form.checkValidity()) {
+      // Optionally show native bubbles
+      form.reportValidity();
+      messageElement.textContent = "Please complete all required fields.";
+      messageElement.style.display = "block";
+      messageElement.style.backgroundColor = "red";
+      messageElement.style.color = "white";
+      return; // 🚫 do not proceed
+    }
+
+    // 4) From here, submission is allowed. Choose JS fetch or native.
+    messageElement.textContent = "Submitting...";
+    messageElement.style.display = "block";
+    messageElement.style.backgroundColor = "beige";
+    messageElement.style.color = "green";
+    submitButton.disabled = true;
+
+    if (APPS_SCRIPT_URL) {
+      // JS submission (to Apps Script)
+      const fd = new FormData(form);
+      const body = [...fd.entries()].map(([k, v]) => k + "=" + encodeURIComponent(v)).join("&");
+
+      try {
+        const r = await fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          redirect: "follow",
+          headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+          body
+        });
+        if (!r.ok) throw new Error("Submit failed");
+
+        messageElement.textContent = "Data submitted successfully!";
+        messageElement.style.backgroundColor = "green";
+        messageElement.style.color = "beige";
+        form.reset();
+        setTimeout(() => { messageElement.textContent = ""; messageElement.style.display = "none"; }, 2600);
+      } catch (err) {
+        console.error(err);
+        messageElement.textContent = "An error occurred while submitting the form.";
+        messageElement.style.display = "block";
+        messageElement.style.backgroundColor = "red";
+        messageElement.style.color = "white";
+      } finally {
+        submitButton.disabled = false;
+      }
+    } else {
+      // Native post to action="submit.php"
+      // Use the native submit method to bypass this listener and avoid recursion:
+      HTMLFormElement.prototype.submit.call(form);
+    }
+  }, /* use capture to beat other handlers if any */ true);
+})();
+</script>
+
+</body>
+</html>

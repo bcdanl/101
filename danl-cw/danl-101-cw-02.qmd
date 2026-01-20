@@ -119,10 +119,10 @@ theme_set(theme_ipsum() +
 
 **Step 2.** Add an option for two-player mode.
 
-- e.g., [Prof. Choe's Tic-Tac-Toe with the Two-player Mode ](https://bcdanl.github.io/tic-tac-toe-pvp.html){target="_blank"}
+- e.g., [Prof. Choe's Tic-Tac-Toe with the Two-player Mode ](../tic-tac-toe-pvp.html){target="_blank"}
 
 <br>
 
 **Step 3.** Make a 4×4 tic-tac-toe version (if your current build is only 3×3).
 
-- e.g., [Prof. Choe's 4×4 Tic-Tac-Toe](https://bcdanl.github.io/tic-tac-toe-pvp-4x4.html){target="_blank"}
+- e.g., [Prof. Choe's 4×4 Tic-Tac-Toe](../tic-tac-toe-pvp-4x4.html){target="_blank"}
